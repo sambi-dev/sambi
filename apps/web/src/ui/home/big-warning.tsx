@@ -1,6 +1,7 @@
 import { Container } from '#/ui/shared/container';
 import { StarRating } from '#/ui/shared/star-rating';
 
+import { FadeIn } from '../fade-in';
 import { ClientAvatar } from '../shared/client-avatar';
 
 export function BigWarning({
@@ -26,27 +27,29 @@ export function BigWarning({
         size="sm"
         className="relative scroll-mt-14 py-20 sm:scroll-mt-32"
       >
-        <figure>
-          <div className="flex text-foreground sm:justify-center">
-            <StarRating />
-          </div>
-          <blockquote className="mt-10 text-pretty text-4xl font-semibold tracking-tight text-secondary-foreground sm:text-center lg:text-5xl">
-            {children}
-          </blockquote>
-          <figcaption className="mt-10 flex items-center sm:justify-center">
-            <div className="overflow-hidden rounded-full bg-border">
-              <ClientAvatar id={id} initials={author.initials} />
+        <FadeIn>
+          <figure>
+            <div className="flex text-foreground sm:justify-center">
+              <StarRating />
             </div>
-            <div className="ml-4">
-              <div className="text-base font-semibold leading-6 tracking-tight text-foreground">
-                {author.name}
+            <blockquote className="mt-10 text-pretty text-4xl font-semibold tracking-tight text-secondary-foreground sm:text-center lg:text-5xl">
+              {children}
+            </blockquote>
+            <figcaption className="mt-10 flex items-center sm:justify-center">
+              <div className="overflow-hidden rounded-full bg-border">
+                <ClientAvatar id={id} initials={author.initials} />
               </div>
-              <div className="text-sm font-medium text-foreground">
-                {author.role}
+              <div className="ml-4">
+                <div className="text-base font-semibold leading-6 tracking-tight text-foreground">
+                  {author.name}
+                </div>
+                <div className="text-sm font-medium text-foreground">
+                  {author.role}
+                </div>
               </div>
-            </div>
-          </figcaption>
-        </figure>
+            </figcaption>
+          </figure>
+        </FadeIn>
       </Container>
     </aside>
   );

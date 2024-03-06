@@ -7,21 +7,25 @@ import { buttonVariants } from '@sambi/ui/button';
 import coverImage from '#/images/hero.png';
 import { HeroTestimonial } from '#/ui/home/hero-testimonial';
 
+import { FadeIn, FadeInStagger } from '../fade-in';
+
 export function Hero() {
   return (
     <header className="overflow-hidden bg-muted lg:bg-transparent lg:px-5">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 grid-rows-[auto_1fr] gap-y-16 py-16 md:pt-20 lg:grid-cols-12 lg:gap-y-20 lg:px-3 lg:pb-36 lg:pt-20 xl:py-32">
+      <FadeInStagger className="mx-auto grid max-w-6xl grid-cols-1 grid-rows-[auto_1fr] gap-y-16 py-16 md:pt-20 lg:grid-cols-12 lg:gap-y-20 lg:px-3 lg:pb-36 lg:pt-20 xl:py-32">
         <div className="relative flex items-end lg:col-span-5 lg:row-span-2">
-          <div className="relative z-10 mx-auto flex w-64 md:w-80 lg:w-auto">
+          <FadeIn className="relative z-10 mx-auto flex w-64 md:w-80 lg:w-auto">
             <Image className="w-full" src={coverImage} alt="" priority />
-          </div>
+          </FadeIn>
         </div>
         <div className="relative px-4 sm:px-6 lg:col-span-7 lg:pb-14 lg:pl-16 lg:pr-0 xl:pl-20">
           <div className="hidden lg:absolute lg:-top-32 lg:bottom-0 lg:left-[-100vw] lg:right-[-100vw] lg:block lg:bg-card" />
-          <HeroTestimonial />
+          <FadeIn>
+            <HeroTestimonial />
+          </FadeIn>
         </div>
         <div className="pt-16 lg:col-span-7 lg:bg-transparent lg:pl-16 lg:pt-0 xl:pl-20">
-          <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:px-0">
+          <FadeIn className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:px-0">
             <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
               A much smaller studio than our clients think
             </h1>
@@ -44,9 +48,9 @@ export function Hero() {
                 Pay us to listen
               </Link>
             </div>
-          </div>
+          </FadeIn>
         </div>
-      </div>
+      </FadeInStagger>
     </header>
   );
 }

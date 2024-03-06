@@ -4,46 +4,11 @@ import Link from 'next/link';
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
 
-import duotoneImage from '#/images/screencasts/duotone.svg';
-import gridsImage from '#/images/screencasts/grids.svg';
-import setupImage from '#/images/screencasts/setup.svg';
-import strokesImage from '#/images/screencasts/strokes.svg';
+import { processSteps } from '#/content/process-steps';
+import { FadeIn } from '#/ui/fade-in';
 import { SectionIntro } from '#/ui/section-intro';
 import { Container } from '#/ui/shared/container';
-
-import { FadeIn } from '../fade-in';
-import { ArrowIcon } from '../shared/icons';
-
-const steps = [
-  {
-    title: 'Discovery & assimilation',
-    description:
-      "We get to know you, your plans, where you're at, where you want to go, and everything about your market.",
-    image: setupImage,
-    ctaText: 'Learn how',
-  },
-  {
-    title: 'Planning & definition',
-    description:
-      'Using methodical frameworks we help to develop lean business plans and define the critical path with clear KPIs.',
-    image: gridsImage,
-    ctaText: 'Understand why',
-  },
-  {
-    title: 'Build & execute',
-    description:
-      'We design and build what needs to be then continue to iterate, test, and validate. We always release too early to minimize waste.',
-    image: strokesImage,
-    ctaText: 'Go deeper',
-  },
-  {
-    title: 'Analyze, improve, & scale',
-    description:
-      'We keep an open mind and let the data drive us. We continue to validate, lay foundations, add resources, and scale experiments.',
-    image: duotoneImage,
-    ctaText: 'Read more',
-  },
-];
+import { ArrowIcon } from '#/ui/shared/icons';
 
 export function Process() {
   return (
@@ -58,18 +23,23 @@ export function Process() {
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          We&apos;ve broken what was supposed to be indesctructible and put it
-          back together again. Over the years, our workflow has gotten pretty
-          good enabling us to deliver quality results, on-time, and on-budget.
+          We&apos;ve broken things that were supposed to be{' '}
+          <span className="line-through">simple</span> indestructible. Over the
+          years, we&apos;ve{' '}
+          <span className="line-through">
+            learned to over pad our estimates
+          </span>{' '}
+          refined our workflow and slapped on labels like world-class. It just
+          sounds better.
         </p>
       </SectionIntro>
       <Container size="lg" className="mt-16">
         <FadeIn>
           <ol className="grid grid-cols-1 gap-x-8 gap-y-10 [counter-reset:step] sm:grid-cols-2 lg:grid-cols-4">
-            {steps.map((step) => (
+            {processSteps.map((step) => (
               <li key={step.title} className="[counter-increment:step]">
                 <div className="relative flex h-44 items-center justify-center rounded-2xl bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-foreground via-muted to-foreground px-6 shadow-lg dark:bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] dark:from-background dark:via-primary dark:to-background">
-                  <div className="flex overflow-hidden rounded shadow-sm">
+                  <div className="flex overflow-hidden rounded-lg shadow-sm">
                     <Image src={step.image} alt="" unoptimized />
                   </div>
                 </div>
@@ -84,7 +54,7 @@ export function Process() {
                     href="/process"
                     aria-label="Visit sambi's process page in the same window to learn more about how we work"
                     className={cn(
-                      buttonVariants({ variant: 'outline', size: 'sm' }),
+                      buttonVariants({ variant: 'secondary', size: 'sm' }),
                     )}
                   >
                     {step.ctaText}
