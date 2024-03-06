@@ -1,4 +1,4 @@
-import { mysqlTableCreator } from "drizzle-orm/mysql-core";
+import { mysqlTableCreator } from 'drizzle-orm/mysql-core';
 
 /**
  * This is an example of how to use the multi-project schema feature of Drizzle ORM.

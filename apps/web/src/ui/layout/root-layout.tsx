@@ -125,7 +125,7 @@ function NavigationItem({
       className="group relative isolate -mx-6 bg-[#121117] px-6 py-10 even:mt-px dark:bg-[#182524] sm:mx-0 sm:px-0 sm:py-16 sm:odd:pr-16 sm:even:mt-0 sm:even:border-l sm:even:border-[#24232F] sm:even:pl-16 dark:sm:even:border-[#2D2B3B]"
     >
       {children}
-      <span className="dark:bg-alternate absolute inset-y-0 -z-10 w-screen bg-primary opacity-0 transition group-odd:right-0 group-even:left-0 group-hover:opacity-100" />
+      <span className="absolute inset-y-0 -z-10 w-screen bg-primary opacity-0 transition group-odd:right-0 group-even:left-0 group-hover:opacity-100 dark:bg-alternate" />
     </Link>
   );
 }

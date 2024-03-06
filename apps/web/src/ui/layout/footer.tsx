@@ -2,6 +2,7 @@ import Link from 'next/link';
 
 import { ThemeToggle } from '@sambi/ui/theme';
 
+import { siteConfig } from '#/config/site';
 import { FadeIn } from '#/ui/fade-in';
 import { Logo } from '#/ui/logo';
 import { Container } from '#/ui/page-container';
@@ -59,16 +60,34 @@ function Navigation() {
               {section.title}
             </div>
             <ul className="mt-4 text-sm text-secondary-foreground">
-              {section.links.map((link, linkIndex) => (
-                <li key={linkIndex} className="mt-4">
-                  <Link
-                    href={link.href}
-                    className="transition hover:text-primary"
-                  >
-                    {link.title}
-                  </Link>
-                </li>
-              ))}
+              {section.links.map((link, linkIndex) => {
+                const isSocialMediaLink = socialMediaProfiles.some(
+                  (socialMediaProfile) => socialMediaProfile.href === link.href,
+                );
+                return (
+                  <li key={linkIndex} className="mt-4">
+                    {isSocialMediaLink ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Visit sambi's ${link.title as string} profile in a new window`}
+                        className="transition hover:text-primary"
+                      >
+                        {link.title}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="transition hover:text-primary"
+                        aria-label={`Visit sambi's ${link.title as string} page in the same window`}
+                      >
+                        {link.title}
+                      </Link>
+                    )}
+                  </li>
+                );
+              })}
             </ul>
           </li>
         ))}
@@ -124,7 +143,8 @@ export function Footer() {
             <Logo className="h-8" fillOnHover />
           </Link>
           <p className="text-sm text-primary">
-            © sambi.dev. All Rights Reserved. {new Date().getFullYear()}
+            © {siteConfig.name}. All Rights Reserved.{' '}
+            {new Date().getFullYear()}
           </p>
           <ThemeToggle />
         </div>

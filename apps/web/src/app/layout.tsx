@@ -11,34 +11,98 @@ import '#/styles/tailwind.css';
 
 import { cn } from '@sambi/ui';
 
+import { siteConfig } from '#/config/site';
+
 export const metadata: Metadata = {
   metadataBase: new URL(
-    env.VERCEL_ENV === 'production'
-      ? 'https://sambi.dev'
-      : 'http://localhost:3000',
+    env.VERCEL_ENV === 'production' ? siteConfig.url : 'http://localhost:3000',
   ),
   title: {
-    template: '%s :: sambi',
-    default: 'sambi :: Award-winning studio',
+    template: `%s :: ${siteConfig.name}`,
+    default: `${siteConfig.name} :: Award-winning studio`,
   },
-  description: 'Simple monorepo with shared backend for web & mobile apps',
+  description: siteConfig.description,
+  keywords: [
+    'Best Upwork Agency',
+    'Freelance MVP Studio',
+    'Fractional CTO',
+    'Fractional CMO',
+    'Fractional CPO',
+    'Rebekah Radice',
+  ],
+  authors: [
+    {
+      name: siteConfig.name,
+      url: siteConfig.url,
+    },
+  ],
+  creator: 'Rebekah Radice',
+  category: 'Upwork Agency',
+  robots: {
+    follow: false,
+    index: false,
+  },
   openGraph: {
-    title: 'Create T3 Turbo',
-    description: 'Simple monorepo with shared backend for web & mobile apps',
-    url: 'https://create-t3-turbo.vercel.app',
-    siteName: 'Create T3 Turbo',
+    type: 'website',
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [siteConfig.image],
+    siteName: siteConfig.name,
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@jullerino',
-    creator: '@jullerino',
+    site: '@sambi_dev',
+    creator: '@sambi_dev',
+    title: siteConfig.name,
+    description: siteConfig.description,
+    images: [
+      {
+        url: siteConfig.image.url,
+        alt: siteConfig.image.alt,
+      },
+    ],
   },
+  icons: [
+    {
+      rel: 'icon',
+      url: '/favicon.ico',
+    },
+    {
+      rel: 'apple',
+      url: '/icons/apple-touch-icon.png',
+    },
+    {
+      rel: 'icon',
+      url: '/icons/favicon-16x16.png',
+      sizes: '16x16',
+    },
+    {
+      rel: 'icon',
+      url: '/icons/favicon-32x32.png',
+      sizes: '32x32',
+    },
+    {
+      rel: 'icon',
+      url: '/icons/favicon-192x192.png',
+      sizes: '192x192',
+    },
+    {
+      rel: 'icon',
+      url: '/icons/android-chrome-512x515.png',
+      sizes: '512x512',
+    },
+    {
+      rel: 'mask-icon',
+      url: '/icons/safari-pinned-tab.svg',
+    },
+  ],
+  manifest: `${siteConfig.url}/site.webmanifest`,
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f7fbf9' },
-    { media: '(prefers-color-scheme: dark)', color: '#101211' },
+    { media: '(prefers-color-scheme: light)', color: '#f8f9fb' },
+    { media: '(prefers-color-scheme: dark)', color: '#0d0e10' },
   ],
   width: 'device-width',
   initialScale: 1,

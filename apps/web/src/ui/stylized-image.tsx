@@ -1,17 +1,9 @@
 import type { ImageProps } from 'next/image';
 
-
-
 import { useId } from 'react';
 import Image from 'next/image';
 
-
-
 import { cn } from '@sambi/ui';
-
-
-
-
 
 const shapes = [
   {

@@ -1,3 +1,17 @@
+export const VERCEL_URL = process.env.NEXT_PUBLIC_VERCEL_URL
+  ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+  : '';
+
+export const SITE_URL =
+  process.env.NEXT_PUBLIC_VERCEL_ENV === 'preview'
+    ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}`
+    : process.env.NEXT_PUBLIC_APP_URL ?? VERCEL_URL ?? 'http://localhost:3000';
+
+export const ensureStartsWith = (stringToCheck: string, startsWith: string) =>
+  stringToCheck.startsWith(startsWith)
+    ? stringToCheck
+    : `${startsWith}${stringToCheck}`;
+
 export const userColors = [
   '#C2F0C2',
   '#B1F1CB',

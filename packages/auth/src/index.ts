@@ -1,9 +1,10 @@
 import type { DefaultSession } from 'next-auth';
 
 import { DrizzleAdapter } from '@auth/drizzle-adapter';
-import { db, tableCreator } from '@sambi/db';
 import NextAuth from 'next-auth';
 import Discord from 'next-auth/providers/discord';
+
+import { db, tableCreator } from '@sambi/db';
 
 export type { Session } from 'next-auth';
 
