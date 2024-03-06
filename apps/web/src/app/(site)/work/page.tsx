@@ -148,9 +148,9 @@ function Clients() {
 }
 
 export const metadata: Metadata = {
-  title: 'Our Work',
+  title: 'Showcase',
   description:
-    'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
+    "Witness the marvel of sambi.dev's Showcase! We've perfected the art of eco-friendly project recycling 🌿 Same 5 templates, infinite possibilities 😉",
 };
 
 export default async function Work() {

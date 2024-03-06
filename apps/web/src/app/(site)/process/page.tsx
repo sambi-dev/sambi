@@ -229,9 +229,9 @@ function Values() {
 }
 
 export const metadata: Metadata = {
-  title: 'Our Process',
+  title: 'How we roll',
   description:
-    'We believe in efficiency and maximizing our resources to provide the best value to our clients.',
+    "Discover how we roll at sambi.dev. Our secret formula? Stalking, re-purposing, and overcharging for stuff you probably don't need. 🤑",
 };
 
 export default function Process() {
