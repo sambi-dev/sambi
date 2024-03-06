@@ -1,9 +1,8 @@
 'use client';
 
-import type { RouterOutputs } from '@sambi/api';
-
 import { use } from 'react';
 
+import type { RouterOutputs } from '@sambi/api';
 import { cn } from '@sambi/ui';
 import { Button } from '@sambi/ui/button';
 import {

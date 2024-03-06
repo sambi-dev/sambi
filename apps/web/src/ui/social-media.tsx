@@ -1,5 +1,6 @@
 import { cn } from '@sambi/ui';
 
+import { siteConfig } from '#/config/site';
 import {
   FacebookIcon,
   GitHubIcon,
@@ -9,35 +10,41 @@ import {
   XIcon,
 } from '#/ui/shared/icons';
 
-export const socialMediaProfiles = [
+interface SocialMediaProfile {
+  title: string;
+  href: string;
+  icon: (props: React.ComponentPropsWithoutRef<'svg'>) => JSX.Element;
+}
+
+export const socialMediaProfiles: SocialMediaProfile[] = [
   {
     title: 'Upwork',
-    href: 'https://www.upwork.com/agencies/425232908694130688/',
+    href: siteConfig.links.upworkAgency,
     icon: UpworkIcon,
   },
   {
     title: 'GitHub',
-    href: 'https://github.com/srizvi/sambi',
+    href: siteConfig.links.github,
     icon: GitHubIcon,
   },
   {
     title: 'Facebook',
-    href: 'https://www.facebook.com/rebekahradicellc',
+    href: siteConfig.links.facebook,
     icon: FacebookIcon,
   },
   {
     title: 'Instagram',
-    href: 'https://www.instagram.com/rebekahradice/',
+    href: siteConfig.links.instagram,
     icon: InstagramIcon,
   },
   {
     title: 'Twitter',
-    href: 'https://twitter.com/rebekahradice',
+    href: siteConfig.links.twitter,
     icon: XIcon,
   },
   {
     title: 'LinkedIn',
-    href: 'https://twitter.com/rebekahradice',
+    href: siteConfig.links.linkedIn,
     icon: LinkedInIcon,
   },
 ];

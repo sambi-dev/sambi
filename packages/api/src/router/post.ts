@@ -1,6 +1,7 @@
+import { z } from 'zod';
+
 import { desc, eq, schema } from '@sambi/db';
 import { CreatePostSchema } from '@sambi/validators';
-import { z } from 'zod';
 
 import { createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
 

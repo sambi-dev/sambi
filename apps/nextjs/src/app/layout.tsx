@@ -1,10 +1,11 @@
 import type { Metadata, Viewport } from 'next';
 
+import { GeistMono } from 'geist/font/mono';
+import { GeistSans } from 'geist/font/sans';
+
 import { cn } from '@sambi/ui';
 import { ThemeProvider, ThemeToggle } from '@sambi/ui/theme';
 import { Toaster } from '@sambi/ui/toast';
-import { GeistMono } from 'geist/font/mono';
-import { GeistSans } from 'geist/font/sans';
 
 import { env } from '#/env';
 import { TRPCReactProvider } from '#/trpc/react';
