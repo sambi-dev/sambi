@@ -22,9 +22,9 @@ export default async function Home() {
       <BigWarning
         id="untestimonial-1"
         author={{
-          name: 'Henri',
+          name: 'Henri L.',
           role: 'Founder ',
-          initials: 'HA',
+          initials: 'HL',
         }}
       >
         <p>
@@ -36,7 +36,7 @@ export default async function Home() {
       <BigWarning
         id="testimonial-from-gerardo-stark"
         author={{
-          name: 'Aditya',
+          name: 'Aditya A.',
           role: 'Protector of mediocrity',
           initials: 'AA',
         }}
