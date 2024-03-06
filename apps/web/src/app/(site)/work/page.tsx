@@ -111,14 +111,14 @@ function CaseStudies({ caseStudies }: { caseStudies: MDXEntry<CaseStudy>[] }) {
 type ClientLogoPair = [string, string];
 
 const clients: ClientLogoPair[] = [
-  ['Phobia', logoPhobia as string],
-  ['Family Fund', logoFamilyFund as string],
-  ['Unseal', logoUnseal as string],
-  ['Mail Smirk', logoMailSmirk as string],
-  ['Home Work', logoHomeWork as string],
-  ['Green Life', logoGreenLife as string],
-  ['Bright Path', logoBrightPath as string],
-  ['North Adventures', logoNorthAdventures as string],
+  ['Phobia', logoPhobia],
+  ['Family Fund', logoFamilyFund],
+  ['Unseal', logoUnseal],
+  ['Mail Smirk', logoMailSmirk],
+  ['Home Work', logoHomeWork],
+  ['Green Life', logoGreenLife],
+  ['Bright Path', logoBrightPath],
+  ['North Adventures', logoNorthAdventures],
 ];
 
 function Clients() {
@@ -171,7 +171,7 @@ export default async function Work() {
 
       <Testimonial
         className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Mail Smirk', logo: logoMailSmirk as string }}
+        client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
       >
         We approached <em>Studio</em> because we loved their past work. They
         delivered something remarkably similar in record time.

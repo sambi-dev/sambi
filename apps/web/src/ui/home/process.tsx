@@ -1,5 +1,3 @@
-import type { StaticImageData } from 'next/image';
-
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -21,28 +19,28 @@ const steps = [
     title: 'Discovery & assimilation',
     description:
       "We get to know you, your plans, where you're at, where you want to go, and everything about your market.",
-    image: setupImage as StaticImageData,
+    image: setupImage,
     ctaText: 'Learn how',
   },
   {
     title: 'Planning & definition',
     description:
       'Using methodical frameworks we help to develop lean business plans and define the critical path with clear KPIs.',
-    image: gridsImage as StaticImageData,
+    image: gridsImage,
     ctaText: 'Understand why',
   },
   {
     title: 'Build & execute',
     description:
       'We design and build what needs to be then continue to iterate, test, and validate. We always release too early to minimize waste.',
-    image: strokesImage as StaticImageData,
+    image: strokesImage,
     ctaText: 'Go deeper',
   },
   {
     title: 'Analyze, improve, & scale',
     description:
       'We keep an open mind and let the data drive us. We continue to validate, lay foundations, add resources, and scale experiments.',
-    image: duotoneImage as StaticImageData,
+    image: duotoneImage,
     ctaText: 'Read more',
   },
 ];
