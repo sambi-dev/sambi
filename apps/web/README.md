@@ -1,28 +1,27 @@
-# Create T3 App
+# sambi.dev Web App
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+Welcome to the sambi.dev web app, the digital face of our un-agency! This app is part of the larger sambi Turborepo, where we showcase our work, share our stories, and connect with like-minded folks.
 
-## What's next? How do I make an app with this?
+## Built on the Shoulders of Giants
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+This app is powered by the mighty [T3 Stack](https://create.t3.gg/), a powerful combination of [Next.js](https://nextjs.org), [NextAuth.js](https://next-auth.js.org), [Drizzle](https://orm.drizzle.team), [Tailwind CSS](https://tailwindcss.com), and [tRPC](https://trpc.io). It's like having a superhero team backing your app.
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+But we didn't stop there. We've also incorporated:
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Drizzle](https://orm.drizzle.team)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+- 🎨 [Tailwind UI templates](https://tailwindui.com/) (subject to their License) by the makers of Tailwind CSS to help speed things up.
+- 🪄 [shadcn UI](https://ui.shadcn.com/), a collection of beautifully designed, accessible, and customizable components that you can easily integrate into your app.
+- 🚀 [Basehub](https://basehub.com/home), for fast, collaborative, and AI-native content management.
 
-## Learn More
+## Getting Started
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+To get this party started, follow these steps:
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+1. Clone this repo
+2. Install dependencies with `pnpm install`
+3. Set up your environment variables (see `.env.example` for what you'll need)
+4. Run `pnpm dev` to start the development server
+5. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+## What's Next?
 
-## How do I deploy this?
-
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+This is just the beginning. We've set up the scaffolding, but it's up to you to make it your own. Add features, experiment with designs, integrate new tools. The sky's the limit.
