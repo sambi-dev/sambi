@@ -5,28 +5,7 @@ import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
 
 import coverImage from '#/images/hero.png';
-import { StarRating } from '#/ui/shared/star-rating';
-
-function Testimonial() {
-  return (
-    <figure className="relative mx-auto max-w-md text-center lg:mx-0 lg:text-left">
-      <div className="flex justify-center text-primary lg:justify-start">
-        <StarRating />
-      </div>
-      <blockquote className="mt-2">
-        <p className="text-lg font-medium text-secondary-foreground">
-          “Recommend sambi? No thanks, just stay away. I depend on them too much
-          to share.”
-        </p>
-      </blockquote>
-      <figcaption className="mt-2 text-sm text-muted-foreground">
-        <strong className="font-semibold text-primary before:content-['—_']">
-          John Galliano
-        </strong>
-      </figcaption>
-    </figure>
-  );
-}
+import { HeroTestimonial } from '#/ui/home/hero-testimonial';
 
 export function Hero() {
   return (
@@ -39,7 +18,7 @@ export function Hero() {
         </div>
         <div className="relative px-4 sm:px-6 lg:col-span-7 lg:pb-14 lg:pl-16 lg:pr-0 xl:pl-20">
           <div className="hidden lg:absolute lg:-top-32 lg:bottom-0 lg:left-[-100vw] lg:right-[-100vw] lg:block lg:bg-card" />
-          <Testimonial />
+          <HeroTestimonial />
         </div>
         <div className="pt-16 lg:col-span-7 lg:bg-transparent lg:pl-16 lg:pt-0 xl:pl-20">
           <div className="mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:px-0">
