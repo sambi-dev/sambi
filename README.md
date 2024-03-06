@@ -1,87 +1,122 @@
-# create-t3-turbo
+# sambi.dev goes T3 Turbo
 
-> **Note**
-> Due to high demand, this repo now uses the `app` directory with some new experimental features. If you want to use the more traditional `pages` router, [check out the repo before the update](https://github.com/t3-oss/create-t3-turbo/tree/414aff131ca124573e721f3779df3edb64989fd4).
+Welcome to sambi.dev, the digital frontier where tech meets design with a dash of marketing genius. Here, Ambreen crafts visuals that pop, Sam tinkers with tech, and Rebekah drives demand. It's our open source playground—from code to coffee quirks.
 
-> **Note**
-> OAuth deployments are now working for preview deployments. Read [deployment guide](https://github.com/t3-oss/create-t3-turbo#auth-proxy) and [check out the source](./apps/auth-proxy) to learn more!
+### What's Inside
+
+Dive into our collective wisdom, where success and slip-ups coexist. This space is more than a showcase, it's a toolkit for those daring to freelance with flair and function. Expect real talk, practical tips, and a glimpse into the freelance hustle.
+
+### Who's This For?
+
+- **Developers:** Explore and experiment with our repos. Innovation encouraged, caution advised.
+- **Clients:** Discover how we blend creativity and strategy and apply it to your digital presence.
+- **Freelancers:** Unearth insights to fuel your journey.
+
+---
+
+## t3-oss ftw
+
+### Shoutout to t3-oss and Julius Marminge
+
+**Heads Up!**  
+A nod to the groundbreaking efforts of [Julius Marminge](https://github.com/juliusmarminge) and the [t3-oss](https://github.com/t3-oss) team. We've adopted T3 Turbo, adding our twist to the mix.
+
+**Good News**  
+Julius and the team's foundational work means OAuth runs smoothly, even in previews. Dive into our [deployment guide](https://github.com/sambi-dev/sambi?tab=readme-ov-file#auth-proxy) and explore the mechanics in the [source](./apps/auth-proxy).
 
 ## Installation
 
-There are two ways of initializing an app using the `create-t3-turbo` starter. You can either use this repository as a template:
+### Getting Started
 
-![use-as-template](https://github.com/t3-oss/create-t3-turbo/assets/51714798/bb6c2e5d-d8b6-416e-aeb3-b3e50e2ca994)
+Clone the `sambi` repository to dive into our digital world:
 
-or use Turbo's CLI to init your project (use PNPM as package manager):
+```bash
+git clone https://github.com/sambi-dev/sambi.git
+```
+
+For an optimal setup, we recommend using PNPM as your package manager.
+
+**Note:**  
+This repository serves as a springboard, not a template. For a generic start, lean in to the command line to spin up `create-t3-turbo` with:
 
 ```bash
 npx create-turbo@latest -e https://github.com/t3-oss/create-t3-turbo
 ```
 
-## About
+## About This Repo
 
-Ever wondered how to migrate your T3 application into a monorepo? Stop right here! This is the perfect starter repo to get you running with the perfect stack!
+Discover how to navigate the Turborepo landscape, inspired by t3-oss. Our take builds upon their create-t3-turbo, offering a unique sambi.dev flavor.
 
-It uses [Turborepo](https://turborepo.org) and contains:
+With [Turborepo](https://turborepo.org), we amplify our T3 applications, crafting a boilerplate for agencies and freelancers alike. It's designed as a launchpad for your projects, providing a sturdy, scalable foundation with room for your creative flair.
+
+Ideal for agencies seeking streamlined development or freelancers aiming to enhance their portfolio. We've handled the groundwork, enabling you to concentrate on developing standout apps and experiences.
 
 ```text
 .github
-  └─ workflows
-        └─ CI with pnpm cache setup
+├── workflows
+│   └── CI with pnpm cache setup
 .vscode
-  └─ Recommended extensions and settings for VSCode users
+└── Recommended extensions and settings for VSCode users
 apps
-  ├─ auth-proxy
-  |   ├─ Nitro server to proxy OAuth requests in preview deployments
-  |   └─ Uses Auth.js Core
-  ├─ expo
-  |   ├─ Expo SDK 49
-  |   ├─ React Native using React 18
-  |   ├─ Navigation using Expo Router
-  |   ├─ Tailwind using NativeWind
-  |   └─ Typesafe API calls using tRPC
-  └─ next.js
-      ├─ Next.js 14
-      ├─ React 18
-      ├─ Tailwind CSS
-      └─ E2E Typesafe API Server & Client
+├── auth-proxy
+│   ├── Nitro server to proxy OAuth requests in preview deployments
+│   └── Uses Auth.js Core
+├── expo
+│   ├── Expo SDK 49
+│   ├── React Native using React 18
+│   ├── Navigation using Expo Router
+│   ├── Tailwind using NativeWind
+│   └── Typesafe API calls using tRPC
+├── next.js
+│   ├── Next.js 14
+│   ├── React 18
+│   ├── Tailwind CSS
+│   └── E2E Typesafe API Server & Client
+└── web
+    ├── Next.js 14
+    ├── React 18
+    ├── Tailwind CSS
+    └── E2E Typesafe API Server & Client
 packages
-  ├─ api
-  |   └─ tRPC v11 router definition
-  ├─ auth
-  |   └─ Authentication using next-auth. **NOTE: Only for Next.js app, not Expo**
-  ├─ db
-  |   └─ Typesafe db calls using Drizzle & Planetscale
-  └─ ui
-      └─ Start of a UI package for the webapp using shadcn-ui
+├── api
+│   └── tRPC v11 router definition
+├── auth
+│   └── Authentication using next-auth. **NOTE: Only for Next.js app, not Expo**
+├── db
+│   └── Typesafe db calls using Drizzle & Planetscale
+└── ui
+    └── Start of a UI package for the webapp using shadcn-ui
 tooling
-  ├─ eslint
-  |   └─ shared, fine-grained, eslint presets
-  ├─ prettier
-  |   └─ shared prettier configuration
-  ├─ tailwind
-  |   └─ shared tailwind configuration
-  └─ typescript
-      └─ shared tsconfig you can extend from
+├── eslint
+│   └── shared, fine-grained, eslint presets
+├── prettier
+│   └── shared prettier configuration
+├── tailwind
+│   └── shared tailwind configuration
+└── typescript
+    └── shared tsconfig you can extend from
 ```
 
-> In this template, we use `@sambi` as a placeholder for package names. As a user, you might want to replace it with your own organization or project name. You can use find-and-replace to change all the instances of `@sambi` to something like `@my-company` or `@project-name`.
+> **Template Tip:**  
+> We use `@sambi` as a placeholder for package names. For a personal touch, substitute `@sambi` with your organization or project name using find-and-replace. This ensures cleaner imports and a customized codebase.
 
 ## Quick Start
 
-> **Note**
-> The [db](./packages/db) package is preconfigured to use PlanetScale and is **edge-bound** with the [database.js](https://github.com/planetscale/database-js) driver. If you're using something else, make the necessary modifications to the [schema](./packages/db/src/schema) as well as the [client](./packages/db/src/index.ts) and the [drizzle config](./packages/db/drizzle.config.ts). If you want to switch to non-edge database driver, remove `export const runtime = "edge";` [from all pages and api routes](https://github.com/t3-oss/create-t3-turbo/issues/634#issuecomment-1730240214).
+> **Note:**  
+> The `db` package is set up for PlanetScale with the [database.js](https://github.com/planetscale/database-js) driver. To switch to a different database, update the [schema](./packages/db/src/schema), [client](./packages/db/src/index.ts), and [drizzle config](./packages/db/drizzle.config.ts) accordingly.
+>
+> For guidance on using a non-edge database driver, see [this discussion](https://github.com/t3-oss/create-t3-turbo/issues/634#issuecomment-1730240214) in the `create-t3-turbo` repo.
 
 To get it running, follow the steps below:
 
-### 1. Setup dependencies
+### 1. Setup Dependencies
 
 ```bash
 # Install dependencies
 pnpm i
 
 # Configure environment variables
-# There is an `.env.example` in the root directory you can use for reference
+# Use `.env.example` in the root for reference
 cp .env.example .env
 
 # Push the Drizzle schema to the database
@@ -92,57 +127,61 @@ pnpm db:push
 
 #### Use iOS Simulator
 
-1. Make sure you have XCode and XCommand Line Tools installed [as shown on expo docs](https://docs.expo.dev/workflow/ios-simulator).
+1. Ensure XCode and XCommand Line Tools are installed as per the [Expo documentation](https://docs.expo.dev/workflow/ios-simulator).
 
-   > **NOTE:** If you just installed XCode, or if you have updated it, you need to open the simulator manually once. Run `npx expo start` in the root dir, and then enter `I` to launch Expo Go. After the manual launch, you can run `pnpm dev` in the root directory.
+   > **NOTE:** Post XCode installation or update, manually launch the simulator once. Execute `npx expo start` in the root directory, then press `I` to open Expo Go. Subsequently, `pnpm dev` can be used for launching.
 
    ```diff
-   +  "dev": "expo start --ios",
+
+   + "dev": "expo start --ios",
    ```
 
 2. Run `pnpm dev` at the project root folder.
 
-#### Use Android Emulator
+#### Android Emulator Setup
 
-1. Install Android Studio tools [as shown on expo docs](https://docs.expo.dev/workflow/android-studio-emulator).
+1. Install Android Studio tools following the [Expo documentation](https://docs.expo.dev/workflow/android-studio-emulator). It's a crucial step for mobile development.
 
-2. Change the `dev` script at `apps/expo/package.json` to open the Android emulator.
+2. Update the `dev` script in `apps/expo/package.json`:
 
    ```diff
    +  "dev": "expo start --android",
    ```
 
-3. Run `pnpm dev` at the project root folder.
+3. To launch, execute `pnpm dev` in the project's root directory and witness the setup in action.
 
-> **TIP:** It might be easier to run each app in separate terminal windows, so you get the logs from each app separately. This is also required if you want your terminals to be interactive, e.g. to access the Expo QR code. You can run `pnpm --filter expo dev` and `pnpm --filter nextjs dev` to run each app in a separate terminal window.
+> **TIP:** Maintain clarity by running each app in a separate terminal window. This allows distinct log tracking and interactive terminal use, like accessing the Expo QR code. Utilize `pnpm --filter expo dev` and `pnpm --filter nextjs dev` for focused app execution.
 
-### 3. When it's time to add a new package
+### 3. Adding a New Package
 
-To add a new package, simply run `pnpm turbo gen init` in the monorepo root. This will prompt you for a package name as well as if you want to install any dependencies to the new package (of course you can also do this yourself later).
+To add a new package to your Turborepo, simply run `pnpm turbo gen init` at the root. The guided setup will ask for the package name and handle dependencies, which you can add immediately or later.
 
-The generator sets up the `package.json`, `tsconfig.json` and a `index.ts`, as well as configures all the necessary configurations for tooling around your package such as formatting, linting and typechecking. When the package is created, you're ready to go build out the package.
+The generator prepares everything for you: `package.json`, `tsconfig.json`, and `index.ts`, along with configurations for formatting, linting, and typechecking. This streamlined process lets you focus on development right away.
+
+Julius's comprehensive approach ensures a smooth start, saving time and effort. 👏🏽
 
 ## FAQ
 
-### Does the starter include Solito?
+### What's the deal with Solito? Is it included in this starter?
 
-No. Solito will not be included in this repo. It is a great tool if you want to share code between your Next.js and Expo app. However, the main purpose of this repo is not the integration between Next.js and Expo — it's the code splitting of your T3 App into a monorepo. The Expo app is just a bonus example of how you can utilize the monorepo with multiple apps but can just as well be any app such as Vite, Electron, etc.
+Nope, Solito isn't part of this Turborepo starter. While Solito excels at bridging Next.js and Expo apps, our repo focuses on showcasing a T3 App within a Turborepo context. The Expo app serves as an illustrative example, demonstrating Turborepo's flexibility with different app types, such as Vite or Electron.
 
-Integrating Solito into this repo isn't hard, and there are a few [official templates](https://github.com/nandorojo/solito/tree/master/example-monorepos) by the creators of Solito that you can use as a reference.
+Interested in integrating Solito? Follow the [official Solito templates](https://github.com/nandorojo/solito/tree/master/example-monorepos) for guidance. This doesn't preclude Solito's use here; it's simply not the primary focus. Feel encouraged to tailor the starter to your project needs!
 
-### What auth solution should I use instead of Next-Auth.js for Expo?
+### Best Auth Solutions for Expo without Next-Auth.js
 
-I've left this kind of open for you to decide. Some options are [Clerk](https://clerk.dev), [Supabase Auth](https://supabase.com/docs/guides/auth), [Firebase Auth](https://firebase.google.com/docs/auth/) or [Auth0](https://auth0.com/docs). Note that if you're dropping the Expo app for something more "browser-like", you can still use Next-Auth.js for those. [See an example in a Plasmo Chrome Extension here](https://github.com/t3-oss/create-t3-turbo/tree/chrome/apps/chrome).
+For Expo projects, explore alternatives like [Clerk](https://clerk.dev), [Supabase Auth](https://supabase.com/docs/guides/auth), [Firebase Auth](https://firebase.google.com/docs/auth/), and [Auth0](https://auth0.com/docs/). Each offers a comprehensive authentication framework suitable for various app types.
 
-The Clerk.dev team even made an [official template repository](https://github.com/clerkinc/t3-turbo-and-clerk) integrating Clerk.dev with this repo.
+- **Clerk:** Find integration insights with an [official template](https://github.com/clerkinc/t3-turbo-and-clerk) for T3 Turbo.
+- **Supabase Auth:** Check out Supabase's [fork](https://github.com/supabase-community/create-t3-turbo) of the repo, highlighted during their Launch Week 7.
 
-During Launch Week 7, Supabase [announced their fork](https://supabase.com/blog/launch-week-7-community-highlights#t3-turbo-x-supabase) of this repo integrating it with their newly announced auth improvements. You can check it out [here](https://github.com/supabase-community/create-t3-turbo).
+Switching to a browser-centric approach? Next-Auth.js remains viable, as demonstrated in [Plasmo Chrome Extension examples](https://github.com/t3-oss/create-t3-turbo/tree/chrome/apps/chrome). These resources offer various pathways to integrate robust authentication into your project.
 
-### Does this pattern leak backend code to my client applications?
+### Backend Secrets and Client Apps
 
-No, it does not. The `api` package should only be a production dependency in the Next.js application where it's served. The Expo app, and all other apps you may add in the future, should only add the `api` package as a dev dependency. This lets you have full typesafety in your client applications, while keeping your backend code safe.
+Fear not! Backend secrets remain secure with our setup. The `api` package functions as a production dependency solely within the Next.js app, safeguarding server-side logic. In contrast, for the Expo app and any future additions, `api` serves merely as a dev dependency, enabling typesafety without risking exposure.
 
-If you need to share runtime code between the client and server, such as input validation schemas, you can create a separate `shared` package for this and import it on both sides.
+For sharing runtime code (e.g., input validation schemas) between client and server, a `shared` package provides a straightforward solution. Import it as needed to maintain both functionality and security seamlessly.
 
 ## Deployment
 
@@ -150,98 +189,85 @@ If you need to share runtime code between the client and server, such as input v
 
 #### Prerequisites
 
-> **Note**
-> Please note that the Next.js application with tRPC must be deployed in order for the Expo app to communicate with the server in a production environment.
+> **Note:**  
+> Ensure the Next.js app is deployed with tRPC to facilitate communication with the Expo app in production.
 
 #### Deploy to Vercel
 
-Let's deploy the Next.js application to [Vercel](https://vercel.com). If you've never deployed a Turborepo app there, don't worry, the steps are quite straightforward. You can also read the [official Turborepo guide](https://vercel.com/docs/concepts/monorepos/turborepo) on deploying to Vercel.
+Vercel simplifies the deployment of your Next.js application.
 
-1. Create a new project on Vercel, select the `apps/nextjs` folder as the root directory. Vercel's zero-config system should handle all configurations for you.
+For newcomers to Vercel and Turborepo deployments, refer to the [official Turborepo guide](https://vercel.com/docs/concepts/monorepos/turborepo) for detailed instructions.
 
-2. Add your `DATABASE_URL` environment variable.
+1. Initiate a Vercel project, specifying the `apps/web` directory as the project root. Vercel's zero-config setup does the heavy lifting.
+2. Integrate your `DATABASE_URL` into the project's environment variables.
+3. Once deployed, assign your domain and update the Expo app's `url` to reflect the production backend, replacing `localhost`.
 
-3. Done! Your app should successfully deploy. Assign your domain and use that instead of `localhost` for the `url` in the Expo app so that your Expo app can communicate with your backend when you are not in development.
+This setup ensures seamless backend communication for your Expo app in a production environment.
 
 ### Auth Proxy
 
-The auth proxy is a Nitro server that proxies OAuth requests in preview deployments. This is required for the Next.js app to be able to authenticate users in preview deployments. The auth proxy is not used for OAuth requests in production deployments. To get it running, it's easiest to use Vercel Edge functions. See the [Nitro docs](https://nitro.unjs.io/deploy/providers/vercel#vercel-edge-functions) for how to deploy Nitro to Vercel.
+The auth proxy, a Nitro server, facilitates OAuth requests during preview deployments, distinct from production OAuth use. For straightforward implementation, Vercel Edge functions are recommended.
 
-Then, there are some environment variables you need to set in order to get OAuth working:
+Deployment guidelines are available in the [Nitro documentation](https://nitro.unjs.io/deploy/providers/vercel#vercel-edge-functions).
 
-- For the Next.js app, set `AUTH_REDIRECT_PROXY_URL` to the URL of the auth proxy.
-- For the auth proxy server, set `AUTH_REDIRECT_PROXY_URL` to the same as above, as well as `AUTH_DISCORD_ID`, `AUTH_DISCORD_SECRET` (or the equivalent for your OAuth provider(s)). Lastly, set `AUTH_SECRET` **to the same value as in the Next.js app** for preview environments.
+#### Environment Variables Setup
 
-Read more about the setup in [the auth proxy README](./apps/auth-proxy/README.md).
+- **Next.js app:** Define `AUTH_REDIRECT_PROXY_URL` with the auth proxy URL.
+- **Auth proxy server:** Configure `AUTH_REDIRECT_PROXY_URL` (as above), `AUTH_DISCORD_ID`, `AUTH_DISCORD_SECRET` (or your OAuth provider's equivalent), and `AUTH_SECRET` (align with the Next.js app's value in previews).
+
+For comprehensive instructions, refer to [the auth proxy README](./apps/auth-proxy/README.md).
 
 ### Expo
 
-Deploying your Expo application works slightly differently compared to Next.js on the web. Instead of "deploying" your app online, you need to submit production builds of your app to app stores, like [Apple App Store](https://www.apple.com/app-store) and [Google Play](https://play.google.com/store/apps). You can read the full [guide to distributing your app](https://docs.expo.dev/distribution/introduction), including best practices, in the Expo docs.
+Deploying your Expo app is a bit different than deploying a Next.js web app. Instead of "deploying" online, you submit production builds to app stores like [Apple App Store](https://www.apple.com/app-store) and [Google Play](https://play.google.com/store/apps). Check out the full [guide to distributing your app](https://docs.expo.dev/distribution/introduction) in the Expo docs for best practices.
 
-1. Make sure to modify the `getBaseUrl` function to point to your backend's production URL:
+1. Update the `getBaseUrl` function to point to your production backend URL:
+   https://github.com/sambi-dev/sambi/blob/656965aff7db271e5e080242c4a3ce4dad5d25f8/apps/expo/src/utils/api.tsx#L20-L37
 
-   <https://github.com/t3-oss/create-t3-turbo/blob/656965aff7db271e5e080242c4a3ce4dad5d25f8/apps/expo/src/utils/api.tsx#L20-L37>
-
-2. Let's start by setting up [EAS Build](https://docs.expo.dev/build/introduction), which is short for Expo Application Services. The build service helps you create builds of your app, without requiring a full native development setup. The commands below are a summary of [Creating your first build](https://docs.expo.dev/build/setup).
+2. Set up [EAS Build](https://docs.expo.dev/build/introduction) to create builds without a full native dev setup:
 
    ```bash
-   # Install the EAS CLI
    pnpm add -g eas-cli
-
-   # Log in with your Expo account
    eas login
-
-   # Configure your Expo app
    cd apps/expo
    eas build:configure
    ```
 
-3. After the initial setup, you can create your first build. You can build for Android and iOS platforms and use different [`eas.json` build profiles](https://docs.expo.dev/build-reference/eas-json) to create production builds or development, or test builds. Let's make a production build for iOS.
+3. Create your first build (e.g., iOS production build):
 
    ```bash
    eas build --platform ios --profile production
    ```
 
-   > If you don't specify the `--profile` flag, EAS uses the `production` profile by default.
-
-4. Now that you have your first production build, you can submit this to the stores. [EAS Submit](https://docs.expo.dev/submit/introduction) can help you send the build to the stores.
+4. Submit the build to the app stores using [EAS Submit](https://docs.expo.dev/submit/introduction):
 
    ```bash
    eas submit --platform ios --latest
    ```
 
-   > You can also combine build and submit in a single command, using `eas build ... --auto-submit`.
+5. Provide additional info to app stores (screenshots, app info, privacy policies, etc.) using [EAS Metadata](https://docs.expo.dev/eas/metadata).
 
-5. Before you can get your app in the hands of your users, you'll have to provide additional information to the app stores. This includes screenshots, app information, privacy policies, etc. _While still in preview_, [EAS Metadata](https://docs.expo.dev/eas/metadata) can help you with most of this information.
-
-6. Once everything is approved, your users can finally enjoy your app. Let's say you spotted a small typo; you'll have to create a new build, submit it to the stores, and wait for approval before you can resolve this issue. In these cases, you can use EAS Update to quickly send a small bugfix to your users without going through this long process. Let's start by setting up EAS Update.
-
-   The steps below summarize the [Getting started with EAS Update](https://docs.expo.dev/eas-update/getting-started/#configure-your-project) guide.
+6. Set up EAS Update for quick bug fixes:
 
    ```bash
-   # Add the `expo-updates` library to your Expo app
    cd apps/expo
    pnpm expo install expo-updates
-
-   # Configure EAS Update
    eas update:configure
    ```
 
-7. Before we can send out updates to your app, you have to create a new build and submit it to the app stores. For every change that includes native APIs, you have to rebuild the app and submit the update to the app stores. See steps 2 and 3.
+7. Create a new build and submit it to the app stores (see steps 2 and 3).
 
-8. Now that everything is ready for updates, let's create a new update for `production` builds. With the `--auto` flag, EAS Update uses your current git branch name and commit message for this update. See [How EAS Update works](https://docs.expo.dev/eas-update/how-eas-update-works/#publishing-an-update) for more information.
+8. Create a new update for `production` builds:
 
    ```bash
    cd apps/expo
    eas update --auto
    ```
 
-   > Your OTA (Over The Air) updates must always follow the app store's rules. You can't change your app's primary functionality without getting app store approval. But this is a fast way to update your app for minor changes and bug fixes.
-
-9. Done! Now that you have created your production build, submitted it to the stores, and installed EAS Update, you are ready for anything!
+9. That's it! You're now set up for production builds, app store submissions, and EAS Updates.
 
 ## References
 
-The stack originates from [create-t3-app](https://github.com/t3-oss/create-t3-app).
+Our project stands on the groundbreaking work of [create-t3-app](https://github.com/t3-oss/create-t3-app) from the innovative team at t3-oss.
 
-A [blog post](https://jumr.dev/blog/t3-turbo) where I wrote how to migrate a T3 app into this.
+For an in-depth look at how t3-oss transformed a T3 app into a turbo-powered ecosystem, dive into Julius's [blog post](https://jumr.dev/blog/t3-turbo) for the full story.
