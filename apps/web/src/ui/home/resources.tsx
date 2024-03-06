@@ -1,4 +1,3 @@
-import type { StaticImageData } from 'next/image';
 import type { ReactElement } from 'react';
 
 import Image from 'next/image';
@@ -30,7 +29,7 @@ const resources: Resource[] = [
     image: function FigmaImage() {
       return (
         <div className="absolute inset-0 flex items-center justify-center bg-[radial-gradient(#2C313D_35%,#000)]">
-          <Image src={figmaImage as StaticImageData} alt="" unoptimized />
+          <Image src={figmaImage} alt="" unoptimized />
         </div>
       );
     },
@@ -52,7 +51,7 @@ const resources: Resource[] = [
           />
           <Image
             className="relative"
-            src={videoPlayerImage as StaticImageData}
+            src={videoPlayerImage}
             alt=""
             unoptimized
           />
@@ -69,7 +68,7 @@ const resources: Resource[] = [
     image: function DiscordImage() {
       return (
         <div className="absolute inset-0 flex items-center justify-center bg-[#6366F1]">
-          <Image src={discordImage as StaticImageData} alt="" unoptimized />
+          <Image src={discordImage} alt="" unoptimized />
         </div>
       );
     },
