@@ -1,9 +1,9 @@
 {
-  "extends": ["@acme/tsconfig/base.json"],
+  "extends": ["@sambi/tsconfig/base.json"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./src/*"]
+      "#/*": ["./src/*"]
     },
     "jsx": "react-native",
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",

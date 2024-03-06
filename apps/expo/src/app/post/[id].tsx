@@ -1,11 +1,11 @@
-import { SafeAreaView, Text, View } from "react-native";
-import { Stack, useGlobalSearchParams } from "expo-router";
+import { SafeAreaView, Text, View } from 'react-native';
+import { Stack, useGlobalSearchParams } from 'expo-router';
 
-import { api } from "~/utils/api";
+import { api } from '#/utils/api';
 
 export default function Post() {
   const { id } = useGlobalSearchParams();
-  if (!id || typeof id !== "string") throw new Error("unreachable");
+  if (!id || typeof id !== 'string') throw new Error('unreachable');
   const { data } = api.post.byId.useQuery({ id: parseInt(id) });
 
   if (!data) return null;

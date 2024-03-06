@@ -1,0 +1,77 @@
+@tailwind base;
+
+@font-face {
+  font-family: 'Bricolage';
+  font-weight: 200 900;
+  font-display: block;
+  font-style: normal;
+  src: url('../fonts/bricolage-variable.woff2') format('woff2');
+}
+
+@layer base {
+  :root {
+    --background: 220 27% 98%; /* 50 instead of white */
+    --foreground: 220 10% 6%; /* 950 */
+
+    --card: 0 0% 100%; /* white */
+    --card-foreground: 220 10% 6%; /* 950 */
+
+    --popover: 0 0% 100%; /* white */
+    --popover-foreground: 220 10% 6%; /* 950 */
+
+    --primary: 245 15% 44%; /* primary #625F81 */
+    --primary-foreground: 220 27% 98%; /* 50 */
+
+    --secondary: 240 5% 92%; /* 100 */
+    --secondary-foreground: 216 16% 16%; /* 800 */
+
+    --muted: 240 5% 92%; /* 100 */
+    --muted-foreground: 222 5% 48%; /* 500 */
+
+    --accent: 240 5% 92%; /* 100 */
+    --accent-foreground: 220 5% 12%; /* 900 */
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 220 27% 98%; /* 50 */
+
+    --border: 220 5% 88%; /* 200 */
+    --input: 220 5% 88%; /* 200 */
+
+    --ring: 245 15% 44%; /* primary #625F81 */
+    --alternate: 176 20% 44%; /* alternate #5A8784 */
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 220 10% 6%; /* 950 */
+    --foreground: 220 27% 98%; /* 50 */
+
+    --card: 220 5% 12%; /* 900 */
+    --card-foreground: 220 27% 98%; /* 50 */
+
+    --popover: 220 10% 6%; /* 950 */
+    --popover-foreground: 220 27% 98%; /* 50 */
+
+    --primary: 244 15% 60%; /* primary-dark #8C8AA8 */
+    --primary-foreground: 220 5% 12%; /* 900 */
+
+    --secondary: 216 16% 16%; /* 800 */
+    --secondary-foreground: 220 5% 88%; /* 200 */
+
+    --muted: 216 16% 16%; /* 800 */
+    --muted-foreground: 220 5% 64%; /* 400 */
+
+    --accent: 216 16% 16%; /* 800 */
+    --accent-foreground: 220 27% 98%; /* 50 */
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 220 27% 98%; /* 50 */
+
+    --border: 216 16% 16%; /* 800 */
+    --input: 216 16% 16%; /* 800 */
+
+    --ring: 244 15% 60%; /* primary-dark #8C8AA8 */
+    --alternate: 177 20% 60%; /* alternate #78A5A3 */
+  }
+}

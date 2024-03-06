@@ -1,5 +1,5 @@
 {
-  "name": "@acme/db",
+  "name": "@sambi/db",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -21,9 +21,9 @@
     "drizzle-orm": "^0.29.3"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:^0.2.0",
-    "@acme/prettier-config": "workspace:^0.1.0",
-    "@acme/tsconfig": "workspace:^0.1.0",
+    "@sambi/eslint-config": "workspace:^0.2.0",
+    "@sambi/prettier-config": "workspace:^0.1.0",
+    "@sambi/tsconfig": "workspace:^0.1.0",
     "dotenv-cli": "^7.3.0",
     "drizzle-kit": "^0.20.14",
     "eslint": "^8.56.0",
@@ -33,8 +33,8 @@
   "eslintConfig": {
     "root": true,
     "extends": [
-      "@acme/eslint-config/base"
+      "@sambi/eslint-config/base"
     ]
   },
-  "prettier": "@acme/prettier-config"
+  "prettier": "@sambi/prettier-config"
 }

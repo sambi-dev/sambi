@@ -1,5 +1,5 @@
 {
-  "name": "@acme/expo",
+  "name": "@sambi/expo",
   "version": "0.1.0",
   "private": true,
   "main": "expo-router/entry",
@@ -39,11 +39,11 @@
     "superjson": "2.2.1"
   },
   "devDependencies": {
-    "@acme/api": "workspace:^0.1.0",
-    "@acme/eslint-config": "workspace:^0.2.0",
-    "@acme/prettier-config": "workspace:^0.1.0",
-    "@acme/tailwind-config": "workspace:^0.1.0",
-    "@acme/tsconfig": "workspace:^0.1.0",
+    "@sambi/api": "workspace:^0.1.0",
+    "@sambi/eslint-config": "workspace:^0.2.0",
+    "@sambi/prettier-config": "workspace:^0.1.0",
+    "@sambi/tailwind-config": "workspace:^0.1.0",
+    "@sambi/tsconfig": "workspace:^0.1.0",
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
     "@babel/runtime": "^7.23.9",
@@ -57,12 +57,12 @@
   "eslintConfig": {
     "root": true,
     "extends": [
-      "@acme/eslint-config/base",
-      "@acme/eslint-config/react"
+      "@sambi/eslint-config/base",
+      "@sambi/eslint-config/react"
     ],
     "ignorePatterns": [
       "expo-plugins/**"
     ]
   },
-  "prettier": "@acme/prettier-config"
+  "prettier": "@sambi/prettier-config"
 }

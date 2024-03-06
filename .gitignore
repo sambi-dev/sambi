@@ -37,8 +37,8 @@ yarn-error.log*
 .pnpm-debug.log*
 
 # local env files
-.env
-.env*.local
+.env*
+!.env.example
 
 # vercel
 .vercel
@@ -48,3 +48,6 @@ yarn-error.log*
 
 # turbo
 .turbo
+
+#cursor
+/abba/

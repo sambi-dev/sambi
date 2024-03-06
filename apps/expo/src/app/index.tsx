@@ -1,14 +1,16 @@
-import { useState } from "react";
-import { Pressable, Text, TextInput, View } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
-import { Link, Stack } from "expo-router";
-import { FlashList } from "@shopify/flash-list";
+import type { RouterOutputs } from '#/utils/api';
 
-import type { RouterOutputs } from "~/utils/api";
-import { api } from "~/utils/api";
+import { useState } from 'react';
+import { Pressable, Text, TextInput, View } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { Link, Stack } from 'expo-router';
+
+import { FlashList } from '@shopify/flash-list';
+
+import { api } from '#/utils/api';
 
 function PostCard(props: {
-  post: RouterOutputs["post"]["all"][number];
+  post: RouterOutputs['post']['all'][number];
   onDelete: () => void;
 }) {
   return (
@@ -17,7 +19,7 @@ function PostCard(props: {
         <Link
           asChild
           href={{
-            pathname: "/post/[id]",
+            pathname: '/post/[id]',
             params: { id: props.post.id },
           }}
         >
@@ -39,13 +41,13 @@ function PostCard(props: {
 function CreatePost() {
   const utils = api.useUtils();
 
-  const [title, setTitle] = useState("");
-  const [content, setContent] = useState("");
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
 
   const { mutate, error } = api.post.create.useMutation({
     async onSuccess() {
-      setTitle("");
-      setContent("");
+      setTitle('');
+      setContent('');
       await utils.post.all.invalidate();
     },
   });
@@ -85,7 +87,7 @@ function CreatePost() {
       >
         <Text className="text-foreground">Create</Text>
       </Pressable>
-      {error?.data?.code === "UNAUTHORIZED" && (
+      {error?.data?.code === 'UNAUTHORIZED' && (
         <Text className="mt-2 text-destructive">
           You need to be logged in to create a post
         </Text>
@@ -106,7 +108,7 @@ export default function Index() {
   return (
     <SafeAreaView className=" bg-background">
       {/* Changes page title visible on the header */}
-      <Stack.Screen options={{ title: "Home Page" }} />
+      <Stack.Screen options={{ title: 'Home Page' }} />
       <View className="h-full w-full bg-background p-4">
         <Text className="pb-2 text-center text-5xl font-bold text-foreground">
           Create <Text className="text-primary">T3</Text> Turbo
