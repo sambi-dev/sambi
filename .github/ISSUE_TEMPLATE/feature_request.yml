@@ -1,28 +1,56 @@
 # This template is heavily inspired by the Next.js's template:
 # See here: https://github.com/vercel/next.js/tree/canary/.github/ISSUE_TEMPLATE
 
-name: 🛠 Feature Request
-description: Create a feature request for the core packages
-title: "feat: "
-labels: ["✨ enhancement"]
+name: 🛠 Feature Request 🌟
+description: Got a game-changing idea? Pitch it here and let's make it happen!
+title: 'feat: '
+labels: ['✨ feat']
+assignees: ['srizvi']
 body:
   - type: markdown
     attributes:
       value: |
-        Thank you for taking the time to file a feature request. Please fill out this form as completely as possible.
+        Hey there, thanks for taking the time to suggest a new feature. Give us the scoop by filling out this form. The more deets, the better 😉
   - type: textarea
     attributes:
-      label: Describe the feature you'd like to request
-      description: Please describe the feature as clear and concise as possible. Remember to add context as to why you believe this feature is needed.
+      label: Describe the feature you'd like to see 🔍
+      description: Paint us a picture of this feature. What's it all about? Why do you think it's a must-have? Context is key!
     validations:
       required: true
   - type: textarea
     attributes:
-      label: Describe the solution you'd like to see
-      description: Please describe the solution you would like to see. Adding example usage is a good way to provide context.
+      label: What's your dream solution? 💭
+      description: If you were calling the shots, how would you bring this feature to life? Feel free to include example usage to really drive it home.
     validations:
       required: true
+  - type: dropdown
+    attributes:
+      label: Who's going to love this? 🙌
+      description: Let us know who's going to benefit from this feature.
+      options:
+        - Everyone
+        - Company
+        - Clients
+        - Developers
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: How big of an impact are we talking? 📈
+      description: Is this feature going to be a game-changer, a nice-to-have, or somewhere in between?
+      options:
+        - High
+        - Medium
+        - Low
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Show us this feature in the wild 🌎
+      description: If you've seen this feature out there in the real world, drop a link or screenshot. We'd love to check it out!
+    validations:
+      required: false
   - type: textarea
     attributes:
-      label: Additional information
-      description: Add any other information related to the feature here. If your feature request is related to any issues or discussions, link them here.
+      label: Any other deets? 🔎
+      description: If there's anything else we should know, like related issues or discussions, link them here. The more context, the merrier!

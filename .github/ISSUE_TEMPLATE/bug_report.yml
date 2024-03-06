@@ -1,13 +1,14 @@
-name: 🐞 Bug Report
-description: Create a bug report to help us improve
-title: "bug: "
-labels: ["🐞❔ unconfirmed bug"]
+name: 🐞 Bug Alert! 🚨
+description: Spotted a bug? Help us squash it! 🪲 Fill out this form to report it and we'll get on it."
+title: 'bug: '
+labels: ['🐞 ⁉️ unconfirmed bug']
+assignees: ['srizvi']
 body:
   - type: textarea
     attributes:
-      label: Provide environment information
+      label: 🌍 Environment Info
       description: |
-        Run this command in your project root and paste the results in a code block:
+        Run this command in your project root and paste the results in a code block. It's like a tech snapshot! 📸
         ```bash
         npx envinfo --system --binaries
         ```
@@ -15,23 +16,23 @@ body:
       required: true
   - type: textarea
     attributes:
-      label: Describe the bug
-      description: A clear and concise description of the bug, as well as what you expected to happen when encountering it.
+      label: 🐛 Describe the Bug
+      description: Give us the lowdown on this pesky bug. What happened? What did you expect to happen instead? The more details, the better. 📝
     validations:
       required: true
   - type: input
     attributes:
-      label: Link to reproduction
-      description: Please provide a link to a reproduction of the bug. Issues without a reproduction repo may be ignored.
+      label: 🔗 Link to Reproduction
+      description: We need to see this bug in action. Please provide a link to a reproduction repo. 😉
     validations:
       required: true
   - type: textarea
     attributes:
-      label: To reproduce
-      description: Describe how to reproduce your bug. Steps, code snippets, reproduction repos etc.
+      label: 🔍 Steps to Reproduce
+      description: Walk us through how to make this bug rear its ugly head. Steps, code snippets, reproduction repos - lay it all out! 🧪
     validations:
       required: true
   - type: textarea
     attributes:
-      label: Additional information
-      description: Add any other information related to the bug here, screenshots if applicable.
+      label: 📸 Screenshots & Extra Info
+      description: Got screenshots? Extra context? Dump it all here. The more we know, the faster we can squash it.
