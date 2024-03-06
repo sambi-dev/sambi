@@ -1,14 +1,15 @@
-import { Suspense } from "react";
+import { Suspense } from 'react';
 
-import { api } from "~/trpc/server";
-import { AuthShowcase } from "./_components/auth-showcase";
+import { api } from '#/trpc/server';
+
+import { AuthShowcase } from './_components/auth-showcase';
 import {
   CreatePostForm,
   PostCardSkeleton,
   PostList,
-} from "./_components/posts";
+} from './_components/posts';
 
-export const runtime = "edge";
+export const runtime = 'edge';
 
 export default async function HomePage() {
   // You can await this here if you don't want to show Suspense fallback below

@@ -1,12 +1,12 @@
-import { createEnv } from "@t3-oss/env-nextjs";
-import { z } from "zod";
+import { createEnv } from '@t3-oss/env-nextjs';
+import { z } from 'zod';
 
 export const env = createEnv({
   shared: {
     NODE_ENV: z
-      .enum(["development", "production", "test"])
-      .default("development"),
-    VERCEL_ENV: z.enum(["development", "preview", "production"]).optional(),
+      .enum(['development', 'production', 'test'])
+      .default('development'),
+    VERCEL_ENV: z.enum(['development', 'preview', 'production']).optional(),
   },
   /**
    * Specify your server-side environment variables schema here.
@@ -37,5 +37,5 @@ export const env = createEnv({
   skipValidation:
     !!process.env.CI ||
     !!process.env.SKIP_ENV_VALIDATION ||
-    process.env.npm_lifecycle_event === "lint",
+    process.env.npm_lifecycle_event === 'lint',
 });

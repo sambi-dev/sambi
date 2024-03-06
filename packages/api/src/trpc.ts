@@ -6,13 +6,13 @@
  * tl;dr - this is where all the tRPC server stuff is created and plugged in.
  * The pieces you will need to use are documented accordingly near the end
  */
-import { initTRPC, TRPCError } from "@trpc/server";
-import superjson from "superjson";
-import { ZodError } from "zod";
+import type { Session } from '@sambi/auth';
 
-import type { Session } from "@acme/auth";
-import { auth } from "@acme/auth";
-import { db } from "@acme/db";
+import { auth } from '@sambi/auth';
+import { db } from '@sambi/db';
+import { initTRPC, TRPCError } from '@trpc/server';
+import superjson from 'superjson';
+import { ZodError } from 'zod';
 
 /**
  * 1. CONTEXT
@@ -31,9 +31,9 @@ export const createTRPCContext = async (opts: {
   session: Session | null;
 }) => {
   const session = opts.session ?? (await auth());
-  const source = opts.headers.get("x-trpc-source") ?? "unknown";
+  const source = opts.headers.get('x-trpc-source') ?? 'unknown';
 
-  console.log(">>> tRPC Request from", source, "by", session?.user);
+  console.log('>>> tRPC Request from', source, 'by', session?.user);
 
   return {
     session,
@@ -96,7 +96,7 @@ export const publicProcedure = t.procedure;
  */
 export const protectedProcedure = t.procedure.use(({ ctx, next }) => {
   if (!ctx.session?.user) {
-    throw new TRPCError({ code: "UNAUTHORIZED" });
+    throw new TRPCError({ code: 'UNAUTHORIZED' });
   }
   return next({
     ctx: {

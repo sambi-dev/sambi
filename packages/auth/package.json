@@ -1,5 +1,5 @@
 {
-  "name": "@acme/auth",
+  "name": "@sambi/auth",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -15,7 +15,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@acme/db": "workspace:^0.1.0",
+    "@sambi/db": "workspace:^0.1.0",
     "@auth/drizzle-adapter": "^0.6.3",
     "@t3-oss/env-nextjs": "^0.9.2",
     "next": "^14.1.0",
@@ -25,9 +25,9 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
-    "@acme/eslint-config": "workspace:^0.2.0",
-    "@acme/prettier-config": "workspace:^0.1.0",
-    "@acme/tsconfig": "workspace:^0.1.0",
+    "@sambi/eslint-config": "workspace:^0.2.0",
+    "@sambi/prettier-config": "workspace:^0.1.0",
+    "@sambi/tsconfig": "workspace:^0.1.0",
     "eslint": "^8.56.0",
     "prettier": "^3.2.5",
     "typescript": "^5.3.3"
@@ -35,8 +35,8 @@
   "eslintConfig": {
     "root": true,
     "extends": [
-      "@acme/eslint-config/base"
+      "@sambi/eslint-config/base"
     ]
   },
-  "prettier": "@acme/prettier-config"
+  "prettier": "@sambi/prettier-config"
 }
