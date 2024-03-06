@@ -156,8 +156,9 @@ function ContactDetails() {
 }
 
 export const metadata: Metadata = {
-  title: 'Contact Us',
-  description: "Let's work together. We can't wait to hear from you.",
+  title: 'Contact',
+  description:
+    "Wanna contact the cool kids at sambi.dev? 😎 Slide into our Upwork DMs or fill out our contact form 📝 We're totally stoked to hear from you. 🤙",
 };
 
 export default function Contact() {

@@ -12,8 +12,6 @@ Dive into our collective wisdom, where success and slip-ups coexist. This space 
 - **Clients:** Discover how we blend creativity and strategy and apply it to your digital presence.
 - **Freelancers:** Unearth insights to fuel your journey.
 
----
-
 ## t3-oss ftw
 
 ### Shoutout to t3-oss and Julius Marminge

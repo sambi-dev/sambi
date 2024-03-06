@@ -18,7 +18,7 @@ import { LoadMore, LoadMoreButton, LoadMoreItems } from '#/ui/shared/load-more';
 export const metadata: Metadata = {
   title: 'Generative Blog',
   description:
-    'Stay up-to-date with the latest industry news as our marketing teams finds new ways to re-purpose old CSS tricks articles.',
+    "The Generative Blog by sambi.dev is where AI SEO experiments go to party. 🎉 We're bringing the SEO results using only AI that'll make Twitter bros drool 🤤",
 };
 
 export default async function GeneratedBlog() {
