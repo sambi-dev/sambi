@@ -1,0 +1,65 @@
+name: 🛠 Project Issue 🤔
+description: Got a project issue? Let's sort it out. Remember, we can do anything but not everything!
+title: 'issue: '
+labels: ['🔧 project issue']
+assignees: ['srizvi']
+body:
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: What's this about? 🚨
+      description: Is this a shiny new feature or some good old-fashioned maintenance?
+      options:
+        - New feature
+        - Maintenance
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What's the current sitch? 🌡️
+      description: Paint us a picture. What's going on right now?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What's the endgame? 🎯
+      description: In a perfect world, what should this look like? Help us see the vision.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Who's going to benefit from this? 🙌
+      description: Let us know who's going to reap the rewards. The team? Clients? Users?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Why should we put our resources into this? 💸
+      description: Make a case for why this is worth our time, energy, and moolah.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Is this just a shiny new object? 🪄
+      description: Be real with us. Is this a must-have or a nice-to-have?
+    validations:
+      required: true
+  - type: checkboxes
+    id: impact
+    attributes:
+      label: What's this going to boost? 📈
+      description: Check all the boxes that apply.
+      options:
+        - label: Revenue 💰
+        - label: Convenience 😌
+        - label: Blood pressure 😠
+        - label: NPS 🙌
+        - label: Performance ⚡
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What's the plan? 🗺️
+      description: Break it down for us. How are you going to turn this issue into a success story?
+    validations:
+      required: true
