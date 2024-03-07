@@ -1,3 +1,4 @@
+import { env } from '#/env';
 import { SITE_URL } from '#/lib/constants';
 
 const siteUrl = SITE_URL;
@@ -47,5 +48,5 @@ export const siteConfig: SiteConfig = {
     upworkConsult:
       'https://www.upwork.com/services/consultation/development-it-sam-1756271340353224704',
   },
-  mailSupport: 'domains@sambi.dev',
+  mailSupport: env.SAMBI_SUPPORT_EMAIL,
 };

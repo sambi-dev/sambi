@@ -1,9 +1,64 @@
-import { Button } from '@sambi/ui/button';
+'use client';
 
+import { useRef, useState, useTransition } from 'react';
+
+import { Turnstile } from '@marsidev/react-turnstile';
+
+import { Button } from '@sambi/ui/button';
+import { toast } from '@sambi/ui/toast';
+
+import { addContactHomeCta } from '#/lib/resend/home-cta/add-contact-home-cta';
 import { Container } from '#/ui/shared/container';
+import { SpinnerIcon } from '#/ui/shared/icons';
 import { Pattern } from '#/ui/shared/pattern';
 
+interface ApiResponse {
+  success: boolean;
+  message?: string;
+}
+
 export function EmailCta() {
+  const [email, setEmail] = useState('');
+  const [isPending, startTransition] = useTransition();
+  const formRef = useRef<HTMLFormElement>(null);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    startTransition(async () => {
+      if (!formRef.current) return;
+      const formData = new FormData(formRef.current);
+      const token = formData.get('cf-turnstile-response')?.toString() ?? '';
+
+      const res = await fetch('/api/verify', {
+        method: 'POST',
+        body: JSON.stringify({ token, email }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+
+      const data = (await res.json()) as ApiResponse;
+      if (data.success) {
+        const { success, message } = await addContactHomeCta(email);
+        if (success) {
+          toast.success('Your request has been received', {
+            description:
+              "We're busy checking ChatGPT for answers and will be in touch within one business day.",
+          });
+        } else {
+          toast.error('There was a problem with your request.', {
+            description: `Something went wrong: ${message}. Please check your input and try again.`,
+          });
+        }
+      } else {
+        toast.error('Cloudflare security verification failed.', {
+          description: `Please check the email address and try again.`,
+        });
+      }
+      setEmail('');
+    });
+  };
+
   return (
     <section
       id="email-cta"
@@ -27,9 +82,9 @@ export function EmailCta() {
             </p>
           </div>
 
-          <form className="lg:pl-16">
+          <form ref={formRef} onSubmit={handleSubmit} className="lg:pl-16">
             <h3 className="text-sm font-medium tracking-tight text-foreground/80">
-              We won&apos;t spam you.{' '}
+              We won&apos;t spam you.
             </h3>
             <div className="mt-4 sm:relative sm:flex sm:items-center sm:py-0.5 sm:pr-2.5">
               <div className="relative sm:static sm:flex-auto">
@@ -39,15 +94,29 @@ export function EmailCta() {
                   required
                   aria-label="Email address"
                   placeholder="Email address"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="peer relative z-10 w-full appearance-none bg-transparent px-4 py-2 text-base text-foreground placeholder:text-secondary-foreground/80 focus:outline-none sm:py-3"
                 />
                 <div className="absolute inset-0 rounded-md border border-secondary-foreground/50 peer-focus:border-primary peer-focus:bg-card peer-focus:ring-4 peer-focus:ring-ring sm:rounded-xl" />
               </div>
+              <Turnstile
+                siteKey="0x4AAAAAAATrIPqB0JKl8mtv"
+                options={{ size: 'invisible' }}
+              />
               <Button
                 type="submit"
-                className="mt-4 w-full sm:relative sm:z-10 sm:mt-0 sm:w-auto sm:flex-none"
+                className="mt-4 w-full text-primary-foreground sm:relative sm:z-10 sm:mt-0 sm:w-auto sm:flex-none"
+                disabled={isPending}
               >
-                Get answers
+                {isPending ? (
+                  <>
+                    <SpinnerIcon className="mr-2 h-4 w-4 animate-spin stroke-primary-foreground" />{' '}
+                    Just a sec...
+                  </>
+                ) : (
+                  'Get answers'
+                )}
               </Button>
             </div>
           </form>

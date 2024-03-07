@@ -155,18 +155,19 @@ export function MenuIcon({
   );
 }
 
-export function PlayIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+export function SpinnerIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
       aria-hidden="true"
-      strokeWidth="1.5"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
       strokeLinecap="round"
       strokeLinejoin="round"
-      viewBox="0 0 16 16"
       {...props}
     >
-      <path d="M6.75 10.25v-4.5L10.25 8l-3.5 2.25Z" />
-      <circle cx="8" cy="8" r="6.25" fill="none" />
+      <path d="M21 12a9 9 0 1 1-6.219-8.56" />
     </svg>
   );
 }
