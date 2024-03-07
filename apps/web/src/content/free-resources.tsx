@@ -35,7 +35,7 @@ export const freeResources: FreeResource[] = [
   {
     title: 'Generative blog',
     description:
-      "Where AI meets actual intelligence. We're using the tech to smith words that grab eyeballs and don't let go.",
+      'A transparent collaboration with top AI models to generate high-quality content to answer tough questions.',
     image: function AiBlogImage() {
       return (
         <div className="absolute inset-0 flex items-center justify-center bg-primary/80">
