@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
 
+import { siteConfig } from '#/config/site';
 import coverImage from '#/images/hero.png';
 import { HeroTestimonial } from '#/ui/home/hero-testimonial';
 
@@ -39,7 +40,7 @@ export function Hero() {
             </p>
             <div className="mt-8 flex gap-4">
               <Link
-                href="https://www.upwork.com/services/consultation/development-it-sam-1756271340353224704"
+                href={siteConfig.links.upworkConsult}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Book a consult with sambi on Upwork in a new window"

@@ -1,3 +1,5 @@
+import { siteConfig } from '#/config/site';
+
 export interface Client {
   id: string;
   name: string;
@@ -28,11 +30,11 @@ export const warnings: WarningsArray = [
     },
     {
       content:
-        "Hire sambi? Only if you're ready for a reality where 'good enough' gets laughed out of the room.",
+        "Hire sambi? Only if you're ready for a situation where 'good enough' gets laughed out of the room.",
       client: {
         id: '2',
         name: 'David E.',
-        role: 'Advisor to Chairman',
+        role: 'Advisor to Chair',
         initials: 'DE',
       },
     },
@@ -48,7 +50,7 @@ export const warnings: WarningsArray = [
     },
     {
       content:
-        "Rebekah's strategy sessions are a bad idea if you prefer your marketing like last year's leftovers, boring and predictable.",
+        "sambi's strategy sessions are a bad idea if you prefer your marketing dry and boring.",
       client: {
         id: '4',
         name: 'Aditya A.',
@@ -58,7 +60,7 @@ export const warnings: WarningsArray = [
     },
     {
       content:
-        "Sam's coding? Only opt in if you're okay with software that runs smoother than a fresh jar of peanut butter.",
+        "Sam's tech skills? Only opt in if you're okay with software that runs smoother than a fresh jar of peanut butter.",
       client: {
         id: '1',
         name: 'John G.',
@@ -88,7 +90,7 @@ export const warnings: WarningsArray = [
     },
     {
       content:
-        'The problem with sambi is that they make it look too easy. Prepare for a reality check.',
+        'The problem with Sam is that he makes it look too easy. Prepare for a reality check.',
       client: {
         id: '7',
         name: 'Karen W.',
@@ -100,7 +102,7 @@ export const warnings: WarningsArray = [
   [
     {
       content:
-        "Brought Sam in for tech. Terrible idea. Everything's working now and I don't have things to complain about.",
+        "Brought Sam in to manage things. Terrible idea. Everything's working now and I don't have stuff to complain about.",
       client: {
         id: '5',
         name: 'Dean W.',
@@ -120,7 +122,7 @@ export const warnings: WarningsArray = [
     },
     {
       content:
-        'If you want someone who’s cracked the code on monetizing digital marketing, don’t work with Rebekah. You can’t handle the mind-blowing results.',
+        "If you want someone who's cracked the code on monetizing digital marketing, don't work with Rebekah. You can't handle the mind-blowing results.",
       client: {
         id: '9',
         name: 'Sabrina G.',
@@ -130,7 +132,7 @@ export const warnings: WarningsArray = [
     },
     {
       content:
-        'Rebekah will ruin your marketing expectations forever. She’s a tornado of positive energy that’ll turn your ho-hum, wishy-washy marketing strategy into a powerhouse growth engine.',
+        "Rebekah will ruin your expectations forever. She's a tornado of positive energy that'll turn your ho-hum, wishy-washy marketing strategy into a powerhouse growth engine.",
       client: {
         id: '10',
         name: 'Divya J.',
@@ -251,7 +253,7 @@ export const warnings: WarningsArray = [
       },
     },
     {
-      content: 'Rebekah sucks. Don’t work with her.',
+      content: "Rebekah sucks. Don't work with her.",
       client: {
         id: '22',
         name: 'Dean R.',
@@ -267,8 +269,7 @@ export const warnings: WarningsArray = [
         name: 'Future You',
         role: 'Cautiously Optimistic',
         initials: 'FY',
-        ctaLink:
-          'https://www.upwork.com/services/consultation/development-it-sam-1756271340353224704',
+        ctaLink: siteConfig.links.upworkConsult,
         ctaText: 'Get results',
       },
     },

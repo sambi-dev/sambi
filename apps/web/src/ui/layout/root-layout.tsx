@@ -16,6 +16,7 @@ import { motion, MotionConfig, useReducedMotion } from 'framer-motion';
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
 
+import { siteConfig } from '#/config/site';
 import { Footer } from '#/ui/layout/footer';
 import { Logo, Logomark } from '#/ui/logo';
 import { Offices } from '#/ui/offices';
@@ -67,7 +68,7 @@ function Header({
         </Link>
         <div className="flex items-center gap-x-8">
           <a
-            href="https://www.upwork.com/services/consultation/development-it-sam-1756271340353224704"
+            href={siteConfig.links.upworkConsult}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Book a consult with sambi on Upwork in a new window"
