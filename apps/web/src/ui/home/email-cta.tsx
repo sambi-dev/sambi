@@ -90,7 +90,8 @@ export function EmailCta() {
               <div className="relative sm:static sm:flex-auto">
                 <input
                   type="email"
-                  id="email-address"
+                  id="home-email-cta"
+                  name="email"
                   required
                   aria-label="Email address"
                   placeholder="Email address"
