@@ -92,6 +92,7 @@ export function EmailCta() {
                   type="email"
                   id="home-email-cta"
                   name="email"
+                  autoComplete="email"
                   required
                   aria-label="Email address"
                   placeholder="Email address"
