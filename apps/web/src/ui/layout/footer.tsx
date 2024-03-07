@@ -108,6 +108,8 @@ function NewsletterForm() {
       </p>
       <div className="relative mt-6">
         <input
+          id="footer-email-cta"
+          name="email"
           type="email"
           placeholder="Email address"
           autoComplete="email"
