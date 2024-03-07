@@ -1,6 +1,7 @@
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
 
+import { siteConfig } from '#/config/site';
 import { FadeIn } from '#/ui/fade-in';
 import { Container } from '#/ui/shared/container';
 import { CheckIcon } from '#/ui/shared/icons';
@@ -105,7 +106,7 @@ export function Introduction() {
           <p className="mt-4">No seriously...</p>
           <div className="mt-10">
             <a
-              href="https://www.upwork.com/services/consultation/development-it-sam-1756271340353224704"
+              href={siteConfig.links.upworkConsult}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Book a consult with sambi on Upwork in a new window"

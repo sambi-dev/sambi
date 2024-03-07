@@ -22,9 +22,9 @@ interface WarningProps {
 
 function Warning({ client, children }: WarningProps) {
   return (
-    <figure className="rounded-4xl border bg-card p-8 shadow-md">
+    <figure className="rounded-4xl border bg-card p-8 shadow">
       <blockquote>
-        <p className="text-lg tracking-tight text-secondary-foreground before:content-['“'] after:content-['”']">
+        <p className="text-lg tracking-tight text-muted-foreground before:content-['“'] after:content-['”']">
           {children}
         </p>
       </blockquote>
@@ -33,7 +33,7 @@ function Warning({ client, children }: WarningProps) {
           <ClientAvatar id={client.id} initials={client.initials} />
         </div>
         <div className="ml-4">
-          <div className="text-base font-medium leading-6 tracking-tight text-primary">
+          <div className="text-base font-medium leading-6 tracking-tight text-foreground">
             {client.name}
           </div>
           {client.ctaLink && client.ctaText ? (
@@ -49,7 +49,7 @@ function Warning({ client, children }: WarningProps) {
               </Link>
             </div>
           ) : (
-            <div className="mt-1 text-sm text-muted-foreground">
+            <div className="mt-1 text-sm font-medium tracking-tight text-alternate">
               {client.role}
             </div>
           )}
