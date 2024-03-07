@@ -29,25 +29,29 @@ export function Tldr() {
               id="tldr-title"
               className="mb-6 block text-base font-semibold uppercase tracking-widest text-primary"
             >
-              TLDR
+              <h2>TL;DR</h2>
             </div>
             <p className="mt-8 text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
               <span className="block text-primary">Your scroll ends here</span>
-              Partner with us and join the ranks of why did we wait so long?
+              Partner with us and join the ranks of{' '}
+              <span className="line-through">wtf</span> why did we wait so long?
             </p>
             <p className="mt-4 text-lg text-muted-foreground">
-              From the digital trenches of design, tech, and growth, we&apos;ve
-              been where you are. Staring at a screen, wondering if it gets
-              better. It does.
+              We&apos;ve been at this so long that we&apos;ve forgotten more
+              than we can remember.
             </p>
             <p className="mt-4 text-lg text-muted-foreground">
-              Our principal-only team has a combined experience of +75 years. We
-              have an NPS score of 92, serving over 100 clients, and
-              there&apos;s only one who won&apos;t talk to us anymore.
+              Our clients say that we&apos;re really good at helping them
+              understand their customers better than anyone else. What does that
+              mean?
             </p>
             <p className="mt-4 text-lg text-muted-foreground">
-              When you&apos;re tired of being the best-kept secret, we&apos;re
-              the ones to shine a light on it.
+              Well, once you start thinking about the ¼&quot; hole instead of a
+              ¼&quot; drill, it&apos;ll all make sense.
+            </p>
+            <p className="mt-4 text-lg text-muted-foreground">
+              Bottom line? Let&apos;s create delightful products that require
+              less marketing and sometimes sell themselves too.
             </p>
             <p className="mt-4 text-lg text-muted-foreground">
               Ready to crush it? Thought so.

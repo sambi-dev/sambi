@@ -62,7 +62,7 @@ export function EmailCta() {
   return (
     <section
       id="email-cta"
-      aria-label="Subscribe to our infrequent but awesome email newsletter"
+      aria-label="Ask us a question about anything digital that ChatGPT could answer. Seriously though, ask us anything."
       className="scroll-mt-14 bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-background via-primary to-background sm:scroll-mt-32"
     >
       <div className="overflow-hidden lg:relative">
