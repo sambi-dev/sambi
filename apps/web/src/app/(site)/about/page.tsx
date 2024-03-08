@@ -175,7 +175,7 @@ export default async function About() {
           </div>
           <div>
             <p>
-              The pandemic threw us a curve ball, as it did to the world. We dove
+              The pandemic threw us a curveball, as it did to the world. We dove
               into newsletters, tinkered with AI editors, and dreamed big. As
               the cash ran out, we regrouped, refocused, and remembered what we
               do best. Turn your ideas into products then thriving companies.
