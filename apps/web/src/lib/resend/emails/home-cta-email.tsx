@@ -61,7 +61,7 @@ export const HomeCtaEmail = () => (
             brain-busting form on our homepage.
           </Text>
           <Text className="text-[12px] text-[#747881]">
-            <span className="font-bold">sambi.dev</span> 1309 Coffen Avenue,
+            <span className="font-bold">sambi.dev</span> 1309 Coffeen Avenue,
             Suite 1247, Sheridan, WY 82801 🇺🇸
           </Text>
         </Container>

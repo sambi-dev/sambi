@@ -23,7 +23,10 @@ interface SiteConfig {
     linkedIn: string;
     twitter: string;
     upworkAgency: string;
+    upworkAmbreen: string;
     upworkConsult: string;
+    upworkRebekah: string;
+    upworkSam: string;
   };
 }
 
@@ -45,8 +48,11 @@ export const siteConfig: SiteConfig = {
     linkedIn: 'https://www.linkedin.com/in/rebekahradice/',
     twitter: 'https://twitter.com/sambi_dev',
     upworkAgency: 'https://www.upwork.com/agencies/sambi/',
+    upworkAmbreen: 'https://www.upwork.com/freelancers/breen',
     upworkConsult:
       'https://www.upwork.com/services/consultation/development-it-sam-1756271340353224704',
+    upworkRebekah: 'https://www.upwork.com/freelancers/rebekahrmarketing',
+    upworkSam: 'https://www.upwork.com/freelancers/rizvio',
   },
   mailSupport: env.NEXT_PUBLIC_SAMBI_SUPPORT_EMAIL,
 };
