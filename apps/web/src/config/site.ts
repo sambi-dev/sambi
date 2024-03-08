@@ -48,5 +48,5 @@ export const siteConfig: SiteConfig = {
     upworkConsult:
       'https://www.upwork.com/services/consultation/development-it-sam-1756271340353224704',
   },
-  mailSupport: env.SAMBI_SUPPORT_EMAIL,
+  mailSupport: env.NEXT_PUBLIC_SAMBI_SUPPORT_EMAIL,
 };
