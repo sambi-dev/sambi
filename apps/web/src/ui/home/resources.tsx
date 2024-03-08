@@ -17,7 +17,7 @@ export function Resources() {
       className="scroll-mt-14 py-16 sm:scroll-mt-32 sm:py-20 lg:py-32"
     >
       <SectionIntro
-        title="Passing on our legos"
+        title="Passing on our Legos"
         eyebrow="Resources"
         className="mt-24 sm:mt-32 lg:mt-40"
       >

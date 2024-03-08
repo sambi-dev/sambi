@@ -78,8 +78,8 @@ export function Showcase({
         </FadeInStagger>
         <FadeIn className="mt-8 flex justify-center">
           <Link
-            href="/work"
-            aria-label="Visit sambi's work page in the same window to view more of our case studies"
+            href="/showcase"
+            aria-label="Visit sambi's showcase page in the same window to view more of our case studies"
             className={cn(buttonVariants({ variant: 'secondary' }))}
           >
             See full Showcase

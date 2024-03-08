@@ -21,7 +21,7 @@ export default async function CaseStudyLayout({
     .filter(({ metadata }) => metadata !== caseStudy)
     .slice(0, 2);
 
-  const eyebrowText = `Case Study${caseStudy.partner ? ' • Via partner' : ''}`;
+  const eyebrowText = `Brief${caseStudy.partner ? ' :: Via partner' : ''}`;
 
   return (
     <>

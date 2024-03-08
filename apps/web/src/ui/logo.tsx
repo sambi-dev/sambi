@@ -1,6 +1,6 @@
 import { useId } from 'react';
 
-import clsx from 'clsx';
+import { cn } from '@sambi/ui';
 
 export function Logomark({
   invert = false,
@@ -16,7 +16,7 @@ export function Logomark({
     <svg viewBox="0 0 32 32" aria-hidden="true" {...props}>
       <rect
         clipPath={`url(#${id}-clip)`}
-        className={clsx(
+        className={cn(
           'h-8 transition-all duration-300',
           invert ? 'fill-primary' : 'fill-foreground',
           filled ? 'w-8' : 'w-0 group-hover/logo:w-8',
@@ -69,7 +69,7 @@ export function Logo({
     <svg
       viewBox="0 0 130 32"
       aria-hidden="true"
-      className={clsx(fillOnHover && 'group/logo', className)}
+      className={cn(fillOnHover && 'group/logo', className)}
       {...props}
     >
       <Logomark

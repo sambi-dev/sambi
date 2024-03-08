@@ -151,7 +151,7 @@ function Deliver() {
           <strong className="font-semibold text-primary">
             fully functional
           </strong>{' '}
-          at launch — the auxiliary pages will, of course, be lorem ipusm shells
+          at launch — the auxiliary pages will, of course, be lorem ipsum shells
           which get updated as part of our exorbitant{' '}
           <strong className="font-semibold text-primary">maintenance</strong>{' '}
           retainer.

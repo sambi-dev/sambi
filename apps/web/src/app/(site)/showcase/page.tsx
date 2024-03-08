@@ -31,7 +31,7 @@ function CaseStudies({ caseStudies }: { caseStudies: MDXEntry<CaseStudy>[] }) {
   return (
     <Container className="mt-40">
       <FadeIn>
-        <h2 className="text-2xl font-semibold text-foreground">Case studies</h2>
+        <h2 className="text-2xl font-semibold text-foreground">Our work</h2>
       </FadeIn>
       <LoadMore className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
         <LoadMoreItems>
@@ -158,7 +158,7 @@ export default async function Work() {
 
   return (
     <>
-      <PageIntro eyebrow="Our work" title="Making us seem bigger than we are">
+      <PageIntro eyebrow="Showcase" title="Making us seem bigger than we are">
         <p>
           Unlike most humble creatives, we embrace reverse imposter syndrome,
           boasting louder and prouder than we probably should. It&apos;s our

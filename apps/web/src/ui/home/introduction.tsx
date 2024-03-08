@@ -77,7 +77,7 @@ export function Introduction() {
           </p>
           <p className="mt-4">
             It&apos;s all our serial-minded clients tend to remember.
-            Occassionally, they thank us and they might hit us up for more when
+            Occasionally, they thank us and they might hit us up for more when
             the next big idea comes to them.
           </p>
           <p className="mt-4">
