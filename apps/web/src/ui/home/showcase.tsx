@@ -9,8 +9,7 @@ import { buttonVariants } from '@sambi/ui/button';
 import { FadeIn, FadeInStagger } from '#/ui/fade-in';
 import { Container } from '#/ui/page-container';
 import { SectionIntro } from '#/ui/section-intro';
-
-import { ArrowIcon } from '../shared/icons';
+import { ArrowIcon } from '#/ui/shared/icons';
 
 export function Showcase({
   caseStudies,
@@ -26,7 +25,6 @@ export function Showcase({
       <SectionIntro
         title="Rockstars, slam dunks, and a couple mulligans"
         eyebrow="Showcase"
-        className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
           This is the part where we namedrop and say things like successfully
@@ -34,7 +32,7 @@ export function Showcase({
           chat. It highlights effective copywriting.
         </p>
       </SectionIntro>
-      <Container className="mt-16">
+      <Container className="my-16">
         <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {caseStudies.map((caseStudy) => (
             <FadeIn key={caseStudy.href} className="flex">

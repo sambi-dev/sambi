@@ -10,6 +10,7 @@ import { cn } from '@sambi/ui';
 import { MenuIcon } from '#/ui/shared/icons';
 
 const sections = [
+  { id: 'mettle', title: 'Mettle' },
   {
     id: 'showcase',
     title: (

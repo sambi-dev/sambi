@@ -4,8 +4,7 @@ import { ThemeProvider } from '@sambi/ui/theme';
 import { Toaster } from '@sambi/ui/toast';
 
 import { env } from '#/env';
-
-import { fontBricolage } from '../fonts/index';
+import { fontBricolage } from '#/fonts/index';
 
 import '#/styles/tailwind.css';
 

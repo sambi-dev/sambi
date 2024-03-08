@@ -1,8 +1,7 @@
+import { FadeIn } from '#/ui/fade-in';
+import { ClientAvatar } from '#/ui/shared/client-avatar';
 import { Container } from '#/ui/shared/container';
 import { StarRating } from '#/ui/shared/star-rating';
-
-import { FadeIn } from '../fade-in';
-import { ClientAvatar } from '../shared/client-avatar';
 
 export function BigWarning({
   id,

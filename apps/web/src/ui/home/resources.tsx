@@ -6,8 +6,7 @@ import { buttonVariants } from '@sambi/ui/button';
 import { freeResources } from '#/content/free-resources';
 import { SectionIntro } from '#/ui/section-intro';
 import { Container } from '#/ui/shared/container';
-
-import { ArrowIcon } from '../shared/icons';
+import { ArrowIcon } from '#/ui/shared/icons';
 
 export function Resources() {
   return (
