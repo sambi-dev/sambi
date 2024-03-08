@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
 
-import { PageIntro } from '../page-intro';
+import { PageIntro } from '#/ui/page-intro';
 
 interface ComingSoonProps {
   eyebrow: string;

@@ -11,7 +11,7 @@ async function loadEntries<T extends { date: string }>(
       (await glob('**/page.mdx', { cwd: `src/app/(site)/${directory}` })).map(
         async (filename) => {
           const importedModule = (await import(
-            `../app/(site)/${directory}/${filename}`
+            `src/app/(site)/${directory}/${filename}`
           )) as ModuleWithMetaData<T>;
           const metadata = importedModule[metaName];
           if (!metadata) {

@@ -3,6 +3,7 @@ import { BigWarning } from '#/ui/home/big-warning';
 import { EmailCta } from '#/ui/home/email-cta';
 import { Hero } from '#/ui/home/hero';
 import { Introduction } from '#/ui/home/introduction';
+import { Mettle } from '#/ui/home/mettle';
 import { Process } from '#/ui/home/process';
 import { Resources } from '#/ui/home/resources';
 import { Showcase } from '#/ui/home/showcase';
@@ -18,6 +19,7 @@ export default async function Home() {
       <Hero />
       <Introduction />
       <NavBar />
+      <Mettle />
       <Showcase caseStudies={caseStudies} />
       <BigWarning
         id="untestimonial-1"

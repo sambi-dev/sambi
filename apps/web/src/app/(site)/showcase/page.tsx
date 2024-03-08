@@ -7,25 +7,18 @@ import Link from 'next/link';
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
 
-import logoBrightPath from '#/images/clients/bright-path/logo-dark.svg';
-import logoFamilyFund from '#/images/clients/family-fund/logo-dark.svg';
-import logoGreenLife from '#/images/clients/green-life/logo-dark.svg';
-import logoHomeWork from '#/images/clients/home-work/logo-dark.svg';
-import logoMailSmirk from '#/images/clients/mail-smirk/logo-dark.svg';
-import logoNorthAdventures from '#/images/clients/north-adventures/logo-dark.svg';
-import logoPhobia from '#/images/clients/phobia/logo-dark.svg';
-import logoUnseal from '#/images/clients/unseal/logo-dark.svg';
 import { formatDate } from '#/lib/constants';
 import { loadCaseStudies } from '#/lib/mdx';
 import { Blockquote } from '#/ui/blockquote';
 import { Border } from '#/ui/border';
+import { Clients } from '#/ui/clients';
 import { ContactSection } from '#/ui/contact-section';
-import { FadeIn, FadeInStagger } from '#/ui/fade-in';
+import { FadeIn } from '#/ui/fade-in';
+import { BigWarning } from '#/ui/home/big-warning';
 import { Container } from '#/ui/page-container';
 import { PageIntro } from '#/ui/page-intro';
 import { ArrowIcon } from '#/ui/shared/icons';
 import { LoadMore, LoadMoreButton, LoadMoreItems } from '#/ui/shared/load-more';
-import { Testimonial } from '#/ui/testimonial';
 
 function CaseStudies({ caseStudies }: { caseStudies: MDXEntry<CaseStudy>[] }) {
   return (
@@ -108,45 +101,6 @@ function CaseStudies({ caseStudies }: { caseStudies: MDXEntry<CaseStudy>[] }) {
   );
 }
 
-type ClientLogoPair = [string, string];
-
-const clients: ClientLogoPair[] = [
-  ['Phobia', logoPhobia],
-  ['Family Fund', logoFamilyFund],
-  ['Unseal', logoUnseal],
-  ['Mail Smirk', logoMailSmirk],
-  ['Home Work', logoHomeWork],
-  ['Green Life', logoGreenLife],
-  ['Bright Path', logoBrightPath],
-  ['North Adventures', logoNorthAdventures],
-];
-
-function Clients() {
-  return (
-    <Container className="mt-24 sm:mt-32 lg:mt-40">
-      <FadeIn>
-        <h2 className="text-2xl font-semibold text-foreground">
-          You’re in good company
-        </h2>
-      </FadeIn>
-      <FadeInStagger className="mt-10" faster>
-        <Border as={FadeIn} />
-        <ul className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-4">
-          {clients.map(([client, logo]) => (
-            <li key={client} className="group">
-              <FadeIn className="overflow-hidden">
-                <Border className="pt-12 group-[&:nth-child(-n+2)]:-mt-px sm:group-[&:nth-child(3)]:-mt-px lg:group-[&:nth-child(4)]:-mt-px">
-                  <Image src={logo} alt={client} unoptimized />
-                </Border>
-              </FadeIn>
-            </li>
-          ))}
-        </ul>
-      </FadeInStagger>
-    </Container>
-  );
-}
-
 export const metadata: Metadata = {
   title: 'Showcase',
   description:
@@ -169,15 +123,32 @@ export default async function Work() {
 
       <CaseStudies caseStudies={caseStudies} />
 
-      <Testimonial
-        className="mt-24 sm:mt-32 lg:mt-40"
-        client={{ name: 'Mail Smirk', logo: logoMailSmirk }}
-      >
-        We approached <em>Studio</em> because we loved their past work. They
-        delivered something remarkably similar in record time.
-      </Testimonial>
+      <div className="mt-24 sm:mt-32 lg:mt-40">
+        <BigWarning
+          id="untestimonial-1"
+          author={{
+            name: 'Henri L.',
+            role: 'Founder ',
+            initials: 'HL',
+          }}
+        >
+          <p>
+            “Hiring sambi? Bad idea. They&apos;re the kind of problem-solvers
+            you think you want until you realize everyone else will want them
+            too.”
+          </p>
+        </BigWarning>
+      </div>
 
-      <Clients />
+      <Clients title="Roasted by the best" limit="sm">
+        <p>
+          Believe it or not, we&apos;ve gotten grilled by some big names.
+          Sometimes the heat was direct{' '}
+          <span className="line-through">and hot</span> or thankfully via a
+          partner
+          <span className="text-alternate">*</span>.
+        </p>
+      </Clients>
 
       <ContactSection />
     </>

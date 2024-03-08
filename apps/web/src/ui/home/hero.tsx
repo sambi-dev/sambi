@@ -6,9 +6,8 @@ import { buttonVariants } from '@sambi/ui/button';
 
 import { siteConfig } from '#/config/site';
 import coverImage from '#/images/hero.png';
+import { FadeIn, FadeInStagger } from '#/ui/fade-in';
 import { HeroTestimonial } from '#/ui/home/hero-testimonial';
-
-import { FadeIn, FadeInStagger } from '../fade-in';
 
 export function Hero() {
   return (

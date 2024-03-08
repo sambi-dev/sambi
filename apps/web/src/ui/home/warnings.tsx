@@ -7,13 +7,12 @@ import { buttonVariants } from '@sambi/ui/button';
 
 import { warnings } from '#/content/warnings';
 import { SectionIntro } from '#/ui/section-intro';
+import { ClientAvatar } from '#/ui/shared/client-avatar';
 import {
   Expandable,
   ExpandableButton,
   ExpandableItems,
 } from '#/ui/shared/expandable';
-
-import { ClientAvatar } from '../shared/client-avatar';
 
 interface WarningProps {
   client: Client;
