@@ -17,7 +17,7 @@
     "@sambi/auth": "workspace:^0.1.0",
     "@sambi/db": "workspace:^0.1.0",
     "@sambi/validators": "workspace:^0.1.0",
-    "@trpc/server": "11.0.0-next-beta.264",
+    "@trpc/server": "11.0.0-next-beta.294",
     "superjson": "2.2.1",
     "zod": "^3.22.4"
   },
