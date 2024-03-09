@@ -21,6 +21,7 @@
     "@mdx-js/loader": "^3.0.0",
     "@mdx-js/react": "^3.0.0",
     "@next/mdx": "^14.0.4",
+    "@paralleldrive/cuid2": "^2.2.2",
     "@sambi/api": "workspace:^0.1.0",
     "@sambi/auth": "workspace:^0.1.0",
     "@sambi/db": "workspace:^0.1.0",
@@ -45,11 +46,11 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@react-email/components": "^0.0.15",
     "@sambi/eslint-config": "workspace:^0.2.0",
     "@sambi/prettier-config": "workspace:^0.1.0",
     "@sambi/tailwind-config": "workspace:^0.1.0",
     "@sambi/tsconfig": "workspace:^0.1.0",
-    "@react-email/components": "^0.0.15",
     "@types/mdx": "^2.0.7",
     "@types/node": "^20.11.20",
     "@types/react": "^18.2.57",

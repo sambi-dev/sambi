@@ -1,5 +1,7 @@
 'use server';
 
+import { createId } from '@paralleldrive/cuid2';
+
 import { siteConfig } from '#/config/site';
 import { env } from '#/env';
 import HomeCtaEmail from '#/lib/resend/emails/home-cta-email';
@@ -27,6 +29,9 @@ export async function sendHomeCtaEmail({ email }: SendHomeCtaEmailParams) {
       subject: subjectLine,
       react: HomeCtaEmail(),
       text: plainTextHomeCtaEmail,
+      headers: {
+        'X-Entity-Ref-ID': createId(),
+      },
     });
 
     if (process.env.NODE_ENV !== 'production') {
