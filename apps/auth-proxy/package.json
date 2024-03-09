@@ -11,16 +11,16 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@auth/core": "0.26.3"
+    "@auth/core": "0.27.0"
   },
   "devDependencies": {
     "@sambi/eslint-config": "workspace:^0.2.0",
     "@sambi/prettier-config": "workspace:^0.1.0",
     "@sambi/tailwind-config": "workspace:^0.1.0",
     "@sambi/tsconfig": "workspace:^0.1.0",
-    "@types/node": "^20.11.13",
-    "eslint": "^8.56.0",
-    "h3": "^1.10.1",
+    "@types/node": "^20.11.20",
+    "eslint": "^8.57.0",
+    "h3": "^1.11.1",
     "nitropack": "^2.8.1",
     "prettier": "^3.2.5",
     "typescript": "^5.3.3"
