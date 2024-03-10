@@ -36,7 +36,10 @@ export default async function Blog() {
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
-        <LoadMore className="space-y-24 lg:space-y-32">
+        <LoadMore
+          className="space-y-24 lg:space-y-32"
+          totalItems={blogPosts.length}
+        >
           <LoadMoreItems>
             {blogPosts.map((post) => (
               <FadeIn key={post.href}>

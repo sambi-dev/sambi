@@ -7,21 +7,30 @@ import { Button } from '@sambi/ui/button';
 import { ArrowDownIcon } from './icons';
 
 const LoadMoreContext = createContext({
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  loadMore: () => {},
+  loadMore: undefined as (() => void) | undefined,
   itemsToShow: 10,
+  totalItems: 0,
 });
 
-export function LoadMore(props: React.ComponentPropsWithoutRef<'div'>) {
+export function LoadMore({
+  children,
+  className,
+  totalItems: initialTotalItems,
+}: {
+  children: React.ReactNode;
+  className?: string;
+  totalItems: number;
+}) {
   const [itemsToShow, setItemsToShow] = useState(10);
+  const totalItems = initialTotalItems;
 
   const loadMore = () => {
     setItemsToShow((prevItemsToShow) => prevItemsToShow + 10);
   };
 
   return (
-    <LoadMoreContext.Provider value={{ loadMore, itemsToShow }}>
-      <div {...props} />
+    <LoadMoreContext.Provider value={{ loadMore, itemsToShow, totalItems }}>
+      <div className={className}>{children}</div>
     </LoadMoreContext.Provider>
   );
 }
@@ -33,7 +42,11 @@ export function LoadMoreItems({ children }: { children: React.ReactNode }) {
 }
 
 export function LoadMoreButton({ children }: { children: React.ReactNode }) {
-  const { loadMore } = useContext(LoadMoreContext);
+  const { loadMore, itemsToShow, totalItems } = useContext(LoadMoreContext);
+
+  if (itemsToShow >= totalItems || !loadMore) {
+    return null;
+  }
 
   return (
     <div className="mt-10 flex justify-center">
