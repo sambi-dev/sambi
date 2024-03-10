@@ -1,138 +1,14 @@
 import type { Metadata } from 'next';
 
-import Image from 'next/image';
-
-import imageAmbreen from '#/images/team/ambreen.jpg';
-import imageRebekah from '#/images/team/rebekah.jpg';
-import imageSam from '#/images/team/sam.jpg';
 import { loadArticles } from '#/lib/mdx';
-import { Border } from '#/ui/border';
+import Crew from '#/ui/about/crew';
+import { Culture } from '#/ui/about/culture';
 import { ContactSection } from '#/ui/contact-section';
-import { FadeIn, FadeInStagger } from '#/ui/fade-in';
-import { GridList, GridListItem } from '#/ui/grid-list';
+import { FadeIn } from '#/ui/fade-in';
 import { Container } from '#/ui/page-container';
 import { PageIntro } from '#/ui/page-intro';
 import { PageLinks } from '#/ui/page-links';
-import { SectionIntro } from '#/ui/section-intro';
 import { StatList, StatListItem } from '#/ui/stat-list';
-
-function Culture() {
-  return (
-    <div className="mt-24 rounded-4xl bg-card py-24 sm:mt-32 lg:mt-40 lg:py-32">
-      <SectionIntro eyebrow="Guiding principles" title="How we operate">
-        <p>
-          We champion a culture where ideas can emerge from anywhere. Teams are
-          flatter, roles are blended, and success is collective.
-        </p>
-      </SectionIntro>
-      <Container className="mt-16">
-        <GridList>
-          <GridListItem title="Creators at heart">
-            We get it. This new synthetic world is kinda crazy. We do everything
-            to fuel the human creative spirit.
-          </GridListItem>
-          <GridListItem title="Inclusive by design">
-            Our culture&apos;s built on accessibility, diversity, and belonging
-            where all voices are heard and valued.
-          </GridListItem>
-          <GridListItem title="Courage to innovate">
-            We dare to explore the frontiers of human and AI potential. We
-            enable simple yet remarkably effective solutions.
-          </GridListItem>
-          <GridListItem title="Transparent practices">
-            We&apos;re an open book—sharing our processes, decisions, and the
-            why behind them.
-          </GridListItem>
-          <GridListItem title="Collective brilliance">
-            The confluence of our diverse talents makes us shine. It pushes us
-            all beyond our own wildest expectations.
-          </GridListItem>
-          <GridListItem title="Humanity amid AI">
-            We&apos;re crafting AI that amplifies human creativity and
-            connection, not replaces it.
-          </GridListItem>
-          <GridListItem title="Privacy and trust">
-            Your trust is sacred, your privacy paramount. We defend them with
-            everything we&apos;ve got.
-          </GridListItem>
-          <GridListItem title="Shared prosperity">
-            Fair equity distribution and cooperative decision-making fuel our
-            commitment to collaborative results.
-          </GridListItem>
-        </GridList>
-      </Container>
-    </div>
-  );
-}
-
-const team = [
-  {
-    title: 'The crew',
-    people: [
-      {
-        name: 'Sam Rizvi',
-        role: 'Strategy & Tech',
-        image: { src: imageSam },
-      },
-      {
-        name: 'Ambreen Dar',
-        role: 'Creative & Design',
-        image: { src: imageAmbreen },
-      },
-      {
-        name: 'Rebekah Radice',
-        role: 'Brand & Growth',
-        image: { src: imageRebekah },
-      },
-    ],
-  },
-];
-
-function Team() {
-  return (
-    <Container className="mt-24 sm:mt-32 lg:mt-40">
-      <div className="space-y-24">
-        {team.map((group) => (
-          <FadeInStagger key={group.title}>
-            <Border as={FadeIn} />
-            <div className="grid grid-cols-1 gap-6 pt-12 sm:pt-16 lg:grid-cols-4 xl:gap-8">
-              <FadeIn>
-                <h2 className="text-2xl font-semibold tracking-tight text-foreground">
-                  {group.title}
-                </h2>
-              </FadeIn>
-              <div className="lg:col-span-3">
-                <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:gap-8">
-                  {group.people.map((person) => (
-                    <li key={person.name}>
-                      <FadeIn>
-                        <div className="group relative overflow-hidden rounded-3xl bg-neutral-100">
-                          <Image
-                            alt=""
-                            {...person.image}
-                            className="h-96 w-full object-cover grayscale transition duration-500 motion-safe:group-hover:scale-105"
-                          />
-                          <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black to-black/0 to-40% p-6">
-                            <p className="text-base/6 font-semibold tracking-wide text-white">
-                              {person.name}
-                            </p>
-                            <p className="mt-2 text-sm text-white">
-                              {person.role}
-                            </p>
-                          </div>
-                        </div>
-                      </FadeIn>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </FadeInStagger>
-        ))}
-      </div>
-    </Container>
-  );
-}
 
 export const metadata: Metadata = {
   title: 'About',
@@ -206,7 +82,7 @@ export default async function About() {
 
       <Culture />
 
-      <Team />
+      <Crew />
 
       <PageLinks
         className="mt-24 sm:mt-32 lg:mt-40"
