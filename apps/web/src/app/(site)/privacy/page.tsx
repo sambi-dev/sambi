@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { loadArticles } from '#/lib/mdx';
+import { loadBlogPosts } from '#/lib/mdx';
 import { ContactSection } from '#/ui/contact-section';
 import { PageLinks } from '#/ui/page-links';
 import ComingSoon from '#/ui/shared/coming-soon';
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default async function PrivacyPolicy() {
-  const blogArticles = (await loadArticles()).slice(0, 2);
+  const blogPosts = (await loadBlogPosts()).slice(0, 2);
 
   return (
     <>
@@ -32,7 +32,7 @@ export default async function PrivacyPolicy() {
         className="mt-24 sm:mt-32 lg:mt-40"
         title="From the blog"
         intro="Amidst the digital echo chamber, we're the ones still using typewriters. Check out our blog to read recently upcycled content"
-        pages={blogArticles}
+        pages={blogPosts}
       />
 
       <ContactSection />

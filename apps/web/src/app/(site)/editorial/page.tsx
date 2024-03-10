@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { loadArticles } from '#/lib/mdx';
+import { loadBlogPosts } from '#/lib/mdx';
 import { ContactSection } from '#/ui/contact-section';
 import { PageLinks } from '#/ui/page-links';
 import ComingSoon from '#/ui/shared/coming-soon';
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 };
 
 export default async function EditorialPolicy() {
-  const blogArticles = (await loadArticles()).slice(0, 2);
+  const blogPosts = (await loadBlogPosts()).slice(0, 2);
 
   return (
     <>
@@ -31,7 +31,7 @@ export default async function EditorialPolicy() {
         className="mt-24 sm:mt-32 lg:mt-40"
         title="From the blog"
         intro="In an era of synthetic noise, we're proudly analog. Crafting content with our bare hands. Call us old fashioned."
-        pages={blogArticles}
+        pages={blogPosts}
       />
 
       <ContactSection />

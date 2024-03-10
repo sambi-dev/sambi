@@ -44,7 +44,7 @@ type Category =
   | 'stack'
   | 'flow';
 
-export interface Article {
+export interface BlogPost {
   date: string;
   title: string;
   description: string;
@@ -54,6 +54,7 @@ export interface Article {
     role: string;
     image: ImagePropsWithOptionalAlt;
   };
+  readMoreButtonText: string;
 }
 
 export interface AiPost {
@@ -66,6 +67,7 @@ export interface AiPost {
     model: string;
     image: ImagePropsWithOptionalAlt;
   };
+  readMoreButtonText: string;
 }
 
 type ServiceType =
@@ -104,8 +106,8 @@ export interface ProjectBrief {
   readMoreButtonText: string;
 }
 
-export function loadArticles() {
-  return loadEntries<Article>('blog', 'article');
+export function loadBlogPosts() {
+  return loadEntries<BlogPost>('blog', 'post');
 }
 
 export function loadAiPosts() {
