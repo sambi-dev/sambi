@@ -34,7 +34,7 @@ function PageLink({ page }: { page: Page }) {
         >
           {formatDate(page.date)}
         </time>
-        <p className="mt-2.5 text-base text-muted-foreground">
+        <p className="mt-2.5 line-clamp-2 text-base text-muted-foreground">
           {page.description}
         </p>
         <Link
@@ -42,7 +42,7 @@ function PageLink({ page }: { page: Page }) {
           aria-label={`Read more: ${page.title}`}
           className={cn(
             buttonVariants({
-              variant: 'secondary',
+              variant: 'outline',
               size: 'sm',
             }),
             'mt-8',

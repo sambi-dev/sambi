@@ -59,11 +59,11 @@ export default async function Blog() {
                           </dd>
                           <dt className="sr-only">Author</dt>
                           <dd className="mt-6 flex gap-x-4">
-                            <div className="flex-none overflow-hidden rounded-xl bg-neutral-100">
+                            <div className="flex-none overflow-hidden rounded-xl bg-background">
                               <Image
                                 alt=""
                                 {...post.author.image}
-                                className="h-12 w-12 object-cover grayscale"
+                                className="h-12 w-12 object-cover grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-150"
                               />
                             </div>
                             <div className="text-sm text-muted-foreground">

@@ -16,8 +16,8 @@ export default async function ProjectBriefWrapper({
   projectBrief: MDXEntry<ProjectBrief>;
   children: React.ReactNode;
 }) {
-  const allCaseStudies = await loadProjectBriefs();
-  const moreCaseStudies = allCaseStudies
+  const allProjectBriefs = await loadProjectBriefs();
+  const moreProjectBriefs = allProjectBriefs
     .filter(({ metadata }) => metadata !== projectBrief)
     .slice(0, 2);
 
@@ -88,11 +88,11 @@ export default async function ProjectBriefWrapper({
         </Container>
       </article>
 
-      {moreCaseStudies.length > 0 && (
+      {moreProjectBriefs.length > 0 && (
         <PageLinks
           className="mt-24 sm:mt-32 lg:mt-40"
           title="More case studies"
-          pages={moreCaseStudies}
+          pages={moreProjectBriefs}
         />
       )}
 

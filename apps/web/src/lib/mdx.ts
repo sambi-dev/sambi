@@ -111,7 +111,7 @@ export function loadBlogPosts() {
 }
 
 export function loadAiPosts() {
-  return loadEntries<AiPost>('mdx', 'article');
+  return loadEntries<AiPost>('mdx', 'aiPost');
 }
 
 export function loadProjectBriefs() {
