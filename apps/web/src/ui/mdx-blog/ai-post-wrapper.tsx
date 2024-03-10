@@ -14,10 +14,8 @@ import { FadeIn } from '#/ui/fade-in';
 import { MDXComponents } from '#/ui/mdx-components';
 import { Container } from '#/ui/page-container';
 import { PageLinks } from '#/ui/page-links';
-
-import { PageIntro } from '../page-intro';
-import { SectionIntro } from '../section-intro';
-import { ArrowIcon } from '../shared/icons';
+import { SectionIntro } from '#/ui/section-intro';
+import { ArrowIcon } from '#/ui/shared/icons';
 
 export default async function AiPostWrapper({
   aiPost,
