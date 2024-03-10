@@ -16,8 +16,10 @@ import { LoadMore, LoadMoreButton, LoadMoreItems } from '#/ui/shared/load-more';
 
 export function ProjectBriefs({
   projectBriefs,
+  totalItems,
 }: {
   projectBriefs: MDXEntry<ProjectBrief>[];
+  totalItems: number;
 }) {
   return (
     <Container className="mt-40">
@@ -26,7 +28,10 @@ export function ProjectBriefs({
           Recent projects
         </h2>
       </FadeIn>
-      <LoadMore className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32">
+      <LoadMore
+        className="mt-10 space-y-20 sm:space-y-24 lg:space-y-32"
+        totalItems={totalItems}
+      >
         <LoadMoreItems>
           {projectBriefs.map((projectBrief) => (
             <FadeIn key={projectBrief.client}>

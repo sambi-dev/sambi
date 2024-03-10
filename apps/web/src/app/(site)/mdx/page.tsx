@@ -39,7 +39,10 @@ export default async function AiBlog() {
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
-        <LoadMore className="space-y-24 lg:space-y-32">
+        <LoadMore
+          className="space-y-24 lg:space-y-32"
+          totalItems={aiPosts.length}
+        >
           <LoadMoreItems>
             {aiPosts.map((aiPost) => (
               <FadeIn key={aiPost.href}>

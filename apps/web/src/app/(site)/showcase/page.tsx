@@ -27,7 +27,10 @@ export default async function Work() {
         </p>
       </PageIntro>
 
-      <ProjectBriefs projectBriefs={projectBriefs} />
+      <ProjectBriefs
+        projectBriefs={projectBriefs}
+        totalItems={projectBriefs.length}
+      />
 
       <div className="mt-24 sm:mt-32 lg:mt-40">
         <BigWarning
