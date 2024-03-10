@@ -25,7 +25,7 @@ function PageLink({ page }: { page: Page }) {
         position="left"
         className="relative flex flex-col items-start pl-8"
       >
-        <h3 className="mt-6 text-pretty text-xl font-semibold text-foreground">
+        <h3 className="mt-6 text-pretty text-2xl font-semibold tracking-tight text-foreground">
           {page.title}
         </h3>
         <time
@@ -42,7 +42,6 @@ function PageLink({ page }: { page: Page }) {
           aria-label={`Read more: ${page.title}`}
           className={cn(
             buttonVariants({
-              variant: 'outline',
               size: 'sm',
             }),
             'mt-8',

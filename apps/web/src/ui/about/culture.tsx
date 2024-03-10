@@ -13,37 +13,41 @@ export function Culture() {
       </SectionIntro>
       <Container className="mt-16">
         <GridList>
-          <GridListItem title="Creators at heart">
-            We get it. This new synthetic world is kinda crazy. We do everything
-            to fuel the human creative spirit.
+          <GridListItem title="Creativity is our thing">
+            We get it, AI can be wild. But we&apos;re always here to support
+            human creativity.
           </GridListItem>
-          <GridListItem title="Inclusive by design">
-            Our culture&apos;s built on accessibility, diversity, and belonging
-            where all voices are heard and valued.
+          <GridListItem title="Everyone's welcome">
+            Our culture is open, diverse, and inclusive. All voices are valued
+            here.
           </GridListItem>
-          <GridListItem title="Courage to innovate">
-            We dare to explore the frontiers of human and AI potential. We
-            enable simple yet remarkably effective solutions.
+          <GridListItem title="Trying new things">
+            We explore uncharted territory with people and AI. We aim for simple
+            yet effective solutions.
           </GridListItem>
-          <GridListItem title="Transparent practices">
-            We&apos;re an open book—sharing our processes, decisions, and the
-            why behind them.
+          <GridListItem title="Keeping it real">
+            We&apos;re an open book. We share our methods, choices, and reasons.
+            No secrets here.
           </GridListItem>
-          <GridListItem title="Collective brilliance">
-            The confluence of our diverse talents makes us shine. It pushes us
-            all beyond our own wildest expectations.
+          <GridListItem title="Teamwork makes the dream work">
+            Our unique skills make us amazing together. We push each other to
+            achieve more.
           </GridListItem>
-          <GridListItem title="Humanity amid AI">
-            We&apos;re crafting AI that amplifies human creativity and
-            connection, not replaces it.
+          <GridListItem title="People first, AI second">
+            We&apos;re making AI that boosts human creativity and connection,
+            not replaces them.
           </GridListItem>
-          <GridListItem title="Privacy and trust">
-            Your trust is sacred, your privacy paramount. We defend them with
-            everything we&apos;ve got.
+          <GridListItem title="Your trust and privacy matter">
+            We take your trust seriously and protect your privacy. We&apos;ll
+            defend them no matter what.
           </GridListItem>
-          <GridListItem title="Shared prosperity">
-            Fair equity distribution and cooperative decision-making fuel our
-            commitment to collaborative results.
+          <GridListItem title="Success for all">
+            We share ownership fairly and decide together. Teamwork drives our
+            shared success.
+          </GridListItem>
+          <GridListItem title="Always learning and improving">
+            We&apos;re always learning, growing, and sometimes even improving.
+            Helps fix the stuff we break.
           </GridListItem>
         </GridList>
       </Container>
