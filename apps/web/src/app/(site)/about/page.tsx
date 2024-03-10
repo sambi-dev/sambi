@@ -23,9 +23,13 @@ export default async function About() {
     <>
       <PageIntro eyebrow="About us" title="Crafted through candor">
         <p>
-          Our tale isn&apos;t spun from fairy dust—instead, it&apos;s built on a
-          decade of real-world triumphs, the occasional stumble, and a
-          relentless drive for results.
+          Our tale isn&apos;t spun from fairy dust. It&apos;s built on over a
+          decade of{' '}
+          <span className="line-through">
+            Ambreen and Rebekah driving Sam crazy
+          </span>{' '}
+          real-world triumphs, an occasional stumble, and a relentless drive for
+          results.
         </p>
       </PageIntro>
 
