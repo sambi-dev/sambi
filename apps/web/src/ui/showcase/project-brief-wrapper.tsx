@@ -9,7 +9,7 @@ import { Container } from '#/ui/page-container';
 import { PageIntro } from '#/ui/page-intro';
 import { PageLinks } from '#/ui/page-links';
 
-export default async function ProjectBriefLayout({
+export default async function ProjectBriefWrapper({
   projectBrief,
   children,
 }: {

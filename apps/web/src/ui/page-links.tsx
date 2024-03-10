@@ -1,6 +1,7 @@
 import Link from 'next/link';
 
 import { cn } from '@sambi/ui';
+import { buttonVariants } from '@sambi/ui/button';
 
 import { formatDate } from '#/lib/constants';
 import { Border } from '#/ui/border';
@@ -14,6 +15,7 @@ interface Page {
   date: string;
   title: string;
   description: string;
+  readMoreButtonText: string;
 }
 
 function PageLink({ page }: { page: Page }) {
@@ -37,12 +39,17 @@ function PageLink({ page }: { page: Page }) {
         </p>
         <Link
           href={page.href}
-          className="mt-6 flex gap-x-3 text-base font-semibold text-primary transition hover:text-primary/80"
           aria-label={`Read more: ${page.title}`}
+          className={cn(
+            buttonVariants({
+              variant: 'secondary',
+              size: 'sm',
+            }),
+            'mt-8',
+          )}
         >
-          Read more
-          <ArrowIcon className="w-6 flex-none fill-current" />
-          <span className="absolute inset-0" />
+          {page.readMoreButtonText}
+          <ArrowIcon className=" ml-2 w-3 flex-none fill-current" />
         </Link>
       </Border>
     </article>

@@ -7,12 +7,13 @@ import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
 
 import { formatDate } from '#/lib/constants';
-import { loadArticles } from '#/lib/mdx';
+import { loadBlogPosts } from '#/lib/mdx';
 import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
 import { FadeIn } from '#/ui/fade-in';
 import { Container } from '#/ui/page-container';
 import { PageIntro } from '#/ui/page-intro';
+import { ArrowIcon } from '#/ui/shared/icons';
 import { LoadMore, LoadMoreButton, LoadMoreItems } from '#/ui/shared/load-more';
 
 export const metadata: Metadata = {
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Blog() {
-  const articles = await loadArticles();
+  const blogPosts = await loadBlogPosts();
 
   return (
     <>
@@ -37,23 +38,23 @@ export default async function Blog() {
       <Container className="mt-24 sm:mt-32 lg:mt-40">
         <LoadMore className="space-y-24 lg:space-y-32">
           <LoadMoreItems>
-            {articles.map((article) => (
-              <FadeIn key={article.href}>
+            {blogPosts.map((post) => (
+              <FadeIn key={post.href}>
                 <article>
                   <Border className="pt-16">
                     <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                       <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
                         <div className="mb-2 text-sm font-semibold uppercase text-primary">
-                          #{article.category}
+                          #{post.category}
                         </div>
                         <h2 className="max-w-2xl text-pretty text-2xl font-semibold tracking-tight text-foreground hover:text-primary">
-                          <Link href={article.href}>{article.title}</Link>
+                          <Link href={post.href}>{post.title}</Link>
                         </h2>
                         <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
                           <dt className="sr-only">Published</dt>
                           <dd className="absolute left-0 top-0 text-sm text-primary lg:static">
-                            <time dateTime={article.date}>
-                              {formatDate(article.date)}
+                            <time dateTime={post.date}>
+                              {formatDate(post.date)}
                             </time>
                           </dd>
                           <dt className="sr-only">Author</dt>
@@ -61,26 +62,26 @@ export default async function Blog() {
                             <div className="flex-none overflow-hidden rounded-xl bg-neutral-100">
                               <Image
                                 alt=""
-                                {...article.author.image}
+                                {...post.author.image}
                                 className="h-12 w-12 object-cover grayscale"
                               />
                             </div>
                             <div className="text-sm text-muted-foreground">
                               <div className="font-semibold">
-                                {article.author.name}
+                                {post.author.name}
                               </div>
                               <div className="text-primary">
-                                {article.author.role}
+                                {post.author.role}
                               </div>
                             </div>
                           </dd>
                         </dl>
                         <p className="mt-6 max-w-2xl text-base text-muted-foreground">
-                          {article.description}
+                          {post.description}
                         </p>
                         <Link
-                          href={article.href}
-                          aria-label={`Read more: ${article.title}`}
+                          href={post.href}
+                          aria-label={`Read more: ${post.title}`}
                           className={cn(
                             buttonVariants({
                               variant: 'secondary',
@@ -89,7 +90,8 @@ export default async function Blog() {
                             'mt-8',
                           )}
                         >
-                          Read more
+                          {post.readMoreButtonText}
+                          <ArrowIcon className=" ml-2 w-3 flex-none fill-current" />
                         </Link>
                       </div>
                     </div>

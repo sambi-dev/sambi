@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { loadArticles } from '#/lib/mdx';
+import { loadBlogPosts } from '#/lib/mdx';
 import Crew from '#/ui/about/crew';
 import { Culture } from '#/ui/about/culture';
 import { ContactSection } from '#/ui/contact-section';
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default async function About() {
-  const blogArticles = (await loadArticles()).slice(0, 2);
+  const blogPosts = (await loadBlogPosts()).slice(0, 2);
 
   return (
     <>
@@ -88,7 +88,7 @@ export default async function About() {
         className="mt-24 sm:mt-32 lg:mt-40"
         title="From the blog"
         intro="Stuck in the maze of business as usual? We share insights on our blog where we decode the latest trends, pass on our winning strategies, and even share our many facepalms."
-        pages={blogArticles}
+        pages={blogPosts}
       />
 
       <ContactSection />
