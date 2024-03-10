@@ -41,7 +41,7 @@ export default async function BlogPostWrapper({
               <Image
                 src={post.author.image.src}
                 alt={`Image of ${post.author.name}`}
-                className="h-6 w-6 flex-none rounded-full bg-background grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-150"
+                className="h-6 w-6 flex-none rounded-full bg-background grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
               />
               <span className="text-sm font-medium text-secondary-foreground">
                 {post.author.name}
