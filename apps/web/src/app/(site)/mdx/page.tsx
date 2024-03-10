@@ -32,7 +32,7 @@ export default async function AiBlog() {
         title="A better way to use AI for SEO"
       >
         <p>
-          Each aiPost on sambi&apos;s generated blog is just that, generated.
+          Each post on sambi&apos;s generated blog is just that, generated.
           Created by AI in close collaboration with humans. Not your usual crap,
           that&apos;s for sure.
         </p>
