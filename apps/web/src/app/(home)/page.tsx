@@ -1,4 +1,4 @@
-import { loadCaseStudies } from '#/lib/mdx';
+import { loadProjectBriefs } from '#/lib/mdx';
 import { BigWarning } from '#/ui/home/big-warning';
 import { EmailCta } from '#/ui/home/email-cta';
 import { Hero } from '#/ui/home/hero';
@@ -13,14 +13,14 @@ import { Footer } from '#/ui/layout/footer';
 import { NavBar } from '#/ui/layout/navbar';
 
 export default async function Home() {
-  const caseStudies = (await loadCaseStudies()).slice(0, 3);
+  const projectBriefs = (await loadProjectBriefs()).slice(0, 3);
   return (
     <>
       <Hero />
       <Introduction />
       <NavBar />
       <Mettle />
-      <Showcase caseStudies={caseStudies} />
+      <Showcase projectBriefs={projectBriefs} />
       <BigWarning
         id="untestimonial-1"
         author={{

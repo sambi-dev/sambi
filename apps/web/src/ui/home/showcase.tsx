@@ -1,4 +1,4 @@
-import type { CaseStudy, MDXEntry } from '#/lib/mdx';
+import type { MDXEntry, ProjectBrief } from '#/lib/mdx';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -12,9 +12,9 @@ import { SectionIntro } from '#/ui/section-intro';
 import { ArrowIcon } from '#/ui/shared/icons';
 
 export function Showcase({
-  caseStudies,
+  projectBriefs,
 }: {
-  caseStudies: MDXEntry<CaseStudy>[];
+  projectBriefs: MDXEntry<ProjectBrief>[];
 }) {
   return (
     <section
@@ -34,41 +34,41 @@ export function Showcase({
       </SectionIntro>
       <Container className="my-16">
         <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          {caseStudies.map((caseStudy) => (
-            <FadeIn key={caseStudy.href} className="flex">
+          {projectBriefs.map((projectBrief) => (
+            <FadeIn key={projectBrief.href} className="flex">
               <article className="relative flex w-full flex-col rounded-3xl border bg-card p-6 shadow-sm transition hover:bg-primary/20 sm:p-8">
                 <h3>
                   <Link
-                    href={caseStudy.href}
-                    aria-label={`Read more about our work with ${caseStudy.client} now`}
+                    href={projectBrief.href}
+                    aria-label={`Read more about our work with ${projectBrief.client} now`}
                   >
                     <span className="absolute inset-0 rounded-3xl" />
                     <Image
-                      src={caseStudy.logo}
-                      alt={caseStudy.client}
+                      src={projectBrief.logo}
+                      alt={projectBrief.client}
                       className="h-12 w-12 rounded-xl grayscale hover:grayscale-0"
                       unoptimized
                     />
                   </Link>
                 </h3>
                 <div className="mt-6 flex gap-x-2 text-sm text-primary">
-                  <p className="text-alternate">{caseStudy.client}</p>
+                  <p className="text-alternate">{projectBrief.client}</p>
                   <span className="text-foreground" aria-hidden="true">
                     ::
                   </span>
-                  <time dateTime={caseStudy.date.split('-')[0]}>
-                    {caseStudy.date.split('-')[0]}
+                  <time dateTime={projectBrief.date.split('-')[0]}>
+                    {projectBrief.date.split('-')[0]}
                   </time>
                   <span className="text-foreground" aria-hidden="true">
                     ::
                   </span>
-                  <span>{caseStudy.service}</span>
+                  <span>{projectBrief.service}</span>
                 </div>
                 <p className="mt-6 grow text-lg font-semibold leading-tight tracking-tight text-foreground lg:text-xl">
-                  {caseStudy.title}
+                  {projectBrief.title}
                 </p>
                 <p className="mt-4 line-clamp-2 text-base text-muted-foreground">
-                  {caseStudy.description}
+                  {projectBrief.description}
                 </p>
               </article>
             </FadeIn>

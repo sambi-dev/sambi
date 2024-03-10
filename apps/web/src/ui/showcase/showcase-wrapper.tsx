@@ -1,6 +1,6 @@
-import type { CaseStudy, MDXEntry } from '#/lib/mdx';
+import type { MDXEntry, ProjectBrief } from '#/lib/mdx';
 
-import { loadCaseStudies } from '#/lib/mdx';
+import { loadProjectBriefs } from '#/lib/mdx';
 import { ContactSection } from '#/ui/contact-section';
 import { FadeIn } from '#/ui/fade-in';
 import { GrayscaleTransitionImage } from '#/ui/grayscale-transition-image';
@@ -9,26 +9,26 @@ import { Container } from '#/ui/page-container';
 import { PageIntro } from '#/ui/page-intro';
 import { PageLinks } from '#/ui/page-links';
 
-export default async function CaseStudyLayout({
-  caseStudy,
+export default async function ProjectBriefLayout({
+  projectBrief,
   children,
 }: {
-  caseStudy: MDXEntry<CaseStudy>;
+  projectBrief: MDXEntry<ProjectBrief>;
   children: React.ReactNode;
 }) {
-  const allCaseStudies = await loadCaseStudies();
+  const allCaseStudies = await loadProjectBriefs();
   const moreCaseStudies = allCaseStudies
-    .filter(({ metadata }) => metadata !== caseStudy)
+    .filter(({ metadata }) => metadata !== projectBrief)
     .slice(0, 2);
 
-  const eyebrowText = `Brief${caseStudy.partner ? ' :: Via partner' : ''}`;
+  const eyebrowText = `${projectBrief.client} Project Brief${projectBrief.partner ? ' :: Via partner' : ''}`;
 
   return (
     <>
       <article className="mt-24 sm:mt-32 lg:mt-40">
         <header>
-          <PageIntro eyebrow={eyebrowText} title={caseStudy.title} centered>
-            <p>{caseStudy.description}</p>
+          <PageIntro eyebrow={eyebrowText} title={projectBrief.title} centered>
+            <p>{projectBrief.description}</p>
           </PageIntro>
 
           <FadeIn>
@@ -39,27 +39,27 @@ export default async function CaseStudyLayout({
                     <div className="border-t px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
                       <dt className="font-semibold">Client</dt>
                       <dd className="text-muted-foreground">
-                        {caseStudy.client}
+                        {projectBrief.client}
                       </dd>
                     </div>
                     <div className="border-t px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
                       <dt className="font-semibold">Year</dt>
                       <dd className="text-muted-foreground">
-                        <time dateTime={caseStudy.date.split('-')[0]}>
-                          {caseStudy.date.split('-')[0]}
+                        <time dateTime={projectBrief.date.split('-')[0]}>
+                          {projectBrief.date.split('-')[0]}
                         </time>
                       </dd>
                     </div>
                     <div className="border-t px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
                       <dt className="font-semibold">Status</dt>
                       <dd className="text-muted-foreground">
-                        {caseStudy.status}
+                        {projectBrief.status}
                       </dd>
                     </div>
                     <div className="border-t px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
                       <dt className="font-semibold">Service</dt>
                       <dd className="text-muted-foreground">
-                        {caseStudy.service}
+                        {projectBrief.service}
                       </dd>
                     </div>
                   </dl>
@@ -70,7 +70,7 @@ export default async function CaseStudyLayout({
             <div className="border-y">
               <div className="-my-px mx-auto max-w-[76rem] bg-background">
                 <GrayscaleTransitionImage
-                  {...caseStudy.image}
+                  {...projectBrief.image}
                   quality={90}
                   className="w-full"
                   sizes="(min-width: 1216px) 76rem, 100vw"

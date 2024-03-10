@@ -83,7 +83,7 @@ export type ProjectStatus =
   | 'Fixing'
   | 'Done';
 
-export interface CaseStudy {
+export interface ProjectBrief {
   partner?: boolean;
   status?: ProjectStatus;
   client: string;
@@ -101,6 +101,7 @@ export interface CaseStudy {
     };
     content: string;
   };
+  readMoreButtonText: string;
 }
 
 export function loadArticles() {
@@ -111,6 +112,6 @@ export function loadAiPosts() {
   return loadEntries<AiPost>('mdx', 'article');
 }
 
-export function loadCaseStudies() {
-  return loadEntries<CaseStudy>('showcase', 'caseStudy');
+export function loadProjectBriefs() {
+  return loadEntries<ProjectBrief>('showcase', 'projectBrief');
 }

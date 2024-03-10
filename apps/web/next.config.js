@@ -51,7 +51,13 @@ async function createConfig() {
             new RegExp(
               `^${escapeStringRegexp(path.resolve('src/app/(site)/showcase'))}`,
             ),
-            [[remarkMDXLayout, 'src/app/(site)/showcase/wrapper', 'caseStudy']],
+            [
+              [
+                remarkMDXLayout,
+                'src/ui/showcase/showcase-wrapper.tsx',
+                'projectBrief',
+              ],
+            ],
           ],
         ],
       ],
