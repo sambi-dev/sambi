@@ -21,7 +21,7 @@ interface WarningProps {
 
 function Warning({ client, children }: WarningProps) {
   return (
-    <figure className="rounded-4xl border bg-card p-8 shadow">
+    <figure className="rounded-4xl border bg-card p-8 shadow-md">
       <blockquote>
         <p className="text-lg tracking-tight text-muted-foreground before:content-['“'] after:content-['”']">
           {children}

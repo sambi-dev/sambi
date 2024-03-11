@@ -6,6 +6,7 @@ import { buttonVariants } from '@sambi/ui/button';
 
 import { siteConfig } from '#/config/site';
 import sambiLogo from '#/images/avatars/sambi-logo.png';
+import { ArrowIcon } from '#/ui/shared/icons';
 
 export function Tldr() {
   return (
@@ -16,7 +17,7 @@ export function Tldr() {
     >
       <div className="relative mx-auto max-w-5xl pt-16 sm:px-6">
         <div className="sm:rounded-6xl bg-card pt-px">
-          <div className="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-muted md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
+          <div className="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-muted shadow-md dark:shadow-[#09090b] md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
             <Image
               className="absolute inset-0 h-full w-full object-cover"
               src={sambiLogo}
@@ -66,6 +67,7 @@ export function Tldr() {
                 className={cn(buttonVariants(), 'w-full md:w-auto')}
               >
                 Let&apos;s talk
+                <ArrowIcon className=" ml-2 w-3 flex-none fill-current" />
               </Link>
             </p>
           </div>

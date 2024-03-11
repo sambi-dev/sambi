@@ -4,7 +4,9 @@ import Link from 'next/link';
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
 
+import { FadeIn } from '#/ui/fade-in';
 import { PageIntro } from '#/ui/page-intro';
+import { ArrowIcon } from '#/ui/shared/icons';
 
 interface ComingSoonProps {
   eyebrow: string;
@@ -25,15 +27,16 @@ export default function ComingSoon({
         <PageIntro eyebrow={eyebrow} title={title} centered={true}>
           {children}
         </PageIntro>
-        <div className="mt-10 flex items-center justify-center gap-x-6">
+        <FadeIn className="mt-10 flex items-center justify-center gap-x-6">
           <Link
             href="/showcase"
             aria-label="Visit our showcase page"
             className={cn(buttonVariants())}
           >
             {buttonText}
+            <ArrowIcon className=" ml-2 w-3 flex-none fill-current" />
           </Link>
-        </div>
+        </FadeIn>
       </div>
     </div>
   );

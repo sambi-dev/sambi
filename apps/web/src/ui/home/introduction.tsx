@@ -4,7 +4,7 @@ import { buttonVariants } from '@sambi/ui/button';
 import { siteConfig } from '#/config/site';
 import { FadeIn } from '#/ui/fade-in';
 import { Container } from '#/ui/shared/container';
-import { CheckIcon } from '#/ui/shared/icons';
+import { ArrowIcon, CheckIcon } from '#/ui/shared/icons';
 
 export function Introduction() {
   return (
@@ -116,6 +116,7 @@ export function Introduction() {
               )}
             >
               Let&apos;s do this
+              <ArrowIcon className=" ml-2 w-3 flex-none fill-current" />
             </a>
           </div>
         </FadeIn>
