@@ -332,9 +332,6 @@ importers:
       remark-gfm:
         specifier: ^4.0.0
         version: 4.0.0
-      remark-rehype-wrap:
-        specifier: 0.0.3
-        version: 0.0.3
       remark-unwrap-images:
         specifier: ^4.0.0
         version: 4.0.0
@@ -6710,10 +6707,6 @@ packages:
     resolution: {integrity: sha512-DRQrD6gJyy8FbiE4s+bDoXS9hiW3Vbx5uCdwvcCf3zLHL+Iv7LtGHLpr+GZV8rHG8tK766FGYBwRbu8pELTt+w==}
     dev: false
 
-  /boolbase@1.0.0:
-    resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
-    dev: false
-
   /bplist-creator@0.1.0:
     resolution: {integrity: sha512-sXaHZicyEEmY86WyueLTQesbeoH/mquvarJaQNbjuOQO+7gbFcDEWqKmcWA4cOTLzFlfgvkiVxolk1k5bBIpmg==}
     dependencies:
@@ -7447,10 +7440,6 @@ packages:
   /crypto-random-string@2.0.0:
     resolution: {integrity: sha512-v1plID3y9r/lPhviJ1wrXpLeyUIGAZ2SHNYTEapm7/8A9nLPoyvVp3RK/EPFqn5kEznyWgYZNsRtYYIWbuG8KA==}
     engines: {node: '>=8'}
-    dev: false
-
-  /css-selector-parser@1.4.1:
-    resolution: {integrity: sha512-HYPSb7y/Z7BNDCOrakL4raGO2zltZkbeXyAd6Tg9obzix6QhzxCotdBl6VT0Dv4vZfJGVz3WL/xaEI9Ly3ul0g==}
     dev: false
 
   /cssesc@3.0.0:
@@ -12280,12 +12269,6 @@ packages:
       set-blocking: 2.0.0
     dev: true
 
-  /nth-check@2.1.1:
-    resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
-    dependencies:
-      boolbase: 1.0.0
-    dev: false
-
   /nullthrows@1.1.1:
     resolution: {integrity: sha512-2vPPEi+Z7WqML2jZYddDIfy5Dqb0r2fze2zTxNNknZaFpVHU3mFB3R+DWeJWGVx0ecvttSGlJTI+WG+8Z4cDWw==}
     dev: false
@@ -13687,12 +13670,6 @@ packages:
       unified: 11.0.4
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /remark-rehype-wrap@0.0.3:
-    resolution: {integrity: sha512-hNZ7epC6wFvNWDyPFNTrMzhk7leJSnaGRYZ2y4/YDRalzA0M2jha27wBiKnIQvWGW8vn1bDmSYOAG2grs6uPog==}
-    dependencies:
-      unist-util-select: 4.0.3
     dev: false
 
   /remark-rehype@11.1.0:
@@ -15334,15 +15311,6 @@ packages:
     dependencies:
       '@types/unist': 3.0.2
       unist-util-visit: 5.0.0
-    dev: false
-
-  /unist-util-select@4.0.3:
-    resolution: {integrity: sha512-1074+K9VyR3NyUz3lgNtHKm7ln+jSZXtLJM4E22uVuoFn88a/Go2pX8dusrt/W+KWH1ncn8jcd8uCQuvXb/fXA==}
-    dependencies:
-      '@types/unist': 2.0.10
-      css-selector-parser: 1.4.1
-      nth-check: 2.1.1
-      zwitch: 2.0.4
     dev: false
 
   /unist-util-stringify-position@3.0.3:

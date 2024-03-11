@@ -179,7 +179,10 @@ export const MDXComponents = {
     ...props
   }: React.ComponentPropsWithoutRef<'strong'>) => (
     <strong
-      className={cn('font-semibold text-primary', className)}
+      className={cn(
+        'font-mono font-bold tracking-tighter text-primary',
+        className,
+      )}
       {...props}
     />
   ),
