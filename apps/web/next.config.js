@@ -9,7 +9,6 @@ import escapeStringRegexp from 'escape-string-regexp';
 import _jiti from 'jiti';
 import { recmaImportImages } from 'recma-import-images';
 import remarkGfm from 'remark-gfm';
-import { remarkRehypeWrap } from 'remark-rehype-wrap';
 import remarkUnwrapImages from 'remark-unwrap-images';
 import shiki from 'shiki';
 import { unifiedConditional } from 'unified-conditional';
@@ -65,6 +64,7 @@ async function createConfig() {
   });
 
   return withMDX({
+    experimental: { optimizeCss: true },
     reactStrictMode: true,
     transpilePackages: [
       '@sambi/api',
