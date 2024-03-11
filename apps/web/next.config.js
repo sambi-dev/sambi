@@ -64,7 +64,6 @@ async function createConfig() {
   });
 
   return withMDX({
-    experimental: { optimizeCss: true },
     reactStrictMode: true,
     transpilePackages: [
       '@sambi/api',
