@@ -48,7 +48,7 @@ function PageLink({ page }: { page: Page }) {
           )}
         >
           {page.readMoreButtonText}
-          <ArrowIcon className=" ml-2 w-3 flex-none fill-current" />
+          <ArrowIcon className="ml-2 w-3 flex-none fill-current" />
         </Link>
       </Border>
     </article>
