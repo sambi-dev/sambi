@@ -25,7 +25,7 @@ function PageLink({ page }: { page: Page }) {
         position="left"
         className="relative flex flex-col items-start pl-8"
       >
-        <h3 className="mt-6 text-pretty text-2xl font-semibold tracking-tight text-foreground">
+        <h3 className="mt-6 line-clamp-2 h-20 text-pretty font-mono text-2xl font-medium tracking-tighter text-foreground">
           {page.title}
         </h3>
         <time
@@ -67,9 +67,12 @@ export function PageLinks({
   className?: string;
 }) {
   return (
-    <div className={cn('relative pt-24 sm:pt-32 lg:pt-40', className)}>
-      <div className="absolute inset-x-0 top-0 -z-10 h-[884px] overflow-hidden rounded-t-4xl bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-background via-primary/30 to-background" />
-
+    <div
+      className={cn(
+        'relative rounded-t-4xl bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-background via-primary/20 to-background py-24 sm:py-32 lg:py-40',
+        className,
+      )}
+    >
       <SectionIntro title={title} smaller>
         {intro && <p>{intro}</p>}
       </SectionIntro>

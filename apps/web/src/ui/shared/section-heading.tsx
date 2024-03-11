@@ -14,7 +14,10 @@ export function SectionHeading({
       )}
       {...props}
     >
-      <span className="text-sm font-bold" aria-hidden="true">
+      <span
+        className="font-mono text-sm font-medium tracking-tighter"
+        aria-hidden="true"
+      >
         {number.padStart(2, '0')}
       </span>
       <span className="ml-3 h-3.5 w-px bg-primary/80" />

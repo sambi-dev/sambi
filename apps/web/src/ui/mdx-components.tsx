@@ -79,7 +79,7 @@ export const MDXComponents = {
   }) {
     return (
       <Border position="left" className={cn('my-10 pl-8', className)}>
-        <p className="text-sm font-bold uppercase tracking-widest text-primary">
+        <p className="font-mono text-sm font-bold uppercase tracking-widest text-primary">
           Top tip
         </p>
         <div className="mt-4">{children}</div>
@@ -91,7 +91,7 @@ export const MDXComponents = {
     // eslint-disable-next-line jsx-a11y/heading-has-content
     <h1
       className={cn(
-        'mt-2 scroll-m-20 text-4xl font-bold tracking-tight text-foreground',
+        'mt-2 scroll-m-20 font-mono text-5xl font-medium tracking-tighter text-foreground',
         className,
       )}
       {...props}
@@ -102,7 +102,7 @@ export const MDXComponents = {
     // eslint-disable-next-line jsx-a11y/heading-has-content
     <h2
       className={cn(
-        'mt-10 scroll-m-20 pb-1 text-3xl font-semibold tracking-tight text-foreground first:mt-0',
+        'mt-10 scroll-m-20 pb-1 font-mono text-4xl font-medium tracking-tighter text-foreground first:mt-0',
         className,
       )}
       {...props}
@@ -113,7 +113,7 @@ export const MDXComponents = {
     // eslint-disable-next-line jsx-a11y/heading-has-content
     <h3
       className={cn(
-        'mt-8 scroll-m-20 text-2xl font-semibold tracking-tight text-foreground',
+        'mt-8 scroll-m-20 font-mono text-3xl font-medium tracking-tighter text-foreground',
         className,
       )}
       {...props}
@@ -124,7 +124,7 @@ export const MDXComponents = {
     // eslint-disable-next-line jsx-a11y/heading-has-content
     <h4
       className={cn(
-        'mt-8 scroll-m-20 text-xl font-semibold tracking-tight text-foreground',
+        'mt-8 scroll-m-20 font-mono text-2xl font-semibold tracking-tighter text-foreground',
         className,
       )}
       {...props}
@@ -135,7 +135,7 @@ export const MDXComponents = {
     // eslint-disable-next-line jsx-a11y/heading-has-content
     <h5
       className={cn(
-        'mt-8 scroll-m-20 text-lg font-semibold tracking-tight text-foreground',
+        'mt-8 scroll-m-20 font-mono text-xl font-semibold tracking-tighter text-foreground',
         className,
       )}
       {...props}
@@ -146,7 +146,7 @@ export const MDXComponents = {
     // eslint-disable-next-line jsx-a11y/heading-has-content
     <h6
       className={cn(
-        'mt-8 scroll-m-20 text-base font-semibold tracking-tight text-foreground',
+        'mt-8 scroll-m-20 font-mono text-lg font-bold tracking-tighter text-foreground',
         className,
       )}
       {...props}

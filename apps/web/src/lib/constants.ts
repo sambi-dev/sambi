@@ -13,18 +13,18 @@ export const ensureStartsWith = (stringToCheck: string, startsWith: string) =>
     : `${startsWith}${stringToCheck}`;
 
 export const userColors = [
-  '#C2F0C2',
-  '#B1F1CB',
-  '#ADF0D4',
-  '#ADF0DD',
-  '#B6ECF7',
-  '#C2E6FF',
-  '#D6E1FF',
-  '#E0DFFE',
-  '#E2DDFE',
-  '#AFB5AD',
-  '#ADB5B2',
-  '#B5B2BC',
+  '#fffc85',
+  '#fffc85',
+  '#fff446',
+  '#fef2c3',
+  '#fee78a',
+  '#fdd847',
+  '#dcfce7',
+  '#bbf7d0',
+  '#86efab',
+  '#eafccb',
+  '#d7f99d',
+  '#bef264',
 ];
 
 export function formatDate(dateString: string): string {

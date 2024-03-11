@@ -9,7 +9,7 @@ export default function Crew() {
     <div className="py-24 md:py-32">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">
         <div className="max-w-2xl xl:col-span-2">
-          <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          <h2 className="font-mono text-3xl font-medium tracking-tighter text-foreground sm:text-4xl">
             Meet the crew
           </h2>
           <p className="mt-6 text-lg leading-8 text-muted-foreground">
@@ -30,7 +30,7 @@ export default function Crew() {
                 alt={`A notion styled illustration representing a headshot of ${person.name}`}
               />
               <div className="max-w-xl flex-auto">
-                <h3 className="text-lg font-semibold leading-8 tracking-tight text-foreground">
+                <h3 className="font-mono text-lg font-medium tracking-tighter text-foreground">
                   {person.name}
                 </h3>
                 <p className="text-base leading-7 text-primary">

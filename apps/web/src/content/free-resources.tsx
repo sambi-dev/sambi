@@ -20,10 +20,10 @@ export const freeResources: FreeResource[] = [
   {
     title: 'Blog & insights',
     description:
-      'We spill the beans on everything we do and why. From our big wins to our hilarious facepalms.',
+      'We spill the beans on everything we do and why. Sometimes we overshare. From our big wins to our hilarious facepalms.',
     image: function BlogImage() {
       return (
-        <div className="absolute inset-0 flex items-center justify-center bg-primary/80">
+        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-primary to-primary/50">
           <Image src={blogImage} alt="" unoptimized />
         </div>
       );
@@ -38,7 +38,7 @@ export const freeResources: FreeResource[] = [
       'A transparent collaboration with top AI models to generate high-quality content to answer tough questions.',
     image: function AiBlogImage() {
       return (
-        <div className="absolute inset-0 flex items-center justify-center bg-primary/80">
+        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-primary to-primary/50">
           <Image className="relative" src={aiImage} alt="" unoptimized />
         </div>
       );
@@ -53,7 +53,7 @@ export const freeResources: FreeResource[] = [
       'Our digital campfire where we gather to swap tales, tips, and the occasional dad joke. Safe, moderated, and full of fire.',
     image: function DiscordImage() {
       return (
-        <div className="absolute inset-0 flex items-center justify-center bg-primary/80">
+        <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-b from-primary to-primary/50">
           <Image src={discordImage} alt="" unoptimized />
         </div>
       );

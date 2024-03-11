@@ -28,12 +28,12 @@ export default async function BlogPostWrapper({
       <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
         <FadeIn>
           <header className="mx-auto flex max-w-5xl flex-col text-center">
-            <h1 className="mt-6 text-5xl font-semibold tracking-tight text-foreground [text-wrap:balance] sm:text-6xl">
+            <h1 className="mt-6 font-mono text-5xl font-medium tracking-tighter text-foreground [text-wrap:balance] sm:text-6xl">
               {post.title}
             </h1>
             <time
               dateTime={post.date}
-              className="order-first block text-sm font-semibold uppercase tracking-widest text-primary"
+              className="order-first block font-mono text-sm font-bold uppercase tracking-widest text-primary"
             >
               {formatDate(post.date)}
             </time>
@@ -43,11 +43,11 @@ export default async function BlogPostWrapper({
                 alt={`Image of ${post.author.name}`}
                 className="h-6 w-6 flex-none rounded-full bg-background grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
               />
-              <span className="text-sm font-medium text-secondary-foreground">
+              <span className="font-mono text-sm font-medium tracking-tighter text-secondary-foreground">
                 {post.author.name}
               </span>
               <span className="text-sm text-secondary-foreground">::</span>
-              <span className="text-sm font-medium uppercase text-primary">
+              <span className="font-mono text-sm font-medium uppercase tracking-tighter text-primary">
                 #{post.category}
               </span>
             </div>

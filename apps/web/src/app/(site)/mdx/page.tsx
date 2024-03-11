@@ -50,12 +50,12 @@ export default async function AiBlog() {
                   <Border className="pt-16">
                     <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                       <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
-                        <h2 className="max-w-2xl text-pretty text-2xl font-semibold tracking-tight text-foreground hover:text-primary">
+                        <h2 className="max-w-2xl text-pretty font-mono text-2xl font-medium tracking-tighter text-foreground hover:text-primary">
                           <Link href={aiPost.href}>{aiPost.title}</Link>
                         </h2>
                         <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
                           <dt className="sr-only">Published</dt>
-                          <dd className="absolute left-0 top-0 text-sm text-primary lg:static">
+                          <dd className="absolute left-0 top-0 font-mono text-sm uppercase text-primary lg:static">
                             <time dateTime={aiPost.date}>
                               {formatDate(aiPost.date)}
                             </time>
@@ -66,11 +66,11 @@ export default async function AiBlog() {
                               <Image
                                 alt=""
                                 {...aiPost.llm.image}
-                                className="h-12 w-12 object-cover grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-150"
+                                className="h-12 w-12 object-cover grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
                               />
                             </div>
                             <div className="text-sm text-muted-foreground">
-                              <div className="font-semibold">
+                              <div className="font-mono font-medium tracking-tighter">
                                 {aiPost.llm.company}
                               </div>
                               <div className="text-primary">

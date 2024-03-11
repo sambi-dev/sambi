@@ -37,10 +37,10 @@ export function Resources() {
                 <freeResource.image />
               </div>
               <div>
-                <h3 className="text-xl font-semibold tracking-tight text-foreground">
+                <h3 className="font-mono text-lg font-bold tracking-tighter text-foreground">
                   {freeResource.title}
                 </h3>
-                <p className="mt-2 text-muted-foreground">
+                <p className="mt-2 text-sm text-muted-foreground">
                   {freeResource.description}
                 </p>
               </div>

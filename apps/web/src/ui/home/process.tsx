@@ -38,15 +38,15 @@ export function Process() {
           <ol className="grid grid-cols-1 gap-x-8 gap-y-10 [counter-reset:step] sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step) => (
               <li key={step.title} className="[counter-increment:step]">
-                <div className="relative flex h-44 items-center justify-center rounded-2xl bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-foreground via-muted to-foreground px-6 shadow-lg dark:bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] dark:from-background dark:via-primary dark:to-background">
+                <div className="relative flex h-44 items-center justify-center rounded-2xl bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] from-primary via-card to-primary px-6 shadow-lg dark:bg-[conic-gradient(at_top,_var(--tw-gradient-stops))] dark:from-background dark:via-primary dark:to-background">
                   <div className="flex overflow-hidden rounded-lg shadow-sm">
                     <Image src={step.image} alt="" unoptimized />
                   </div>
                 </div>
-                <h3 className="mt-8 text-xl font-semibold tracking-tight text-primary before:mb-2 before:block before:text-base before:font-bold before:text-secondary-foreground before:content-[counter(step,decimal-leading-zero)]">
+                <h3 className="mt-8 font-mono text-lg font-bold tracking-tighter text-primary before:mb-2 before:block before:font-mono before:text-base before:text-secondary-foreground before:content-[counter(step,decimal-leading-zero)]">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-pretty text-muted-foreground">
+                <p className="mt-2 text-pretty text-sm text-muted-foreground">
                   {step.description}
                 </p>
                 <div className="mt-6 flex">

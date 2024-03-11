@@ -19,7 +19,6 @@ import { buttonVariants } from '@sambi/ui/button';
 import { siteConfig } from '#/config/site';
 import { Footer } from '#/ui/layout/footer';
 import { Logo, Logomark } from '#/ui/logo';
-import { Offices } from '#/ui/offices';
 import { Container } from '#/ui/page-container';
 import { BurgerMenuIcon, CloseMenuIcon } from '#/ui/shared/icons';
 import { SocialMedia } from '#/ui/social-media';
@@ -92,7 +91,7 @@ function Header({
               className={cn(
                 'h-6 w-6',
                 invert
-                  ? 'fill-zinc-50 group-hover:fill-zinc-200'
+                  ? 'fill-[#09090B] group-hover:fill-[#09090B]/80'
                   : 'fill-foreground group-hover:fill-foreground/80',
               )}
             />
@@ -105,7 +104,7 @@ function Header({
 
 function NavigationRow({ children }: { children: React.ReactNode }) {
   return (
-    <div className="even:mt-px dark:bg-[#182524] sm:bg-[#121117]">
+    <div className="even:mt-px sm:bg-[#F5C000]">
       <Container>
         <div className="grid grid-cols-1 sm:grid-cols-2">{children}</div>
       </Container>
@@ -123,23 +122,23 @@ function NavigationItem({
   return (
     <Link
       href={href}
-      className="group relative isolate -mx-6 bg-[#121117] px-6 py-10 even:mt-px dark:bg-[#182524] sm:mx-0 sm:px-0 sm:py-16 sm:odd:pr-16 sm:even:mt-0 sm:even:border-l sm:even:border-[#24232F] sm:even:pl-16 dark:sm:even:border-[#2D2B3B]"
+      className="group relative isolate -mx-6 bg-[#F5C000] px-6 py-10 text-[#1E1E20] even:mt-px hover:text-[#FBFAF9] dark:hover:text-[#09090B] sm:mx-0 sm:px-0 sm:py-16 sm:odd:pr-16 sm:even:mt-0 sm:even:border-l sm:even:border-[#09090B]/10 sm:even:pl-16"
     >
       {children}
-      <span className="absolute inset-y-0 -z-10 w-screen bg-primary opacity-0 transition group-odd:right-0 group-even:left-0 group-hover:opacity-100 dark:bg-alternate" />
+      <span className="absolute inset-y-0 -z-10 w-screen bg-primary opacity-0 transition group-odd:right-0 group-even:left-0 group-hover:opacity-100 dark:bg-primary" />
     </Link>
   );
 }
 
 function Navigation() {
   return (
-    <nav className="mt-px text-5xl font-medium tracking-tight text-white">
+    <nav className="mt-px font-mono text-5xl font-medium tracking-tight">
       <NavigationRow>
         <NavigationItem href="/showcase">Showcase</NavigationItem>
-        <NavigationItem href="/about">About Us</NavigationItem>
+        <NavigationItem href="/about">About</NavigationItem>
       </NavigationRow>
       <NavigationRow>
-        <NavigationItem href="/process">Our Process</NavigationItem>
+        <NavigationItem href="/process">Process</NavigationItem>
         <NavigationItem href="/blog">Blog</NavigationItem>
       </NavigationRow>
     </nav>
@@ -198,16 +197,13 @@ function MainLayoutInner({ children }: { children: React.ReactNode }) {
           layout
           id={panelId}
           style={{ height: expanded ? 'auto' : '0.5rem' }}
-          className="relative z-50 overflow-hidden bg-[#121117] pt-2 dark:bg-[#182524]"
+          className="relative z-50 overflow-hidden bg-[#F5C000] pt-2"
           aria-hidden={expanded ? undefined : 'true'}
           // @ts-expect-error (https://github.com/facebook/react/issues/17157)
           inert={expanded ? undefined : ''}
         >
-          <motion.div layout className="bg-[#24232F] dark:bg-[#2D2B3B]">
-            <div
-              ref={navRef}
-              className="bg-[#121117] pb-16 pt-14 dark:bg-[#182524]"
-            >
+          <motion.div layout className="bg-[#09090B]/10">
+            <div ref={navRef} className="bg-[#F5C000] pb-16 pt-14">
               <Header
                 invert
                 panelId={panelId}
@@ -223,20 +219,11 @@ function MainLayoutInner({ children }: { children: React.ReactNode }) {
               />
             </div>
             <Navigation />
-            <div className="relative bg-[#121117] before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-[#24232F] dark:bg-[#182524] dark:before:bg-[#2D2B3B]">
+            <div className="relative bg-[#F5C000] before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-[#09090B]/10">
               <Container>
                 <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
-                  <div>
-                    <h2 className="text-base font-semibold text-white">
-                      Working remotely from
-                    </h2>
-                    <Offices
-                      invert
-                      className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-3"
-                    />
-                  </div>
-                  <div className="sm:border-l sm:border-transparent sm:pl-16">
-                    <h2 className="text-base font-semibold text-white">
+                  <div className="sm:border-l sm:border-transparent">
+                    <h2 className="font-mono text-base font-bold tracking-tighter text-[#141414]">
                       Follow us
                     </h2>
                     <SocialMedia className="mt-6" invert />

@@ -1,7 +1,7 @@
-import analyzeImage from '#/images/screencasts/analyze.jpg';
-import buildImage from '#/images/screencasts/build.jpg';
-import definitionImage from '#/images/screencasts/design.jpg';
-import discoveryImage from '#/images/screencasts/discovery.jpg';
+import analyzeImage from '#/images/process/analyze.jpg';
+import buildImage from '#/images/process/build.jpg';
+import definitionImage from '#/images/process/design.jpg';
+import discoveryImage from '#/images/process/discovery.jpg';
 
 interface ProcessStep {
   title: string;
@@ -28,7 +28,7 @@ export const processSteps: ProcessStep[] = [
   {
     title: 'Build & execute',
     description:
-      'We design, build, and then release an MVP way too early to get feedback. Iteration is just a fancy word for fixing our mistakes',
+      'We design, build, and then release an MVP way too early. We say we do it to get feedback. Iteration is just a fancy word for fixing our mistakes',
     image: buildImage,
     ctaText: 'Go deeper',
   },
@@ -37,6 +37,6 @@ export const processSteps: ProcessStep[] = [
     description:
       "We use terms like data-driven, validate, and scale to stay fresh. Experiments sound better than admitting we're still figuring it out.",
     image: analyzeImage,
-    ctaText: 'Read more',
+    ctaText: 'Analyze this',
   },
 ];

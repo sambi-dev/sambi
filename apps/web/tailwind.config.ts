@@ -1,6 +1,6 @@
 import type { Config } from 'tailwindcss';
 
-import defaultTheme from 'tailwindcss/defaultTheme';
+import { fontFamily } from 'tailwindcss/defaultTheme';
 
 import baseConfig from '@sambi/tailwind-config/web';
 
@@ -34,7 +34,8 @@ export default {
         '6xl': '5.5rem',
       },
       fontFamily: {
-        sans: ['var(--font-bricolage)', ...defaultTheme.fontFamily.sans],
+        sans: ['var(--font-geist-sans)', ...fontFamily.sans],
+        mono: ['var(--font-geist-mono)', ...fontFamily.mono],
       },
     },
   },

@@ -15,11 +15,11 @@ export function Introduction() {
     >
       <Container className="text-lg tracking-tight text-muted-foreground">
         <FadeIn>
-          <p className="text-5xl font-bold tracking-tight text-foreground">
+          <p className="text-pretty font-mono text-4xl font-medium tracking-tighter text-foreground">
             Ambreen gushes, Rebekah agrees, and Sam? He&apos;s never happy but
             that&apos;s our thing
           </p>
-          <p className="mt-4 text-2xl font-semibold text-primary">
+          <p className="mt-4 font-mono text-2xl font-medium tracking-tighter text-primary">
             Ever have a shower thought so good, it makes the soap sing?
           </p>
           <p className="mt-4">
@@ -51,7 +51,7 @@ export function Introduction() {
               'Can I get all this done with promo codes and free trials?',
             ].map((question) => (
               <li key={question} className="flex">
-                <CheckIcon className="h-8 w-8 flex-none fill-alternate" />
+                <CheckIcon className="h-8 w-8 flex-none fill-primary" />
                 <span className="ml-4">{question}</span>
               </li>
             ))}

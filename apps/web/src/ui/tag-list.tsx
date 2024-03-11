@@ -20,7 +20,7 @@ export function TagListItem({
   return (
     <li
       className={cn(
-        'rounded-full border border-primary px-4 py-1.5 text-base text-primary',
+        'rounded-full border border-primary px-4 py-1.5 font-mono text-sm font-medium tracking-tighter text-primary',
         className,
       )}
     >

@@ -51,9 +51,12 @@ export function Showcase({
                     />
                   </Link>
                 </h3>
-                <div className="mt-6 flex gap-x-2 text-sm text-primary">
-                  <p className="text-alternate">{projectBrief.client}</p>
-                  <span className="text-foreground" aria-hidden="true">
+                <div className="mt-6 flex gap-x-2 font-mono text-sm font-bold tracking-tighter text-secondary-foreground">
+                  <p className=" text-primary">{projectBrief.client}</p>
+                  <span
+                    className="text-secondary-foreground"
+                    aria-hidden="true"
+                  >
                     ::
                   </span>
                   <time dateTime={projectBrief.date.split('-')[0]}>
@@ -64,10 +67,10 @@ export function Showcase({
                   </span>
                   <span>{projectBrief.service}</span>
                 </div>
-                <p className="mt-6 grow text-lg font-semibold leading-tight tracking-tight text-foreground lg:text-xl">
+                <p className="mt-6 grow font-mono text-lg font-bold tracking-tighter text-foreground">
                   {projectBrief.title}
                 </p>
-                <p className="mt-4 line-clamp-2 text-base text-muted-foreground">
+                <p className="mt-4 line-clamp-2 text-sm text-muted-foreground">
                   {projectBrief.description}
                 </p>
               </article>
