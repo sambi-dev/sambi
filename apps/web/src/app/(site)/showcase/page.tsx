@@ -55,7 +55,7 @@ export default async function Work() {
           Sometimes the heat was direct{' '}
           <span className="line-through">and hot</span> or thankfully via a
           partner
-          <span className="text-alternate">*</span>.
+          <span className="text-primary">*</span>.
         </p>
       </Clients>
 

@@ -37,13 +37,17 @@ export default async function ProjectBriefWrapper({
                 <div className="mx-auto max-w-5xl">
                   <dl className="-mx-6 grid grid-cols-1 text-sm text-secondary-foreground sm:mx-0 sm:grid-cols-4">
                     <div className="border-t px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
-                      <dt className="font-semibold">Client</dt>
+                      <dt className="font-mono font-bold tracking-tighter">
+                        Client
+                      </dt>
                       <dd className="text-muted-foreground">
                         {projectBrief.client}
                       </dd>
                     </div>
                     <div className="border-t px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
-                      <dt className="font-semibold">Year</dt>
+                      <dt className="font-mono font-bold tracking-tighter">
+                        Year
+                      </dt>
                       <dd className="text-muted-foreground">
                         <time dateTime={projectBrief.date.split('-')[0]}>
                           {projectBrief.date.split('-')[0]}
@@ -51,13 +55,17 @@ export default async function ProjectBriefWrapper({
                       </dd>
                     </div>
                     <div className="border-t px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
-                      <dt className="font-semibold">Status</dt>
+                      <dt className="font-mono font-bold tracking-tighter">
+                        Status
+                      </dt>
                       <dd className="text-muted-foreground">
                         {projectBrief.status}
                       </dd>
                     </div>
                     <div className="border-t px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
-                      <dt className="font-semibold">Service</dt>
+                      <dt className="font-mono font-bold tracking-tighter">
+                        Service
+                      </dt>
                       <dd className="text-muted-foreground">
                         {projectBrief.service}
                       </dd>

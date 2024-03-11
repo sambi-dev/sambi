@@ -38,10 +38,14 @@ function BlockquoteWithImage({
         />
       </div>
       <figcaption className="text-sm text-secondary-foreground sm:col-span-7 sm:row-start-3 sm:text-base">
-        <span className="font-semibold">{author.name}</span>
+        <span className="font-mono font-medium tracking-tighter">
+          {author.name}
+        </span>
         <span className="hidden font-semibold sm:inline"> • </span>
         <br className="sm:hidden" />
-        <span className="text-primary sm:font-semibold">{author.role}</span>
+        <span className="font-mono tracking-tighter text-primary sm:font-semibold">
+          {author.role}
+        </span>
       </figcaption>
     </figure>
   );
@@ -62,7 +66,7 @@ function BlockquoteWithoutImage({
         <blockquote className="text-secondary-foreground [&>*]:relative [&>:first-child]:before:absolute [&>:first-child]:before:right-full [&>:first-child]:before:content-['“'] [&>:last-child]:after:content-['”']">
           {typeof children === 'string' ? <p>{children}</p> : children}
         </blockquote>
-        <figcaption className="mt-6 font-semibold text-secondary-foreground">
+        <figcaption className="mt-6 font-mono font-bold tracking-tighter text-secondary-foreground">
           {author.name} • <span className="text-primary">{author.role}</span>
         </figcaption>
       </figure>

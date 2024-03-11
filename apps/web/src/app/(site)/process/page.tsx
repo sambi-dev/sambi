@@ -27,7 +27,7 @@ function Section({
     <Container className="group/section [counter-increment:section]">
       <div className="lg:flex lg:items-center lg:justify-end lg:gap-x-8 lg:group-even/section:justify-start xl:gap-x-20">
         <div className="flex justify-center">
-          <FadeIn className="w-[33.75rem] flex-none lg:w-[45rem]">
+          <FadeIn className="w-[28rem] flex-none lg:w-[45rem]">
             <StylizedImage
               {...image}
               sizes="(min-width: 1024px) 41rem, 31rem"
@@ -38,10 +38,10 @@ function Section({
         <div className="mt-12 lg:mt-0 lg:w-[37rem] lg:flex-none lg:group-even/section:order-first">
           <FadeIn>
             <div
-              className="text-base font-semibold before:text-primary before:content-['/_'] after:text-foreground after:content-[counter(section,decimal-leading-zero)]"
+              className="font-mono text-base font-medium tracking-tighter before:text-primary before:content-['/_'] after:text-foreground after:content-[counter(section,decimal-leading-zero)]"
               aria-hidden="true"
             />
-            <h2 className="mt-2 text-3xl font-semibold text-foreground sm:text-4xl">
+            <h2 className="mt-2 font-mono text-3xl font-medium tracking-tighter text-foreground sm:text-4xl">
               {title}
             </h2>
             <div className="mt-6">{children}</div>
@@ -78,7 +78,7 @@ function Discover() {
         </p>
       </div>
 
-      <h3 className="mt-12 text-base font-semibold text-secondary-foreground">
+      <h3 className="mt-12 font-mono text-base font-bold tracking-tighter text-secondary-foreground">
         Included in this phase
       </h3>
       <TagList className="mt-4">
@@ -158,7 +158,7 @@ function Deliver() {
         </p>
       </div>
 
-      <h3 className="mt-12 text-base font-semibold text-secondary-foreground">
+      <h3 className="mt-12 font-mono text-base font-bold tracking-tighter text-secondary-foreground">
         Included in this phase
       </h3>
       <List className="mt-8">
@@ -181,8 +181,7 @@ function Deliver() {
 
 function Values() {
   return (
-    <div className="relative mt-24 pt-24 sm:mt-32 sm:pt-32 lg:mt-40 lg:pt-40">
-      <div className="absolute inset-x-0 top-0 -z-10 h-[884px] overflow-hidden rounded-t-4xl bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-background via-primary/30 to-background" />
+    <div className="relative mt-24 rounded-t-4xl bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-background via-primary/20 to-background py-24 sm:mt-32 sm:py-32 lg:mt-40 lg:py-40">
       <SectionIntro
         eyebrow="Our values"
         title="Balancing reliability and innovation"

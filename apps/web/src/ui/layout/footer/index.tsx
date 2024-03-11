@@ -23,7 +23,7 @@ export function Footer() {
               <p className="leading-6 text-muted-foreground">
                 {siteConfig.description}
               </p>
-              <div className="flex space-x-6">
+              <div className="flex space-x-4">
                 <SocialMedia />
               </div>
             </div>
@@ -32,7 +32,7 @@ export function Footer() {
             </div>
           </div>
           <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t pt-12">
-            <p className="text-sm text-primary">
+            <p className="font-mono text-sm text-primary">
               © {siteConfig.name}. All Rights Reserved.{' '}
               {new Date().getFullYear()}
             </p>

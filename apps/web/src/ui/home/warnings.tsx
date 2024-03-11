@@ -48,7 +48,7 @@ function Warning({ client, children }: WarningProps) {
               </Link>
             </div>
           ) : (
-            <div className="mt-1 text-sm font-medium tracking-tight text-alternate">
+            <div className="mt-1 text-sm font-medium tracking-tight text-primary">
               {client.role}
             </div>
           )}

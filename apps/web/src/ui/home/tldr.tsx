@@ -27,11 +27,11 @@ export function Tldr() {
           <div className="px-4 py-10 sm:px-10 sm:py-16 md:py-20 lg:px-20 lg:py-32">
             <div
               id="tldr-title"
-              className="mb-6 block text-base font-semibold uppercase tracking-widest text-primary"
+              className="mb-6 block font-mono text-base font-bold uppercase tracking-widest text-primary"
             >
               <h2>TL;DR</h2>
             </div>
-            <p className="mt-8 text-5xl font-bold tracking-tight text-foreground sm:text-6xl">
+            <p className="mt-8 font-mono text-4xl font-medium tracking-tighter text-foreground sm:text-5xl">
               <span className="block text-primary">Your scroll ends here</span>
               Partner with us and join the ranks of{' '}
               <span className="line-through">wtf</span> why did we wait so long?

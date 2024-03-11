@@ -11,7 +11,7 @@ export function Mettle() {
         <p>
           Here&apos;s a bunch of well known clients we&apos;ve worked with or
           for via a partner
-          <span className="text-alternate">*</span>. We put this here to impress
+          <span className="text-primary">*</span>. We put this here to impress
           you so you&apos;ll keep reading. It&apos;s{' '}
           <span className="line-through">foolproof.</span> called social proof
           or something.

@@ -30,7 +30,7 @@ function ClientLogo({ name, Logo, viaPartner }: (typeof clientLogos)[number]) {
               className="mx-auto"
             />
             {viaPartner && (
-              <span className="absolute right-8 top-8 text-lg text-alternate/80">
+              <span className="absolute right-8 top-8 text-lg text-primary/80">
                 *
               </span>
             )}

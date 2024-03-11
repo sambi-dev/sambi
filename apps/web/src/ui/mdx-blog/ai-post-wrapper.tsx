@@ -34,12 +34,12 @@ export default async function AiPostWrapper({
       <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
         <FadeIn>
           <header className="mx-auto flex max-w-5xl flex-col text-center">
-            <h1 className="mt-6 text-5xl font-semibold tracking-tight text-foreground [text-wrap:balance] sm:text-6xl">
+            <h1 className="mt-6 font-mono text-5xl font-medium tracking-tighter text-foreground [text-wrap:balance] sm:text-6xl">
               {aiPost.title}
             </h1>
             <time
               dateTime={aiPost.date}
-              className="order-first block text-sm font-semibold uppercase tracking-widest text-primary"
+              className="order-first block font-mono text-sm font-bold uppercase tracking-widest text-primary"
             >
               {formatDate(aiPost.date)}
             </time>

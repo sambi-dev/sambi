@@ -1,77 +1,67 @@
 @tailwind base;
 
-@font-face {
-  font-family: 'Bricolage';
-  font-weight: 200 900;
-  font-display: block;
-  font-style: normal;
-  src: url('../fonts/bricolage-variable.woff2') format('woff2');
-}
-
 @layer base {
   :root {
-    --background: 220 27% 98%; /* 50 instead of white */
-    --foreground: 220 10% 6%; /* 950 */
+    --background: 30 20% 99%; /* 50 instead of white */
+    --foreground: 240 3% 12%; /* 800 */
 
     --card: 0 0% 100%; /* white */
-    --card-foreground: 220 10% 6%; /* 950 */
+    --card-foreground: 240 3% 12%; /* 800 */
 
     --popover: 0 0% 100%; /* white */
-    --popover-foreground: 220 10% 6%; /* 950 */
+    --popover-foreground: 240 3% 12%; /* 800 */
 
-    --primary: 245 15% 44%; /* primary #625F81 */
-    --primary-foreground: 220 27% 98%; /* 50 */
+    --primary: 120 89% 28%; /* primary #359A09 */
+    --primary-foreground: 0 0% 100%; /* white */
 
-    --secondary: 240 5% 92%; /* 100 */
-    --secondary-foreground: 216 16% 16%; /* 800 */
+    --secondary: 330 7% 96%; /* 100 */
+    --secondary-foreground: 240 3% 12%; /* 800 */
 
-    --muted: 240 5% 92%; /* 100 */
-    --muted-foreground: 224 5% 44%; /* 500 */
+    --muted: 330 7% 96%; /* 100 */
+    --muted-foreground: 262 3% 46%; /* 500 */
 
-    --accent: 240 5% 92%; /* 100 */
-    --accent-foreground: 220 5% 12%; /* 900 */
+    --accent: 330 7% 96%; /* 100 */
+    --accent-foreground: 0 0% 8%; /* 900 */
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 220 27% 98%; /* 50 */
+    --destructive-foreground: 30 20% 99%; /* 50 */
 
-    --border: 220 5% 88%; /* 200 */
-    --input: 220 5% 88%; /* 200 */
+    --border: 300 4% 92%; /* 200 */
+    --input: 300 4% 92%; /* 200 */
 
-    --ring: 245 15% 44%; /* primary #625F81 */
-    --alternate: 176 20% 44%; /* alternate #5A8784 */
+    --ring: 120 89% 28%; /* primary #359A09 */
 
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 220 10% 6%; /* 950 */
-    --foreground: 220 27% 98%; /* 50 */
+    --background: 240 10% 4%; /* 950 */
+    --foreground: 330 7% 96%; /* 100 */
 
-    --card: 220 5% 12%; /* 900 */
-    --card-foreground: 220 27% 98%; /* 50 */
+    --card: 0 0% 8%; /* 900 */
+    --card-foreground: 330 7% 96%; /* 100 */
 
-    --popover: 220 10% 6%; /* 950 */
-    --popover-foreground: 220 27% 98%; /* 50 */
+    --popover: 240 10% 4%; /* 950 */
+    --popover-foreground: 330 7% 96%; /* 100 */
 
-    --primary: 244 15% 60%; /* primary-dark #8C8AA8 */
-    --primary-foreground: 220 5% 12%; /* 900 */
+    --primary: 97 71% 45%; /* primary-dark #68C421 */
+    --primary-foreground: 0 0% 8%; /* 900 */
 
-    --secondary: 216 16% 16%; /* 800 */
-    --secondary-foreground: 220 5% 88%; /* 200 */
+    --secondary: 240 3% 12%; /* 800 */
+    --secondary-foreground: 300 4% 92%; /* 200 */
 
-    --muted: 216 16% 16%; /* 800 */
-    --muted-foreground: 220 5% 64%; /* 400 */
+    --muted: 240 3% 12%; /* 800 */
+    --muted-foreground: 240 4% 64%; /* 400 */
 
-    --accent: 216 16% 16%; /* 800 */
-    --accent-foreground: 220 27% 98%; /* 50 */
+    --accent: 240 3% 12%; /* 800 */
+    --accent-foreground: 30 20% 99%; /* 50 */
 
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 220 27% 98%; /* 50 */
+    --destructive-foreground: 30 20% 99%; /* 50 */
 
-    --border: 216 16% 16%; /* 800 */
-    --input: 216 16% 16%; /* 800 */
+    --border: 240 3% 12%; /* 800 */
+    --input: 240 3% 12%; /* 800 */
 
-    --ring: 244 15% 60%; /* primary-dark #8C8AA8 */
-    --alternate: 177 20% 60%; /* alternate #78A5A3 */
+    --ring: 97 71% 45%; /* primary-dark #68C421 */
   }
 }

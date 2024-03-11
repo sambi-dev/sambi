@@ -59,8 +59,8 @@ export function SocialMedia({
   return (
     <ul
       className={cn(
-        'flex gap-x-10',
-        invert ? 'text-white' : 'text-secondary-foreground',
+        'flex gap-x-6',
+        invert ? 'text-[#28282A]' : 'text-secondary-foreground',
         className,
       )}
     >
@@ -74,7 +74,7 @@ export function SocialMedia({
             className={cn(
               'transition',
               invert
-                ? 'hover:text-white/80'
+                ? 'hover:text-[#28282A]/80'
                 : 'hover:text-secondary-foreground/80',
             )}
           >
