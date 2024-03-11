@@ -3,6 +3,7 @@ import { buttonVariants } from '@sambi/ui/button';
 
 import { env } from '#/env';
 import { Container } from '#/ui/shared/container';
+import { ArrowIcon } from '#/ui/shared/icons';
 
 export function Cta() {
   const mailtoLink = `mailto:${env.NEXT_PUBLIC_SAMBI_SUPPORT_EMAIL}?subject=Website%3A%20Brain%20buster%20inquiry&body=Hey%20sambi.dev%20team%2C%20I%20have%20a%20brain%20buster%20for%20you%2C%20here%20it%20is%20%F0%9F%91%87%3A%20`;
@@ -31,9 +32,10 @@ export function Cta() {
             <a
               href={mailtoLink}
               aria-label="Send the sambi.dev team an email with your brain busting question"
-              className={cn(buttonVariants({ size: 'lg' }), 'w-full md:w-auto')}
+              className={cn(buttonVariants(), 'w-full md:w-auto')}
             >
               Get answers
+              <ArrowIcon className=" ml-2 w-3 flex-none fill-current" />
             </a>
           </div>
         </Container>

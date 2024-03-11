@@ -1,6 +1,5 @@
+import { Border } from '#/ui/border';
 import { FadeIn } from '#/ui/fade-in';
-
-import { Border } from '../border';
 
 interface Location {
   name: string;

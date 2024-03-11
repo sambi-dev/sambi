@@ -33,7 +33,7 @@ export function Resources() {
               key={freeResource.title}
               className="grid auto-rows-min grid-cols-1 items-center gap-8 px-3 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-1 xl:px-12"
             >
-              <div className="relative h-48 overflow-hidden rounded-2xl shadow-lg sm:h-60 lg:h-40">
+              <div className="relative h-48 overflow-hidden rounded-2xl shadow-md sm:h-60 lg:h-40">
                 <freeResource.image />
               </div>
               <div>

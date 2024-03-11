@@ -1,9 +1,8 @@
 import { contactMethods } from '#/content/contact-methods';
+import { Border } from '#/ui/border';
 import { FadeIn } from '#/ui/fade-in';
 import { ArrowIcon } from '#/ui/shared/icons';
 import { SocialMedia } from '#/ui/social-media';
-
-import { Border } from '../border';
 
 export default function GetInTouch() {
   return (
