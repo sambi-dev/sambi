@@ -1,6 +1,5 @@
 import { loadProjectBriefs } from '#/lib/mdx';
 import { BigWarning } from '#/ui/home/big-warning';
-import { EmailCta } from '#/ui/home/email-cta';
 import { Hero } from '#/ui/home/hero';
 import { Introduction } from '#/ui/home/introduction';
 import { Mettle } from '#/ui/home/mettle';
@@ -11,6 +10,7 @@ import { Tldr } from '#/ui/home/tldr';
 import { Warnings } from '#/ui/home/warnings';
 import { Footer } from '#/ui/layout/footer';
 import { NavBar } from '#/ui/layout/navbar';
+import { Cta } from '#/ui/shared/cta';
 
 export default async function Home() {
   const projectBriefs = (await loadProjectBriefs()).slice(0, 3);
@@ -24,9 +24,9 @@ export default async function Home() {
       <BigWarning
         id="untestimonial-1"
         author={{
-          name: 'Henri L.',
+          name: 'Peter J.',
           role: 'Founder ',
-          initials: 'HL',
+          initials: 'PJT',
         }}
       >
         <p>
@@ -49,7 +49,7 @@ export default async function Home() {
         </p>
       </BigWarning>
       <Resources />
-      <EmailCta />
+      <Cta />
       <Warnings />
       <Tldr />
       <Footer />
