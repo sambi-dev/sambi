@@ -23,7 +23,10 @@ export default function GetInTouch() {
               linkHref,
               linkText,
             }) => (
-              <div key={title} className="rounded-2xl border bg-card p-10">
+              <div
+                key={title}
+                className="rounded-2xl border bg-card p-10 shadow-md"
+              >
                 <Border position="left" className="pl-8">
                   <h3 className="font-mono text-lg font-bold tracking-tighter text-foreground">
                     {title}
@@ -54,7 +57,7 @@ export default function GetInTouch() {
               </div>
             ),
           )}
-          <div className="rounded-2xl border bg-card p-10">
+          <div className="rounded-2xl border bg-card p-10 shadow-md">
             <h3 className="font-mono text-lg font-bold tracking-tighter text-foreground">
               Connect with us
             </h3>

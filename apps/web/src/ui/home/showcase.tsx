@@ -36,7 +36,7 @@ export function Showcase({
         <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {projectBriefs.map((projectBrief) => (
             <FadeIn key={projectBrief.href} className="flex">
-              <article className="relative flex w-full flex-col rounded-3xl border bg-card p-6 shadow-sm transition hover:bg-primary/20 sm:p-8">
+              <article className="relative flex w-full flex-col rounded-3xl border bg-card p-6 shadow-md transition hover:bg-primary/20 sm:p-8">
                 <h3>
                   <Link
                     href={projectBrief.href}
