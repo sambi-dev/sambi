@@ -24,7 +24,7 @@ export function ProjectBriefs({
   return (
     <Container className="mt-40">
       <FadeIn>
-        <h2 className="font-mono text-2xl font-semibold tracking-tighter text-foreground">
+        <h2 className="font-mono text-2xl font-bold tracking-tighter text-foreground">
           Recent projects
         </h2>
       </FadeIn>
@@ -38,32 +38,27 @@ export function ProjectBriefs({
               <article>
                 <Border className="grid grid-cols-3 gap-x-8 gap-y-8 pt-12">
                   <div className="col-span-full sm:flex sm:items-center sm:justify-between sm:gap-x-8 lg:col-span-1 lg:block">
-                    <dl className="pt-14 lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
-                      <dt className="sr-only">Published</dt>
-                      <dd className="absolute left-0 top-0 font-mono text-sm uppercase text-primary lg:static">
+                    <div className="sm:flex sm:items-center sm:gap-x-6 lg:block">
+                      <Image
+                        src={projectBrief.logo}
+                        alt=""
+                        className="h-12 w-12 rounded-lg border object-cover grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
+                        unoptimized
+                      />
+                      <h3 className="mt-6 font-mono text-sm font-bold text-primary sm:mt-0 lg:mt-8">
+                        {projectBrief.client}
+                      </h3>
+                    </div>
+                    <div className="mt-1 flex gap-x-4 sm:mt-0 lg:block">
+                      <p className="font-mono text-sm tracking-tight text-secondary-foreground after:ml-4 after:font-semibold after:content-['::'] lg:mt-2 lg:after:hidden">
+                        {projectBrief.status}
+                      </p>
+                      <p className="font-mono text-sm uppercase text-secondary-foreground lg:mt-2">
                         <time dateTime={projectBrief.date}>
                           {formatDate(projectBrief.date)}
                         </time>
-                      </dd>
-                      <dt className="sr-only">Author</dt>
-                      <dd className="mt-6 flex gap-x-4">
-                        <div className="flex-none overflow-hidden rounded-xl bg-background">
-                          <Image
-                            alt=""
-                            src={projectBrief.logo}
-                            className="h-12 w-12 object-cover grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
-                          />
-                        </div>
-                        <div className="text-sm text-muted-foreground">
-                          <div className="font-mono font-medium tracking-tighter">
-                            {projectBrief.client}
-                          </div>
-                          <div className="text-primary">
-                            {projectBrief.status}
-                          </div>
-                        </div>
-                      </dd>
-                    </dl>
+                      </p>
+                    </div>
                   </div>
 
                   <div className="col-span-full lg:col-span-2 lg:max-w-2xl">
@@ -72,7 +67,7 @@ export function ProjectBriefs({
                         Via partner
                       </div>
                     )}
-                    <p className="mt-2 text-pretty font-mono text-4xl font-medium tracking-tighter text-foreground hover:text-primary">
+                    <p className="text-pretty font-mono text-4xl font-semibold tracking-tighter text-foreground hover:text-primary">
                       <Link href={projectBrief.href}>{projectBrief.title}</Link>
                     </p>
                     <div className="mt-6 space-y-6 text-base text-muted-foreground">

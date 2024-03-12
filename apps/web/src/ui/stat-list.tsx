@@ -26,7 +26,7 @@ export function StatListItem({
   return (
     <Border as={FadeIn} position="left" className="flex flex-col-reverse pl-8">
       <dt className="mt-2 text-base text-muted-foreground">{label}</dt>
-      <dd className="font-mono text-3xl font-medium tracking-tighter text-foreground sm:text-4xl">
+      <dd className="font-mono text-3xl font-semibold tracking-tighter text-primary sm:text-4xl">
         {value}
       </dd>
     </Border>

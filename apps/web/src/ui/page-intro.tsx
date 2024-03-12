@@ -26,7 +26,7 @@ export function PageIntro({
           <span className="sr-only"> - </span>
           <span
             className={cn(
-              'mt-6 block max-w-5xl font-mono text-5xl font-medium tracking-tighter text-foreground [text-wrap:balance] sm:text-6xl',
+              'mt-6 block max-w-5xl font-mono text-5xl font-semibold tracking-tighter text-foreground [text-wrap:balance] sm:text-6xl',
               centered && 'mx-auto',
             )}
           >
@@ -35,7 +35,7 @@ export function PageIntro({
         </h1>
         <div
           className={cn(
-            'mt-6 max-w-3xl text-xl text-muted-foreground',
+            'mt-6 max-w-3xl text-muted-foreground md:text-lg lg:text-xl',
             centered && 'mx-auto',
           )}
         >

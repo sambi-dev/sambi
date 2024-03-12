@@ -7,7 +7,7 @@ const CanvaLogo = (props: React.ComponentProps<'svg'>) => {
       aria-label="Canva logo"
       viewBox="0 0 257.603 96"
       {...props}
-      className={cn('h-16 w-40 fill-muted-foreground', props.className)}
+      className={cn('h-12 w-28 fill-muted-foreground', props.className)}
     >
       <path
         id="a"

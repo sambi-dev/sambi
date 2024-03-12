@@ -36,13 +36,13 @@
 
   .dark {
     --background: 240 10% 4%; /* 950 */
-    --foreground: 330 7% 96%; /* 100 */
+    --foreground: 30 20% 99%; /* 50 */
 
     --card: 0 0% 8%; /* 900 */
-    --card-foreground: 330 7% 96%; /* 100 */
+    --card-foreground: 30 20% 99%; /* 50 */
 
     --popover: 240 10% 4%; /* 950 */
-    --popover-foreground: 330 7% 96%; /* 100 */
+    --popover-foreground: 30 20% 99%; /* 50 */
 
     --primary: 97 71% 45%; /* primary-dark #68C421 */
     --primary-foreground: 0 0% 8%; /* 900 */

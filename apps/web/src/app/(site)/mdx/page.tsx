@@ -50,36 +50,36 @@ export default async function AiBlog() {
                   <Border className="pt-16">
                     <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                       <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
-                        <h2 className="max-w-2xl text-pretty font-mono text-2xl font-medium tracking-tighter text-foreground hover:text-primary">
+                        <h2 className="max-w-2xl text-pretty font-mono text-3xl font-semibold tracking-tighter text-foreground hover:text-primary md:text-4xl">
                           <Link href={aiPost.href}>{aiPost.title}</Link>
                         </h2>
                         <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
                           <dt className="sr-only">Published</dt>
-                          <dd className="absolute left-0 top-0 font-mono text-sm uppercase text-primary lg:static">
+                          <dd className="absolute left-0 top-0 font-mono text-sm uppercase lg:static">
                             <time dateTime={aiPost.date}>
                               {formatDate(aiPost.date)}
                             </time>
                           </dd>
                           <dt className="sr-only">LLM Model</dt>
                           <dd className="mt-6 flex gap-x-4">
-                            <div className="flex-none overflow-hidden rounded-xl bg-background">
+                            <div className="flex-none overflow-hidden rounded-xl border bg-background">
                               <Image
                                 alt=""
                                 {...aiPost.llm.image}
                                 className="h-12 w-12 object-cover grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
                               />
                             </div>
-                            <div className="text-sm text-muted-foreground">
-                              <div className="font-mono font-medium tracking-tighter">
+                            <div className="text-sm text-secondary-foreground">
+                              <div className="font-mono font-bold tracking-tighter">
                                 {aiPost.llm.company}
                               </div>
-                              <div className="text-primary">
+                              <div className="font-mono text-primary">
                                 {aiPost.llm.model}
                               </div>
                             </div>
                           </dd>
                         </dl>
-                        <p className="mt-6 max-w-2xl text-base text-muted-foreground">
+                        <p className="mt-6 line-clamp-2 max-w-2xl text-muted-foreground md:text-lg">
                           {aiPost.description}
                         </p>
                         <Link

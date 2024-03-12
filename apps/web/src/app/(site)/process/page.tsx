@@ -41,7 +41,7 @@ function Section({
               className="font-mono text-base font-medium tracking-tighter before:text-primary before:content-['/_'] after:text-foreground after:content-[counter(section,decimal-leading-zero)]"
               aria-hidden="true"
             />
-            <h2 className="mt-2 font-mono text-3xl font-medium tracking-tighter text-foreground sm:text-4xl">
+            <h2 className="mt-2 font-mono text-3xl font-semibold tracking-tighter text-foreground sm:text-4xl">
               {title}
             </h2>
             <div className="mt-6">{children}</div>
@@ -55,7 +55,7 @@ function Section({
 function Discover() {
   return (
     <Section title="Discover" image={{ src: imageWhiteboard }}>
-      <div className="space-y-6 text-base text-muted-foreground">
+      <div className="space-y-6 text-sm text-muted-foreground md:text-base">
         <p>
           We work closely with our clients to understand their{' '}
           <strong className="font-semibold text-primary">needs</strong> and
@@ -78,7 +78,7 @@ function Discover() {
         </p>
       </div>
 
-      <h3 className="mt-12 font-mono text-base font-bold tracking-tighter text-secondary-foreground">
+      <h3 className="mt-12 font-mono text-base font-bold tracking-tighter text-secondary-foreground md:text-lg">
         Included in this phase
       </h3>
       <TagList className="mt-4">
@@ -96,7 +96,7 @@ function Discover() {
 function Build() {
   return (
     <Section title="Build" image={{ src: imageLaptop, flipped: true }}>
-      <div className="space-y-6 text-base text-muted-foreground">
+      <div className="space-y-6 text-sm text-muted-foreground md:text-base">
         <p>
           Based off of the discovery phase, we develop a comprehensive roadmap
           for each product and start working towards delivery. The roadmap is an
@@ -119,11 +119,11 @@ function Build() {
       </div>
 
       <Blockquote
-        author={{ name: 'Debra Fiscal', role: 'CEO of Unseal' }}
+        author={{ name: 'David E.', role: 'Advisor to Chair' }}
         className="mt-12"
       >
-        Studio were so regular with their progress updates we almost began to
-        think they were automated!
+        Hire sambi? Only if you&apos;re ready for a situation where &apos;good
+        enough&apos; gets laughed out of the room.
       </Blockquote>
     </Section>
   );
@@ -132,7 +132,7 @@ function Build() {
 function Deliver() {
   return (
     <Section title="Deliver" image={{ src: imageMeeting }}>
-      <div className="space-y-6 text-base text-muted-foreground">
+      <div className="space-y-6 text-sm text-muted-foreground md:text-base">
         <p>
           About halfway through the Build phase, we push each project out by 6
           weeks due to a change in{' '}
@@ -182,11 +182,8 @@ function Deliver() {
 function Values() {
   return (
     <div className="relative mt-24 rounded-t-4xl bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-background via-primary/20 to-background py-24 sm:mt-32 sm:py-32 lg:mt-40 lg:py-40">
-      <SectionIntro
-        eyebrow="Our values"
-        title="Balancing reliability and innovation"
-      >
-        <p>
+      <SectionIntro eyebrow="Our values" title="Reliability and innovation">
+        <p className="text-secondary-foreground md:text-lg">
           We strive to stay at the forefront of emerging trends and
           technologies, while completely ignoring them and forking that old
           Rails project we feel comfortable using. We stand by our core values
@@ -196,30 +193,33 @@ function Values() {
 
       <Container className="mt-24">
         <GridList>
-          <GridListItem title="Meticulous">
-            The first part of any partnership is getting our designer to put
-            your logo in our template. The second step is getting them to do the
-            colors.
+          <GridListItem title="Meticulous" onGradientBg>
+            We sweat the small stuff, like making sure your logo is a perfect
+            99x99 pixels. The devil&apos;s in the details, but we keep him on
+            retainer.
           </GridListItem>
-          <GridListItem title="Efficient">
-            We pride ourselves on never missing a deadline which is easy because
-            most of the work was done years ago.
+          <GridListItem title="Efficient" onGradientBg>
+            Our secret to hitting deadlines? Recycling old projects and hoping
+            you don&apos;t notice. It&apos;s not lazy, it&apos;s resourceful.
           </GridListItem>
-          <GridListItem title="Adaptable">
-            Every business has unique needs and our greatest challenge is
-            shoe-horning those needs into something we already built.
+          <GridListItem title="Adaptable" onGradientBg>
+            Your unique needs are our greatest challenge. But don&apos;t worry,
+            we&apos;ll find a way to make our pre-built solutions fit, even if
+            it means using a virtual shoehorn.
           </GridListItem>
-          <GridListItem title="Honest">
-            We are transparent about all of our processes, banking on the simple
-            fact our clients never actually read anything.
+          <GridListItem title="Straightforward" onGradientBg>
+            Transparency is our middle name. We&apos;ll tell you everything
+            about our process, counting on the fact that you&apos;ll zone out
+            after the first sentence.
           </GridListItem>
-          <GridListItem title="Loyal">
-            We foster long-term relationships with our clients that go beyond
-            just delivering a product, allowing us to invoice them for decades.
+          <GridListItem title="Loyal" onGradientBg>
+            We&apos;re in it for the long haul. Our relationships last longer
+            than most marriages, giving us plenty of time to send invoices.
           </GridListItem>
-          <GridListItem title="Innovative">
-            The technological landscape is always evolving and so are we. We are
-            constantly on the lookout for new open source projects to clone.
+          <GridListItem title="Innovative" onGradientBg>
+            We&apos;re always on the cutting edge of technology. And by that, we
+            mean we&apos;re really good at Cmd+C, Cmd+V-ing the latest open
+            source trends.
           </GridListItem>
         </GridList>
       </Container>

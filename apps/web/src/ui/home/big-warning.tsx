@@ -31,7 +31,7 @@ export function BigWarning({
             <div className="flex text-foreground sm:justify-center">
               <StarRating />
             </div>
-            <blockquote className="mt-10 text-pretty font-mono text-4xl font-medium tracking-tighter text-secondary-foreground sm:text-center lg:text-5xl">
+            <blockquote className="mt-10 text-pretty font-mono text-4xl font-semibold tracking-tighter text-secondary-foreground sm:text-center lg:text-5xl">
               {children}
             </blockquote>
             <figcaption className="mt-10 flex items-center sm:justify-center">
@@ -39,7 +39,7 @@ export function BigWarning({
                 <ClientAvatar id={id} initials={author.initials} />
               </div>
               <div className="ml-4">
-                <div className="font-mono text-base font-medium leading-6 tracking-tighter text-foreground">
+                <div className="font-mono text-base font-bold leading-6 tracking-tighter text-foreground md:text-lg lg:text-xl">
                   {author.name}
                 </div>
                 <div className="text-sm font-medium text-foreground">

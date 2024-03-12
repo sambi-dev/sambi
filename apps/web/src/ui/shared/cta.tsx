@@ -19,7 +19,7 @@ export function Cta() {
           className="relative grid grid-cols-1 items-center gap-y-12 py-24 lg:static lg:grid-cols-2 lg:py-28 xl:py-32"
         >
           <div>
-            <h2 className="font-mono text-4xl font-medium tracking-tighter text-foreground sm:w-3/4 sm:text-5xl md:w-2/3 lg:w-auto">
+            <h2 className="font-mono text-4xl font-semibold tracking-tighter text-foreground sm:w-3/4 sm:text-5xl md:w-2/3 lg:w-auto">
               Got a brain-buster?
             </h2>
             <p className="mt-4 text-lg tracking-tight text-secondary-foreground">
