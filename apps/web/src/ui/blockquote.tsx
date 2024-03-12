@@ -67,7 +67,7 @@ function BlockquoteWithoutImage({
           {typeof children === 'string' ? <p>{children}</p> : children}
         </blockquote>
         <figcaption className="mt-6 font-mono font-bold tracking-tighter text-secondary-foreground">
-          {author.name} • <span className="text-primary">{author.role}</span>
+          {author.name} :: <span className="text-primary">{author.role}</span>
         </figcaption>
       </figure>
     </Border>
