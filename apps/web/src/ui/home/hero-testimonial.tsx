@@ -7,7 +7,7 @@ export function HeroTestimonial() {
         <StarRating />
       </div>
       <blockquote className="mt-2">
-        <p className="text-lg font-medium text-secondary-foreground">
+        <p className="text-balance text-lg font-medium text-secondary-foreground">
           “Recommend sambi? No thank you. Listen, just stay away. I depend on
           them too much to share.”
         </p>

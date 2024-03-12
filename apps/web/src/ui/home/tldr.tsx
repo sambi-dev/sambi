@@ -32,29 +32,29 @@ export function Tldr() {
             >
               <h2>TL;DR</h2>
             </div>
-            <p className="mt-8 font-mono text-4xl font-medium tracking-tighter text-foreground sm:text-5xl">
+            <p className="mt-8 text-balance font-mono text-4xl font-bold tracking-tighter text-foreground sm:text-5xl">
               <span className="block text-primary">Your scroll ends here</span>
               Partner with us and join the ranks of{' '}
               <span className="line-through">wtf</span> why did we wait so long?
             </p>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <p className="mt-4 text-muted-foreground lg:text-lg">
               We&apos;ve been at this so long that we&apos;ve forgotten more
               than we can remember.
             </p>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <p className="mt-4 text-muted-foreground lg:text-lg">
               Our clients say that we&apos;re really good at helping them
               understand their customers better than anyone else. What does that
               mean?
             </p>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <p className="mt-4 text-muted-foreground lg:text-lg">
               Well, once you start thinking about the ¼&quot; hole instead of a
               ¼&quot; drill, it&apos;ll all make sense.
             </p>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <p className="mt-4 text-muted-foreground lg:text-lg">
               Bottom line? Let&apos;s create delightful products that require
               less marketing and sometimes sell themselves too.
             </p>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <p className="mt-4 text-muted-foreground lg:text-lg">
               Ready to crush it? Thought so.
             </p>
 

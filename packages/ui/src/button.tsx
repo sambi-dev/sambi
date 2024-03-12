@@ -8,14 +8,14 @@ import { cva } from 'class-variance-authority';
 import { cn } from '.';
 
 const buttonVariants = cva(
-  'inline-flex items-center justify-center whitespace-nowrap rounded-md font-mono text-sm font-semibold tracking-tighter transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
+  'inline-flex items-center justify-center whitespace-nowrap rounded-md font-mono text-sm font-bold tracking-tighter transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
   {
     variants: {
       variant: {
         primary:
-          'bg-primary text-white shadow-md hover:bg-primary/90 dark:text-primary-foreground',
+          'bg-primary text-white shadow-md hover:bg-primary/80 dark:text-primary-foreground',
         destructive:
-          'bg-destructive text-destructive-foreground shadow-md hover:bg-destructive/90',
+          'bg-destructive text-destructive-foreground shadow-md hover:bg-destructive/80',
         outline:
           'border bg-transparent shadow-md hover:bg-accent hover:text-accent-foreground',
         secondary:

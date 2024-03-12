@@ -34,8 +34,8 @@ export default {
         '6xl': '5.5rem',
       },
       fontFamily: {
-        sans: ['var(--font-geist-sans)', ...fontFamily.sans],
-        mono: ['var(--font-geist-mono)', ...fontFamily.mono],
+        sans: ['var(--font-lexend)', ...fontFamily.sans],
+        mono: ['var(--font-sometype)', ...fontFamily.mono],
       },
     },
   },

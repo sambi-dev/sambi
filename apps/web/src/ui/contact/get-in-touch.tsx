@@ -9,7 +9,7 @@ export default function GetInTouch() {
     <FadeIn className="mx-auto max-w-2xl space-y-16 divide-y divide-border lg:mx-0 lg:max-w-none">
       <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
         <div>
-          <h2 className="font-mono text-3xl font-medium tracking-tighter text-foreground">
+          <h2 className="font-mono text-3xl font-semibold tracking-tighter text-foreground">
             Get in touch
           </h2>
         </div>
@@ -25,16 +25,18 @@ export default function GetInTouch() {
             }) => (
               <div key={title} className="rounded-2xl border bg-card p-10">
                 <Border position="left" className="pl-8">
-                  <h3 className="font-mono text-lg font-semibold tracking-tighter text-foreground">
+                  <h3 className="font-mono text-lg font-bold tracking-tighter text-foreground">
                     {title}
                   </h3>
-                  <p className="mt-2 text-muted-foreground">{description}</p>
-                  <dl className="mt-3 space-y-1 leading-6 text-muted-foreground">
+                  <p className="mt-2 text-sm text-muted-foreground md:text-base">
+                    {description}
+                  </p>
+                  <dl className="mt-4 space-y-1 leading-6 text-muted-foreground">
                     <div>
                       <dt className="sr-only">{screenReaderLabel}</dt>
                       <dd>
                         <a
-                          className="font-mono font-semibold tracking-tighter text-primary hover:underline hover:decoration-4 hover:underline-offset-4"
+                          className="font-mono font-bold tracking-tighter text-primary hover:underline hover:decoration-4 hover:underline-offset-4"
                           href={linkHref}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -53,17 +55,17 @@ export default function GetInTouch() {
             ),
           )}
           <div className="rounded-2xl border bg-card p-10">
-            <h3 className="font-mono text-lg font-semibold tracking-tighter text-foreground">
+            <h3 className="font-mono text-lg font-bold tracking-tighter text-foreground">
               Connect with us
             </h3>
-            <p className="mt-2 text-muted-foreground">
+            <p className="mt-2 text-sm text-muted-foreground md:text-base">
               Follow our progress and facepalms on social media.
             </p>
             <dl className="mt-3 space-y-1 leading-6 text-muted-foreground">
               <div>
                 <dt className="sr-only">Email</dt>
                 <dd>
-                  <SocialMedia className="mt-6 gap-6" />
+                  <SocialMedia className="mt-4 gap-6" />
                 </dd>
               </div>
             </dl>

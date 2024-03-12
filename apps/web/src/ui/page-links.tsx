@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
 
-import { formatDate } from '#/lib/constants';
 import { Border } from '#/ui/border';
 import { FadeIn, FadeInStagger } from '#/ui/fade-in';
 import { Container } from '#/ui/page-container';
@@ -25,16 +24,10 @@ function PageLink({ page }: { page: Page }) {
         position="left"
         className="relative flex flex-col items-start pl-8"
       >
-        <h3 className="mt-6 line-clamp-2 h-20 text-pretty font-mono text-2xl font-medium tracking-tighter text-foreground">
+        <h3 className="mt-6 line-clamp-2 h-20 text-pretty font-mono text-2xl font-semibold tracking-tighter text-foreground">
           {page.title}
         </h3>
-        <time
-          dateTime={page.date}
-          className="order-first text-sm text-muted-foreground"
-        >
-          {formatDate(page.date)}
-        </time>
-        <p className="mt-2.5 line-clamp-2 text-base text-muted-foreground">
+        <p className="mt-2.5 line-clamp-2 text-sm text-secondary-foreground md:text-base">
           {page.description}
         </p>
         <Link
@@ -74,7 +67,11 @@ export function PageLinks({
       )}
     >
       <SectionIntro title={title} smaller>
-        {intro && <p>{intro}</p>}
+        {intro && (
+          <p className="text-sm text-secondary-foreground md:text-base lg:text-lg">
+            {intro}
+          </p>
+        )}
       </SectionIntro>
 
       <Container className={intro ? 'mt-24' : 'mt-16'}>

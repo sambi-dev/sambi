@@ -36,7 +36,7 @@ export const contactMethods: ContactMethod[] = [
   {
     title: 'Write about us',
     description:
-      "Rebekah's all over the news, tap into her social capital for your story.",
+      "Rebekah's all over the web. Tap in to her social capital for your story.",
     screenReaderLabel: 'Email us to write about our company',
     ariaLabel: 'Send us an email to write about our company',
     linkHref: writeAboutUsMailtoLink,

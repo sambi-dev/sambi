@@ -32,7 +32,7 @@ export function SectionIntro({
           )}
           <span
             className={cn(
-              'block text-pretty font-mono font-medium tracking-tighter text-foreground',
+              'block text-pretty font-mono font-semibold tracking-tighter text-foreground',
               smaller ? 'text-2xl' : 'text-4xl sm:text-5xl',
             )}
           >
@@ -40,7 +40,9 @@ export function SectionIntro({
           </span>
         </h2>
         {children && (
-          <div className="mt-6 text-xl text-muted-foreground">{children}</div>
+          <div className="mt-6 text-muted-foreground md:text-lg lg:text-xl">
+            {children}
+          </div>
         )}
       </FadeIn>
     </Container>

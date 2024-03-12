@@ -28,21 +28,24 @@ export function GridListItem({
   title,
   children,
   className,
+  onGradientBg = false,
 }: {
   title: string;
   children: React.ReactNode;
   className?: string;
+  onGradientBg?: boolean;
 }) {
   return (
     <li
       className={cn(
-        'text-base text-muted-foreground before:bg-primary after:bg-primary/40',
+        onGradientBg ? 'text-secondary-foreground' : 'text-muted-foreground',
+        'text-pretty text-sm before:bg-primary after:bg-primary/40 md:text-base',
         className,
       )}
     >
       <FadeIn>
         <Border position="left" className="pl-8">
-          <strong className="font-mono font-bold tracking-tighter text-secondary-foreground">
+          <strong className="font-mono font-bold tracking-tighter text-primary">
             {title}.
           </strong>{' '}
           {children}

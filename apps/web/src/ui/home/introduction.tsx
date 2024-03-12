@@ -15,11 +15,11 @@ export function Introduction() {
     >
       <Container className="text-lg tracking-tight text-muted-foreground">
         <FadeIn>
-          <p className="text-pretty font-mono text-4xl font-medium tracking-tighter text-foreground">
+          <p className="text-pretty font-mono text-4xl font-semibold tracking-tighter text-foreground">
             Ambreen gushes, Rebekah agrees, and Sam? He&apos;s never happy but
             that&apos;s our thing
           </p>
-          <p className="mt-4 font-mono text-2xl font-medium tracking-tighter text-primary">
+          <p className="mt-4 font-mono text-2xl font-semibold tracking-tighter text-primary">
             Ever have a shower thought so good, it makes the soap sing?
           </p>
           <p className="mt-4">

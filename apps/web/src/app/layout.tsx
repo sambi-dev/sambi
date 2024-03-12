@@ -1,12 +1,10 @@
 import type { Metadata, Viewport } from 'next';
 
-import { GeistMono } from 'geist/font/mono';
-import { GeistSans } from 'geist/font/sans';
-
 import { ThemeProvider } from '@sambi/ui/theme';
 import { Toaster } from '@sambi/ui/toast';
 
 import { env } from '#/env';
+import { fontLexend, fontSometype } from '#/fonts/index';
 
 import '#/styles/tailwind.css';
 
@@ -123,8 +121,8 @@ export default function RootLayout({
       suppressHydrationWarning
       className={cn(
         'h-full scroll-smooth bg-background text-foreground antialiased',
-        GeistSans.variable,
-        GeistMono.variable,
+        fontLexend.variable,
+        fontSometype.variable,
       )}
     >
       <body className="flex min-h-full flex-col">

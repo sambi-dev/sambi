@@ -19,7 +19,7 @@ import { LoadMore, LoadMoreButton, LoadMoreItems } from '#/ui/shared/load-more';
 export const metadata: Metadata = {
   title: 'Blog',
   description:
-    'Stay "up-to-date" with sambi.dev\'s Blog. 📰 Where we find innovative ways to recycle old news and pass it off as cutting-edge insights, again. 🤫',
+    "Stay up-to-date with sambi.dev's Blog. 📰 Where we find innovative ways to recycle old news and pass it off as cutting-edge insights, again. 🤫",
 };
 
 export default async function Blog() {
@@ -47,39 +47,39 @@ export default async function Blog() {
                   <Border className="pt-16">
                     <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                       <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
-                        <div className="mb-2 font-mono text-sm font-medium uppercase text-primary">
+                        <div className="mb-2 font-mono text-sm font-semibold uppercase text-primary">
                           #{post.category}
                         </div>
-                        <h2 className="max-w-2xl text-pretty font-mono text-2xl font-medium tracking-tighter text-foreground hover:text-primary">
+                        <h2 className="max-w-2xl text-pretty font-mono text-3xl font-semibold tracking-tighter text-foreground hover:text-primary md:text-4xl">
                           <Link href={post.href}>{post.title}</Link>
                         </h2>
                         <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
                           <dt className="sr-only">Published</dt>
-                          <dd className="absolute left-0 top-0 font-mono text-sm uppercase text-primary lg:static">
+                          <dd className="absolute left-0 top-0 font-mono text-sm uppercase lg:static">
                             <time dateTime={post.date}>
                               {formatDate(post.date)}
                             </time>
                           </dd>
                           <dt className="sr-only">Author</dt>
                           <dd className="mt-6 flex gap-x-4">
-                            <div className="flex-none overflow-hidden rounded-xl bg-background">
+                            <div className="flex-none overflow-hidden rounded-xl border bg-background">
                               <Image
                                 alt=""
                                 {...post.author.image}
                                 className="h-12 w-12 object-cover grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
                               />
                             </div>
-                            <div className="text-sm text-muted-foreground">
-                              <div className="font-mono font-medium tracking-tighter">
+                            <div className="text-sm text-secondary-foreground">
+                              <div className="font-mono font-bold tracking-tighter">
                                 {post.author.name}
                               </div>
-                              <div className="text-primary">
+                              <div className="font-mono text-primary">
                                 {post.author.role}
                               </div>
                             </div>
                           </dd>
                         </dl>
-                        <p className="mt-6 max-w-2xl text-base text-muted-foreground">
+                        <p className="mt-6 line-clamp-2 max-w-2xl text-muted-foreground md:text-lg">
                           {post.description}
                         </p>
                         <Link

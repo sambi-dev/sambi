@@ -11,7 +11,7 @@ const locations: Location[] = [
   {
     name: 'Los Angeles',
     airportCode: 'LAX',
-    description: 'Burbank, Malibu, and Santa Monica',
+    description: 'Burbank, Malibu, & Santa Monica',
   },
   {
     name: 'Hong Kong',
@@ -30,7 +30,7 @@ export default function Locations() {
     <FadeIn className="mx-auto max-w-2xl space-y-16 divide-y divide-border lg:mx-0 lg:max-w-none">
       <div className="grid grid-cols-1 gap-x-8 gap-y-10 pt-16 lg:grid-cols-3">
         <div>
-          <h2 className="font-mono text-3xl font-medium tracking-tighter text-foreground">
+          <h2 className="font-mono text-3xl font-semibold tracking-tighter text-foreground">
             We work remotely
           </h2>
         </div>
@@ -38,21 +38,20 @@ export default function Locations() {
           {locations.map(({ name, airportCode, description }) => (
             <div key={name} className="rounded-2xl border bg-card p-10">
               <Border position="left" className="pl-8">
-                <h3 className="font-mono text-lg font-semibold tracking-tighter text-foreground">
-                  {name} <span className="text-muted-foreground"> :: </span>{' '}
-                  {airportCode}
+                <h3 className="font-mono text-lg font-bold tracking-tighter text-foreground">
+                  {name} :: {airportCode}
                 </h3>
-                <p className="mt-3 space-y-1 not-italic leading-6 text-muted-foreground">
+                <p className="mt-2 text-sm text-muted-foreground md:text-base">
                   {description}
                 </p>
               </Border>
             </div>
           ))}
           <div className="rounded-2xl border bg-card p-10">
-            <h3 className="font-mono text-lg font-semibold tracking-tighter text-foreground">
+            <h3 className="font-mono text-lg font-bold tracking-tighter text-foreground">
               Send us 🌮 or a check
             </h3>
-            <address className="mt-3 space-y-1 text-sm not-italic leading-6 text-muted-foreground">
+            <address className="mt-2 text-sm not-italic text-muted-foreground md:text-base">
               <p>1370 N. St. Andrews Place</p>
               <p>Los Angeles, CA 90028</p>
             </address>

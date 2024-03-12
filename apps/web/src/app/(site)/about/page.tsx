@@ -34,7 +34,7 @@ export default async function About() {
       </PageIntro>
 
       <Container>
-        <FadeIn className="my-10 grid max-w-xl grid-cols-1 gap-8 text-base leading-7 text-muted-foreground lg:max-w-none lg:grid-cols-2 lg:text-lg">
+        <FadeIn className="my-10 grid max-w-xl grid-cols-1 gap-8 leading-7 text-muted-foreground lg:max-w-none lg:grid-cols-2 lg:text-lg">
           <div>
             <p>
               We&apos;re Sam and Ambreen...and Rebekah. Three principals
