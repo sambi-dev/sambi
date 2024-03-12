@@ -8,12 +8,6 @@ export default {
   content: [...baseConfig.content, '../../packages/ui/**/*.{ts,tsx}'],
   presets: [baseConfig],
   theme: {
-    boxShadow: {
-      sm: '0 2px 6px rgb(15 23 42 / 0.08)',
-      md: '0 8px 8px rgb(15 23 42 / 0.05), 0 3px 6px rgb(15 23 42 / 0.05)',
-      lg: '0 8px 15px rgb(15 23 42 / 0.08), 0 3px 6px rgb(15 23 42 / 0.08)',
-      xl: '2px 11px 16px rgb(15 23 42 / 0.17), 0 1px 6px rgb(15 23 42 / 0.17), 3px 23px 24px rgb(15 23 42 / 0.17)',
-    },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
       sm: ['0.875rem', { lineHeight: '1.5rem' }],

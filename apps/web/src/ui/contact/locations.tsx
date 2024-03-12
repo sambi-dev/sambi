@@ -36,7 +36,10 @@ export default function Locations() {
         </div>
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
           {locations.map(({ name, airportCode, description }) => (
-            <div key={name} className="rounded-2xl border bg-card p-10">
+            <div
+              key={name}
+              className="rounded-2xl border bg-card p-10 shadow-md"
+            >
               <Border position="left" className="pl-8">
                 <h3 className="font-mono text-lg font-bold tracking-tighter text-foreground">
                   {name} :: {airportCode}
@@ -47,7 +50,7 @@ export default function Locations() {
               </Border>
             </div>
           ))}
-          <div className="rounded-2xl border bg-card p-10">
+          <div className="rounded-2xl border bg-card p-10 shadow-md">
             <h3 className="font-mono text-lg font-bold tracking-tighter text-foreground">
               Send us 🌮 or a check
             </h3>
