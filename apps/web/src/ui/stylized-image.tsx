@@ -34,11 +34,7 @@ export function StylizedImage({
         'relative flex aspect-[719/680] w-full grayscale',
       )}
     >
-      <svg
-        viewBox={`0 0 ${width} ${height}`}
-        fill="none"
-        className={`h-full ${flipped ? 'scale-x-[-1]' : ''}`}
-      >
+      <svg viewBox={`0 0 ${width} ${height}`} fill="none" className="h-full">
         <g clipPath={`url(#${id}-clip)`} className="group">
           <g className="origin-center scale-100 transition duration-500 motion-safe:group-hover:scale-105">
             {/* eslint-disable-next-line @typescript-eslint/no-unsafe-assignment */}
@@ -51,11 +47,6 @@ export function StylizedImage({
               />
             </foreignObject>
           </g>
-          <use
-            href={`#${id}-shape`}
-            strokeWidth="2"
-            className="stroke-neutral-950/10"
-          />
         </g>
         <defs>
           <clipPath id={`${id}-clip`}>
@@ -65,9 +56,15 @@ export function StylizedImage({
               d={path}
               fillRule="evenodd"
               clipRule="evenodd"
+              transform={flipped ? 'scale(-1, 1) translate(-655, 0)' : ''}
             />
           </clipPath>
         </defs>
+        <use
+          href={`#${id}-shape`}
+          strokeWidth="2"
+          className="stroke-neutral-950/10"
+        />
       </svg>
     </div>
   );
