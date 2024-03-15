@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     },
     {
       rel: 'icon',
-      url: '/icons/android-chrome-512x515.png',
+      url: '/icons/android-chrome-512x512.png',
       sizes: '512x512',
     },
     {
