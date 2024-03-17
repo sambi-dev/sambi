@@ -47,6 +47,7 @@
     "AUTH_REDIRECT_PROXY_URL",
     "AUTH_SECRET",
     "AUTH_URL",
+    "BASEHUB_TOKEN",
     "DB_HOST",
     "DB_NAME",
     "DB_USERNAME",
