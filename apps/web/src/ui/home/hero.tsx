@@ -29,7 +29,7 @@ export function Hero() {
         </div>
         <div className="pt-16 lg:col-span-7 lg:bg-transparent lg:pl-16 lg:pt-0 xl:pl-20">
           <div className="mx-auto px-4 sm:px-6 md:max-w-3xl md:px-4 lg:px-0">
-            <h1 className="text-pretty font-mono text-4xl font-semibold tracking-tighter text-foreground sm:text-6xl">
+            <h1 className="text-pretty font-mono text-4xl font-semibold tracking-tighter text-foreground sm:text-5xl">
               A much smaller studio than our clients think
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">

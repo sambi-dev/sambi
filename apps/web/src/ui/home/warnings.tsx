@@ -15,6 +15,8 @@ import {
 } from '#/ui/shared/expandable';
 import { ArrowIcon } from '#/ui/shared/icons';
 
+import { StarRating } from '../shared/star-rating';
+
 interface WarningProps {
   client: Client;
   children: React.ReactNode;
@@ -23,6 +25,9 @@ interface WarningProps {
 function Warning({ client, children }: WarningProps) {
   return (
     <figure className="rounded-4xl border bg-card p-8 shadow-md">
+      <div className="my-2 flex text-primary">
+        <StarRating />
+      </div>
       <blockquote>
         <p className="tracking-tight text-muted-foreground before:content-['“'] after:content-['”']">
           {children}
@@ -50,7 +55,7 @@ function Warning({ client, children }: WarningProps) {
               </Link>
             </div>
           ) : (
-            <div className="mt-1 font-mono text-sm font-medium tracking-tight text-primary">
+            <div className="mt-1 font-mono text-sm font-medium tracking-tight text-muted-foreground">
               {client.role}
             </div>
           )}
@@ -74,8 +79,9 @@ export function Warnings() {
         className="mt-24 sm:mt-32 lg:mt-40"
       >
         <p>
-          Read at your own risk. What our clients say might just turn you into a
-          fan too. Who said warnings couldn&apos;t be endorsements in disguise?
+          Read at your own risk. Being roasted by some of the most{' '}
+          <span className="line-through">demanding</span> inspiring clients
+          helps us build resiliency.
         </p>
       </SectionIntro>
       <Expandable className="group mt-16">

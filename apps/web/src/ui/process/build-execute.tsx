@@ -28,7 +28,7 @@ export function BuildExecute() {
           collapse when you look at it too hard)
         </p>
       </div>
-      <h3 className="mt-12 font-mono text-base font-bold tracking-tighter text-secondary-foreground md:text-lg">
+      <h3 className="mt-12 font-mono text-sm font-medium tracking-tighter text-secondary-foreground md:text-base">
         Stuff that happens
       </h3>
       <TagList className="mt-4">

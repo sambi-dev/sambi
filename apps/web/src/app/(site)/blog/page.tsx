@@ -36,10 +36,7 @@ export default async function Blog() {
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
-        <LoadMore
-          className="space-y-24 lg:space-y-32"
-          totalItems={blogPosts.length}
-        >
+        <LoadMore className="space-y-24" totalItems={blogPosts.length}>
           <LoadMoreItems>
             {blogPosts.map((post) => (
               <FadeIn key={post.href}>
@@ -47,10 +44,10 @@ export default async function Blog() {
                   <Border className="pt-16">
                     <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                       <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
-                        <div className="mb-2 font-mono text-sm font-semibold uppercase text-primary">
+                        <div className="mb-2 font-mono text-sm font-medium uppercase text-primary">
                           #{post.category}
                         </div>
-                        <h2 className="max-w-2xl text-pretty font-mono text-3xl font-semibold tracking-tighter text-foreground hover:text-primary md:text-4xl">
+                        <h2 className="max-w-2xl text-pretty font-mono text-3xl font-semibold tracking-tighter text-foreground hover:text-primary">
                           <Link href={post.href}>{post.title}</Link>
                         </h2>
                         <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
@@ -70,16 +67,16 @@ export default async function Blog() {
                               />
                             </div>
                             <div className="text-sm text-secondary-foreground">
-                              <div className="font-mono font-bold tracking-tighter">
+                              <div className="font-mono font-medium tracking-tighter">
                                 {post.author.name}
                               </div>
-                              <div className="font-mono text-primary">
+                              <div className="font-mono text-muted-foreground">
                                 {post.author.role}
                               </div>
                             </div>
                           </dd>
                         </dl>
-                        <p className="mt-6 line-clamp-2 max-w-2xl text-muted-foreground md:text-lg">
+                        <p className="mt-6 line-clamp-2 max-w-2xl text-muted-foreground">
                           {post.description}
                         </p>
                         <Link

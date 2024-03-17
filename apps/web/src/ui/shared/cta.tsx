@@ -16,11 +16,11 @@ export function Cta() {
       <div className="overflow-hidden lg:relative">
         <Container
           size="md"
-          className="relative grid grid-cols-1 items-center gap-y-12 py-24 lg:static lg:grid-cols-2 lg:py-28 xl:py-32"
+          className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8"
         >
-          <div>
-            <h2 className="font-mono text-4xl font-semibold tracking-tighter text-foreground sm:w-3/4 sm:text-5xl md:w-2/3 lg:w-auto">
-              Got a brain-buster?
+          <div className="max-w-xl">
+            <h2 className="font-mono text-4xl font-semibold tracking-tighter text-foreground sm:w-3/4 sm:text-5xl md:w-3/4 lg:w-auto">
+              Got a brain buster?
             </h2>
             <p className="mt-4 text-lg tracking-tight text-secondary-foreground">
               We&apos;re not the know-it-alls we sound like. But we&apos;re

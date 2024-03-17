@@ -45,7 +45,7 @@ export function GridListItem({
     >
       <FadeIn>
         <Border position="left" className="pl-8">
-          <strong className="font-mono font-bold tracking-tighter text-primary">
+          <strong className="font-mono text-xs font-semibold tracking-tighter text-primary md:text-sm">
             {title}.
           </strong>{' '}
           {children}

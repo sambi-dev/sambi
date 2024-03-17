@@ -12,7 +12,7 @@ export default function Crew() {
           <h2 className="font-mono text-3xl font-semibold tracking-tighter text-foreground sm:text-4xl">
             Meet the crew
           </h2>
-          <p className="mt-6 leading-8 text-muted-foreground md:text-lg">
+          <p className="mt-6 leading-8 text-muted-foreground">
             We&apos;re a dynamic group of individuals who are passionate about
             what we do and dedicated to delivering the best results for our
             clients.
@@ -32,17 +32,15 @@ export default function Crew() {
               <div className="max-w-xl flex-auto">
                 <h3
                   id={person.id}
-                  className="font-mono font-bold tracking-tighter text-foreground md:text-lg"
+                  className="font-mono font-semibold tracking-tighter text-foreground"
                 >
                   {person.name}
                 </h3>
-                <p className="font-mono font-bold text-primary md:text-lg">
-                  {person.role}
-                </p>
-                <p className="mt-6 text-sm leading-7 text-muted-foreground md:text-base lg:text-lg">
+                <p className="font-mono text-sm text-primary">{person.role}</p>
+                <p className="mt-6 text-sm leading-7 text-muted-foreground md:text-base">
                   {person.bio}
                 </p>
-                <ul className="mt-6 flex gap-x-6">
+                <ul className="mt-6 flex gap-x-4">
                   <li>
                     <CrewSocialIcon
                       url={person.upworkUrl}

@@ -94,7 +94,7 @@ export function NavBar() {
                   >
                     {(mobileActiveIndex + 1).toString().padStart(2, '0')}
                   </span>
-                  <span className="ml-4 text-base font-medium text-foreground">
+                  <span className="ml-4 font-mono text-sm font-medium text-foreground">
                     {sections[mobileActiveIndex]?.title}
                   </span>
                 </>
@@ -121,7 +121,7 @@ export function NavBar() {
                   as="a"
                   key={section.id}
                   href={`#${section.id}`}
-                  className="flex items-center px-4 py-1.5"
+                  className="flex items-center px-4 py-1.5 hover:bg-primary/20"
                 >
                   <span
                     aria-hidden="true"
@@ -129,7 +129,7 @@ export function NavBar() {
                   >
                     {(sectionIndex + 1).toString().padStart(2, '0')}
                   </span>
-                  <span className="ml-4 font-mono text-base font-bold tracking-tighter text-foreground">
+                  <span className="ml-4 font-mono text-base font-semibold tracking-tighter text-foreground">
                     {section.title}
                   </span>
                 </Popover.Button>
@@ -140,7 +140,7 @@ export function NavBar() {
         )}
       </Popover>
       <div className="sm:background hidden sm:flex sm:h-32 sm:justify-center sm:border-b sm:[@supports(backdrop-filter:blur(0))]:bg-secondary sm:[@supports(backdrop-filter:blur(0))]:backdrop-blur">
-        <ol className="mb-[-2px] grid auto-cols-[minmax(0,15rem)] grid-flow-col font-mono text-base font-semibold tracking-tighter text-foreground/80 [counter-reset:section]">
+        <ol className="mb-[-2px] grid auto-cols-[minmax(0,15rem)] grid-flow-col font-mono text-base font-medium tracking-tighter text-foreground/80 [counter-reset:section]">
           {sections.map((section, sectionIndex) => (
             <li key={section.id} className="flex [counter-increment:section]">
               <Link
@@ -148,7 +148,7 @@ export function NavBar() {
                 className={cn(
                   'before:text-md flex w-full flex-col items-center justify-center border-b-2 before:mb-2 before:font-mono before:content-[counter(section,decimal-leading-zero)]',
                   sectionIndex === activeIndex
-                    ? 'border-primary bg-primary/20 font-bold text-foreground before:text-primary'
+                    ? 'border-primary bg-primary/20 font-semibold text-foreground before:text-primary'
                     : 'border-transparent before:text-primary/80 hover:bg-primary/20 hover:before:text-foreground',
                 )}
               >
