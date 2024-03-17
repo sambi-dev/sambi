@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 import { people } from '#/content/people';
 import CrewSocialIcon from '#/ui/about/crew-social-icon';
-import { LinkedInIcon, XIcon } from '#/ui/shared/icons';
+import { LinkedInIcon, UpworkIcon, XIcon } from '#/ui/shared/icons';
 
 export default function Crew() {
   return (
@@ -30,7 +30,10 @@ export default function Crew() {
                 alt={`A notion styled illustration representing a headshot of ${person.name}`}
               />
               <div className="max-w-xl flex-auto">
-                <h3 className="font-mono font-bold tracking-tighter text-foreground md:text-lg">
+                <h3
+                  id={person.id}
+                  className="font-mono font-bold tracking-tighter text-foreground md:text-lg"
+                >
                   {person.name}
                 </h3>
                 <p className="font-mono font-bold text-primary md:text-lg">
@@ -40,6 +43,15 @@ export default function Crew() {
                   {person.bio}
                 </p>
                 <ul className="mt-6 flex gap-x-6">
+                  <li>
+                    <CrewSocialIcon
+                      url={person.upworkUrl}
+                      icon={
+                        <UpworkIcon className="h-6 w-6" aria-hidden="true" />
+                      }
+                      label={`Follow ${person.name} on Twitter in a new window`}
+                    />
+                  </li>
                   <li>
                     <CrewSocialIcon
                       url={person.xUrl}
