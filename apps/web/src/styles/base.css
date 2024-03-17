@@ -12,7 +12,7 @@
     --popover: 0 0% 100%; /* white */
     --popover-foreground: 240 2% 12%; /* 950 */
 
-    --primary: 120 89% 28%; /* primary #359A09 */
+    --primary: 94 71% 30%; /* primary #458316 */
     --primary-foreground: 0 0% 100%; /* white */
 
     --secondary: 330 7% 96%; /* 100 */
@@ -30,7 +30,8 @@
     --border: 300 4% 92%; /* 200 */
     --input: 300 4% 92%; /* 200 */
 
-    --ring: 120 89% 28%; /* primary #359A09 */
+    --ring: 94 71% 30%; /* primary #458316 */
+    --alternate: 47 100% 36%; /* alternate #B89000 */
 
     --radius: 0.5rem;
   }
@@ -45,7 +46,7 @@
     --popover: 240 2% 12%; /* 950 */
     --popover-foreground: 30 20% 99%; /* 50 */
 
-    --primary: 94 71% 53%; /* primary-dark #84DE3F */
+    --primary: 94 71% 52%; /* primary-dark #79DC2E */
     --primary-foreground: 240 4% 16%; /* 900 */
 
     --secondary: 225 8% 20%; /* 800 */
@@ -63,7 +64,8 @@
     --border: 225 8% 20%; /* 800 */
     --input: 225 8% 20%; /* 800 */
 
-    --ring: 94 71% 53%; /* primary-dark #84DE3F */
+    --ring: 94 71% 52%; /* primary-dark #79DC2E */
+    --alternate: 47 100% 52%; /* alternate #FFCA0A */
   }
 }
 

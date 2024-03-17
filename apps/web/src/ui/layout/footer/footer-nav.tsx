@@ -8,7 +8,7 @@ export function FooterNav() {
       <ul className="grid grid-cols-2 gap-16 sm:grid-cols-4">
         {footerLinks.map((section, sectionIndex) => (
           <li key={sectionIndex}>
-            <div className="font-mono text-sm font-bold uppercase tracking-widest text-primary">
+            <div className="block font-mono text-xs font-semibold uppercase tracking-widest text-primary">
               {section.title}
             </div>
             <ul className="mt-4 text-sm text-secondary-foreground">
@@ -22,14 +22,14 @@ export function FooterNav() {
                         target="_blank"
                         rel="noopener noreferrer"
                         aria-label={`Visit ${link.title}'s profile on Upwork in a new window`}
-                        className="transition hover:text-primary hover:underline hover:decoration-4 hover:underline-offset-4"
+                        className="transition hover:text-primary hover:underline hover:decoration-2 hover:underline-offset-4"
                       >
                         {link.title}
                       </a>
                     ) : (
                       <Link
                         href={link.href}
-                        className="transition hover:text-primary hover:underline hover:decoration-4 hover:underline-offset-4"
+                        className="transition hover:text-primary hover:underline hover:decoration-2 hover:underline-offset-4"
                         aria-label={`Visit our ${link.title} page in the same window`}
                       >
                         {link.title}

@@ -20,7 +20,7 @@ export function Footer() {
               <Link href="/" aria-label="Home">
                 <Logo className="h-16" fillOnHover />
               </Link>
-              <p className="leading-6 text-muted-foreground">
+              <p className="text-pretty text-sm leading-6 text-muted-foreground">
                 {siteConfig.description}
               </p>
               <div className="flex space-x-4">
@@ -32,7 +32,7 @@ export function Footer() {
             </div>
           </div>
           <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t pt-12">
-            <p className="font-mono text-sm text-primary">
+            <p className="font-mono text-xs text-primary">
               © {siteConfig.name}. All Rights Reserved.{' '}
               {new Date().getFullYear()}
             </p>

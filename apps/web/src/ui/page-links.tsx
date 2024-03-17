@@ -62,11 +62,11 @@ export function PageLinks({
   return (
     <div
       className={cn(
-        'relative rounded-t-4xl bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-background via-primary/20 to-background py-24 sm:py-32 lg:py-40',
+        'relative rounded-t-4xl bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-background via-primary/80 to-card py-24 dark:via-primary sm:py-32 lg:py-40',
         className,
       )}
     >
-      <SectionIntro title={title} smaller>
+      <SectionIntro title={title}>
         {intro && (
           <p className="text-sm text-secondary-foreground md:text-base lg:text-lg">
             {intro}

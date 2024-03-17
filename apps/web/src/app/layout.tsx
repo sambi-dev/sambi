@@ -4,7 +4,7 @@ import { ThemeProvider } from '@sambi/ui/theme';
 import { Toaster } from '@sambi/ui/toast';
 
 import { env } from '#/env';
-import { fontLexend, fontSometype } from '#/fonts/index';
+import { fontLexend, fontMartian } from '#/fonts/index';
 
 import '#/styles/tailwind.css';
 
@@ -122,7 +122,7 @@ export default function RootLayout({
       className={cn(
         'h-full scroll-smooth bg-background text-foreground antialiased',
         fontLexend.variable,
-        fontSometype.variable,
+        fontMartian.variable,
       )}
     >
       <body className="flex min-h-full flex-col">

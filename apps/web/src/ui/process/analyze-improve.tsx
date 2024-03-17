@@ -30,7 +30,7 @@ export function AnalyzeImprove() {
         </p>
       </div>
 
-      <h3 className="mt-12 font-mono text-base font-bold tracking-tighter text-secondary-foreground">
+      <h3 className="mt-12 font-mono text-sm font-medium tracking-tighter text-secondary-foreground md:text-base">
         Included in this phase
       </h3>
       <List className="mt-8">

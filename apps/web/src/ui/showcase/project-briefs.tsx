@@ -24,7 +24,7 @@ export function ProjectBriefs({
   return (
     <Container className="mt-40">
       <FadeIn>
-        <h2 className="font-mono text-2xl font-bold tracking-tighter text-foreground">
+        <h2 className="font-mono text-xl font-semibold tracking-tighter text-foreground">
           Recent projects
         </h2>
       </FadeIn>
@@ -45,12 +45,12 @@ export function ProjectBriefs({
                         className="h-12 w-12 rounded-lg border object-cover grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
                         unoptimized
                       />
-                      <h3 className="mt-6 font-mono text-sm font-bold text-primary sm:mt-0 lg:mt-8">
+                      <h3 className="mt-6 font-mono text-sm font-medium text-primary sm:mt-0 lg:mt-8">
                         {projectBrief.client}
                       </h3>
                     </div>
                     <div className="mt-1 flex gap-x-4 sm:mt-0 lg:block">
-                      <p className="font-mono text-sm tracking-tight text-secondary-foreground after:ml-4 after:font-semibold after:content-['::'] lg:mt-2 lg:after:hidden">
+                      <p className="font-mono text-sm tracking-tight text-secondary-foreground after:ml-4 after:font-medium after:content-['::'] lg:mt-2 lg:after:hidden">
                         {projectBrief.status}
                       </p>
                       <p className="font-mono text-sm uppercase text-secondary-foreground lg:mt-2">
@@ -63,11 +63,11 @@ export function ProjectBriefs({
 
                   <div className="col-span-full lg:col-span-2 lg:max-w-2xl">
                     {projectBrief.partner && (
-                      <div className="block pt-3 font-mono text-sm font-bold uppercase tracking-widest text-primary">
+                      <div className="block pt-3 font-mono text-sm font-medium uppercase tracking-widest text-primary">
                         Via partner
                       </div>
                     )}
-                    <p className="text-pretty font-mono text-4xl font-semibold tracking-tighter text-foreground hover:text-primary">
+                    <p className="text-pretty font-mono text-3xl font-semibold tracking-tighter text-foreground hover:text-primary">
                       <Link href={projectBrief.href}>{projectBrief.title}</Link>
                     </p>
                     <div className="mt-6 space-y-6 text-base text-muted-foreground">

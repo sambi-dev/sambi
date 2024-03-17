@@ -41,7 +41,7 @@ export default function Locations() {
               className="rounded-2xl border bg-card p-10 shadow-md"
             >
               <Border position="left" className="pl-8">
-                <h3 className="font-mono text-lg font-bold tracking-tighter text-foreground">
+                <h3 className="font-mono text-lg font-semibold tracking-tighter text-foreground">
                   {name} :: {airportCode}
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground md:text-base">
@@ -51,7 +51,7 @@ export default function Locations() {
             </div>
           ))}
           <div className="rounded-2xl border bg-card p-10 shadow-md">
-            <h3 className="font-mono text-lg font-bold tracking-tighter text-foreground">
+            <h3 className="font-mono text-lg font-semibold tracking-tighter text-foreground">
               Send us 🌮 or a check
             </h3>
             <address className="mt-2 text-sm not-italic text-muted-foreground md:text-base">

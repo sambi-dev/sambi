@@ -21,7 +21,7 @@ export const MDXComponents = {
     return (
       <div
         className={cn(
-          'group isolate my-10 overflow-hidden rounded-4xl bg-neutral-100 max-sm:-mx-6',
+          'group isolate my-10 overflow-hidden rounded-4xl bg-secondary max-sm:-mx-6',
           className,
         )}
       >
@@ -79,7 +79,7 @@ export const MDXComponents = {
   }) {
     return (
       <Border position="left" className={cn('my-10 pl-8', className)}>
-        <p className="font-mono text-sm font-bold uppercase tracking-widest text-primary">
+        <p className="font-mono text-sm font-medium uppercase tracking-widest text-primary">
           Top tip
         </p>
         <div className="mt-4">{children}</div>
@@ -91,7 +91,7 @@ export const MDXComponents = {
     // eslint-disable-next-line jsx-a11y/heading-has-content
     <h1
       className={cn(
-        'mt-2 scroll-m-20 font-mono text-5xl font-medium tracking-tighter text-foreground',
+        'mt-2 scroll-m-20 font-mono text-5xl font-semibold tracking-tighter text-foreground',
         className,
       )}
       {...props}
@@ -102,7 +102,7 @@ export const MDXComponents = {
     // eslint-disable-next-line jsx-a11y/heading-has-content
     <h2
       className={cn(
-        'mt-10 scroll-m-20 pb-1 font-mono text-4xl font-medium tracking-tighter text-foreground first:mt-0',
+        'mt-10 scroll-m-20 pb-1 font-mono text-4xl font-semibold tracking-tighter text-foreground first:mt-0',
         className,
       )}
       {...props}
@@ -113,7 +113,7 @@ export const MDXComponents = {
     // eslint-disable-next-line jsx-a11y/heading-has-content
     <h3
       className={cn(
-        'mt-8 scroll-m-20 font-mono text-3xl font-medium tracking-tighter text-foreground',
+        'mt-8 scroll-m-20 font-mono text-3xl font-semibold tracking-tighter text-foreground',
         className,
       )}
       {...props}
@@ -146,7 +146,7 @@ export const MDXComponents = {
     // eslint-disable-next-line jsx-a11y/heading-has-content
     <h6
       className={cn(
-        'mt-8 scroll-m-20 font-mono text-lg font-bold tracking-tighter text-foreground',
+        'mt-8 scroll-m-20 font-mono text-lg font-semibold tracking-tighter text-foreground',
         className,
       )}
       {...props}
@@ -157,7 +157,7 @@ export const MDXComponents = {
     // eslint-disable-next-line jsx-a11y/anchor-has-content
     <a
       className={cn(
-        'font-semibold text-primary underline underline-offset-4 hover:text-primary/80 lg:text-lg',
+        'font-bold text-primary underline decoration-2 underline-offset-4 hover:text-primary/80 lg:text-lg',
         className,
       )}
       {...props}
@@ -167,7 +167,7 @@ export const MDXComponents = {
   p: ({ className, ...props }: React.ComponentPropsWithoutRef<'p'>) => (
     <p
       className={cn(
-        'leading-7 text-muted-foreground lg:text-lg [&:not(:first-child)]:mt-6',
+        'leading-relaxed text-muted-foreground lg:text-lg [&:not(:first-child)]:mt-6',
         className,
       )}
       {...props}
@@ -179,10 +179,7 @@ export const MDXComponents = {
     ...props
   }: React.ComponentPropsWithoutRef<'strong'>) => (
     <strong
-      className={cn(
-        'font-mono font-bold tracking-tighter text-primary',
-        className,
-      )}
+      className={cn('font-bold text-secondary-foreground', className)}
       {...props}
     />
   ),

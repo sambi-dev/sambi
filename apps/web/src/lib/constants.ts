@@ -12,21 +12,6 @@ export const ensureStartsWith = (stringToCheck: string, startsWith: string) =>
     ? stringToCheck
     : `${startsWith}${stringToCheck}`;
 
-export const userColors = [
-  '#fffc85',
-  '#fffc85',
-  '#fff446',
-  '#fef2c3',
-  '#fee78a',
-  '#fdd847',
-  '#dcfce7',
-  '#bbf7d0',
-  '#86efab',
-  '#eafccb',
-  '#d7f99d',
-  '#bef264',
-];
-
 export function formatDate(dateString: string): string {
   const date = new Date(`${dateString}T00:00:00Z`);
   const monthNames = [

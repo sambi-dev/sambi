@@ -32,7 +32,7 @@ export function Tldr() {
             >
               <h2>TL;DR</h2>
             </div>
-            <p className="mt-8 text-balance font-mono text-4xl font-bold tracking-tighter text-foreground sm:text-5xl">
+            <p className="mt-8 text-balance font-mono text-3xl font-semibold tracking-tighter text-foreground sm:text-4xl">
               <span className="block text-primary">Your scroll ends here</span>
               Partner with us and join the ranks of{' '}
               <span className="line-through">wtf</span> why did we wait so long?

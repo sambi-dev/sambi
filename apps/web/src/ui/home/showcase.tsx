@@ -51,23 +51,14 @@ export function Showcase({
                     />
                   </Link>
                 </h3>
-                <div className="mt-6 flex gap-x-2 font-mono text-sm font-bold tracking-tighter text-secondary-foreground">
+                <div className="mt-6 flex gap-x-2 font-mono text-xs font-medium tracking-tighter text-secondary-foreground">
                   <p className=" text-primary">{projectBrief.client}</p>
-                  <span
-                    className="text-secondary-foreground"
-                    aria-hidden="true"
-                  >
-                    ::
-                  </span>
-                  <time dateTime={projectBrief.date.split('-')[0]}>
-                    {projectBrief.date.split('-')[0]}
-                  </time>
                   <span className="text-foreground" aria-hidden="true">
                     ::
                   </span>
                   <span>{projectBrief.service}</span>
                 </div>
-                <p className="mt-6 grow font-mono text-lg font-bold tracking-tighter text-foreground">
+                <p className="mt-6 grow text-pretty font-mono font-semibold tracking-tighter text-foreground">
                   {projectBrief.title}
                 </p>
                 <p className="mt-4 line-clamp-2 text-sm text-muted-foreground">
@@ -77,7 +68,7 @@ export function Showcase({
             </FadeIn>
           ))}
         </FadeInStagger>
-        <FadeIn className="mt-8 flex justify-center">
+        <FadeIn className="mt-10 flex justify-center">
           <Link
             href="/showcase"
             aria-label="Visit sambi's showcase page in the same window to view more of our case studies"

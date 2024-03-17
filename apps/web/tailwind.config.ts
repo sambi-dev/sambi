@@ -29,7 +29,7 @@ export default {
       },
       fontFamily: {
         sans: ['var(--font-lexend)', ...fontFamily.sans],
-        mono: ['var(--font-sometype)', ...fontFamily.mono],
+        mono: ['var(--font-martian)', ...fontFamily.mono],
       },
     },
   },

@@ -28,7 +28,7 @@ export default function GetInTouch() {
                 className="rounded-2xl border bg-card p-10 shadow-md"
               >
                 <Border position="left" className="pl-8">
-                  <h3 className="font-mono text-lg font-bold tracking-tighter text-foreground">
+                  <h3 className="font-mono text-lg font-semibold tracking-tighter text-foreground">
                     {title}
                   </h3>
                   <p className="mt-2 text-sm text-muted-foreground md:text-base">
@@ -39,7 +39,7 @@ export default function GetInTouch() {
                       <dt className="sr-only">{screenReaderLabel}</dt>
                       <dd>
                         <a
-                          className="font-mono font-bold tracking-tighter text-primary hover:underline hover:decoration-4 hover:underline-offset-4"
+                          className="font-mono text-sm font-semibold tracking-tighter text-primary hover:underline hover:decoration-2 hover:underline-offset-4 md:text-base"
                           href={linkHref}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -58,7 +58,7 @@ export default function GetInTouch() {
             ),
           )}
           <div className="rounded-2xl border bg-card p-10 shadow-md">
-            <h3 className="font-mono text-lg font-bold tracking-tighter text-foreground">
+            <h3 className="font-mono text-lg font-semibold tracking-tighter text-foreground">
               Connect with us
             </h3>
             <p className="mt-2 text-sm text-muted-foreground md:text-base">

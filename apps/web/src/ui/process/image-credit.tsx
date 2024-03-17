@@ -19,7 +19,7 @@ export function ImageCredit({
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`Visit ${photographerName}'s profile on Unsplash in a new window`}
-        className="hover:underline hover:decoration-primary hover:decoration-4 hover:underline-offset-4"
+        className="hover:underline hover:decoration-primary hover:decoration-2 hover:underline-offset-4"
       >
         <span className="text-muted-foreground">{photographerName}</span>
       </a>{' '}
@@ -29,7 +29,7 @@ export function ImageCredit({
         target="_blank"
         rel="noopener noreferrer"
         aria-label={`See original photo by ${photographerName} on Unsplash in a new window`}
-        className="hover:underline hover:decoration-primary hover:decoration-4 hover:underline-offset-4"
+        className="hover:underline hover:decoration-primary hover:decoration-2 hover:underline-offset-4"
       >
         Unsplash
       </a>
