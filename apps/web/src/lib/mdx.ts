@@ -44,19 +44,6 @@ type Category =
   | 'stack'
   | 'flow';
 
-export interface BlogPost {
-  date: string;
-  title: string;
-  description: string;
-  category: Category;
-  author: {
-    name: string;
-    role: string;
-    image: ImagePropsWithOptionalAlt;
-  };
-  readMoreButtonText: string;
-}
-
 export interface AiPost {
   date: string;
   title: string;
@@ -104,10 +91,6 @@ export interface ProjectBrief {
     content: string;
   };
   readMoreButtonText: string;
-}
-
-export function loadBlogPosts() {
-  return loadEntries<BlogPost>('blog', 'post');
 }
 
 export function loadAiPosts() {

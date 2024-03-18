@@ -6,10 +6,10 @@
   "scripts": {
     "build": "pnpm with-env next build",
     "clean": "git clean -xdf .next .turbo node_modules",
-    "dev": "pnpm basehub && pnpm with-env next dev",
+    "dev": "pnpm basehub --output .basehub && pnpm with-env next dev",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "dotenv -v SKIP_ENV_VALIDATION=1 next lint",
-    "postinstall": "basehub",
+    "postinstall": "basehub --output .basehub",
     "start": "pnpm with-env next start",
     "typecheck": "tsc --noEmit",
     "with-env": "dotenv -e ../../.env --"
@@ -28,7 +28,7 @@
     "@t3-oss/env-nextjs": "^0.9.2",
     "acorn": "^8.10.0",
     "acorn-jsx": "^5.3.2",
-    "basehub": "3.0.5",
+    "basehub": "^3.0.5",
     "escape-string-regexp": "^5.0.0",
     "fast-glob": "^3.2.12",
     "framer-motion": "^11.0.5",
