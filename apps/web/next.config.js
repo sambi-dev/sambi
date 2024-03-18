@@ -36,12 +36,6 @@ async function createConfig() {
           unifiedConditional,
           [
             new RegExp(
-              `^${escapeStringRegexp(path.resolve('src/app/(site)/mdx'))}`,
-            ),
-            [[remarkMDXLayout, 'src/ui/mdx-blog/ai-post-wrapper', 'aiPost']],
-          ],
-          [
-            new RegExp(
               `^${escapeStringRegexp(path.resolve('src/app/(site)/showcase'))}`,
             ),
             [

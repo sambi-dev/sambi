@@ -1,7 +1,8 @@
 import Image from 'next/image';
 
-import CrewSocialIcon from '../about/crew-social-icon';
-import { LinkedInIcon, UpworkIcon, XIcon } from '../shared/icons';
+import CrewSocialIcon from '#/ui/about/crew-social-icon';
+import { FadeIn } from '#/ui/fade-in';
+import { LinkedInIcon, UpworkIcon, XIcon } from '#/ui/shared/icons';
 
 interface Author {
   name: string;
@@ -16,7 +17,7 @@ interface Author {
 
 export default function AuthorCard({ author }: { author: Author }) {
   return (
-    <div className="mx-auto my-10 max-w-3xl items-center rounded-4xl border bg-card p-6 sm:my-16">
+    <FadeIn className="mx-auto my-10 max-w-3xl items-center rounded-4xl border bg-card p-6 sm:my-16">
       <figure className="grid grid-cols-1 items-center gap-x-6 gap-y-8 lg:gap-x-10">
         <ul className="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3">
           <li
@@ -72,6 +73,6 @@ export default function AuthorCard({ author }: { author: Author }) {
           </li>
         </ul>
       </figure>
-    </div>
+    </FadeIn>
   );
 }

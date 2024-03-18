@@ -34,29 +34,6 @@ type ImagePropsWithOptionalAlt = Omit<ImageProps, 'alt'> & { alt?: string };
 
 export type MDXEntry<T> = T & { href: string; metadata: T };
 
-type Category =
-  | 'plan'
-  | 'design'
-  | 'get'
-  | 'keep'
-  | 'grow'
-  | 'ai'
-  | 'stack'
-  | 'flow';
-
-export interface AiPost {
-  date: string;
-  title: string;
-  description: string;
-  category: Category;
-  llm: {
-    company: string;
-    model: string;
-    image: ImagePropsWithOptionalAlt;
-  };
-  readMoreButtonText: string;
-}
-
 type ServiceType =
   | 'Plan'
   | 'Design'
@@ -91,10 +68,6 @@ export interface ProjectBrief {
     content: string;
   };
   readMoreButtonText: string;
-}
-
-export function loadAiPosts() {
-  return loadEntries<AiPost>('mdx', 'aiPost');
 }
 
 export function loadProjectBriefs() {

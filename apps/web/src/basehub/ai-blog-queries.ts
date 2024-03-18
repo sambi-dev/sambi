@@ -1,34 +1,35 @@
 import type {
+  AiBlogPostsItemGenqlSelection,
   BlogPostsItem,
-  BlogPostsItemGenqlSelection,
   FieldsSelection,
   QueryGenqlSelection,
 } from '.basehub';
 
 import { basehubClient } from './client';
 
-export async function fetchBlogPageMetadata() {
-  const { blog } = await basehubClient.query({
-    blog: {
-      blogPageMeta: {
+export async function fetchAiBlogPageMetadata() {
+  const { aiBlog } = await basehubClient.query({
+    aiBlog: {
+      aiBlogPageMeta: {
         _id: true,
         _slug: true,
         _title: true,
+        title: true,
         description: true,
       },
     },
   });
 
   return {
-    title: blog.blogPageMeta._title,
-    description: blog.blogPageMeta.description,
+    title: aiBlog.aiBlogPageMeta.title,
+    description: aiBlog.aiBlogPageMeta.description,
   };
 }
 
-export async function fetchBlogPageIntro() {
-  const { blog } = await basehubClient.query({
-    blog: {
-      blogPageIntro: {
+export async function fetchAiBlogPageIntro() {
+  const { aiBlog } = await basehubClient.query({
+    aiBlog: {
+      aiBlogPageIntro: {
         eyebrow: true,
         title: true,
         description: {
@@ -42,26 +43,29 @@ export async function fetchBlogPageIntro() {
   });
 
   return {
-    eyebrow: blog.blogPageIntro.eyebrow,
-    title: blog.blogPageIntro.title,
-    description: blog.blogPageIntro.description,
-    centered: blog.blogPageIntro.centered,
+    eyebrow: aiBlog.aiBlogPageIntro.eyebrow,
+    title: aiBlog.aiBlogPageIntro.title,
+    description: aiBlog.aiBlogPageIntro.description,
+    centered: aiBlog.aiBlogPageIntro.centered,
   };
 }
 
-export const blogPostFragment = {
+export const aiBlogPostFragment = {
   _id: true,
   _slug: true,
   _title: true,
-  author: {
+  aiCompany: {
     _id: true,
-    _slug: true,
     _title: true,
-    image: {
-      url: true,
-      alt: true,
+    items: {
+      _title: true,
+      image: {
+        url: true,
+        alt: true,
+      },
+      model: true,
+      version: true,
     },
-    role: true,
   },
   category: {
     __typename: true,
@@ -91,21 +95,21 @@ export const blogPostFragment = {
       content: true,
     },
   },
-} satisfies BlogPostsItemGenqlSelection;
+} satisfies AiBlogPostsItemGenqlSelection;
 
-export type BlogPostFragment = FieldsSelection<
+export type AiBlogPostFragment = FieldsSelection<
   BlogPostsItem,
-  typeof blogPostFragment
+  typeof aiBlogPostFragment
 >;
 
-export async function fetchBlogPosts({ first = 10 } = {}) {
-  const { blog } = await basehubClient.query({
-    blog: {
-      blogPosts: {
+export async function fetchAiBlogPosts({ first = 10 } = {}) {
+  const { aiBlog } = await basehubClient.query({
+    aiBlog: {
+      aiBlogPosts: {
         __args: {
           first,
         },
-        items: blogPostFragment,
+        items: aiBlogPostFragment,
         _meta: {
           totalCount: true,
         },
@@ -114,15 +118,15 @@ export async function fetchBlogPosts({ first = 10 } = {}) {
   });
 
   return {
-    items: blog.blogPosts.items,
-    totalCount: blog.blogPosts._meta.totalCount,
+    items: aiBlog.aiBlogPosts.items,
+    totalCount: aiBlog.aiBlogPosts._meta.totalCount,
   };
 }
 
-export const getPostBySlugQuery = (slug: string) => {
+export const getAiPostBySlugQuery = (slug: string) => {
   return {
-    blog: {
-      blogPosts: {
+    aiBlog: {
+      aiBlogPosts: {
         __args: { first: 1, filter: { _sys_slug: { eq: slug } } },
         items: {
           _id: true,
@@ -130,19 +134,18 @@ export const getPostBySlugQuery = (slug: string) => {
           _title: true,
           publishedDate: true,
           content: { json: { content: true } },
-          author: {
+          aiCompany: {
             _id: true,
             _title: true,
-            bio: true,
-            image: {
-              url: true,
-              alt: true,
+            items: {
+              _title: true,
+              image: {
+                url: true,
+                alt: true,
+              },
+              model: true,
+              version: true,
             },
-            role: true,
-            websiteRelativePath: true,
-            upworkUrl: true,
-            twitterUrl: true,
-            linkedinUrl: true,
           },
           category: {
             _id: true,
