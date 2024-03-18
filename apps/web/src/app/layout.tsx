@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     env.VERCEL_ENV === 'production' ? siteConfig.url : 'http://localhost:3000',
   ),
   title: {
-    template: `%s:: ${siteConfig.name}`,
+    template: `%s :: ${siteConfig.name}`,
     default: `${siteConfig.name} :: Award-winning studio`,
   },
   description: siteConfig.description,

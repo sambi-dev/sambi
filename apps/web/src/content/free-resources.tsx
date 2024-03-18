@@ -43,7 +43,7 @@ export const freeResources: FreeResource[] = [
         </div>
       );
     },
-    href: '/mdx',
+    href: '/ai-blog',
     linkText: 'Read AI blog',
     linkAriaText: "Visit sambi.dev's AI Blog in the same window",
   },

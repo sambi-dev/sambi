@@ -17,7 +17,7 @@ export const footerLinks: Section[] = [
     links: [
       { title: 'Showcase', href: '/showcase' },
       { title: 'Blog', href: '/blog' },
-      { title: 'AI Blog', href: '/mdx' },
+      { title: 'AI Blog', href: '/ai-blog' },
       { title: 'FAQ', href: '/faq' },
       { title: 'Process', href: '/process' },
     ],

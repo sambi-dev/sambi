@@ -3,11 +3,17 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { RichText } from 'basehub/react-rich-text';
+
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
 
-import { formatDate } from '#/lib/constants';
-import { loadAiPosts } from '#/lib/mdx';
+import {
+  fetchAiBlogPageIntro,
+  fetchAiBlogPageMetadata,
+  fetchAiBlogPosts,
+} from '#/basehub/ai-blog-queries';
+import { formatISODate } from '#/lib/constants';
 import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
 import { FadeIn } from '#/ui/fade-in';
@@ -16,72 +22,80 @@ import { PageIntro } from '#/ui/page-intro';
 import { ArrowIcon } from '#/ui/shared/icons';
 import { LoadMore, LoadMoreButton, LoadMoreItems } from '#/ui/shared/load-more';
 
-export const metadata: Metadata = {
-  title: 'Generative Blog',
-  description:
-    "The Generative Blog by sambi.dev is where AI SEO experiments go to party. 🎉 We're bringing the SEO results using only AI that'll make Twitter bros drool 🤤",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const metadata = await fetchAiBlogPageMetadata();
+
+  return {
+    title: metadata.title,
+    description: metadata.description,
+  };
+}
 
 export default async function AiBlog() {
-  const aiPosts = await loadAiPosts();
+  const { items: aiBlogPosts, totalCount } = await fetchAiBlogPosts();
+  const pageIntro = await fetchAiBlogPageIntro();
 
   return (
     <>
       <PageIntro
-        eyebrow="Generated blog"
-        title="A better way to use AI for SEO"
+        eyebrow={pageIntro.eyebrow}
+        title={pageIntro.title}
+        centered={pageIntro.centered}
       >
-        <p>
-          Each post on sambi&apos;s generated blog is just that, generated.
-          Created by AI in close collaboration with humans. Not your usual crap,
-          that&apos;s for sure.
-        </p>
+        <RichText>{pageIntro.description?.json.content}</RichText>
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
-        <LoadMore className="space-y-24" totalItems={aiPosts.length}>
+        <LoadMore className="space-y-24" totalItems={totalCount}>
           <LoadMoreItems>
-            {aiPosts.map((aiPost) => (
-              <FadeIn key={aiPost.href}>
+            {aiBlogPosts.map((aiPost) => (
+              <FadeIn key={aiPost._id}>
                 <article>
                   <Border className="pt-16">
                     <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                       <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
                         <h2 className="max-w-2xl text-pretty font-mono text-3xl font-semibold tracking-tighter text-foreground hover:text-primary">
-                          <Link href={aiPost.href}>{aiPost.title}</Link>
+                          <Link href={`/ai-blog/${aiPost._slug}`}>
+                            {aiPost._title}
+                          </Link>
                         </h2>
                         <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
                           <dt className="sr-only">Published</dt>
                           <dd className="absolute left-0 top-0 font-mono text-sm uppercase lg:static">
-                            <time dateTime={aiPost.date}>
-                              {formatDate(aiPost.date)}
+                            <time dateTime={aiPost.publishedDate}>
+                              {formatISODate(aiPost.publishedDate)}
                             </time>
                           </dd>
                           <dt className="sr-only">LLM Model</dt>
                           <dd className="mt-6 flex gap-x-4">
                             <div className="flex-none overflow-hidden rounded-xl border bg-background">
                               <Image
-                                alt=""
-                                {...aiPost.llm.image}
+                                alt={
+                                  aiPost.aiCompany.items[0]!.image.alt ??
+                                  "A simple colored square representing the AI model's company"
+                                }
+                                src={aiPost.aiCompany.items[0]!.image.url}
+                                width={48}
+                                height={48}
                                 className="h-12 w-12 object-cover grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
                               />
                             </div>
                             <div className="text-sm text-secondary-foreground">
                               <div className="font-mono font-medium tracking-tighter">
-                                {aiPost.llm.company}
+                                {aiPost.aiCompany.items[0]!._title}
                               </div>
                               <div className="font-mono text-muted-foreground">
-                                {aiPost.llm.model}
+                                {aiPost.aiCompany.items[0]!.model}
                               </div>
                             </div>
                           </dd>
                         </dl>
                         <p className="mt-6 line-clamp-2 max-w-2xl text-muted-foreground">
-                          {aiPost.description}
+                          {aiPost.metaDescription}
                         </p>
                         <Link
-                          href={aiPost.href}
-                          aria-label={`Read more: ${aiPost.title}`}
+                          href={`/ai-blog/${aiPost._slug}`}
+                          aria-label={`Read more: ${aiPost._title}`}
                           className={cn(
                             buttonVariants({
                               variant: 'secondary',
