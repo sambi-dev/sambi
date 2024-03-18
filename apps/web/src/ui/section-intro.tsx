@@ -33,7 +33,7 @@ export function SectionIntro({
           <span
             className={cn(
               'block text-pretty font-mono font-semibold tracking-tighter text-foreground',
-              smaller ? 'text-2xl' : 'text-4xl sm:text-5xl',
+              smaller ? 'text-2xl' : 'text-3xl sm:text-4xl',
             )}
           >
             {title}

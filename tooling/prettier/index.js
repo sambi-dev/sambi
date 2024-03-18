@@ -36,6 +36,7 @@ const config = {
     '^@sambi/(.*)$',
     '',
     '<TYPES>^[.|..|~]',
+    '^\\.basehub',
     '',
     '^#/',
     '',

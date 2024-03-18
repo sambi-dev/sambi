@@ -39,6 +39,29 @@ export function formatDate(dateString: string): string {
   }
 }
 
+export function formatISODate(isoDateString: string): string {
+  const date = new Date(isoDateString);
+  const monthNames = [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Oct',
+    'Nov',
+    'Dec',
+  ];
+  const year = date.getUTCFullYear();
+  const month = monthNames[date.getUTCMonth()];
+  const day = date.getUTCDate();
+
+  return `${month} ${day}, ${year}`;
+}
+
 export function randomElement(array: string[]): string {
   return array[Math.floor(Math.random() * array.length)] ?? '';
 }

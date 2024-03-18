@@ -3,11 +3,17 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { RichText } from 'basehub/react-rich-text';
+
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
 
-import { formatDate } from '#/lib/constants';
-import { loadBlogPosts } from '#/lib/mdx';
+import {
+  fetchBlogPageIntro,
+  fetchBlogPageMetadata,
+  fetchBlogPosts,
+} from '#/basehub/blog-queries';
+import { formatISODate } from '#/lib/constants';
 import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
 import { FadeIn } from '#/ui/fade-in';
@@ -16,59 +22,71 @@ import { PageIntro } from '#/ui/page-intro';
 import { ArrowIcon } from '#/ui/shared/icons';
 import { LoadMore, LoadMoreButton, LoadMoreItems } from '#/ui/shared/load-more';
 
-export const metadata: Metadata = {
-  title: 'Blog',
-  description:
-    "Stay up-to-date with sambi.dev's Blog. 📰 Where we find innovative ways to recycle old news and pass it off as cutting-edge insights, again. 🤫",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const metadata = await fetchBlogPageMetadata();
+
+  return {
+    title: metadata.title,
+    description: metadata.description,
+  };
+}
 
 export default async function Blog() {
-  const blogPosts = await loadBlogPosts();
+  const { items: blogPosts, totalCount } = await fetchBlogPosts();
+  const pageIntro = await fetchBlogPageIntro();
 
   return (
     <>
-      <PageIntro eyebrow="Blog" title="Like open source for expertise">
-        <p>
-          Dive into our blog for a no-fluff zone of insights and experiences.
-          Includes epic facepalms and tons of wins too. We&apos;re sharing it
-          all.
-        </p>
+      <PageIntro
+        eyebrow={pageIntro.eyebrow}
+        title={pageIntro.title}
+        centered={pageIntro.centered}
+      >
+        <RichText>{pageIntro.description?.json.content}</RichText>
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
-        <LoadMore className="space-y-24" totalItems={blogPosts.length}>
+        <LoadMore className="space-y-24" totalItems={totalCount}>
           <LoadMoreItems>
             {blogPosts.map((post) => (
-              <FadeIn key={post.href}>
+              <FadeIn key={post._id}>
                 <article>
                   <Border className="pt-16">
                     <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                       <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
                         <div className="mb-2 font-mono text-sm font-medium uppercase text-primary">
-                          #{post.category}
+                          {post.category.length > 0 && (
+                            <div className="mb-2 font-mono text-sm font-medium uppercase text-primary">
+                              #{post.category[0]?._title}
+                            </div>
+                          )}
                         </div>
                         <h2 className="max-w-2xl text-pretty font-mono text-3xl font-semibold tracking-tighter text-foreground hover:text-primary">
-                          <Link href={post.href}>{post.title}</Link>
+                          <Link href={`/blog/${post._slug}`}>
+                            {post._title}
+                          </Link>
                         </h2>
                         <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
                           <dt className="sr-only">Published</dt>
                           <dd className="absolute left-0 top-0 font-mono text-sm uppercase lg:static">
-                            <time dateTime={post.date}>
-                              {formatDate(post.date)}
+                            <time dateTime={post.publishedDate}>
+                              {formatISODate(post.publishedDate)}
                             </time>
                           </dd>
                           <dt className="sr-only">Author</dt>
                           <dd className="mt-6 flex gap-x-4">
                             <div className="flex-none overflow-hidden rounded-xl border bg-background">
                               <Image
-                                alt=""
-                                {...post.author.image}
+                                alt={post.author.image.alt!}
+                                src={post.author.image.url}
+                                width={48}
+                                height={48}
                                 className="h-12 w-12 object-cover grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
                               />
                             </div>
                             <div className="text-sm text-secondary-foreground">
                               <div className="font-mono font-medium tracking-tighter">
-                                {post.author.name}
+                                {post.author._title}
                               </div>
                               <div className="font-mono text-muted-foreground">
                                 {post.author.role}
@@ -76,12 +94,13 @@ export default async function Blog() {
                             </div>
                           </dd>
                         </dl>
-                        <p className="mt-6 line-clamp-2 max-w-2xl text-muted-foreground">
-                          {post.description}
-                        </p>
+                        <div className="mt-6 line-clamp-2 max-w-2xl text-muted-foreground">
+                          <RichText>{post.tldr?.json.content}</RichText>
+                        </div>
+
                         <Link
-                          href={post.href}
-                          aria-label={`Read more: ${post.title}`}
+                          href={post._slug}
+                          aria-label={`Read more: ${post._title}`}
                           className={cn(
                             buttonVariants({
                               variant: 'secondary',

@@ -36,12 +36,6 @@ async function createConfig() {
           unifiedConditional,
           [
             new RegExp(
-              `^${escapeStringRegexp(path.resolve('src/app/(site)/blog'))}`,
-            ),
-            [[remarkMDXLayout, 'src/ui/blog/blog-post-wrapper', 'post']],
-          ],
-          [
-            new RegExp(
               `^${escapeStringRegexp(path.resolve('src/app/(site)/mdx'))}`,
             ),
             [[remarkMDXLayout, 'src/ui/mdx-blog/ai-post-wrapper', 'aiPost']],
@@ -65,6 +59,15 @@ async function createConfig() {
 
   return withMDX({
     reactStrictMode: true,
+    images: {
+      formats: ['image/avif', 'image/webp'],
+      remotePatterns: [
+        {
+          protocol: 'https',
+          hostname: 'basehub.earth',
+        },
+      ],
+    },
     transpilePackages: [
       '@sambi/api',
       '@sambi/auth',

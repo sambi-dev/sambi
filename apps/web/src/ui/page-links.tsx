@@ -11,7 +11,6 @@ import { ArrowIcon } from '#/ui/shared/icons';
 
 interface Page {
   href: string;
-  date: string;
   title: string;
   description: string;
   readMoreButtonText: string;
