@@ -115,7 +115,7 @@ export function NavBar() {
                 <MenuIcon open={open} className="h-6 w-6 stroke-primary" />
               </Popover.Button>
             </div>
-            <Popover.Panel className="absolute inset-x-0 top-0 bg-background py-3.5 shadow-sm [@supports(backdrop-filter:blur(0))]:bg-secondary [@supports(backdrop-filter:blur(0))]:backdrop-blur">
+            <Popover.Panel className="absolute inset-x-0 top-0 bg-background py-3.5 shadow-sm [@supports(backdrop-filter:blur(0))]:backdrop-blur [@supports(backdrop-filter:blur(10))]:bg-secondary">
               {sections.map((section, sectionIndex) => (
                 <Popover.Button
                   as="a"
@@ -139,7 +139,7 @@ export function NavBar() {
           </>
         )}
       </Popover>
-      <div className="sm:background hidden sm:flex sm:h-32 sm:justify-center sm:border-b sm:[@supports(backdrop-filter:blur(0))]:bg-secondary sm:[@supports(backdrop-filter:blur(0))]:backdrop-blur">
+      <div className="hidden sm:flex sm:h-32 sm:justify-center sm:border-b sm:bg-background sm:[@supports(backdrop-filter:blur(0))]:bg-secondary sm:[@supports(backdrop-filter:blur(0))]:backdrop-blur">
         <ol className="mb-[-2px] grid auto-cols-[minmax(0,15rem)] grid-flow-col font-mono text-base font-medium tracking-tighter text-foreground/80 [counter-reset:section]">
           {sections.map((section, sectionIndex) => (
             <li key={section.id} className="flex [counter-increment:section]">
