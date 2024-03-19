@@ -1,20 +1,41 @@
 import type { Metadata } from 'next';
 
+import { RichText } from 'basehub/react-rich-text';
+
 import { fetchBlogPosts } from '#/basehub/blog-queries';
+import {
+  fetchFaqs,
+  fetchFaqsPageIntro,
+  fetchFaqsPageMetadata,
+} from '#/basehub/faq-queries';
+import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
+import { Container } from '#/ui/page-container';
+import { PageIntro } from '#/ui/page-intro';
 import { PageLinks } from '#/ui/page-links';
-import ComingSoon from '#/ui/shared/coming-soon';
+import Faqs from '#/ui/shared/faq';
 
-export const metadata: Metadata = {
-  title: 'FAQ',
-  description:
-    "Got hard questions? We got ChatGPT and Claude 3 subscriptions. First, check our our frequently asked questions. When they're ready that is.",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const metadata = await fetchFaqsPageMetadata();
 
-export default async function FAQ() {
+  return {
+    title: metadata.title,
+    description: metadata.description,
+  };
+}
+
+export default async function FaqPage() {
+  const pageIntro = await fetchFaqsPageIntro();
+  const faq = await fetchFaqs();
   const { items: blogPosts } = await fetchBlogPosts({
     first: 2,
   });
+
+  if (faq.items) {
+    faq.items.sort((a, b) =>
+      a.isPriority === b.isPriority ? 0 : a.isPriority ? -1 : 1,
+    );
+  }
 
   const pages = blogPosts.map((post) => ({
     href: `/blog/${post._slug}`,
@@ -25,17 +46,30 @@ export default async function FAQ() {
 
   return (
     <>
-      <ComingSoon
-        eyebrow="Frequently Asked Questions"
-        title="We hit our ChatGPT limit"
-        buttonText="Take me there"
+      <PageIntro
+        eyebrow={pageIntro.eyebrow}
+        title={pageIntro.title}
+        centered={pageIntro.centered}
       >
-        <p>
-          We have ChatGPT and Claude 3 subscriptions too. You&apos;d think
-          we&apos;d be able to finish this page already. Take a look at our
-          recent project showcase in the meantime?
-        </p>
-      </ComingSoon>
+        <RichText>{pageIntro.description?.json.content}</RichText>
+      </PageIntro>
+      <Container className="mt-24 sm:mt-32 lg:mt-40">
+        <Border className="pt-16" />
+        <Faqs faq={faq} />
+        <div className="mx-auto mt-6 max-w-2xl text-pretty py-10 text-base leading-7 text-muted-foreground">
+          Have a different question?{' '}
+          <a
+            href="https://github.com/sambi-dev/sambi/issues"
+            className="font-semibold text-primary underline decoration-2 underline-offset-4 hover:text-primary/80"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Open an issue on our GitHub project in a new window"
+          >
+            Reach out to us on GitHub
+          </a>
+          . We&apos;ll be happy to help.
+        </div>
+      </Container>
 
       <PageLinks
         className="mt-24 sm:mt-32 lg:mt-40"

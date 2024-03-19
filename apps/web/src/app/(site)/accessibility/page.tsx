@@ -50,7 +50,10 @@ export default async function PrivacyPolicy() {
 
       <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
         <Border className="py-16" />
-        <RichTextWrapper content={privacy.content?.json.content as string} />
+        <RichTextWrapper
+          content={privacy.content?.json.content as string}
+          centered
+        />
       </Container>
       <PageLinks
         className="mt-24 sm:mt-32 lg:mt-40"
