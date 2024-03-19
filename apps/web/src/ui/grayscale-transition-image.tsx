@@ -17,7 +17,7 @@ const MotionImage = motion(Image);
 export function GrayscaleTransitionImage(
   props: Pick<
     ImageProps,
-    'src' | 'quality' | 'className' | 'sizes' | 'priority'
+    'src' | 'quality' | 'className' | 'sizes' | 'priority' | 'width' | 'height'
   > & { alt?: string },
 ) {
   const ref = useRef<React.ElementRef<'div'>>(null);
@@ -36,7 +36,7 @@ export function GrayscaleTransitionImage(
         className="pointer-events-none absolute left-0 top-0 w-full opacity-0 transition duration-300 group-hover:opacity-100"
         aria-hidden="true"
       >
-        <Image alt="" {...props} />
+        <Image width={1216} height={1216} alt="" {...props} />
       </div>
     </div>
   );

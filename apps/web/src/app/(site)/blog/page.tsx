@@ -13,7 +13,7 @@ import {
   fetchBlogPageMetadata,
   fetchBlogPosts,
 } from '#/basehub/blog-queries';
-import { formatISODate } from '#/lib/constants';
+import { formatDate } from '#/lib/constants';
 import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
 import { FadeIn } from '#/ui/fade-in';
@@ -61,7 +61,7 @@ export default async function Blog() {
                             </div>
                           )}
                         </div>
-                        <h2 className="max-w-2xl text-pretty font-mono text-3xl font-semibold tracking-tighter text-foreground hover:text-primary">
+                        <h2 className="max-w-2xl text-pretty font-mono text-3xl font-semibold leading-normal tracking-tighter text-foreground hover:text-primary">
                           <Link href={`/blog/${post._slug}`}>
                             {post._title}
                           </Link>
@@ -70,7 +70,7 @@ export default async function Blog() {
                           <dt className="sr-only">Published</dt>
                           <dd className="absolute left-0 top-0 font-mono text-sm uppercase lg:static">
                             <time dateTime={post.publishedDate}>
-                              {formatISODate(post.publishedDate)}
+                              {formatDate(post.publishedDate)}
                             </time>
                           </dd>
                           <dt className="sr-only">Author</dt>

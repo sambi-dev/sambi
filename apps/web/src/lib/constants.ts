@@ -12,34 +12,7 @@ export const ensureStartsWith = (stringToCheck: string, startsWith: string) =>
     ? stringToCheck
     : `${startsWith}${stringToCheck}`;
 
-export function formatDate(dateString: string): string {
-  const date = new Date(`${dateString}T00:00:00Z`);
-  const monthNames = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ];
-  const year = date.getUTCFullYear();
-  const month = monthNames[date.getUTCMonth()];
-  const day = date.getUTCDate();
-
-  if (dateString.split('-').length > 2) {
-    return `${month} ${day}, ${year}`;
-  } else {
-    return `${month} ${year}`;
-  }
-}
-
-export function formatISODate(isoDateString: string): string {
+export function formatDate(isoDateString: string): string {
   const date = new Date(isoDateString);
   const monthNames = [
     'Jan',

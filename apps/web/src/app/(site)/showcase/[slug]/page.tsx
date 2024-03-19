@@ -1,34 +1,82 @@
-import type { MDXEntry, ProjectBrief } from '#/lib/mdx';
+import { notFound } from 'next/navigation';
 
-import { loadProjectBriefs } from '#/lib/mdx';
+import { basehubClient } from '#/basehub/client';
+import {
+  fetchShowcaseBriefs,
+  getShowcaseBriefBySlugQuery,
+} from '#/basehub/showcase-queries';
 import { ContactSection } from '#/ui/contact-section';
 import { FadeIn } from '#/ui/fade-in';
 import { GrayscaleTransitionImage } from '#/ui/grayscale-transition-image';
-import { MDXComponents } from '#/ui/mdx-components';
 import { Container } from '#/ui/page-container';
 import { PageIntro } from '#/ui/page-intro';
 import { PageLinks } from '#/ui/page-links';
+import RichTextWrapper from '#/ui/shared/rich-text-wrapper';
 
-export default async function ProjectBriefWrapper({
-  projectBrief,
-  children,
+export async function generateStaticParams() {
+  const { showcase } = await basehubClient.query({
+    showcase: {
+      brief: {
+        __args: {
+          first: 10,
+        },
+        items: {
+          _slug: true,
+        },
+      },
+    },
+  });
+
+  return showcase.brief.items.map((item) => ({ params: { slug: item._slug } }));
+}
+
+export async function generateMetadata({
+  params,
 }: {
-  projectBrief: MDXEntry<ProjectBrief>;
-  children: React.ReactNode;
-}) {
-  const allProjectBriefs = await loadProjectBriefs();
-  const moreProjectBriefs = allProjectBriefs
-    .filter(({ metadata }) => metadata !== projectBrief)
-    .slice(0, 2);
+  params: { slug: string };
+}): Promise<{ title: string; description: string }> {
+  const query = getShowcaseBriefBySlugQuery(params.slug);
+  const { showcase } = await basehubClient.query(query);
 
-  const eyebrowText = `${projectBrief.client} Project Brief${projectBrief.partner ? ' :: Via partner' : ''}`;
+  const brief = showcase.brief.items[0];
+  if (!brief) throw new Error('Not found');
+
+  return {
+    title: brief.metaTitle,
+    description: brief.metaDescription,
+  };
+}
+
+export default async function ProjectBriefPage({
+  params,
+}: {
+  params: { slug: string };
+}) {
+  const { showcase } = await basehubClient.query(
+    getShowcaseBriefBySlugQuery(params.slug),
+  );
+  const brief = showcase.brief.items[0];
+  if (!brief) notFound();
+
+  const { items: moreShowcaseBriefs } = await fetchShowcaseBriefs({
+    first: 2,
+  });
+
+  const eyebrowText = `${brief.client._title} Project Brief${brief.isPartner ? ' :: Via partner' : ''}`;
+
+  const formattedPages = moreShowcaseBriefs.map((brief) => ({
+    href: `/showcase/${brief._slug}`,
+    title: brief._title,
+    description: brief.metaDescription,
+    readMoreButtonText: brief.readMoreButtonText,
+  }));
 
   return (
     <>
       <article className="mt-24 sm:mt-32 lg:mt-40">
         <header>
-          <PageIntro eyebrow={eyebrowText} title={projectBrief.title} centered>
-            <p>{projectBrief.description}</p>
+          <PageIntro eyebrow={eyebrowText} title={brief._title} centered>
+            <p>{brief.metaDescription}</p>
           </PageIntro>
 
           <FadeIn>
@@ -41,7 +89,7 @@ export default async function ProjectBriefWrapper({
                         Client
                       </dt>
                       <dd className="text-muted-foreground">
-                        {projectBrief.client}
+                        {brief.client._title}
                       </dd>
                     </div>
                     <div className="border-t px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
@@ -49,8 +97,8 @@ export default async function ProjectBriefWrapper({
                         Year
                       </dt>
                       <dd className="text-muted-foreground">
-                        <time dateTime={projectBrief.date.split('-')[0]}>
-                          {projectBrief.date.split('-')[0]}
+                        <time dateTime={brief.publishedDate.split('-')[0]}>
+                          {brief.publishedDate.split('-')[0]}
                         </time>
                       </dd>
                     </div>
@@ -58,16 +106,14 @@ export default async function ProjectBriefWrapper({
                       <dt className="font-mono font-bold tracking-tighter">
                         Status
                       </dt>
-                      <dd className="text-muted-foreground">
-                        {projectBrief.status}
-                      </dd>
+                      <dd className="text-muted-foreground">{brief.status}</dd>
                     </div>
                     <div className="border-t px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
                       <dt className="font-mono font-bold tracking-tighter">
                         Service
                       </dt>
                       <dd className="text-muted-foreground">
-                        {projectBrief.service}
+                        {brief.service[0]?._title}
                       </dd>
                     </div>
                   </dl>
@@ -78,7 +124,10 @@ export default async function ProjectBriefWrapper({
             <div className="border-y">
               <div className="-my-px mx-auto max-w-[76rem] bg-background">
                 <GrayscaleTransitionImage
-                  {...projectBrief.image}
+                  src={brief.image.url}
+                  alt={brief.image.alt ?? 'An image for the project brief'}
+                  width={1216}
+                  height={1216}
                   quality={90}
                   className="w-full"
                   sizes="(min-width: 1216px) 76rem, 100vw"
@@ -90,17 +139,15 @@ export default async function ProjectBriefWrapper({
         </header>
 
         <Container className="mt-24 sm:mt-32 lg:mt-40">
-          <FadeIn>
-            <MDXComponents.wrapper>{children}</MDXComponents.wrapper>
-          </FadeIn>
+          <RichTextWrapper content={brief.content?.json.content as string} />
         </Container>
       </article>
 
-      {moreProjectBriefs.length > 0 && (
+      {formattedPages.length > 0 && (
         <PageLinks
           className="mt-24 sm:mt-32 lg:mt-40"
           title="More case studies"
-          pages={moreProjectBriefs}
+          pages={formattedPages}
         />
       )}
 

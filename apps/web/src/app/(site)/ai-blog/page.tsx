@@ -13,7 +13,7 @@ import {
   fetchAiBlogPageMetadata,
   fetchAiBlogPosts,
 } from '#/basehub/ai-blog-queries';
-import { formatISODate } from '#/lib/constants';
+import { formatDate } from '#/lib/constants';
 import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
 import { FadeIn } from '#/ui/fade-in';
@@ -54,7 +54,7 @@ export default async function AiBlog() {
                   <Border className="pt-16">
                     <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                       <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
-                        <h2 className="max-w-2xl text-pretty font-mono text-3xl font-semibold tracking-tighter text-foreground hover:text-primary">
+                        <h2 className="max-w-2xl text-pretty font-mono text-3xl font-semibold leading-normal tracking-tighter text-foreground hover:text-primary">
                           <Link href={`/ai-blog/${aiPost._slug}`}>
                             {aiPost._title}
                           </Link>
@@ -63,7 +63,7 @@ export default async function AiBlog() {
                           <dt className="sr-only">Published</dt>
                           <dd className="absolute left-0 top-0 font-mono text-sm uppercase lg:static">
                             <time dateTime={aiPost.publishedDate}>
-                              {formatISODate(aiPost.publishedDate)}
+                              {formatDate(aiPost.publishedDate)}
                             </time>
                           </dd>
                           <dt className="sr-only">LLM Model</dt>

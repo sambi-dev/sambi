@@ -1,4 +1,4 @@
-import { loadProjectBriefs } from '#/lib/mdx';
+import { fetchShowcaseBriefs } from '#/basehub/showcase-queries';
 import { BigWarning } from '#/ui/home/big-warning';
 import { Hero } from '#/ui/home/hero';
 import { Introduction } from '#/ui/home/introduction';
@@ -13,7 +13,7 @@ import { NavBar } from '#/ui/layout/navbar';
 import { Cta } from '#/ui/shared/cta';
 
 export default async function Home() {
-  const projectBriefs = (await loadProjectBriefs()).slice(0, 3);
+  const { items: projectBriefs } = await fetchShowcaseBriefs({ first: 3 });
   return (
     <>
       <Hero />
