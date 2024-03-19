@@ -54,7 +54,7 @@ export const footerLinks: Section[] = [
     title: 'Legal',
     links: [
       { title: 'Accessibility', href: '/accessibility' },
-      { title: 'Cookies', href: '/privacy#cookies' },
+      { title: 'Cookies', href: '/privacy' },
       { title: 'Editorial', href: '/editorial' },
       { title: 'Privacy', href: '/privacy' },
       { title: 'Terms', href: '/terms' },

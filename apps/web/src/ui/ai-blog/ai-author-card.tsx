@@ -14,7 +14,7 @@ export default function AiAuthorCard() {
           Don&apos;t fall for that <span className="line-through">shit</span>.
           Quality matters, and you&apos;ll get crushed by Google like they did.
           Our AI Blog transparently explores what humans and AI can achieve
-          together to craft high-quality, meaningful content.{' '}
+          together to craft high-quality, meaningful content.
         </p>
       </SectionIntro>
     </FadeIn>

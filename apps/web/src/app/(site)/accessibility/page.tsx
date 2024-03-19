@@ -1,17 +1,32 @@
 import type { Metadata } from 'next';
 
+import { RichText } from 'basehub/react-rich-text';
+
+import {
+  fetchAccessibilityPage,
+  fetchAccessibilityPageIntro,
+  fetchAccessibilityPageMetadata,
+} from '#/basehub/accessibility-queries';
 import { fetchBlogPosts } from '#/basehub/blog-queries';
+import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
+import { Container } from '#/ui/page-container';
+import { PageIntro } from '#/ui/page-intro';
 import { PageLinks } from '#/ui/page-links';
-import ComingSoon from '#/ui/shared/coming-soon';
+import RichTextWrapper from '#/ui/shared/rich-text-wrapper';
 
-export const metadata: Metadata = {
-  title: 'Accessibility',
-  description:
-    'We do our best to ensure digital access for all. Dive into our accessibility guide to learn more about our ongoing efforts to improve access for everyone.',
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const metadata = await fetchAccessibilityPageMetadata();
 
-export default async function Accessibility() {
+  return {
+    title: metadata.title,
+    description: metadata.description,
+  };
+}
+
+export default async function PrivacyPolicy() {
+  const pageIntro = await fetchAccessibilityPageIntro();
+  const privacy = await fetchAccessibilityPage();
   const { items: blogPosts } = await fetchBlogPosts({
     first: 2,
   });
@@ -24,26 +39,26 @@ export default async function Accessibility() {
   }));
 
   return (
-    <>
-      <ComingSoon
-        eyebrow="Accessibility"
-        title="Kind of ironic isn't it?"
-        buttonText="OK, sure..."
+    <div>
+      <PageIntro
+        eyebrow={pageIntro.eyebrow}
+        title={pageIntro.title}
+        centered={pageIntro.centered}
       >
-        <p>
-          Ambreen wanted an accessibility page. Sam&apos;s solution? A footer
-          link. It&apos;s a work in progress. Explore our showcase until then?
-        </p>
-      </ComingSoon>
+        <RichText>{pageIntro.description?.json.content}</RichText>
+      </PageIntro>
 
+      <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
+        <Border className="py-16" />
+        <RichTextWrapper content={privacy.content?.json.content as string} />
+      </Container>
       <PageLinks
         className="mt-24 sm:mt-32 lg:mt-40"
         title="From the blog"
-        intro="In a world of recycled ideas, we're hitting differently. Think of us as the thrift shop of digital content. Vintage, but cool."
+        intro="In an era of synthetic noise, we're proudly analog. Crafting content with our bare hands. Call us old fashioned."
         pages={pages}
       />
-
       <ContactSection />
-    </>
+    </div>
   );
 }

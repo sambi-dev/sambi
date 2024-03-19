@@ -14,13 +14,14 @@ export async function fetchBlogPageMetadata() {
         _id: true,
         _slug: true,
         _title: true,
+        title: true,
         description: true,
       },
     },
   });
 
   return {
-    title: blog.blogPageMeta._title,
+    title: blog.blogPageMeta.title,
     description: blog.blogPageMeta.description,
   };
 }
