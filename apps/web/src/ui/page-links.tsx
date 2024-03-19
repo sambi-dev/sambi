@@ -24,7 +24,13 @@ function PageLink({ page }: { page: Page }) {
         className="relative flex flex-col items-start pl-8"
       >
         <h3 className="mt-6 line-clamp-2 h-20 text-pretty font-mono text-2xl font-semibold tracking-tighter text-foreground">
-          {page.title}
+          <Link
+            aria-label={`Read post ${page.title} in the same window`}
+            className="hover:text-foreground/80"
+            href={page.href}
+          >
+            {page.title}
+          </Link>
         </h3>
         <p className="mt-2.5 line-clamp-2 text-sm text-secondary-foreground md:text-base">
           {page.description}
@@ -61,7 +67,7 @@ export function PageLinks({
   return (
     <div
       className={cn(
-        'relative rounded-t-4xl bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-background via-primary/80 to-card py-24 dark:via-primary sm:py-32 lg:py-40',
+        'relative rounded-t-4xl bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-background via-primary/50 to-card py-24 sm:py-32 lg:py-40',
         className,
       )}
     >

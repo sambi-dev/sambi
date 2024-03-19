@@ -59,8 +59,12 @@ const AiBlogPost = async ({ params }: { params: { slug: string } }) => {
   const post = aiBlog.aiBlogPosts.items[0];
   if (!post) notFound();
   const { items: moreAiBlogPosts } = await fetchAiBlogPosts({
-    first: 2,
+    first: 10,
   });
+
+  const filteredAiBlogPosts = moreAiBlogPosts.filter(
+    (morePost) => morePost._id !== post._id,
+  );
 
   return (
     <>
@@ -110,11 +114,11 @@ const AiBlogPost = async ({ params }: { params: { slug: string } }) => {
         <AiAuthorCard />
       </Container>
 
-      {moreAiBlogPosts.length > 0 && (
+      {filteredAiBlogPosts.length > 0 && (
         <PageLinks
           className="mt-24 sm:mt-32 lg:mt-40"
           title="More articles"
-          pages={moreAiBlogPosts.map((post) => ({
+          pages={filteredAiBlogPosts.map((post) => ({
             href: `/ai-blog/${post._slug}`,
             date: post.publishedDate,
             title: post._title,

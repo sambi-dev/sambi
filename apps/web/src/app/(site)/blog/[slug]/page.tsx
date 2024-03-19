@@ -50,8 +50,12 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
   const post = blog.blogPosts.items[0];
   if (!post) notFound();
   const { items: moreBlogPosts } = await fetchBlogPosts({
-    first: 2,
+    first: 10,
   });
+
+  const filteredBlogPosts = moreBlogPosts.filter(
+    (morePost) => morePost._id !== post._id,
+  );
 
   return (
     <>
@@ -109,11 +113,11 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
         />
       </Container>
 
-      {moreBlogPosts.length > 0 && (
+      {filteredBlogPosts.length > 0 && (
         <PageLinks
           className="mt-24 sm:mt-32 lg:mt-40"
           title="More articles"
-          pages={moreBlogPosts.map((post) => ({
+          pages={filteredBlogPosts.map((post) => ({
             href: `/blog/${post._slug}`,
             date: post.publishedDate,
             title: post._title,
