@@ -103,7 +103,10 @@ const AiBlogPost = async ({ params }: { params: { slug: string } }) => {
           </header>
         </FadeIn>
 
-        <RichTextWrapper content={post.content?.json.content as string} />
+        <RichTextWrapper
+          content={post.content?.json.content as string}
+          centered
+        />
         <AiAuthorCard />
       </Container>
 

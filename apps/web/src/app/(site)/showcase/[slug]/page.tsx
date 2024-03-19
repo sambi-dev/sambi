@@ -139,7 +139,10 @@ export default async function ProjectBriefPage({
         </header>
 
         <Container className="mt-24 sm:mt-32 lg:mt-40">
-          <RichTextWrapper content={brief.content?.json.content as string} />
+          <RichTextWrapper
+            content={brief.content?.json.content as string}
+            centered
+          />
         </Container>
       </article>
 
