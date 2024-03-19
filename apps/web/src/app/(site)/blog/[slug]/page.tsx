@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 
 import { fetchBlogPosts, getPostBySlugQuery } from '#/basehub/blog-queries';
 import { basehubClient } from '#/basehub/client';
-import { formatISODate } from '#/lib/constants';
+import { formatDate } from '#/lib/constants';
 import AuthorCard from '#/ui/blog/author-card';
 import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
@@ -45,7 +45,7 @@ export async function generateMetadata({
   };
 }
 
-const BlogPage = async ({ params }: { params: { slug: string } }) => {
+const BlogPost = async ({ params }: { params: { slug: string } }) => {
   const { blog } = await basehubClient.query(getPostBySlugQuery(params.slug));
   const post = blog.blogPosts.items[0];
   if (!post) notFound();
@@ -65,7 +65,7 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
               dateTime={post.publishedDate}
               className="order-first block font-mono text-sm font-bold uppercase tracking-widest text-primary"
             >
-              {formatISODate(post.publishedDate)}
+              {formatDate(post.publishedDate)}
             </time>
             <div className="mt-6 flex items-center justify-center space-x-2">
               <Image
@@ -125,4 +125,4 @@ const BlogPage = async ({ params }: { params: { slug: string } }) => {
   );
 };
 
-export default BlogPage;
+export default BlogPost;

@@ -1,103 +1,36 @@
-import * as path from 'path';
 import { fileURLToPath } from 'url';
 
-import rehypeShiki from '@leafac/rehype-shiki';
-import nextMDX from '@next/mdx';
-import { Parser } from 'acorn';
-import jsx from 'acorn-jsx';
-import escapeStringRegexp from 'escape-string-regexp';
 import _jiti from 'jiti';
-import { recmaImportImages } from 'recma-import-images';
-import remarkGfm from 'remark-gfm';
-import remarkUnwrapImages from 'remark-unwrap-images';
-import shiki from 'shiki';
-import { unifiedConditional } from 'unified-conditional';
 
 const jiti = _jiti(fileURLToPath(import.meta.url));
 
+// Import env files to validate at build time. Use jiti so we can load .ts files in here.
 jiti('./src/env');
 jiti('@sambi/auth/env');
 
-/**
- * @returns {Promise<import('next').NextConfig>}
- */
-async function createConfig() {
-  let highlighter = await shiki.getHighlighter({ theme: 'css-variables' });
-
-  let withMDX = nextMDX({
-    extension: /\.mdx$/,
-    options: {
-      recmaPlugins: [recmaImportImages],
-      rehypePlugins: [[rehypeShiki, { highlighter }]],
-      remarkPlugins: [
-        remarkGfm,
-        remarkUnwrapImages,
-        [
-          unifiedConditional,
-          [
-            new RegExp(
-              `^${escapeStringRegexp(path.resolve('src/app/(site)/showcase'))}`,
-            ),
-            [
-              [
-                remarkMDXLayout,
-                'src/ui/showcase/project-brief-wrapper',
-                'projectBrief',
-              ],
-            ],
-          ],
-        ],
-      ],
-    },
-  });
-
-  return withMDX({
-    reactStrictMode: true,
-    images: {
-      formats: ['image/avif', 'image/webp'],
-      remotePatterns: [
-        {
-          protocol: 'https',
-          hostname: 'basehub.earth',
-        },
-      ],
-    },
-    transpilePackages: [
-      '@sambi/api',
-      '@sambi/auth',
-      '@sambi/db',
-      '@sambi/ui',
-      '@sambi/validators',
+/** @type {import("next").NextConfig} */
+const config = {
+  images: {
+    formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'basehub.earth',
+      },
     ],
-    eslint: { ignoreDuringBuilds: true },
-    typescript: { ignoreBuildErrors: true },
-    pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'mdx'],
-  });
-}
+  },
+  reactStrictMode: true,
 
-function remarkMDXLayout(source, metaName) {
-  let parser = Parser.extend(jsx());
-  let parseOptions = { ecmaVersion: 'latest', sourceType: 'module' };
+  transpilePackages: [
+    '@sambi/api',
+    '@sambi/auth',
+    '@sambi/db',
+    '@sambi/ui',
+    '@sambi/validators',
+  ],
 
-  return (tree) => {
-    let imp = `import _Layout from '${source}'`;
-    let exp = `export default function Layout(props) {
-      return <_Layout {...props} ${metaName}={${metaName}} />
-    }`;
+  eslint: { ignoreDuringBuilds: true },
+  typescript: { ignoreBuildErrors: true },
+};
 
-    tree.children.push(
-      {
-        type: 'mdxjsEsm',
-        value: imp,
-        data: { estree: parser.parse(imp, parseOptions) },
-      },
-      {
-        type: 'mdxjsEsm',
-        value: exp,
-        data: { estree: parser.parse(exp, parseOptions) },
-      },
-    );
-  };
-}
-
-export default createConfig();
+export default config;

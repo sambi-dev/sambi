@@ -1,36 +1,42 @@
 import type { Metadata } from 'next';
 
-import { loadProjectBriefs } from '#/lib/mdx';
+import { RichText } from 'basehub/react-rich-text';
+
+import {
+  fetchShowcaseBriefs,
+  fetchShowcasePageIntro,
+  fetchShowcasePageMetadata,
+} from '#/basehub/showcase-queries';
 import { Clients } from '#/ui/clients';
 import { ContactSection } from '#/ui/contact-section';
 import { BigWarning } from '#/ui/home/big-warning';
 import { PageIntro } from '#/ui/page-intro';
 import { ProjectBriefs } from '#/ui/showcase/project-briefs';
 
-export const metadata: Metadata = {
-  title: 'Showcase',
-  description:
-    "Witness the marvel of sambi.dev's Showcase! We've perfected the art of eco-friendly project recycling 🌿 Same 5 templates, infinite possibilities 😉",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const metadata = await fetchShowcasePageMetadata();
+
+  return {
+    title: metadata.title,
+    description: metadata.description,
+  };
+}
 
 export default async function Work() {
-  const projectBriefs = await loadProjectBriefs();
+  const pageIntro = await fetchShowcasePageIntro();
+  const { items: projectBriefs, totalCount } = await fetchShowcaseBriefs();
 
   return (
     <>
-      <PageIntro eyebrow="Showcase" title="Making us seem bigger than we are">
-        <p>
-          Unlike most humble creatives, we embrace reverse imposter syndrome,
-          boasting louder and prouder than we probably should. It&apos;s our
-          tribute to the brilliant minds whose ideas we{' '}
-          <span className="line-through">steal</span> build upon.
-        </p>
+      <PageIntro
+        eyebrow={pageIntro.eyebrow}
+        title={pageIntro.title}
+        centered={pageIntro.centered}
+      >
+        <RichText>{pageIntro.description?.json.content}</RichText>
       </PageIntro>
 
-      <ProjectBriefs
-        projectBriefs={projectBriefs}
-        totalItems={projectBriefs.length}
-      />
+      <ProjectBriefs projectBriefs={projectBriefs} totalItems={totalCount} />
 
       <div className="mt-24 sm:mt-32 lg:mt-40">
         <BigWarning

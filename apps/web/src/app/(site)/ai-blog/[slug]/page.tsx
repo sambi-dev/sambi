@@ -6,7 +6,7 @@ import {
   getAiPostBySlugQuery,
 } from '#/basehub/ai-blog-queries';
 import { basehubClient } from '#/basehub/client';
-import { formatISODate } from '#/lib/constants';
+import { formatDate } from '#/lib/constants';
 import AiAuthorCard from '#/ui/ai-blog/ai-author-card';
 import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
@@ -74,7 +74,7 @@ const AiBlogPost = async ({ params }: { params: { slug: string } }) => {
               dateTime={post.publishedDate}
               className="order-first block font-mono text-sm font-bold uppercase tracking-widest text-primary"
             >
-              {formatISODate(post.publishedDate)}
+              {formatDate(post.publishedDate)}
             </time>
             <div className="mt-6 flex items-center justify-center space-x-2">
               <Image
