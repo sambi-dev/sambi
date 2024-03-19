@@ -4,11 +4,11 @@ import { ThemeToggle } from '@sambi/ui/theme';
 
 import { siteConfig } from '#/config/site';
 import { FadeIn } from '#/ui/fade-in';
+import { FooterNav } from '#/ui/layout/footer/footer-nav';
+import SystemStatusWidget from '#/ui/layout/footer/system-status';
 import { Logo } from '#/ui/logo';
 import { Container } from '#/ui/page-container';
 import { SocialMedia } from '#/ui/social-media';
-
-import { FooterNav } from './footer-nav';
 
 export function Footer() {
   return (
@@ -36,7 +36,10 @@ export function Footer() {
               © {siteConfig.name}. All Rights Reserved.{' '}
               {new Date().getFullYear()}
             </p>
-            <ThemeToggle />
+            <SystemStatusWidget />
+            <div className="items-end">
+              <ThemeToggle />
+            </div>
           </div>
         </FadeIn>
       </Container>
