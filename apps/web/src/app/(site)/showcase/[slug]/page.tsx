@@ -59,12 +59,16 @@ export default async function ProjectBriefPage({
   if (!brief) notFound();
 
   const { items: moreShowcaseBriefs } = await fetchShowcaseBriefs({
-    first: 2,
+    first: 10,
   });
 
   const eyebrowText = `${brief.client._title} Project Brief${brief.isPartner ? ' :: Via partner' : ''}`;
 
-  const formattedPages = moreShowcaseBriefs.map((brief) => ({
+  const filteredShowcaseBriefs = moreShowcaseBriefs.filter(
+    (moreBrief) => moreBrief._id !== brief._id,
+  );
+
+  const formattedPages = filteredShowcaseBriefs.map((brief) => ({
     href: `/showcase/${brief._slug}`,
     title: brief._title,
     description: brief.metaDescription,
