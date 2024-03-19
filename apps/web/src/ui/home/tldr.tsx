@@ -6,7 +6,7 @@ import { buttonVariants } from '@sambi/ui/button';
 
 import { siteConfig } from '#/config/site';
 import sambiLogo from '#/images/avatars/sambi-logo.png';
-import { ArrowIcon } from '#/ui/shared/icons';
+import { ArrowRightIcon } from '#/ui/shared/icons';
 
 export function Tldr() {
   return (
@@ -67,7 +67,7 @@ export function Tldr() {
                 className={cn(buttonVariants(), 'w-full md:w-auto')}
               >
                 Let&apos;s talk
-                <ArrowIcon className=" ml-2 w-3 flex-none fill-current" />
+                <ArrowRightIcon className="ml-2 w-3 flex-none fill-current" />
               </Link>
             </p>
           </div>

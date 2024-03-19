@@ -52,7 +52,7 @@ export function LoadMoreButton({ children }: { children: React.ReactNode }) {
     <div className="mt-10 flex justify-center">
       <Button size="lg" variant="secondary" onClick={loadMore}>
         {children}
-        <ArrowDownIcon className="ml-2 h-4 w-4" />
+        <ArrowDownIcon className="ml-2 h-3 w-3" />
       </Button>
     </div>
   );

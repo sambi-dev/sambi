@@ -7,7 +7,7 @@ import { buttonVariants } from '@sambi/ui/button';
 import { siteConfig } from '#/config/site';
 import heroImage from '#/images/hero.png';
 import { HeroTestimonial } from '#/ui/home/hero-testimonial';
-import { ArrowIcon } from '#/ui/shared/icons';
+import { ArrowRightIcon } from '#/ui/shared/icons';
 
 export function Hero() {
   return (
@@ -52,7 +52,7 @@ export function Hero() {
                 )}
               >
                 Pay us to listen
-                <ArrowIcon className=" ml-2 w-3 flex-none fill-current" />
+                <ArrowRightIcon className="ml-2 w-3 flex-none fill-current" />
               </Link>
             </div>
           </div>
