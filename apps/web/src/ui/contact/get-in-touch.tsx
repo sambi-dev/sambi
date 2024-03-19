@@ -1,7 +1,7 @@
 import { contactMethods } from '#/content/contact-methods';
 import { Border } from '#/ui/border';
 import { FadeIn } from '#/ui/fade-in';
-import { ArrowIcon } from '#/ui/shared/icons';
+import { ArrowRightIcon } from '#/ui/shared/icons';
 import { SocialMedia } from '#/ui/social-media';
 
 export default function GetInTouch() {
@@ -47,7 +47,7 @@ export default function GetInTouch() {
                         >
                           <span className="flex flex-row">
                             {linkText}
-                            <ArrowIcon className="ml-2 w-4 flex-none fill-current" />
+                            <ArrowRightIcon className="ml-2 w-3 flex-none fill-current" />
                           </span>
                         </a>
                       </dd>

@@ -13,7 +13,7 @@ import {
   ExpandableButton,
   ExpandableItems,
 } from '#/ui/shared/expandable';
-import { ArrowIcon } from '#/ui/shared/icons';
+import { ArrowRightIcon } from '#/ui/shared/icons';
 
 import { StarRating } from '../shared/star-rating';
 
@@ -51,7 +51,7 @@ function Warning({ client, children }: WarningProps) {
                 className={cn(buttonVariants({ size: 'sm' }))}
               >
                 {client.ctaText}
-                <ArrowIcon className=" ml-2 w-3 flex-none fill-current" />
+                <ArrowRightIcon className="ml-2 w-3 flex-none fill-current" />
               </Link>
             </div>
           ) : (

@@ -19,7 +19,7 @@ import { ContactSection } from '#/ui/contact-section';
 import { FadeIn } from '#/ui/fade-in';
 import { Container } from '#/ui/page-container';
 import { PageIntro } from '#/ui/page-intro';
-import { ArrowIcon } from '#/ui/shared/icons';
+import { ArrowRightIcon } from '#/ui/shared/icons';
 import { LoadMore, LoadMoreButton, LoadMoreItems } from '#/ui/shared/load-more';
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -105,7 +105,7 @@ export default async function AiBlog() {
                           )}
                         >
                           {aiPost.readMoreButtonText}
-                          <ArrowIcon className=" ml-2 w-3 flex-none fill-current" />
+                          <ArrowRightIcon className="ml-2 w-3 flex-none fill-current" />
                         </Link>
                       </div>
                     </div>

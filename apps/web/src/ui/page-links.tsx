@@ -7,7 +7,7 @@ import { Border } from '#/ui/border';
 import { FadeIn, FadeInStagger } from '#/ui/fade-in';
 import { Container } from '#/ui/page-container';
 import { SectionIntro } from '#/ui/section-intro';
-import { ArrowIcon } from '#/ui/shared/icons';
+import { ArrowRightIcon } from '#/ui/shared/icons';
 
 interface Page {
   href: string;
@@ -40,7 +40,7 @@ function PageLink({ page }: { page: Page }) {
           )}
         >
           {page.readMoreButtonText}
-          <ArrowIcon className="ml-2 w-3 flex-none fill-current" />
+          <ArrowRightIcon className="ml-2 w-3 flex-none fill-current" />
         </Link>
       </Border>
     </article>

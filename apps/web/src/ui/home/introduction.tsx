@@ -4,7 +4,7 @@ import { buttonVariants } from '@sambi/ui/button';
 import { siteConfig } from '#/config/site';
 import { FadeIn } from '#/ui/fade-in';
 import { Container } from '#/ui/shared/container';
-import { ArrowIcon, CheckIcon } from '#/ui/shared/icons';
+import { ArrowRightIcon, CheckIcon } from '#/ui/shared/icons';
 
 export function Introduction() {
   return (
@@ -51,7 +51,7 @@ export function Introduction() {
               'Can I get all this done with promo codes and free trials?',
             ].map((question) => (
               <li key={question} className="flex">
-                <CheckIcon className="h-8 w-8 flex-none fill-primary" />
+                <CheckIcon className="h-8 flex-none text-primary" />
                 <span className="ml-4">{question}</span>
               </li>
             ))}
@@ -116,7 +116,7 @@ export function Introduction() {
               )}
             >
               Let&apos;s do this
-              <ArrowIcon className=" ml-2 w-3 flex-none fill-current" />
+              <ArrowRightIcon className="ml-2 w-3 flex-none fill-current" />
             </a>
           </div>
         </FadeIn>

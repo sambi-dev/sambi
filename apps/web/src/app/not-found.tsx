@@ -5,7 +5,7 @@ import { buttonVariants } from '@sambi/ui/button';
 
 import { Logo } from '#/ui/logo';
 import { Container } from '#/ui/shared/container';
-import { ArrowIcon } from '#/ui/shared/icons';
+import { ArrowRightIcon } from '#/ui/shared/icons';
 
 export default function NotFound() {
   return (
@@ -36,7 +36,7 @@ export default function NotFound() {
             className={cn(buttonVariants())}
           >
             Take me home
-            <ArrowIcon className="ml-2 w-3 flex-none fill-current" />
+            <ArrowRightIcon className="ml-2 w-3 flex-none fill-current" />
           </Link>
           <Link
             href="https://github.com/sambi-dev/sambi/issues/new/choose"
@@ -49,7 +49,7 @@ export default function NotFound() {
             )}
           >
             Yell at Sam
-            <ArrowIcon className="ml-2 w-3 flex-none fill-current" />
+            <ArrowRightIcon className="ml-2 w-3 flex-none fill-current" />
           </Link>
         </div>
       </Container>

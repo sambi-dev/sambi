@@ -8,7 +8,7 @@ import { processSteps } from '#/content/process-steps';
 import { FadeIn } from '#/ui/fade-in';
 import { SectionIntro } from '#/ui/section-intro';
 import { Container } from '#/ui/shared/container';
-import { ArrowIcon } from '#/ui/shared/icons';
+import { ArrowRightIcon } from '#/ui/shared/icons';
 
 export function Process() {
   return (
@@ -58,7 +58,7 @@ export function Process() {
                     )}
                   >
                     {step.ctaText}
-                    <ArrowIcon className=" ml-2 w-4 flex-none fill-current" />
+                    <ArrowRightIcon className="ml-2 w-3 flex-none fill-current" />
                   </Link>
                 </div>
               </li>

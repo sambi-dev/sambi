@@ -20,7 +20,11 @@ import { siteConfig } from '#/config/site';
 import { Footer } from '#/ui/layout/footer';
 import { Logo, Logomark } from '#/ui/logo';
 import { Container } from '#/ui/page-container';
-import { BurgerMenuIcon, CloseMenuIcon } from '#/ui/shared/icons';
+import {
+  ArrowRightIcon,
+  BurgerMenuIcon,
+  CloseMenuIcon,
+} from '#/ui/shared/icons';
 import { SocialMedia } from '#/ui/social-media';
 
 const MainLayoutContext = createContext<{
@@ -71,9 +75,10 @@ function Header({
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Book a consult with sambi on Upwork in a new window"
-            className={cn(buttonVariants({}))}
+            className={cn(buttonVariants({ size: 'sm' }))}
           >
             Hire us
+            <ArrowRightIcon className="ml-2 w-3 flex-none fill-current" />
           </a>
           <button
             ref={toggleRef}
@@ -91,8 +96,8 @@ function Header({
               className={cn(
                 'h-6 w-6',
                 invert
-                  ? 'fill-[#09090B] group-hover:fill-[#09090B]/80'
-                  : 'fill-foreground group-hover:fill-foreground/80',
+                  ? 'text-[#09090B] group-hover:text-[#09090B]/80'
+                  : 'text-foreground group-hover:text-foreground/80',
               )}
             />
           </button>
