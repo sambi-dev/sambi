@@ -68,7 +68,9 @@ export default async function ProjectBriefPage({
     (moreBrief) => moreBrief._id !== brief._id,
   );
 
-  const formattedPages = filteredShowcaseBriefs.map((brief) => ({
+  const limitedShowcaseBriefs = filteredShowcaseBriefs.slice(0, 2);
+
+  const formattedPages = limitedShowcaseBriefs.map((brief) => ({
     href: `/showcase/${brief._slug}`,
     title: brief._title,
     description: brief.metaDescription,

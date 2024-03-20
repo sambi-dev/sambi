@@ -66,6 +66,8 @@ const AiBlogPost = async ({ params }: { params: { slug: string } }) => {
     (morePost) => morePost._id !== post._id,
   );
 
+  const limitedAiBlogPosts = filteredAiBlogPosts.slice(0, 2);
+
   return (
     <>
       <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
@@ -114,11 +116,11 @@ const AiBlogPost = async ({ params }: { params: { slug: string } }) => {
         <AiAuthorCard />
       </Container>
 
-      {filteredAiBlogPosts.length > 0 && (
+      {limitedAiBlogPosts.length > 0 && (
         <PageLinks
           className="mt-24 sm:mt-32 lg:mt-40"
           title="More articles"
-          pages={filteredAiBlogPosts.map((post) => ({
+          pages={limitedAiBlogPosts.map((post) => ({
             href: `/ai-blog/${post._slug}`,
             date: post.publishedDate,
             title: post._title,
