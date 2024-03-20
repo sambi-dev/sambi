@@ -80,7 +80,9 @@ export default async function Blog() {
                                 {post.author._title}
                               </div>
                               <div className="font-mono text-muted-foreground">
-                                {post.author.role}
+                                <span className="text-alternate">
+                                  {post.author.role}
+                                </span>
                               </div>
                             </div>
                           </dd>
