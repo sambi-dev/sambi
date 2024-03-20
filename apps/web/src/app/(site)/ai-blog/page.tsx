@@ -1,3 +1,4 @@
+import type { AiBlogPostFragment } from '#/basehub/ai-blog-queries';
 import type { Metadata } from 'next';
 
 import Image from 'next/image';
@@ -23,7 +24,10 @@ import { ArrowRightIcon } from '#/ui/shared/icons';
 import { LoadMore, LoadMoreButton, LoadMoreItems } from '#/ui/shared/load-more';
 
 export default async function AiBlog() {
-  const { items: aiBlogPosts, totalCount } = await fetchAiBlogPosts();
+  const { items: initialAiBlogPosts, totalCount } = await fetchAiBlogPosts({
+    skip: 0,
+    first: 10,
+  });
   const pageIntro = await fetchAiBlogPageIntro();
 
   return (
@@ -37,9 +41,14 @@ export default async function AiBlog() {
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
-        <LoadMore className="space-y-24" totalItems={totalCount}>
+        <LoadMore<AiBlogPostFragment>
+          className="space-y-24"
+          totalItems={totalCount}
+          initialItems={initialAiBlogPosts}
+          loadMoreFn={fetchAiBlogPosts}
+        >
           <LoadMoreItems>
-            {aiBlogPosts.map((aiPost) => (
+            {initialAiBlogPosts.map((aiPost) => (
               <FadeIn key={aiPost._id}>
                 <article>
                   <Border className="pt-16">

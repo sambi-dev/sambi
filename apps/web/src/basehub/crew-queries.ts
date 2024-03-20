@@ -37,6 +37,8 @@ export const crewFragment = {
 export type CrewFragment = FieldsSelection<CrewComponent, typeof crewFragment>;
 
 export async function fetchCrew() {
+  'use server';
+
   const { crew } = await basehubClient.query({
     crew: {
       ...crewFragment,

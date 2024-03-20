@@ -1,3 +1,4 @@
+import type { ShowcaseBriefFragment } from '#/basehub/showcase-queries';
 import type { Metadata } from 'next';
 
 import { RichText } from 'basehub/react-rich-text';
@@ -12,11 +13,14 @@ import { Clients } from '#/ui/clients';
 import { ContactSection } from '#/ui/contact-section';
 import { BigWarning } from '#/ui/home/big-warning';
 import { PageIntro } from '#/ui/page-intro';
+import { LoadMore, LoadMoreButton, LoadMoreItems } from '#/ui/shared/load-more';
 import { ProjectBriefs } from '#/ui/showcase/project-briefs';
 
 export default async function Work() {
+  const { items: initialProjectBriefs, totalCount } = await fetchShowcaseBriefs(
+    { skip: 0, first: 10 },
+  );
   const pageIntro = await fetchShowcasePageIntro();
-  const { items: projectBriefs, totalCount } = await fetchShowcaseBriefs();
 
   return (
     <>
@@ -28,7 +32,17 @@ export default async function Work() {
         <RichText>{pageIntro.description?.json.content}</RichText>
       </PageIntro>
 
-      <ProjectBriefs projectBriefs={projectBriefs} totalItems={totalCount} />
+      <LoadMore<ShowcaseBriefFragment>
+        className="mt-24 space-y-24 sm:mt-32 lg:mt-40"
+        totalItems={totalCount}
+        initialItems={initialProjectBriefs}
+        loadMoreFn={fetchShowcaseBriefs}
+      >
+        <LoadMoreItems>
+          <ProjectBriefs projectBriefs={initialProjectBriefs} />
+        </LoadMoreItems>
+        <LoadMoreButton>Load more</LoadMoreButton>
+      </LoadMore>
 
       <div className="mt-24 sm:mt-32 lg:mt-40">
         <BigWarning

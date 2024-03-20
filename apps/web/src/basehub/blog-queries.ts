@@ -8,6 +8,8 @@ import type {
 import { basehubClient } from './client';
 
 export async function fetchBlogPageMetadata() {
+  'use server';
+
   const { blog } = await basehubClient.query({
     blog: {
       blogPageMeta: {
@@ -27,6 +29,8 @@ export async function fetchBlogPageMetadata() {
 }
 
 export async function fetchBlogPageIntro() {
+  'use server';
+
   const { blog } = await basehubClient.query({
     blog: {
       blogPageIntro: {
@@ -99,12 +103,15 @@ export type BlogPostFragment = FieldsSelection<
   typeof blogPostFragment
 >;
 
-export async function fetchBlogPosts({ first = 10 } = {}) {
+export async function fetchBlogPosts({ skip = 0, first = 10 } = {}) {
+  'use server';
+
   const { blog } = await basehubClient.query({
     blog: {
       blogPosts: {
         __args: {
           first,
+          skip,
         },
         items: blogPostFragment,
         _meta: {

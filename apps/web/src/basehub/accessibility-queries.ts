@@ -1,3 +1,5 @@
+'use server';
+
 import { basehubClient } from './client';
 
 export async function fetchAccessibilityPageMetadata() {

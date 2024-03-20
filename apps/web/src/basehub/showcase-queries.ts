@@ -8,6 +8,8 @@ import type {
 import { basehubClient } from './client';
 
 export async function fetchShowcasePageMetadata() {
+  'use server';
+
   const { showcase } = await basehubClient.query({
     showcase: {
       showcasePageMeta: {
@@ -27,6 +29,8 @@ export async function fetchShowcasePageMetadata() {
 }
 
 export async function fetchShowcasePageIntro() {
+  'use server';
+
   const { showcase } = await basehubClient.query({
     showcase: {
       showcasePageIntro: {
@@ -122,12 +126,15 @@ export type ShowcaseBriefFragment = FieldsSelection<
   typeof showcaseBriefFragment
 >;
 
-export async function fetchShowcaseBriefs({ first = 10 } = {}) {
+export async function fetchShowcaseBriefs({ skip = 0, first = 10 } = {}) {
+  'use server';
+
   const { showcase } = await basehubClient.query({
     showcase: {
       brief: {
         __args: {
           first,
+          skip,
         },
         items: showcaseBriefFragment,
         _meta: {

@@ -3,6 +3,8 @@ import type { Faq, FaqGenqlSelection, FieldsSelection } from '.basehub';
 import { basehubClient } from './client';
 
 export async function fetchFaqsPageMetadata() {
+  'use server';
+
   const { faqs } = await basehubClient.query({
     faqs: {
       faqsPageMeta: {
@@ -22,6 +24,8 @@ export async function fetchFaqsPageMetadata() {
 }
 
 export async function fetchFaqsPageIntro() {
+  'use server';
+
   const { faqs } = await basehubClient.query({
     faqs: {
       faqsPageIntro: {
@@ -66,6 +70,8 @@ export const faqFragment = {
 export type FaqFragment = FieldsSelection<Faq, typeof faqFragment>;
 
 export async function fetchFaqs() {
+  'use server';
+
   const { faqs } = await basehubClient.query({
     faqs: {
       faq: {

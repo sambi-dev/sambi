@@ -1,6 +1,8 @@
 import { basehubClient } from './client';
 
 export async function fetchTermsPageMetadata() {
+  'use server';
+
   const { terms } = await basehubClient.query({
     terms: {
       termsPageMeta: {
@@ -20,6 +22,8 @@ export async function fetchTermsPageMetadata() {
 }
 
 export async function fetchTermsPageIntro() {
+  'use server';
+
   const { terms } = await basehubClient.query({
     terms: {
       termsPageIntro: {
@@ -44,6 +48,8 @@ export async function fetchTermsPageIntro() {
 }
 
 export async function fetchTermsPage() {
+  'use server';
+
   const { terms } = await basehubClient.query({
     terms: {
       _id: true,
