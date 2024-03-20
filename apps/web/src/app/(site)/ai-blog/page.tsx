@@ -76,7 +76,9 @@ export default async function AiBlog() {
                                 {aiPost.company._title}
                               </div>
                               <div className="font-mono text-muted-foreground">
-                                {aiPost.company.model}
+                                <span className="text-alternate">
+                                  With {aiPost.company.model}
+                                </span>
                               </div>
                             </div>
                           </dd>
