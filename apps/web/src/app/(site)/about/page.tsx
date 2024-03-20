@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { fetchBlogPosts } from '#/basehub/blog-queries';
+import { fetchCrew } from '#/basehub/crew-queries';
 import { SITE_URL } from '#/lib/constants';
 import Crew from '#/ui/about/crew';
 import { Culture } from '#/ui/about/culture';
@@ -22,6 +23,8 @@ export default async function About() {
     description: post.metaDescription,
     readMoreButtonText: post.readMoreButtonText,
   }));
+
+  const crew = await fetchCrew();
 
   return (
     <>
@@ -90,7 +93,7 @@ export default async function About() {
 
       <Culture />
 
-      <Crew />
+      <Crew crew={crew} />
 
       <PageLinks
         className="mt-24 sm:mt-32 lg:mt-40"
