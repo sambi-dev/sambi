@@ -18,8 +18,8 @@ export const footerLinks: Section[] = [
       { title: 'Showcase', href: '/showcase' },
       { title: 'Blog', href: '/blog' },
       { title: 'AI Blog', href: '/ai-blog' },
+      { title: 'Stack', href: '/stack' },
       { title: 'FAQ', href: '/faq' },
-      { title: 'Process', href: '/process' },
     ],
   },
   {
@@ -47,6 +47,7 @@ export const footerLinks: Section[] = [
     title: 'Company',
     links: [
       { title: 'About', href: '/about' },
+      { title: 'Process', href: '/process' },
       { title: 'Contact', href: '/contact' },
     ],
   },

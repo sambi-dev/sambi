@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { fetchBlogPosts } from '#/basehub/blog-queries';
+import { SITE_URL } from '#/lib/constants';
 import Crew from '#/ui/about/crew';
 import { Culture } from '#/ui/about/culture';
 import { ContactSection } from '#/ui/contact-section';
@@ -9,12 +10,6 @@ import { Container } from '#/ui/page-container';
 import { PageIntro } from '#/ui/page-intro';
 import { PageLinks } from '#/ui/page-links';
 import { StatList, StatListItem } from '#/ui/stat-list';
-
-export const metadata: Metadata = {
-  title: 'About',
-  description:
-    "About sambi.dev? We're the Upwork agency everyone's talking about. A trio of tech 🤓 design 🎨 and demand. Sam + Ambreen + Rebekah = sambi. 🤔",
-};
 
 export default async function About() {
   const { items: blogPosts } = await fetchBlogPosts({
@@ -108,3 +103,42 @@ export default async function About() {
     </>
   );
 }
+
+const title = 'About';
+const description =
+  "About sambi.dev? We're the Upwork agency everyone's talking about. A trio of tech 🤓 design 🎨 and demand. Sam + Ambreen + Rebekah = sambi. 🤔";
+const imageUrl = '/opengraph-image.gif';
+const imageAlt =
+  'Loading screen animation with pulsing text that spells out "Loading..." with the sambi.dev logo (a silohuette of a French Bulldog and lower case text) in the top left';
+const pageUrl = `${SITE_URL}/about`;
+
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    type: 'website',
+    title,
+    description,
+    images: [
+      {
+        url: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: imageAlt,
+      },
+    ],
+    url: pageUrl,
+  },
+  twitter: {
+    title,
+    description,
+    images: [
+      {
+        url: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: imageAlt,
+      },
+    ],
+  },
+};

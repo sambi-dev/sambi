@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import { notFound } from 'next/navigation';
 
 import { basehubClient } from '#/basehub/client';
@@ -5,6 +7,7 @@ import {
   fetchShowcaseBriefs,
   getShowcaseBriefBySlugQuery,
 } from '#/basehub/showcase-queries';
+import { SITE_URL } from '#/lib/constants';
 import { ContactSection } from '#/ui/contact-section';
 import { FadeIn } from '#/ui/fade-in';
 import { GrayscaleTransitionImage } from '#/ui/grayscale-transition-image';
@@ -28,23 +31,6 @@ export async function generateStaticParams() {
   });
 
   return showcase.brief.items.map((item) => ({ params: { slug: item._slug } }));
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<{ title: string; description: string }> {
-  const query = getShowcaseBriefBySlugQuery(params.slug);
-  const { showcase } = await basehubClient.query(query);
-
-  const brief = showcase.brief.items[0];
-  if (!brief) throw new Error('Not found');
-
-  return {
-    title: brief.metaTitle,
-    description: brief.metaDescription,
-  };
 }
 
 export default async function ProjectBriefPage({
@@ -163,4 +149,53 @@ export default async function ProjectBriefPage({
       <ContactSection />
     </>
   );
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const query = getShowcaseBriefBySlugQuery(params.slug);
+  const { showcase } = await basehubClient.query(query);
+
+  const brief = showcase.brief.items[0];
+  if (!brief) throw new Error('Not found');
+
+  const imageUrl = `/opengraph-image.gif`;
+  const imageAlt =
+    'Loading screen animation with pulsing text that spells out "Loading..." with the sambi.dev logo (a silohuette of a French Bulldog and lower case text) in the top left';
+
+  const metadata: Metadata = {
+    title: brief.metaTitle,
+    description: brief.metaDescription,
+    openGraph: {
+      type: 'website',
+      title: brief.metaTitle,
+      description: brief.metaDescription,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: imageAlt,
+        },
+      ],
+      url: `${SITE_URL}/showcase/${params.slug}`,
+    },
+    twitter: {
+      title: brief.metaTitle,
+      description: brief.metaDescription,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: imageAlt,
+        },
+      ],
+    },
+  };
+
+  return metadata;
 }

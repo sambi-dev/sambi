@@ -8,21 +8,13 @@ import {
   fetchAccessibilityPageMetadata,
 } from '#/basehub/accessibility-queries';
 import { fetchBlogPosts } from '#/basehub/blog-queries';
+import { SITE_URL } from '#/lib/constants';
 import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
 import { Container } from '#/ui/page-container';
 import { PageIntro } from '#/ui/page-intro';
 import { PageLinks } from '#/ui/page-links';
 import RichTextWrapper from '#/ui/shared/rich-text-wrapper';
-
-export async function generateMetadata(): Promise<Metadata> {
-  const metadata = await fetchAccessibilityPageMetadata();
-
-  return {
-    title: metadata.title,
-    description: metadata.description,
-  };
-}
 
 export default async function PrivacyPolicy() {
   const pageIntro = await fetchAccessibilityPageIntro();
@@ -64,4 +56,44 @@ export default async function PrivacyPolicy() {
       <ContactSection />
     </div>
   );
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const cmsMetadata = await fetchAccessibilityPageMetadata();
+  const imageUrl = `/opengraph-image.gif`;
+  const imageAlt =
+    'Loading screen animation with pulsing text that spells out "Loading..." with the sambi.dev logo (a silohuette of a French Bulldog and lower case text) in the top left';
+
+  const metadata = {
+    title: cmsMetadata.title,
+    description: cmsMetadata.description,
+    openGraph: {
+      type: 'website',
+      title: cmsMetadata.title,
+      description: cmsMetadata.description,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: imageAlt,
+        },
+      ],
+      url: `${SITE_URL}/accessibility`,
+    },
+    twitter: {
+      title: cmsMetadata.title,
+      description: cmsMetadata.description,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: imageAlt,
+        },
+      ],
+    },
+  };
+
+  return metadata;
 }
