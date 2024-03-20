@@ -62,10 +62,10 @@ export default async function AiBlog() {
                             <div className="flex-none overflow-hidden rounded-xl border bg-background">
                               <Image
                                 alt={
-                                  aiPost.aiCompany.items[0]!.image.alt ??
+                                  aiPost.company.image.alt ??
                                   "A simple colored square representing the AI model's company"
                                 }
-                                src={aiPost.aiCompany.items[0]!.image.url}
+                                src={aiPost.company.image.url}
                                 width={48}
                                 height={48}
                                 className="h-12 w-12 object-cover grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
@@ -73,10 +73,10 @@ export default async function AiBlog() {
                             </div>
                             <div className="text-sm text-secondary-foreground">
                               <div className="font-mono font-medium tracking-tighter">
-                                {aiPost.aiCompany.items[0]!._title}
+                                {aiPost.company._title}
                               </div>
                               <div className="font-mono text-muted-foreground">
-                                {aiPost.aiCompany.items[0]!.model}
+                                {aiPost.company.model}
                               </div>
                             </div>
                           </dd>

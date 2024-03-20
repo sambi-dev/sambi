@@ -54,18 +54,15 @@ export const aiBlogPostFragment = {
   _id: true,
   _slug: true,
   _title: true,
-  aiCompany: {
+  company: {
     _id: true,
     _title: true,
-    items: {
-      _title: true,
-      image: {
-        url: true,
-        alt: true,
-      },
-      model: true,
-      version: true,
+    image: {
+      url: true,
+      alt: true,
     },
+    model: true,
+    version: true,
   },
   category: {
     __typename: true,
@@ -134,17 +131,14 @@ export const getAiPostBySlugQuery = (slug: string) => {
           _title: true,
           publishedDate: true,
           content: { json: { content: true } },
-          aiCompany: {
+          company: {
             _id: true,
             _title: true,
-            items: {
-              _title: true,
-              image: {
-                url: true,
-                alt: true,
-              },
-              model: true,
-              version: true,
+            model: true,
+            version: true,
+            image: {
+              url: true,
+              alt: true,
             },
           },
           category: {
