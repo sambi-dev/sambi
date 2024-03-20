@@ -1,16 +1,11 @@
 import type { Metadata } from 'next';
 
+import { SITE_URL } from '#/lib/constants';
 import { Border } from '#/ui/border';
 import GetInTouch from '#/ui/contact/get-in-touch';
 import Locations from '#/ui/contact/locations';
 import { Container } from '#/ui/page-container';
 import { PageIntro } from '#/ui/page-intro';
-
-export const metadata: Metadata = {
-  title: 'Contact',
-  description:
-    "Wanna contact the cool kids at sambi.dev? 😎 Slide into our Upwork DMs or fill out our contact form 📝 We're totally stoked to hear from you. 🤙",
-};
 
 export default function Contact() {
   return (
@@ -31,3 +26,42 @@ export default function Contact() {
     </>
   );
 }
+
+const title = 'Contact';
+const description =
+  "Wanna contact the us at sambi.dev? 😎 Slide into our Upwork DMs if you're new or hit us up on GitHub if you're not. We're totally stoked to hear from you. 🤙";
+const imageUrl = '/opengraph-image.gif';
+const imageAlt =
+  'Loading screen animation with pulsing text that spells out "Loading..." with the sambi.dev logo (a silohuette of a French Bulldog and lower case text) in the top left';
+const pageUrl = `${SITE_URL}/contact`;
+
+export const metadata: Metadata = {
+  title,
+  description,
+  openGraph: {
+    type: 'website',
+    title,
+    description,
+    images: [
+      {
+        url: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: imageAlt,
+      },
+    ],
+    url: pageUrl,
+  },
+  twitter: {
+    title,
+    description,
+    images: [
+      {
+        url: imageUrl,
+        width: 1200,
+        height: 630,
+        alt: imageAlt,
+      },
+    ],
+  },
+};

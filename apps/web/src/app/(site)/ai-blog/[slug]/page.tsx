@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
@@ -6,7 +8,7 @@ import {
   getAiPostBySlugQuery,
 } from '#/basehub/ai-blog-queries';
 import { basehubClient } from '#/basehub/client';
-import { formatDate } from '#/lib/constants';
+import { formatDate, SITE_URL } from '#/lib/constants';
 import AiAuthorCard from '#/ui/ai-blog/ai-author-card';
 import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
@@ -38,7 +40,7 @@ export async function generateMetadata({
   params,
 }: {
   params: { slug: string };
-}): Promise<{ title: string; description: string }> {
+}): Promise<Metadata> {
   const { aiBlog } = await basehubClient.query(
     getAiPostBySlugQuery(params.slug),
   );
@@ -46,10 +48,42 @@ export async function generateMetadata({
   const post = aiBlog.aiBlogPosts.items[0];
   if (!post) notFound();
 
-  return {
+  const imageUrl = `/opengraph-image.gif`;
+  const imageAlt =
+    'Loading screen animation with pulsing text that spells out "Loading..." with the sambi.dev logo (a silohuette of a French Bulldog and lower case text) in the top left';
+
+  const metadata: Metadata = {
     title: post.metaTitle,
     description: post.metaDescription,
+    openGraph: {
+      type: 'website',
+      title: post.metaTitle,
+      description: post.metaDescription,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: imageAlt,
+        },
+      ],
+      url: `${SITE_URL}/ai-blog/${params.slug}`,
+    },
+    twitter: {
+      title: post.metaTitle,
+      description: post.metaDescription,
+      images: [
+        {
+          url: imageUrl,
+          width: 1200,
+          height: 630,
+          alt: imageAlt,
+        },
+      ],
+    },
   };
+
+  return metadata;
 }
 
 const AiBlogPost = async ({ params }: { params: { slug: string } }) => {
