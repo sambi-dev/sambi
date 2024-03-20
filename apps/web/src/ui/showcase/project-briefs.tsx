@@ -50,7 +50,7 @@ export function ProjectBriefs({
                         }
                         width={48}
                         height={48}
-                        className="h-12 w-12 rounded-lg border object-cover grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
+                        className="h-12 w-12 rounded-xl border object-cover grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
                         unoptimized
                       />
                       <h3 className="mt-6 font-mono text-sm font-medium text-primary sm:mt-0 lg:mt-8">

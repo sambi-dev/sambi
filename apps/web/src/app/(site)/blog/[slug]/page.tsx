@@ -57,6 +57,8 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
     (morePost) => morePost._id !== post._id,
   );
 
+  const limitedBlogPosts = filteredBlogPosts.slice(0, 2);
+
   return (
     <>
       <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
@@ -113,11 +115,11 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
         />
       </Container>
 
-      {filteredBlogPosts.length > 0 && (
+      {limitedBlogPosts.length > 0 && (
         <PageLinks
           className="mt-24 sm:mt-32 lg:mt-40"
           title="More articles"
-          pages={filteredBlogPosts.map((post) => ({
+          pages={limitedBlogPosts.map((post) => ({
             href: `/blog/${post._slug}`,
             date: post.publishedDate,
             title: post._title,
