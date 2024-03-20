@@ -8,6 +8,8 @@ import type {
 import { basehubClient } from './client';
 
 export async function fetchAiBlogPageMetadata() {
+  'use server';
+
   const { aiBlog } = await basehubClient.query({
     aiBlog: {
       aiBlogPageMeta: {
@@ -27,6 +29,8 @@ export async function fetchAiBlogPageMetadata() {
 }
 
 export async function fetchAiBlogPageIntro() {
+  'use server';
+
   const { aiBlog } = await basehubClient.query({
     aiBlog: {
       aiBlogPageIntro: {
@@ -99,11 +103,14 @@ export type AiBlogPostFragment = FieldsSelection<
   typeof aiBlogPostFragment
 >;
 
-export async function fetchAiBlogPosts({ first = 10 } = {}) {
+export async function fetchAiBlogPosts({ skip = 0, first = 10 } = {}) {
+  'use server';
+
   const { aiBlog } = await basehubClient.query({
     aiBlog: {
       aiBlogPosts: {
         __args: {
+          skip,
           first,
         },
         items: aiBlogPostFragment,

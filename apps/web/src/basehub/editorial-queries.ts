@@ -1,6 +1,8 @@
 import { basehubClient } from './client';
 
 export async function fetchEditorialPageMetadata() {
+  'use server';
+
   const { editorial } = await basehubClient.query({
     editorial: {
       editorialPageMeta: {
@@ -20,6 +22,8 @@ export async function fetchEditorialPageMetadata() {
 }
 
 export async function fetchEditorialPageIntro() {
+  'use server';
+
   const { editorial } = await basehubClient.query({
     editorial: {
       editorialPageIntro: {
@@ -44,6 +48,8 @@ export async function fetchEditorialPageIntro() {
 }
 
 export async function fetchEditorialPage() {
+  'use server';
+
   const { editorial } = await basehubClient.query({
     editorial: {
       _id: true,

@@ -1,3 +1,4 @@
+import type { BlogPostFragment } from '#/basehub/blog-queries';
 import type { Metadata } from 'next';
 
 import Image from 'next/image';
@@ -23,7 +24,10 @@ import { ArrowRightIcon } from '#/ui/shared/icons';
 import { LoadMore, LoadMoreButton, LoadMoreItems } from '#/ui/shared/load-more';
 
 export default async function Blog() {
-  const { items: blogPosts, totalCount } = await fetchBlogPosts();
+  const { items: initialBlogPosts, totalCount } = await fetchBlogPosts({
+    skip: 0,
+    first: 10,
+  });
   const pageIntro = await fetchBlogPageIntro();
 
   return (
@@ -37,9 +41,14 @@ export default async function Blog() {
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
-        <LoadMore className="space-y-24" totalItems={totalCount}>
+        <LoadMore<BlogPostFragment>
+          className="space-y-24"
+          totalItems={totalCount}
+          initialItems={initialBlogPosts}
+          loadMoreFn={fetchBlogPosts}
+        >
           <LoadMoreItems>
-            {blogPosts.map((post) => (
+            {initialBlogPosts.map((post) => (
               <FadeIn key={post._id}>
                 <article>
                   <Border className="pt-16">
@@ -68,7 +77,10 @@ export default async function Blog() {
                           <dd className="mt-6 flex gap-x-4">
                             <div className="flex-none overflow-hidden rounded-xl border bg-background">
                               <Image
-                                alt={post.author.image.alt!}
+                                alt={
+                                  post.author.image.alt ??
+                                  'An image of the post author'
+                                }
                                 src={post.author.image.url}
                                 width={48}
                                 height={48}

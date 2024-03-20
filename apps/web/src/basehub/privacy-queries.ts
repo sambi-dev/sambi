@@ -1,6 +1,8 @@
 import { basehubClient } from './client';
 
 export async function fetchPrivacyPageMetadata() {
+  'use server';
+
   const { privacy } = await basehubClient.query({
     privacy: {
       privacyPageMeta: {
@@ -20,6 +22,8 @@ export async function fetchPrivacyPageMetadata() {
 }
 
 export async function fetchPrivacyPageIntro() {
+  'use server';
+
   const { privacy } = await basehubClient.query({
     privacy: {
       privacyPageIntro: {
@@ -44,6 +48,8 @@ export async function fetchPrivacyPageIntro() {
 }
 
 export async function fetchPrivacyPage() {
+  'use server';
+
   const { privacy } = await basehubClient.query({
     privacy: {
       _id: true,
