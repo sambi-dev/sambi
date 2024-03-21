@@ -150,6 +150,24 @@ export async function fetchShowcaseBriefs({ skip = 0, first = 10 } = {}) {
   };
 }
 
+export async function fetchRecentShowcaseBriefs() {
+  'use server';
+
+  const { showcase } = await basehubClient.query({
+    showcase: {
+      brief: {
+        __args: {
+          first: 3,
+          orderBy: 'publishedDate__DESC',
+        },
+        items: showcaseBriefFragment,
+      },
+    },
+  });
+
+  return showcase.brief.items;
+}
+
 export const getShowcaseBriefBySlugQuery = (slug: string) => {
   return {
     showcase: {

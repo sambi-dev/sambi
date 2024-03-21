@@ -1,4 +1,4 @@
-import { fetchShowcaseBriefs } from '#/basehub/showcase-queries';
+import { fetchRecentShowcaseBriefs } from '#/basehub/showcase-queries';
 import { BigWarning } from '#/ui/home/big-warning';
 import { Hero } from '#/ui/home/hero';
 import { Introduction } from '#/ui/home/introduction';
@@ -13,7 +13,7 @@ import { NavBar } from '#/ui/layout/navbar';
 import { Cta } from '#/ui/shared/cta';
 
 export default async function Home() {
-  const { items: projectBriefs } = await fetchShowcaseBriefs({ first: 3 });
+  const projectBriefs = await fetchRecentShowcaseBriefs();
   return (
     <>
       <Hero />
