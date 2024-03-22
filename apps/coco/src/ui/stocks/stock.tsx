@@ -68,7 +68,8 @@ export function Stock({ props: { symbol, price, delta } }: { props: Stock }) {
         });
       }
     }
-  }, [startHighlight, endHighlight, id, xToDate, aiState, setAIState]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [startHighlight, endHighlight]);
 
   return (
     <div className="rounded-xl border bg-card p-4 text-primary shadow-md">
