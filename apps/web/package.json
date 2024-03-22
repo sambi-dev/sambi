@@ -6,7 +6,7 @@
   "scripts": {
     "build": "pnpm with-env next build",
     "clean": "git clean -xdf .next .turbo node_modules",
-    "dev": "pnpm basehub --output .basehub && pnpm with-env next dev",
+    "dev": "pnpm with-env basehub --output .basehub && pnpm with-env next dev",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "dotenv -v SKIP_ENV_VALIDATION=1 next lint",
     "postinstall": "pnpm with-env basehub --output .basehub",
