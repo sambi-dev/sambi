@@ -176,6 +176,8 @@ export const getAiPostBySlugQuery = (slug: string) => {
               title: true,
               __typename: true,
             },
+            description: true,
+            isActive: true,
           },
           image: {
             url: true,

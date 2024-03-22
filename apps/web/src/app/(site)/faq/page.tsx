@@ -31,8 +31,8 @@ export default async function FaqPage() {
   }
 
   const pages = blogPosts.map((post) => ({
-    href: `/blog/${post._slug}`,
-    title: post._title,
+    href: `/blog/${post._sys.slug}`,
+    title: post._sys.title,
     description: post.metaDescription,
     readMoreButtonText: post.readMoreButtonText,
   }));
