@@ -7,9 +7,14 @@ import type {
 import { basehubClient } from './client';
 
 export const crewFragment = {
-  _id: true,
-  _slug: true,
-  _title: true,
+  _sys: {
+    id: true,
+    slug: true,
+    title: true,
+    createdAt: true,
+    lastModifiedAt: true,
+    __typename: true,
+  },
   title: true,
   description: {
     json: {
@@ -18,9 +23,12 @@ export const crewFragment = {
   },
   people: {
     items: {
-      _id: true,
-      _slug: true,
-      _title: true,
+      _sys: {
+        id: true,
+        slug: true,
+        title: true,
+        __typename: true,
+      },
       bio: true,
       role: true,
       image: {

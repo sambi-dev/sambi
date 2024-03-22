@@ -27,7 +27,7 @@ export default function Crew({ crew }: CrewProps) {
         <ul className="-mt-12 space-y-12 divide-y divide-border xl:col-span-3">
           {crew.people.items.map((person) => (
             <li
-              key={person._id}
+              key={person._sys.id}
               className="flex flex-col gap-10 pt-12 sm:flex-row"
             >
               <Image
@@ -35,17 +35,17 @@ export default function Crew({ crew }: CrewProps) {
                 src={person.image.url}
                 alt={
                   person.image.alt ??
-                  `A notion styled illustration representing a headshot of ${person._title}`
+                  `A notion styled illustration representing a headshot of ${person._sys.title}`
                 }
                 width={208}
                 height={260}
               />
               <div className="max-w-xl flex-auto">
                 <h3
-                  id={person._slug}
+                  id={person._sys.id}
                   className="font-mono font-semibold tracking-tighter text-foreground"
                 >
-                  {person._title}
+                  {person._sys.title}
                 </h3>
                 <p className="font-mono text-sm text-primary">{person.role}</p>
                 <p className="mt-6 text-sm leading-7 text-muted-foreground md:text-base">
@@ -59,7 +59,7 @@ export default function Crew({ crew }: CrewProps) {
                         icon={
                           <UpworkIcon className="h-6 w-6" aria-hidden="true" />
                         }
-                        label={`Follow ${person._title} on Upwork in a new window`}
+                        label={`Follow ${person._sys.title} on Upwork in a new window`}
                       />
                     </li>
                   )}
@@ -68,7 +68,7 @@ export default function Crew({ crew }: CrewProps) {
                       <CrewSocialIcon
                         url={person.twitterUrl}
                         icon={<XIcon className="h-6 w-6" aria-hidden="true" />}
-                        label={`Follow ${person._title} on Twitter in a new window`}
+                        label={`Follow ${person._sys.title} on Twitter in a new window`}
                       />
                     </li>
                   )}
@@ -82,7 +82,7 @@ export default function Crew({ crew }: CrewProps) {
                             aria-hidden="true"
                           />
                         }
-                        label={`Connect with ${person._title} on LinkedIn in a new window`}
+                        label={`Connect with ${person._sys.title} on LinkedIn in a new window`}
                       />
                     </li>
                   )}
