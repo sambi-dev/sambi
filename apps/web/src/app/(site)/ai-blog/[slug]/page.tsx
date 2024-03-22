@@ -48,7 +48,7 @@ const AiBlogPost = async ({ params }: { params: { slug: string } }) => {
   });
 
   const filteredAiBlogPosts = moreAiBlogPosts.filter(
-    (morePost) => morePost._id !== post._id,
+    (morePost) => morePost._sys.id !== post._sys.id,
   );
 
   const limitedAiBlogPosts = filteredAiBlogPosts.slice(0, 2);
@@ -59,13 +59,13 @@ const AiBlogPost = async ({ params }: { params: { slug: string } }) => {
         <FadeIn>
           <header className="mx-auto flex max-w-5xl flex-col text-center">
             <h1 className="mt-6 font-mono text-4xl font-semibold tracking-tighter text-foreground [text-wrap:balance] sm:text-5xl">
-              {post._title}
+              {post._sys.title}
             </h1>
             <time
-              dateTime={post.publishedDate}
+              dateTime={post._sys.createdAt}
               className="order-first block font-mono text-sm font-bold uppercase tracking-widest text-primary"
             >
-              {formatDate(post.publishedDate)}
+              {formatDate(post._sys.createdAt)}
             </time>
             <div className="mt-6 flex items-center justify-center space-x-2">
               <Image
@@ -79,13 +79,13 @@ const AiBlogPost = async ({ params }: { params: { slug: string } }) => {
                 className="h-6 w-6 flex-none rounded-full bg-background grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
               />
               <span className="font-mono text-sm font-medium tracking-tighter text-secondary-foreground">
-                {post.company._title}
+                {post.company._sys.title}
               </span>
               <span className="text-sm text-secondary-foreground">::</span>
               <span className="font-mono text-xs font-medium uppercase tracking-tighter text-primary">
                 {post.category.length > 0 && (
                   <div className="font-mono text-xs font-medium uppercase text-primary">
-                    #{post.category[0]?._title}
+                    #{post.category[0]?._sys.title}
                   </div>
                 )}
               </span>
@@ -106,9 +106,9 @@ const AiBlogPost = async ({ params }: { params: { slug: string } }) => {
           className="mt-24 sm:mt-32 lg:mt-40"
           title="More articles"
           pages={limitedAiBlogPosts.map((post) => ({
-            href: `/ai-blog/${post._slug}`,
-            date: post.publishedDate,
-            title: post._title,
+            href: `/ai-blog/${post._sys.slug}`,
+            date: post._sys.createdAt,
+            title: post._sys.title,
             description: post.metaDescription,
             readMoreButtonText: post.readMoreButtonText,
           }))}

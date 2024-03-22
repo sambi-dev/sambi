@@ -13,9 +13,10 @@ export async function fetchAiBlogPageMetadata() {
   const { aiBlog } = await basehubClient.query({
     aiBlog: {
       aiBlogPageMeta: {
-        _id: true,
-        _slug: true,
-        _title: true,
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         title: true,
         description: true,
       },
@@ -34,6 +35,10 @@ export async function fetchAiBlogPageIntro() {
   const { aiBlog } = await basehubClient.query({
     aiBlog: {
       aiBlogPageIntro: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         eyebrow: true,
         title: true,
         description: {
@@ -55,12 +60,20 @@ export async function fetchAiBlogPageIntro() {
 }
 
 export const aiBlogPostFragment = {
-  _id: true,
-  _slug: true,
-  _title: true,
+  _sys: {
+    id: true,
+    slug: true,
+    title: true,
+    createdAt: true,
+    lastModifiedAt: true,
+    __typename: true,
+  },
   company: {
-    _id: true,
-    _title: true,
+    _sys: {
+      id: true,
+      title: true,
+      __typename: true,
+    },
     image: {
       url: true,
       alt: true,
@@ -69,10 +82,12 @@ export const aiBlogPostFragment = {
     version: true,
   },
   category: {
-    __typename: true,
-    _id: true,
-    _slug: true,
-    _title: true,
+    _sys: {
+      id: true,
+      slug: true,
+      title: true,
+      __typename: true,
+    },
     description: true,
     isActive: true,
   },
@@ -89,7 +104,6 @@ export const aiBlogPostFragment = {
   },
   metaTitle: true,
   metaDescription: true,
-  publishedDate: true,
   readMoreButtonText: true,
   tldr: {
     json: {
@@ -112,6 +126,7 @@ export async function fetchAiBlogPosts({ skip = 0, first = 10 } = {}) {
         __args: {
           skip,
           first,
+          orderBy: '_sys_createdAt__DESC',
         },
         items: aiBlogPostFragment,
         _meta: {
@@ -133,14 +148,21 @@ export const getAiPostBySlugQuery = (slug: string) => {
       aiBlogPosts: {
         __args: { first: 1, filter: { _sys_slug: { eq: slug } } },
         items: {
-          _id: true,
-          _slug: true,
-          _title: true,
-          publishedDate: true,
+          _sys: {
+            id: true,
+            slug: true,
+            title: true,
+            createdAt: true,
+            lastModifiedAt: true,
+            __typename: true,
+          },
           content: { json: { content: true } },
           company: {
-            _id: true,
-            _title: true,
+            _sys: {
+              id: true,
+              title: true,
+              __typename: true,
+            },
             model: true,
             version: true,
             image: {
@@ -149,8 +171,11 @@ export const getAiPostBySlugQuery = (slug: string) => {
             },
           },
           category: {
-            _id: true,
-            _title: true,
+            _sys: {
+              id: true,
+              title: true,
+              __typename: true,
+            },
           },
           image: {
             url: true,
