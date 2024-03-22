@@ -104,7 +104,7 @@ const AiBlogPost = async ({ params }: { params: { slug: string } }) => {
       {limitedAiBlogPosts.length > 0 && (
         <PageLinks
           className="mt-24 sm:mt-32 lg:mt-40"
-          title="More articles"
+          title="More from the AI blog "
           pages={limitedAiBlogPosts.map((post) => ({
             href: `/ai-blog/${post._sys.slug}`,
             date: post._sys.createdAt,

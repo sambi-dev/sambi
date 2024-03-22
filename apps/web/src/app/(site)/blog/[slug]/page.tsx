@@ -105,7 +105,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
       {limitedBlogPosts.length > 0 && (
         <PageLinks
           className="mt-24 sm:mt-32 lg:mt-40"
-          title="More articles"
+          title="More from the blog"
           pages={limitedBlogPosts.map((post) => ({
             href: `/blog/${post._sys.slug}`,
             date: post._sys.createdAt,
