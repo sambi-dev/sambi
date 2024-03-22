@@ -1,6 +1,6 @@
 {
   "$schema": "https://turborepo.org/schema.json",
-  "globalDependencies": ["**/.env"],
+  "globalDependencies": ["**/.env.*local"],
   "pipeline": {
     "topo": {
       "dependsOn": ["^topo"]
@@ -12,6 +12,51 @@
         "!.next/cache/**",
         "next-env.d.ts",
         ".expo/**",
+        ".output/**",
+        ".vercel/output/**"
+      ],
+      "dotEnv": [".env.local", ".env.production", ".env.development"]
+    },
+    "@sambi/coco#build": {
+      "dependsOn": ["^build"],
+      "env": [
+        "AUTH_DISCORD_ID",
+        "AUTH_DISCORD_SECRET",
+        "AUTH_SECRET",
+        "KV_URL",
+        "KV_REST_API_URL",
+        "KV_REST_API_TOKEN",
+        "KV_REST_API_READ_ONLY_TOKEN",
+        "OPENAI_API_KEY",
+        "NEXT_PUBLIC_APP_URL"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "next-env.d.ts",
+        ".output/**",
+        ".vercel/output/**"
+      ]
+    },
+    "@sambi/web#build": {
+      "dependsOn": ["^build"],
+      "env": [
+        "AUTH_DISCORD_ID",
+        "AUTH_DISCORD_SECRET",
+        "AUTH_REDIRECT_PROXY_URL",
+        "AUTH_SECRET",
+        "AUTH_URL",
+        "BASEHUB_TOKEN",
+        "DB_HOST",
+        "DB_NAME",
+        "DB_USERNAME",
+        "DB_PASSWORD",
+        "NEXT_PUBLIC_APP_URL"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "next-env.d.ts",
         ".output/**",
         ".vercel/output/**"
       ]
@@ -42,25 +87,13 @@
   "globalEnv": [
     "AUTH_DISCORD_ID",
     "AUTH_DISCORD_SECRET",
-    "AUTH_GITHUB_ID",
-    "AUTH_GITHUB_SECRET",
     "AUTH_REDIRECT_PROXY_URL",
     "AUTH_SECRET",
     "AUTH_URL",
-    "BASEHUB_TOKEN",
     "DB_HOST",
     "DB_NAME",
     "DB_USERNAME",
     "DB_PASSWORD",
-    "GOOGLE_CLIENT_ID",
-    "GOOGLE_CLIENT_SECRET",
-    "KV_REST_API_READ_ONLY_TOKEN",
-    "KV_REST_API_TOKEN",
-    "KV_REST_API_URL",
-    "KV_URL",
-    "NEXT_PUBLIC_APP_URL",
-    "NEXT_PUBLIC_SAMBI_SUPPORT_EMAIL",
-    "OPENAI_API_KEY",
     "TURBO_TEAM",
     "TURBO_TOKEN"
   ]

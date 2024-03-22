@@ -15,7 +15,6 @@ interface SiteConfig {
   description: string;
   url: string;
   image: Image;
-  mailSupport: string;
   links: {
     facebook: string;
     github: string;
@@ -54,5 +53,4 @@ export const siteConfig: SiteConfig = {
     upworkRebekah: 'https://www.upwork.com/freelancers/rebekahrmarketing',
     upworkSam: 'https://www.upwork.com/freelancers/rizvio',
   },
-  mailSupport: env.NEXT_PUBLIC_SAMBI_SUPPORT_EMAIL,
 };
