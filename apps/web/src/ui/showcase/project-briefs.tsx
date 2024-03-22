@@ -7,13 +7,13 @@ import { RichText } from 'basehub/react-rich-text';
 
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
+import { ArrowRightIcon } from '@sambi/ui/icons';
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Blockquote } from '#/ui/blockquote';
 import { Border } from '#/ui/border';
 import { FadeIn } from '#/ui/fade-in';
 import { Container } from '#/ui/page-container';
-import { ArrowRightIcon } from '#/ui/shared/icons';
 
 export function ProjectBriefs({
   projectBriefs,

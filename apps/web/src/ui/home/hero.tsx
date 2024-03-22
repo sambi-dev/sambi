@@ -3,11 +3,11 @@ import Link from 'next/link';
 
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
+import { ArrowRightIcon } from '@sambi/ui/icons';
 
 import { siteConfig } from '#/config/site';
 import heroImage from '#/images/hero.png';
 import { HeroTestimonial } from '#/ui/home/hero-testimonial';
-import { ArrowRightIcon } from '#/ui/shared/icons';
 
 export function Hero() {
   return (

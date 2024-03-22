@@ -5,9 +5,9 @@ import type { LoadMoreFunction } from '#/hooks/use-load-more';
 import React, { createContext, useContext } from 'react';
 
 import { Button } from '@sambi/ui/button';
+import { ArrowDownIcon } from '@sambi/ui/icons';
 
 import { useLoadMore } from '#/hooks/use-load-more';
-import { ArrowDownIcon } from '#/ui/shared/icons';
 
 interface LoadMoreContextValue<T> {
   items: T[];

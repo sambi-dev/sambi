@@ -8,6 +8,7 @@ import {
   getAiPostBySlugQuery,
 } from '#/basehub/ai-blog-queries';
 import { basehubClient } from '#/basehub/client';
+import { siteConfig } from '#/config/site';
 import { formatDate, SITE_URL } from '#/lib/constants';
 import AiAuthorCard from '#/ui/ai-blog/ai-author-card';
 import { Border } from '#/ui/border';
@@ -133,10 +134,6 @@ export async function generateMetadata({
   const post = aiBlog.aiBlogPosts.items[0];
   if (!post) notFound();
 
-  const imageUrl = `/opengraph-image.gif`;
-  const imageAlt =
-    'Loading screen animation with pulsing text that spells out "Loading..." with the sambi.dev logo (a silohuette of a French Bulldog and lower case text) in the top left';
-
   const metadata: Metadata = {
     title: post.metaTitle,
     description: post.metaDescription,
@@ -146,10 +143,10 @@ export async function generateMetadata({
       description: post.metaDescription,
       images: [
         {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: imageAlt,
+          url: siteConfig.image.url,
+          width: siteConfig.image.width,
+          height: siteConfig.image.height,
+          alt: siteConfig.image.alt,
         },
       ],
       url: `${SITE_URL}/ai-blog/${params.slug}`,
@@ -159,10 +156,10 @@ export async function generateMetadata({
       description: post.metaDescription,
       images: [
         {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: imageAlt,
+          url: siteConfig.image.url,
+          width: siteConfig.image.width,
+          height: siteConfig.image.height,
+          alt: siteConfig.image.alt,
         },
       ],
     },

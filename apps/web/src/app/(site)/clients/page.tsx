@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { fetchBlogPosts } from '#/basehub/blog-queries';
+import { siteConfig } from '#/config/site';
 import { SITE_URL } from '#/lib/constants';
 import { ContactSection } from '#/ui/contact-section';
 import { PageLinks } from '#/ui/page-links';
@@ -47,9 +48,7 @@ export default async function Clients() {
 const title = 'Clients';
 const description =
   "Want to know who sambi.dev's clients are? We've been roasted by the best clients over the years. We have the battle scars to prove it. We've marked work via partners accordingly.";
-const imageUrl = '/opengraph-image.gif';
-const imageAlt =
-  'Loading screen animation with pulsing text that spells out "Loading..." with the sambi.dev logo (a silohuette of a French Bulldog and lower case text) in the top left';
+
 const pageUrl = `${SITE_URL}/clients`;
 
 export const metadata: Metadata = {
@@ -61,10 +60,10 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: imageUrl,
-        width: 1200,
-        height: 630,
-        alt: imageAlt,
+        url: siteConfig.image.url,
+        width: siteConfig.image.width,
+        height: siteConfig.image.height,
+        alt: siteConfig.image.alt,
       },
     ],
     url: pageUrl,
@@ -74,10 +73,10 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: imageUrl,
-        width: 1200,
-        height: 630,
-        alt: imageAlt,
+        url: siteConfig.image.url,
+        width: siteConfig.image.width,
+        height: siteConfig.image.height,
+        alt: siteConfig.image.alt,
       },
     ],
   },

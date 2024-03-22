@@ -7,6 +7,7 @@ import {
   fetchShowcaseBriefs,
   getShowcaseBriefBySlugQuery,
 } from '#/basehub/showcase-queries';
+import { siteConfig } from '#/config/site';
 import { SITE_URL } from '#/lib/constants';
 import { ContactSection } from '#/ui/contact-section';
 import { FadeIn } from '#/ui/fade-in';
@@ -162,10 +163,6 @@ export async function generateMetadata({
   const brief = showcase.brief.items[0];
   if (!brief) throw new Error('Not found');
 
-  const imageUrl = `/opengraph-image.gif`;
-  const imageAlt =
-    'Loading screen animation with pulsing text that spells out "Loading..." with the sambi.dev logo (a silohuette of a French Bulldog and lower case text) in the top left';
-
   const metadata: Metadata = {
     title: brief.metaTitle,
     description: brief.metaDescription,
@@ -175,10 +172,10 @@ export async function generateMetadata({
       description: brief.metaDescription,
       images: [
         {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: imageAlt,
+          url: siteConfig.image.url,
+          width: siteConfig.image.width,
+          height: siteConfig.image.height,
+          alt: siteConfig.image.alt,
         },
       ],
       url: `${SITE_URL}/showcase/${params.slug}`,
@@ -188,10 +185,10 @@ export async function generateMetadata({
       description: brief.metaDescription,
       images: [
         {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: imageAlt,
+          url: siteConfig.image.url,
+          width: siteConfig.image.width,
+          height: siteConfig.image.height,
+          alt: siteConfig.image.alt,
         },
       ],
     },

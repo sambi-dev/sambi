@@ -39,7 +39,7 @@ export const siteConfig: SiteConfig = {
     url: `${siteUrl}/opengraph-image.gif`,
     width: 1200,
     height: 630,
-    alt: 'An animated open graph image that appears to look like a Loading screen with the sambi.dev logo.',
+    alt: 'Loading screen animation with pulsing text that spells out "Loading..." with the sambi.dev logo (a silohuette of a French Bulldog and lower case text) in the top left.',
   },
   links: {
     facebook: 'https://www.facebook.com/rebekahradicellc',

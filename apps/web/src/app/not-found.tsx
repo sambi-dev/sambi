@@ -2,10 +2,9 @@ import Link from 'next/link';
 
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
-
-import { Logo } from '#/ui/logo';
-import { Container } from '#/ui/shared/container';
-import { ArrowRightIcon } from '#/ui/shared/icons';
+import { Container } from '@sambi/ui/container';
+import { ArrowRightIcon } from '@sambi/ui/icons';
+import { Logo } from '@sambi/ui/logo';
 
 export default function NotFound() {
   return (

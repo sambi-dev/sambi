@@ -45,7 +45,14 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     url: siteConfig.url,
-    images: [siteConfig.image],
+    images: [
+      {
+        url: siteConfig.image.url,
+        width: siteConfig.image.width,
+        height: siteConfig.image.height,
+        alt: siteConfig.image.alt,
+      },
+    ],
     siteName: siteConfig.name,
     locale: 'en_US',
   },
@@ -58,6 +65,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: siteConfig.image.url,
+        width: siteConfig.image.width,
+        height: siteConfig.image.height,
         alt: siteConfig.image.alt,
       },
     ],

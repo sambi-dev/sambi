@@ -1,10 +1,10 @@
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
+import { Container } from '@sambi/ui/container';
+import { ArrowRightIcon, CheckIcon } from '@sambi/ui/icons';
 
 import { siteConfig } from '#/config/site';
 import { FadeIn } from '#/ui/fade-in';
-import { Container } from '#/ui/shared/container';
-import { ArrowRightIcon, CheckIcon } from '#/ui/shared/icons';
 
 export function Introduction() {
   return (

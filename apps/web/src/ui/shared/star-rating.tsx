@@ -1,4 +1,4 @@
-import { StarIcon } from './icons';
+import { StarIcon } from '@sambi/ui/icons';
 
 export function StarRating({ rating = 5 }: { rating?: 1 | 2 | 3 | 4 | 5 }) {
   return (

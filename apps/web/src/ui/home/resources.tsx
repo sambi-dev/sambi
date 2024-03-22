@@ -2,11 +2,11 @@ import Link from 'next/link';
 
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
+import { Container } from '@sambi/ui/container';
+import { ArrowRightIcon } from '@sambi/ui/icons';
 
 import { freeResources } from '#/content/free-resources';
 import { SectionIntro } from '#/ui/section-intro';
-import { Container } from '#/ui/shared/container';
-import { ArrowRightIcon } from '#/ui/shared/icons';
 
 export function Resources() {
   return (

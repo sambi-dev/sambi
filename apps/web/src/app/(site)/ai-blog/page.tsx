@@ -8,19 +8,20 @@ import { RichText } from 'basehub/react-rich-text';
 
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
+import { ArrowRightIcon } from '@sambi/ui/icons';
 
 import {
   fetchAiBlogPageIntro,
   fetchAiBlogPageMetadata,
   fetchAiBlogPosts,
 } from '#/basehub/ai-blog-queries';
+import { siteConfig } from '#/config/site';
 import { formatDate, SITE_URL } from '#/lib/constants';
 import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
 import { FadeIn } from '#/ui/fade-in';
 import { Container } from '#/ui/page-container';
 import { PageIntro } from '#/ui/page-intro';
-import { ArrowRightIcon } from '#/ui/shared/icons';
 import { LoadMore, LoadMoreButton, LoadMoreItems } from '#/ui/shared/load-more';
 
 export default async function AiBlog() {
@@ -127,9 +128,6 @@ export default async function AiBlog() {
 
 export async function generateMetadata(): Promise<Metadata> {
   const cmsMetadata = await fetchAiBlogPageMetadata();
-  const imageUrl = '/opengraph-image.gif';
-  const imageAlt =
-    'Loading screen animation with pulsing text that spells out "Loading..." with the sambi.dev logo (a silohuette of a French Bulldog and lower case text) in the top left';
 
   const metadata = {
     title: cmsMetadata.title,
@@ -140,10 +138,10 @@ export async function generateMetadata(): Promise<Metadata> {
       description: cmsMetadata.description,
       images: [
         {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: imageAlt,
+          url: siteConfig.image.url,
+          width: siteConfig.image.width,
+          height: siteConfig.image.height,
+          alt: siteConfig.image.alt,
         },
       ],
       url: `${SITE_URL}/ai-blog`,
@@ -153,10 +151,10 @@ export async function generateMetadata(): Promise<Metadata> {
       description: cmsMetadata.description,
       images: [
         {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: imageAlt,
+          url: siteConfig.image.url,
+          width: siteConfig.image.width,
+          height: siteConfig.image.height,
+          alt: siteConfig.image.alt,
         },
       ],
     },

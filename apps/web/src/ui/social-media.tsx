@@ -1,6 +1,4 @@
 import { cn } from '@sambi/ui';
-
-import { siteConfig } from '#/config/site';
 import {
   FacebookIcon,
   GitHubIcon,
@@ -8,7 +6,9 @@ import {
   LinkedInIcon,
   UpworkIcon,
   XIcon,
-} from '#/ui/shared/icons';
+} from '@sambi/ui/icons';
+
+import { siteConfig } from '#/config/site';
 
 interface SocialMediaProfile {
   title: string;
