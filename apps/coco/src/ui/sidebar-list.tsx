@@ -1,5 +1,7 @@
 import { cache } from 'react';
 
+import { ThemeToggle } from '@sambi/ui/theme';
+
 import { clearChats, getChats } from '#/app/actions';
 import { ClearHistory } from '#/ui/clear-history';
 import { SidebarItems } from '#/ui/sidebar-items';
@@ -30,6 +32,10 @@ export async function SidebarList({ userId }: SidebarListProps) {
         )}
       </div>
       <div className="flex items-center justify-between p-4">
+        <div className="sm:hidden">
+          <ThemeToggle />
+        </div>
+
         <ClearHistory clearChats={clearChats} isEnabled={chats?.length > 0} />
       </div>
     </div>
