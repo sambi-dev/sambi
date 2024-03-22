@@ -1,6 +1,6 @@
 import { useId } from 'react';
 
-import { cn } from '@sambi/ui';
+import { cn } from '.';
 
 export function Logomark({
   invert = false,

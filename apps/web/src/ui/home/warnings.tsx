@@ -4,16 +4,16 @@ import Link from 'next/link';
 
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
+import { ArrowRightIcon } from '@sambi/ui/icons';
+import { UserAvatar } from '@sambi/ui/user-avatar';
 
 import { warnings } from '#/content/warnings';
 import { SectionIntro } from '#/ui/section-intro';
-import { ClientAvatar } from '#/ui/shared/client-avatar';
 import {
   Expandable,
   ExpandableButton,
   ExpandableItems,
 } from '#/ui/shared/expandable';
-import { ArrowRightIcon } from '#/ui/shared/icons';
 
 import { StarRating } from '../shared/star-rating';
 
@@ -35,7 +35,7 @@ function Warning({ client, children }: WarningProps) {
       </blockquote>
       <figcaption className="mt-6 flex items-center">
         <div className="overflow-hidden rounded-full bg-primary">
-          <ClientAvatar id={client.id} initials={client.initials} />
+          <UserAvatar id={client.id} initials={client.initials} />
         </div>
         <div className="ml-4">
           <div className="font-mono text-base font-semibold leading-6 tracking-tight text-foreground">

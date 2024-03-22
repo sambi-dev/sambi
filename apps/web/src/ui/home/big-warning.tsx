@@ -1,6 +1,7 @@
+import { Container } from '@sambi/ui/container';
+import { UserAvatar } from '@sambi/ui/user-avatar';
+
 import { FadeIn } from '#/ui/fade-in';
-import { ClientAvatar } from '#/ui/shared/client-avatar';
-import { Container } from '#/ui/shared/container';
 import { StarRating } from '#/ui/shared/star-rating';
 
 export function BigWarning({
@@ -36,7 +37,7 @@ export function BigWarning({
             </blockquote>
             <figcaption className="mt-10 flex items-center sm:justify-center">
               <div className="overflow-hidden rounded-full bg-border">
-                <ClientAvatar id={id} initials={author.initials} />
+                <UserAvatar id={id} initials={author.initials} />
               </div>
               <div className="ml-4">
                 <div className="font-mono text-base font-semibold leading-6 tracking-tighter text-foreground md:text-lg lg:text-xl">

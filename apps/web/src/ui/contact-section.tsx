@@ -2,11 +2,11 @@ import Link from 'next/link';
 
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
+import { ArrowRightIcon } from '@sambi/ui/icons';
 
 import { FadeIn } from '#/ui/fade-in';
 import { Offices } from '#/ui/offices';
 import { Container } from '#/ui/page-container';
-import { ArrowRightIcon } from '#/ui/shared/icons';
 
 export function ContactSection() {
   return (

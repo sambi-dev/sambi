@@ -1,7 +1,8 @@
+import { ArrowRightIcon } from '@sambi/ui/icons';
+
 import { contactMethods } from '#/content/contact-methods';
 import { Border } from '#/ui/border';
 import { FadeIn } from '#/ui/fade-in';
-import { ArrowRightIcon } from '#/ui/shared/icons';
 import { SocialMedia } from '#/ui/social-media';
 
 export default function GetInTouch() {

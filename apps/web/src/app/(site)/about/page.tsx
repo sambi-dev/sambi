@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import { fetchBlogPosts } from '#/basehub/blog-queries';
 import { fetchCrew } from '#/basehub/crew-queries';
+import { siteConfig } from '#/config/site';
 import { SITE_URL } from '#/lib/constants';
 import Crew from '#/ui/about/crew';
 import { Culture } from '#/ui/about/culture';
@@ -110,9 +111,6 @@ export default async function About() {
 const title = 'About';
 const description =
   "About sambi.dev? We're the Upwork agency everyone's talking about. A trio of tech 🤓 design 🎨 and demand. Sam + Ambreen + Rebekah = sambi. 🤔";
-const imageUrl = '/opengraph-image.gif';
-const imageAlt =
-  'Loading screen animation with pulsing text that spells out "Loading..." with the sambi.dev logo (a silohuette of a French Bulldog and lower case text) in the top left';
 const pageUrl = `${SITE_URL}/about`;
 
 export const metadata: Metadata = {
@@ -124,10 +122,10 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: imageUrl,
-        width: 1200,
-        height: 630,
-        alt: imageAlt,
+        url: siteConfig.image.url,
+        width: siteConfig.image.width,
+        height: siteConfig.image.height,
+        alt: siteConfig.image.alt,
       },
     ],
     url: pageUrl,
@@ -137,10 +135,10 @@ export const metadata: Metadata = {
     description,
     images: [
       {
-        url: imageUrl,
-        width: 1200,
-        height: 630,
-        alt: imageAlt,
+        url: siteConfig.image.url,
+        width: siteConfig.image.width,
+        height: siteConfig.image.height,
+        alt: siteConfig.image.alt,
       },
     ],
   },

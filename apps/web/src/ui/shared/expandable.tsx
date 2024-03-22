@@ -3,8 +3,7 @@
 import { Children, createContext, useContext, useState } from 'react';
 
 import { Button } from '@sambi/ui/button';
-
-import { ArrowDownIcon } from '#/ui/shared/icons';
+import { ArrowDownIcon } from '@sambi/ui/icons';
 
 const ExpandableContext = createContext({
   isExpanded: false,

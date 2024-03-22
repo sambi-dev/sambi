@@ -3,10 +3,10 @@ import Link from 'next/link';
 
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
+import { ArrowRightIcon } from '@sambi/ui/icons';
 
 import { FadeIn } from '#/ui/fade-in';
 import { PageIntro } from '#/ui/page-intro';
-import { ArrowRightIcon } from '#/ui/shared/icons';
 
 interface ComingSoonProps {
   eyebrow: string;

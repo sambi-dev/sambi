@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 
 import { fetchBlogPosts, getPostBySlugQuery } from '#/basehub/blog-queries';
 import { basehubClient } from '#/basehub/client';
+import { siteConfig } from '#/config/site';
 import { formatDate, SITE_URL } from '#/lib/constants';
 import AuthorCard from '#/ui/blog/author-card';
 import { Border } from '#/ui/border';
@@ -29,54 +30,6 @@ export async function generateStaticParams() {
   });
 
   return blog.blogPosts.items.map((post) => ({ params: { slug: post._slug } }));
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}): Promise<Metadata> {
-  const { blog } = await basehubClient.query(getPostBySlugQuery(params.slug));
-
-  const post = blog.blogPosts.items[0];
-  if (!post) notFound();
-
-  const imageUrl = `/opengraph-image.gif`;
-  const imageAlt =
-    'Loading screen animation with pulsing text that spells out "Loading..." with the sambi.dev logo (a silohuette of a French Bulldog and lower case text) in the top left';
-
-  const metadata: Metadata = {
-    title: post.metaTitle,
-    description: post.metaDescription,
-    openGraph: {
-      type: 'website',
-      title: post.metaTitle,
-      description: post.metaDescription,
-      images: [
-        {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: imageAlt,
-        },
-      ],
-      url: `${SITE_URL}/blog/${params.slug}`,
-    },
-    twitter: {
-      title: post.metaTitle,
-      description: post.metaDescription,
-      images: [
-        {
-          url: imageUrl,
-          width: 1200,
-          height: 630,
-          alt: imageAlt,
-        },
-      ],
-    },
-  };
-
-  return metadata;
 }
 
 const BlogPost = async ({ params }: { params: { slug: string } }) => {
@@ -169,3 +122,47 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
 };
 
 export default BlogPost;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
+  const { blog } = await basehubClient.query(getPostBySlugQuery(params.slug));
+
+  const post = blog.blogPosts.items[0];
+  if (!post) notFound();
+
+  const metadata: Metadata = {
+    title: post.metaTitle,
+    description: post.metaDescription,
+    openGraph: {
+      type: 'website',
+      title: post.metaTitle,
+      description: post.metaDescription,
+      images: [
+        {
+          url: siteConfig.image.url,
+          width: siteConfig.image.width,
+          height: siteConfig.image.height,
+          alt: siteConfig.image.alt,
+        },
+      ],
+      url: `${SITE_URL}/blog/${params.slug}`,
+    },
+    twitter: {
+      title: post.metaTitle,
+      description: post.metaDescription,
+      images: [
+        {
+          url: siteConfig.image.url,
+          width: siteConfig.image.width,
+          height: siteConfig.image.height,
+          alt: siteConfig.image.alt,
+        },
+      ],
+    },
+  };
+
+  return metadata;
+}

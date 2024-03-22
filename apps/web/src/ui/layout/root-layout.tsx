@@ -15,16 +15,12 @@ import { motion, MotionConfig, useReducedMotion } from 'framer-motion';
 
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
+import { ArrowRightIcon, BurgerMenuIcon, CloseMenuIcon } from '@sambi/ui/icons';
+import { Logo, Logomark } from '@sambi/ui/logo';
 
 import { siteConfig } from '#/config/site';
 import { Footer } from '#/ui/layout/footer';
-import { Logo, Logomark } from '#/ui/logo';
 import { Container } from '#/ui/page-container';
-import {
-  ArrowRightIcon,
-  BurgerMenuIcon,
-  CloseMenuIcon,
-} from '#/ui/shared/icons';
 import { SocialMedia } from '#/ui/social-media';
 
 const MainLayoutContext = createContext<{

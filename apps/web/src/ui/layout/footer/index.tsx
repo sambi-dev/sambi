@@ -1,12 +1,12 @@
 import Link from 'next/link';
 
+import { Logo } from '@sambi/ui/logo';
 import { ThemeToggle } from '@sambi/ui/theme';
 
 import { siteConfig } from '#/config/site';
 import { FadeIn } from '#/ui/fade-in';
 import { FooterNav } from '#/ui/layout/footer/footer-nav';
 import SystemStatusWidget from '#/ui/layout/footer/system-status';
-import { Logo } from '#/ui/logo';
 import { Container } from '#/ui/page-container';
 import { SocialMedia } from '#/ui/social-media';
 
