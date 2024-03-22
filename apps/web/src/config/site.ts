@@ -1,4 +1,3 @@
-import { env } from '#/env';
 import { SITE_URL } from '#/lib/constants';
 
 const siteUrl = SITE_URL;
