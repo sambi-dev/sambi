@@ -35,12 +35,15 @@ export function Showcase({
       <Container className="my-16">
         <FadeInStagger className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           {projectBriefs.map((projectBrief) => (
-            <FadeIn key={`/showcase/${projectBrief._slug}`} className="flex">
+            <FadeIn
+              key={`/showcase/${projectBrief._sys.slug}`}
+              className="flex"
+            >
               <article className="relative flex w-full flex-col rounded-3xl border bg-card p-6 shadow-md transition hover:bg-primary/20 sm:p-8">
                 <h3>
                   <Link
-                    href={`/showcase/${projectBrief._slug}`}
-                    aria-label={`Read more about our work with ${projectBrief.client._title} now`}
+                    href={`/showcase/${projectBrief._sys.slug}`}
+                    aria-label={`Read more about our work with ${projectBrief.client._sys.title} now`}
                   >
                     <span className="absolute inset-0 rounded-3xl" />
                     <Image
@@ -56,14 +59,16 @@ export function Showcase({
                   </Link>
                 </h3>
                 <div className="mt-6 flex gap-x-2 font-mono text-xs font-medium tracking-tighter text-secondary-foreground">
-                  <p className=" text-primary">{projectBrief.client._title}</p>
+                  <p className=" text-primary">
+                    {projectBrief.client._sys.title}
+                  </p>
                   <span className="text-foreground" aria-hidden="true">
                     ::
                   </span>
-                  <span>{projectBrief.service[0]?._title}</span>
+                  <span>{projectBrief.service[0]?._sys.title}</span>
                 </div>
                 <p className="mt-6 grow text-pretty font-mono font-semibold tracking-tighter text-foreground">
-                  {projectBrief._title}
+                  {projectBrief._sys.title}
                 </p>
                 <p className="mt-4 line-clamp-2 text-sm text-muted-foreground">
                   {projectBrief.metaDescription}

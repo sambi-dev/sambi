@@ -89,7 +89,7 @@ export const blogPostFragment = {
       __typename: true,
     },
     description: true,
-    isActive: true,
+    isPublished: true,
   },
   tldr: {
     json: {
@@ -182,7 +182,7 @@ export const getPostBySlugQuery = (slug: string) => {
               __typename: true,
             },
             description: true,
-            isActive: true,
+            isPublished: true,
           },
           image: {
             url: true,

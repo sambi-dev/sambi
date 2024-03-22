@@ -24,7 +24,7 @@ import { Container } from '#/ui/page-container';
 import { PageIntro } from '#/ui/page-intro';
 import { LoadMore, LoadMoreButton, LoadMoreItems } from '#/ui/shared/load-more';
 
-export default async function AiBlog() {
+export default async function AiBlogPage() {
   const { items: initialAiBlogPosts, totalCount } = await fetchAiBlogPosts({
     skip: 0,
     first: 10,

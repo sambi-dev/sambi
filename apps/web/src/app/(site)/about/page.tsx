@@ -13,7 +13,7 @@ import { PageIntro } from '#/ui/page-intro';
 import { PageLinks } from '#/ui/page-links';
 import { StatList, StatListItem } from '#/ui/stat-list';
 
-export default async function About() {
+export default async function AboutPage() {
   const { items: blogPosts } = await fetchBlogPosts({
     first: 2,
   });

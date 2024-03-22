@@ -6,9 +6,10 @@ export async function fetchPrivacyPageMetadata() {
   const { privacy } = await basehubClient.query({
     privacy: {
       privacyPageMeta: {
-        _id: true,
-        _slug: true,
-        _title: true,
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         title: true,
         description: true,
       },
@@ -27,6 +28,10 @@ export async function fetchPrivacyPageIntro() {
   const { privacy } = await basehubClient.query({
     privacy: {
       privacyPageIntro: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         eyebrow: true,
         title: true,
         description: {
@@ -52,9 +57,14 @@ export async function fetchPrivacyPage() {
 
   const { privacy } = await basehubClient.query({
     privacy: {
-      _id: true,
-      _slug: true,
-      _title: true,
+      _sys: {
+        id: true,
+        slug: true,
+        title: true,
+        createdAt: true,
+        lastModifiedAt: true,
+        __typename: true,
+      },
       content: {
         json: {
           content: true,
@@ -62,6 +72,10 @@ export async function fetchPrivacyPage() {
       },
       isPublished: true,
       privacyPageIntro: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         eyebrow: true,
         title: true,
         description: {
@@ -72,9 +86,11 @@ export async function fetchPrivacyPage() {
         centered: true,
       },
       privacyPageMeta: {
-        _id: true,
-        _slug: true,
-        _title: true,
+        _sys: {
+          id: true,
+          __typename: true,
+        },
+        title: true,
         description: true,
       },
     },

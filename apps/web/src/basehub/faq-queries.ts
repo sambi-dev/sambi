@@ -8,9 +8,10 @@ export async function fetchFaqsPageMetadata() {
   const { faqs } = await basehubClient.query({
     faqs: {
       faqsPageMeta: {
-        _id: true,
-        _slug: true,
-        _title: true,
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         title: true,
         description: true,
       },
@@ -29,6 +30,10 @@ export async function fetchFaqsPageIntro() {
   const { faqs } = await basehubClient.query({
     faqs: {
       faqsPageIntro: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         eyebrow: true,
         title: true,
         description: {
@@ -50,15 +55,21 @@ export async function fetchFaqsPageIntro() {
 }
 
 export const faqFragment = {
-  _id: true,
-  _slug: true,
-  _title: true,
+  _sys: {
+    id: true,
+    slug: true,
+    title: true,
+    createdAt: true,
+    lastModifiedAt: true,
+    __typename: true,
+  },
   items: {
-    _id: true,
-    _slug: true,
-    _title: true,
+    _sys: {
+      id: true,
+      title: true,
+      __typename: true,
+    },
     isPriority: true,
-    isActive: true,
     answer: {
       json: {
         content: true,

@@ -17,7 +17,7 @@ import { PageIntro } from '#/ui/page-intro';
 import { LoadMore, LoadMoreButton, LoadMoreItems } from '#/ui/shared/load-more';
 import { ProjectBriefs } from '#/ui/showcase/project-briefs';
 
-export default async function Work() {
+export default async function ShowcasePage() {
   const { items: initialProjectBriefs, totalCount } = await fetchShowcaseBriefs(
     { skip: 0, first: 10 },
   );

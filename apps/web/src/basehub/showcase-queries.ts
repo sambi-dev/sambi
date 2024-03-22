@@ -13,9 +13,10 @@ export async function fetchShowcasePageMetadata() {
   const { showcase } = await basehubClient.query({
     showcase: {
       showcasePageMeta: {
-        _id: true,
-        _slug: true,
-        _title: true,
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         title: true,
         description: true,
       },
@@ -34,6 +35,10 @@ export async function fetchShowcasePageIntro() {
   const { showcase } = await basehubClient.query({
     showcase: {
       showcasePageIntro: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         eyebrow: true,
         title: true,
         description: {
@@ -55,24 +60,36 @@ export async function fetchShowcasePageIntro() {
 }
 
 export const showcaseBriefFragment = {
-  _id: true,
-  _slug: true,
-  _title: true,
-  __typename: true,
-  client: {
-    _id: true,
-    _title: true,
-    _slug: true,
+  _sys: {
+    id: true,
+    slug: true,
+    title: true,
+    createdAt: true,
+    lastModifiedAt: true,
     __typename: true,
+  },
+  client: {
+    _sys: {
+      id: true,
+      title: true,
+      __typename: true,
+    },
     contacts: {
+      _sys: {
+        id: true,
+        title: true,
+        __typename: true,
+      },
       __args: {
         first: 1,
       },
       items: {
-        _id: true,
-        __typename: true,
-        _slug: true,
-        _title: true,
+        _sys: {
+          id: true,
+          title: true,
+          slug: true,
+          __typename: true,
+        },
         firstName: true,
         lastInitial: true,
         role: true,
@@ -87,7 +104,7 @@ export const showcaseBriefFragment = {
       url: true,
       alt: true,
     },
-    isActive: true,
+    isPublished: true,
     logo: {
       url: true,
       alt: true,
@@ -105,13 +122,15 @@ export const showcaseBriefFragment = {
   },
   isPartner: true,
   isPublished: true,
-  publishedDate: true,
   metaTitle: true,
   metaDescription: true,
   readMoreButtonText: true,
   service: {
-    _id: true,
-    _title: true,
+    _sys: {
+      id: true,
+      title: true,
+      __typename: true,
+    },
   },
   status: true,
   summary: {
@@ -135,6 +154,7 @@ export async function fetchShowcaseBriefs({ skip = 0, first = 10 } = {}) {
         __args: {
           first,
           skip,
+          orderBy: '_sys_createdAt__DESC',
         },
         items: showcaseBriefFragment,
         _meta: {
@@ -158,7 +178,7 @@ export async function fetchRecentShowcaseBriefs() {
       brief: {
         __args: {
           first: 3,
-          orderBy: 'publishedDate__DESC',
+          orderBy: '_sys_createdAt__DESC',
         },
         items: showcaseBriefFragment,
       },
@@ -174,15 +194,27 @@ export const getShowcaseBriefBySlugQuery = (slug: string) => {
       brief: {
         __args: { first: 1, filter: { _sys_slug: { eq: slug } } },
         items: {
-          _id: true,
-          _slug: true,
-          _title: true,
-          publishedDate: true,
+          _sys: {
+            id: true,
+            slug: true,
+            title: true,
+            createdAt: true,
+            lastModifiedAt: true,
+            __typename: true,
+          },
           content: { json: { content: true } },
           client: {
-            _id: true,
-            _title: true,
+            _sys: {
+              id: true,
+              title: true,
+              __typename: true,
+            },
             contacts: {
+              _sys: {
+                id: true,
+                title: true,
+                __typename: true,
+              },
               __args: {
                 first: 1,
               },
@@ -193,7 +225,7 @@ export const getShowcaseBriefBySlugQuery = (slug: string) => {
               url: true,
               alt: true,
             },
-            isActive: true,
+            isPublished: true,
             logo: {
               url: true,
               alt: true,
@@ -201,8 +233,12 @@ export const getShowcaseBriefBySlugQuery = (slug: string) => {
             website: true,
           },
           service: {
-            _id: true,
-            _title: true,
+            _sys: {
+              id: true,
+              title: true,
+              slug: true,
+              __typename: true,
+            },
           },
           status: true,
           image: {

@@ -89,7 +89,7 @@ export const aiBlogPostFragment = {
       __typename: true,
     },
     description: true,
-    isActive: true,
+    isPublished: true,
   },
   content: {
     json: {
@@ -174,10 +174,11 @@ export const getAiPostBySlugQuery = (slug: string) => {
             _sys: {
               id: true,
               title: true,
+              slug: true,
               __typename: true,
             },
             description: true,
-            isActive: true,
+            isPublished: true,
           },
           image: {
             url: true,

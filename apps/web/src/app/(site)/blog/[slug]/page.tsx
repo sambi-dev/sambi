@@ -32,7 +32,7 @@ export async function generateStaticParams() {
   return blog.blogPosts.items.map((post) => ({ params: { slug: post._slug } }));
 }
 
-const BlogPost = async ({ params }: { params: { slug: string } }) => {
+const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
   const { blog } = await basehubClient.query(getPostBySlugQuery(params.slug));
   const post = blog.blogPosts.items[0];
   if (!post) notFound();
@@ -121,7 +121,7 @@ const BlogPost = async ({ params }: { params: { slug: string } }) => {
   );
 };
 
-export default BlogPost;
+export default BlogPostPage;
 
 export async function generateMetadata({
   params,

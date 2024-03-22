@@ -17,7 +17,7 @@ import { PageIntro } from '#/ui/page-intro';
 import { PageLinks } from '#/ui/page-links';
 import RichTextWrapper from '#/ui/shared/rich-text-wrapper';
 
-export default async function PrivacyPolicy() {
+export default async function PrivacyPolicyPage() {
   const pageIntro = await fetchPrivacyPageIntro();
   const privacy = await fetchPrivacyPage();
   const { items: blogPosts } = await fetchBlogPosts({

@@ -22,7 +22,8 @@ export function ProjectBriefs({
 }) {
   const sortedProjectBriefs = projectBriefs.sort(
     (a, b) =>
-      new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime(),
+      new Date(b._sys.createdAt).getTime() -
+      new Date(a._sys.createdAt).getTime(),
   );
 
   return (
@@ -34,7 +35,7 @@ export function ProjectBriefs({
       </FadeIn>
       <div className="mt-10 space-y-24">
         {sortedProjectBriefs.map((projectBrief) => (
-          <FadeIn key={projectBrief._id}>
+          <FadeIn key={projectBrief._sys.id}>
             <article>
               <Border className="grid grid-cols-3 gap-x-8 gap-y-8 pt-16">
                 <div className="col-span-full sm:flex sm:items-center sm:justify-between sm:gap-x-8 lg:col-span-1 lg:block">
@@ -51,7 +52,7 @@ export function ProjectBriefs({
                       unoptimized
                     />
                     <h3 className="mt-6 font-mono text-sm font-medium text-primary sm:mt-0 lg:mt-8">
-                      {projectBrief.client._title}
+                      {projectBrief.client._sys.title}
                     </h3>
                   </div>
                   <div className="mt-1 flex flex-row items-center gap-x-4 sm:mt-0">
@@ -59,13 +60,15 @@ export function ProjectBriefs({
                       {projectBrief.status}
                     </p>
                     <p className="font-mono text-xs text-muted-foreground lg:mt-2">
-                      <time dateTime={projectBrief.publishedDate.split('-')[0]}>
-                        {projectBrief.publishedDate.split('-')[0]}
+                      <time
+                        dateTime={projectBrief._sys.createdAt.split('-')[0]}
+                      >
+                        {projectBrief._sys.createdAt.split('-')[0]}
                       </time>
                     </p>
                   </div>
                   <p className="font-mono text-xs text-muted-foreground lg:mt-2">
-                    {projectBrief.service[0]?._title}
+                    {projectBrief.service[0]?._sys.title}
                   </p>
                 </div>
 
@@ -76,8 +79,8 @@ export function ProjectBriefs({
                     </div>
                   )}
                   <p className="text-pretty font-mono text-3xl font-semibold leading-normal tracking-tighter text-foreground hover:text-primary">
-                    <Link href={`/showcase/${projectBrief._slug}`}>
-                      {projectBrief._title}
+                    <Link href={`/showcase/${projectBrief._sys.slug}`}>
+                      {projectBrief._sys.title}
                     </Link>
                   </p>
                   <div className="my-6 space-y-6 text-base text-muted-foreground">
@@ -85,8 +88,8 @@ export function ProjectBriefs({
                   </div>
                   <div className="my-8 flex">
                     <Link
-                      href={`/showcase/${projectBrief._slug}`}
-                      aria-label={`Read project brief: ${projectBrief.client._title}`}
+                      href={`/showcase/${projectBrief._sys.slug}`}
+                      aria-label={`Read project brief: ${projectBrief.client._sys.title}`}
                       className={cn(
                         buttonVariants({ variant: 'secondary', size: 'sm' }),
                       )}

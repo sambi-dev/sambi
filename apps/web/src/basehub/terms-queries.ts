@@ -6,9 +6,10 @@ export async function fetchTermsPageMetadata() {
   const { terms } = await basehubClient.query({
     terms: {
       termsPageMeta: {
-        _id: true,
-        _slug: true,
-        _title: true,
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         title: true,
         description: true,
       },
@@ -27,6 +28,10 @@ export async function fetchTermsPageIntro() {
   const { terms } = await basehubClient.query({
     terms: {
       termsPageIntro: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         eyebrow: true,
         title: true,
         description: {
@@ -52,16 +57,25 @@ export async function fetchTermsPage() {
 
   const { terms } = await basehubClient.query({
     terms: {
-      _id: true,
-      _slug: true,
-      _title: true,
+      _sys: {
+        id: true,
+        slug: true,
+        title: true,
+        createdAt: true,
+        lastModifiedAt: true,
+        __typename: true,
+      },
+      isPublished: true,
       content: {
         json: {
           content: true,
         },
       },
-      isPublished: true,
       termsPageIntro: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         eyebrow: true,
         title: true,
         description: {
@@ -72,9 +86,11 @@ export async function fetchTermsPage() {
         centered: true,
       },
       termsPageMeta: {
-        _id: true,
-        _slug: true,
-        _title: true,
+        _sys: {
+          id: true,
+          __typename: true,
+        },
+        title: true,
         description: true,
       },
     },

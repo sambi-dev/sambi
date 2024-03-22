@@ -7,7 +7,7 @@ import { ContactSection } from '#/ui/contact-section';
 import { PageLinks } from '#/ui/page-links';
 import ComingSoon from '#/ui/shared/coming-soon';
 
-export default async function Clients() {
+export default async function ClientsPage() {
   const { items: blogPosts } = await fetchBlogPosts({
     first: 2,
   });

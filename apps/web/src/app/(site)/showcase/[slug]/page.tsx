@@ -49,17 +49,17 @@ export default async function ProjectBriefPage({
     first: 10,
   });
 
-  const eyebrowText = `${brief.client._title} Project Brief${brief.isPartner ? ' :: Via partner' : ''}`;
+  const eyebrowText = `${brief.client._sys.title} Project Brief${brief.isPartner ? ' :: Via partner' : ''}`;
 
   const filteredShowcaseBriefs = moreShowcaseBriefs.filter(
-    (moreBrief) => moreBrief._id !== brief._id,
+    (moreBrief) => moreBrief._sys.id !== brief._sys.id,
   );
 
   const limitedShowcaseBriefs = filteredShowcaseBriefs.slice(0, 2);
 
   const formattedPages = limitedShowcaseBriefs.map((brief) => ({
-    href: `/showcase/${brief._slug}`,
-    title: brief._title,
+    href: `/showcase/${brief._sys.slug}`,
+    title: brief._sys.title,
     description: brief.metaDescription,
     readMoreButtonText: brief.readMoreButtonText,
   }));
@@ -68,7 +68,7 @@ export default async function ProjectBriefPage({
     <>
       <article className="mt-24 sm:mt-32 lg:mt-40">
         <header>
-          <PageIntro eyebrow={eyebrowText} title={brief._title} centered>
+          <PageIntro eyebrow={eyebrowText} title={brief._sys.title} centered>
             <p>{brief.metaDescription}</p>
           </PageIntro>
 
@@ -82,7 +82,7 @@ export default async function ProjectBriefPage({
                         Client
                       </dt>
                       <dd className="text-muted-foreground">
-                        {brief.client._title}
+                        {brief.client._sys.title}
                       </dd>
                     </div>
                     <div className="border-t px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
@@ -90,8 +90,8 @@ export default async function ProjectBriefPage({
                         Year
                       </dt>
                       <dd className="text-muted-foreground">
-                        <time dateTime={brief.publishedDate.split('-')[0]}>
-                          {brief.publishedDate.split('-')[0]}
+                        <time dateTime={brief._sys.createdAt.split('-')[0]}>
+                          {brief._sys.createdAt.split('-')[0]}
                         </time>
                       </dd>
                     </div>
@@ -106,7 +106,7 @@ export default async function ProjectBriefPage({
                         Service
                       </dt>
                       <dd className="text-muted-foreground">
-                        {brief.service[0]?._title}
+                        {brief.service[0]?._sys.title}
                       </dd>
                     </div>
                   </dl>
