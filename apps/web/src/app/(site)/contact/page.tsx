@@ -8,7 +8,7 @@ import Locations from '#/ui/contact/locations';
 import { Container } from '#/ui/page-container';
 import { PageIntro } from '#/ui/page-intro';
 
-export default function Contact() {
+export default function ContactPage() {
   return (
     <>
       <PageIntro eyebrow="Contact us" title="Drop us a line">
@@ -28,7 +28,7 @@ export default function Contact() {
   );
 }
 
-const title = 'Contact';
+const title = 'ContactPage';
 const description =
   "Wanna contact the us at sambi.dev? 😎 Slide into our Upwork DMs if you're new or hit us up on GitHub if you're not. We're totally stoked to hear from you. 🤙";
 

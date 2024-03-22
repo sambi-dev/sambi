@@ -7,14 +7,14 @@ import { ContactSection } from '#/ui/contact-section';
 import { PageLinks } from '#/ui/page-links';
 import ComingSoon from '#/ui/shared/coming-soon';
 
-export default async function Clients() {
+export default async function ClientsPage() {
   const { items: blogPosts } = await fetchBlogPosts({
     first: 2,
   });
 
   const pages = blogPosts.map((post) => ({
-    href: `/blog/${post._slug}`,
-    title: post._title,
+    href: `/blog/${post._sys.slug}`,
+    title: post._sys.title,
     description: post.metaDescription,
     readMoreButtonText: post.readMoreButtonText,
   }));

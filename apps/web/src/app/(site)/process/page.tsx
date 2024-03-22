@@ -10,7 +10,7 @@ import { DiscoveryAssimilation } from '#/ui/process/discovery-assimilate';
 import { PlanningDefinition } from '#/ui/process/planning-definition';
 import { Values } from '#/ui/process/values';
 
-export default function Process() {
+export default function ProcessPage() {
   return (
     <>
       <PageIntro eyebrow="Our Secret Formula" title="Innovatively recycled">
@@ -33,7 +33,7 @@ export default function Process() {
   );
 }
 
-const title = 'Process';
+const title = 'The Process';
 const description =
   "Discover and be assimilated in our process at sambi.dev. Our secret formula? Stalking, re-purposing, and overcharging for stuff you probably don't need. 🤑";
 

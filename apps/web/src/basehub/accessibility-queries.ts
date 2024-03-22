@@ -6,9 +6,10 @@ export async function fetchAccessibilityPageMetadata() {
   const { accessibility } = await basehubClient.query({
     accessibility: {
       accessibilityPageMeta: {
-        _id: true,
-        _slug: true,
-        _title: true,
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         title: true,
         description: true,
       },
@@ -25,6 +26,10 @@ export async function fetchAccessibilityPageIntro() {
   const { accessibility } = await basehubClient.query({
     accessibility: {
       accessibilityPageIntro: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         eyebrow: true,
         title: true,
         description: {
@@ -48,16 +53,25 @@ export async function fetchAccessibilityPageIntro() {
 export async function fetchAccessibilityPage() {
   const { accessibility } = await basehubClient.query({
     accessibility: {
-      _id: true,
-      _slug: true,
-      _title: true,
+      _sys: {
+        id: true,
+        slug: true,
+        title: true,
+        createdAt: true,
+        lastModifiedAt: true,
+        __typename: true,
+      },
+      isPublished: true,
       content: {
         json: {
           content: true,
         },
       },
-      isPublished: true,
       accessibilityPageIntro: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         eyebrow: true,
         title: true,
         description: {
@@ -68,9 +82,11 @@ export async function fetchAccessibilityPage() {
         centered: true,
       },
       accessibilityPageMeta: {
-        _id: true,
-        _slug: true,
-        _title: true,
+        _sys: {
+          id: true,
+          __typename: true,
+        },
+        title: true,
         description: true,
       },
     },

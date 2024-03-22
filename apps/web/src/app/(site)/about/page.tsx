@@ -13,14 +13,14 @@ import { PageIntro } from '#/ui/page-intro';
 import { PageLinks } from '#/ui/page-links';
 import { StatList, StatListItem } from '#/ui/stat-list';
 
-export default async function About() {
+export default async function AboutPage() {
   const { items: blogPosts } = await fetchBlogPosts({
     first: 2,
   });
 
   const pages = blogPosts.map((post) => ({
-    href: `/blog/${post._slug}`,
-    title: post._title,
+    href: `/blog/${post._sys.slug}`,
+    title: post._sys.title,
     description: post.metaDescription,
     readMoreButtonText: post.readMoreButtonText,
   }));

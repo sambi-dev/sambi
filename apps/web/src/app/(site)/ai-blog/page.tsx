@@ -24,7 +24,7 @@ import { Container } from '#/ui/page-container';
 import { PageIntro } from '#/ui/page-intro';
 import { LoadMore, LoadMoreButton, LoadMoreItems } from '#/ui/shared/load-more';
 
-export default async function AiBlog() {
+export default async function AiBlogPage() {
   const { items: initialAiBlogPosts, totalCount } = await fetchAiBlogPosts({
     skip: 0,
     first: 10,
@@ -50,21 +50,21 @@ export default async function AiBlog() {
         >
           <LoadMoreItems>
             {initialAiBlogPosts.map((aiPost) => (
-              <FadeIn key={aiPost._id}>
+              <FadeIn key={aiPost._sys.id}>
                 <article>
                   <Border className="pt-16">
                     <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                       <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
                         <h2 className="max-w-2xl text-pretty font-mono text-3xl font-semibold leading-normal tracking-tighter text-foreground hover:text-primary">
-                          <Link href={`/ai-blog/${aiPost._slug}`}>
-                            {aiPost._title}
+                          <Link href={`/ai-blog/${aiPost._sys.slug}`}>
+                            {aiPost._sys.title}
                           </Link>
                         </h2>
                         <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
                           <dt className="sr-only">Published</dt>
                           <dd className="absolute left-0 top-0 font-mono text-sm uppercase lg:static">
-                            <time dateTime={aiPost.publishedDate}>
-                              {formatDate(aiPost.publishedDate)}
+                            <time dateTime={aiPost._sys.createdAt}>
+                              {formatDate(aiPost._sys.createdAt)}
                             </time>
                           </dd>
                           <dt className="sr-only">LLM Model</dt>
@@ -83,7 +83,7 @@ export default async function AiBlog() {
                             </div>
                             <div className="text-sm text-secondary-foreground">
                               <div className="font-mono font-medium tracking-tighter">
-                                {aiPost.company._title}
+                                {aiPost.company._sys.title}
                               </div>
                               <div className="font-mono text-muted-foreground">
                                 <span className="text-alternate">
@@ -97,8 +97,8 @@ export default async function AiBlog() {
                           {aiPost.metaDescription}
                         </p>
                         <Link
-                          href={`/ai-blog/${aiPost._slug}`}
-                          aria-label={`Read more: ${aiPost._title}`}
+                          href={`/ai-blog/${aiPost._sys.slug}`}
+                          aria-label={`Read more: ${aiPost._sys.title}`}
                           className={cn(
                             buttonVariants({
                               variant: 'secondary',

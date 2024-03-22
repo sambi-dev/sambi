@@ -6,9 +6,10 @@ export async function fetchEditorialPageMetadata() {
   const { editorial } = await basehubClient.query({
     editorial: {
       editorialPageMeta: {
-        _id: true,
-        _slug: true,
-        _title: true,
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         title: true,
         description: true,
       },
@@ -27,6 +28,10 @@ export async function fetchEditorialPageIntro() {
   const { editorial } = await basehubClient.query({
     editorial: {
       editorialPageIntro: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         eyebrow: true,
         title: true,
         description: {
@@ -52,16 +57,25 @@ export async function fetchEditorialPage() {
 
   const { editorial } = await basehubClient.query({
     editorial: {
-      _id: true,
-      _slug: true,
-      _title: true,
+      _sys: {
+        id: true,
+        slug: true,
+        title: true,
+        createdAt: true,
+        lastModifiedAt: true,
+        __typename: true,
+      },
+      isPublished: true,
       content: {
         json: {
           content: true,
         },
       },
-      isPublished: true,
       editorialPageIntro: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         eyebrow: true,
         title: true,
         description: {
@@ -72,9 +86,11 @@ export async function fetchEditorialPage() {
         centered: true,
       },
       editorialPageMeta: {
-        _id: true,
-        _slug: true,
-        _title: true,
+        _sys: {
+          id: true,
+          __typename: true,
+        },
+        title: true,
         description: true,
       },
     },

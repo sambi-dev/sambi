@@ -13,9 +13,10 @@ export async function fetchBlogPageMetadata() {
   const { blog } = await basehubClient.query({
     blog: {
       blogPageMeta: {
-        _id: true,
-        _slug: true,
-        _title: true,
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         title: true,
         description: true,
       },
@@ -34,6 +35,10 @@ export async function fetchBlogPageIntro() {
   const { blog } = await basehubClient.query({
     blog: {
       blogPageIntro: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
         eyebrow: true,
         title: true,
         description: {
@@ -55,13 +60,21 @@ export async function fetchBlogPageIntro() {
 }
 
 export const blogPostFragment = {
-  _id: true,
-  _slug: true,
-  _title: true,
+  _sys: {
+    id: true,
+    slug: true,
+    title: true,
+    createdAt: true,
+    lastModifiedAt: true,
+    __typename: true,
+  },
   author: {
-    _id: true,
-    _slug: true,
-    _title: true,
+    _sys: {
+      id: true,
+      slug: true,
+      title: true,
+      __typename: true,
+    },
     image: {
       url: true,
       alt: true,
@@ -69,12 +82,19 @@ export const blogPostFragment = {
     role: true,
   },
   category: {
-    __typename: true,
-    _id: true,
-    _slug: true,
-    _title: true,
+    _sys: {
+      id: true,
+      slug: true,
+      title: true,
+      __typename: true,
+    },
     description: true,
-    isActive: true,
+    isPublished: true,
+  },
+  tldr: {
+    json: {
+      content: true,
+    },
   },
   content: {
     json: {
@@ -89,13 +109,7 @@ export const blogPostFragment = {
   },
   metaTitle: true,
   metaDescription: true,
-  publishedDate: true,
   readMoreButtonText: true,
-  tldr: {
-    json: {
-      content: true,
-    },
-  },
 } satisfies BlogPostsItemGenqlSelection;
 
 export type BlogPostFragment = FieldsSelection<
@@ -110,8 +124,9 @@ export async function fetchBlogPosts({ skip = 0, first = 10 } = {}) {
     blog: {
       blogPosts: {
         __args: {
-          first,
           skip,
+          first,
+          orderBy: '_sys_createdAt__DESC',
         },
         items: blogPostFragment,
         _meta: {
@@ -133,14 +148,22 @@ export const getPostBySlugQuery = (slug: string) => {
       blogPosts: {
         __args: { first: 1, filter: { _sys_slug: { eq: slug } } },
         items: {
-          _id: true,
-          _slug: true,
-          _title: true,
-          publishedDate: true,
+          _sys: {
+            id: true,
+            slug: true,
+            title: true,
+            createdAt: true,
+            lastModifiedAt: true,
+            __typename: true,
+          },
           content: { json: { content: true } },
           author: {
-            _id: true,
-            _title: true,
+            _sys: {
+              id: true,
+              slug: true,
+              title: true,
+              __typename: true,
+            },
             bio: true,
             image: {
               url: true,
@@ -153,8 +176,13 @@ export const getPostBySlugQuery = (slug: string) => {
             linkedinUrl: true,
           },
           category: {
-            _id: true,
-            _title: true,
+            _sys: {
+              id: true,
+              title: true,
+              __typename: true,
+            },
+            description: true,
+            isPublished: true,
           },
           image: {
             url: true,
