@@ -15,7 +15,7 @@ import { motion, MotionConfig, useReducedMotion } from 'framer-motion';
 
 import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
-import { ArrowRightIcon, BurgerMenuIcon, CloseMenuIcon } from '@sambi/ui/icons';
+import { BurgerMenuIcon, CloseMenuIcon, UpworkIcon } from '@sambi/ui/icons';
 import { Logo, Logomark } from '@sambi/ui/logo';
 
 import { siteConfig } from '#/config/site';
@@ -71,10 +71,10 @@ function Header({
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Book a consult with sambi on Upwork in a new window"
-            className={cn(buttonVariants({ size: 'sm' }))}
+            className={cn(buttonVariants())}
           >
-            Hire us
-            <ArrowRightIcon className="ml-2 w-3 flex-none fill-current" />
+            <UpworkIcon className="mr-2 size-5 flex-none fill-current" />
+            Get results
           </a>
           <button
             ref={toggleRef}
@@ -105,7 +105,7 @@ function Header({
 
 function NavigationRow({ children }: { children: React.ReactNode }) {
   return (
-    <div className="even:mt-px sm:bg-[#F5C000]">
+    <div className="even:mt-px sm:bg-[#FFC60A]">
       <Container>
         <div className="grid grid-cols-1 sm:grid-cols-2">{children}</div>
       </Container>
@@ -123,7 +123,7 @@ function NavigationItem({
   return (
     <Link
       href={href}
-      className="group relative isolate -mx-6 bg-[#F5C000] px-6 py-10 text-[#1E1E20] even:mt-px hover:text-[#FBFAF9] dark:hover:text-[#09090B] sm:mx-0 sm:px-0 sm:py-16 sm:odd:pr-16 sm:even:mt-0 sm:even:border-l sm:even:border-[#09090B]/10 sm:even:pl-16"
+      className="group relative isolate -mx-6 bg-[#FFC60A] px-6 py-10 text-[#1E1E20] even:mt-px hover:text-[#FBFAF9] dark:hover:text-[#09090B] sm:mx-0 sm:px-0 sm:py-16 sm:odd:pr-16 sm:even:mt-0 sm:even:border-l sm:even:border-[#09090B]/10 sm:even:pl-16"
     >
       {children}
       <span className="absolute inset-y-0 -z-10 w-screen bg-primary opacity-0 transition group-odd:right-0 group-even:left-0 group-hover:opacity-100 dark:bg-primary" />
@@ -198,13 +198,13 @@ function MainLayoutInner({ children }: { children: React.ReactNode }) {
           layout
           id={panelId}
           style={{ height: expanded ? 'auto' : '0.5rem' }}
-          className="relative z-50 overflow-hidden bg-[#F5C000] pt-2"
+          className="relative z-50 overflow-hidden bg-[#FFC60A] pt-2"
           aria-hidden={expanded ? undefined : 'true'}
           // @ts-expect-error (https://github.com/facebook/react/issues/17157)
           inert={expanded ? undefined : ''}
         >
           <motion.div layout className="bg-[#09090B]/10">
-            <div ref={navRef} className="bg-[#F5C000] pb-16 pt-14">
+            <div ref={navRef} className="bg-[#FFC60A] pb-16 pt-14">
               <Header
                 invert
                 panelId={panelId}
@@ -220,7 +220,7 @@ function MainLayoutInner({ children }: { children: React.ReactNode }) {
               />
             </div>
             <Navigation />
-            <div className="relative bg-[#F5C000] before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-[#09090B]/10">
+            <div className="relative bg-[#FFC60A] before:absolute before:inset-x-0 before:top-0 before:h-px before:bg-[#09090B]/10">
               <Container>
                 <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
                   <div className="sm:border-l sm:border-transparent">

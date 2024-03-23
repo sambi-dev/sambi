@@ -18,7 +18,7 @@ const writeAboutUsMailtoLink = `mailto:${SUPPORT_EMAIL}?subject=We%20want%20to%2
 
 export const contactMethods: ContactMethod[] = [
   {
-    title: 'Hire us',
+    title: 'Grow like crazy',
     description: 'Create a Client account on Upwork then send us a message.',
     screenReaderLabel: 'Hire on Upwork',
     ariaLabel: 'Hire sambi.dev on Upwork in a new window',

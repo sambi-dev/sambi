@@ -19,6 +19,13 @@ import Faqs from '#/ui/shared/faq';
 
 export default async function FaqPage() {
   const pageIntro = await fetchFaqsPageIntro();
+  const orderedCategories = [
+    'general',
+    'clients',
+    'partners',
+    'vendors',
+    'trolls',
+  ];
   const faq = await fetchFaqs();
   const { items: blogPosts } = await fetchBlogPosts({
     first: 2,
@@ -47,8 +54,19 @@ export default async function FaqPage() {
         <RichText>{pageIntro.description?.json.content}</RichText>
       </PageIntro>
       <Container className="mt-24 sm:mt-32 lg:mt-40">
-        <Border className="pt-16" />
-        <Faqs faq={faq} />
+        <Border position="top" className="pb-1" />
+        {orderedCategories.map((category) => {
+          const filteredItems = faq.items.filter(
+            (item) => item.category === category,
+          );
+          const faqForCategory = {
+            ...faq,
+            items: filteredItems,
+          };
+          return (
+            <Faqs key={category} faq={faqForCategory} category={category} />
+          );
+        })}
         <div className="mx-auto mt-6 max-w-2xl text-pretty py-10 text-base leading-7 text-muted-foreground">
           Have a different question?{' '}
           <a

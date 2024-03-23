@@ -42,7 +42,8 @@ export default function Locations() {
             >
               <Border position="left" className="pl-8">
                 <h3 className="font-mono text-lg font-semibold tracking-tighter text-foreground">
-                  {name} :: {airportCode}
+                  {name} <span className="text-alternate">::</span>{' '}
+                  {airportCode}
                 </h3>
                 <p className="mt-2 text-sm text-muted-foreground">
                   {description}
