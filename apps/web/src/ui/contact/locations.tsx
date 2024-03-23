@@ -44,7 +44,7 @@ export default function Locations() {
                 <h3 className="font-mono text-lg font-semibold tracking-tighter text-foreground">
                   {name} :: {airportCode}
                 </h3>
-                <p className="mt-2 text-sm text-muted-foreground md:text-base">
+                <p className="mt-2 text-sm text-muted-foreground">
                   {description}
                 </p>
               </Border>
@@ -54,7 +54,7 @@ export default function Locations() {
             <h3 className="font-mono text-lg font-semibold tracking-tighter text-foreground">
               Send us 🌮 or a check
             </h3>
-            <address className="mt-2 text-sm not-italic text-muted-foreground md:text-base">
+            <address className="mt-2 text-sm not-italic text-muted-foreground">
               <p>1370 N. St. Andrews Place</p>
               <p>Los Angeles, CA 90028</p>
             </address>

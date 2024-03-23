@@ -47,7 +47,9 @@ export default function Crew({ crew }: CrewProps) {
                 >
                   {person._sys.title}
                 </h3>
-                <p className="font-mono text-sm text-primary">{person.role}</p>
+                <p className="font-mono text-sm text-alternate">
+                  {person.role}
+                </p>
                 <p className="mt-6 text-sm leading-7 text-muted-foreground md:text-base">
                   {person.bio}
                 </p>

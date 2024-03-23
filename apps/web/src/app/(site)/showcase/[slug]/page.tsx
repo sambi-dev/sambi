@@ -78,7 +78,7 @@ export default async function ProjectBriefPage({
                 <div className="mx-auto max-w-5xl">
                   <dl className="-mx-6 grid grid-cols-1 text-sm text-secondary-foreground sm:mx-0 sm:grid-cols-4">
                     <div className="border-t px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
-                      <dt className="font-mono font-bold tracking-tighter">
+                      <dt className="font-mono text-xs font-bold tracking-tighter lg:text-sm">
                         Client
                       </dt>
                       <dd className="text-muted-foreground">
@@ -86,7 +86,7 @@ export default async function ProjectBriefPage({
                       </dd>
                     </div>
                     <div className="border-t px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
-                      <dt className="font-mono font-bold tracking-tighter">
+                      <dt className="font-mono text-xs font-bold tracking-tighter lg:text-sm">
                         Year
                       </dt>
                       <dd className="text-muted-foreground">
@@ -96,13 +96,13 @@ export default async function ProjectBriefPage({
                       </dd>
                     </div>
                     <div className="border-t px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
-                      <dt className="font-mono font-bold tracking-tighter">
+                      <dt className="font-mono text-xs font-bold tracking-tighter lg:text-sm">
                         Status
                       </dt>
                       <dd className="text-muted-foreground">{brief.status}</dd>
                     </div>
                     <div className="border-t px-6 py-4 first:border-t-0 sm:border-l sm:border-t-0">
-                      <dt className="font-mono font-bold tracking-tighter">
+                      <dt className="font-mono text-xs font-bold tracking-tighter lg:text-sm">
                         Service
                       </dt>
                       <dd className="text-muted-foreground">

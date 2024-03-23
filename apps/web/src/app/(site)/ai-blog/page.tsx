@@ -62,7 +62,7 @@ export default async function AiBlogPage() {
                         </h2>
                         <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
                           <dt className="sr-only">Published</dt>
-                          <dd className="absolute left-0 top-0 font-mono text-sm uppercase lg:static">
+                          <dd className="absolute left-0 top-0 font-mono text-sm uppercase text-muted-foreground lg:static">
                             <time dateTime={aiPost._sys.createdAt}>
                               {formatDate(aiPost._sys.createdAt)}
                             </time>

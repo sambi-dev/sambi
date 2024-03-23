@@ -40,7 +40,7 @@ export function BigWarning({
                 <UserAvatar id={id} initials={author.initials} />
               </div>
               <div className="ml-4">
-                <div className="font-mono text-base font-semibold leading-6 tracking-tighter text-foreground md:text-lg lg:text-xl">
+                <div className="font-mono text-base font-semibold leading-6 tracking-tighter text-foreground md:text-lg">
                   {author.name}
                 </div>
                 <div className="text-sm font-medium text-foreground">

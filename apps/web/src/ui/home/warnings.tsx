@@ -38,7 +38,7 @@ function Warning({ client, children }: WarningProps) {
           <UserAvatar id={client.id} initials={client.initials} />
         </div>
         <div className="ml-4">
-          <div className="font-mono text-base font-semibold leading-6 tracking-tight text-foreground">
+          <div className="font-mono text-sm font-semibold leading-6 tracking-tight text-foreground">
             {client.name}
           </div>
           {client.ctaLink && client.ctaText ? (
@@ -55,7 +55,7 @@ function Warning({ client, children }: WarningProps) {
               </Link>
             </div>
           ) : (
-            <div className="mt-1 font-mono text-sm font-medium tracking-tight text-muted-foreground">
+            <div className="mt-1 font-mono text-xs font-medium tracking-tight text-muted-foreground">
               {client.role}
             </div>
           )}

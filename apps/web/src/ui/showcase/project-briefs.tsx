@@ -29,7 +29,7 @@ export function ProjectBriefs({
   return (
     <Container className="mt-24 sm:mt-32 lg:mt-40">
       <FadeIn>
-        <h2 className="font-mono text-xl font-semibold tracking-tighter text-foreground">
+        <h2 className="font-mono text-lg font-semibold tracking-tighter text-foreground">
           Recently shipped
         </h2>
       </FadeIn>
@@ -67,23 +67,23 @@ export function ProjectBriefs({
                       </time>
                     </p>
                   </div>
-                  <p className="font-mono text-xs text-muted-foreground lg:mt-2">
+                  <p className="font-mono text-xs text-alternate lg:mt-2">
                     {projectBrief.service[0]?._sys.title}
                   </p>
                 </div>
 
                 <div className="col-span-full lg:col-span-2 lg:max-w-2xl">
                   {projectBrief.isPartner && (
-                    <div className="block pt-3 font-mono text-sm font-medium uppercase tracking-widest text-primary">
+                    <div className="block pt-3 font-mono text-sm font-medium uppercase tracking-widest text-alternate">
                       Via partner
                     </div>
                   )}
-                  <p className="text-pretty font-mono text-3xl font-semibold leading-normal tracking-tighter text-foreground hover:text-primary">
+                  <p className="text-pretty font-mono text-2xl font-semibold leading-normal tracking-tighter text-foreground hover:text-primary">
                     <Link href={`/showcase/${projectBrief._sys.slug}`}>
                       {projectBrief._sys.title}
                     </Link>
                   </p>
-                  <div className="my-6 space-y-6 text-base text-muted-foreground">
+                  <div className="my-6 space-y-6 text-sm text-muted-foreground lg:text-base">
                     <RichText>{projectBrief.summary?.json.content}</RichText>
                   </div>
                   <div className="my-8 flex">
