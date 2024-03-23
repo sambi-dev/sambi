@@ -13,7 +13,7 @@ export default function NotFound() {
         <Logo fillOnHover className="absolute left-8 top-8 h-8" />
       </Link>
       <Container className="flex flex-col items-center py-16 text-center sm:py-20 lg:py-32">
-        <h1 className="block font-mono text-base font-semibold uppercase tracking-widest text-primary">
+        <h1 className="block font-mono text-sm font-semibold uppercase tracking-widest text-primary">
           404{' '}
           <span className="font-sans text-lg text-secondary-foreground">
             ::

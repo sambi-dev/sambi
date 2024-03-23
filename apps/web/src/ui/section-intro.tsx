@@ -24,7 +24,7 @@ export function SectionIntro({
         <h2>
           {eyebrow && (
             <>
-              <span className="mb-6 block font-mono text-base font-medium uppercase tracking-widest text-primary">
+              <span className="mb-6 block font-mono text-sm font-medium uppercase tracking-widest text-primary">
                 {eyebrow}
               </span>
               <span className="sr-only"> - </span>

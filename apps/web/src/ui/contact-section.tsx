@@ -28,7 +28,7 @@ export function ContactSection() {
               </Link>
             </div>
             <div className="mt-10 border-t pt-10">
-              <h3 className="font-mono text-base font-medium tracking-tighter text-secondary-foreground">
+              <h3 className="font-mono text-sm font-medium tracking-tighter text-secondary-foreground">
                 Working remotely from
               </h3>
               <Offices className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2" />

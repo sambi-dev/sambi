@@ -128,7 +128,7 @@ export function NavBar() {
                   >
                     {(sectionIndex + 1).toString().padStart(2, '0')}
                   </span>
-                  <span className="ml-4 font-mono text-base font-semibold tracking-tighter text-foreground">
+                  <span className="ml-4 font-mono text-sm font-semibold tracking-tighter text-foreground">
                     {section.title}
                   </span>
                 </Popover.Button>
@@ -139,7 +139,7 @@ export function NavBar() {
         )}
       </Popover>
       <div className="hidden sm:flex sm:h-32 sm:justify-center sm:border-b sm:bg-background sm:[@supports(backdrop-filter:blur(0))]:bg-secondary sm:[@supports(backdrop-filter:blur(0))]:backdrop-blur">
-        <ol className="mb-[-2px] grid auto-cols-[minmax(0,15rem)] grid-flow-col font-mono text-base font-medium tracking-tighter text-foreground/80 [counter-reset:section]">
+        <ol className="mb-[-2px] grid auto-cols-[minmax(0,15rem)] grid-flow-col font-mono text-sm font-medium tracking-tighter text-foreground/80 [counter-reset:section]">
           {sections.map((section, sectionIndex) => (
             <li key={section.id} className="flex [counter-increment:section]">
               <Link

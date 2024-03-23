@@ -69,7 +69,9 @@ export const faqFragment = {
       title: true,
       __typename: true,
     },
+    category: true,
     isPriority: true,
+    isPublished: true,
     answer: {
       json: {
         content: true,

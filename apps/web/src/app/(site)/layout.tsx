@@ -7,7 +7,7 @@ interface InnerPagesLayoutProps {
 export default function InnerPagesLayout({ children }: InnerPagesLayoutProps) {
   return (
     <div className="h-full">
-      <main className="flex min-h-full flex-col bg-[#F5C000]">
+      <main className="flex min-h-full flex-col bg-[#FFC60A]">
         <MainLayout>{children}</MainLayout>
       </main>
     </div>

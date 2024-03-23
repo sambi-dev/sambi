@@ -82,9 +82,9 @@ const AiBlogPost = async ({ params }: { params: { slug: string } }) => {
                 {post.company._sys.title}
               </span>
               <span className="text-sm text-secondary-foreground">::</span>
-              <span className="font-mono text-xs font-medium uppercase tracking-tighter text-primary">
+              <span className="font-mono text-sm font-medium uppercase tracking-tighter text-primary">
                 {post.category.length > 0 && (
-                  <div className="font-mono text-xs font-medium uppercase text-primary">
+                  <div className="-mb-0.5 font-mono text-sm font-medium uppercase text-alternate">
                     #{post.category[0]?._sys.title}
                   </div>
                 )}
