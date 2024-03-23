@@ -40,7 +40,7 @@ export function SectionIntro({
           </span>
         </h2>
         {children && (
-          <div className="mt-6 text-muted-foreground md:text-lg lg:text-xl">
+          <div className="mt-6 text-muted-foreground md:text-lg">
             {children}
           </div>
         )}

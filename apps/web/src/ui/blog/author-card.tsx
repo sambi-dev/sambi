@@ -35,17 +35,15 @@ export default function AuthorCard({ author }: { author: Author }) {
             />
             <div className="max-w-xl flex-auto">
               <div className="flex items-center gap-2">
-                <h3 className="font-mono text-xl font-semibold leading-8 tracking-tighter text-foreground">
+                <h3 className="font-mono text-xl font-semibold tracking-tighter text-foreground">
                   {author.name}
                 </h3>
               </div>
-              <p className="font-mono text-base font-medium leading-7 tracking-tighter text-primary">
+              <p className="font-mono text-xs font-medium uppercase tracking-tighter text-alternate">
                 {author.role}
               </p>
-              <p className="mt-6 text-base leading-7 text-muted-foreground">
-                {author.bio}
-              </p>
-              <ul className="mt-6 flex gap-x-6">
+              <p className="mt-2 text-sm text-muted-foreground">{author.bio}</p>
+              <ul className="mt-4 flex gap-x-6">
                 <li>
                   <CrewSocialIcon
                     url={author.upworkUrl}

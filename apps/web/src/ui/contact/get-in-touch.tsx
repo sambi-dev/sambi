@@ -32,7 +32,7 @@ export default function GetInTouch() {
                   <h3 className="font-mono text-lg font-semibold tracking-tighter text-foreground">
                     {title}
                   </h3>
-                  <p className="mt-2 text-sm text-muted-foreground md:text-base">
+                  <p className="mt-2 text-sm text-muted-foreground">
                     {description}
                   </p>
                   <dl className="mt-4 space-y-1 leading-6 text-muted-foreground">
@@ -40,7 +40,7 @@ export default function GetInTouch() {
                       <dt className="sr-only">{screenReaderLabel}</dt>
                       <dd>
                         <a
-                          className="font-mono text-sm font-semibold tracking-tighter text-primary hover:underline hover:decoration-2 hover:underline-offset-4 md:text-base"
+                          className="font-mono text-sm font-semibold tracking-tighter text-primary hover:underline hover:decoration-2 hover:underline-offset-4"
                           href={linkHref}
                           target="_blank"
                           rel="noopener noreferrer"
@@ -62,7 +62,7 @@ export default function GetInTouch() {
             <h3 className="font-mono text-lg font-semibold tracking-tighter text-foreground">
               Connect with us
             </h3>
-            <p className="mt-2 text-sm text-muted-foreground md:text-base">
+            <p className="mt-2 text-sm text-muted-foreground">
               Follow our progress and facepalms on social media.
             </p>
             <dl className="mt-3 space-y-1 leading-6 text-muted-foreground">

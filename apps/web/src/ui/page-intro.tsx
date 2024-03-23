@@ -35,7 +35,7 @@ export function PageIntro({
         </h1>
         <div
           className={cn(
-            'mt-6 max-w-3xl text-pretty text-muted-foreground md:text-lg lg:text-xl',
+            'mt-6 max-w-3xl text-pretty text-muted-foreground md:text-lg',
             centered && 'mx-auto',
           )}
         >

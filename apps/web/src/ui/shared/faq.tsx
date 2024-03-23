@@ -24,6 +24,7 @@ export default function Faqs({ faq }: FaqsProps) {
                 <RichTextWrapper
                   content={item.answer?.json.content as string}
                   centered
+                  small
                 />
               </dd>
             </FadeIn>
