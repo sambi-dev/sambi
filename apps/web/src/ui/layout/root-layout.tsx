@@ -224,7 +224,7 @@ function MainLayoutInner({ children }: { children: React.ReactNode }) {
               <Container>
                 <div className="grid grid-cols-1 gap-y-10 pb-16 pt-10 sm:grid-cols-2 sm:pt-16">
                   <div className="sm:border-l sm:border-transparent">
-                    <h2 className="font-mono text-base font-bold tracking-tighter text-[#141414]">
+                    <h2 className="font-mono text-sm font-bold tracking-tighter text-[#141414]">
                       Follow us
                     </h2>
                     <SocialMedia className="mt-6" invert />
