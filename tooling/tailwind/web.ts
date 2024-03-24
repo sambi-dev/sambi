@@ -37,6 +37,15 @@ export default {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
       },
+      height: {
+        150: '37.5rem',
+      },
+      spacing: {
+        128: '32rem',
+      },
+      margin: {
+        30: '7.5rem',
+      },
     },
   },
   plugins: [animate, typography],

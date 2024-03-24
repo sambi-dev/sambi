@@ -1,5 +1,4 @@
 import { fetchRecentShowcaseBriefs } from '#/basehub/showcase-queries';
-import { BigWarning } from '#/ui/home/big-warning';
 import { Hero } from '#/ui/home/hero';
 import { Introduction } from '#/ui/home/introduction';
 import { Mettle } from '#/ui/home/mettle';
@@ -7,10 +6,11 @@ import { Process } from '#/ui/home/process';
 import { Resources } from '#/ui/home/resources';
 import { Showcase } from '#/ui/home/showcase';
 import { Tldr } from '#/ui/home/tldr';
-import { Warnings } from '#/ui/home/warnings';
 import { Footer } from '#/ui/layout/footer';
 import { NavBar } from '#/ui/layout/navbar';
 import { Cta } from '#/ui/shared/cta';
+import { BigWarning } from '#/ui/warnings/big-warning';
+import { Warnings } from '#/ui/warnings/warnings';
 
 export default async function Home() {
   const projectBriefs = await fetchRecentShowcaseBriefs();

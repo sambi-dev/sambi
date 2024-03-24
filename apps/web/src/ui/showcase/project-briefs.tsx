@@ -9,7 +9,6 @@ import { cn } from '@sambi/ui';
 import { buttonVariants } from '@sambi/ui/button';
 import { ArrowRightIcon } from '@sambi/ui/icons';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { Blockquote } from '#/ui/blockquote';
 import { Border } from '#/ui/border';
 import { FadeIn } from '#/ui/fade-in';
@@ -41,7 +40,10 @@ export function ProjectBriefs({
                 <div className="col-span-full sm:flex sm:items-center sm:justify-between sm:gap-x-8 lg:col-span-1 lg:block">
                   <div className="sm:flex sm:items-center sm:gap-x-6 lg:block">
                     <Image
-                      src={projectBrief.client.icon.url}
+                      src={
+                        projectBrief.client.icon.url ??
+                        '/icons/android-chrome-512x512.png'
+                      }
                       alt={
                         projectBrief.client.logo.alt ??
                         "An icon for sambi.dev's client"
@@ -98,23 +100,23 @@ export function ProjectBriefs({
                       <ArrowRightIcon className="ml-2 w-3 flex-none fill-current" />
                     </Link>
                   </div>
-                  {/*projectBrief.client.contacts.items.map(
-                      (contact) =>
-                        contact.testimonial && (
-                          <Blockquote
-                            key={contact._id}
-                            author={{
-                              name: `${contact.firstName} ${contact.lastInitial}`,
-                              role: contact.role,
-                            }}
-                            className="mt-12"
-                          >
-                            <RichText>
-                              {contact.testimonial.json.content}
-                            </RichText>
-                          </Blockquote>
-                        ),
-                          )*/}
+                  {projectBrief.client.contacts.items.map(
+                    (contact) =>
+                      contact.testimonial && (
+                        <Blockquote
+                          key={contact._sys.id}
+                          author={{
+                            name: `${contact._sys.title} ${contact.lastInitial}`,
+                            role: contact.role,
+                          }}
+                          className="mt-12"
+                        >
+                          <RichText>
+                            {contact.testimonial.json.content}
+                          </RichText>
+                        </Blockquote>
+                      ),
+                  )}
                 </div>
               </Border>
             </article>

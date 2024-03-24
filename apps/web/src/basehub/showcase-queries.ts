@@ -90,7 +90,6 @@ export const showcaseBriefFragment = {
           slug: true,
           __typename: true,
         },
-        firstName: true,
         lastInitial: true,
         role: true,
         testimonial: {

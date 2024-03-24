@@ -66,9 +66,9 @@ function BlockquoteWithoutImage({
         <blockquote className="text-secondary-foreground [&>*]:relative [&>:first-child]:before:absolute [&>:first-child]:before:right-full [&>:first-child]:before:content-['“'] [&>:last-child]:after:content-['”']">
           {typeof children === 'string' ? <p>{children}</p> : children}
         </blockquote>
-        <figcaption className="mt-6 font-mono font-semibold tracking-tighter text-primary">
-          {author.name}{' '}
-          <span className="text-muted-foreground">:: {author.role}</span>
+        <figcaption className="mt-6 font-mono text-xs font-semibold tracking-tighter text-primary">
+          {author.name} <span className="text-muted-foreground">:: </span>
+          <span className="text-alternate"> {author.role}</span>
         </figcaption>
       </figure>
     </Border>

@@ -19,7 +19,7 @@ import RichTextWrapper from '#/ui/shared/rich-text-wrapper';
 
 export default async function AccessibilityPage() {
   const pageIntro = await fetchAccessibilityPageIntro();
-  const privacy = await fetchAccessibilityPage();
+  const accessibility = await fetchAccessibilityPage();
   const { items: blogPosts } = await fetchBlogPosts({
     first: 2,
   });
@@ -44,7 +44,7 @@ export default async function AccessibilityPage() {
       <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
         <Border className="py-16" />
         <RichTextWrapper
-          content={privacy.content?.json.content as string}
+          content={accessibility.content?.json.content as string}
           centered
         />
       </Container>

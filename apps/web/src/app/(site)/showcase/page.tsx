@@ -12,10 +12,10 @@ import { siteConfig } from '#/config/site';
 import { SITE_URL } from '#/lib/constants';
 import { Clients } from '#/ui/clients';
 import { ContactSection } from '#/ui/contact-section';
-import { BigWarning } from '#/ui/home/big-warning';
 import { PageIntro } from '#/ui/page-intro';
 import { LoadMore, LoadMoreButton, LoadMoreItems } from '#/ui/shared/load-more';
 import { ProjectBriefs } from '#/ui/showcase/project-briefs';
+import { BigWarning } from '#/ui/warnings/big-warning';
 
 export default async function ShowcasePage() {
   const { items: initialProjectBriefs, totalCount } = await fetchShowcaseBriefs(
