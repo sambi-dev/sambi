@@ -73,9 +73,9 @@ export function PromptForm({
         <Tooltip>
           <TooltipTrigger asChild>
             <Button
-              variant="outline"
+              variant="secondary"
               size="icon"
-              className="absolute left-0 top-[14px] size-8 rounded-full bg-card p-0 sm:left-4"
+              className="absolute left-2 top-[20px] size-6 rounded-full p-0 sm:left-4 md:top-[14px] md:size-8"
               onClick={() => {
                 router.push('/new');
               }}
