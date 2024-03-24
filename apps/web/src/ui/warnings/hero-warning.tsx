@@ -1,6 +1,6 @@
 import { StarRating } from '#/ui/shared/star-rating';
 
-export function HeroTestimonial() {
+export function HeroWarning() {
   return (
     <figure className="relative mx-auto max-w-md text-center lg:mx-0 lg:text-left">
       <div className="flex justify-center text-secondary-foreground lg:justify-start">

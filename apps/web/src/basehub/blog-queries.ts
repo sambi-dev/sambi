@@ -96,6 +96,10 @@ export const blogPostFragment = {
       content: true,
     },
   },
+  image: {
+    url: true,
+    alt: true,
+  },
   content: {
     json: {
       content: true,

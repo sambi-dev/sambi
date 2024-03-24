@@ -30,14 +30,18 @@ export function BigWarning({
         <FadeIn>
           <figure>
             <div className="flex text-foreground sm:justify-center">
-              <StarRating />
+              <StarRating size="lg" />
             </div>
             <blockquote className="mt-10 text-pretty font-mono text-4xl font-semibold tracking-tighter text-secondary-foreground sm:text-center lg:text-5xl">
               {children}
             </blockquote>
             <figcaption className="mt-10 flex items-center sm:justify-center">
               <div className="overflow-hidden rounded-full bg-border">
-                <UserAvatar id={id} initials={author.initials} />
+                <UserAvatar
+                  id={id}
+                  initials={author.initials}
+                  name={author.name}
+                />
               </div>
               <div className="ml-4">
                 <div className="font-mono text-base font-semibold leading-6 tracking-tighter text-foreground md:text-lg">

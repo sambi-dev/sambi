@@ -8,6 +8,7 @@ export function SectionIntro({
   eyebrow,
   children,
   smaller = false,
+  centered = false,
   ...props
 }: Omit<
   React.ComponentPropsWithoutRef<typeof Container>,
@@ -17,10 +18,11 @@ export function SectionIntro({
   eyebrow?: string;
   children?: React.ReactNode;
   smaller?: boolean;
+  centered?: boolean;
 }) {
   return (
-    <Container {...props}>
-      <FadeIn className="max-w-2xl">
+    <Container {...props} className={cn(centered && 'text-center')}>
+      <FadeIn className={cn('max-w-2xl', centered && 'mx-auto')}>
         <h2>
           {eyebrow && (
             <>
@@ -34,13 +36,19 @@ export function SectionIntro({
             className={cn(
               'block text-pretty font-mono font-semibold tracking-tighter text-foreground',
               smaller ? 'text-2xl' : 'text-3xl sm:text-4xl',
+              centered && 'mx-auto',
             )}
           >
             {title}
           </span>
         </h2>
         {children && (
-          <div className="mt-6 text-muted-foreground md:text-lg">
+          <div
+            className={cn(
+              'mt-6 text-muted-foreground md:text-lg',
+              centered && 'mx-auto',
+            )}
+          >
             {children}
           </div>
         )}

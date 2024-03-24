@@ -7,7 +7,7 @@ import { ArrowRightIcon } from '@sambi/ui/icons';
 
 import { siteConfig } from '#/config/site';
 import heroImage from '#/images/hero.png';
-import { HeroTestimonial } from '#/ui/home/hero-testimonial';
+import { HeroWarning } from '#/ui/warnings/hero-warning';
 
 export function Hero() {
   return (
@@ -25,19 +25,19 @@ export function Hero() {
         </div>
         <div className="relative px-4 sm:px-6 lg:col-span-7 lg:pb-14 lg:pl-16 lg:pr-0 xl:pl-20">
           <div className="hidden lg:absolute lg:-top-32 lg:bottom-0 lg:left-[-100vw] lg:right-[-100vw] lg:block lg:bg-card" />
-          <HeroTestimonial />
+          <HeroWarning />
         </div>
         <div className="pt-16 lg:col-span-7 lg:bg-transparent lg:pl-16 lg:pt-0 xl:pl-20">
           <div className="mx-auto px-4 sm:px-6 md:max-w-3xl md:px-4 lg:px-0">
-            <h1 className="text-pretty font-mono text-4xl font-semibold tracking-tighter text-foreground sm:text-5xl">
+            <h1 className="text-pretty font-mono text-3xl font-semibold tracking-tighter text-foreground sm:text-5xl">
               A much smaller studio than our clients think
             </h1>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <p className="mt-4 text-muted-foreground lg:text-lg">
               Somehow, our just wing it attitude keeps racking up big wins for
               clients. They come for the tech, awards on our shelf, and the
               promise of glory. Who are we to mess with a good thing.
             </p>
-            <p className="mt-4 text-lg text-muted-foreground">
+            <p className="mt-4 text-muted-foreground lg:text-lg">
               👇🏽 Got a crazy idea?
             </p>
             <div className="mt-8 flex gap-4">
