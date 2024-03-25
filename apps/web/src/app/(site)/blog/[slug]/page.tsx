@@ -53,8 +53,8 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
           <Image
             className="absolute inset-0 h-full w-full object-cover opacity-25"
             src={post.image.url}
-            width={1440}
-            height={577}
+            width={1920}
+            height={1080}
             alt={
               post.image.alt ??
               `A featured image for the post ${post.author._sys.title}`
@@ -106,6 +106,13 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
           content={post.content?.json.content as string}
           centered
         />
+        <div className="my-6">
+          <RichTextWrapper
+            content={post.imageAttribution?.json.content as string}
+            centered
+          />
+        </div>
+
         <AuthorCard
           author={{
             name: post.author._sys.title,

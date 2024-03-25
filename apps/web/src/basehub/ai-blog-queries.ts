@@ -91,6 +91,11 @@ export const aiBlogPostFragment = {
     description: true,
     isPublished: true,
   },
+  image: {
+    url: true,
+    alt: true,
+  },
+  imageAttribution: { json: { content: true } },
   content: {
     json: {
       content: true,
@@ -147,46 +152,7 @@ export const getAiPostBySlugQuery = (slug: string) => {
     aiBlog: {
       aiBlogPosts: {
         __args: { first: 1, filter: { _sys_slug: { eq: slug } } },
-        items: {
-          _sys: {
-            id: true,
-            slug: true,
-            title: true,
-            createdAt: true,
-            lastModifiedAt: true,
-            __typename: true,
-          },
-          content: { json: { content: true } },
-          company: {
-            _sys: {
-              id: true,
-              title: true,
-              __typename: true,
-            },
-            model: true,
-            version: true,
-            image: {
-              url: true,
-              alt: true,
-            },
-          },
-          category: {
-            _sys: {
-              id: true,
-              title: true,
-              slug: true,
-              __typename: true,
-            },
-            description: true,
-            isPublished: true,
-          },
-          image: {
-            url: true,
-            alt: true,
-          },
-          metaTitle: true,
-          metaDescription: true,
-        },
+        items: aiBlogPostFragment,
       },
     },
   } satisfies QueryGenqlSelection;
