@@ -61,7 +61,7 @@ function Warning({ client, children }: WarningProps) {
           </div>
           <p className="line-clamp-1 font-mono text-[0.6rem] font-medium tracking-tight text-muted-foreground">
             {client.role}
-            <span className="text-alternate"> ::</span>
+            <span className="text-alternate"> :: </span>
             {client.name}
           </p>
         </div>

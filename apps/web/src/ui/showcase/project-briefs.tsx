@@ -19,12 +19,6 @@ export function ProjectBriefs({
 }: {
   projectBriefs: ShowcaseBriefFragment[];
 }) {
-  const sortedProjectBriefs = projectBriefs.sort(
-    (a, b) =>
-      new Date(b._sys.createdAt).getTime() -
-      new Date(a._sys.createdAt).getTime(),
-  );
-
   return (
     <Container className="mt-24 sm:mt-32 lg:mt-40">
       <FadeIn>
@@ -33,7 +27,7 @@ export function ProjectBriefs({
         </h2>
       </FadeIn>
       <div className="mt-10 space-y-24">
-        {sortedProjectBriefs.map((projectBrief) => (
+        {projectBriefs.map((projectBrief) => (
           <FadeIn key={projectBrief._sys.id}>
             <article>
               <Border className="grid grid-cols-3 gap-x-8 gap-y-8 pt-16">
@@ -75,7 +69,7 @@ export function ProjectBriefs({
                 </div>
 
                 <div className="col-span-full lg:col-span-2 lg:max-w-2xl">
-                  {projectBrief.isPartner && (
+                  {projectBrief.client.isPartner && (
                     <div className="block pt-3 font-mono text-sm font-medium uppercase tracking-widest text-alternate">
                       Via partner
                     </div>

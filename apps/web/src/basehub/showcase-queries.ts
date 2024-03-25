@@ -74,6 +74,7 @@ export const showcaseBriefFragment = {
       title: true,
       __typename: true,
     },
+    isPartner: true,
     contacts: {
       _sys: {
         id: true,
@@ -119,7 +120,6 @@ export const showcaseBriefFragment = {
     url: true,
     alt: true,
   },
-  isPartner: true,
   isPublished: true,
   metaTitle: true,
   metaDescription: true,
@@ -153,7 +153,7 @@ export async function fetchShowcaseBriefs({ skip = 0, first = 10 } = {}) {
         __args: {
           first,
           skip,
-          orderBy: '_sys_createdAt__DESC',
+          orderBy: 'serviceDate__DESC',
         },
         items: showcaseBriefFragment,
         _meta: {
@@ -177,7 +177,7 @@ export async function fetchRecentShowcaseBriefs() {
       brief: {
         __args: {
           first: 3,
-          orderBy: '_sys_createdAt__DESC',
+          orderBy: 'serviceDate__DESC',
         },
         items: showcaseBriefFragment,
       },
