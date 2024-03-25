@@ -15,7 +15,7 @@ const HomePageJson = () => {
           '@type': 'Corporation',
           name: siteConfig.company,
           url: siteConfig.companyUrl,
-          logo: siteConfig.logo.url,
+          logo: siteConfig.companyLogo.url,
           sameAs: [
             'https://www.linkedin.com/company/brillacx/',
             'https://twitter.com/brillacx',
@@ -24,6 +24,7 @@ const HomePageJson = () => {
         },
         description: siteConfig.description,
         inLanguage: 'en-US',
+        isAccessibleForFree: 'True',
         name: siteConfig.name,
         publisher: {
           '@type': 'Organization',

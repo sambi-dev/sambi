@@ -8,6 +8,7 @@ interface ShowcaseBriefJsonProps {
   description: string;
   slug: string;
   title: string;
+  imageUrl: string;
 }
 
 const ShowcaseBriefJson = ({
@@ -16,24 +17,31 @@ const ShowcaseBriefJson = ({
   description,
   slug,
   title,
+  imageUrl,
 }: ShowcaseBriefJsonProps) => {
   const jsonLd: WithContext<Article> = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     author: {
-      '@type': 'Organization',
+      '@type': 'Corporation',
       name: siteConfig.company,
       url: siteConfig.companyUrl,
       logo: {
         '@type': 'ImageObject',
         url: siteConfig.companyLogo.url,
       },
+      sameAs: [
+        'https://www.linkedin.com/company/brillacx/',
+        'https://twitter.com/brillacx',
+        'https://github.com/brilla-cx',
+      ],
     },
     dateModified: dateModified,
     datePublished: datePublished,
     description: description,
     headline: title,
-    image: siteConfig.image.url,
+    image: imageUrl,
+    isAccessibleForFree: 'True',
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `${siteConfig.url}/showcase/${slug}`,
@@ -45,6 +53,7 @@ const ShowcaseBriefJson = ({
         '@type': 'ImageObject',
         url: siteConfig.logo.url,
       },
+      sameAs: Object.values(siteConfig.links),
     },
   };
 
