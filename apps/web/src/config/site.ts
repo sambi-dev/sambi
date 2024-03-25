@@ -10,9 +10,11 @@ interface Image {
 }
 
 interface SiteConfig {
+  company: string;
+  companyUrl: string;
   name: string;
-  description: string;
   url: string;
+  description: string;
   image: Image;
   links: {
     facebook: string;
@@ -29,6 +31,8 @@ interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
+  company: 'BRIL.LA, LLC.',
+  companyUrl: 'https://bril.la',
   name: 'sambi.dev',
   description:
     'sambi.dev is a premiere Upwork agency. We help founders, startups, and fast-growing businesses turn their ideas into products that people love. 🔥',
