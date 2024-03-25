@@ -106,7 +106,7 @@ export function Introduction() {
           <p className="mt-4">No seriously...</p>
           <div className="mt-10">
             <a
-              href={siteConfig.links.upworkConsult}
+              href={siteConfig.teamLinks.upworkConsult}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Book a consult with sambi on Upwork in a new window"

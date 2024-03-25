@@ -29,6 +29,12 @@ export async function fetchFaqsPageIntro() {
 
   const { faqs } = await basehubClient.query({
     faqs: {
+      _sys: {
+        id: true,
+        title: true,
+        slug: true,
+        __typename: true,
+      },
       faqsPageIntro: {
         _sys: {
           id: true,
@@ -47,6 +53,8 @@ export async function fetchFaqsPageIntro() {
   });
 
   return {
+    jsonTitle: faqs._sys.title,
+    jsonSlug: faqs._sys.slug,
     eyebrow: faqs.faqsPageIntro.eyebrow,
     title: faqs.faqsPageIntro.title,
     description: faqs.faqsPageIntro.description,

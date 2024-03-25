@@ -1,4 +1,5 @@
 import { fetchRecentShowcaseBriefs } from '#/basehub/showcase-queries';
+import HomePageJson from '#/json-ld/home-jsonld';
 import { Hero } from '#/ui/home/hero';
 import { Introduction } from '#/ui/home/introduction';
 import { Mettle } from '#/ui/home/mettle';
@@ -53,6 +54,7 @@ export default async function Home() {
       <Warnings />
       <Tldr />
       <Footer />
+      <HomePageJson />
     </>
   );
 }

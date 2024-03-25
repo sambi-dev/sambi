@@ -8,7 +8,7 @@ import {
   getShowcaseBriefBySlugQuery,
 } from '#/basehub/showcase-queries';
 import { siteConfig } from '#/config/site';
-import ShowcaseBriefJson from '#/json-ld/showcase-brief';
+import ShowcaseBriefJson from '#/json-ld/showcase-jsonld';
 import { SITE_URL } from '#/lib/constants';
 import { ContactSection } from '#/ui/contact-section';
 import { FadeIn } from '#/ui/fade-in';
@@ -130,7 +130,6 @@ export default async function ProjectBriefPage({
             </div>
           </FadeIn>
         </header>
-
         <Container className="mt-24 sm:mt-32 lg:mt-40">
           <RichTextWrapper
             content={brief.content?.json.content as string}
@@ -141,11 +140,6 @@ export default async function ProjectBriefPage({
           slug={brief._sys.slug}
           title={brief._sys.title}
           description={brief.metaDescription}
-          imageUrl={brief.image.url}
-          authorName={siteConfig.company}
-          authorUrl={siteConfig.companyUrl}
-          publisherName={siteConfig.name}
-          publisherUrl={siteConfig.url}
           datePublished={brief._sys.createdAt}
           dateModified={brief._sys.lastModifiedAt}
         />

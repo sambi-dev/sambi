@@ -32,15 +32,15 @@ export const footerLinks: Section[] = [
       },
       {
         title: 'Ambreen',
-        href: siteConfig.links.upworkAmbreen,
+        href: siteConfig.teamLinks.upworkAmbreen,
         external: true,
       },
       {
         title: 'Rebekah',
-        href: siteConfig.links.upworkRebekah,
+        href: siteConfig.teamLinks.upworkRebekah,
         external: true,
       },
-      { title: 'Sam', href: siteConfig.links.upworkSam, external: true },
+      { title: 'Sam', href: siteConfig.teamLinks.upworkSam, external: true },
     ],
   },
   {

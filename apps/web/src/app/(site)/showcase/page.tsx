@@ -9,6 +9,7 @@ import {
   fetchShowcasePageMetadata,
 } from '#/basehub/showcase-queries';
 import { siteConfig } from '#/config/site';
+import PageJson from '#/json-ld/page-jsonld';
 import { SITE_URL } from '#/lib/constants';
 import { Clients } from '#/ui/clients';
 import { ContactSection } from '#/ui/contact-section';
@@ -73,6 +74,10 @@ export default async function ShowcasePage() {
       </Clients>
 
       <ContactSection />
+      <PageJson
+        pageSlug={`${pageIntro.jsonSlug}`}
+        pageName={`${pageIntro.jsonTitle} :: ${siteConfig.name}`}
+      />
     </>
   );
 }

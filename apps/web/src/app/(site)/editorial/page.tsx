@@ -9,6 +9,7 @@ import {
   fetchEditorialPageMetadata,
 } from '#/basehub/editorial-queries';
 import { siteConfig } from '#/config/site';
+import PageJson from '#/json-ld/page-jsonld';
 import { SITE_URL } from '#/lib/constants';
 import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
@@ -19,7 +20,7 @@ import RichTextWrapper from '#/ui/shared/rich-text-wrapper';
 
 export default async function EditorialPolicyPage() {
   const pageIntro = await fetchEditorialPageIntro();
-  const privacy = await fetchEditorialPage();
+  const editorial = await fetchEditorialPage();
   const { items: blogPosts } = await fetchBlogPosts({
     first: 2,
   });
@@ -44,7 +45,7 @@ export default async function EditorialPolicyPage() {
       <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
         <Border className="py-16" />
         <RichTextWrapper
-          content={privacy.content?.json.content as string}
+          content={editorial.content?.json.content as string}
           centered
         />
       </Container>
@@ -55,6 +56,10 @@ export default async function EditorialPolicyPage() {
         pages={pages}
       />
       <ContactSection />
+      <PageJson
+        pageSlug={`${editorial._sys.slug}`}
+        pageName={`${editorial._sys.title} :: ${siteConfig.name}`}
+      />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { siteConfig } from '#/config/site';
+import PageJson from '#/json-ld/page-jsonld';
 import { SITE_URL } from '#/lib/constants';
 import { Border } from '#/ui/border';
 import GetInTouch from '#/ui/contact/get-in-touch';
@@ -24,13 +25,17 @@ export default function ContactPage() {
         <Border className="mt-16 pt-16" />
         <Locations />
       </Container>
+      <PageJson
+        pageSlug="contact"
+        pageName={`${title} :: ${siteConfig.name}`}
+      />
     </>
   );
 }
 
-const title = 'ContactPage';
+const title = 'Contact us';
 const description =
-  "Wanna contact the us at sambi.dev? 😎 Slide into our Upwork DMs if you're new or hit us up on GitHub if you're not. We're totally stoked to hear from you. 🤙";
+  "Wanna contact us at sambi.dev? 😎 Slide into our Upwork DMs if you're new or hit us up on GitHub if you're not. We're totally stoked to hear from you. 🤙";
 
 const pageUrl = `${SITE_URL}/contact`;
 

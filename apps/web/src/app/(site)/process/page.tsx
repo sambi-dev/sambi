@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { siteConfig } from '#/config/site';
+import PageJson from '#/json-ld/page-jsonld';
 import { SITE_URL } from '#/lib/constants';
 import { ContactSection } from '#/ui/contact-section';
 import { PageIntro } from '#/ui/page-intro';
@@ -29,6 +30,10 @@ export default function ProcessPage() {
       </div>
       <Values />
       <ContactSection />
+      <PageJson
+        pageSlug="process"
+        pageName={`${title} :: ${siteConfig.name}`}
+      />
     </>
   );
 }

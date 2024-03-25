@@ -34,6 +34,12 @@ export async function fetchBlogPageIntro() {
 
   const { blog } = await basehubClient.query({
     blog: {
+      _sys: {
+        id: true,
+        title: true,
+        slug: true,
+        __typename: true,
+      },
       blogPageIntro: {
         _sys: {
           id: true,
@@ -52,6 +58,8 @@ export async function fetchBlogPageIntro() {
   });
 
   return {
+    jsonTitle: blog._sys.title,
+    jsonSlug: blog._sys.slug,
     eyebrow: blog.blogPageIntro.eyebrow,
     title: blog.blogPageIntro.title,
     description: blog.blogPageIntro.description,

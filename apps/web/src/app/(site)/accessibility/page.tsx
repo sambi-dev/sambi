@@ -9,6 +9,7 @@ import {
 } from '#/basehub/accessibility-queries';
 import { fetchBlogPosts } from '#/basehub/blog-queries';
 import { siteConfig } from '#/config/site';
+import PageJson from '#/json-ld/page-jsonld';
 import { SITE_URL } from '#/lib/constants';
 import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
@@ -55,6 +56,10 @@ export default async function AccessibilityPage() {
         pages={pages}
       />
       <ContactSection />
+      <PageJson
+        pageSlug={`${accessibility._sys.slug}`}
+        pageName={`${accessibility._sys.title} :: ${siteConfig.name}`}
+      />
     </div>
   );
 }

@@ -67,7 +67,7 @@ function Header({
         </Link>
         <div className="flex items-center gap-x-8">
           <a
-            href={siteConfig.links.upworkConsult}
+            href={siteConfig.teamLinks.upworkConsult}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Book a consult with sambi on Upwork in a new window"
