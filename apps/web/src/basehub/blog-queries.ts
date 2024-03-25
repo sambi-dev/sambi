@@ -75,11 +75,16 @@ export const blogPostFragment = {
       title: true,
       __typename: true,
     },
+    bio: true,
     image: {
       url: true,
       alt: true,
     },
     role: true,
+    websiteRelativePath: true,
+    upworkUrl: true,
+    twitterUrl: true,
+    linkedinUrl: true,
   },
   category: {
     _sys: {
@@ -100,6 +105,7 @@ export const blogPostFragment = {
     url: true,
     alt: true,
   },
+  imageAttribution: { json: { content: true } },
   content: {
     json: {
       content: true,
@@ -151,50 +157,7 @@ export const getPostBySlugQuery = (slug: string) => {
     blog: {
       blogPosts: {
         __args: { first: 1, filter: { _sys_slug: { eq: slug } } },
-        items: {
-          _sys: {
-            id: true,
-            slug: true,
-            title: true,
-            createdAt: true,
-            lastModifiedAt: true,
-            __typename: true,
-          },
-          content: { json: { content: true } },
-          author: {
-            _sys: {
-              id: true,
-              slug: true,
-              title: true,
-              __typename: true,
-            },
-            bio: true,
-            image: {
-              url: true,
-              alt: true,
-            },
-            role: true,
-            websiteRelativePath: true,
-            upworkUrl: true,
-            twitterUrl: true,
-            linkedinUrl: true,
-          },
-          category: {
-            _sys: {
-              id: true,
-              title: true,
-              __typename: true,
-            },
-            description: true,
-            isPublished: true,
-          },
-          image: {
-            url: true,
-            alt: true,
-          },
-          metaTitle: true,
-          metaDescription: true,
-        },
+        items: blogPostFragment,
       },
     },
   } satisfies QueryGenqlSelection;

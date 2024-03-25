@@ -192,62 +192,7 @@ export const getShowcaseBriefBySlugQuery = (slug: string) => {
     showcase: {
       brief: {
         __args: { first: 1, filter: { _sys_slug: { eq: slug } } },
-        items: {
-          _sys: {
-            id: true,
-            slug: true,
-            title: true,
-            createdAt: true,
-            lastModifiedAt: true,
-            __typename: true,
-          },
-          content: { json: { content: true } },
-          client: {
-            _sys: {
-              id: true,
-              title: true,
-              __typename: true,
-            },
-            contacts: {
-              _sys: {
-                id: true,
-                title: true,
-                __typename: true,
-              },
-              __args: {
-                first: 1,
-              },
-              _id: true,
-              _title: true,
-            },
-            icon: {
-              url: true,
-              alt: true,
-            },
-            isPublished: true,
-            logo: {
-              url: true,
-              alt: true,
-            },
-            website: true,
-          },
-          service: {
-            _sys: {
-              id: true,
-              title: true,
-              slug: true,
-              __typename: true,
-            },
-          },
-          status: true,
-          image: {
-            url: true,
-            alt: true,
-          },
-          isPartner: true,
-          metaTitle: true,
-          metaDescription: true,
-        },
+        items: showcaseBriefFragment,
       },
     },
   } satisfies QueryGenqlSelection;

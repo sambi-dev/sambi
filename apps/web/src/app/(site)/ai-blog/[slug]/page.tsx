@@ -55,7 +55,22 @@ const AiBlogPost = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <>
-      <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
+      <div className="absolute inset-0 box-content h-128 pt-128">
+        <Image
+          className="absolute inset-0 h-full w-full object-cover opacity-25"
+          src={post.image.url}
+          width={1920}
+          height={1080}
+          alt={
+            post.image.alt ?? `A featured image for the post ${post._sys.title}`
+          }
+        />
+        <div
+          className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-background"
+          aria-hidden="true"
+        />
+      </div>
+      <Container as="article" className="relative z-10 mt-24 sm:mt-32 lg:mt-40">
         <FadeIn>
           <header className="mx-auto flex max-w-5xl flex-col text-center">
             <h1 className="mt-6 font-mono text-4xl font-semibold tracking-tighter text-foreground [text-wrap:balance] sm:text-5xl">
@@ -98,6 +113,12 @@ const AiBlogPost = async ({ params }: { params: { slug: string } }) => {
           content={post.content?.json.content as string}
           centered
         />
+        <div className="my-6">
+          <RichTextWrapper
+            content={post.imageAttribution?.json.content as string}
+            centered
+          />
+        </div>
         <AiAuthorCard />
       </Container>
 
