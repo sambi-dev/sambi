@@ -9,6 +9,7 @@ import {
   fetchFaqsPageMetadata,
 } from '#/basehub/faq-queries';
 import { siteConfig } from '#/config/site';
+import PageJson from '#/json-ld/page-jsonld';
 import { SITE_URL } from '#/lib/constants';
 import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
@@ -90,6 +91,10 @@ export default async function FaqPage() {
       />
 
       <ContactSection />
+      <PageJson
+        pageSlug={`${pageIntro.jsonSlug}`}
+        pageName={`${pageIntro.jsonTitle} :: ${siteConfig.name}`}
+      />
     </>
   );
 }

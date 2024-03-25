@@ -9,6 +9,7 @@ import {
   fetchTermsPageMetadata,
 } from '#/basehub/terms-queries';
 import { siteConfig } from '#/config/site';
+import PageJson from '#/json-ld/page-jsonld';
 import { SITE_URL } from '#/lib/constants';
 import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
@@ -19,7 +20,7 @@ import RichTextWrapper from '#/ui/shared/rich-text-wrapper';
 
 export default async function TermsOfServicePage() {
   const pageIntro = await fetchTermsPageIntro();
-  const privacy = await fetchTermsPage();
+  const terms = await fetchTermsPage();
   const { items: blogPosts } = await fetchBlogPosts({
     first: 2,
   });
@@ -44,7 +45,7 @@ export default async function TermsOfServicePage() {
       <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
         <Border className="py-16" />
         <RichTextWrapper
-          content={privacy.content?.json.content as string}
+          content={terms.content?.json.content as string}
           centered
         />
       </Container>
@@ -55,6 +56,10 @@ export default async function TermsOfServicePage() {
         pages={pages}
       />
       <ContactSection />
+      <PageJson
+        pageSlug={`${terms._sys.slug}`}
+        pageName={`${terms._sys.title} :: ${siteConfig.name}`}
+      />
     </div>
   );
 }

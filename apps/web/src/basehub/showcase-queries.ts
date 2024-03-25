@@ -34,6 +34,12 @@ export async function fetchShowcasePageIntro() {
 
   const { showcase } = await basehubClient.query({
     showcase: {
+      _sys: {
+        id: true,
+        title: true,
+        slug: true,
+        __typename: true,
+      },
       showcasePageIntro: {
         _sys: {
           id: true,
@@ -52,6 +58,8 @@ export async function fetchShowcasePageIntro() {
   });
 
   return {
+    jsonTitle: showcase._sys.title,
+    jsonSlug: showcase._sys.slug,
     eyebrow: showcase.showcasePageIntro.eyebrow,
     title: showcase.showcasePageIntro.title,
     description: showcase.showcasePageIntro.description,

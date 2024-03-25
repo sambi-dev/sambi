@@ -60,7 +60,7 @@ export function Tldr() {
 
             <p className="mt-8">
               <Link
-                href={siteConfig.links.upworkConsult}
+                href={siteConfig.teamLinks.upworkConsult}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Book a consult with sambi on Upwork in a new window"

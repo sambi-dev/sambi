@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import { fetchBlogPosts } from '#/basehub/blog-queries';
 import { siteConfig } from '#/config/site';
+import PageJson from '#/json-ld/page-jsonld';
 import { SITE_URL } from '#/lib/constants';
 import { ContactSection } from '#/ui/contact-section';
 import { PageLinks } from '#/ui/page-links';
@@ -41,6 +42,10 @@ export default async function ClientsPage() {
       />
 
       <ContactSection />
+      <PageJson
+        pageSlug="clients"
+        pageName={`${title} :: ${siteConfig.name}`}
+      />
     </>
   );
 }

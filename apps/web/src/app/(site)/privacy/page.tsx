@@ -9,6 +9,7 @@ import {
   fetchPrivacyPageMetadata,
 } from '#/basehub/privacy-queries';
 import { siteConfig } from '#/config/site';
+import PageJson from '#/json-ld/page-jsonld';
 import { SITE_URL } from '#/lib/constants';
 import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
@@ -55,6 +56,10 @@ export default async function PrivacyPolicyPage() {
         pages={pages}
       />
       <ContactSection />
+      <PageJson
+        pageSlug={`${privacy._sys.slug}`}
+        pageName={`${privacy._sys.title} :: ${siteConfig.name}`}
+      />
     </div>
   );
 }

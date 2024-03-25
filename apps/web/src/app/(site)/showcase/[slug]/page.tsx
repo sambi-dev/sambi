@@ -8,6 +8,7 @@ import {
   getShowcaseBriefBySlugQuery,
 } from '#/basehub/showcase-queries';
 import { siteConfig } from '#/config/site';
+import ShowcaseBriefJson from '#/json-ld/showcase-jsonld';
 import { SITE_URL } from '#/lib/constants';
 import { ContactSection } from '#/ui/contact-section';
 import { FadeIn } from '#/ui/fade-in';
@@ -71,7 +72,6 @@ export default async function ProjectBriefPage({
           <PageIntro eyebrow={eyebrowText} title={brief._sys.title} centered>
             <p>{brief.metaDescription}</p>
           </PageIntro>
-
           <FadeIn>
             <div className="mt-24 border border-t sm:mt-32 lg:mt-40">
               <Container>
@@ -130,13 +130,19 @@ export default async function ProjectBriefPage({
             </div>
           </FadeIn>
         </header>
-
         <Container className="mt-24 sm:mt-32 lg:mt-40">
           <RichTextWrapper
             content={brief.content?.json.content as string}
             centered
           />
         </Container>
+        <ShowcaseBriefJson
+          slug={brief._sys.slug}
+          title={brief._sys.title}
+          description={brief.metaDescription}
+          datePublished={brief._sys.createdAt}
+          dateModified={brief._sys.lastModifiedAt}
+        />
       </article>
 
       {formattedPages.length > 0 && (

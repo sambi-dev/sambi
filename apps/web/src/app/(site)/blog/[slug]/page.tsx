@@ -6,6 +6,7 @@ import { notFound } from 'next/navigation';
 import { fetchBlogPosts, getPostBySlugQuery } from '#/basehub/blog-queries';
 import { basehubClient } from '#/basehub/client';
 import { siteConfig } from '#/config/site';
+import BlogPostJson from '#/json-ld/blog-post-jsonld';
 import { formatDate, SITE_URL } from '#/lib/constants';
 import AuthorCard from '#/ui/blog/author-card';
 import { Border } from '#/ui/border';
@@ -142,6 +143,21 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
       )}
 
       <ContactSection />
+      <BlogPostJson
+        slug={post._sys.slug}
+        title={post._sys.title}
+        description={post.metaDescription}
+        datePublished={post._sys.createdAt}
+        dateModified={post._sys.lastModifiedAt}
+        imageUrl={post.image.url}
+        authorName={post.author._sys.title}
+        authorRole={post.author.role}
+        authorImageUrl={post.author.image.url}
+        authorBio={post.author.bio}
+        authorUpworkUrl={post.author.upworkUrl}
+        authorTwitterUrl={post.author.twitterUrl}
+        authorLinkedinUrl={post.author.linkedinUrl}
+      />
     </>
   );
 };

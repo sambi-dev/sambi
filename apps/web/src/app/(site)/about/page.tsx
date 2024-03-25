@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import { fetchBlogPosts } from '#/basehub/blog-queries';
 import { fetchCrew } from '#/basehub/crew-queries';
 import { siteConfig } from '#/config/site';
+import PageJson from '#/json-ld/page-jsonld';
 import { SITE_URL } from '#/lib/constants';
 import Crew from '#/ui/about/crew';
 import { Culture } from '#/ui/about/culture';
@@ -104,6 +105,7 @@ export default async function AboutPage() {
       />
 
       <ContactSection />
+      <PageJson pageSlug="about" pageName={`${title} :: ${siteConfig.name}`} />
     </>
   );
 }

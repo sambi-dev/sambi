@@ -12,6 +12,12 @@ export async function fetchAiBlogPageMetadata() {
 
   const { aiBlog } = await basehubClient.query({
     aiBlog: {
+      _sys: {
+        id: true,
+        title: true,
+        slug: true,
+        __typename: true,
+      },
       aiBlogPageMeta: {
         _sys: {
           id: true,
@@ -34,6 +40,12 @@ export async function fetchAiBlogPageIntro() {
 
   const { aiBlog } = await basehubClient.query({
     aiBlog: {
+      _sys: {
+        id: true,
+        title: true,
+        slug: true,
+        __typename: true,
+      },
       aiBlogPageIntro: {
         _sys: {
           id: true,
@@ -52,6 +64,8 @@ export async function fetchAiBlogPageIntro() {
   });
 
   return {
+    jsonTitle: aiBlog._sys.title,
+    jsonSlug: aiBlog._sys.slug,
     eyebrow: aiBlog.aiBlogPageIntro.eyebrow,
     title: aiBlog.aiBlogPageIntro.title,
     description: aiBlog.aiBlogPageIntro.description,
