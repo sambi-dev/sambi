@@ -61,11 +61,13 @@ const BlogPostJson = ({
       '@type': 'ImageObject',
       url: imageUrl,
     },
+    isAccessibleForFree: 'True',
     publisher: {
       '@type': 'Organization',
       name: siteConfig.name,
       url: siteConfig.url,
       logo: siteConfig.logo.url,
+      sameAs: Object.values(siteConfig.links),
     },
     sourceOrganization: {
       '@type': 'Organization',

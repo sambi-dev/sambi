@@ -142,6 +142,7 @@ export default async function ProjectBriefPage({
           description={brief.metaDescription}
           datePublished={brief._sys.createdAt}
           dateModified={brief._sys.lastModifiedAt}
+          imageUrl={brief.image.url}
         />
       </article>
 

@@ -50,6 +50,7 @@ const PageJson = ({ pageName, pageSlug }: PageJsonProps) => {
         '@id': siteId,
         description: siteConfig.description,
         inLanguage: 'en-US',
+        isAccessibleForFree: 'True',
         name: siteConfig.name,
         publisher: { '@id': organizationId },
         sourceOrganization: { '@id': corporationId },
