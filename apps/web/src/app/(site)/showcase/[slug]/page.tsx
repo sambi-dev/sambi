@@ -49,7 +49,7 @@ export default async function ProjectBriefPage({
     first: 10,
   });
 
-  const eyebrowText = `${brief.client._sys.title} Project Brief${brief.isPartner ? ' :: Via partner' : ''}`;
+  const eyebrowText = `${brief.client._sys.title} Project Brief${brief.client.isPartner ? ' :: Via partner' : ''}`;
 
   const filteredShowcaseBriefs = moreShowcaseBriefs.filter(
     (moreBrief) => moreBrief._sys.id !== brief._sys.id,
