@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import yoCxoLogo from '#/images/avatars/yocxo-logo-square.png';
+import yoCxoLogo from '#/images/avatars/yocxo-logo-icon.png';
 import { FadeIn } from '#/ui/fade-in';
 
 export default function AiAuthorCard() {
@@ -10,9 +10,9 @@ export default function AiAuthorCard() {
         <div className="-mt-12 space-y-12 divide-y divide-gray-200 xl:col-span-3">
           <div className="flex flex-col gap-10 pt-12 sm:flex-row">
             <Image
-              className="h-20 w-20 flex-none rounded-full border object-cover grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
+              className="h-20 w-20 flex-none rounded-full border bg-primary object-cover p-2 grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
               src={yoCxoLogo}
-              alt="A logomark for Yo CXO"
+              alt="A logomark for Yo CXO that looks like a funnel representing the letter Y"
               width={96}
               height={96}
               unoptimized

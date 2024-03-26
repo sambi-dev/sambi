@@ -22,7 +22,7 @@ export function EmptyScreen() {
         <p className="leading-normal text-muted-foreground">
           We forked it and added that signature{' '}
           <ExternalLink href="https://yocxo.com/showcase/coco-gpt">
-            yocxo.com
+            Yo CXO
           </ExternalLink>{' '}
           touch.
         </p>

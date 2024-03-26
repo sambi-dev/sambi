@@ -6,7 +6,7 @@ import { buttonVariants } from '@yocxo/ui/button';
 import { ArrowRightIcon } from '@yocxo/ui/icons';
 
 import { siteConfig } from '#/config/site';
-import yoCxoLogo from '#/images/avatars/yocxo-logo-square.png';
+import yoCxoLogo from '#/images/avatars/yocxo.com-logo-square.png';
 
 export function Tldr() {
   return (
