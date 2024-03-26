@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import { RichText } from 'basehub/react-rich-text';
 
-import { LinkedInIcon, UpworkIcon, XIcon } from '@sambi/ui/icons';
+import { LinkedInIcon, UpworkIcon, XIcon } from '@yocxo/ui/icons';
 
 import CrewSocialIcon from '#/ui/about/crew-social-icon';
 

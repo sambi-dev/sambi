@@ -17,7 +17,7 @@
       ],
       "dotEnv": [".env.local", ".env.production", ".env.development"]
     },
-    "@sambi/coco#build": {
+    "@yocxo/coco#build": {
       "dependsOn": ["^build"],
       "env": [
         "AUTH_DISCORD_ID",
@@ -38,7 +38,7 @@
         ".vercel/output/**"
       ]
     },
-    "@sambi/web#build": {
+    "@yocxo/web#build": {
       "dependsOn": ["^build"],
       "env": [
         "AUTH_DISCORD_ID",

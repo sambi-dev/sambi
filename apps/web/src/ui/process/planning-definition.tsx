@@ -37,7 +37,7 @@ export function PlanningDefinition() {
         author={{ name: 'Joseph O.', role: 'Former Pro Football Player' }}
         className="mt-12"
       >
-        When the folks at sambi said their delivery is on time, I didn&apos;t
+        When the folks at Yo CXO said their delivery is on time, I didn&apos;t
         think they were referring only to their invoices.
       </Blockquote>
       <ImageCredit

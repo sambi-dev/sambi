@@ -2,7 +2,7 @@ import type { Config } from 'tailwindcss';
 
 import { fontFamily } from 'tailwindcss/defaultTheme';
 
-import baseConfig from '@sambi/tailwind-config/web';
+import baseConfig from '@yocxo/tailwind-config/web';
 
 export default {
   content: [...baseConfig.content, '../../packages/ui/**/*.{ts,tsx}'],

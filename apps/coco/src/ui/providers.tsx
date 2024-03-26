@@ -2,8 +2,8 @@
 
 import * as React from 'react';
 
-import { ThemeProvider } from '@sambi/ui/theme';
-import { TooltipProvider } from '@sambi/ui/tooltip';
+import { ThemeProvider } from '@yocxo/ui/theme';
+import { TooltipProvider } from '@yocxo/ui/tooltip';
 
 import { SidebarProvider } from '#/lib/hooks/use-sidebar';
 

@@ -14,7 +14,7 @@ import { auth } from 'auth';
 import OpenAI from 'openai';
 import { z } from 'zod';
 
-import { SpinnerIcon } from '@sambi/ui/icons';
+import { SpinnerIcon } from '@yocxo/ui/icons';
 
 import { saveChat } from '#/app/actions';
 import {

@@ -45,28 +45,28 @@ export const siteConfig: SiteConfig = {
   companyUrl: 'https://bril.la',
 
   description:
-    'sambi.dev is a premiere Upwork agency. We help founders, startups, and fast-growing businesses turn their ideas into products that people love. 🔥',
+    'Yo CXO is a premiere Upwork agency. We help founders, startups, and fast-growing businesses turn their ideas into products that people love. 🔥',
   image: {
     url: `${siteUrl}/opengraph-image.gif`,
     width: 1200,
     height: 630,
-    alt: 'Loading screen animation with pulsing text that spells out "Loading..." with the sambi.dev logo (a silohuette of a French Bulldog and lower case text) in the top left.',
+    alt: 'Loading screen animation with pulsing text that spells out "Loading..." with the Yo CXO logo (a silohuette of a French Bulldog and lower case text) in the top left.',
   },
   logo: {
-    url: `${siteUrl}/sambi-logo.png`,
+    url: `${siteUrl}/yocxo.com-logo.png`,
     width: 1000,
     height: 1000,
-    alt: 'A lowercased logomark spelling sambi in a plain color with a poorly executed drop shadow.',
+    alt: 'A lowercased logomark spelling Yo CXO in an unusual monospaced, plain color font, with a poorly executed drop shadow.',
   },
-  name: 'sambi.dev',
+  name: 'Yo CXO',
   url: siteUrl,
   links: {
     facebook: 'https://www.facebook.com/rebekahradicellc',
-    github: 'https://github.com/sambi-dev/sambi',
+    github: 'https://github.com/yocxo/studio',
     instagram: 'https://www.instagram.com/rebekahradice/',
     linkedIn: 'https://www.linkedin.com/in/rebekahradice/',
-    twitter: 'https://twitter.com/sambi_dev',
-    upworkAgency: 'https://www.upwork.com/agencies/sambi/',
+    twitter: 'https://twitter.com/supyocxo',
+    upworkAgency: 'https://www.upwork.com/agencies/yocxo/',
   },
   teamLinks: {
     upworkAmbreen: 'https://www.upwork.com/freelancers/breen',

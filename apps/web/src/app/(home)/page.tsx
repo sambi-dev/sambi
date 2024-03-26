@@ -31,7 +31,7 @@ export default async function Home() {
         }}
       >
         <p>
-          “Hiring sambi? Bad idea. They&apos;re the kind of problem-solvers you
+          “Hiring Yo CXO? Bad idea. They&apos;re the kind of problem-solvers you
           think you want until you realize everyone else will want them too.”
         </p>
       </BigWarning>

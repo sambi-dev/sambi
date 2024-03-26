@@ -1,5 +1,5 @@
 {
-  "name": "@sambi/expo",
+  "name": "@yocxo/expo",
   "version": "0.1.0",
   "private": true,
   "main": "expo-router/entry",
@@ -39,11 +39,11 @@
     "superjson": "2.2.1"
   },
   "devDependencies": {
-    "@sambi/api": "workspace:^0.1.0",
-    "@sambi/eslint-config": "workspace:^0.2.0",
-    "@sambi/prettier-config": "workspace:^0.1.0",
-    "@sambi/tailwind-config": "workspace:^0.1.0",
-    "@sambi/tsconfig": "workspace:^0.1.0",
+    "@yocxo/api": "workspace:^0.1.0",
+    "@yocxo/eslint-config": "workspace:^0.2.0",
+    "@yocxo/prettier-config": "workspace:^0.1.0",
+    "@yocxo/tailwind-config": "workspace:^0.1.0",
+    "@yocxo/tsconfig": "workspace:^0.1.0",
     "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
     "@babel/runtime": "^7.23.9",
@@ -57,12 +57,12 @@
   "eslintConfig": {
     "root": true,
     "extends": [
-      "@sambi/eslint-config/base",
-      "@sambi/eslint-config/react"
+      "@yocxo/eslint-config/base",
+      "@yocxo/eslint-config/react"
     ],
     "ignorePatterns": [
       "expo-plugins/**"
     ]
   },
-  "prettier": "@sambi/prettier-config"
+  "prettier": "@yocxo/prettier-config"
 }

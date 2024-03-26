@@ -17,7 +17,7 @@ export const env = createEnv({
   },
   client: {
     NEXT_PUBLIC_APP_URL: z.string(),
-    NEXT_PUBLIC_SAMBI_SUPPORT_EMAIL: z.string(),
+    NEXT_PUBLIC_YOCXO_SUPPORT_EMAIL: z.string(),
   },
 
   runtimeEnv: {
@@ -27,8 +27,8 @@ export const env = createEnv({
     DB_PASSWORD: process.env.DB_PASSWORD,
     DB_USERNAME: process.env.DB_USERNAME,
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
-    NEXT_PUBLIC_SAMBI_SUPPORT_EMAIL:
-      process.env.NEXT_PUBLIC_SAMBI_SUPPORT_EMAIL,
+    NEXT_PUBLIC_YOCXO_SUPPORT_EMAIL:
+      process.env.NEXT_PUBLIC_YOCXO_SUPPORT_EMAIL,
     NODE_ENV: process.env.NODE_ENV,
     VERCEL_ENV: process.env.VERCEL_ENV,
   },

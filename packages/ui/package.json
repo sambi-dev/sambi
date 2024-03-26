@@ -1,5 +1,5 @@
 {
-  "name": "@sambi/ui",
+  "name": "@yocxo/ui",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -58,10 +58,10 @@
     "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "@sambi/eslint-config": "workspace:^0.2.0",
-    "@sambi/prettier-config": "workspace:^0.1.0",
-    "@sambi/tailwind-config": "workspace:^0.1.0",
-    "@sambi/tsconfig": "workspace:^0.1.0",
+    "@yocxo/eslint-config": "workspace:^0.2.0",
+    "@yocxo/prettier-config": "workspace:^0.1.0",
+    "@yocxo/tailwind-config": "workspace:^0.1.0",
+    "@yocxo/tsconfig": "workspace:^0.1.0",
     "@types/react": "^18.2.67",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
@@ -76,9 +76,9 @@
   },
   "eslintConfig": {
     "extends": [
-      "@sambi/eslint-config/base",
-      "@sambi/eslint-config/react"
+      "@yocxo/eslint-config/base",
+      "@yocxo/eslint-config/react"
     ]
   },
-  "prettier": "@sambi/prettier-config"
+  "prettier": "@yocxo/prettier-config"
 }

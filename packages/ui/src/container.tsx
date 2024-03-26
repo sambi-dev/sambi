@@ -1,4 +1,4 @@
-import { cn } from '@sambi/ui';
+import { cn } from '@yocxo/ui';
 
 const styles = {
   xs: 'mx-auto px-4 sm:px-6 md:max-w-2xl md:px-4 lg:px-2',

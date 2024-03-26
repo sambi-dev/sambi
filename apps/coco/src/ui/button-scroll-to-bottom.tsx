@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import type { ButtonProps } from '@sambi/ui/button';
-import { cn } from '@sambi/ui';
-import { Button } from '@sambi/ui/button';
-import { ArrowDownIcon } from '@sambi/ui/icons';
+import type { ButtonProps } from '@yocxo/ui/button';
+import { cn } from '@yocxo/ui';
+import { Button } from '@yocxo/ui/button';
+import { ArrowDownIcon } from '@yocxo/ui/icons';
 
 interface ButtonScrollToBottomProps extends ButtonProps {
   isAtBottom: boolean;

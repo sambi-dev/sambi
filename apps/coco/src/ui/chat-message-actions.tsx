@@ -2,9 +2,9 @@
 
 import type { Message } from 'ai';
 
-import { cn } from '@sambi/ui';
-import { Button } from '@sambi/ui/button';
-import { CopiedIcon, CopyIcon } from '@sambi/ui/icons';
+import { cn } from '@yocxo/ui';
+import { Button } from '@yocxo/ui/button';
+import { CopiedIcon, CopyIcon } from '@yocxo/ui/icons';
 
 import { useCopyToClipboard } from '#/lib/hooks/use-copy-to-clipboard';
 

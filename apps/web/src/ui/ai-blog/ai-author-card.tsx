@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import sambiLogo from '#/images/avatars/sambi-logo.png';
+import yoCxoLogo from '#/images/avatars/yocxo-logo-square.png';
 import { FadeIn } from '#/ui/fade-in';
 
 export default function AiAuthorCard() {
@@ -11,8 +11,8 @@ export default function AiAuthorCard() {
           <div className="flex flex-col gap-10 pt-12 sm:flex-row">
             <Image
               className="h-20 w-20 flex-none rounded-full border object-cover grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
-              src={sambiLogo}
-              alt="A logomark for sambi.dev"
+              src={yoCxoLogo}
+              alt="A logomark for Yo CXO"
               width={96}
               height={96}
               unoptimized

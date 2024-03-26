@@ -5,8 +5,8 @@ import * as React from 'react';
 import { useActions, useAIState, useUIState } from 'ai/rsc';
 import { nanoid } from 'nanoid';
 
-import { Button } from '@sambi/ui/button';
-import { ShareIcon } from '@sambi/ui/icons';
+import { Button } from '@yocxo/ui/button';
+import { ShareIcon } from '@yocxo/ui/icons';
 
 import { shareChat } from '#/app/actions';
 import { ButtonScrollToBottom } from '#/ui/button-scroll-to-bottom';

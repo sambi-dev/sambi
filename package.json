@@ -1,5 +1,5 @@
 {
-  "name": "sambi-t3-turbo",
+  "name": "yocxo-t3-turbo",
   "private": true,
   "engines": {
     "node": ">=20.11.1"
@@ -21,11 +21,11 @@
     "typecheck": "turbo typecheck"
   },
   "devDependencies": {
-    "@sambi/prettier-config": "workspace:^0.1.0",
+    "@yocxo/prettier-config": "workspace:^0.1.0",
     "@turbo/gen": "^1.12.4",
     "prettier": "^3.2.5",
     "turbo": "^1.12.4",
     "typescript": "^5.3.3"
   },
-  "prettier": "@sambi/prettier-config"
+  "prettier": "@yocxo/prettier-config"
 }

@@ -2,15 +2,15 @@ import type { Session } from '#/lib/types';
 
 import { signOut } from 'auth';
 
-import { Button } from '@sambi/ui/button';
+import { Button } from '@yocxo/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from '@sambi/ui/dropdown-menu';
-import { UserAvatar } from '@sambi/ui/user-avatar';
+} from '@yocxo/ui/dropdown-menu';
+import { UserAvatar } from '@yocxo/ui/user-avatar';
 
 export interface UserMenuProps {
   user: Session['user'];

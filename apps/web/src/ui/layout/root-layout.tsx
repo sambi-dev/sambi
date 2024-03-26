@@ -13,10 +13,10 @@ import { usePathname } from 'next/navigation';
 
 import { motion, MotionConfig, useReducedMotion } from 'framer-motion';
 
-import { cn } from '@sambi/ui';
-import { buttonVariants } from '@sambi/ui/button';
-import { BurgerMenuIcon, CloseMenuIcon, UpworkIcon } from '@sambi/ui/icons';
-import { Logo, Logomark } from '@sambi/ui/logo';
+import { cn } from '@yocxo/ui';
+import { buttonVariants } from '@yocxo/ui/button';
+import { BurgerMenuIcon, CloseMenuIcon, UpworkIcon } from '@yocxo/ui/icons';
+import { Logo, Logomark } from '@yocxo/ui/logo';
 
 import { siteConfig } from '#/config/site';
 import { Footer } from '#/ui/layout/footer';
@@ -60,7 +60,7 @@ function Header({
             filled={logoHovered}
           />
           <Logo
-            className="hidden h-8 sm:block"
+            className="hidden h-10 sm:block"
             invert={invert}
             filled={logoHovered}
           />
@@ -70,7 +70,7 @@ function Header({
             href={siteConfig.teamLinks.upworkConsult}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Book a consult with sambi on Upwork in a new window"
+            aria-label="Book a consult with Yo CXO on Upwork in a new window"
             className={cn(buttonVariants())}
           >
             <UpworkIcon className="mr-2 size-5 flex-none fill-current" />

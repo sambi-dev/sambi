@@ -1,4 +1,4 @@
 {
-  "extends": "@sambi/tsconfig/base.json",
+  "extends": "@yocxo/tsconfig/base.json",
   "include": ["routes"]
 }

@@ -1,4 +1,4 @@
-import { ArrowRightIcon } from '@sambi/ui/icons';
+import { ArrowRightIcon } from '@yocxo/ui/icons';
 
 import { contactMethods } from '#/content/contact-methods';
 import { Border } from '#/ui/border';

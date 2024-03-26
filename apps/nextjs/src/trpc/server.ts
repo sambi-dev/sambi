@@ -1,8 +1,8 @@
 import { cache } from 'react';
 import { headers } from 'next/headers';
 
-import { createCaller, createTRPCContext } from '@sambi/api';
-import { auth } from '@sambi/auth';
+import { createCaller, createTRPCContext } from '@yocxo/api';
+import { auth } from '@yocxo/auth';
 
 /**
  * This wraps the `createTRPCContext` helper and provides the required context for the tRPC API when

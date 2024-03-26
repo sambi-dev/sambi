@@ -1,4 +1,4 @@
-import { ArrowUpRightIcon } from '@sambi/ui/icons';
+import { ArrowUpRightIcon } from '@yocxo/ui/icons';
 
 export function ExternalLink({
   href,

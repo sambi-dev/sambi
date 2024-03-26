@@ -1,4 +1,4 @@
-import { cn } from '@sambi/ui';
+import { cn } from '@yocxo/ui';
 
 import { FadeIn } from '#/ui/fade-in';
 import { Container } from '#/ui/page-container';

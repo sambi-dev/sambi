@@ -8,8 +8,8 @@ import { usePathname, useRouter } from 'next/navigation';
 
 import { useAIState, useUIState } from 'ai/rsc';
 
-import { cn } from '@sambi/ui';
-import { toast } from '@sambi/ui/toast';
+import { cn } from '@yocxo/ui';
+import { toast } from '@yocxo/ui/toast';
 
 import { useLocalStorage } from '#/lib/hooks/use-local-storage';
 import { useScrollAnchor } from '#/lib/hooks/use-scroll-anchor';

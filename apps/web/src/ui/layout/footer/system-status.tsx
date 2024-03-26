@@ -83,7 +83,7 @@ const SystemStatusWidget = () => {
   const [statusData, setStatusData] = useState<StatusData | null>(null);
 
   useEffect(() => {
-    fetch('https://sambi.instatus.com/summary.json')
+    fetch('https://yocxo.instatus.com/summary.json')
       .then((response) => response.json())
       .then((data) => setStatusData(data as StatusData))
       .catch((error) => console.error('Error fetching status data:', error));
@@ -91,10 +91,10 @@ const SystemStatusWidget = () => {
 
   return (
     <a
-      href="https://sambi.instatus.com/"
+      href="https://yocxo.instatus.com/"
       target="_blank"
       rel="noopener noreferrer"
-      aria-label="Visit sambi.dev's system status page on Instatus in a new window"
+      aria-label="Visit yocxo.com's system status page on Instatus in a new window"
     >
       <div className="hover:text-primary hover:underline hover:decoration-2 hover:underline-offset-4">
         {statusData && (

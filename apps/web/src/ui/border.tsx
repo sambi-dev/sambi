@@ -1,4 +1,4 @@
-import { cn } from '@sambi/ui';
+import { cn } from '@yocxo/ui';
 
 interface BorderProps<T extends React.ElementType> {
   as?: T;

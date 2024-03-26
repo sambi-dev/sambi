@@ -1,11 +1,11 @@
-<a href="https://coco.sambi.dev/">
+<a href="https://coco.yocxo.com/">
   <img alt="Next.js 14 and App Router-ready AI chatbot." src="../coco/src/app/opengraph-image.gif">
-  <h1 align="center">:: CocoGPT by sambi.deb :: Powered by Vercel ::</h1>
+  <h1 align="center">:: CocoGPT by Yo CXO :: Powered by Vercel ::</h1>
 </a>
 
 So, you want to create a ChatGPT wrapper? You've got a game-changing idea that people are practically begging for. Because the world desperately needs another AI product that'll ~~be outdated in a month~~ solve all their problems.
 
-But this isn't your average project. The [geniuses at Vercel](https://vercel.com) built something remarkable. We forked it and added that signature sambi.dev touch. Get ready for a chatbot that's as unique as it is powerful.
+But this isn't your average project. The [geniuses at Vercel](https://vercel.com) built something remarkable. We forked it and added that signature yocxo.com touch. Get ready for a chatbot that's as unique as it is powerful.
 
 <p align="center">
   <a href="#features"><strong>Features</strong></a> ·
@@ -75,9 +75,9 @@ This project was built on the shoulders of giants at [Vercel](https://vercel.com
 
 ### Power ups by
 
-- Ambreen Dar ([@breenzy](https://twitter.com/breenzy)) - [sambi.dev](https://sambi.dev)
-- Rebekah Radice ([@rebekahradice](https://twitter.com/rebekahradice)) - [sambi.dev](https://sambi.dev)
-- Sam Rizvi ([@srizvi](https://github.com/srizvi)) - [sambi.dev](https://sambi.dev)
+- Ambreen Dar ([@breenzy](https://twitter.com/breenzy)) - [yocxo.com](https://yocxo.com/about#ambreen)
+- Rebekah Radice ([@rebekahradice](https://twitter.com/rebekahradice)) - [yocxo.com](https://yocxo.com/about#rebekah)
+- Sam Rizvi ([@srizvi](https://github.com/srizvi)) - [yocxo.com](https://yocxo.com/about#sam)
 
 ## License
 

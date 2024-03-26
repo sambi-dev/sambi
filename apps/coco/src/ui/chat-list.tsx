@@ -3,8 +3,8 @@ import type { Session } from '#/lib/types';
 
 import Link from 'next/link';
 
-import { AlertTriangleIcon } from '@sambi/ui/icons';
-import { Separator } from '@sambi/ui/separator';
+import { AlertTriangleIcon } from '@yocxo/ui/icons';
+import { Separator } from '@yocxo/ui/separator';
 
 export interface ChatList {
   messages: UIState;

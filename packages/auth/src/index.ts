@@ -4,7 +4,7 @@ import { DrizzleAdapter } from '@auth/drizzle-adapter';
 import NextAuth from 'next-auth';
 import Discord from 'next-auth/providers/discord';
 
-import { db, tableCreator } from '@sambi/db';
+import { db, tableCreator } from '@yocxo/db';
 
 export type { Session } from 'next-auth';
 

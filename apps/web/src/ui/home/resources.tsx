@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-import { cn } from '@sambi/ui';
-import { buttonVariants } from '@sambi/ui/button';
-import { Container } from '@sambi/ui/container';
-import { ArrowRightIcon } from '@sambi/ui/icons';
+import { cn } from '@yocxo/ui';
+import { buttonVariants } from '@yocxo/ui/button';
+import { Container } from '@yocxo/ui/container';
+import { ArrowRightIcon } from '@yocxo/ui/icons';
 
 import { freeResources } from '#/content/free-resources';
 import { SectionIntro } from '#/ui/section-intro';

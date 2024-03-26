@@ -112,7 +112,7 @@ export default async function AboutPage() {
 
 const title = 'About';
 const description =
-  "About sambi.dev? We're the Upwork agency everyone's talking about. A trio of tech 🤓 design 🎨 and demand. Sam + Ambreen + Rebekah = sambi. 🤔";
+  "About Yo CXO? We're the Upwork agency everyone's talking about. A trio of tech 🤓 design 🎨 and demand. When you're ready, just holler, Yo CXO!. 🤔";
 const pageUrl = `${SITE_URL}/about`;
 
 export const metadata: Metadata = {

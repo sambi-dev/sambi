@@ -1,4 +1,4 @@
-import { cn } from '@sambi/ui';
+import { cn } from '@yocxo/ui';
 
 import { Blockquote } from '#/ui/blockquote';
 import { Border } from '#/ui/border';

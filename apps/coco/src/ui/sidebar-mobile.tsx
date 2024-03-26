@@ -1,8 +1,8 @@
 'use client';
 
-import { Button } from '@sambi/ui/button';
-import { SidebarIcon } from '@sambi/ui/icons';
-import { Sheet, SheetContent, SheetTrigger } from '@sambi/ui/sheet';
+import { Button } from '@yocxo/ui/button';
+import { SidebarIcon } from '@yocxo/ui/icons';
+import { Sheet, SheetContent, SheetTrigger } from '@yocxo/ui/sheet';
 
 import { Sidebar } from '#/ui/sidebar';
 

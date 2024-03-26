@@ -6,8 +6,8 @@ import type { Message } from 'ai';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 
-import { cn } from '@sambi/ui';
-import { CocoIcon, UserIcon } from '@sambi/ui/icons';
+import { cn } from '@yocxo/ui';
+import { CocoIcon, UserIcon } from '@yocxo/ui/icons';
 
 import { ChatMessageActions } from '#/ui/chat-message-actions';
 import { CodeBlock } from '#/ui/codeblock';

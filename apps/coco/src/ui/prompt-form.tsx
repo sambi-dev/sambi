@@ -7,9 +7,9 @@ import { useActions, useUIState } from 'ai/rsc';
 import { nanoid } from 'nanoid';
 import Textarea from 'react-textarea-autosize';
 
-import { Button } from '@sambi/ui/button';
-import { ArrowElbowIcon, PlusIcon } from '@sambi/ui/icons';
-import { Tooltip, TooltipContent, TooltipTrigger } from '@sambi/ui/tooltip';
+import { Button } from '@yocxo/ui/button';
+import { ArrowElbowIcon, PlusIcon } from '@yocxo/ui/icons';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@yocxo/ui/tooltip';
 
 import { useEnterSubmit } from '#/lib/hooks/use-enter-submit';
 

@@ -1,5 +1,5 @@
-import { auth, signIn, signOut } from '@sambi/auth';
-import { Button } from '@sambi/ui/button';
+import { auth, signIn, signOut } from '@yocxo/auth';
+import { Button } from '@yocxo/ui/button';
 
 export async function AuthShowcase() {
   const session = await auth();

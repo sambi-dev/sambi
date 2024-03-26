@@ -1,12 +1,12 @@
-import { cn } from '@sambi/ui';
-import { buttonVariants } from '@sambi/ui/button';
-import { Container } from '@sambi/ui/container';
-import { ArrowRightIcon } from '@sambi/ui/icons';
+import { cn } from '@yocxo/ui';
+import { buttonVariants } from '@yocxo/ui/button';
+import { Container } from '@yocxo/ui/container';
+import { ArrowRightIcon } from '@yocxo/ui/icons';
 
 import { env } from '#/env';
 
 export function Cta() {
-  const mailtoLink = `mailto:${env.NEXT_PUBLIC_SAMBI_SUPPORT_EMAIL}?subject=Website%3A%20Brain%20buster%20inquiry&body=Hey%20sambi.dev%20team%2C%20I%20have%20a%20brain%20buster%20for%20you%2C%20here%20it%20is%20%F0%9F%91%87%3A%20`;
+  const mailtoLink = `mailto:${env.NEXT_PUBLIC_YOCXO_SUPPORT_EMAIL}?subject=Website%3A%20Brain%20buster%20inquiry&body=Sup%2C%20Yo%20CXO!%3F%20I%20have%20a%20brain%20buster%20for%20you%2C%20here%20it%20is%20%F0%9F%91%87%3A%20`;
   return (
     <section
       id="cta"
@@ -31,7 +31,7 @@ export function Cta() {
           <div className="mt-8 flex items-center justify-end gap-4 lg:pl-16">
             <a
               href={mailtoLink}
-              aria-label="Send the sambi.dev team an email with your brain busting question"
+              aria-label="Send the Yo CXO team an email with your brain busting question"
               className={cn(buttonVariants(), 'w-full md:w-auto')}
             >
               Get answers

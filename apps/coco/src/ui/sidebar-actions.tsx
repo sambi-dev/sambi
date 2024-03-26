@@ -12,11 +12,11 @@ import {
   AlertDialogFooter,
   AlertDialogHeader,
   AlertDialogTitle,
-} from '@sambi/ui/alert-dialog';
-import { Button } from '@sambi/ui/button';
-import { ShareIcon, SpinnerIcon, TrashIcon } from '@sambi/ui/icons';
-import { toast } from '@sambi/ui/toast';
-import { Tooltip, TooltipContent, TooltipTrigger } from '@sambi/ui/tooltip';
+} from '@yocxo/ui/alert-dialog';
+import { Button } from '@yocxo/ui/button';
+import { ShareIcon, SpinnerIcon, TrashIcon } from '@yocxo/ui/icons';
+import { toast } from '@yocxo/ui/toast';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@yocxo/ui/tooltip';
 
 import { ChatShareDialog } from '#/ui/chat-share-dialog';
 

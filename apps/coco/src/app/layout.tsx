@@ -2,9 +2,9 @@ import { fontLexend, fontMartian } from '#/fonts/index';
 
 import '#/app/globals.css';
 
-import { cn } from '@sambi/ui';
-import { ThemeToggle } from '@sambi/ui/theme';
-import { Toaster } from '@sambi/ui/toast';
+import { cn } from '@yocxo/ui';
+import { ThemeToggle } from '@yocxo/ui/theme';
+import { Toaster } from '@yocxo/ui/toast';
 
 import { siteConfig } from '#/config/site';
 import { env } from '#/env';
@@ -17,7 +17,7 @@ export const metadata = {
   ),
   title: {
     template: `%s :: ${siteConfig.name}`,
-    default: `CocoGPT :: By sambi.dev`,
+    default: `CocoGPT :: By Yo CXO`,
   },
   description: siteConfig.description,
   keywords: [
@@ -50,8 +50,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@sambi_dev',
-    creator: '@sambi_dev',
+    site: '@supyocxo',
+    creator: '@supyocxo',
     title: siteConfig.name,
     description: siteConfig.description,
     images: [

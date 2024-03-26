@@ -56,7 +56,7 @@ export default async function ShowcasePage() {
           }}
         >
           <p>
-            “Hiring sambi? Bad idea. They&apos;re the kind of problem-solvers
+            “Hiring Yo CXO? Bad idea. They&apos;re the kind of problem-solvers
             you think you want until you realize everyone else will want them
             too.”
           </p>

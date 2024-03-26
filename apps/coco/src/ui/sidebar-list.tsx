@@ -1,6 +1,6 @@
 import { cache } from 'react';
 
-import { ThemeToggle } from '@sambi/ui/theme';
+import { ThemeToggle } from '@yocxo/ui/theme';
 
 import { clearChats, getChats } from '#/app/actions';
 import { ClearHistory } from '#/ui/clear-history';

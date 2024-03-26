@@ -3,9 +3,9 @@ import type { ShowcaseBriefFragment } from '#/basehub/showcase-queries';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { cn } from '@sambi/ui';
-import { buttonVariants } from '@sambi/ui/button';
-import { ArrowRightIcon } from '@sambi/ui/icons';
+import { cn } from '@yocxo/ui';
+import { buttonVariants } from '@yocxo/ui/button';
+import { ArrowRightIcon } from '@yocxo/ui/icons';
 
 import { FadeIn, FadeInStagger } from '#/ui/fade-in';
 import { Container } from '#/ui/page-container';
@@ -80,7 +80,7 @@ export function Showcase({
         <FadeIn className="mt-10 flex justify-center">
           <Link
             href="/showcase"
-            aria-label="Visit sambi's showcase page in the same window to view more of our case studies"
+            aria-label="Visit Yo CXO's showcase page in the same window to view more of our case studies"
             className={cn(buttonVariants({ variant: 'secondary' }))}
           >
             See full Showcase
