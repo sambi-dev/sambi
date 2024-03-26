@@ -45,7 +45,7 @@ export const siteConfig: SiteConfig = {
   companyUrl: 'https://bril.la',
 
   description:
-    'Yo CXO is a premiere Upwork agency. We help founders, startups, and fast-growing businesses turn their ideas into products that people love. 🔥',
+    'Yo CXO is a top Upwork agency. We help founders, startups, and fast-growing businesses achieve the outcomes they need to build products that people love. 🔥',
   image: {
     url: `${siteUrl}/opengraph-image.gif`,
     width: 1200,

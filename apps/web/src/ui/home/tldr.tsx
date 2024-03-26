@@ -7,6 +7,7 @@ import { ArrowRightIcon } from '@yocxo/ui/icons';
 
 import { siteConfig } from '#/config/site';
 import yoCxoLogo from '#/images/avatars/yocxo.com-logo-square.png';
+import { FadeIn } from '#/ui/fade-in';
 
 export function Tldr() {
   return (
@@ -15,7 +16,7 @@ export function Tldr() {
       aria-labelledby="tldr-title"
       className="relative scroll-mt-14 pb-3 pt-8 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16"
     >
-      <div className="relative mx-auto max-w-5xl pt-16 sm:px-6">
+      <FadeIn className="relative mx-auto max-w-5xl pt-16 sm:px-6">
         <div className="sm:rounded-6xl bg-card pt-px">
           <div className="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-muted shadow-md md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
             <Image
@@ -72,7 +73,7 @@ export function Tldr() {
             </p>
           </div>
         </div>
-      </div>
+      </FadeIn>
     </section>
   );
 }
