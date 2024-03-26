@@ -1,4 +1,4 @@
-# yocxo.com Security Policy
+# Yo CXO Security Policy
 
 ## Supported Versions
 
