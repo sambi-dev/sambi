@@ -1,7 +1,7 @@
 import { fetchRequestHandler } from '@trpc/server/adapters/fetch';
 
-import { appRouter, createTRPCContext } from '@sambi/api';
-import { auth } from '@sambi/auth';
+import { appRouter, createTRPCContext } from '@yocxo/api';
+import { auth } from '@yocxo/auth';
 
 export const runtime = 'edge';
 

@@ -5,9 +5,9 @@ import Link from 'next/link';
 
 import { RichText } from 'basehub/react-rich-text';
 
-import { cn } from '@sambi/ui';
-import { buttonVariants } from '@sambi/ui/button';
-import { ArrowRightIcon } from '@sambi/ui/icons';
+import { cn } from '@yocxo/ui';
+import { buttonVariants } from '@yocxo/ui/button';
+import { ArrowRightIcon } from '@yocxo/ui/icons';
 
 import { Blockquote } from '#/ui/blockquote';
 import { Border } from '#/ui/border';
@@ -40,7 +40,7 @@ export function ProjectBriefs({
                       }
                       alt={
                         projectBrief.client.logo.alt ??
-                        "An icon for sambi.dev's client"
+                        "An icon for Yo CXO's client"
                       }
                       width={48}
                       height={48}

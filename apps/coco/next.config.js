@@ -21,11 +21,11 @@ const config = {
   },
   reactStrictMode: true,
   transpilePackages: [
-    '@sambi/api',
-    '@sambi/auth',
-    '@sambi/db',
-    '@sambi/ui',
-    '@sambi/validators',
+    '@yocxo/api',
+    '@yocxo/auth',
+    '@yocxo/db',
+    '@yocxo/ui',
+    '@yocxo/validators',
   ],
   typescript: { ignoreBuildErrors: true },
 };

@@ -1,4 +1,4 @@
-import { cn } from '@sambi/ui';
+import { cn } from '@yocxo/ui';
 import {
   FacebookIcon,
   GitHubIcon,
@@ -6,7 +6,7 @@ import {
   LinkedInIcon,
   UpworkIcon,
   XIcon,
-} from '@sambi/ui/icons';
+} from '@yocxo/ui/icons';
 
 import { siteConfig } from '#/config/site';
 
@@ -70,7 +70,7 @@ export function SocialMedia({
             href={socialMediaProfile.href}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Visit sambi's ${socialMediaProfile.title} profile in a new window`}
+            aria-label={`Visit Yo CXO's ${socialMediaProfile.title} profile in a new window`}
             className={cn(
               'transition',
               invert

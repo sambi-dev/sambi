@@ -7,13 +7,13 @@ import { useRouter } from 'next/navigation';
 import { useFormState, useFormStatus } from 'react-dom';
 import { toast } from 'sonner';
 
-import { Button } from '@sambi/ui/button';
+import { Button } from '@yocxo/ui/button';
 import {
   DiscordIcon,
   GitHubIcon,
   GoogleIcon,
   SpinnerIcon,
-} from '@sambi/ui/icons';
+} from '@yocxo/ui/icons';
 
 import { signup } from '#/app/signup/actions';
 import { getMessageFromCode } from '#/lib/utils';
@@ -161,7 +161,7 @@ export default function SignupForm() {
           . By clicking sign up, you get that this experience is a demo and that
           the data is complete 🐴💩. It means you agree to our{' '}
           <Link
-            href="https://sambi.dev/terms"
+            href="https://yocxo.com/terms"
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold leading-6 text-primary hover:text-primary/80"
@@ -170,7 +170,7 @@ export default function SignupForm() {
           </Link>{' '}
           and{' '}
           <Link
-            href="https://sambi.dev/privacy"
+            href="https://yocxo.com/privacy"
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold leading-6 text-primary hover:text-primary/80"

@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { cn } from '@sambi/ui';
-import { buttonVariants } from '@sambi/ui/button';
-import { ArrowRightIcon } from '@sambi/ui/icons';
+import { cn } from '@yocxo/ui';
+import { buttonVariants } from '@yocxo/ui/button';
+import { ArrowRightIcon } from '@yocxo/ui/icons';
 
 import { siteConfig } from '#/config/site';
-import sambiLogo from '#/images/avatars/sambi-logo.png';
+import yoCxoLogo from '#/images/avatars/yocxo-logo-square.png';
 
 export function Tldr() {
   return (
@@ -20,7 +20,7 @@ export function Tldr() {
           <div className="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-muted shadow-md md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
             <Image
               className="absolute inset-0 h-full w-full object-cover"
-              src={sambiLogo}
+              src={yoCxoLogo}
               alt=""
               sizes="(min-width: 1024px) 18rem, (min-width: 768px) 16rem, 11rem"
             />
@@ -63,7 +63,7 @@ export function Tldr() {
                 href={siteConfig.teamLinks.upworkConsult}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Book a consult with sambi on Upwork in a new window"
+                aria-label="Book a consult with Yo CXO on Upwork in a new window"
                 className={cn(buttonVariants(), 'w-full md:w-auto')}
               >
                 Let&apos;s talk

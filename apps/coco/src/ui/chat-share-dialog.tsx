@@ -3,7 +3,7 @@ import type { Chat, ServerActionResult } from '#/lib/types';
 
 import * as React from 'react';
 
-import { Button } from '@sambi/ui/button';
+import { Button } from '@yocxo/ui/button';
 import {
   Dialog,
   DialogContent,
@@ -11,9 +11,9 @@ import {
   DialogFooter,
   DialogHeader,
   DialogTitle,
-} from '@sambi/ui/dialog';
-import { SpinnerIcon } from '@sambi/ui/icons';
-import { toast } from '@sambi/ui/toast';
+} from '@yocxo/ui/dialog';
+import { SpinnerIcon } from '@yocxo/ui/icons';
+import { toast } from '@yocxo/ui/toast';
 
 import { useCopyToClipboard } from '#/lib/hooks/use-copy-to-clipboard';
 

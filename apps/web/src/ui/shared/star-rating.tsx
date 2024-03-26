@@ -1,4 +1,4 @@
-import { StarIcon } from '@sambi/ui/icons';
+import { StarIcon } from '@yocxo/ui/icons';
 
 interface StarRatingProps {
   rating?: 1 | 2 | 3 | 4 | 5;

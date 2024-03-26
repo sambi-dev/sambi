@@ -1,5 +1,5 @@
 {
-  "name": "@sambi/auth-proxy",
+  "name": "@yocxo/auth-proxy",
   "private": true,
   "type": "module",
   "scripts": {
@@ -14,10 +14,10 @@
     "@auth/core": "0.27.0"
   },
   "devDependencies": {
-    "@sambi/eslint-config": "workspace:^0.2.0",
-    "@sambi/prettier-config": "workspace:^0.1.0",
-    "@sambi/tailwind-config": "workspace:^0.1.0",
-    "@sambi/tsconfig": "workspace:^0.1.0",
+    "@yocxo/eslint-config": "workspace:^0.2.0",
+    "@yocxo/prettier-config": "workspace:^0.1.0",
+    "@yocxo/tailwind-config": "workspace:^0.1.0",
+    "@yocxo/tsconfig": "workspace:^0.1.0",
     "@types/node": "^20.11.25",
     "eslint": "^8.57.0",
     "h3": "^1.11.1",
@@ -28,8 +28,8 @@
   "eslintConfig": {
     "root": true,
     "extends": [
-      "@sambi/eslint-config/base"
+      "@yocxo/eslint-config/base"
     ]
   },
-  "prettier": "@sambi/prettier-config"
+  "prettier": "@yocxo/prettier-config"
 }

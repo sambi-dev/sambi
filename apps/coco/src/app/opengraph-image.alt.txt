@@ -1,1 +1,1 @@
-Loading screen animation with pulsing text that spells out "Loading..." with the sambi.dev logo (a silohuette of a French Bulldog and lower case text) in the top left
+Loading screen animation with pulsing text that spells out "Loading..." with the yocxo.com logo (a silohuette of a French Bulldog and lower case text) in the top left

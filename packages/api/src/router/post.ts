@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
-import { desc, eq, schema } from '@sambi/db';
-import { CreatePostSchema } from '@sambi/validators';
+import { desc, eq, schema } from '@yocxo/db';
+import { CreatePostSchema } from '@yocxo/validators';
 
 import { createTRPCRouter, protectedProcedure, publicProcedure } from '../trpc';
 

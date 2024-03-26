@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 
 import { RichText } from 'basehub/react-rich-text';
 
-import { UserAvatar } from '@sambi/ui/user-avatar';
+import { UserAvatar } from '@yocxo/ui/user-avatar';
 
 import {
   fetchWarnings,

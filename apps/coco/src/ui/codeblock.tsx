@@ -14,8 +14,8 @@ import {
   oneLight,
 } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-import { Button } from '@sambi/ui/button';
-import { CopiedIcon, CopyIcon, DownloadIcon } from '@sambi/ui/icons';
+import { Button } from '@yocxo/ui/button';
+import { CopiedIcon, CopyIcon, DownloadIcon } from '@yocxo/ui/icons';
 
 import { useCopyToClipboard } from '#/lib/hooks/use-copy-to-clipboard';
 

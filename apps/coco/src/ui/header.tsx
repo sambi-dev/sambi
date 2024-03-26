@@ -5,11 +5,11 @@ import Link from 'next/link';
 
 import { auth } from 'auth';
 
-import { cn } from '@sambi/ui';
-import { Button, buttonVariants } from '@sambi/ui/button';
-import { UpworkIcon } from '@sambi/ui/icons';
-import { Logomark } from '@sambi/ui/logo';
-import { Separator } from '@sambi/ui/separator';
+import { cn } from '@yocxo/ui';
+import { Button, buttonVariants } from '@yocxo/ui/button';
+import { UpworkIcon } from '@yocxo/ui/icons';
+import { Logomark } from '@yocxo/ui/logo';
+import { Separator } from '@yocxo/ui/separator';
 
 import { siteConfig } from '#/config/site';
 import { UserMenu } from '#/ui/user-menu';

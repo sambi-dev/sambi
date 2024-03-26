@@ -2,7 +2,7 @@ import type { ImageProps } from 'next/image';
 
 import Image from 'next/image';
 
-import { cn } from '@sambi/ui';
+import { cn } from '@yocxo/ui';
 
 import { Border } from '#/ui/border';
 

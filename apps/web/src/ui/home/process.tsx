@@ -1,10 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { cn } from '@sambi/ui';
-import { buttonVariants } from '@sambi/ui/button';
-import { Container } from '@sambi/ui/container';
-import { ArrowRightIcon } from '@sambi/ui/icons';
+import { cn } from '@yocxo/ui';
+import { buttonVariants } from '@yocxo/ui/button';
+import { Container } from '@yocxo/ui/container';
+import { ArrowRightIcon } from '@yocxo/ui/icons';
 
 import { processSteps } from '#/content/process-steps';
 import { FadeIn } from '#/ui/fade-in';
@@ -52,7 +52,7 @@ export function Process() {
                 <div className="mt-6 flex">
                   <Link
                     href="/process"
-                    aria-label="Visit sambi's process page in the same window to learn more about how we work"
+                    aria-label="Visit Yo CXO's process page in the same window to learn more about how we work"
                     className={cn(
                       buttonVariants({ variant: 'secondary', size: 'sm' }),
                     )}

@@ -2,8 +2,8 @@
 
 import * as React from 'react';
 
-import { Button } from '@sambi/ui/button';
-import { SidebarIcon } from '@sambi/ui/icons';
+import { Button } from '@yocxo/ui/button';
+import { SidebarIcon } from '@yocxo/ui/icons';
 
 import { useSidebar } from '#/lib/hooks/use-sidebar';
 

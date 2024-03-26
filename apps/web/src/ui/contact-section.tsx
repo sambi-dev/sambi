@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-import { cn } from '@sambi/ui';
-import { buttonVariants } from '@sambi/ui/button';
-import { ArrowRightIcon } from '@sambi/ui/icons';
+import { cn } from '@yocxo/ui';
+import { buttonVariants } from '@yocxo/ui/button';
+import { ArrowRightIcon } from '@yocxo/ui/icons';
 
 import { FadeIn } from '#/ui/fade-in';
 import { Offices } from '#/ui/offices';
@@ -20,7 +20,7 @@ export function ContactSection() {
             <div className="mt-6 flex">
               <Link
                 href="/contact"
-                aria-label="Go to contact page to reach out to the sambi.dev crew."
+                aria-label="Go to contact page to reach out to the Yo CXO crew."
                 className={cn(buttonVariants({ size: 'sm' }))}
               >
                 Say hello

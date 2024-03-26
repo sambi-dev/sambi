@@ -14,10 +14,10 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '@sambi/ui/alert-dialog';
-import { Button } from '@sambi/ui/button';
-import { SpinnerIcon } from '@sambi/ui/icons';
-import { toast } from '@sambi/ui/toast';
+} from '@yocxo/ui/alert-dialog';
+import { Button } from '@yocxo/ui/button';
+import { SpinnerIcon } from '@yocxo/ui/icons';
+import { toast } from '@yocxo/ui/toast';
 
 interface ClearHistoryProps {
   isEnabled: boolean;

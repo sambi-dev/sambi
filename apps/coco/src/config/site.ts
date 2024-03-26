@@ -29,23 +29,23 @@ interface SiteConfig {
 }
 
 export const siteConfig: SiteConfig = {
-  name: 'By sambi.dev',
+  name: 'By yocxo.com',
   description:
-    'cocoGPT is an experimental wrapper by sambi.dev. Powered by Vercel AI and forked from their Chat repo. We added a little something something of our own. 🍌🍌',
+    'cocoGPT is an experimental wrapper by yocxo.com. Powered by Vercel AI and forked from their Chat repo. We added a little something something of our own. 🍌🍌',
   url: siteUrl,
   image: {
     url: `${siteUrl}/opengraph-image.gif`,
     width: 1200,
     height: 630,
-    alt: 'Loading screen animation with pulsing text that spells out "Loading..." with the sambi.dev logo (a silohuette of a French Bulldog and lower case text) in the top left.',
+    alt: 'Loading screen animation with pulsing text that spells out "Loading..." with the yocxo.com logo (a silohuette of a French Bulldog and lower case text) in the top left.',
   },
   links: {
     facebook: 'https://www.facebook.com/rebekahradicellc',
-    github: 'https://github.com/sambi-dev/sambi',
+    github: 'https://github.com/yocxo/studio',
     instagram: 'https://www.instagram.com/rebekahradice/',
     linkedIn: 'https://www.linkedin.com/in/rebekahradice/',
-    twitter: 'https://twitter.com/sambi_dev',
-    upworkAgency: 'https://www.upwork.com/agencies/sambi/',
+    twitter: 'https://twitter.com/supyocxo',
+    upworkAgency: 'https://www.upwork.com/agencies/yocxo/',
     upworkAmbreen: 'https://www.upwork.com/freelancers/breen',
     upworkConsult:
       'https://www.upwork.com/services/consultation/development-it-sam-1756271340353224704',

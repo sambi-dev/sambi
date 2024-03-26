@@ -1,10 +1,10 @@
 import Link from 'next/link';
 
-import { cn } from '@sambi/ui';
-import { buttonVariants } from '@sambi/ui/button';
-import { Container } from '@sambi/ui/container';
-import { ArrowRightIcon } from '@sambi/ui/icons';
-import { Logo } from '@sambi/ui/logo';
+import { cn } from '@yocxo/ui';
+import { buttonVariants } from '@yocxo/ui/button';
+import { Container } from '@yocxo/ui/container';
+import { ArrowRightIcon } from '@yocxo/ui/icons';
+import { Logo } from '@yocxo/ui/logo';
 
 export default function NotFound() {
   return (
@@ -31,15 +31,15 @@ export default function NotFound() {
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <Link
             href="/"
-            aria-label="Go to sambi.dev home page"
+            aria-label="Go to yocxo.com home page"
             className={cn(buttonVariants())}
           >
             Take me home
             <ArrowRightIcon className="ml-2 w-3 flex-none fill-current" />
           </Link>
           <Link
-            href="https://github.com/sambi-dev/sambi/issues/new/choose"
-            aria-label="Contact sambi.dev support on Github in a new window"
+            href="https://github.com/yocxo/studio/issues/new/choose"
+            aria-label="Contact Yo CXO support on Github in a new window"
             target="_blank"
             rel="noopener noreferrer"
             className={cn(

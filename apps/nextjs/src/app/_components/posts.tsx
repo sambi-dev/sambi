@@ -2,9 +2,9 @@
 
 import { use } from 'react';
 
-import type { RouterOutputs } from '@sambi/api';
-import { cn } from '@sambi/ui';
-import { Button } from '@sambi/ui/button';
+import type { RouterOutputs } from '@yocxo/api';
+import { cn } from '@yocxo/ui';
+import { Button } from '@yocxo/ui/button';
 import {
   Form,
   FormControl,
@@ -12,10 +12,10 @@ import {
   FormItem,
   FormMessage,
   useForm,
-} from '@sambi/ui/form';
-import { Input } from '@sambi/ui/input';
-import { toast } from '@sambi/ui/toast';
-import { CreatePostSchema } from '@sambi/validators';
+} from '@yocxo/ui/form';
+import { Input } from '@yocxo/ui/input';
+import { toast } from '@yocxo/ui/toast';
+import { CreatePostSchema } from '@yocxo/validators';
 
 import { api } from '#/trpc/react';
 

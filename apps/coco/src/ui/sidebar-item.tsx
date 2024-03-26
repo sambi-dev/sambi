@@ -8,10 +8,10 @@ import { usePathname } from 'next/navigation';
 
 import { motion } from 'framer-motion';
 
-import { cn } from '@sambi/ui';
-import { buttonVariants } from '@sambi/ui/button';
-import { MessageIcon, UsersIcon } from '@sambi/ui/icons';
-import { Tooltip, TooltipContent, TooltipTrigger } from '@sambi/ui/tooltip';
+import { cn } from '@yocxo/ui';
+import { buttonVariants } from '@yocxo/ui/button';
+import { MessageIcon, UsersIcon } from '@yocxo/ui/icons';
+import { Tooltip, TooltipContent, TooltipTrigger } from '@yocxo/ui/tooltip';
 
 import { useLocalStorage } from '#/lib/hooks/use-local-storage';
 

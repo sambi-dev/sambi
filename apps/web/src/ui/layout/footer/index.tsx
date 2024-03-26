@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
-import { Logo } from '@sambi/ui/logo';
-import { ThemeToggle } from '@sambi/ui/theme';
+import { Logo } from '@yocxo/ui/logo';
+import { ThemeToggle } from '@yocxo/ui/theme';
 
 import { siteConfig } from '#/config/site';
 import { FadeIn } from '#/ui/fade-in';
@@ -18,7 +18,7 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
             <div className="max-w-md space-y-8">
               <Link href="/" aria-label="Home">
-                <Logo className="h-16" fillOnHover />
+                <Logo className="h-20" fillOnHover />
               </Link>
               <p className="text-pretty text-sm leading-6 text-muted-foreground">
                 {siteConfig.description}

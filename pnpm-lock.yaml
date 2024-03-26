@@ -8,12 +8,12 @@ importers:
 
   .:
     devDependencies:
-      '@sambi/prettier-config':
-        specifier: workspace:^0.1.0
-        version: link:tooling/prettier
       '@turbo/gen':
         specifier: ^1.12.4
         version: 1.13.0(@types/node@20.11.30)(typescript@5.4.3)
+      '@yocxo/prettier-config':
+        specifier: workspace:^0.1.0
+        version: link:tooling/prettier
       prettier:
         specifier: ^3.2.5
         version: 3.2.5
@@ -30,21 +30,21 @@ importers:
         specifier: 0.27.0
         version: 0.27.0
     devDependencies:
-      '@sambi/eslint-config':
-        specifier: workspace:^0.2.0
-        version: link:../../tooling/eslint
-      '@sambi/prettier-config':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/prettier
-      '@sambi/tailwind-config':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/tailwind
-      '@sambi/tsconfig':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/typescript
       '@types/node':
         specifier: ^20.11.25
         version: 20.11.30
+      '@yocxo/eslint-config':
+        specifier: workspace:^0.2.0
+        version: link:../../tooling/eslint
+      '@yocxo/prettier-config':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/prettier
+      '@yocxo/tailwind-config':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/tailwind
+      '@yocxo/tsconfig':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/typescript
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -63,21 +63,6 @@ importers:
 
   apps/coco:
     dependencies:
-      '@sambi/api':
-        specifier: workspace:^0.1.0
-        version: link:../../packages/api
-      '@sambi/auth':
-        specifier: workspace:^0.1.0
-        version: link:../../packages/auth
-      '@sambi/db':
-        specifier: workspace:^0.1.0
-        version: link:../../packages/db
-      '@sambi/ui':
-        specifier: workspace:^0.1.0
-        version: link:../../packages/ui
-      '@sambi/validators':
-        specifier: workspace:^0.1.0
-        version: link:../../packages/validators
       '@t3-oss/env-nextjs':
         specifier: ^0.9.2
         version: 0.9.2(typescript@5.4.3)(zod@3.22.4)
@@ -90,6 +75,21 @@ importers:
       '@vercel/og':
         specifier: ^0.6.2
         version: 0.6.2
+      '@yocxo/api':
+        specifier: workspace:^0.1.0
+        version: link:../../packages/api
+      '@yocxo/auth':
+        specifier: workspace:^0.1.0
+        version: link:../../packages/auth
+      '@yocxo/db':
+        specifier: workspace:^0.1.0
+        version: link:../../packages/db
+      '@yocxo/ui':
+        specifier: workspace:^0.1.0
+        version: link:../../packages/ui
+      '@yocxo/validators':
+        specifier: workspace:^0.1.0
+        version: link:../../packages/validators
       ai:
         specifier: ^3.0.12
         version: 3.0.13(react@18.2.0)(solid-js@1.8.16)(svelte@4.2.12)(vue@3.4.21)(zod@3.22.4)
@@ -148,18 +148,6 @@ importers:
         specifier: ^3.22.4
         version: 3.22.4
     devDependencies:
-      '@sambi/eslint-config':
-        specifier: workspace:^0.2.0
-        version: link:../../tooling/eslint
-      '@sambi/prettier-config':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/prettier
-      '@sambi/tailwind-config':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/tailwind
-      '@sambi/tsconfig':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/typescript
       '@types/d3-scale':
         specifier: ^4.0.8
         version: 4.0.8
@@ -175,6 +163,18 @@ importers:
       '@types/react-syntax-highlighter':
         specifier: ^15.5.11
         version: 15.5.11
+      '@yocxo/eslint-config':
+        specifier: workspace:^0.2.0
+        version: link:../../tooling/eslint
+      '@yocxo/prettier-config':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/prettier
+      '@yocxo/tailwind-config':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/tailwind
+      '@yocxo/tsconfig':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/typescript
       dotenv-cli:
         specifier: ^7.3.0
         version: 7.4.1
@@ -272,27 +272,27 @@ importers:
       '@babel/runtime':
         specifier: ^7.23.9
         version: 7.24.1
-      '@sambi/api':
-        specifier: workspace:^0.1.0
-        version: link:../../packages/api
-      '@sambi/eslint-config':
-        specifier: workspace:^0.2.0
-        version: link:../../tooling/eslint
-      '@sambi/prettier-config':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/prettier
-      '@sambi/tailwind-config':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/tailwind
-      '@sambi/tsconfig':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/typescript
       '@types/babel__core':
         specifier: ^7.20.5
         version: 7.20.5
       '@types/react':
         specifier: ^18.2.67
         version: 18.2.67
+      '@yocxo/api':
+        specifier: workspace:^0.1.0
+        version: link:../../packages/api
+      '@yocxo/eslint-config':
+        specifier: workspace:^0.2.0
+        version: link:../../tooling/eslint
+      '@yocxo/prettier-config':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/prettier
+      '@yocxo/tailwind-config':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/tailwind
+      '@yocxo/tsconfig':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/typescript
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -308,21 +308,6 @@ importers:
 
   apps/nextjs:
     dependencies:
-      '@sambi/api':
-        specifier: workspace:^0.1.0
-        version: link:../../packages/api
-      '@sambi/auth':
-        specifier: workspace:^0.1.0
-        version: link:../../packages/auth
-      '@sambi/db':
-        specifier: workspace:^0.1.0
-        version: link:../../packages/db
-      '@sambi/ui':
-        specifier: workspace:^0.1.0
-        version: link:../../packages/ui
-      '@sambi/validators':
-        specifier: workspace:^0.1.0
-        version: link:../../packages/validators
       '@t3-oss/env-nextjs':
         specifier: ^0.9.2
         version: 0.9.2(typescript@5.4.3)(zod@3.22.4)
@@ -338,6 +323,21 @@ importers:
       '@trpc/server':
         specifier: 11.0.0-next-beta.294
         version: 11.0.0-next-beta.294
+      '@yocxo/api':
+        specifier: workspace:^0.1.0
+        version: link:../../packages/api
+      '@yocxo/auth':
+        specifier: workspace:^0.1.0
+        version: link:../../packages/auth
+      '@yocxo/db':
+        specifier: workspace:^0.1.0
+        version: link:../../packages/db
+      '@yocxo/ui':
+        specifier: workspace:^0.1.0
+        version: link:../../packages/ui
+      '@yocxo/validators':
+        specifier: workspace:^0.1.0
+        version: link:../../packages/validators
       geist:
         specifier: ^1.2.2
         version: 1.2.2(next@14.1.4)
@@ -357,18 +357,6 @@ importers:
         specifier: ^3.22.4
         version: 3.22.4
     devDependencies:
-      '@sambi/eslint-config':
-        specifier: workspace:^0.2.0
-        version: link:../../tooling/eslint
-      '@sambi/prettier-config':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/prettier
-      '@sambi/tailwind-config':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/tailwind
-      '@sambi/tsconfig':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/typescript
       '@types/node':
         specifier: ^20.11.25
         version: 20.11.30
@@ -378,6 +366,18 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.22
         version: 18.2.22
+      '@yocxo/eslint-config':
+        specifier: workspace:^0.2.0
+        version: link:../../tooling/eslint
+      '@yocxo/prettier-config':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/prettier
+      '@yocxo/tailwind-config':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/tailwind
+      '@yocxo/tsconfig':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/typescript
       dotenv-cli:
         specifier: ^7.3.0
         version: 7.4.1
@@ -402,24 +402,24 @@ importers:
       '@headlessui/react':
         specifier: ^1.7.13
         version: 1.7.18(react-dom@18.2.0)(react@18.2.0)
-      '@sambi/api':
-        specifier: workspace:^0.1.0
-        version: link:../../packages/api
-      '@sambi/auth':
-        specifier: workspace:^0.1.0
-        version: link:../../packages/auth
-      '@sambi/db':
-        specifier: workspace:^0.1.0
-        version: link:../../packages/db
-      '@sambi/ui':
-        specifier: workspace:^0.1.0
-        version: link:../../packages/ui
-      '@sambi/validators':
-        specifier: workspace:^0.1.0
-        version: link:../../packages/validators
       '@t3-oss/env-nextjs':
         specifier: ^0.9.2
         version: 0.9.2(typescript@5.4.3)(zod@3.22.4)
+      '@yocxo/api':
+        specifier: workspace:^0.1.0
+        version: link:../../packages/api
+      '@yocxo/auth':
+        specifier: workspace:^0.1.0
+        version: link:../../packages/auth
+      '@yocxo/db':
+        specifier: workspace:^0.1.0
+        version: link:../../packages/db
+      '@yocxo/ui':
+        specifier: workspace:^0.1.0
+        version: link:../../packages/ui
+      '@yocxo/validators':
+        specifier: workspace:^0.1.0
+        version: link:../../packages/validators
       basehub:
         specifier: ^3.0.5
         version: 3.0.6(react-dom@18.2.0)(react@18.2.0)
@@ -445,18 +445,6 @@ importers:
         specifier: ^3.22.4
         version: 3.22.4
     devDependencies:
-      '@sambi/eslint-config':
-        specifier: workspace:^0.2.0
-        version: link:../../tooling/eslint
-      '@sambi/prettier-config':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/prettier
-      '@sambi/tailwind-config':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/tailwind
-      '@sambi/tsconfig':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/typescript
       '@types/node':
         specifier: ^20.11.25
         version: 20.11.30
@@ -466,6 +454,18 @@ importers:
       '@types/react-dom':
         specifier: ^18.2.22
         version: 18.2.22
+      '@yocxo/eslint-config':
+        specifier: workspace:^0.2.0
+        version: link:../../tooling/eslint
+      '@yocxo/prettier-config':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/prettier
+      '@yocxo/tailwind-config':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/tailwind
+      '@yocxo/tsconfig':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/typescript
       dotenv-cli:
         specifier: ^7.3.0
         version: 7.4.1
@@ -493,18 +493,18 @@ importers:
 
   packages/api:
     dependencies:
-      '@sambi/auth':
-        specifier: workspace:^0.1.0
-        version: link:../auth
-      '@sambi/db':
-        specifier: workspace:^0.1.0
-        version: link:../db
-      '@sambi/validators':
-        specifier: workspace:^0.1.0
-        version: link:../validators
       '@trpc/server':
         specifier: 11.0.0-next-beta.294
         version: 11.0.0-next-beta.294
+      '@yocxo/auth':
+        specifier: workspace:^0.1.0
+        version: link:../auth
+      '@yocxo/db':
+        specifier: workspace:^0.1.0
+        version: link:../db
+      '@yocxo/validators':
+        specifier: workspace:^0.1.0
+        version: link:../validators
       superjson:
         specifier: 2.2.1
         version: 2.2.1
@@ -512,13 +512,13 @@ importers:
         specifier: ^3.22.4
         version: 3.22.4
     devDependencies:
-      '@sambi/eslint-config':
+      '@yocxo/eslint-config':
         specifier: workspace:^0.2.0
         version: link:../../tooling/eslint
-      '@sambi/prettier-config':
+      '@yocxo/prettier-config':
         specifier: workspace:^0.1.0
         version: link:../../tooling/prettier
-      '@sambi/tsconfig':
+      '@yocxo/tsconfig':
         specifier: workspace:^0.1.0
         version: link:../../tooling/typescript
       eslint:
@@ -536,12 +536,12 @@ importers:
       '@auth/drizzle-adapter':
         specifier: ^0.7.0
         version: 0.7.0
-      '@sambi/db':
-        specifier: workspace:^0.1.0
-        version: link:../db
       '@t3-oss/env-nextjs':
         specifier: ^0.9.2
         version: 0.9.2(typescript@5.4.3)(zod@3.22.4)
+      '@yocxo/db':
+        specifier: workspace:^0.1.0
+        version: link:../db
       next:
         specifier: ^14.1.0
         version: 14.1.4(react-dom@18.2.0)(react@18.2.0)
@@ -558,13 +558,13 @@ importers:
         specifier: ^3.22.4
         version: 3.22.4
     devDependencies:
-      '@sambi/eslint-config':
+      '@yocxo/eslint-config':
         specifier: workspace:^0.2.0
         version: link:../../tooling/eslint
-      '@sambi/prettier-config':
+      '@yocxo/prettier-config':
         specifier: workspace:^0.1.0
         version: link:../../tooling/prettier
-      '@sambi/tsconfig':
+      '@yocxo/tsconfig':
         specifier: workspace:^0.1.0
         version: link:../../tooling/typescript
       eslint:
@@ -586,13 +586,13 @@ importers:
         specifier: ^0.29.4
         version: 0.29.5(@planetscale/database@1.16.0)
     devDependencies:
-      '@sambi/eslint-config':
+      '@yocxo/eslint-config':
         specifier: workspace:^0.2.0
         version: link:../../tooling/eslint
-      '@sambi/prettier-config':
+      '@yocxo/prettier-config':
         specifier: workspace:^0.1.0
         version: link:../../tooling/prettier
-      '@sambi/tsconfig':
+      '@yocxo/tsconfig':
         specifier: workspace:^0.1.0
         version: link:../../tooling/typescript
       dotenv-cli:
@@ -668,21 +668,21 @@ importers:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.1)
     devDependencies:
-      '@sambi/eslint-config':
-        specifier: workspace:^0.2.0
-        version: link:../../tooling/eslint
-      '@sambi/prettier-config':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/prettier
-      '@sambi/tailwind-config':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/tailwind
-      '@sambi/tsconfig':
-        specifier: workspace:^0.1.0
-        version: link:../../tooling/typescript
       '@types/react':
         specifier: ^18.2.67
         version: 18.2.67
+      '@yocxo/eslint-config':
+        specifier: workspace:^0.2.0
+        version: link:../../tooling/eslint
+      '@yocxo/prettier-config':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/prettier
+      '@yocxo/tailwind-config':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/tailwind
+      '@yocxo/tsconfig':
+        specifier: workspace:^0.1.0
+        version: link:../../tooling/typescript
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -708,13 +708,13 @@ importers:
         specifier: ^3.22.4
         version: 3.22.4
     devDependencies:
-      '@sambi/eslint-config':
+      '@yocxo/eslint-config':
         specifier: workspace:^0.2.0
         version: link:../../tooling/eslint
-      '@sambi/prettier-config':
+      '@yocxo/prettier-config':
         specifier: workspace:^0.1.0
         version: link:../../tooling/prettier
-      '@sambi/tsconfig':
+      '@yocxo/tsconfig':
         specifier: workspace:^0.1.0
         version: link:../../tooling/typescript
       eslint:
@@ -754,15 +754,15 @@ importers:
         specifier: ^4.6.0
         version: 4.6.0(eslint@8.57.0)
     devDependencies:
-      '@sambi/prettier-config':
-        specifier: workspace:^0.1.0
-        version: link:../prettier
-      '@sambi/tsconfig':
-        specifier: workspace:^0.1.0
-        version: link:../typescript
       '@types/eslint':
         specifier: ^8.56.5
         version: 8.56.6
+      '@yocxo/prettier-config':
+        specifier: workspace:^0.1.0
+        version: link:../prettier
+      '@yocxo/tsconfig':
+        specifier: workspace:^0.1.0
+        version: link:../typescript
       eslint:
         specifier: ^8.57.0
         version: 8.57.0
@@ -787,7 +787,7 @@ importers:
         specifier: ^0.5.11
         version: 0.5.12(@ianvs/prettier-plugin-sort-imports@4.2.1)(prettier@3.2.5)
     devDependencies:
-      '@sambi/tsconfig':
+      '@yocxo/tsconfig':
         specifier: workspace:^0.1.0
         version: link:../typescript
       typescript:
@@ -809,13 +809,13 @@ importers:
         specifier: ^1.0.7
         version: 1.0.7(tailwindcss@3.4.1)
     devDependencies:
-      '@sambi/eslint-config':
+      '@yocxo/eslint-config':
         specifier: workspace:^0.2.0
         version: link:../eslint
-      '@sambi/prettier-config':
+      '@yocxo/prettier-config':
         specifier: workspace:^0.1.0
         version: link:../prettier
-      '@sambi/tsconfig':
+      '@yocxo/tsconfig':
         specifier: workspace:^0.1.0
         version: link:../typescript
       eslint:

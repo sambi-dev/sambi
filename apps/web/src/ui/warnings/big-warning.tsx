@@ -1,5 +1,5 @@
-import { Container } from '@sambi/ui/container';
-import { UserAvatar } from '@sambi/ui/user-avatar';
+import { Container } from '@yocxo/ui/container';
+import { UserAvatar } from '@yocxo/ui/user-avatar';
 
 import { FadeIn } from '#/ui/fade-in';
 import { StarRating } from '#/ui/shared/star-rating';

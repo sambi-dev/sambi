@@ -3,9 +3,9 @@ import type { Metadata, Viewport } from 'next';
 import { GeistMono } from 'geist/font/mono';
 import { GeistSans } from 'geist/font/sans';
 
-import { cn } from '@sambi/ui';
-import { ThemeProvider, ThemeToggle } from '@sambi/ui/theme';
-import { Toaster } from '@sambi/ui/toast';
+import { cn } from '@yocxo/ui';
+import { ThemeProvider, ThemeToggle } from '@yocxo/ui/theme';
+import { Toaster } from '@yocxo/ui/toast';
 
 import { env } from '#/env';
 import { TRPCReactProvider } from '#/trpc/react';

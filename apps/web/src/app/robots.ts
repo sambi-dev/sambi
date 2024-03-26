@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       // allow: "/",
       disallow: '/',
     },
-    // sitemap: "https://sambi.dev/sitemap.xml",
+    // sitemap: "https://yocxo.com/sitemap.xml",
   };
 }

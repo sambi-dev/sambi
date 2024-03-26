@@ -1,6 +1,6 @@
-# sambi.dev Web App
+# Yo CXO Web App
 
-Welcome to the sambi.dev web app, the digital face of our un-agency! This app is part of the larger sambi Turborepo, where we showcase our work, share our stories, and connect with like-minded folks.
+Welcome to the Yo CXO web app, the digital face of our un-agency! This app is part of the larger Yo CXO Turborepo, where we showcase our work, share our stories, and connect with like-minded folks.
 
 ## Built on the Shoulders of Giants
 

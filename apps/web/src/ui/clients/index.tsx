@@ -26,7 +26,7 @@ function ClientLogo({ name, Logo, viaPartner }: (typeof clientLogos)[number]) {
         <Border className="pt-12 group-[&:nth-child(-n+2)]:-mt-px sm:group-[&:nth-child(3)]:-mt-px lg:group-[&:nth-child(4)]:-mt-px">
           <FadeIn className="overflow-hidden">
             <Logo
-              aria-label={`A logo representing sambi.dev's client, ${name}`}
+              aria-label={`A logo representing Yo CXO's client, ${name}`}
               className="mx-auto"
             />
             {viaPartner && (

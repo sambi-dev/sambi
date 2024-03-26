@@ -1,4 +1,4 @@
-# sambi.dev Security Policy
+# yocxo.com Security Policy
 
 ## Supported Versions
 
@@ -6,7 +6,7 @@ Our project is continuously evolving. There are no older versions. Each update, 
 
 ## Reporting a Vulnerability
 
-Your safety and security are important to us. If you find a security vulnerability, **[we'd be grateful if you'd contact us directly](mailto:hey@sambi.dev)** instead of using the public issue tracker.
+Your safety and security are important to us. If you find a security vulnerability, **[we'd be grateful if you'd contact us directly](mailto:sup@yocxo.com)** instead of using the public issue tracker.
 
 This approach allows us to fix the issue discreetly.
 

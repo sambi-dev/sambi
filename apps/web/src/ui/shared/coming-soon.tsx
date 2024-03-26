@@ -1,9 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { cn } from '@sambi/ui';
-import { buttonVariants } from '@sambi/ui/button';
-import { ArrowRightIcon } from '@sambi/ui/icons';
+import { cn } from '@yocxo/ui';
+import { buttonVariants } from '@yocxo/ui/button';
+import { ArrowRightIcon } from '@yocxo/ui/icons';
 
 import { FadeIn } from '#/ui/fade-in';
 import { PageIntro } from '#/ui/page-intro';

@@ -1,6 +1,6 @@
-# sambi.dev goes T3 Turbo
+# yocxo.com goes T3 Turbo
 
-Welcome to sambi.dev, the digital frontier where tech meets design with a dash of marketing genius. Here, Ambreen crafts visuals that pop, Sam tinkers with tech, and Rebekah drives demand. It's our open source playground—from code to coffee quirks.
+Welcome to yocxo.com, the digital frontier where tech meets design with a dash of marketing genius. Here, Ambreen crafts visuals that pop, Sam tinkers with tech, and Rebekah drives demand. It's our open source playground—from code to coffee quirks.
 
 ### What's Inside
 
@@ -20,16 +20,16 @@ Dive into our collective wisdom, where success and slip-ups coexist. This space 
 A nod to the groundbreaking efforts of [Julius Marminge](https://github.com/juliusmarminge) and the [t3-oss](https://github.com/t3-oss) team. We've adopted T3 Turbo, adding our twist to the mix.
 
 **Good News**  
-Julius and the team's foundational work means OAuth runs smoothly, even in previews. Dive into our [deployment guide](https://github.com/sambi-dev/sambi?tab=readme-ov-file#auth-proxy) and explore the mechanics in the [source](./apps/auth-proxy).
+Julius and the team's foundational work means OAuth runs smoothly, even in previews. Dive into our [deployment guide](https://github.com/yocxo/studio?tab=readme-ov-file#auth-proxy) and explore the mechanics in the [source](./apps/auth-proxy).
 
 ## Installation
 
 ### Getting Started
 
-Clone the `sambi` repository to dive into our digital world:
+Clone the `yocxo` repository to dive into our digital world:
 
 ```bash
-git clone https://github.com/sambi-dev/sambi.git
+git clone https://github.com/yocxo/studio.git
 ```
 
 For an optimal setup, we recommend using PNPM as your package manager.
@@ -43,7 +43,7 @@ npx create-turbo@latest -e https://github.com/t3-oss/create-t3-turbo
 
 ## About This Repo
 
-Discover how to navigate the Turborepo landscape, inspired by t3-oss. Our take builds upon their create-t3-turbo, offering a unique sambi.dev flavor.
+Discover how to navigate the Turborepo landscape, inspired by t3-oss. Our take builds upon their create-t3-turbo, offering a unique yocxo.com flavor.
 
 With [Turborepo](https://turborepo.org), we amplify our T3 applications, crafting a boilerplate for agencies and freelancers alike. It's designed as a launchpad for your projects, providing a sturdy, scalable foundation with room for your creative flair.
 
@@ -96,7 +96,7 @@ tooling
 ```
 
 > **Template Tip:**  
-> We use `@sambi` as a placeholder for package names. For a personal touch, substitute `@sambi` with your organization or project name using find-and-replace. This ensures cleaner imports and a customized codebase.
+> We use `@yocxo` as a placeholder for package names. For a personal touch, substitute `@yocxo` with your organization or project name using find-and-replace. This ensures cleaner imports and a customized codebase.
 
 ## Quick Start
 
@@ -220,7 +220,7 @@ For comprehensive instructions, refer to [the auth proxy README](./apps/auth-pro
 Deploying your Expo app is a bit different than deploying a Next.js web app. Instead of "deploying" online, you submit production builds to app stores like [Apple App Store](https://www.apple.com/app-store) and [Google Play](https://play.google.com/store/apps). Check out the full [guide to distributing your app](https://docs.expo.dev/distribution/introduction) in the Expo docs for best practices.
 
 1. Update the `getBaseUrl` function to point to your production backend URL:
-   https://github.com/sambi-dev/sambi/blob/656965aff7db271e5e080242c4a3ce4dad5d25f8/apps/expo/src/utils/api.tsx#L20-L37
+   https://github.com/yocxo/studio/blob/656965aff7db271e5e080242c4a3ce4dad5d25f8/apps/expo/src/utils/api.tsx#L20-L37
 
 2. Set up [EAS Build](https://docs.expo.dev/build/introduction) to create builds without a full native dev setup:
 

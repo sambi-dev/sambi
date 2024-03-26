@@ -1,4 +1,4 @@
-import { cn } from '@sambi/ui';
+import { cn } from '@yocxo/ui';
 
 const FacebookLogo = (props: React.ComponentProps<'svg'>) => {
   return (

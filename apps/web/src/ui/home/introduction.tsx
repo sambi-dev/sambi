@@ -1,7 +1,7 @@
-import { cn } from '@sambi/ui';
-import { buttonVariants } from '@sambi/ui/button';
-import { Container } from '@sambi/ui/container';
-import { ArrowRightIcon, CheckIcon } from '@sambi/ui/icons';
+import { cn } from '@yocxo/ui';
+import { buttonVariants } from '@yocxo/ui/button';
+import { Container } from '@yocxo/ui/container';
+import { ArrowRightIcon, CheckIcon } from '@yocxo/ui/icons';
 
 import { siteConfig } from '#/config/site';
 import { FadeIn } from '#/ui/fade-in';
@@ -109,7 +109,7 @@ export function Introduction() {
               href={siteConfig.teamLinks.upworkConsult}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Book a consult with sambi on Upwork in a new window"
+              aria-label="Book a consult with Yo CXO on Upwork in a new window"
               className={cn(
                 buttonVariants({ size: 'lg', variant: 'secondary' }),
                 'w-full md:w-auto',

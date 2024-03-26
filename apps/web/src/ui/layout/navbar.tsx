@@ -5,8 +5,8 @@ import Link from 'next/link';
 
 import { Popover } from '@headlessui/react';
 
-import { cn } from '@sambi/ui';
-import { MenuIcon } from '@sambi/ui/icons';
+import { cn } from '@yocxo/ui';
+import { MenuIcon } from '@yocxo/ui/icons';
 
 const sections = [
   { id: 'mettle', title: 'Mettle' },

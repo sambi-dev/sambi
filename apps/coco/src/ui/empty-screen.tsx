@@ -21,8 +21,8 @@ export function EmptyScreen() {
         </p>
         <p className="leading-normal text-muted-foreground">
           We forked it and added that signature{' '}
-          <ExternalLink href="https://sambi.dev/showcase/sambi-gpt">
-            sambi.dev
+          <ExternalLink href="https://yocxo.com/showcase/coco-gpt">
+            yocxo.com
           </ExternalLink>{' '}
           touch.
         </p>

@@ -1,5 +1,5 @@
 {
-  "extends": ["@sambi/tsconfig/base.json"],
+  "extends": ["@yocxo/tsconfig/base.json"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

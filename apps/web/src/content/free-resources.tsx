@@ -30,7 +30,7 @@ export const freeResources: FreeResource[] = [
     },
     href: '/blog',
     linkText: 'Visit blog',
-    linkAriaText: "Visit sambi.dev's Blog in the same window",
+    linkAriaText: "Visit Yo CXO's Blog in the same window",
   },
   {
     title: 'Generative blog',
@@ -45,7 +45,7 @@ export const freeResources: FreeResource[] = [
     },
     href: '/ai-blog',
     linkText: 'Read AI blog',
-    linkAriaText: "Visit sambi.dev's AI Blog in the same window",
+    linkAriaText: "Visit Yo CXO's AI Blog in the same window",
   },
   {
     title: 'Community of professionals',
@@ -60,7 +60,7 @@ export const freeResources: FreeResource[] = [
     },
     href: 'https://discord.gg/2Tjpg2kkBW',
     linkText: 'Join community',
-    linkAriaText: "Visit sambi.dev's Discord server in a new window",
+    linkAriaText: "Visit Yo CXO's Discord server in a new window",
     external: true,
   },
 ];

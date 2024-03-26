@@ -6,7 +6,7 @@ const jiti = _jiti(fileURLToPath(import.meta.url));
 
 // Import env files to validate at build time. Use jiti so we can load .ts files in here.
 jiti('./src/env');
-jiti('@sambi/auth/env');
+jiti('@yocxo/auth/env');
 
 /** @type {import("next").NextConfig} */
 const config = {
@@ -22,11 +22,11 @@ const config = {
   reactStrictMode: true,
 
   transpilePackages: [
-    '@sambi/api',
-    '@sambi/auth',
-    '@sambi/db',
-    '@sambi/ui',
-    '@sambi/validators',
+    '@yocxo/api',
+    '@yocxo/auth',
+    '@yocxo/db',
+    '@yocxo/ui',
+    '@yocxo/validators',
   ],
 
   eslint: { ignoreDuringBuilds: true },

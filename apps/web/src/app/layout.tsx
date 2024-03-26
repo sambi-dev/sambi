@@ -1,14 +1,14 @@
 import type { Metadata, Viewport } from 'next';
 
-import { ThemeProvider } from '@sambi/ui/theme';
-import { Toaster } from '@sambi/ui/toast';
+import { ThemeProvider } from '@yocxo/ui/theme';
+import { Toaster } from '@yocxo/ui/toast';
 
 import { env } from '#/env';
 import { fontLexend, fontMartian } from '#/fonts/index';
 
 import '#/styles/tailwind.css';
 
-import { cn } from '@sambi/ui';
+import { cn } from '@yocxo/ui';
 
 import { siteConfig } from '#/config/site';
 
@@ -58,8 +58,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    site: '@sambi_dev',
-    creator: '@sambi_dev',
+    site: '@yocxo',
+    creator: '@yocxo',
     title: siteConfig.name,
     description: siteConfig.description,
     images: [

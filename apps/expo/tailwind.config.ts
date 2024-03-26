@@ -3,7 +3,7 @@ import type { Config } from 'tailwindcss';
 // @ts-expect-error - no types
 import nativewind from 'nativewind/preset';
 
-import baseConfig from '@sambi/tailwind-config/native';
+import baseConfig from '@yocxo/tailwind-config/native';
 
 export default {
   content: ['./src/**/*.{ts,tsx}'],

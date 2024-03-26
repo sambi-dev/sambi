@@ -1,9 +1,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { cn } from '@sambi/ui';
-import { buttonVariants } from '@sambi/ui/button';
-import { ArrowRightIcon } from '@sambi/ui/icons';
+import { cn } from '@yocxo/ui';
+import { buttonVariants } from '@yocxo/ui/button';
+import { ArrowRightIcon } from '@yocxo/ui/icons';
 
 import { siteConfig } from '#/config/site';
 import heroImage from '#/images/hero.png';
@@ -18,7 +18,7 @@ export function Hero() {
             <Image
               className="w-full"
               src={heroImage}
-              alt="A collage of Notion styled illustrations of Sam, Ambreen, and Rebekah of sambi.dev"
+              alt="A collage of Notion styled illustrations of Sam, Ambreen, and Rebekah of Yo CXO"
               priority
             />
           </div>
@@ -45,7 +45,7 @@ export function Hero() {
                 href={siteConfig.teamLinks.upworkConsult}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Book a consult with sambi on Upwork in a new window"
+                aria-label="Book a consult with Yo CXO on Upwork in a new window"
                 className={cn(
                   buttonVariants({ size: 'sm' }),
                   'w-full md:w-auto',

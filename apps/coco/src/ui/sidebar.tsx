@@ -2,7 +2,7 @@
 
 import * as React from 'react';
 
-import { cn } from '@sambi/ui';
+import { cn } from '@yocxo/ui';
 
 import { useSidebar } from '#/lib/hooks/use-sidebar';
 

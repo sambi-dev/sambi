@@ -5,8 +5,8 @@ import type { StreamableValue } from 'ai/rsc';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 
-import { cn } from '@sambi/ui';
-import { CocoIcon, SpinnerIcon, UserIcon } from '@sambi/ui/icons';
+import { cn } from '@yocxo/ui';
+import { CocoIcon, SpinnerIcon, UserIcon } from '@yocxo/ui/icons';
 
 import { useStreamableText } from '#/lib/hooks/use-streamable-text';
 

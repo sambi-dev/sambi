@@ -3,7 +3,7 @@
   "extends": ["config:base"],
   "packageRules": [
     {
-      "matchPackagePatterns": ["^@sambi/"],
+      "matchPackagePatterns": ["^@yocxo/"],
       "enabled": false
     }
   ],
