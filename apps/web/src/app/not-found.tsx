@@ -31,7 +31,7 @@ export default function NotFound() {
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <Link
             href="/"
-            aria-label="Go to yocxo.com home page"
+            aria-label="Go to Yo CXO home page"
             className={cn(buttonVariants())}
           >
             Take me home
