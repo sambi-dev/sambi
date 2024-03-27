@@ -39,7 +39,7 @@ export function Showcase({
               key={`/showcase/${projectBrief._sys.slug}`}
               className="flex"
             >
-              <article className="relative flex w-full flex-col rounded-3xl border bg-card p-6 shadow-md transition hover:bg-primary/20 sm:p-8">
+              <article className="group relative flex w-full flex-col rounded-3xl border bg-card p-6 shadow-md transition hover:bg-primary/20 sm:p-8">
                 <h3>
                   <Link
                     href={`/showcase/${projectBrief._sys.slug}`}
@@ -53,13 +53,13 @@ export function Showcase({
                       }
                       width={24}
                       height={24}
-                      className="h-10 w-10 rounded-xl grayscale hover:grayscale-0"
+                      className="h-10 w-10 rounded-xl grayscale group-hover:grayscale-0"
                       unoptimized
                     />
                   </Link>
                 </h3>
                 <div className="mt-6 flex gap-x-2 font-mono text-xs font-medium tracking-tighter text-secondary-foreground">
-                  <p className=" text-primary">
+                  <p className=" text-primary group-hover:text-foreground">
                     {projectBrief.client._sys.title}
                   </p>
                   <span className="text-foreground" aria-hidden="true">
@@ -67,7 +67,7 @@ export function Showcase({
                   </span>
                   <span>{projectBrief.service[0]?._sys.title}</span>
                 </div>
-                <p className="mt-6 grow text-pretty font-mono font-semibold tracking-tighter text-foreground">
+                <p className="mt-6 grow text-pretty font-mono font-semibold tracking-tighter text-foreground group-hover:text-primary/80">
                   {projectBrief._sys.title}
                 </p>
                 <p className="mt-4 line-clamp-2 text-sm text-muted-foreground">

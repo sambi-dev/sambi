@@ -18,7 +18,7 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-x-8 gap-y-16 lg:grid-cols-2">
             <div className="max-w-md space-y-8">
               <Link href="/" aria-label="Home">
-                <Logo className="h-20" fillOnHover />
+                <Logo className="h-12" fillOnHover />
               </Link>
               <p className="text-pretty text-sm leading-6 text-muted-foreground">
                 {siteConfig.description}
@@ -31,13 +31,13 @@ export function Footer() {
               <FooterNav />
             </div>
           </div>
-          <div className="mb-20 mt-24 flex flex-wrap items-end justify-between gap-x-6 gap-y-4 border-t pt-12">
+          <div className="mb-20 mt-24 flex flex-col gap-y-4 border-t pt-12 md:flex-row md:flex-wrap md:justify-between md:gap-x-6 md:gap-y-0">
             <p className="font-mono text-xs text-primary">
               © {siteConfig.name}. All Rights Reserved.{' '}
               {new Date().getFullYear()}
             </p>
             <SystemStatusWidget />
-            <div className="items-end">
+            <div className="md:items-end">
               <ThemeToggle />
             </div>
           </div>

@@ -38,7 +38,7 @@ export function Process() {
           <ol className="grid grid-cols-1 gap-x-8 gap-y-10 [counter-reset:step] sm:grid-cols-2 lg:grid-cols-4">
             {processSteps.map((step) => (
               <li key={step.title} className="[counter-increment:step]">
-                <div className="relative flex h-44 items-center justify-center rounded-2xl bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-background via-primary/80 to-card px-6 shadow-md dark:via-primary">
+                <div className="relative flex h-44 items-center justify-center rounded-2xl bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-background via-primary/80 to-card px-6 shadow-md dark:via-primary/60">
                   <div className="flex overflow-hidden rounded-lg shadow-sm">
                     <Image src={step.image} alt="" unoptimized />
                   </div>

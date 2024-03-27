@@ -22,7 +22,7 @@ export const contactMethods: ContactMethod[] = [
     description: 'Create a Client account on Upwork then send us a message.',
     screenReaderLabel: 'Hire on Upwork',
     ariaLabel: 'Hire Yo CXO on Upwork in a new window',
-    linkHref: siteConfig.teamLinks.upworkRebekah,
+    linkHref: siteConfig.teamLinks.upworkSam,
     linkText: 'Start getting results',
   },
   {

@@ -17,7 +17,7 @@ export function Tldr() {
       className="relative scroll-mt-14 pb-3 pt-8 sm:scroll-mt-32 sm:pb-16 sm:pt-10 lg:pt-16"
     >
       <FadeIn className="relative mx-auto max-w-5xl pt-16 sm:px-6">
-        <div className="sm:rounded-6xl bg-card pt-px">
+        <div className="sm:rounded-6xl border bg-card pt-px shadow-md">
           <div className="relative mx-auto -mt-16 h-44 w-44 overflow-hidden rounded-full bg-muted shadow-md md:float-right md:h-64 md:w-64 md:[shape-outside:circle(40%)] lg:mr-20 lg:h-72 lg:w-72">
             <Image
               className="absolute inset-0 h-full w-full object-cover"
@@ -38,24 +38,24 @@ export function Tldr() {
               Partner with us and join the ranks of{' '}
               <span className="line-through">wtf</span> why did we wait so long?
             </p>
-            <p className="mt-4 text-muted-foreground lg:text-lg">
+            <p className="mt-4 text-muted-foreground">
               We&apos;ve been at this so long that we&apos;ve forgotten more
               than we can remember.
             </p>
-            <p className="mt-4 text-muted-foreground lg:text-lg">
+            <p className="mt-4 text-muted-foreground">
               Our clients say that we&apos;re really good at helping them
               understand their customers better than anyone else. What does that
               mean?
             </p>
-            <p className="mt-4 text-muted-foreground lg:text-lg">
+            <p className="mt-4 text-muted-foreground">
               Well, once you start thinking about the ¼&quot; hole instead of a
               ¼&quot; drill, it&apos;ll all make sense.
             </p>
-            <p className="mt-4 text-muted-foreground lg:text-lg">
+            <p className="mt-4 text-muted-foreground">
               Bottom line? Let&apos;s create delightful products that require
               less marketing and sometimes sell themselves too.
             </p>
-            <p className="mt-4 text-muted-foreground lg:text-lg">
+            <p className="mt-4 text-muted-foreground">
               Ready to crush it? Thought so.
             </p>
 

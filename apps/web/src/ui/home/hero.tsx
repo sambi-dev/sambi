@@ -48,7 +48,7 @@ export function Hero() {
                 aria-label="Book a consult with Yo CXO on Upwork in a new window"
                 className={cn(
                   buttonVariants({ size: 'sm' }),
-                  'w-full md:w-auto',
+                  'w-full focus-visible:ring-1 md:w-auto',
                 )}
               >
                 Pay us to listen
