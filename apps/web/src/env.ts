@@ -1,12 +1,14 @@
 import { createEnv } from '@t3-oss/env-nextjs';
 import { z } from 'zod';
 
+import { env as authEnv } from '@yocxo/auth/env';
+
 export const env = createEnv({
+  extends: [authEnv],
   shared: {
     NODE_ENV: z
       .enum(['development', 'production', 'test'])
       .default('development'),
-    VERCEL_ENV: z.enum(['development', 'preview', 'production']).optional(),
   },
   server: {
     BASEHUB_TOKEN: z.string(),
@@ -30,7 +32,6 @@ export const env = createEnv({
     NEXT_PUBLIC_YOCXO_SUPPORT_EMAIL:
       process.env.NEXT_PUBLIC_YOCXO_SUPPORT_EMAIL,
     NODE_ENV: process.env.NODE_ENV,
-    VERCEL_ENV: process.env.VERCEL_ENV,
   },
   skipValidation:
     !!process.env.CI ||

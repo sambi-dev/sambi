@@ -7,14 +7,13 @@ import { cn } from '@yocxo/ui';
 import { ThemeProvider, ThemeToggle } from '@yocxo/ui/theme';
 import { Toaster } from '@yocxo/ui/toast';
 
-import { env } from '#/env';
 import { TRPCReactProvider } from '#/trpc/react';
 
 import '#/app/globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    env.VERCEL_ENV === 'production'
+    process.env.VERCEL_ENV === 'production'
       ? 'https://turbo.t3.gg'
       : 'http://localhost:3000',
   ),

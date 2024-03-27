@@ -6,7 +6,6 @@ export const env = createEnv({
     NODE_ENV: z
       .enum(['development', 'production', 'test'])
       .default('development'),
-    VERCEL_ENV: z.enum(['development', 'preview', 'production']).optional(),
   },
   server: {
     AUTH_SECRET: z.string(),
@@ -29,7 +28,6 @@ export const env = createEnv({
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
     NODE_ENV: process.env.NODE_ENV,
     OPENAI_API_KEY: process.env.OPENAI_API_KEY,
-    VERCEL_ENV: process.env.VERCEL_ENV,
   },
   skipValidation:
     !!process.env.CI ||
