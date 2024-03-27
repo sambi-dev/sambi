@@ -9,7 +9,7 @@ importers:
   .:
     devDependencies:
       '@turbo/gen':
-        specifier: ^1.12.4
+        specifier: ^1.13.0
         version: 1.13.0(@types/node@20.11.30)(typescript@5.4.3)
       '@yocxo/prettier-config':
         specifier: workspace:^0.1.0
@@ -18,7 +18,7 @@ importers:
         specifier: ^3.2.5
         version: 3.2.5
       turbo:
-        specifier: ^1.12.4
+        specifier: ^1.13.0
         version: 1.13.0
       typescript:
         specifier: ^5.3.3
@@ -739,7 +739,7 @@ importers:
         specifier: ^7.2.0
         version: 7.4.0(eslint@8.57.0)(typescript@5.4.3)
       eslint-config-turbo:
-        specifier: ^1.12.4
+        specifier: ^1.13.0
         version: 1.13.0(eslint@8.57.0)
       eslint-plugin-import:
         specifier: ^2.29.1
