@@ -7,13 +7,14 @@ import { ThemeToggle } from '@yocxo/ui/theme';
 import { Toaster } from '@yocxo/ui/toast';
 
 import { siteConfig } from '#/config/site';
-import { env } from '#/env';
 import { Header } from '#/ui/header';
 import { Providers } from '#/ui/providers';
 
 export const metadata = {
   metadataBase: new URL(
-    env.VERCEL_ENV === 'production' ? siteConfig.url : 'http://localhost:3003',
+    process.env.VERCEL_ENV === 'production'
+      ? siteConfig.url
+      : 'http://localhost:3003',
   ),
   title: {
     template: `%s :: ${siteConfig.name}`,

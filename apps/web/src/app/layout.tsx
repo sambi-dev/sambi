@@ -3,7 +3,6 @@ import type { Metadata, Viewport } from 'next';
 import { ThemeProvider } from '@yocxo/ui/theme';
 import { Toaster } from '@yocxo/ui/toast';
 
-import { env } from '#/env';
 import { fontLexend, fontMartian } from '#/fonts/index';
 
 import '#/styles/tailwind.css';
@@ -14,7 +13,9 @@ import { siteConfig } from '#/config/site';
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    env.VERCEL_ENV === 'production' ? siteConfig.url : 'http://localhost:3000',
+    process.env.VERCEL_ENV === 'production'
+      ? siteConfig.url
+      : 'http://localhost:3000',
   ),
   title: {
     template: `%s :: ${siteConfig.name}`,
