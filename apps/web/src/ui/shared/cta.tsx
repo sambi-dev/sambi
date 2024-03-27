@@ -11,7 +11,7 @@ export function Cta() {
     <section
       id="cta"
       aria-label="Ask us a question about anything digital that ChatGPT could answer. Seriously though, ask us anything."
-      className="scroll-mt-14 bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-background via-primary/80 to-background dark:via-primary sm:scroll-mt-32"
+      className="scroll-mt-14 bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-background via-primary/80 to-background dark:via-primary/60 sm:scroll-mt-32"
     >
       <div className="overflow-hidden lg:relative">
         <Container

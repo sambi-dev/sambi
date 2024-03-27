@@ -67,7 +67,7 @@ export function PageLinks({
   return (
     <div
       className={cn(
-        'relative rounded-t-4xl bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-background via-primary/50 to-card py-24 sm:py-32 lg:py-40',
+        'relative rounded-t-4xl bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-background via-primary/60 to-card py-24 sm:py-32 lg:py-40',
         className,
       )}
     >

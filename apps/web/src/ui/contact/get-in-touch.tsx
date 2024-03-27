@@ -46,7 +46,7 @@ export default function GetInTouch() {
                           rel="noopener noreferrer"
                           aria-label={ariaLabel}
                         >
-                          <span className="flex flex-row">
+                          <span className="flex flex-row items-center">
                             {linkText}
                             <ArrowRightIcon className="ml-2 w-3 flex-none fill-current" />
                           </span>

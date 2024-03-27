@@ -16,6 +16,7 @@ import {
 } from '#/ui/shared/expandable';
 import { StarRating } from '#/ui/shared/star-rating';
 
+import { FadeIn } from '../fade-in';
 import RichTextWrapper from '../shared/rich-text-wrapper';
 
 interface Client {
@@ -41,9 +42,9 @@ interface WarningProps {
 function Warning({ client, children }: WarningProps) {
   return (
     <figure className="rounded-4xl border bg-card p-8 shadow-md">
-      <div className="my-2 flex text-primary">
+      <FadeIn className="my-2 flex text-primary">
         <StarRating size="sm" />
-      </div>
+      </FadeIn>
       <blockquote>
         <div className="tracking-tight text-muted-foreground">{children}</div>
       </blockquote>
@@ -61,8 +62,8 @@ function Warning({ client, children }: WarningProps) {
           </div>
           <p className="line-clamp-1 font-mono text-[0.6rem] font-medium tracking-tight text-muted-foreground">
             {client.role}
-            <span className="text-alternate"> :: </span>
-            {client.name}
+            {/*<span className="text-alternate"> :: </span>
+            {client.name}*/}
           </p>
         </div>
       </figcaption>
