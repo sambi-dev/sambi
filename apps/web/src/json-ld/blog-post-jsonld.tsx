@@ -16,6 +16,7 @@ interface BlogPostJsonProps {
   imageUrl: string;
   slug: string;
   title: string;
+  keyword: string;
 }
 
 const BlogPostJson = ({
@@ -32,6 +33,7 @@ const BlogPostJson = ({
   imageUrl,
   slug,
   title,
+  keyword,
 }: BlogPostJsonProps) => {
   const jsonLd: WithContext<BlogPosting> = {
     '@context': 'https://schema.org',
@@ -56,6 +58,7 @@ const BlogPostJson = ({
     dateModified: dateModified,
     datePublished: datePublished,
     description: description,
+    keywords: keyword,
     headline: title,
     image: {
       '@type': 'ImageObject',

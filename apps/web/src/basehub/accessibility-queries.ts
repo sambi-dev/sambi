@@ -39,6 +39,13 @@ export async function fetchAccessibilityPageIntro() {
         },
         centered: true,
       },
+      accessibilityPageKeyword: {
+        _sys: {
+          id: true,
+          title: true,
+          __typename: true,
+        },
+      },
     },
   });
 
@@ -47,6 +54,7 @@ export async function fetchAccessibilityPageIntro() {
     title: accessibility.accessibilityPageIntro.title,
     description: accessibility.accessibilityPageIntro.description,
     centered: accessibility.accessibilityPageIntro.centered,
+    keyword: accessibility.accessibilityPageKeyword,
   };
 }
 

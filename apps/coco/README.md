@@ -1,11 +1,11 @@
 <a href="https://coco.yocxo.com/">
   <img alt="Next.js 14 and App Router-ready AI chatbot." src="../coco/src/app/opengraph-image.gif">
-  <h1 align="center">:: CocoGPT by Yo CXO :: Powered by Vercel ::</h1>
+  <h1 align="center">:: CocoGPT by Yo! CXO :: Powered by Vercel ::</h1>
 </a>
 
 So, you want to create a ChatGPT wrapper? You've got a game-changing idea that people are practically begging for. Because the world desperately needs another AI product that'll ~~be outdated in a month~~ solve all their problems.
 
-But this isn't your average project. The [geniuses at Vercel](https://vercel.com) built something remarkable. We forked it and added that signature Yo CXO touch. Get ready for a chatbot that's as unique as it is powerful.
+But this isn't your average project. The [geniuses at Vercel](https://vercel.com) built something remarkable. We forked it and added that signature Yo! CXO touch. Get ready for a chatbot that's as unique as it is powerful.
 
 <p align="center">
   <a href="#features"><strong>Features</strong></a> ·

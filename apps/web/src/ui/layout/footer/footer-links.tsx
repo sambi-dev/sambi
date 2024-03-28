@@ -26,7 +26,7 @@ export const footerLinks: Section[] = [
     title: 'Retain',
     links: [
       {
-        title: 'Yo CXO',
+        title: 'Yo! CXO',
         href: siteConfig.links.upworkAgency,
         external: true,
       },

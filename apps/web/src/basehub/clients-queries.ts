@@ -11,7 +11,7 @@ export async function fetchClientsPageMetadata() {
 
   const { clients } = await basehubClient.query({
     clients: {
-      meta: {
+      clientsPageMeta: {
         _sys: {
           id: true,
           __typename: true,
@@ -23,8 +23,8 @@ export async function fetchClientsPageMetadata() {
   });
 
   return {
-    title: clients.meta.title,
-    description: clients.meta.description,
+    title: clients.clientsPageMeta.title,
+    description: clients.clientsPageMeta.description,
   };
 }
 
@@ -39,7 +39,7 @@ export async function fetchClientsPageIntro() {
         slug: true,
         __typename: true,
       },
-      pageIntro: {
+      clientsPageIntro: {
         _sys: {
           id: true,
           __typename: true,
@@ -53,16 +53,24 @@ export async function fetchClientsPageIntro() {
         },
         centered: true,
       },
+      clientsPageKeyword: {
+        _sys: {
+          id: true,
+          title: true,
+          __typename: true,
+        },
+      },
     },
   });
 
   return {
     jsonTitle: clients._sys.title,
     jsonSlug: clients._sys.slug,
-    eyebrow: clients.pageIntro.eyebrow,
-    title: clients.pageIntro.title,
-    description: clients.pageIntro.description,
-    centered: clients.pageIntro.centered,
+    eyebrow: clients.clientsPageIntro.eyebrow,
+    title: clients.clientsPageIntro.title,
+    description: clients.clientsPageIntro.description,
+    centered: clients.clientsPageIntro.centered,
+    keyword: clients.clientsPageKeyword,
   };
 }
 

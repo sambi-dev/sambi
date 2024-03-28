@@ -33,7 +33,7 @@ export default function NotFound() {
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <Link
             href="/"
-            aria-label="Go to Yo CXO home page"
+            aria-label="Go to Yo! CXO home page"
             className={cn(buttonVariants())}
           >
             Take me home
@@ -41,7 +41,7 @@ export default function NotFound() {
           </Link>
           <Link
             href={siteConfig.links.support}
-            aria-label="Contact Yo CXO support on Github in a new window"
+            aria-label="Contact Yo! CXO support on Github in a new window"
             target="_blank"
             rel="noopener noreferrer"
             className={cn(

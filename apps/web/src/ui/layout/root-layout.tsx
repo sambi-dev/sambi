@@ -70,7 +70,7 @@ function Header({
             href={siteConfig.teamLinks.upworkConsult}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Book a consult with Yo CXO on Upwork in a new window"
+            aria-label="Book a consult with Yo! CXO on Upwork in a new window"
             className={cn(buttonVariants())}
           >
             <UpworkIcon className="mr-2 size-5 flex-none fill-current" />

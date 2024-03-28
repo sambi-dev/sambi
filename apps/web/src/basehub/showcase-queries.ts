@@ -54,6 +54,13 @@ export async function fetchShowcasePageIntro() {
         },
         centered: true,
       },
+      showcasePageKeyword: {
+        _sys: {
+          id: true,
+          title: true,
+          __typename: true,
+        },
+      },
     },
   });
 
@@ -64,6 +71,7 @@ export async function fetchShowcasePageIntro() {
     title: showcase.showcasePageIntro.title,
     description: showcase.showcasePageIntro.description,
     centered: showcase.showcasePageIntro.centered,
+    keyword: showcase.showcasePageKeyword,
   };
 }
 
@@ -75,6 +83,13 @@ export const showcaseBriefFragment = {
     createdAt: true,
     lastModifiedAt: true,
     __typename: true,
+  },
+  briefKeyword: {
+    _sys: {
+      id: true,
+      title: true,
+      __typename: true,
+    },
   },
   client: {
     _sys: {

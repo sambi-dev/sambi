@@ -31,7 +31,7 @@ export function Cta() {
           <div className="mt-8 flex items-center justify-end gap-4 lg:pl-16">
             <a
               href={mailtoLink}
-              aria-label="Send the Yo CXO team an email with your brain busting question"
+              aria-label="Send the Yo! CXO team an email with your brain busting question"
               className={cn(buttonVariants(), 'w-full md:w-auto')}
             >
               Get answers

@@ -62,6 +62,7 @@ export default async function AccessibilityPage() {
       <PageJson
         pageSlug={`${accessibility._sys.slug}`}
         pageName={`${accessibility._sys.title} :: ${siteConfig.name}`}
+        keyword={pageIntro.keyword?._sys.title}
       />
     </div>
   );

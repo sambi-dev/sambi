@@ -33,7 +33,7 @@ export default function NotFound() {
           </Link>
           <Link
             href={siteConfig.links.support}
-            aria-label="Contact Yo CXO support on Github in a new window"
+            aria-label="Contact Yo! CXO support on Github in a new window"
             target="_blank"
             rel="noopener noreferrer"
             className={cn(

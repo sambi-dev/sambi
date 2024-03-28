@@ -134,6 +134,7 @@ export default async function BlogPage() {
       <PageJson
         pageSlug={`${pageIntro.jsonSlug}`}
         pageName={`${pageIntro.jsonTitle} :: ${siteConfig.name}`}
+        keyword={pageIntro.keyword?._sys.title}
       />
     </>
   );

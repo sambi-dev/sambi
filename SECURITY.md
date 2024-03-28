@@ -1,4 +1,4 @@
-# Yo CXO Security Policy
+# Yo! CXO Security Policy
 
 ## Supported Versions
 

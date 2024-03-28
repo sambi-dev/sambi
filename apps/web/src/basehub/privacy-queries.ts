@@ -41,6 +41,13 @@ export async function fetchPrivacyPageIntro() {
         },
         centered: true,
       },
+      privacyPageKeyword: {
+        _sys: {
+          id: true,
+          title: true,
+          __typename: true,
+        },
+      },
     },
   });
 
@@ -49,6 +56,7 @@ export async function fetchPrivacyPageIntro() {
     title: privacy.privacyPageIntro.title,
     description: privacy.privacyPageIntro.description,
     centered: privacy.privacyPageIntro.centered,
+    keyword: privacy.privacyPageKeyword,
   };
 }
 

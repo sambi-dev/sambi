@@ -7,9 +7,10 @@ import { siteConfig } from '#/config/site';
 interface PageJsonProps {
   pageName: string;
   pageSlug: string;
+  keyword: string;
 }
 
-const PageJson = ({ pageName, pageSlug }: PageJsonProps) => {
+const PageJson = ({ pageName, pageSlug, keyword }: PageJsonProps) => {
   const siteId = `${siteConfig.url}/#site`;
   const pageId = `${siteConfig.url}/${pageSlug}/#page`;
   const organizationId = `${siteConfig.url}/#organization`;
@@ -65,6 +66,7 @@ const PageJson = ({ pageName, pageSlug }: PageJsonProps) => {
         mainEntity: { '@id': organizationId },
         name: pageName,
         url: `${siteConfig.url}/${pageSlug}`,
+        keywords: keyword,
       },
     ],
   };

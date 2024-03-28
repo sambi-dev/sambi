@@ -41,6 +41,13 @@ export async function fetchEditorialPageIntro() {
         },
         centered: true,
       },
+      editorialPageKeyword: {
+        _sys: {
+          id: true,
+          title: true,
+          __typename: true,
+        },
+      },
     },
   });
 
@@ -49,6 +56,7 @@ export async function fetchEditorialPageIntro() {
     title: editorial.editorialPageIntro.title,
     description: editorial.editorialPageIntro.description,
     centered: editorial.editorialPageIntro.centered,
+    keyword: editorial.editorialPageKeyword,
   };
 }
 

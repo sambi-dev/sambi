@@ -62,6 +62,7 @@ export default async function EditorialPolicyPage() {
       <PageJson
         pageSlug={`${editorial._sys.slug}`}
         pageName={`${editorial._sys.title} :: ${siteConfig.name}`}
+        keyword={pageIntro.keyword?._sys.title}
       />
     </div>
   );

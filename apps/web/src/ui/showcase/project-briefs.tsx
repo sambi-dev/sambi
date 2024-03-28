@@ -40,7 +40,7 @@ export function ProjectBriefs({
                       }
                       alt={
                         projectBrief.client.logo.alt ??
-                        "An icon for Yo CXO's client"
+                        "An icon for Yo! CXO's client"
                       }
                       width={48}
                       height={48}

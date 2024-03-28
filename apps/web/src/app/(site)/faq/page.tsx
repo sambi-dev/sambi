@@ -94,6 +94,7 @@ export default async function FaqPage() {
       <PageJson
         pageSlug={`${pageIntro.jsonSlug}`}
         pageName={`${pageIntro.jsonTitle} :: ${siteConfig.name}`}
+        keyword={pageIntro.keyword?._sys.title}
       />
     </>
   );
