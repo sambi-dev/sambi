@@ -40,8 +40,8 @@ export default async function PrivacyPolicyPage() {
         centered={pageIntro.centered}
       >
         <RichText>{pageIntro.description?.json.content}</RichText>
-        <p className="flex items-center justify-center pt-6 text-sm text-muted-foreground">
-          Last updated on {formatDate(privacy._sys.lastModifiedAt)}
+        <p className="flex items-center justify-center pt-6 text-sm text-alternate">
+          Updated {formatDate(privacy._sys.lastModifiedAt)}
         </p>
       </PageIntro>
 

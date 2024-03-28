@@ -11,25 +11,48 @@ export function PlanningDefinition() {
     >
       <div className="space-y-6 text-sm text-muted-foreground md:text-base">
         <p>
-          Based on our suspiciously thorough discovery, we&apos;ll{' '}
+          Based on our suspiciously thorough discovery, we&apos;ll begin to{' '}
           <strong className="font-semibold text-primary">
             craft a roadmap
+          </strong>
+          . If the previous stage was about knowing where we&apos;re at, this is
+          all about where we&apos;re going.
+        </p>
+        <p>
+          The catch? We&apos;re going to{' '}
+          <span className="line-through">ignore what you want</span> reflect on
+          what you asked for and deliver a plan that focuses on the{' '}
+          <strong className="font-semibold text-primary">
+            results you need
+          </strong>
+          .
+        </p>
+        <p>
+          During this phase, our clients are surprised by how long{' '}
+          <span className="line-through">ChatGPT</span> it takes us to produce a
+          two-page{' '}
+          <strong className="font-semibold text-primary">
+            outcome driven plan
+          </strong>
+          .
+        </p>
+        <p>
+          One for the{' '}
+          <strong className="font-semibold text-primary">strategy map </strong>{' '}
+          and the other a{' '}
+          <strong className="font-semibold text-primary">
+            lean set of initiatives
           </strong>{' '}
-          that looks impressive on paper.
+          with{' '}
+          <strong className="font-semibold text-primary">
+            key measurements
+          </strong>
+          .
         </p>
         <p>
-          In reality, it&apos;s our best guess at turning your vague ideas into
-          something resembling what you asked for.
-        </p>
-        <p>
-          We&apos;ll talk about synergy and growth hacking after fussing with
-          ChatGPT on those topics. The more impressive our charts and graphs
-          look, the less likely you are to notice we&apos;re winging it.
-        </p>
-        <p>
-          And hey, if things start to look questionable, we&apos;ll claim
-          it&apos;s a bold, disruptive strategy. No one understands what that
-          means anyway.
+          If things start to look questionable, we&apos;ll just label it as a
+          bold, synergistic, and transformational strategy. That heading usually
+          does the trick.
         </p>
       </div>
 

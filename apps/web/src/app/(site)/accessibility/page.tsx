@@ -10,7 +10,7 @@ import {
 import { fetchBlogPosts } from '#/basehub/blog-queries';
 import { siteConfig } from '#/config/site';
 import PageJson from '#/json-ld/page-jsonld';
-import { SITE_URL } from '#/lib/constants';
+import { formatDate, SITE_URL } from '#/lib/constants';
 import { Border } from '#/ui/border';
 import { ContactSection } from '#/ui/contact-section';
 import { Container } from '#/ui/page-container';
@@ -40,12 +40,15 @@ export default async function AccessibilityPage() {
         centered={pageIntro.centered}
       >
         <RichText>{pageIntro.description?.json.content}</RichText>
+        <p className="flex items-center justify-center pt-6 text-sm text-alternate">
+          Updated {formatDate(accessibility._sys.lastModifiedAt)}
+        </p>
       </PageIntro>
 
       <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
         <Border className="py-16" />
         <RichTextWrapper
-          content={accessibility.content?.json.content as string}
+          content={accessibility.accessibilityContent?.json.content as string}
           centered
         />
       </Container>
