@@ -2,7 +2,10 @@ import { fileURLToPath } from 'url';
 
 import createJiti from 'jiti';
 
-// Import env files to validate at build time. Use jiti so we can load .ts files in here.
+const withVercelToolbar = (
+  await import('@vercel/toolbar/plugins/next')
+).default();
+
 createJiti(fileURLToPath(import.meta.url))('./src/env');
 
 /** @type {import("next").NextConfig} */
@@ -30,4 +33,6 @@ const config = {
   typescript: { ignoreBuildErrors: true },
 };
 
-export default config;
+const withToolbarConfig = withVercelToolbar(config);
+
+export default withToolbarConfig;

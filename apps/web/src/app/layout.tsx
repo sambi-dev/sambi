@@ -1,8 +1,5 @@
 import type { Metadata, Viewport } from 'next';
 
-import { ThemeProvider } from '@yocxo/ui/theme';
-import { Toaster } from '@yocxo/ui/toast';
-
 import { fontLexend, fontMartian } from '#/fonts/index';
 
 import '#/styles/tailwind.css';
@@ -10,6 +7,7 @@ import '#/styles/tailwind.css';
 import { cn } from '@yocxo/ui';
 
 import { siteConfig } from '#/config/site';
+import { Providers } from '#/ui/providers/providers';
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -19,14 +17,15 @@ export const metadata: Metadata = {
   ),
   title: {
     template: `%s :: ${siteConfig.name}`,
-    default: `${siteConfig.name} :: Award-winning studio`,
+    default: `${siteConfig.name} :: Top Upwork Agency`,
   },
   description: siteConfig.description,
   keywords: [
+    'Top Upwork Agency',
     'Best Upwork Agency',
-    'Freelance MVP Studio',
     'Fractional CTO',
     'Fractional CMO',
+    'Fractional COO',
     'Rebekah Radice',
   ],
   authors: [
@@ -135,10 +134,7 @@ export default function RootLayout({
       )}
     >
       <body className="flex min-h-full flex-col">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
-          <Toaster />
-        </ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
