@@ -8,28 +8,56 @@ export function BuildExecute() {
     <Section title="Build & execute" image={{ src: imageExecute }}>
       <div className="space-y-6 text-sm text-muted-foreground md:text-base">
         <p>
-          We&apos;ll roll up our sleeves and get to work (after figuring out
-          which sleeves even have buttons). You&apos;ll likely see frantic
-          keyboard tapping and panicked searches for &quot;how to fix [insert
-          disastrous mishap].&quot;
+          Normally, we don&apos;t even make it this far. But when we do, we lean
+          in to{' '}
+          <strong className="font-semibold text-primary">
+            iterations towards outcomes
+          </strong>
+          . Jumping right into the{' '}
+          <strong className="font-semibold text-primary">quick-wins</strong> we
+          identified earlier and sometimes{' '}
+          <strong className="font-semibold text-primary">quick-fixes</strong>{' '}
+          too.
         </p>
         <p>
-          If you&apos;re lucky, you&apos;ll even catch the occasional muttered
-          curse word as things go sideways.
+          After that, we{' '}
+          <span className="line-through">start making shit up</span> continue to{' '}
+          <strong className="font-semibold text-primary">
+            iterate on the plan
+          </strong>
+          .
         </p>
         <p>
-          Think of us as slightly less-competent construction workers trying to
-          build a house entirely from IKEA instructions... while the
-          instructions are in Swedish.
+          It&apos;s a deliberate and repetitive process of{' '}
+          <strong className="font-semibold text-primary">
+            analysis, experimentation, measurement, and improvement
+          </strong>
+          . It helps us hide the fact that we&apos;re mostly winging it.
         </p>
         <p>
-          Sure, it might be a bumpy ride, but we&apos;re committed to getting
-          you something that sorta makes you smile. (and doesn&apos;t completely
-          collapse when you look at it too hard)
+          The whole thing can be a pretty bumpy ride. We always forget things,
+          we will no-doubt make{' '}
+          <span className="line-through">way too many</span>{' '}
+          <strong className="font-semibold text-primary">mistakes</strong>.
+        </p>
+        <p>
+          The cool thing about being{' '}
+          <span className="line-through">old AF</span> experienced is that{' '}
+          <strong className="font-semibold text-primary">
+            we recover faster
+          </strong>{' '}
+          than you&apos;ll notice.
+        </p>
+        <p>
+          Yep, this is where we&apos;re focused on laying a{' '}
+          <strong className="font-semibold text-primary">
+            solid foundation of systems
+          </strong>{' '}
+          across people, process, and technology.
         </p>
       </div>
       <h3 className="mt-12 font-mono text-sm font-medium tracking-tighter text-secondary-foreground md:text-base">
-        Stuff that happens
+        Just part of the schtick
       </h3>
       <TagList className="mt-4">
         <TagListItem>Overcaffeinated brainstorming</TagListItem>

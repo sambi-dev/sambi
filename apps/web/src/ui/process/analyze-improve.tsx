@@ -12,26 +12,47 @@ export function AnalyzeImprove() {
     >
       <div className="space-y-6 text-sm text-muted-foreground md:text-base">
         <p>
-          We&apos;ll squint at dashboards full of numbers, desperately searching
-          for insights. (while silently wishing we&apos;d paid more attention in
-          math class)
+          Now that we have our repeatable systems in place, it&apos;s time to{' '}
+          <strong className="font-semibold text-primary">
+            put them to the test
+          </strong>
+          .
         </p>
         <p>
-          Don&apos;t be fooled by words like &quot;data-driven&quot; and
-          &quot;validate.&quot; We&apos;re basically making educated guesses and
-          hoping you can&apos;t tell the difference.
+          We&apos;ll work towards clearly defined{' '}
+          <strong className="font-semibold text-primary">
+            economies of scale
+          </strong>
+          . That means you&apos;ll get a huge invoice from us.
         </p>
         <p>
-          Expect random tweaks, cleverly disguised as &quot;strategic
-          experiments.&quot; It&apos;s a whole lotta trial and error (mostly
-          error). And if anyone asks about scaling? We&apos;ll offer a
-          reassuring smile. Meanwhile, we&apos;re secretly hoping your sudden
-          growth spurt looks like the magic we &quot;planned.&quot;
+          Remember the{' '}
+          <strong className="font-semibold text-primary">
+            experiments we ran
+          </strong>{' '}
+          in the previous phase? We&apos;ll start{' '}
+          <strong className="font-semibold text-primary">
+            increasing their scope
+          </strong>{' '}
+          and{' '}
+          <strong className="font-semibold text-primary">
+            improving their velocity
+          </strong>
+          .
         </p>
+        <p>
+          As Sam likes to say, velocity isn&apos;t about speed, it&apos;s about
+          reaching levels of{' '}
+          <strong className="font-semibold text-primary">
+            dependable and predictable performance
+          </strong>
+          .
+        </p>
+        <p>When we have that, the sky&apos;s the limit. </p>
       </div>
 
       <h3 className="mt-12 font-mono text-sm font-medium tracking-tighter text-secondary-foreground md:text-base">
-        Included in this phase
+        Hyperbole delivered in this round
       </h3>
       <List className="mt-8">
         <ListItem title="Data Diving">

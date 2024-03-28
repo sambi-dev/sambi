@@ -66,7 +66,7 @@ export async function fetchEditorialPage() {
         __typename: true,
       },
       isPublished: true,
-      content: {
+      editorialContent: {
         json: {
           content: true,
         },

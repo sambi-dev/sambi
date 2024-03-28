@@ -62,7 +62,7 @@ export async function fetchAccessibilityPage() {
         __typename: true,
       },
       isPublished: true,
-      content: {
+      accessibilityContent: {
         json: {
           content: true,
         },

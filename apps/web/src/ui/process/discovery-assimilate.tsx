@@ -17,24 +17,23 @@ export function DiscoveryAssimilation() {
         </p>
         <p>
           Expect weird questions and some empty smiles too. We&apos;ll use big
-          words to{' '}
+          words and a lot of jargon while we{' '}
           <strong className="font-semibold text-primary">
             dig into everything
           </strong>{' '}
-          from your website to your acquisition strategy. Cause snooping is our
+          from your website, to support, and fulfillment. Cause snooping is our
           jam.
         </p>
         <p>
           The more you tell us, the better we can hide our confusion. And the
           more creative our excuses sound when things get… interesting. By the
           end? We&apos;ll{' '}
-          <strong className="font-semibold text-primary">deliver a plan</strong>{' '}
-          (and a bill). Don&apos;t worry, the budget will be just as surprising
-          as our strategy.
+          <strong className="font-semibold text-primary">be onboard</strong> and
+          know where the bodies are buried.
         </p>
       </div>
       <h3 className="mt-12 font-mono text-sm font-medium tracking-tighter text-secondary-foreground md:text-base">
-        Included in this phase
+        Things that may or may not happen
       </h3>
       <TagList className="mt-4">
         <TagListItem>Deep questionnaires</TagListItem>
