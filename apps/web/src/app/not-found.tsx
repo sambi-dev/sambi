@@ -5,6 +5,7 @@ import { buttonVariants } from '@yocxo/ui/button';
 import { Container } from '@yocxo/ui/container';
 import { ArrowRightIcon } from '@yocxo/ui/icons';
 import { Logo } from '@yocxo/ui/logo';
+
 import { siteConfig } from '#/config/site';
 
 export default function NotFound() {
