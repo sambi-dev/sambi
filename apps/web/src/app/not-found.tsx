@@ -5,6 +5,7 @@ import { buttonVariants } from '@yocxo/ui/button';
 import { Container } from '@yocxo/ui/container';
 import { ArrowRightIcon } from '@yocxo/ui/icons';
 import { Logo } from '@yocxo/ui/logo';
+import { siteConfig } from '#/config/site';
 
 export default function NotFound() {
   return (
@@ -38,7 +39,7 @@ export default function NotFound() {
             <ArrowRightIcon className="ml-2 w-3 flex-none fill-current" />
           </Link>
           <Link
-            href="https://github.com/yocxo/studio/issues/new/choose"
+            href={siteConfig.links.support}
             aria-label="Contact Yo CXO support on Github in a new window"
             target="_blank"
             rel="noopener noreferrer"

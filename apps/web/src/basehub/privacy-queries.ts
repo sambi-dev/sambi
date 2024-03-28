@@ -65,7 +65,7 @@ export async function fetchPrivacyPage() {
         lastModifiedAt: true,
         __typename: true,
       },
-      content: {
+      privacyContent: {
         json: {
           content: true,
         },

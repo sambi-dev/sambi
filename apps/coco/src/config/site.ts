@@ -19,6 +19,7 @@ interface SiteConfig {
     github: string;
     instagram: string;
     linkedIn: string;
+    support: string;
     twitter: string;
     upworkAgency: string;
     upworkAmbreen: string;
@@ -44,6 +45,7 @@ export const siteConfig: SiteConfig = {
     github: 'https://github.com/yocxo/studio',
     instagram: 'https://www.instagram.com/rebekahradice/',
     linkedIn: 'https://www.linkedin.com/in/rebekahradice/',
+    support: 'https://github.com/yocxo/studio/issues/new/choose',
     twitter: 'https://twitter.com/supyocxo',
     upworkAgency: 'https://www.upwork.com/agencies/yocxo/',
     upworkAmbreen: 'https://www.upwork.com/freelancers/breen',

@@ -71,7 +71,7 @@ export default async function FaqPage() {
         <div className="mx-auto mt-6 max-w-2xl text-pretty py-10 text-base leading-7 text-muted-foreground">
           Have a different question?{' '}
           <a
-            href="https://github.com/yocxo/studio/issues"
+            href={siteConfig.links.support}
             className="font-semibold text-primary underline decoration-2 underline-offset-4 hover:text-primary/80"
             target="_blank"
             rel="noopener noreferrer"
