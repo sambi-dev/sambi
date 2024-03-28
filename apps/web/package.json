@@ -17,6 +17,7 @@
   "dependencies": {
     "@headlessui/react": "^1.7.13",
     "@t3-oss/env-nextjs": "^0.9.2",
+    "@vercel/toolbar": "^0.1.13",
     "@yocxo/api": "workspace:*",
     "@yocxo/auth": "workspace:*",
     "@yocxo/db": "workspace:*",
