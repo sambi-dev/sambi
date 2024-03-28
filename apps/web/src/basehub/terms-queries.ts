@@ -66,7 +66,7 @@ export async function fetchTermsPage() {
         __typename: true,
       },
       isPublished: true,
-      content: {
+      termsContent: {
         json: {
           content: true,
         },
