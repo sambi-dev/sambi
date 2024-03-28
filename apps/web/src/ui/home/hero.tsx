@@ -18,7 +18,7 @@ export function Hero() {
             <Image
               className="w-full"
               src={heroImage}
-              alt="A collage of Notion styled illustrations of Sam, Ambreen, and Rebekah of Yo CXO"
+              alt="A collage of Notion styled illustrations of Sam, Ambreen, and Rebekah of Yo! CXO"
               priority
             />
           </div>
@@ -45,7 +45,7 @@ export function Hero() {
                 href={siteConfig.teamLinks.upworkConsult}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Book a consult with Yo CXO on Upwork in a new window"
+                aria-label="Book a consult with Yo! CXO on Upwork in a new window"
                 className={cn(
                   buttonVariants({ size: 'sm' }),
                   'w-full focus-visible:ring-1 md:w-auto',

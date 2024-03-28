@@ -45,6 +45,7 @@ export default async function ClientsPage() {
       <PageJson
         pageSlug="clients"
         pageName={`${title} :: ${siteConfig.name}`}
+        keyword="freelance consultant"
       />
     </>
   );
@@ -52,7 +53,7 @@ export default async function ClientsPage() {
 
 const title = 'Clients';
 const description =
-  "Want to know who Yo CXO's clients are? We've been roasted by the best clients over the years. We have the battle scars to prove it. We've marked work via partners accordingly.";
+  "Want to know who Yo! CXO's clients are? We've been roasted by the best clients over the years. We have the battle scars to prove it. We've marked work via partners accordingly.";
 
 const pageUrl = `${SITE_URL}/clients`;
 

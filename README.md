@@ -1,6 +1,6 @@
-# Yo CXO goes T3 Turbo
+# Yo! CXO goes T3 Turbo
 
-Welcome to Yo CXO, the digital frontier where tech meets design with a dash of marketing genius. Here, Ambreen crafts visuals that pop, Sam tinkers with tech, and Rebekah drives demand. It's our open source playground—from code to coffee quirks.
+Welcome to Yo! CXO, the digital frontier where tech meets design with a dash of marketing genius. Here, Ambreen crafts visuals that pop, Sam tinkers with tech, and Rebekah drives demand. It's our open source playground—from code to coffee quirks.
 
 ### What's Inside
 
@@ -43,7 +43,7 @@ npx create-turbo@latest -e https://github.com/t3-oss/create-t3-turbo
 
 ## About This Repo
 
-Discover how to navigate the Turborepo landscape, inspired by t3-oss. Our take builds upon their create-t3-turbo, offering a unique Yo CXO flavor.
+Discover how to navigate the Turborepo landscape, inspired by t3-oss. Our take builds upon their create-t3-turbo, offering a unique Yo! CXO flavor.
 
 With [Turborepo](https://turborepo.org), we amplify our T3 applications, crafting a boilerplate for agencies and freelancers alike. It's designed as a launchpad for your projects, providing a sturdy, scalable foundation with room for your creative flair.
 

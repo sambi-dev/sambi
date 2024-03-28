@@ -41,14 +41,18 @@ export default async function StackPage() {
       />
 
       <ContactSection />
-      <PageJson pageSlug="stack" pageName={`${title} :: ${siteConfig.name}`} />
+      <PageJson
+        pageSlug="stack"
+        pageName={`${title} :: ${siteConfig.name}`}
+        keyword="freelancer tool stack"
+      />
     </>
   );
 }
 
 const title = 'Our Stack';
 const description =
-  "Wondering what tools we use to build our products and grow our business? No problem, here's the Yo CXO stack with each tool so you can steal like an artist.";
+  "Wondering what tools we use to build our products and grow our business? No problem, here's the Yo! CXO stack with each tool so you can steal like an artist.";
 
 const pageUrl = `${SITE_URL}/stack`;
 

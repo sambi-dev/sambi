@@ -105,14 +105,18 @@ export default async function AboutPage() {
       />
 
       <ContactSection />
-      <PageJson pageSlug="about" pageName={`${title} :: ${siteConfig.name}`} />
+      <PageJson
+        pageSlug="about"
+        pageName={`${title} :: ${siteConfig.name}`}
+        keyword="upwork fractional cto"
+      />
     </>
   );
 }
 
 const title = 'About';
 const description =
-  "About Yo CXO? We're the Upwork agency everyone's talking about. A trio of tech 🤓 design 🎨 and demand. When you're ready, just holler, Yo CXO!. 🤔";
+  "About Yo! CXO? We're the Upwork agency everyone's talking about. A trio of tech 🤓 design 🎨 and demand. When you're ready, just holler, Yo! CXO!. 🤔";
 const pageUrl = `${SITE_URL}/about`;
 
 export const metadata: Metadata = {

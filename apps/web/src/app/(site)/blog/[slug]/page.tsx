@@ -157,6 +157,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
         authorUpworkUrl={post.author.upworkUrl}
         authorTwitterUrl={post.author.twitterUrl}
         authorLinkedinUrl={post.author.linkedinUrl}
+        keyword={post.blogPostKeyword?._sys.title}
       />
     </>
   );

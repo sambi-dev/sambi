@@ -12,7 +12,7 @@ export default function AiAuthorCard() {
             <Image
               className="h-20 w-20 flex-none rounded-full border bg-primary object-cover p-2 grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
               src={yoCxoLogo}
-              alt="A logomark for Yo CXO that looks like a funnel representing the letter Y"
+              alt="A logomark for Yo! CXO that looks like a funnel representing the letter Y"
               width={96}
               height={96}
               unoptimized

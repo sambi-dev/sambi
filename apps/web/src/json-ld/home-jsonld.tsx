@@ -23,6 +23,7 @@ const HomePageJson = () => {
           ],
         },
         description: siteConfig.description,
+        keywords: siteConfig.keyword,
         inLanguage: 'en-US',
         isAccessibleForFree: 'True',
         name: siteConfig.name,

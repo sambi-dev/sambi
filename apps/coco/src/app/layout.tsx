@@ -18,7 +18,7 @@ export const metadata = {
   ),
   title: {
     template: `%s :: ${siteConfig.name}`,
-    default: `CocoGPT :: By Yo CXO`,
+    default: `CocoGPT :: By Yo! CXO`,
   },
   description: siteConfig.description,
   keywords: [

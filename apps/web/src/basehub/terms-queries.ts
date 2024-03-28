@@ -41,6 +41,13 @@ export async function fetchTermsPageIntro() {
         },
         centered: true,
       },
+      termsPageKeyword: {
+        _sys: {
+          id: true,
+          title: true,
+          __typename: true,
+        },
+      },
     },
   });
 
@@ -49,6 +56,7 @@ export async function fetchTermsPageIntro() {
     title: terms.termsPageIntro.title,
     description: terms.termsPageIntro.description,
     centered: terms.termsPageIntro.centered,
+    keyword: terms.termsPageKeyword,
   };
 }
 

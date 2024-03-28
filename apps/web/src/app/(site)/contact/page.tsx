@@ -28,6 +28,7 @@ export default function ContactPage() {
       <PageJson
         pageSlug="contact"
         pageName={`${title} :: ${siteConfig.name}`}
+        keyword="business consulting services"
       />
     </>
   );
@@ -35,7 +36,7 @@ export default function ContactPage() {
 
 const title = 'Contact us';
 const description =
-  "Wanna contact us at Yo CXO? 😎 Slide into our Upwork DMs if you're new or hit us up on GitHub if you're not. We're totally stoked to hear from you. 🤙";
+  "Wanna contact us at Yo! CXO? 😎 Slide into our Upwork DMs if you're new or hit us up on GitHub if you're not. We're totally stoked to hear from you. 🤙";
 
 const pageUrl = `${SITE_URL}/contact`;
 

@@ -20,7 +20,7 @@ export function ContactSection() {
             <div className="mt-6 flex">
               <Link
                 href="/contact"
-                aria-label="Go to contact page to reach out to the Yo CXO crew."
+                aria-label="Go to contact page to reach out to the Yo! CXO crew."
                 className={cn(buttonVariants({ size: 'sm' }))}
               >
                 Say hello

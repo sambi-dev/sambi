@@ -62,6 +62,7 @@ export default async function PrivacyPolicyPage() {
       <PageJson
         pageSlug={`${privacy._sys.slug}`}
         pageName={`${privacy._sys.title} :: ${siteConfig.name}`}
+        keyword={pageIntro.keyword?._sys.title}
       />
     </div>
   );

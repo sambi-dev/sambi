@@ -54,6 +54,13 @@ export async function fetchBlogPageIntro() {
         },
         centered: true,
       },
+      blogPageKeyword: {
+        _sys: {
+          id: true,
+          title: true,
+          __typename: true,
+        },
+      },
     },
   });
 
@@ -64,6 +71,7 @@ export async function fetchBlogPageIntro() {
     title: blog.blogPageIntro.title,
     description: blog.blogPageIntro.description,
     centered: blog.blogPageIntro.centered,
+    keyword: blog.blogPageKeyword,
   };
 }
 
@@ -120,10 +128,12 @@ export const blogPostFragment = {
     },
   },
   isPublished: true,
-  keywords: {
-    _id: true,
-    _slug: true,
-    _title: true,
+  blogPostKeyword: {
+    _sys: {
+      id: true,
+      title: true,
+      __typename: true,
+    },
   },
   metaTitle: true,
   metaDescription: true,

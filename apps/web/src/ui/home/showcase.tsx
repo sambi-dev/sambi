@@ -80,7 +80,7 @@ export function Showcase({
         <FadeIn className="mt-10 flex justify-center">
           <Link
             href="/showcase"
-            aria-label="Visit Yo CXO's showcase page in the same window to view more of our case studies"
+            aria-label="Visit Yo! CXO's showcase page in the same window to view more of our case studies"
             className={cn(buttonVariants({ variant: 'secondary' }))}
           >
             See full Showcase

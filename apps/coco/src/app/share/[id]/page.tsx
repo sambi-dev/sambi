@@ -58,7 +58,7 @@ export async function generateMetadata({
 }: SharePageProps): Promise<Metadata> {
   const chat = await getSharedChat(params.id);
   const title =
-    chat?.title.slice(0, 50) ?? 'CocoGPT Chat powered by Vercel x Yo CXO';
+    chat?.title.slice(0, 50) ?? 'CocoGPT Chat powered by Vercel x Yo! CXO';
   const description = siteConfig.description;
   const pageUrl = `${SITE_URL}/share/${params.id}`;
 

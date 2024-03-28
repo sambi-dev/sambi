@@ -14,6 +14,7 @@ interface SiteConfig {
   companyLogo: Image;
   companyUrl: string;
   description: string;
+  keyword: string;
   image: Image;
   name: string;
   logo: Image;
@@ -44,31 +45,31 @@ export const siteConfig: SiteConfig = {
     alt: "A lowercased logomark spelling brilla (rhymes with see ya) in a plain color with an icon consistent of a colon and two forward slashes representing the i and l's in the name.",
   },
   companyUrl: 'https://bril.la',
-
   description:
-    'Yo CXO is a top Upwork agency. We help founders, startups, and fast-growing businesses achieve the outcomes they need to build products that people love. 🔥',
+    'Yo! CXO is a top Upwork agency. We help founders, startups, and fast-growing businesses achieve the outcomes they need to build products that people love.',
   image: {
     url: `${siteUrl}/opengraph-image.gif`,
     width: 1200,
     height: 630,
-    alt: 'Loading screen animation with pulsing text that spells out "Loading..." with the Yo CXO logo (a silohuette of a French Bulldog and lower case text) in the top left.',
+    alt: 'Loading screen animation with pulsing text that spells out "Loading..." with the Yo! CXO logo (a silohuette of a French Bulldog and lower case text) in the top left.',
   },
+  keyword: 'top upwork agency',
   logo: {
     url: `${siteUrl}/yocxo.com-logo.png`,
     width: 1000,
     height: 1000,
-    alt: 'A lowercased logomark spelling Yo CXO in an unusual monospaced, plain color font, with a poorly executed drop shadow.',
+    alt: 'A lowercased logomark spelling Yo! CXO in an unusual monospaced, plain color font, with a poorly executed drop shadow.',
   },
-  name: 'Yo CXO',
+  name: 'Yo! CXO',
   url: siteUrl,
   links: {
-    facebook: 'https://www.facebook.com/rebekahradicellc',
-    github: 'https://github.com/yocxo/studio',
-    instagram: 'https://www.instagram.com/rebekahradice/',
-    linkedIn: 'https://www.linkedin.com/in/rebekahradice/',
-    support: 'https://github.com/yocxo/studio/issues/new/choose',
-    twitter: 'https://twitter.com/supyocxo',
     upworkAgency: 'https://www.upwork.com/agencies/yocxo/',
+    github: 'https://github.com/yocxo/studio',
+    twitter: 'https://twitter.com/supyocxo',
+    instagram: 'https://www.instagram.com/supyocxo/',
+    linkedIn: 'https://www.linkedin.com/in/supyocxo/',
+    facebook: 'https://www.facebook.com/supyocxo',
+    support: 'https://github.com/yocxo/studio/issues/new/choose',
   },
   teamLinks: {
     upworkAmbreen: 'https://www.upwork.com/freelancers/breen',

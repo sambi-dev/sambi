@@ -62,6 +62,7 @@ export default async function TermsOfServicePage() {
       <PageJson
         pageSlug={`${terms._sys.slug}`}
         pageName={`${terms._sys.title} :: ${siteConfig.name}`}
+        keyword={pageIntro.keyword?._sys.title}
       />
     </div>
   );

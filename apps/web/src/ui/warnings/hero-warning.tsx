@@ -8,7 +8,7 @@ export function HeroWarning() {
       </div>
       <blockquote className="mt-2">
         <p className="text-balance text-muted-foreground">
-          “Recommend Yo CXO? No thank you. Listen, just stay away. I depend on
+          “Recommend Yo! CXO? No thank you. Listen, just stay away. I depend on
           them too much to share.”
         </p>
       </blockquote>

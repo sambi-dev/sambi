@@ -16,7 +16,7 @@ export default function ProcessPage() {
     <>
       <PageIntro eyebrow="Our Secret Formula" title="Innovatively recycled">
         <p>
-          At Yo CXO, we&apos;re eco-friendly with our ideas. We relentlessly
+          At Yo! CXO, we&apos;re eco-friendly with our ideas. We relentlessly
           recycle the same projects over and over again. Why explore new
           horizons when you can just repaint the old ones and call it
           groundbreaking.
@@ -33,6 +33,7 @@ export default function ProcessPage() {
       <PageJson
         pageSlug="process"
         pageName={`${title} :: ${siteConfig.name}`}
+        keyword="fractional coo"
       />
     </>
   );
@@ -40,7 +41,7 @@ export default function ProcessPage() {
 
 const title = 'The Process';
 const description =
-  "Discover and be assimilated in our process at Yo CXO. Our secret formula? Stalking, re-purposing, and overcharging for stuff you probably don't need. 🤑";
+  "Discover and be assimilated in our process at Yo! CXO. Our secret formula? Stalking, re-purposing, and overcharging for stuff you probably don't need. 🤑";
 
 const pageUrl = `${SITE_URL}/about`;
 

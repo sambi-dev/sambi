@@ -52,7 +52,7 @@ export function Process() {
                 <div className="mt-6 flex">
                   <Link
                     href="/process"
-                    aria-label="Visit Yo CXO's process page in the same window to learn more about how we work"
+                    aria-label="Visit Yo! CXO's process page in the same window to learn more about how we work"
                     className={cn(
                       buttonVariants({ variant: 'secondary', size: 'sm' }),
                     )}

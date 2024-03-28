@@ -64,7 +64,7 @@ export function Tldr() {
                 href={siteConfig.teamLinks.upworkConsult}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Book a consult with Yo CXO on Upwork in a new window"
+                aria-label="Book a consult with Yo! CXO on Upwork in a new window"
                 className={cn(buttonVariants(), 'w-full md:w-auto')}
               >
                 Let&apos;s talk

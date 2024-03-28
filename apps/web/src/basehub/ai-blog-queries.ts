@@ -60,6 +60,13 @@ export async function fetchAiBlogPageIntro() {
         },
         centered: true,
       },
+      aiBlogPageKeyword: {
+        _sys: {
+          id: true,
+          title: true,
+          __typename: true,
+        },
+      },
     },
   });
 
@@ -70,6 +77,7 @@ export async function fetchAiBlogPageIntro() {
     title: aiBlog.aiBlogPageIntro.title,
     description: aiBlog.aiBlogPageIntro.description,
     centered: aiBlog.aiBlogPageIntro.centered,
+    keyword: aiBlog.aiBlogPageKeyword,
   };
 }
 

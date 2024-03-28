@@ -70,7 +70,7 @@ export function SocialMedia({
             href={socialMediaProfile.href}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Visit Yo CXO's ${socialMediaProfile.title} profile in a new window`}
+            aria-label={`Visit Yo! CXO's ${socialMediaProfile.title} profile in a new window`}
             className={cn(
               'transition',
               invert

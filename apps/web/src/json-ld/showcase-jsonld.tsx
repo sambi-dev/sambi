@@ -6,6 +6,7 @@ interface ShowcaseBriefJsonProps {
   dateModified: string;
   datePublished: string;
   description: string;
+  keyword: string;
   slug: string;
   title: string;
   imageUrl: string;
@@ -15,6 +16,7 @@ const ShowcaseBriefJson = ({
   dateModified,
   datePublished,
   description,
+  keyword,
   slug,
   title,
   imageUrl,
@@ -42,6 +44,7 @@ const ShowcaseBriefJson = ({
     headline: title,
     image: imageUrl,
     isAccessibleForFree: 'True',
+    keywords: keyword,
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': `${siteConfig.url}/showcase/${slug}`,
