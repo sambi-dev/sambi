@@ -3,7 +3,6 @@
  * @see https://v0.dev/t/QymconjlUzC
  * Documentation: https://v0.dev/docs#integrating-generated-code-into-your-nextjs-app
  */
-
 import Image from 'next/image';
 
 import {
@@ -20,7 +19,6 @@ import {
   mockWarningsForAiSummary,
 } from '#/content/warnings';
 import perplexityAiImage from '#/images/llms/perplexity.jpg';
-import { summarizeReviews } from '#/lib/ai/ai-summary';
 
 interface NPSData {
   nps: number;
@@ -53,8 +51,11 @@ const getNPSData = (reviews: typeof mockWarningsForAiSummary): NPSData => {
   };
 };
 
-export async function AIReviewSummary() {
-  const summary = await summarizeReviews();
+interface Props {
+  summary: string;
+}
+
+export default function AIReviewSummary({ summary }: Props) {
   const {
     nps,
     promoters,

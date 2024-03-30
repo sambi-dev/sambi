@@ -1,12 +1,11 @@
+'use server';
+
 /**
  * Inspired by Ai Summary by Vercel.
  * @see https://github.com/vercel/ai-review-summary
  * h/t to the one and only Malte Ube https://github.com/cramforce
  * Documentation: https://vercel.com/templates/next.js/customer-reviews-ai-summary-nextjs-vercel
  */
-
-'use server';
-
 import { unstable_cache } from 'next/cache';
 
 import { OpenAIStream, StreamingTextResponse } from 'ai';
@@ -81,8 +80,8 @@ Example 3:\n
     model: 'pplx-7b-chat',
     stream: true,
     messages: buildPrompt(prompt),
-    max_tokens: 125,
-    temperature: 0.75,
+    max_tokens: 187,
+    temperature: 1,
     top_p: 1,
     frequency_penalty: 1,
   } as const;
