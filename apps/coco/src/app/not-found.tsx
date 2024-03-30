@@ -18,7 +18,7 @@ export default function NotFound() {
           Well that sucks
         </h2>
         <p className="mx-auto mt-4 max-w-lg text-pretty text-muted">
-          Rebekah was probably fiddling around with hotfixes. She&apos;s a
+          Rebekah was probably fiddling around with hot-fixes. She&apos;s a
           menace. We couldn&apos;t find the chat or page you need.
         </p>
 

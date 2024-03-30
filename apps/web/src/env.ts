@@ -16,6 +16,7 @@ export const env = createEnv({
     DB_NAME: z.string(),
     DB_PASSWORD: z.string(),
     DB_USERNAME: z.string(),
+    PERPLEXITY_API_KEY: z.string(),
   },
   client: {
     NEXT_PUBLIC_APP_URL: z.string(),
@@ -32,6 +33,7 @@ export const env = createEnv({
     NEXT_PUBLIC_YOCXO_SUPPORT_EMAIL:
       process.env.NEXT_PUBLIC_YOCXO_SUPPORT_EMAIL,
     NODE_ENV: process.env.NODE_ENV,
+    PERPLEXITY_API_KEY: process.env.PERPLEXITY_API_KEY,
   },
   skipValidation:
     !!process.env.CI ||

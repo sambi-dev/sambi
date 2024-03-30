@@ -9,6 +9,7 @@
     "./avatar": "./src/avatar.tsx",
     "./badge": "./src/badge.tsx",
     "./button": "./src/button.tsx",
+    "./card": "./src/card.tsx",
     "./container": "./src/container.tsx",
     "./dialog": "./src/dialog.tsx",
     "./dropdown-menu": "./src/dropdown-menu.tsx",

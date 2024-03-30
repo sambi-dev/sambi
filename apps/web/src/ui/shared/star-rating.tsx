@@ -2,7 +2,7 @@ import { StarIcon } from '@yocxo/ui/icons';
 
 interface StarRatingProps {
   rating?: 1 | 2 | 3 | 4 | 5;
-  size?: 'default' | 'sm' | 'lg';
+  size?: 'default' | 'sm' | 'lg' | 'xl';
 }
 
 export function StarRating({ rating = 5, size = 'default' }: StarRatingProps) {
@@ -10,6 +10,7 @@ export function StarRating({ rating = 5, size = 'default' }: StarRatingProps) {
     default: 'size-4',
     sm: 'size-3',
     lg: 'size-6',
+    xl: 'size-8',
   };
 
   return (

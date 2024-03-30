@@ -23,7 +23,7 @@ export default function NotFound() {
           Not found
         </h1>
         <h2 className="mt-6 block max-w-4xl font-mono text-4xl font-semibold tracking-tighter text-foreground [text-wrap:balance] sm:text-5xl">
-          Hmmm... this is embarassing
+          Hmmm... this is embarrassing
         </h2>
         <p className="mt-4 text-pretty text-muted-foreground">
           Sam broke something, again. Sorry, but the page that is supposed to be
