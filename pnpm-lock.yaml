@@ -423,6 +423,9 @@ importers:
       '@yocxo/validators':
         specifier: workspace:*
         version: link:../../packages/validators
+      ai:
+        specifier: ^3.0.12
+        version: 3.0.14(react@18.2.0)(solid-js@1.8.16)(svelte@4.2.12)(vue@3.4.21)(zod@3.22.4)
       basehub:
         specifier: ^3.0.5
         version: 3.0.8(react-dom@18.2.0)(react@18.2.0)
@@ -438,6 +441,9 @@ importers:
       next:
         specifier: ^14.1.4
         version: 14.1.4(react-dom@18.2.0)(react@18.2.0)
+      openai:
+        specifier: ^4.24.7
+        version: 4.29.2
       react:
         specifier: 18.2.0
         version: 18.2.0

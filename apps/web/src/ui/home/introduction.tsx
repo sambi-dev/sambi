@@ -29,7 +29,7 @@ export function Introduction() {
           <p className="mt-4">
             Our new clients expect us to know our{' '}
             <span className="line-through">shit</span> stuff. When we onboard
-            them, we make sure to overwhlem them with buzzwords, allude to
+            them, we make sure to overwhelm them with buzzwords, allude to
             allusive algorithms, and show them fancy Venn diagrams.
           </p>
           <p className="mt-4">

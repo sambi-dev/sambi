@@ -35,7 +35,7 @@ export default function Crew({ crew }: CrewProps) {
                 src={person.image.url}
                 alt={
                   person.image.alt ??
-                  `A notion styled illustration representing a headshot of ${person._sys.title}`
+                  `A notion styled illustration representing a head shot of ${person._sys.title}`
                 }
                 width={208}
                 height={260}

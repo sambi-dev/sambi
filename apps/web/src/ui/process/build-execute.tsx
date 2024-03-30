@@ -60,7 +60,7 @@ export function BuildExecute() {
         Just part of the schtick
       </h3>
       <TagList className="mt-4">
-        <TagListItem>Overcaffeinated brainstorming</TagListItem>
+        <TagListItem>Over caffeinated brainstorming</TagListItem>
         <TagListItem>Existential questioning</TagListItem>
         <TagListItem>Imposter syndrome</TagListItem>
         <TagListItem>ChatGPT rate limits</TagListItem>

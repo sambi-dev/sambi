@@ -14,7 +14,7 @@ import { Values } from '#/ui/process/values';
 export default function ProcessPage() {
   return (
     <>
-      <PageIntro eyebrow="Our Secret Formula" title="Innovatively recycled">
+      <PageIntro eyebrow="Our Secret Formula" title="Innovative recycling">
         <p>
           At Yo! CXO, we&apos;re eco-friendly with our ideas. We relentlessly
           recycle the same projects over and over again. Why explore new

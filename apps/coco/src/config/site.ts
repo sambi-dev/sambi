@@ -38,7 +38,7 @@ export const siteConfig: SiteConfig = {
     url: `${siteUrl}/opengraph-image.gif`,
     width: 1200,
     height: 630,
-    alt: 'Loading screen animation with pulsing text that spells out "Loading..." with the Yo! CXO logo (a silohuette of a French Bulldog and lower case text) in the top left.',
+    alt: 'Loading screen animation with pulsing text that spells out "Loading..." with the Yo! CXO logo (a silhouette of a French Bulldog and lower case text) in the top left.',
   },
   links: {
     facebook: 'https://www.facebook.com/rebekahradicellc',

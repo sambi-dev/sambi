@@ -13,7 +13,7 @@ function RichTextWrapper<T>({
   centered = false,
   small = false,
 }: RichTextWrapperProps<T>) {
-  const fadeInClass = `prose ${centered ? 'mx-auto' : ''} dark:prose-invert prose-headings:font-mono prose-headings:tracking-tighter prose-headings:text-foreground prose-h2:font-semibold prose-h3:font-semibold prose-h4:font-semibold prose-h5:font-semibold prose-h6:font-semibold prose-p:text-muted-foreground prose-a:font-medium prose-a:text-primary/80 prose-a:underline-offset-4 prose-strong:font-semibold prose-li:marker:text-primary prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl ${small ? 'prose-p:text-sm xl:prose-p:text-base' : 'lg:prose-lg'}`;
+  const fadeInClass = `prose ${centered ? 'mx-auto' : ''} dark:prose-invert prose-headings:font-mono prose-headings:tracking-tighter prose-headings:text-foreground prose-h2:font-semibold prose-h3:font-semibold prose-h4:font-semibold prose-h5:font-semibold prose-h6:font-semibold prose-p:text-muted-foreground prose-a:font-medium prose-a:text-primary/80 prose-a:underline-offset-4 prose-strong:font-semibold prose-li:marker:text-primary prose-h2:text-3xl prose-h3:text-2xl prose-h4:text-xl ${small ? 'prose-p:text-sm' : 'lg:prose-lg'}`;
 
   return (
     <FadeIn className={fadeInClass}>

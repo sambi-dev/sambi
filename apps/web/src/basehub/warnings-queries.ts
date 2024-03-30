@@ -45,6 +45,14 @@ export const warningsWarningFragment = {
     lastModifiedAt: true,
     __typename: true,
   },
+  starRating: {
+    _sys: {
+      id: true,
+      title: true,
+      __typename: true,
+    },
+    rating: true,
+  },
   client: {
     _sys: {
       id: true,
