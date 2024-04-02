@@ -6,28 +6,6 @@ import type {
 
 import { basehubClient } from './client';
 
-export async function fetchClientsPageMetadata() {
-  'use server';
-
-  const { clients } = await basehubClient.query({
-    clients: {
-      clientsPageMeta: {
-        _sys: {
-          id: true,
-          __typename: true,
-        },
-        title: true,
-        description: true,
-      },
-    },
-  });
-
-  return {
-    title: clients.clientsPageMeta.title,
-    description: clients.clientsPageMeta.description,
-  };
-}
-
 export async function fetchClientsPageIntro() {
   'use server';
 
@@ -39,7 +17,7 @@ export async function fetchClientsPageIntro() {
         slug: true,
         __typename: true,
       },
-      clientsPageIntro: {
+      pageIntro: {
         _sys: {
           id: true,
           __typename: true,
@@ -53,7 +31,7 @@ export async function fetchClientsPageIntro() {
         },
         centered: true,
       },
-      clientsPageKeyword: {
+      keyword: {
         _sys: {
           id: true,
           title: true,
@@ -66,11 +44,33 @@ export async function fetchClientsPageIntro() {
   return {
     jsonTitle: clients._sys.title,
     jsonSlug: clients._sys.slug,
-    eyebrow: clients.clientsPageIntro.eyebrow,
-    title: clients.clientsPageIntro.title,
-    description: clients.clientsPageIntro.description,
-    centered: clients.clientsPageIntro.centered,
-    keyword: clients.clientsPageKeyword,
+    eyebrow: clients.pageIntro.eyebrow,
+    title: clients.pageIntro.title,
+    description: clients.pageIntro.description,
+    centered: clients.pageIntro.centered,
+    keyword: clients.keyword,
+  };
+}
+
+export async function fetchClientsPageMetadata() {
+  'use server';
+
+  const { clients } = await basehubClient.query({
+    clients: {
+      meta: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
+        title: true,
+        description: true,
+      },
+    },
+  });
+
+  return {
+    title: clients.meta.title,
+    description: clients.meta.description,
   };
 }
 

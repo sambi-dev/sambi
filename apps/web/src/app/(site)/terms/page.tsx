@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 
 import { RichText } from 'basehub/react-rich-text';
 
+import type { BlockRichText } from '.basehub';
+
 import { fetchBlogPosts } from '#/basehub/blog-queries';
 import {
   fetchTermsPage,
@@ -48,7 +50,7 @@ export default async function TermsOfServicePage() {
       <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
         <Border className="py-16" />
         <RichTextWrapper
-          content={terms.termsContent?.json.content as string}
+          content={terms.body?.json.content as BlockRichText}
           centered
         />
       </Container>

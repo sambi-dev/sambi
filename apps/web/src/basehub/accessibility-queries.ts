@@ -2,30 +2,10 @@
 
 import { basehubClient } from './client';
 
-export async function fetchAccessibilityPageMetadata() {
-  const { accessibility } = await basehubClient.query({
-    accessibility: {
-      accessibilityPageMeta: {
-        _sys: {
-          id: true,
-          __typename: true,
-        },
-        title: true,
-        description: true,
-      },
-    },
-  });
-
-  return {
-    title: accessibility.accessibilityPageMeta.title,
-    description: accessibility.accessibilityPageMeta.description,
-  };
-}
-
 export async function fetchAccessibilityPageIntro() {
   const { accessibility } = await basehubClient.query({
     accessibility: {
-      accessibilityPageIntro: {
+      pageIntro: {
         _sys: {
           id: true,
           __typename: true,
@@ -39,7 +19,7 @@ export async function fetchAccessibilityPageIntro() {
         },
         centered: true,
       },
-      accessibilityPageKeyword: {
+      keyword: {
         _sys: {
           id: true,
           title: true,
@@ -50,11 +30,31 @@ export async function fetchAccessibilityPageIntro() {
   });
 
   return {
-    eyebrow: accessibility.accessibilityPageIntro.eyebrow,
-    title: accessibility.accessibilityPageIntro.title,
-    description: accessibility.accessibilityPageIntro.description,
-    centered: accessibility.accessibilityPageIntro.centered,
-    keyword: accessibility.accessibilityPageKeyword,
+    eyebrow: accessibility.pageIntro.eyebrow,
+    title: accessibility.pageIntro.title,
+    description: accessibility.pageIntro.description,
+    centered: accessibility.pageIntro.centered,
+    keyword: accessibility.keyword,
+  };
+}
+
+export async function fetchAccessibilityPageMetadata() {
+  const { accessibility } = await basehubClient.query({
+    accessibility: {
+      meta: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
+        title: true,
+        description: true,
+      },
+    },
+  });
+
+  return {
+    title: accessibility.meta.title,
+    description: accessibility.meta.description,
   };
 }
 
@@ -70,12 +70,12 @@ export async function fetchAccessibilityPage() {
         __typename: true,
       },
       isPublished: true,
-      accessibilityContent: {
+      body: {
         json: {
           content: true,
         },
       },
-      accessibilityPageIntro: {
+      pageIntro: {
         _sys: {
           id: true,
           __typename: true,
@@ -89,7 +89,7 @@ export async function fetchAccessibilityPage() {
         },
         centered: true,
       },
-      accessibilityPageMeta: {
+      meta: {
         _sys: {
           id: true,
           __typename: true,

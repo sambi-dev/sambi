@@ -1,33 +1,11 @@
 import { basehubClient } from './client';
 
-export async function fetchEditorialPageMetadata() {
-  'use server';
-
-  const { editorial } = await basehubClient.query({
-    editorial: {
-      editorialPageMeta: {
-        _sys: {
-          id: true,
-          __typename: true,
-        },
-        title: true,
-        description: true,
-      },
-    },
-  });
-
-  return {
-    title: editorial.editorialPageMeta.title,
-    description: editorial.editorialPageMeta.description,
-  };
-}
-
 export async function fetchEditorialPageIntro() {
   'use server';
 
   const { editorial } = await basehubClient.query({
     editorial: {
-      editorialPageIntro: {
+      pageIntro: {
         _sys: {
           id: true,
           __typename: true,
@@ -41,7 +19,7 @@ export async function fetchEditorialPageIntro() {
         },
         centered: true,
       },
-      editorialPageKeyword: {
+      keyword: {
         _sys: {
           id: true,
           title: true,
@@ -52,11 +30,33 @@ export async function fetchEditorialPageIntro() {
   });
 
   return {
-    eyebrow: editorial.editorialPageIntro.eyebrow,
-    title: editorial.editorialPageIntro.title,
-    description: editorial.editorialPageIntro.description,
-    centered: editorial.editorialPageIntro.centered,
-    keyword: editorial.editorialPageKeyword,
+    eyebrow: editorial.pageIntro.eyebrow,
+    title: editorial.pageIntro.title,
+    description: editorial.pageIntro.description,
+    centered: editorial.pageIntro.centered,
+    keyword: editorial.keyword,
+  };
+}
+
+export async function fetchEditorialPageMetadata() {
+  'use server';
+
+  const { editorial } = await basehubClient.query({
+    editorial: {
+      meta: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
+        title: true,
+        description: true,
+      },
+    },
+  });
+
+  return {
+    title: editorial.meta.title,
+    description: editorial.meta.description,
   };
 }
 
@@ -74,12 +74,12 @@ export async function fetchEditorialPage() {
         __typename: true,
       },
       isPublished: true,
-      editorialContent: {
+      body: {
         json: {
           content: true,
         },
       },
-      editorialPageIntro: {
+      pageIntro: {
         _sys: {
           id: true,
           __typename: true,
@@ -93,7 +93,7 @@ export async function fetchEditorialPage() {
         },
         centered: true,
       },
-      editorialPageMeta: {
+      meta: {
         _sys: {
           id: true,
           __typename: true,

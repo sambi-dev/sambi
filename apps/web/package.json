@@ -24,7 +24,7 @@
     "@yocxo/ui": "workspace:*",
     "@yocxo/validators": "workspace:*",
     "ai": "^3.0.12",
-    "basehub": "^3.0.5",
+    "basehub": "^3.1.6",
     "escape-string-regexp": "^5.0.0",
     "fast-glob": "^3.2.12",
     "framer-motion": "^11.0.5",
@@ -32,6 +32,7 @@
     "openai": "^4.24.7",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-tweet": "^3.2.0",
     "zod": "^3.22.4"
   },
   "devDependencies": {

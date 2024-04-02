@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 
 import { RichText } from 'basehub/react-rich-text';
 
-import type { ClientItem } from '.basehub';
+import type { BlockRichText, ClientItem } from '.basehub';
 
 import {
   fetchWarnings,
@@ -105,7 +105,7 @@ export async function Warnings() {
                           small
                           content={
                             warning.client.contacts.items[0]!.testimonial?.json
-                              .content as string
+                              .content as BlockRichText
                           }
                         />
                       </Warning>

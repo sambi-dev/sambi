@@ -1,4 +1,4 @@
-import type { AiBlogPostFragment } from '#/basehub/ai-blog-queries';
+import type { AiPostFragment } from '#/basehub/ai-blog-queries';
 import type { Metadata } from 'next';
 
 import Image from 'next/image';
@@ -43,7 +43,7 @@ export default async function AiBlogPage() {
       </PageIntro>
 
       <Container className="mt-24 sm:mt-32 lg:mt-40">
-        <LoadMore<AiBlogPostFragment>
+        <LoadMore<AiPostFragment>
           className="space-y-24"
           totalItems={totalCount}
           initialItems={initialAiBlogPosts}

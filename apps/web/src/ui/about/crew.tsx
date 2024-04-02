@@ -6,6 +6,8 @@ import { RichText } from 'basehub/react-rich-text';
 
 import { LinkedInIcon, UpworkIcon, XIcon } from '@yocxo/ui/icons';
 
+import type { BlockRichText } from '.basehub';
+
 import CrewSocialIcon from '#/ui/about/crew-social-icon';
 
 interface CrewProps {
@@ -21,13 +23,16 @@ export default function Crew({ crew }: CrewProps) {
             {crew.title}
           </h2>
           <div className="mt-6 leading-8 text-muted-foreground">
-            <RichText>{crew.description.json?.content as string}</RichText>
+            <RichText>
+              {crew.description.json?.content as BlockRichText}
+            </RichText>
           </div>
         </div>
         <ul className="-mt-12 space-y-12 divide-y divide-border xl:col-span-3">
           {crew.people.items.map((person) => (
             <li
               key={person._sys.id}
+              id={person.websiteRelativePath}
               className="flex flex-col gap-10 pt-12 sm:flex-row"
             >
               <Image

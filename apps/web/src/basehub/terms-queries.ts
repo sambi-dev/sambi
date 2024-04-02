@@ -1,33 +1,11 @@
 import { basehubClient } from './client';
 
-export async function fetchTermsPageMetadata() {
-  'use server';
-
-  const { terms } = await basehubClient.query({
-    terms: {
-      termsPageMeta: {
-        _sys: {
-          id: true,
-          __typename: true,
-        },
-        title: true,
-        description: true,
-      },
-    },
-  });
-
-  return {
-    title: terms.termsPageMeta.title,
-    description: terms.termsPageMeta.description,
-  };
-}
-
 export async function fetchTermsPageIntro() {
   'use server';
 
   const { terms } = await basehubClient.query({
     terms: {
-      termsPageIntro: {
+      pageIntro: {
         _sys: {
           id: true,
           __typename: true,
@@ -41,7 +19,7 @@ export async function fetchTermsPageIntro() {
         },
         centered: true,
       },
-      termsPageKeyword: {
+      keyword: {
         _sys: {
           id: true,
           title: true,
@@ -52,11 +30,33 @@ export async function fetchTermsPageIntro() {
   });
 
   return {
-    eyebrow: terms.termsPageIntro.eyebrow,
-    title: terms.termsPageIntro.title,
-    description: terms.termsPageIntro.description,
-    centered: terms.termsPageIntro.centered,
-    keyword: terms.termsPageKeyword,
+    eyebrow: terms.pageIntro.eyebrow,
+    title: terms.pageIntro.title,
+    description: terms.pageIntro.description,
+    centered: terms.pageIntro.centered,
+    keyword: terms.keyword,
+  };
+}
+
+export async function fetchTermsPageMetadata() {
+  'use server';
+
+  const { terms } = await basehubClient.query({
+    terms: {
+      meta: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
+        title: true,
+        description: true,
+      },
+    },
+  });
+
+  return {
+    title: terms.meta.title,
+    description: terms.meta.description,
   };
 }
 
@@ -74,12 +74,12 @@ export async function fetchTermsPage() {
         __typename: true,
       },
       isPublished: true,
-      termsContent: {
+      body: {
         json: {
           content: true,
         },
       },
-      termsPageIntro: {
+      pageIntro: {
         _sys: {
           id: true,
           __typename: true,
@@ -93,7 +93,7 @@ export async function fetchTermsPage() {
         },
         centered: true,
       },
-      termsPageMeta: {
+      meta: {
         _sys: {
           id: true,
           __typename: true,

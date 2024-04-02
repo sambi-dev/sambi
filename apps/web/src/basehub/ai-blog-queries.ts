@@ -1,39 +1,11 @@
 import type {
-  AiBlogPostsItemGenqlSelection,
-  BlogPostsItem,
+  AiPostsItem,
+  AiPostsItemGenqlSelection,
   FieldsSelection,
   QueryGenqlSelection,
 } from '.basehub';
 
 import { basehubClient } from './client';
-
-export async function fetchAiBlogPageMetadata() {
-  'use server';
-
-  const { aiBlog } = await basehubClient.query({
-    aiBlog: {
-      _sys: {
-        id: true,
-        title: true,
-        slug: true,
-        __typename: true,
-      },
-      aiBlogPageMeta: {
-        _sys: {
-          id: true,
-          __typename: true,
-        },
-        title: true,
-        description: true,
-      },
-    },
-  });
-
-  return {
-    title: aiBlog.aiBlogPageMeta.title,
-    description: aiBlog.aiBlogPageMeta.description,
-  };
-}
 
 export async function fetchAiBlogPageIntro() {
   'use server';
@@ -46,7 +18,7 @@ export async function fetchAiBlogPageIntro() {
         slug: true,
         __typename: true,
       },
-      aiBlogPageIntro: {
+      pageIntro: {
         _sys: {
           id: true,
           __typename: true,
@@ -60,7 +32,7 @@ export async function fetchAiBlogPageIntro() {
         },
         centered: true,
       },
-      aiBlogPageKeyword: {
+      keyword: {
         _sys: {
           id: true,
           title: true,
@@ -73,15 +45,43 @@ export async function fetchAiBlogPageIntro() {
   return {
     jsonTitle: aiBlog._sys.title,
     jsonSlug: aiBlog._sys.slug,
-    eyebrow: aiBlog.aiBlogPageIntro.eyebrow,
-    title: aiBlog.aiBlogPageIntro.title,
-    description: aiBlog.aiBlogPageIntro.description,
-    centered: aiBlog.aiBlogPageIntro.centered,
-    keyword: aiBlog.aiBlogPageKeyword,
+    eyebrow: aiBlog.pageIntro.eyebrow,
+    title: aiBlog.pageIntro.title,
+    description: aiBlog.pageIntro.description,
+    centered: aiBlog.pageIntro.centered,
+    keyword: aiBlog.keyword,
   };
 }
 
-export const aiBlogPostFragment = {
+export async function fetchAiBlogPageMetadata() {
+  'use server';
+
+  const { aiBlog } = await basehubClient.query({
+    aiBlog: {
+      _sys: {
+        id: true,
+        title: true,
+        slug: true,
+        __typename: true,
+      },
+      meta: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
+        title: true,
+        description: true,
+      },
+    },
+  });
+
+  return {
+    title: aiBlog.meta.title,
+    description: aiBlog.meta.description,
+  };
+}
+
+export const aiPostFragment = {
   _sys: {
     id: true,
     slug: true,
@@ -113,18 +113,18 @@ export const aiBlogPostFragment = {
     description: true,
     isPublished: true,
   },
-  image: {
+  featuredImage: {
     url: true,
     alt: true,
   },
-  imageAttribution: { json: { content: true } },
-  content: {
+  featuredImageAttribution: { json: { content: true } },
+  body: {
     json: {
       content: true,
     },
   },
   isPublished: true,
-  keywords: {
+  keyword: {
     _id: true,
     _slug: true,
     _title: true,
@@ -137,11 +137,11 @@ export const aiBlogPostFragment = {
       content: true,
     },
   },
-} satisfies AiBlogPostsItemGenqlSelection;
+} satisfies AiPostsItemGenqlSelection;
 
-export type AiBlogPostFragment = FieldsSelection<
-  BlogPostsItem,
-  typeof aiBlogPostFragment
+export type AiPostFragment = FieldsSelection<
+  AiPostsItem,
+  typeof aiPostFragment
 >;
 
 export async function fetchAiBlogPosts({ skip = 0, first = 10 } = {}) {
@@ -149,13 +149,13 @@ export async function fetchAiBlogPosts({ skip = 0, first = 10 } = {}) {
 
   const { aiBlog } = await basehubClient.query({
     aiBlog: {
-      aiBlogPosts: {
+      aiPosts: {
         __args: {
           skip,
           first,
           orderBy: '_sys_createdAt__DESC',
         },
-        items: aiBlogPostFragment,
+        items: aiPostFragment,
         _meta: {
           totalCount: true,
         },
@@ -164,17 +164,17 @@ export async function fetchAiBlogPosts({ skip = 0, first = 10 } = {}) {
   });
 
   return {
-    items: aiBlog.aiBlogPosts.items,
-    totalCount: aiBlog.aiBlogPosts._meta.totalCount,
+    items: aiBlog.aiPosts.items,
+    totalCount: aiBlog.aiPosts._meta.totalCount,
   };
 }
 
 export const getAiPostBySlugQuery = (slug: string) => {
   return {
     aiBlog: {
-      aiBlogPosts: {
+      aiPosts: {
         __args: { first: 1, filter: { _sys_slug: { eq: slug } } },
-        items: aiBlogPostFragment,
+        items: aiPostFragment,
       },
     },
   } satisfies QueryGenqlSelection;
