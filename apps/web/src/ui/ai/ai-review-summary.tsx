@@ -105,15 +105,17 @@ export default function AIReviewSummary({ summary }: Props) {
           hater.
         </p>
       </CardContent>
-      <CardFooter className="mt-4 flex flex-wrap items-center gap-4 border-t border-foreground/20 sm:flex-nowrap">
+      <CardFooter className="mt-4 flex items-center gap-4 border-t border-foreground/20">
         <div className="flex-auto text-right font-mono font-semibold leading-6 tracking-tight">
-          <div className="mt-4 text-foreground">NPS Sentiment analysis</div>
+          <div className="mt-4 text-sm text-foreground md:text-base">
+            NPS Sentiment analysis
+          </div>
           <div className="text-sm text-muted-foreground">By Perplexity AI</div>
         </div>
         <Image
           width={80}
           height={80}
-          className="mt-4 size-12 w-auto flex-none rounded-full border shadow-md"
+          className="mt-4 hidden size-12 w-auto flex-none rounded-full border shadow-md sm:block"
           src={perplexityAiImage}
           alt=""
         />

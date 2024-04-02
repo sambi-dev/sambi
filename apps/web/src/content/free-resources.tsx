@@ -2,9 +2,9 @@ import type { ReactElement } from 'react';
 
 import Image from 'next/image';
 
-import aiImage from '#/images/resources/ai.svg';
-import blogImage from '#/images/resources/blog.svg';
-import discordImage from '#/images/resources/discord.svg';
+import aiImage from '#/images/resources/ai.png';
+import blogImage from '#/images/resources/blog.png';
+import discordImage from '#/images/resources/discord.png';
 
 interface FreeResource {
   title: string;
