@@ -3,6 +3,8 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
+import type { BlockRichText } from '.basehub';
+
 import { fetchBlogPosts, getPostBySlugQuery } from '#/basehub/blog-queries';
 import { basehubClient } from '#/basehub/client';
 import { siteConfig } from '#/config/site';
@@ -19,7 +21,7 @@ import RichTextWrapper from '#/ui/shared/rich-text-wrapper';
 export async function generateStaticParams() {
   const { blog } = await basehubClient.query({
     blog: {
-      blogPosts: {
+      posts: {
         __args: {
           first: 10,
         },
@@ -30,12 +32,12 @@ export async function generateStaticParams() {
     },
   });
 
-  return blog.blogPosts.items.map((post) => ({ params: { slug: post._slug } }));
+  return blog.posts.items.map((post) => ({ params: { slug: post._slug } }));
 }
 
 const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
   const { blog } = await basehubClient.query(getPostBySlugQuery(params.slug));
-  const post = blog.blogPosts.items[0];
+  const post = blog.posts.items[0];
   if (!post) notFound();
   const { items: moreBlogPosts } = await fetchBlogPosts({
     first: 10,
@@ -49,15 +51,15 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
 
   return (
     <>
-      {post.image && (
+      {post.featuredImage && (
         <div className="absolute inset-0 box-content h-128 pt-128">
           <Image
             className="absolute inset-0 h-full w-full object-cover opacity-25"
-            src={post.image.url}
+            src={post.featuredImage.url}
             width={1920}
             height={1080}
             alt={
-              post.image.alt ??
+              post.featuredImage.alt ??
               `A featured image for the post ${post.author._sys.title}`
             }
           />
@@ -70,7 +72,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
       <Container as="article" className="relative z-10 mt-24 sm:mt-32 lg:mt-40">
         <FadeIn>
           <header className="mx-auto flex max-w-5xl flex-col text-center">
-            <h1 className="mt-6 font-mono text-4xl font-semibold tracking-tighter text-foreground [text-wrap:balance] sm:text-5xl">
+            <h1 className="mt-6 font-mono text-4xl font-semibold tracking-tighter text-foreground [text-wrap:balance] sm:text-6xl">
               {post._sys.title}
             </h1>
             <time
@@ -102,18 +104,18 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
             <Border className="my-16" />
           </header>
         </FadeIn>
-
         <RichTextWrapper
-          content={post.content?.json.content as string}
+          content={post.body?.json.content as BlockRichText}
           centered
         />
         <div className="my-6">
           <RichTextWrapper
-            content={post.imageAttribution?.json.content as string}
+            content={
+              post.featuredImageAttribution?.json.content as BlockRichText
+            }
             centered
           />
         </div>
-
         <AuthorCard
           author={{
             name: post.author._sys.title,
@@ -149,7 +151,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
         description={post.metaDescription}
         datePublished={post._sys.createdAt}
         dateModified={post._sys.lastModifiedAt}
-        imageUrl={post.image.url}
+        imageUrl={post.featuredImage.url}
         authorName={post.author._sys.title}
         authorRole={post.author.role}
         authorImageUrl={post.author.image.url}
@@ -157,7 +159,7 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
         authorUpworkUrl={post.author.upworkUrl}
         authorTwitterUrl={post.author.twitterUrl}
         authorLinkedinUrl={post.author.linkedinUrl}
-        keyword={post.blogPostKeyword?._sys.title}
+        keyword={post.keyword?._sys.title}
       />
     </>
   );
@@ -172,7 +174,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { blog } = await basehubClient.query(getPostBySlugQuery(params.slug));
 
-  const post = blog.blogPosts.items[0];
+  const post = blog.posts.items[0];
   if (!post) notFound();
 
   const metadata: Metadata = {

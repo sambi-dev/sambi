@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 
 import { notFound } from 'next/navigation';
 
+import type { BlockRichText } from '.basehub';
+
 import { basehubClient } from '#/basehub/client';
 import {
   fetchShowcaseBriefs,
@@ -117,8 +119,10 @@ export default async function ProjectBriefPage({
             <div className="border-y">
               <div className="-my-px mx-auto max-w-[76rem] bg-background">
                 <GrayscaleTransitionImage
-                  src={brief.image.url}
-                  alt={brief.image.alt ?? 'An image for the project brief'}
+                  src={brief.featuredImage.url}
+                  alt={
+                    brief.featuredImage.alt ?? 'An image for the project brief'
+                  }
                   width={1216}
                   height={1216}
                   quality={90}
@@ -132,7 +136,7 @@ export default async function ProjectBriefPage({
         </header>
         <Container className="mt-24 sm:mt-32 lg:mt-40">
           <RichTextWrapper
-            content={brief.content?.json.content as string}
+            content={brief.body?.json.content as BlockRichText}
             centered
           />
         </Container>
@@ -142,8 +146,8 @@ export default async function ProjectBriefPage({
           description={brief.metaDescription}
           datePublished={brief._sys.createdAt}
           dateModified={brief._sys.lastModifiedAt}
-          imageUrl={brief.image.url}
-          keyword={brief.briefKeyword?._sys.title}
+          imageUrl={brief.featuredImage.url}
+          keyword={brief.keyword?._sys.title}
         />
       </article>
 

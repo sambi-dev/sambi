@@ -7,28 +7,6 @@ import type {
 
 import { basehubClient } from './client';
 
-export async function fetchShowcasePageMetadata() {
-  'use server';
-
-  const { showcase } = await basehubClient.query({
-    showcase: {
-      showcasePageMeta: {
-        _sys: {
-          id: true,
-          __typename: true,
-        },
-        title: true,
-        description: true,
-      },
-    },
-  });
-
-  return {
-    title: showcase.showcasePageMeta.title,
-    description: showcase.showcasePageMeta.description,
-  };
-}
-
 export async function fetchShowcasePageIntro() {
   'use server';
 
@@ -40,7 +18,7 @@ export async function fetchShowcasePageIntro() {
         slug: true,
         __typename: true,
       },
-      showcasePageIntro: {
+      pageIntro: {
         _sys: {
           id: true,
           __typename: true,
@@ -54,7 +32,7 @@ export async function fetchShowcasePageIntro() {
         },
         centered: true,
       },
-      showcasePageKeyword: {
+      keyword: {
         _sys: {
           id: true,
           title: true,
@@ -67,11 +45,33 @@ export async function fetchShowcasePageIntro() {
   return {
     jsonTitle: showcase._sys.title,
     jsonSlug: showcase._sys.slug,
-    eyebrow: showcase.showcasePageIntro.eyebrow,
-    title: showcase.showcasePageIntro.title,
-    description: showcase.showcasePageIntro.description,
-    centered: showcase.showcasePageIntro.centered,
-    keyword: showcase.showcasePageKeyword,
+    eyebrow: showcase.pageIntro.eyebrow,
+    title: showcase.pageIntro.title,
+    description: showcase.pageIntro.description,
+    centered: showcase.pageIntro.centered,
+    keyword: showcase.keyword,
+  };
+}
+
+export async function fetchShowcasePageMetadata() {
+  'use server';
+
+  const { showcase } = await basehubClient.query({
+    showcase: {
+      meta: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
+        title: true,
+        description: true,
+      },
+    },
+  });
+
+  return {
+    title: showcase.meta.title,
+    description: showcase.meta.description,
   };
 }
 
@@ -84,7 +84,7 @@ export const showcaseBriefFragment = {
     lastModifiedAt: true,
     __typename: true,
   },
-  briefKeyword: {
+  keyword: {
     _sys: {
       id: true,
       title: true,
@@ -134,12 +134,12 @@ export const showcaseBriefFragment = {
     },
     website: true,
   },
-  content: {
+  body: {
     json: {
       content: true,
     },
   },
-  image: {
+  featuredImage: {
     url: true,
     alt: true,
   },

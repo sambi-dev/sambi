@@ -1,33 +1,11 @@
 import { basehubClient } from './client';
 
-export async function fetchPrivacyPageMetadata() {
-  'use server';
-
-  const { privacy } = await basehubClient.query({
-    privacy: {
-      privacyPageMeta: {
-        _sys: {
-          id: true,
-          __typename: true,
-        },
-        title: true,
-        description: true,
-      },
-    },
-  });
-
-  return {
-    title: privacy.privacyPageMeta.title,
-    description: privacy.privacyPageMeta.description,
-  };
-}
-
 export async function fetchPrivacyPageIntro() {
   'use server';
 
   const { privacy } = await basehubClient.query({
     privacy: {
-      privacyPageIntro: {
+      pageIntro: {
         _sys: {
           id: true,
           __typename: true,
@@ -41,7 +19,7 @@ export async function fetchPrivacyPageIntro() {
         },
         centered: true,
       },
-      privacyPageKeyword: {
+      keyword: {
         _sys: {
           id: true,
           title: true,
@@ -52,11 +30,33 @@ export async function fetchPrivacyPageIntro() {
   });
 
   return {
-    eyebrow: privacy.privacyPageIntro.eyebrow,
-    title: privacy.privacyPageIntro.title,
-    description: privacy.privacyPageIntro.description,
-    centered: privacy.privacyPageIntro.centered,
-    keyword: privacy.privacyPageKeyword,
+    eyebrow: privacy.pageIntro.eyebrow,
+    title: privacy.pageIntro.title,
+    description: privacy.pageIntro.description,
+    centered: privacy.pageIntro.centered,
+    keyword: privacy.keyword,
+  };
+}
+
+export async function fetchPrivacyPageMetadata() {
+  'use server';
+
+  const { privacy } = await basehubClient.query({
+    privacy: {
+      meta: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
+        title: true,
+        description: true,
+      },
+    },
+  });
+
+  return {
+    title: privacy.meta.title,
+    description: privacy.meta.description,
   };
 }
 
@@ -73,13 +73,13 @@ export async function fetchPrivacyPage() {
         lastModifiedAt: true,
         __typename: true,
       },
-      privacyContent: {
+      body: {
         json: {
           content: true,
         },
       },
       isPublished: true,
-      privacyPageIntro: {
+      pageIntro: {
         _sys: {
           id: true,
           __typename: true,
@@ -93,7 +93,7 @@ export async function fetchPrivacyPage() {
         },
         centered: true,
       },
-      privacyPageMeta: {
+      meta: {
         _sys: {
           id: true,
           __typename: true,

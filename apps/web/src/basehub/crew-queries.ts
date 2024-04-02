@@ -38,6 +38,7 @@ export const crewFragment = {
       upworkUrl: true,
       twitterUrl: true,
       linkedinUrl: true,
+      websiteRelativePath: true,
     },
   },
 } satisfies CrewComponentGenqlSelection;

@@ -1,4 +1,4 @@
-import type { AiBlogPostFragment } from '#/basehub/ai-blog-queries';
+import type { AiPostFragment } from '#/basehub/ai-blog-queries';
 import type { BlogPostFragment } from '#/basehub/blog-queries';
 import type { ShowcaseBriefFragment } from '#/basehub/showcase-queries';
 import type { MetadataRoute } from 'next';
@@ -8,10 +8,7 @@ import { fetchBlogPosts } from '#/basehub/blog-queries';
 import { fetchShowcaseBriefs } from '#/basehub/showcase-queries';
 import { SITE_URL } from '#/lib/constants';
 
-type BasehubItem =
-  | AiBlogPostFragment
-  | BlogPostFragment
-  | ShowcaseBriefFragment;
+type BasehubItem = AiPostFragment | BlogPostFragment | ShowcaseBriefFragment;
 
 export interface SitemapData {
   slug: string;
@@ -31,7 +28,7 @@ async function fetchSitemapData<T extends BasehubItem>(
 
 async function getAllSitemapData(): Promise<SitemapData[]> {
   const [aiBlog, blog, showcase] = await Promise.all([
-    fetchSitemapData<AiBlogPostFragment>(fetchAiBlogPosts, 'ai-blog'),
+    fetchSitemapData<AiPostFragment>(fetchAiBlogPosts, 'ai-blog'),
     fetchSitemapData<BlogPostFragment>(fetchBlogPosts, 'blog'),
     fetchSitemapData<ShowcaseBriefFragment>(fetchShowcaseBriefs, 'showcase'),
   ]);

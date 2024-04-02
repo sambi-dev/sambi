@@ -2,28 +2,6 @@ import type { Faq, FaqGenqlSelection, FieldsSelection } from '.basehub';
 
 import { basehubClient } from './client';
 
-export async function fetchFaqsPageMetadata() {
-  'use server';
-
-  const { faqs } = await basehubClient.query({
-    faqs: {
-      faqsPageMeta: {
-        _sys: {
-          id: true,
-          __typename: true,
-        },
-        title: true,
-        description: true,
-      },
-    },
-  });
-
-  return {
-    title: faqs.faqsPageMeta.title,
-    description: faqs.faqsPageMeta.description,
-  };
-}
-
 export async function fetchFaqsPageIntro() {
   'use server';
 
@@ -35,7 +13,7 @@ export async function fetchFaqsPageIntro() {
         slug: true,
         __typename: true,
       },
-      faqsPageIntro: {
+      pageIntro: {
         _sys: {
           id: true,
           __typename: true,
@@ -49,7 +27,7 @@ export async function fetchFaqsPageIntro() {
         },
         centered: true,
       },
-      faqsPageKeyword: {
+      keyword: {
         _sys: {
           id: true,
           title: true,
@@ -62,11 +40,33 @@ export async function fetchFaqsPageIntro() {
   return {
     jsonTitle: faqs._sys.title,
     jsonSlug: faqs._sys.slug,
-    eyebrow: faqs.faqsPageIntro.eyebrow,
-    title: faqs.faqsPageIntro.title,
-    description: faqs.faqsPageIntro.description,
-    centered: faqs.faqsPageIntro.centered,
-    keyword: faqs.faqsPageKeyword,
+    eyebrow: faqs.pageIntro.eyebrow,
+    title: faqs.pageIntro.title,
+    description: faqs.pageIntro.description,
+    centered: faqs.pageIntro.centered,
+    keyword: faqs.keyword,
+  };
+}
+
+export async function fetchFaqsPageMetadata() {
+  'use server';
+
+  const { faqs } = await basehubClient.query({
+    faqs: {
+      meta: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
+        title: true,
+        description: true,
+      },
+    },
+  });
+
+  return {
+    title: faqs.meta.title,
+    description: faqs.meta.description,
   };
 }
 
