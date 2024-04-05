@@ -32,10 +32,6 @@ jobs:
         shell: bash
         run: cp .env.example .env
 
-      - name: Generate Basehub Types (apps/web)
-        run: pnpm with-env basehub --output apps/web/.basehub
-        working-directory: apps/web
-
       - name: Lint
         run: pnpm lint && pnpm lint:ws
 
@@ -57,10 +53,6 @@ jobs:
 
       - name: Setup
         uses: ./tooling/github/setup
-
-      - name: Generate Basehub Types (apps/web)
-        run: pnpm with-env basehub --output apps/web/.basehub
-        working-directory: apps/web
 
       - name: Typecheck
         run: pnpm typecheck

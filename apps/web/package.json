@@ -4,14 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm with-env basehub --output .basehub && pnpm with-env next build",
+    "build": "pnpm basehub-generate && pnpm with-env next build",
     "clean": "git clean -xdf .next .turbo node_modules",
-    "dev": "pnpm with-env basehub --output .basehub && pnpm with-env next dev",
+    "dev": "pnpm with-env next dev",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "dotenv -v SKIP_ENV_VALIDATION=1 next lint",
     "start": "pnpm with-env next start",
     "typecheck": "tsc --noEmit",
-    "with-env": "dotenv -e .env.local --"
+    "with-env": "dotenv -e .env.local --",
+    "basehub-generate": "pnpm with-env basehub --output .basehub"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
