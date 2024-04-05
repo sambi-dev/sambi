@@ -18,7 +18,7 @@ import { ContactSection } from '#/ui/contact-section';
 import { Container } from '#/ui/page-container';
 import { PageIntro } from '#/ui/page-intro';
 import { PageLinks } from '#/ui/page-links';
-import RichTextWrapper from '#/ui/shared/rich-text-wrapper';
+import RichTextComponents from '#/ui/shared/rich-text-components';
 
 export default async function EditorialPolicyPage() {
   const pageIntro = await fetchEditorialPageIntro();
@@ -49,7 +49,7 @@ export default async function EditorialPolicyPage() {
 
       <Container as="article" className="mt-24 sm:mt-32 lg:mt-40">
         <Border className="py-16" />
-        <RichTextWrapper
+        <RichTextComponents
           content={editorial.body?.json.content as BlockRichText}
           centered
         />

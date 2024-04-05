@@ -126,15 +126,28 @@ export const postFragment = {
     json: {
       content: true,
       blocks: {
-        _sys: {
+        on_TweetComponent: {
           __typename: true,
-          id: true,
-          slug: true,
-          title: true,
+          _id: true,
+          tweetId: true,
         },
-        __typename: true,
-        _id: true,
-        tweetId: true,
+        on_BlockquoteComponent: {
+          __typename: true,
+          _id: true,
+          author: true,
+          role: true,
+          quote: true,
+        },
+        on_ToptipComponent: {
+          __typename: true,
+          _id: true,
+          tip: true,
+        },
+        on_GotchaComponent: {
+          __typename: true,
+          _id: true,
+          gotcha: true,
+        },
       },
     },
   },

@@ -3,13 +3,18 @@ import { RichText } from 'basehub/react-rich-text';
 
 import { cn } from '@yocxo/ui';
 
-import type { BlockDocument, BlockRichText, TweetComponent } from '.basehub';
+import type {
+  BlockDocument,
+  BlockquoteComponent as BlockquoteComponentType,
+  BlockRichText,
+  GotchaComponent,
+  ToptipComponent,
+  TweetComponent,
+} from '.basehub';
 
 import { Blockquote } from '#/ui/blockquote';
 import { Border } from '#/ui/border';
 import { GrayscaleTransitionImage } from '#/ui/grayscale-transition-image';
-import { StatList, StatListItem } from '#/ui/stat-list';
-import { TagList, TagListItem } from '#/ui/tag-list';
 
 import ReactTweetComponent from './tweet-component';
 
@@ -20,18 +25,38 @@ interface RichTextWrapperProps {
   small?: boolean;
 }
 
-function RichTextWrapper({
+function RichTextComponents({
   content,
   blocks,
   centered = false,
   small = false,
 }: RichTextWrapperProps) {
   const components = {
-    Blockquote({
-      className,
-      ...props
-    }: React.ComponentPropsWithoutRef<typeof Blockquote>) {
-      return <Blockquote className={cn('my-32', className)} {...props} />;
+    BlockquoteComponent: ({
+      _id,
+      author,
+      quote,
+      role,
+    }: BlockquoteComponentType) => (
+      <Blockquote
+        key={_id}
+        author={{ name: author, role }}
+        className="my-8"
+        large
+      >
+        {quote}
+      </Blockquote>
+    ),
+
+    GotchaComponent({ gotcha }: GotchaComponent) {
+      return (
+        <Border position="left" className="my-10 pl-8" gotcha>
+          <p className="font-mono text-sm font-medium uppercase tracking-widest text-destructive">
+            Gotcha
+          </p>
+          <div className="mt-4">{gotcha}</div>
+        </Border>
+      );
     },
 
     img: function Img({
@@ -54,63 +79,19 @@ function RichTextWrapper({
       );
     },
 
-    StatList({
-      className,
-      ...props
-    }: React.ComponentPropsWithoutRef<typeof StatList>) {
+    ToptipComponent({ tip }: ToptipComponent) {
       return (
-        <StatList className={cn('my-32 !max-w-none', className)} {...props} />
-      );
-    },
-
-    StatListItem,
-
-    table: function Table({
-      className,
-      ...props
-    }: React.ComponentPropsWithoutRef<'table'>) {
-      return (
-        <div
-          className={cn(
-            'my-10 max-sm:-mx-6 max-sm:flex max-sm:overflow-x-auto',
-            className,
-          )}
-        >
-          <div className="max-sm:min-w-full max-sm:flex-none max-sm:px-6">
-            <table {...props} />
-          </div>
-        </div>
-      );
-    },
-
-    TagList({
-      className,
-      ...props
-    }: React.ComponentPropsWithoutRef<typeof TagList>) {
-      return <TagList className={cn('my-6', className)} {...props} />;
-    },
-
-    TagListItem,
-
-    TopTip({
-      children,
-      className,
-    }: {
-      children: React.ReactNode;
-      className?: string;
-    }) {
-      return (
-        <Border position="left" className={cn('my-10 pl-8', className)}>
+        <Border position="left" className="my-10 pl-8">
           <p className="font-mono text-sm font-medium uppercase tracking-widest text-primary">
             Top tip
           </p>
-          <div className="mt-4">{children}</div>
+          <div className="mt-4">{tip}</div>
         </Border>
       );
     },
 
-    Tweet: ({ tweetId }: TweetComponent) => {
-      return <ReactTweetComponent tweetId={tweetId} />;
+    TweetComponent: ({ _id, tweetId }: TweetComponent) => {
+      return <ReactTweetComponent key={_id} tweetId={tweetId} />;
     },
 
     h2: ({ className, ...props }: React.ComponentPropsWithoutRef<'h2'>) => (
@@ -157,7 +138,7 @@ function RichTextWrapper({
     p: ({ className, ...props }: React.ComponentPropsWithoutRef<'p'>) => (
       <p
         className={cn(
-          `leading-relaxed text-muted-foreground ${small ? 'text-sm' : 'lg:text-lg'} [&:not(:first-child)]:mt-6`,
+          `text-muted-foreground ${small ? 'text-sm' : 'lg:text-lg'} [&:not(:first-child)]:mt-6`,
           className,
         )}
         {...props}
@@ -209,7 +190,7 @@ function RichTextWrapper({
     <div
       className={cn(
         `${centered ? 'mx-auto max-w-3xl' : ''} [&>*]:max-w-full [&>:first-child]:!mt-0 [&>:last-child]:!mb-0`,
-        `leading-relaxed text-muted-foreground ${small ? 'text-sm' : 'lg:text-lg'}`,
+        `text-muted-foreground ${small ? 'text-sm' : 'lg:text-lg'}`,
       )}
     >
       <RichText components={components} blocks={blocks}>
@@ -219,4 +200,4 @@ function RichTextWrapper({
   );
 }
 
-export default RichTextWrapper;
+export default RichTextComponents;

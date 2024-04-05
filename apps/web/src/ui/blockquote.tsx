@@ -55,15 +55,25 @@ function BlockquoteWithoutImage({
   author,
   children,
   className,
+  large = false,
 }: {
   author: { name: string; role: string };
   children: React.ReactNode;
   className?: string;
+  large?: boolean;
 }) {
   return (
     <Border position="left" className={cn('pl-8', className)}>
       <figure className="text-sm">
-        <blockquote className="text-secondary-foreground [&>*]:relative [&>:first-child]:before:absolute [&>:first-child]:before:right-full [&>:first-child]:before:content-['“'] [&>:last-child]:after:content-['”']">
+        <blockquote
+          className={cn(
+            "text-secondary-foreground [&>*]:relative [&>:first-child]:before:absolute [&>:first-child]:before:right-full [&>:first-child]:before:content-['“'] [&>:last-child]:after:content-['”']",
+            {
+              'text-pretty font-mono tracking-tighter text-muted-foreground lg:text-xl':
+                large,
+            },
+          )}
+        >
           {typeof children === 'string' ? <p>{children}</p> : children}
         </blockquote>
         <figcaption className="mt-6 font-mono text-xs font-semibold tracking-tighter text-primary">

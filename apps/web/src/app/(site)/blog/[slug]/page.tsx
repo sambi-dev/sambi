@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
-import type { BlockRichText } from '.basehub';
+import type { BlockDocument, BlockRichText } from '.basehub';
 
 import { fetchBlogPosts, getPostBySlugQuery } from '#/basehub/blog-queries';
 import { basehubClient } from '#/basehub/client';
@@ -16,7 +16,7 @@ import { ContactSection } from '#/ui/contact-section';
 import { FadeIn } from '#/ui/fade-in';
 import { Container } from '#/ui/page-container';
 import { PageLinks } from '#/ui/page-links';
-import RichTextWrapper from '#/ui/shared/rich-text-wrapper';
+import RichTextComponents from '#/ui/shared/rich-text-components';
 
 export async function generateStaticParams() {
   const { blog } = await basehubClient.query({
@@ -104,12 +104,13 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
             <Border className="my-16" />
           </header>
         </FadeIn>
-        <RichTextWrapper
+        <RichTextComponents
+          blocks={post.body?.json.blocks as BlockDocument[]}
           content={post.body?.json.content as BlockRichText}
           centered
         />
         <div className="my-6">
-          <RichTextWrapper
+          <RichTextComponents
             content={
               post.featuredImageAttribution?.json.content as BlockRichText
             }

@@ -18,7 +18,7 @@ import { GrayscaleTransitionImage } from '#/ui/grayscale-transition-image';
 import { Container } from '#/ui/page-container';
 import { PageIntro } from '#/ui/page-intro';
 import { PageLinks } from '#/ui/page-links';
-import RichTextWrapper from '#/ui/shared/rich-text-wrapper';
+import RichTextComponents from '#/ui/shared/rich-text-components';
 
 export async function generateStaticParams() {
   const { showcase } = await basehubClient.query({
@@ -135,7 +135,7 @@ export default async function ProjectBriefPage({
           </FadeIn>
         </header>
         <Container className="mt-24 sm:mt-32 lg:mt-40">
-          <RichTextWrapper
+          <RichTextComponents
             content={brief.body?.json.content as BlockRichText}
             centered
           />
