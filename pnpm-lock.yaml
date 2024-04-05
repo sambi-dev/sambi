@@ -748,10 +748,10 @@ importers:
         specifier: ^14.1.4
         version: 14.1.4
       '@typescript-eslint/eslint-plugin':
-        specifier: ^7.3.1
+        specifier: ^7.4.0
         version: 7.5.0(@typescript-eslint/parser@7.5.0)(eslint@8.57.0)(typescript@5.4.3)
       '@typescript-eslint/parser':
-        specifier: ^7.3.1
+        specifier: ^7.4.0
         version: 7.5.0(eslint@8.57.0)(typescript@5.4.3)
       eslint-config-turbo:
         specifier: ^1.13.0
