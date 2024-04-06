@@ -18,7 +18,7 @@ import { ContactSection } from '#/ui/contact-section';
 import { FadeIn } from '#/ui/fade-in';
 import { Container } from '#/ui/page-container';
 import { PageLinks } from '#/ui/page-links';
-import RichTextWrapper from '#/ui/shared/rich-text-wrapper';
+import RichTextComponents from '#/ui/shared/rich-text-components';
 
 export async function generateStaticParams() {
   const { aiBlog } = await basehubClient.query({
@@ -112,12 +112,12 @@ const AiBlogPost = async ({ params }: { params: { slug: string } }) => {
           </header>
         </FadeIn>
 
-        <RichTextWrapper
+        <RichTextComponents
           content={post.body?.json.content as BlockRichText}
           centered
         />
         <div className="my-6">
-          <RichTextWrapper
+          <RichTextComponents
             content={
               post.featuredImageAttribution?.json.content as BlockRichText
             }

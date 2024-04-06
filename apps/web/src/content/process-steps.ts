@@ -1,7 +1,7 @@
-import analyzeImage from '#/images/process/analyze.jpg';
-import buildImage from '#/images/process/build.jpg';
-import definitionImage from '#/images/process/design.jpg';
-import discoveryImage from '#/images/process/discovery.jpg';
+import analyzeImage from '#/images/process/analyze.png';
+import buildImage from '#/images/process/build.png';
+import definitionImage from '#/images/process/design.png';
+import discoveryImage from '#/images/process/discovery.png';
 
 interface ProcessStep {
   title: string;

@@ -4,15 +4,15 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "pnpm with-env next build",
+    "build": "pnpm basehub-generate && pnpm with-env next build",
     "clean": "git clean -xdf .next .turbo node_modules",
-    "dev": "pnpm with-env basehub --output .basehub && pnpm with-env next dev",
+    "dev": "pnpm with-env next dev",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "dotenv -v SKIP_ENV_VALIDATION=1 next lint",
-    "postinstall": "pnpm with-env basehub --output .basehub",
     "start": "pnpm with-env next start",
     "typecheck": "tsc --noEmit",
-    "with-env": "dotenv -e .env.local --"
+    "with-env": "dotenv -e .env.local --",
+    "basehub-generate": "pnpm with-env basehub --output .basehub"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",
@@ -23,8 +23,8 @@
     "@yocxo/db": "workspace:*",
     "@yocxo/ui": "workspace:*",
     "@yocxo/validators": "workspace:*",
-    "ai": "^3.0.12",
-    "basehub": "^3.1.6",
+    "ai": "^3.0.19",
+    "basehub": "^3.2.0",
     "escape-string-regexp": "^5.0.0",
     "fast-glob": "^3.2.12",
     "framer-motion": "^11.0.5",
@@ -48,7 +48,7 @@
     "jiti": "^1.21.0",
     "prettier": "^3.2.5",
     "schema-dts": "^1.1.2",
-    "sharp": "0.33.1",
+    "sharp": "^0.33.3",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.4.3"
   },

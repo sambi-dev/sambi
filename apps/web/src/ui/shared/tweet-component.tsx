@@ -1,29 +1,37 @@
-import React, { Suspense } from 'react';
-import { unstable_cache } from 'next/cache';
+import type { TweetProps } from 'react-tweet';
 
-import { EmbeddedTweet, TweetNotFound, TweetSkeleton } from 'react-tweet';
-import { getTweet as _getTweet } from 'react-tweet/api';
+import { EmbeddedTweet, TweetNotFound } from 'react-tweet';
+import { getTweet } from 'react-tweet/api';
 
-const getTweet = unstable_cache(
-  async (id: string) => _getTweet(id),
-  ['tweet'],
-  { revalidate: 3600 * 24 },
-);
+const TweetContent = async ({ id, components, onError }: TweetProps) => {
+  let error;
+  const tweet = id
+    ? await getTweet(id).catch((err) => {
+        const errorInstance = err as unknown as Error;
+        if (onError) {
+          onError(errorInstance);
+        } else {
+          console.error(errorInstance);
+        }
+        error = errorInstance;
+        return undefined;
+      })
+    : undefined;
 
-const fetchAndRenderTweet = async ({ id }: { id: string }) => {
-  try {
-    const tweet = await getTweet(id);
-    return tweet ? <EmbeddedTweet tweet={tweet} /> : <TweetNotFound />;
-  } catch (error) {
-    console.error(error);
-    return <TweetNotFound error={error} />;
+  if (!tweet) {
+    const NotFound = components?.TweetNotFound ?? TweetNotFound;
+    return <NotFound error={error} />;
   }
+
+  return <EmbeddedTweet tweet={tweet} components={components} />;
 };
 
+export const ReactTweet = (props: TweetProps) => <TweetContent {...props} />;
+
 const ReactTweetComponent = ({ tweetId }: { tweetId: string }) => (
-  <Suspense fallback={<TweetSkeleton />}>
-    {fetchAndRenderTweet({ id: tweetId })}
-  </Suspense>
+  <div className="flex justify-center pb-2 pt-8">
+    {ReactTweet({ id: tweetId })}
+  </div>
 );
 
 export default ReactTweetComponent;

@@ -2,9 +2,9 @@ import type { FaqFragment } from '#/basehub/faq-queries';
 
 import type { BlockRichText } from '.basehub';
 
-import { Border } from '../border';
-import { FadeIn, FadeInStagger } from '../fade-in';
-import RichTextWrapper from './rich-text-wrapper';
+import { Border } from '#/ui/border';
+import { FadeIn, FadeInStagger } from '#/ui/fade-in';
+import RichTextComponents from '#/ui/shared/rich-text-components';
 
 interface FaqsProps {
   faq: FaqFragment;
@@ -34,7 +34,7 @@ export default function Faqs({ faq, category }: FaqsProps) {
                   {item._sys.title}
                 </dt>
                 <dd className="mt-2">
-                  <RichTextWrapper
+                  <RichTextComponents
                     content={item.answer?.json.content as BlockRichText}
                     centered
                     small

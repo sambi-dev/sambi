@@ -12,7 +12,7 @@ import { summarizeReviews } from '#/lib/ai/ai-summary';
 import AIReviewSummary from '#/ui/ai/ai-review-summary';
 import { FadeIn, FadeInStagger } from '#/ui/fade-in';
 import { SectionIntro } from '#/ui/section-intro';
-import RichTextWrapper from '#/ui/shared/rich-text-wrapper';
+import RichTextComponents from '#/ui/shared/rich-text-components';
 
 import { Warning } from './warning';
 
@@ -101,7 +101,7 @@ export async function Warnings() {
                           role: warning.client.contacts.items[0]!.role,
                         }}
                       >
-                        <RichTextWrapper
+                        <RichTextComponents
                           small
                           content={
                             warning.client.contacts.items[0]!.testimonial?.json
