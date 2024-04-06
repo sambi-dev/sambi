@@ -1,4 +1,6 @@
 /* eslint-disable jsx-a11y/heading-has-content */
+import type { ComponentPropsWithoutRef } from 'react';
+
 import { RichText } from 'basehub/react-rich-text';
 
 import { cn } from '@yocxo/ui';
@@ -24,6 +26,40 @@ interface RichTextWrapperProps {
   centered?: boolean;
   small?: boolean;
 }
+// :: Temporary workaround to filter out unused props from basehub ::
+function withFilteredProps<P extends object>(
+  WrappedComponent: React.ComponentType<P>,
+  filterProps: string[],
+) {
+  function FilteredComponent(props: P) {
+    const filteredProps = { ...props };
+
+    filterProps.forEach((prop) => {
+      delete filteredProps[prop as keyof typeof filteredProps];
+    });
+
+    return <WrappedComponent {...filteredProps} />;
+  }
+
+  FilteredComponent.displayName = `Filtered${(WrappedComponent.displayName ?? WrappedComponent.name) || 'Component'}`;
+
+  return FilteredComponent;
+}
+
+const FilteredLi = withFilteredProps(
+  (props: ComponentPropsWithoutRef<'li'>) => <li {...props} />,
+  ['isTaskList', 'isTaskListItem', 'isTasksList'],
+);
+
+const FilteredUl = withFilteredProps(
+  (props: ComponentPropsWithoutRef<'ul'>) => <ul {...props} />,
+  ['isTaskList', 'isTaskListItem', 'isTasksList'],
+);
+
+const FilteredOl = withFilteredProps(
+  (props: ComponentPropsWithoutRef<'ol'>) => <ol {...props} />,
+  ['isTaskList', 'isTaskListItem', 'isTasksList'],
+);
 
 function RichTextComponents({
   content,
@@ -97,7 +133,7 @@ function RichTextComponents({
     h2: ({ className, ...props }: React.ComponentPropsWithoutRef<'h2'>) => (
       <h2
         className={cn(
-          'mt-10 scroll-m-20 text-pretty pb-1 font-mono text-3xl font-semibold tracking-tighter text-foreground first:mt-0',
+          'mt-10 scroll-m-20 text-pretty pb-1 font-mono text-2xl font-semibold tracking-tighter text-foreground first:mt-0',
           className,
         )}
         {...props}
@@ -107,7 +143,7 @@ function RichTextComponents({
     h3: ({ className, ...props }: React.ComponentPropsWithoutRef<'h3'>) => (
       <h3
         className={cn(
-          'mt-8 scroll-m-20 text-pretty font-mono text-2xl font-semibold tracking-tighter text-foreground',
+          'mt-8 scroll-m-20 text-pretty font-mono text-xl font-semibold tracking-tighter text-foreground',
           className,
         )}
         {...props}
@@ -117,7 +153,7 @@ function RichTextComponents({
     h4: ({ className, ...props }: React.ComponentPropsWithoutRef<'h4'>) => (
       <h4
         className={cn(
-          'mt-8 scroll-m-20 text-pretty font-mono text-xl font-semibold tracking-tighter text-foreground',
+          'mt-8 scroll-m-20 text-pretty font-mono text-lg font-semibold tracking-tighter text-foreground',
           className,
         )}
         {...props}
@@ -138,7 +174,7 @@ function RichTextComponents({
     p: ({ className, ...props }: React.ComponentPropsWithoutRef<'p'>) => (
       <p
         className={cn(
-          `text-muted-foreground ${small ? 'text-sm' : 'lg:text-lg'} [&:not(:first-child)]:mt-6`,
+          `text-muted-foreground ${small ? 'text-sm' : 'lg:text-lg'} text-pretty leading-[40px] [&:not(:first-child)]:mt-6`,
           className,
         )}
         {...props}
@@ -156,9 +192,9 @@ function RichTextComponents({
     ),
 
     ul: ({ className, ...props }: React.ComponentPropsWithoutRef<'ul'>) => (
-      <ul
+      <FilteredUl
         className={cn(
-          `my-6 ml-6 list-disc text-muted-foreground ${small ? 'text-sm' : 'lg:text-lg'}`,
+          `ml-6 list-disc text-muted-foreground md:my-6 ${small ? 'text-sm' : 'lg:text-lg'}`,
           className,
         )}
         {...props}
@@ -166,9 +202,9 @@ function RichTextComponents({
     ),
 
     ol: ({ className, ...props }: React.ComponentPropsWithoutRef<'ol'>) => (
-      <ol
+      <FilteredOl
         className={cn(
-          `my-6 ml-6 list-decimal text-muted-foreground ${small ? 'text-sm' : 'lg:text-lg'}`,
+          `ml-6 list-decimal text-muted-foreground md:my-6 ${small ? 'text-sm' : 'lg:text-lg'}`,
           className,
         )}
         {...props}
@@ -176,9 +212,9 @@ function RichTextComponents({
     ),
 
     li: ({ className, ...props }: React.ComponentPropsWithoutRef<'li'>) => (
-      <li
+      <FilteredLi
         className={cn(
-          `ml-6 mt-3 text-muted-foreground ${small ? 'text-sm' : 'lg:text-lg'} [&::marker]:text-primary`,
+          `ml-6 mt-3 text-muted-foreground md:mt-4 ${small ? 'text-sm' : 'lg:text-lg'} [&::marker]:text-primary`,
           className,
         )}
         {...props}
@@ -189,8 +225,7 @@ function RichTextComponents({
   return (
     <div
       className={cn(
-        `${centered ? 'mx-auto max-w-3xl' : ''} [&>*]:max-w-full [&>:first-child]:!mt-0 [&>:last-child]:!mb-0`,
-        `text-muted-foreground ${small ? 'text-sm' : 'lg:text-lg'}`,
+        `${centered ? 'mx-auto max-w-prose' : ''} text-muted-foreground [&>*]:max-w-full [&>:first-child]:!mt-0 [&>:last-child]:!mb-0 ${small ? 'text-sm' : 'lg:text-lg'}`,
       )}
     >
       <RichText components={components} blocks={blocks}>
