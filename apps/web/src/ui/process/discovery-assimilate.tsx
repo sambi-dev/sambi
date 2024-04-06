@@ -32,7 +32,7 @@ export function DiscoveryAssimilation() {
           know where the bodies are buried.
         </p>
       </div>
-      <h3 className="mt-12 font-mono text-sm font-medium tracking-tighter text-secondary-foreground md:text-base">
+      <h3 className="mt-12 font-mono text-xs font-medium tracking-tighter text-secondary-foreground md:text-base">
         Things that may or may not happen
       </h3>
       <TagList className="mt-4">

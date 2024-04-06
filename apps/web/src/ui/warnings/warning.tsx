@@ -42,7 +42,7 @@ export function Warning({ client, children }: WarningProps) {
           />
         </div>
         <div className="ml-4">
-          <div className="font-mono text-sm font-semibold leading-6 tracking-tight text-foreground after:content-['.']">
+          <div className="font-mono text-xs font-semibold leading-6 tracking-tight text-foreground after:content-['.']">
             {contact} {initials}
           </div>
           <p className="line-clamp-1 font-mono text-[0.6rem] font-medium tracking-tight text-muted-foreground">

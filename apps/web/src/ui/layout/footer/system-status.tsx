@@ -72,7 +72,7 @@ const StatusIndicator = ({ status }: StatusIndicatorProps) => {
   return (
     <div className="flex items-center gap-2">
       <div className={`h-2 w-2 rounded-full ${color}`} />
-      <span className="whitespace-nowrap font-mono text-xs text-muted-foreground hover:text-primary">
+      <span className="whitespace-nowrap font-mono text-xs text-muted-foreground">
         {text}
       </span>
     </div>
@@ -96,7 +96,7 @@ const SystemStatusWidget = () => {
       rel="noopener noreferrer"
       aria-label="Visit Yo! CXO's system status page on Instatus in a new window"
     >
-      <div className="hover:text-primary hover:underline hover:decoration-2 hover:underline-offset-4 sm:mb-0">
+      <div className="h-9 rounded-md border px-4 py-2 shadow-md hover:bg-accent sm:mb-0">
         {statusData && (
           <div>
             <StatusIndicator status={statusData.page.status} />

@@ -47,7 +47,7 @@ export function ProjectBriefs({
                       className="h-12 w-12 rounded-xl border object-cover grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
                       unoptimized
                     />
-                    <h3 className="mt-6 font-mono text-sm font-medium text-primary sm:mt-0 lg:mt-8">
+                    <h3 className="mt-6 font-mono text-xs font-medium text-primary sm:mt-0 lg:mt-8">
                       {projectBrief.client._sys.title}
                     </h3>
                   </div>
@@ -70,7 +70,7 @@ export function ProjectBriefs({
 
                 <div className="col-span-full lg:col-span-2 lg:max-w-2xl">
                   {projectBrief.client.isPartner && (
-                    <div className="block pt-3 font-mono text-sm font-medium uppercase tracking-widest text-alternate">
+                    <div className="block pt-3 font-mono text-xs font-medium uppercase tracking-widest text-alternate">
                       Via partner
                     </div>
                   )}

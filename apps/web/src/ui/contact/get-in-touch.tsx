@@ -10,7 +10,7 @@ export default function GetInTouch() {
     <FadeIn className="mx-auto max-w-2xl space-y-16 divide-y divide-border lg:mx-0 lg:max-w-none">
       <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
         <div>
-          <h2 className="font-mono text-3xl font-semibold tracking-tighter text-foreground">
+          <h2 className="font-mono text-xl font-semibold tracking-tighter text-foreground">
             Get in touch
           </h2>
         </div>
@@ -40,7 +40,7 @@ export default function GetInTouch() {
                       <dt className="sr-only">{screenReaderLabel}</dt>
                       <dd>
                         <a
-                          className="font-mono text-sm font-semibold tracking-tighter text-primary hover:underline hover:decoration-2 hover:underline-offset-4"
+                          className="font-mono text-xs font-semibold tracking-tighter text-primary hover:underline hover:decoration-2 hover:underline-offset-4"
                           href={linkHref}
                           target="_blank"
                           rel="noopener noreferrer"

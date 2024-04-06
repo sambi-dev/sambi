@@ -56,14 +56,14 @@ export default async function AiBlogPage() {
                   <Border className="pt-16">
                     <div className="relative lg:-mx-4 lg:flex lg:justify-end">
                       <div className="pt-10 lg:w-2/3 lg:flex-none lg:px-4 lg:pt-0">
-                        <h2 className="max-w-2xl text-pretty font-mono text-3xl font-semibold leading-normal tracking-tighter text-foreground hover:text-primary">
+                        <h2 className="max-w-2xl text-pretty font-mono text-2xl font-semibold leading-normal tracking-tighter text-foreground hover:text-primary">
                           <Link href={`/ai-blog/${aiPost._sys.slug}`}>
                             {aiPost._sys.title}
                           </Link>
                         </h2>
                         <dl className="lg:absolute lg:left-0 lg:top-0 lg:w-1/3 lg:px-4">
                           <dt className="sr-only">Published</dt>
-                          <dd className="absolute left-0 top-0 font-mono text-sm uppercase text-muted-foreground lg:static">
+                          <dd className="absolute left-0 top-0 font-mono text-xs uppercase text-muted-foreground lg:static">
                             <time dateTime={aiPost._sys.createdAt}>
                               {formatDate(aiPost._sys.createdAt)}
                             </time>

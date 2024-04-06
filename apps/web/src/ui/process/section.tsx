@@ -26,10 +26,10 @@ export function Section({
         <div className="mt-12 lg:mt-0 lg:w-[37rem] lg:flex-none lg:group-even/section:order-first">
           <FadeIn>
             <div
-              className="font-mono text-sm font-medium tracking-tighter before:text-primary before:content-['/_'] after:text-foreground after:content-[counter(section,decimal-leading-zero)]"
+              className="font-mono text-xs font-medium tracking-tighter before:text-primary before:content-['/_'] after:text-foreground after:content-[counter(section,decimal-leading-zero)]"
               aria-hidden="true"
             />
-            <h2 className="mt-2 font-mono text-3xl font-semibold tracking-tighter text-foreground sm:text-4xl">
+            <h2 className="mt-2 font-mono text-2xl font-semibold tracking-tighter text-foreground">
               {title}
             </h2>
             <div className="mt-6">{children}</div>

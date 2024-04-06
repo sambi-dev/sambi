@@ -14,7 +14,7 @@ export function ContactSection() {
       <FadeIn className="-mx-6 rounded-4xl bg-card px-6 py-20 shadow-md sm:mx-0 sm:py-32 md:px-12">
         <div className="mx-auto max-w-4xl">
           <div className="max-w-2xl">
-            <h2 className="text-pretty font-mono text-2xl font-semibold tracking-tighter text-foreground sm:text-4xl">
+            <h2 className="text-pretty font-mono text-2xl font-semibold tracking-tighter text-foreground">
               Tell us about your project
             </h2>
             <div className="mt-6 flex">
@@ -28,7 +28,7 @@ export function ContactSection() {
               </Link>
             </div>
             <div className="mt-10 border-t pt-10">
-              <h3 className="font-mono text-sm font-medium tracking-tighter text-secondary-foreground">
+              <h3 className="font-mono text-xs font-medium tracking-tighter text-secondary-foreground">
                 Working remotely from
               </h3>
               <Offices className="mt-6 grid grid-cols-1 gap-8 sm:grid-cols-2" />

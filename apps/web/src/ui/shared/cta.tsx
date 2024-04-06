@@ -19,7 +19,7 @@ export function Cta() {
           className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:justify-between lg:px-8"
         >
           <div className="max-w-xl">
-            <h2 className="font-mono text-4xl font-semibold tracking-tighter text-foreground sm:w-3/4 sm:text-5xl md:w-3/4 lg:w-auto">
+            <h2 className="font-mono text-3xl font-semibold tracking-tighter text-foreground sm:w-3/4 md:w-3/4 lg:w-auto">
               Got a brain buster?
             </h2>
             <p className="mt-4 text-lg tracking-tight text-secondary-foreground">

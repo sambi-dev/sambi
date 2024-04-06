@@ -133,7 +133,7 @@ function NavigationItem({
 
 function Navigation() {
   return (
-    <nav className="mt-px font-mono text-5xl font-medium tracking-tight">
+    <nav className="mt-px font-mono text-6xl font-medium tracking-tight">
       <NavigationRow>
         <NavigationItem href="/showcase">Showcase</NavigationItem>
         <NavigationItem href="/about">About</NavigationItem>

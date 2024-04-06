@@ -19,7 +19,7 @@ export default function Crew({ crew }: CrewProps) {
     <div className="py-24 md:py-32">
       <div className="mx-auto grid max-w-7xl grid-cols-1 gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-5">
         <div className="max-w-2xl xl:col-span-2">
-          <h2 className="font-mono text-3xl font-semibold tracking-tighter text-foreground sm:text-4xl">
+          <h2 className="font-mono text-2xl font-semibold tracking-tighter text-foreground">
             {crew.title}
           </h2>
           <div className="mt-6 leading-8 text-muted-foreground">
@@ -52,7 +52,7 @@ export default function Crew({ crew }: CrewProps) {
                 >
                   {person._sys.title}
                 </h3>
-                <p className="font-mono text-sm text-alternate">
+                <p className="font-mono text-xs text-alternate">
                   {person.role}
                 </p>
                 <p className="mt-6 text-sm leading-7 text-muted-foreground md:text-base">

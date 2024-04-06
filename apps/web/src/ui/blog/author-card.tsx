@@ -35,7 +35,7 @@ export default function AuthorCard({ author }: { author: Author }) {
             />
             <div className="max-w-xl flex-auto">
               <div className="flex items-center gap-2">
-                <h3 className="font-mono text-xl font-semibold tracking-tighter text-foreground">
+                <h3 className="font-mono text-lg font-semibold tracking-tighter text-foreground">
                   {author.name}
                 </h3>
               </div>

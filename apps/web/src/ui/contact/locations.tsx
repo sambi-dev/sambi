@@ -30,7 +30,7 @@ export default function Locations() {
     <FadeIn className="mx-auto max-w-2xl space-y-16 divide-y divide-border lg:mx-0 lg:max-w-none">
       <div className="grid grid-cols-1 gap-x-8 gap-y-10 pt-16 lg:grid-cols-3">
         <div>
-          <h2 className="font-mono text-3xl font-semibold tracking-tighter text-foreground">
+          <h2 className="font-mono text-xl font-semibold tracking-tighter text-foreground">
             We work remotely
           </h2>
         </div>

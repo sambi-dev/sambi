@@ -20,13 +20,13 @@ export function PageIntro({
     >
       <FadeIn>
         <h1>
-          <span className="block font-mono text-sm font-semibold uppercase tracking-widest text-primary">
+          <span className="block font-mono text-xs font-semibold uppercase tracking-widest text-primary">
             {eyebrow}
           </span>
           <span className="sr-only"> - </span>
           <span
             className={cn(
-              'mt-6 block max-w-5xl font-mono text-4xl font-semibold tracking-tighter text-foreground [text-wrap:balance] sm:text-6xl',
+              'mt-6 block max-w-3xl font-mono text-3xl font-semibold tracking-tighter text-foreground [text-wrap:balance]',
               centered && 'mx-auto',
             )}
           >

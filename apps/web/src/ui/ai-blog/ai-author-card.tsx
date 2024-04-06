@@ -23,7 +23,7 @@ export default function AiAuthorCard() {
                   AI Blog
                 </h3>
               </div>
-              <p className="font-mono text-xl font-semibold tracking-tighter text-foreground">
+              <p className="font-mono text-lg font-semibold tracking-tighter text-foreground">
                 AI content that hits different
               </p>
               <p className="mt-2 text-sm text-muted-foreground">
