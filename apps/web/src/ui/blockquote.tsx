@@ -67,10 +67,9 @@ function BlockquoteWithoutImage({
       <figure className="text-sm">
         <blockquote
           className={cn(
-            "text-secondary-foreground [&>*]:relative [&>:first-child]:before:absolute [&>:first-child]:before:right-full [&>:first-child]:before:content-['“'] [&>:last-child]:after:content-['”']",
+            "text-muted-foreground [&>*]:relative [&>:first-child]:before:absolute [&>:first-child]:before:right-full [&>:first-child]:before:content-['“'] [&>:last-child]:after:content-['”']",
             {
-              'text-pretty font-mono tracking-tighter text-muted-foreground lg:text-xl':
-                large,
+              'text-pretty text-lg text-muted-foreground': large,
             },
           )}
         >
