@@ -137,6 +137,30 @@ export const showcaseBriefFragment = {
   body: {
     json: {
       content: true,
+      blocks: {
+        on_TweetComponent: {
+          __typename: true,
+          _id: true,
+          tweetId: true,
+        },
+        on_BlockquoteComponent: {
+          __typename: true,
+          _id: true,
+          author: true,
+          role: true,
+          quote: true,
+        },
+        on_ToptipComponent: {
+          __typename: true,
+          _id: true,
+          tip: true,
+        },
+        on_GotchaComponent: {
+          __typename: true,
+          _id: true,
+          gotcha: true,
+        },
+      },
     },
   },
   featuredImage: {
