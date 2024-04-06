@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 
-import type { BlockRichText } from '.basehub';
+import type { BlockDocument, BlockRichText } from '.basehub';
 
 import {
   fetchAiBlogPosts,
@@ -113,6 +113,7 @@ const AiBlogPost = async ({ params }: { params: { slug: string } }) => {
         </FadeIn>
 
         <RichTextComponents
+          blocks={post.body?.json.blocks as BlockDocument[]}
           content={post.body?.json.content as BlockRichText}
           centered
         />

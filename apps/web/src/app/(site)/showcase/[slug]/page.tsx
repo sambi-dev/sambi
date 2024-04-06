@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 
 import { notFound } from 'next/navigation';
 
-import type { BlockRichText } from '.basehub';
+import type { BlockDocument, BlockRichText } from '.basehub';
 
 import { basehubClient } from '#/basehub/client';
 import {
@@ -136,6 +136,7 @@ export default async function ProjectBriefPage({
         </header>
         <Container className="mt-24 sm:mt-32 lg:mt-40">
           <RichTextComponents
+            blocks={brief.body?.json.blocks as BlockDocument[]}
             content={brief.body?.json.content as BlockRichText}
             centered
           />
