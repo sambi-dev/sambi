@@ -71,13 +71,13 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
       )}
       <Container as="article" className="relative z-10 mt-24 sm:mt-32 lg:mt-40">
         <FadeIn>
-          <header className="mx-auto flex max-w-5xl flex-col text-center">
-            <h1 className="mt-6 font-mono text-4xl font-semibold tracking-tighter text-foreground [text-wrap:balance] sm:text-6xl">
+          <header className="mx-auto flex max-w-3xl flex-col text-center">
+            <h1 className="mt-6 font-mono text-3xl font-semibold tracking-tighter text-foreground [text-wrap:balance]">
               {post._sys.title}
             </h1>
             <time
               dateTime={post._sys.createdAt}
-              className="order-first block font-mono text-sm font-bold uppercase tracking-widest text-primary"
+              className="order-first block font-mono text-xs font-bold uppercase tracking-widest text-primary"
             >
               {formatDate(post._sys.createdAt)}
             </time>
@@ -89,13 +89,13 @@ const BlogPostPage = async ({ params }: { params: { slug: string } }) => {
                 alt={`Image of ${post.author._sys.title}`}
                 className="h-6 w-6 flex-none rounded-full bg-background grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
               />
-              <span className="font-mono text-sm font-medium tracking-tighter text-secondary-foreground">
+              <span className="font-mono text-xs font-medium tracking-tighter text-secondary-foreground">
                 {post.author._sys.title}
               </span>
               <span className="text-sm text-secondary-foreground">::</span>
               <span className="font-mono text-xs font-medium uppercase tracking-tighter text-primary">
                 {post.category.length > 0 && (
-                  <div className="-mb-0.5 font-mono text-sm font-medium uppercase text-alternate">
+                  <div className="-mb-0.5 font-mono text-xs font-medium uppercase text-alternate">
                     #{post.category[0]?._sys.title}
                   </div>
                 )}

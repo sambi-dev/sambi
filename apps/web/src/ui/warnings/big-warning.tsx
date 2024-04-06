@@ -32,7 +32,7 @@ export function BigWarning({
             <div className="flex text-alternate sm:justify-center">
               <StarRating size="lg" />
             </div>
-            <blockquote className="mt-10 text-pretty font-mono text-4xl font-medium tracking-tighter text-secondary-foreground sm:text-center lg:text-5xl">
+            <blockquote className="mt-10 text-pretty font-mono text-3xl font-medium tracking-tighter text-secondary-foreground sm:text-center">
               {children}
             </blockquote>
             <figcaption className="mt-10 flex items-center sm:justify-center">

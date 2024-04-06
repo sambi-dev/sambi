@@ -56,7 +56,7 @@ export function BuildExecute() {
           across people, process, and technology.
         </p>
       </div>
-      <h3 className="mt-12 font-mono text-sm font-medium tracking-tighter text-secondary-foreground md:text-base">
+      <h3 className="mt-12 font-mono text-xs font-medium tracking-tighter text-secondary-foreground md:text-base">
         Just part of the schtick
       </h3>
       <TagList className="mt-4">

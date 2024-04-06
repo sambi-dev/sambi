@@ -51,7 +51,7 @@ export function AnalyzeImprove() {
         <p>When we have that, the sky&apos;s the limit. </p>
       </div>
 
-      <h3 className="mt-12 font-mono text-sm font-medium tracking-tighter text-secondary-foreground md:text-base">
+      <h3 className="mt-12 font-mono text-xs font-medium tracking-tighter text-secondary-foreground md:text-base">
         Hyperbole delivered in this round
       </h3>
       <List className="mt-8">

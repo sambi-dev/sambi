@@ -72,7 +72,7 @@ export default function AIReviewSummary({ summary }: Props) {
     <Card className="grid grid-cols-1 rounded-4xl border-primary/50 bg-card p-8 shadow-lg sm:col-span-2 sm:mx-auto xl:col-start-2 xl:row-end-1">
       <CardHeader className="mt-4 items-center gap-4 space-y-0 p-0">
         <div className="grid gap-1 text-center">
-          <CardTitle className="flex flex-col font-mono font-semibold tracking-tighter md:text-2xl">
+          <CardTitle className="flex flex-col font-mono text-2xl font-semibold tracking-tighter">
             Mock Net Promoter Score
           </CardTitle>
           <CardDescription className="flex flex-col items-center gap-2">

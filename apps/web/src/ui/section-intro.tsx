@@ -7,7 +7,6 @@ export function SectionIntro({
   title,
   eyebrow,
   children,
-  smaller = false,
   centered = false,
   ...props
 }: Omit<
@@ -17,7 +16,6 @@ export function SectionIntro({
   title: string;
   eyebrow?: string;
   children?: React.ReactNode;
-  smaller?: boolean;
   centered?: boolean;
 }) {
   return (
@@ -26,7 +24,7 @@ export function SectionIntro({
         <h2>
           {eyebrow && (
             <>
-              <span className="mb-6 block font-mono text-sm font-medium uppercase tracking-widest text-primary">
+              <span className="mb-6 block font-mono text-xs font-medium uppercase tracking-widest text-primary">
                 {eyebrow}
               </span>
               <span className="sr-only"> - </span>
@@ -34,8 +32,7 @@ export function SectionIntro({
           )}
           <span
             className={cn(
-              'block text-pretty font-mono font-semibold tracking-tighter text-foreground',
-              smaller ? 'text-2xl' : 'text-3xl sm:text-4xl',
+              'block text-pretty font-mono text-2xl font-semibold tracking-tighter text-foreground',
               centered && 'mx-auto',
             )}
           >

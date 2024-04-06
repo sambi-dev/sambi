@@ -87,7 +87,7 @@ function RichTextComponents({
     GotchaComponent({ gotcha }: GotchaComponent) {
       return (
         <Border position="left" className="my-10 pl-8" gotcha>
-          <p className="font-mono text-sm font-medium uppercase tracking-widest text-destructive">
+          <p className="font-mono text-xs font-medium uppercase tracking-widest text-destructive">
             Gotcha
           </p>
           <div className="mt-4">{gotcha}</div>
@@ -118,7 +118,7 @@ function RichTextComponents({
     ToptipComponent({ tip }: ToptipComponent) {
       return (
         <Border position="left" className="my-10 pl-8">
-          <p className="font-mono text-sm font-medium uppercase tracking-widest text-primary">
+          <p className="font-mono text-xs font-medium uppercase tracking-widest text-primary">
             Top tip
           </p>
           <div className="mt-4">{tip}</div>
@@ -174,7 +174,7 @@ function RichTextComponents({
     p: ({ className, ...props }: React.ComponentPropsWithoutRef<'p'>) => (
       <p
         className={cn(
-          `text-muted-foreground ${small ? 'text-sm' : 'lg:text-lg'} text-pretty leading-[40px] [&:not(:first-child)]:mt-6`,
+          `text-muted-foreground ${small ? 'text-sm' : 'lg:text-lg'} text-pretty [&:not(:first-child)]:mt-6`,
           className,
         )}
         {...props}
