@@ -32,7 +32,7 @@ export function Footer() {
             </div>
           </div>
           <div className="mb-20 mt-24 flex flex-col items-center gap-y-4 border-t pt-12 md:flex-row md:flex-wrap md:justify-between md:gap-x-6 md:gap-y-0">
-            <p className="font-mono text-xs text-primary">
+            <p className="font-mono text-xs uppercase text-muted-foreground">
               © {siteConfig.name}. All Rights Reserved.{' '}
               {new Date().getFullYear()}
             </p>

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { fetchBlogPosts } from '#/basehub/blog-queries';
+import { fetchBlogPage } from '#/basehub/blog-queries';
 import { siteConfig } from '#/config/site';
 import PageJson from '#/json-ld/page-jsonld';
 import { SITE_URL } from '#/lib/constants';
@@ -9,11 +9,11 @@ import { PageLinks } from '#/ui/page-links';
 import ComingSoon from '#/ui/shared/coming-soon';
 
 export default async function ClientsPage() {
-  const { items: blogPosts } = await fetchBlogPosts({
+  const morePostsData = await fetchBlogPage({
     first: 2,
   });
 
-  const pages = blogPosts.map((post) => ({
+  const morePosts = morePostsData.posts.items.map((post) => ({
     href: `/blog/${post._sys.slug}`,
     title: post._sys.title,
     description: post.metaDescription,
@@ -38,7 +38,7 @@ export default async function ClientsPage() {
         className="mt-24 sm:mt-32 lg:mt-40"
         title="From the blog"
         intro="We've taken a page from the Hollywood book. Find every old and overused idea and freshen it up. The Mummy was underrated."
-        pages={pages}
+        pages={morePosts}
       />
 
       <ContactSection />

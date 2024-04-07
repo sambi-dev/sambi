@@ -8,7 +8,7 @@ import {
   XIcon,
 } from '@yocxo/ui/icons';
 
-import { siteConfig } from '#/config/site';
+import { socialConfig } from '#/config/social';
 
 interface SocialMediaProfile {
   title: string;
@@ -19,32 +19,32 @@ interface SocialMediaProfile {
 export const socialMediaProfiles: SocialMediaProfile[] = [
   {
     title: 'Upwork',
-    href: siteConfig.links.upworkAgency,
+    href: socialConfig.links.upworkAgency,
     icon: UpworkIcon,
   },
   {
     title: 'GitHub',
-    href: siteConfig.links.github,
+    href: socialConfig.links.github,
     icon: GitHubIcon,
   },
   {
     title: 'Facebook',
-    href: siteConfig.links.facebook,
+    href: socialConfig.links.facebook,
     icon: FacebookIcon,
   },
   {
     title: 'Instagram',
-    href: siteConfig.links.instagram,
+    href: socialConfig.links.instagram,
     icon: InstagramIcon,
   },
   {
     title: 'Twitter',
-    href: siteConfig.links.twitter,
+    href: socialConfig.links.twitter,
     icon: XIcon,
   },
   {
     title: 'LinkedIn',
-    href: siteConfig.links.linkedIn,
+    href: socialConfig.links.linkedIn,
     icon: LinkedInIcon,
   },
 ];

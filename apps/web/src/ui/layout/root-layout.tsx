@@ -18,7 +18,7 @@ import { buttonVariants } from '@yocxo/ui/button';
 import { BurgerMenuIcon, CloseMenuIcon, UpworkIcon } from '@yocxo/ui/icons';
 import { Logo, Logomark } from '@yocxo/ui/logo';
 
-import { siteConfig } from '#/config/site';
+import { upworkConfig } from '#/config/upwork';
 import { Footer } from '#/ui/layout/footer';
 import { Container } from '#/ui/page-container';
 import { SocialMedia } from '#/ui/social-media';
@@ -67,7 +67,7 @@ function Header({
         </Link>
         <div className="flex items-center gap-x-8">
           <a
-            href={siteConfig.teamLinks.upworkConsult}
+            href={upworkConfig.consult}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Book a consult with Yo! CXO on Upwork in a new window"

@@ -4,12 +4,8 @@ import { RichText } from 'basehub/react-rich-text';
 
 import type { BlockRichText } from '.basehub';
 
-import { fetchBlogPosts } from '#/basehub/blog-queries';
-import {
-  fetchEditorialPage,
-  fetchEditorialPageIntro,
-  fetchEditorialPageMetadata,
-} from '#/basehub/editorial-queries';
+import { fetchBlogPage } from '#/basehub/blog-queries';
+import { fetchEditorialPage } from '#/basehub/editorial-queries';
 import { siteConfig } from '#/config/site';
 import PageJson from '#/json-ld/page-jsonld';
 import { formatDate, SITE_URL } from '#/lib/constants';
@@ -21,13 +17,13 @@ import { PageLinks } from '#/ui/page-links';
 import RichTextComponents from '#/ui/shared/rich-text-components';
 
 export default async function EditorialPolicyPage() {
-  const pageIntro = await fetchEditorialPageIntro();
   const editorial = await fetchEditorialPage();
-  const { items: blogPosts } = await fetchBlogPosts({
+
+  const morePostsData = await fetchBlogPage({
     first: 2,
   });
 
-  const pages = blogPosts.map((post) => ({
+  const morePosts = morePostsData.posts.items.map((post) => ({
     href: `/blog/${post._sys.slug}`,
     title: post._sys.title,
     description: post.metaDescription,
@@ -37,11 +33,11 @@ export default async function EditorialPolicyPage() {
   return (
     <div>
       <PageIntro
-        eyebrow={pageIntro.eyebrow}
-        title={pageIntro.title}
-        centered={pageIntro.centered}
+        eyebrow={editorial.pageIntro.eyebrow}
+        title={editorial.pageIntro.title}
+        centered={editorial.pageIntro.centered}
       >
-        <RichText>{pageIntro.description?.json.content}</RichText>
+        <RichText>{editorial.pageIntro.description?.json.content}</RichText>
         <p className="flex items-center justify-center pt-6 text-sm text-alternate">
           Updated {formatDate(editorial._sys.lastModifiedAt)}
         </p>
@@ -58,28 +54,28 @@ export default async function EditorialPolicyPage() {
         className="mt-24 sm:mt-32 lg:mt-40"
         title="From the blog"
         intro="In an era of synthetic noise, we're proudly analog. Crafting content with our bare hands. Call us old fashioned."
-        pages={pages}
+        pages={morePosts}
       />
       <ContactSection />
       <PageJson
         pageSlug={`${editorial._sys.slug}`}
         pageName={`${editorial._sys.title} :: ${siteConfig.name}`}
-        keyword={pageIntro.keyword?._sys.title}
+        keyword={editorial.keyword?._sys.title}
       />
     </div>
   );
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const cmsMetadata = await fetchEditorialPageMetadata();
+  const editorial = await fetchEditorialPage();
 
   const metadata = {
-    title: cmsMetadata.title,
-    description: cmsMetadata.description,
+    title: editorial.meta.title,
+    description: editorial.meta.description,
     openGraph: {
       type: 'website',
-      title: cmsMetadata.title,
-      description: cmsMetadata.description,
+      title: editorial.meta.title,
+      description: editorial.meta.description,
       images: [
         {
           url: siteConfig.image.url,
@@ -91,8 +87,8 @@ export async function generateMetadata(): Promise<Metadata> {
       url: `${SITE_URL}/editorial`,
     },
     twitter: {
-      title: cmsMetadata.title,
-      description: cmsMetadata.description,
+      title: editorial.meta.title,
+      description: editorial.meta.description,
       images: [
         {
           url: siteConfig.image.url,

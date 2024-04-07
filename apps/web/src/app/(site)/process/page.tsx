@@ -43,7 +43,7 @@ const title = 'The Process';
 const description =
   "Discover and be assimilated in our process at Yo! CXO. Our secret formula? Stalking, re-purposing, and overcharging for stuff you probably don't need. 🤑";
 
-const pageUrl = `${SITE_URL}/about`;
+const pageUrl = `${SITE_URL}/process`;
 
 export const metadata: Metadata = {
   title,

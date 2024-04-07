@@ -1,4 +1,4 @@
-import { siteConfig } from '#/config/site';
+import { upworkConfig } from '#/config/upwork';
 import { env } from '#/env';
 
 interface ContactMethod {
@@ -22,7 +22,7 @@ export const contactMethods: ContactMethod[] = [
     description: 'Create a Client account on Upwork then send us a message.',
     screenReaderLabel: 'Hire on Upwork',
     ariaLabel: 'Hire Yo! CXO on Upwork in a new window',
-    linkHref: siteConfig.teamLinks.upworkSam,
+    linkHref: upworkConfig.rebekah,
     linkText: 'Start getting results',
   },
   {

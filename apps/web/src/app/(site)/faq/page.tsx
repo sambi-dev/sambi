@@ -2,13 +2,10 @@ import type { Metadata } from 'next';
 
 import { RichText } from 'basehub/react-rich-text';
 
-import { fetchBlogPosts } from '#/basehub/blog-queries';
-import {
-  fetchFaqs,
-  fetchFaqsPageIntro,
-  fetchFaqsPageMetadata,
-} from '#/basehub/faq-queries';
+import { fetchBlogPage } from '#/basehub/blog-queries';
+import { fetchFaqsPage } from '#/basehub/faq-queries';
 import { siteConfig } from '#/config/site';
+import { socialConfig } from '#/config/social';
 import PageJson from '#/json-ld/page-jsonld';
 import { SITE_URL } from '#/lib/constants';
 import { Border } from '#/ui/border';
@@ -19,7 +16,7 @@ import { PageLinks } from '#/ui/page-links';
 import Faqs from '#/ui/shared/faq';
 
 export default async function FaqPage() {
-  const pageIntro = await fetchFaqsPageIntro();
+  const faqsPageData = await fetchFaqsPage();
   const orderedCategories = [
     'general',
     'clients',
@@ -27,18 +24,13 @@ export default async function FaqPage() {
     'vendors',
     'trolls',
   ];
-  const faq = await fetchFaqs();
-  const { items: blogPosts } = await fetchBlogPosts({
+  const blogPageData = await fetchBlogPage({
     first: 2,
   });
 
-  if (faq.items) {
-    faq.items.sort((a, b) =>
-      a.isPriority === b.isPriority ? 0 : a.isPriority ? -1 : 1,
-    );
-  }
+  const blogPosts = blogPageData.posts.items;
 
-  const pages = blogPosts.map((post) => ({
+  const morePosts = blogPosts.map((post) => ({
     href: `/blog/${post._sys.slug}`,
     title: post._sys.title,
     description: post.metaDescription,
@@ -48,20 +40,20 @@ export default async function FaqPage() {
   return (
     <>
       <PageIntro
-        eyebrow={pageIntro.eyebrow}
-        title={pageIntro.title}
-        centered={pageIntro.centered}
+        eyebrow={faqsPageData.pageIntro.eyebrow}
+        title={faqsPageData.pageIntro.title}
+        centered={faqsPageData.pageIntro.centered}
       >
-        <RichText>{pageIntro.description?.json.content}</RichText>
+        <RichText>{faqsPageData.pageIntro.description?.json.content}</RichText>
       </PageIntro>
       <Container className="mt-24 sm:mt-32 lg:mt-40">
         <Border position="top" className="pb-1" />
         {orderedCategories.map((category) => {
-          const filteredItems = faq.items.filter(
+          const filteredItems = faqsPageData.faq.items.filter(
             (item) => item.category === category,
           );
           const faqForCategory = {
-            ...faq,
+            ...faqsPageData.faq,
             items: filteredItems,
           };
           return (
@@ -71,7 +63,7 @@ export default async function FaqPage() {
         <div className="mx-auto mt-6 max-w-2xl text-pretty py-10 text-base leading-7 text-muted-foreground">
           Have a different question?{' '}
           <a
-            href={siteConfig.links.support}
+            href={socialConfig.links.support}
             className="font-semibold text-primary underline decoration-2 underline-offset-4 hover:text-primary/80"
             target="_blank"
             rel="noopener noreferrer"
@@ -87,29 +79,29 @@ export default async function FaqPage() {
         className="mt-24 sm:mt-32 lg:mt-40"
         title="From the blog"
         intro="We've taken a page from the Hollywood book. Find every old and overused idea and freshen it up. The Mummy was underrated."
-        pages={pages}
+        pages={morePosts}
       />
 
       <ContactSection />
       <PageJson
-        pageSlug={`${pageIntro.jsonSlug}`}
-        pageName={`${pageIntro.jsonTitle} :: ${siteConfig.name}`}
-        keyword={pageIntro.keyword?._sys.title}
+        pageSlug={`${faqsPageData._sys.slug}`}
+        pageName={`${faqsPageData._sys.title} :: ${siteConfig.name}`}
+        keyword={faqsPageData.keyword._sys.title}
       />
     </>
   );
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const cmsMetadata = await fetchFaqsPageMetadata();
+  const faqsPageData = await fetchFaqsPage();
 
   const metadata = {
-    title: cmsMetadata.title,
-    description: cmsMetadata.description,
+    title: faqsPageData.meta.title,
+    description: faqsPageData.meta.description,
     openGraph: {
       type: 'website',
-      title: cmsMetadata.title,
-      description: cmsMetadata.description,
+      title: faqsPageData.meta.title,
+      description: faqsPageData.meta.description,
       images: [
         {
           url: siteConfig.image.url,
@@ -121,8 +113,8 @@ export async function generateMetadata(): Promise<Metadata> {
       url: `${SITE_URL}/faq`,
     },
     twitter: {
-      title: cmsMetadata.title,
-      description: cmsMetadata.description,
+      title: faqsPageData.meta.title,
+      description: faqsPageData.meta.description,
       images: [
         {
           url: siteConfig.image.url,

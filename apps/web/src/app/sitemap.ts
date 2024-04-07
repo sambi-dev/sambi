@@ -3,9 +3,9 @@ import type { BlogPostFragment } from '#/basehub/blog-queries';
 import type { ShowcaseBriefFragment } from '#/basehub/showcase-queries';
 import type { MetadataRoute } from 'next';
 
-import { fetchAiBlogPosts } from '#/basehub/ai-blog-queries';
-import { fetchBlogPosts } from '#/basehub/blog-queries';
-import { fetchShowcaseBriefs } from '#/basehub/showcase-queries';
+import { fetchAiBlogPage } from '#/basehub/ai-blog-queries';
+import { fetchBlogPage } from '#/basehub/blog-queries';
+import { fetchShowcasePage } from '#/basehub/showcase-queries';
 import { SITE_URL } from '#/lib/constants';
 
 type BasehubItem = AiPostFragment | BlogPostFragment | ShowcaseBriefFragment;
@@ -16,10 +16,21 @@ export interface SitemapData {
 }
 
 async function fetchSitemapData<T extends BasehubItem>(
-  fetchFn: (args: { first: number }) => Promise<{ items: T[] }>,
+  fetchFn: (args: { skip?: number; first?: number }) => Promise<
+    Record<
+      string,
+      {
+        items?: T[];
+      } & Record<string, unknown>
+    >
+  >,
   path: string,
 ): Promise<SitemapData[]> {
-  const { items } = await fetchFn({ first: 100 });
+  const data = await fetchFn({ first: 100 });
+  const key = Object.keys(data).find(
+    (key) => key !== '_sys' && data[key] && 'items' in data[key]!,
+  );
+  const items = key ? data[key]?.items ?? [] : [];
   return items.map(({ _sys: { slug, lastModifiedAt } }) => ({
     slug: `${SITE_URL}/${path}/${slug}`,
     _updatedAt: lastModifiedAt,
@@ -28,9 +39,9 @@ async function fetchSitemapData<T extends BasehubItem>(
 
 async function getAllSitemapData(): Promise<SitemapData[]> {
   const [aiBlog, blog, showcase] = await Promise.all([
-    fetchSitemapData<AiPostFragment>(fetchAiBlogPosts, 'ai-blog'),
-    fetchSitemapData<BlogPostFragment>(fetchBlogPosts, 'blog'),
-    fetchSitemapData<ShowcaseBriefFragment>(fetchShowcaseBriefs, 'showcase'),
+    fetchSitemapData<AiPostFragment>(fetchAiBlogPage, 'ai-blog'),
+    fetchSitemapData<BlogPostFragment>(fetchBlogPage, 'blog'),
+    fetchSitemapData<ShowcaseBriefFragment>(fetchShowcasePage, 'showcase'),
   ]);
 
   return [...aiBlog, ...blog, ...showcase];

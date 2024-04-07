@@ -3,6 +3,7 @@ import type { Graph } from 'schema-dts';
 import React from 'react';
 
 import { siteConfig } from '#/config/site';
+import { socialConfig } from '#/config/social';
 
 interface PageJsonProps {
   pageName: string;
@@ -43,7 +44,7 @@ const PageJson = ({ pageName, pageSlug, keyword }: PageJsonProps) => {
           url: siteConfig.logo.url,
         },
         name: siteConfig.name,
-        sameAs: Object.values(siteConfig.links),
+        sameAs: Object.values(socialConfig.links),
         url: siteConfig.url,
       },
       {

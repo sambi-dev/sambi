@@ -4,12 +4,8 @@ import { RichText } from 'basehub/react-rich-text';
 
 import type { BlockRichText } from '.basehub';
 
-import { fetchBlogPosts } from '#/basehub/blog-queries';
-import {
-  fetchPrivacyPage,
-  fetchPrivacyPageIntro,
-  fetchPrivacyPageMetadata,
-} from '#/basehub/privacy-queries';
+import { fetchBlogPage } from '#/basehub/blog-queries';
+import { fetchPrivacyPage } from '#/basehub/privacy-queries';
 import { siteConfig } from '#/config/site';
 import PageJson from '#/json-ld/page-jsonld';
 import { formatDate, SITE_URL } from '#/lib/constants';
@@ -21,13 +17,12 @@ import { PageLinks } from '#/ui/page-links';
 import RichTextComponents from '#/ui/shared/rich-text-components';
 
 export default async function PrivacyPolicyPage() {
-  const pageIntro = await fetchPrivacyPageIntro();
   const privacy = await fetchPrivacyPage();
-  const { items: blogPosts } = await fetchBlogPosts({
+  const morePostsData = await fetchBlogPage({
     first: 2,
   });
 
-  const pages = blogPosts.map((post) => ({
+  const morePosts = morePostsData.posts.items.map((post) => ({
     href: `/blog/${post._sys.slug}`,
     title: post._sys.title,
     description: post.metaDescription,
@@ -37,11 +32,11 @@ export default async function PrivacyPolicyPage() {
   return (
     <div>
       <PageIntro
-        eyebrow={pageIntro.eyebrow}
-        title={pageIntro.title}
-        centered={pageIntro.centered}
+        eyebrow={privacy.pageIntro.eyebrow}
+        title={privacy.pageIntro.title}
+        centered={privacy.pageIntro.centered}
       >
-        <RichText>{pageIntro.description?.json.content}</RichText>
+        <RichText>{privacy.pageIntro.description?.json.content}</RichText>
         <p className="flex items-center justify-center pt-6 text-sm text-alternate">
           Updated {formatDate(privacy._sys.lastModifiedAt)}
         </p>
@@ -58,28 +53,28 @@ export default async function PrivacyPolicyPage() {
         className="mt-24 sm:mt-32 lg:mt-40"
         title="From the blog"
         intro="In an era of synthetic noise, we're proudly analog. Crafting content with our bare hands. Call us old fashioned."
-        pages={pages}
+        pages={morePosts}
       />
       <ContactSection />
       <PageJson
         pageSlug={`${privacy._sys.slug}`}
         pageName={`${privacy._sys.title} :: ${siteConfig.name}`}
-        keyword={pageIntro.keyword?._sys.title}
+        keyword={privacy.keyword?._sys.title}
       />
     </div>
   );
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const cmsMetadata = await fetchPrivacyPageMetadata();
+  const privacy = await fetchPrivacyPage();
 
   const metadata = {
-    title: cmsMetadata.title,
-    description: cmsMetadata.description,
+    title: privacy.meta.title,
+    description: privacy.meta.description,
     openGraph: {
       type: 'website',
-      title: cmsMetadata.title,
-      description: cmsMetadata.description,
+      title: privacy.meta.title,
+      description: privacy.meta.description,
       images: [
         {
           url: siteConfig.image.url,
@@ -88,11 +83,11 @@ export async function generateMetadata(): Promise<Metadata> {
           alt: siteConfig.image.alt,
         },
       ],
-      url: `${SITE_URL}/faq`,
+      url: `${SITE_URL}/privacy`,
     },
     twitter: {
-      title: cmsMetadata.title,
-      description: cmsMetadata.description,
+      title: privacy.meta.title,
+      description: privacy.meta.description,
       images: [
         {
           url: siteConfig.image.url,

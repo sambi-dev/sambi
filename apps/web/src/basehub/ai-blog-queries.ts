@@ -7,80 +7,6 @@ import type {
 
 import { basehubClient } from './client';
 
-export async function fetchAiBlogPageIntro() {
-  'use server';
-
-  const { aiBlog } = await basehubClient.query({
-    aiBlog: {
-      _sys: {
-        id: true,
-        title: true,
-        slug: true,
-        __typename: true,
-      },
-      pageIntro: {
-        _sys: {
-          id: true,
-          __typename: true,
-        },
-        eyebrow: true,
-        title: true,
-        description: {
-          json: {
-            content: true,
-          },
-        },
-        centered: true,
-      },
-      keyword: {
-        _sys: {
-          id: true,
-          title: true,
-          __typename: true,
-        },
-      },
-    },
-  });
-
-  return {
-    jsonTitle: aiBlog._sys.title,
-    jsonSlug: aiBlog._sys.slug,
-    eyebrow: aiBlog.pageIntro.eyebrow,
-    title: aiBlog.pageIntro.title,
-    description: aiBlog.pageIntro.description,
-    centered: aiBlog.pageIntro.centered,
-    keyword: aiBlog.keyword,
-  };
-}
-
-export async function fetchAiBlogPageMetadata() {
-  'use server';
-
-  const { aiBlog } = await basehubClient.query({
-    aiBlog: {
-      _sys: {
-        id: true,
-        title: true,
-        slug: true,
-        __typename: true,
-      },
-      meta: {
-        _sys: {
-          id: true,
-          __typename: true,
-        },
-        title: true,
-        description: true,
-      },
-    },
-  });
-
-  return {
-    title: aiBlog.meta.title,
-    description: aiBlog.meta.description,
-  };
-}
-
 export const aiPostFragment = {
   _sys: {
     id: true,
@@ -168,11 +94,17 @@ export type AiPostFragment = FieldsSelection<
   typeof aiPostFragment
 >;
 
-export async function fetchAiBlogPosts({ skip = 0, first = 10 } = {}) {
+export async function fetchAiBlogPage({ skip = 0, first = 10 } = {}) {
   'use server';
 
   const { aiBlog } = await basehubClient.query({
     aiBlog: {
+      _sys: {
+        id: true,
+        title: true,
+        slug: true,
+        __typename: true,
+      },
       aiPosts: {
         __args: {
           skip,
@@ -184,13 +116,39 @@ export async function fetchAiBlogPosts({ skip = 0, first = 10 } = {}) {
           totalCount: true,
         },
       },
+      keyword: {
+        _sys: {
+          id: true,
+          title: true,
+          __typename: true,
+        },
+      },
+      meta: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
+        title: true,
+        description: true,
+      },
+      pageIntro: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
+        eyebrow: true,
+        title: true,
+        description: {
+          json: {
+            content: true,
+          },
+        },
+        centered: true,
+      },
     },
   });
 
-  return {
-    items: aiBlog.aiPosts.items,
-    totalCount: aiBlog.aiPosts._meta.totalCount,
-  };
+  return aiBlog;
 }
 
 export const getAiPostBySlugQuery = (slug: string) => {

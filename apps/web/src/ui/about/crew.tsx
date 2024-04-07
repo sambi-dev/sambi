@@ -33,10 +33,10 @@ export default function Crew({ crew }: CrewProps) {
             <li
               key={person._sys.id}
               id={person.websiteRelativePath}
-              className="flex flex-col gap-10 pt-12 sm:flex-row"
+              className="group flex flex-col gap-10 pt-12 sm:flex-row"
             >
               <Image
-                className="aspect-[4/5] w-44 flex-none rounded-2xl border object-cover grayscale transition duration-500 hover:grayscale-0 motion-safe:hover:scale-105"
+                className="aspect-[4/5] w-44 flex-none rounded-2xl border bg-card object-cover grayscale transition duration-500 group-hover:bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] group-hover:from-background group-hover:via-primary/80 group-hover:to-card group-hover:grayscale-0 motion-safe:group-hover:scale-105"
                 src={person.image.url}
                 alt={
                   person.image.alt ??
