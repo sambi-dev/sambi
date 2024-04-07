@@ -5,7 +5,7 @@ import { cn } from '@yocxo/ui';
 import { buttonVariants } from '@yocxo/ui/button';
 import { ArrowRightIcon } from '@yocxo/ui/icons';
 
-import { siteConfig } from '#/config/site';
+import { upworkConfig } from '#/config/upwork';
 import yoCxoLogo from '#/images/avatars/yocxo.com-logo-square.png';
 import { FadeIn } from '#/ui/fade-in';
 
@@ -61,7 +61,7 @@ export function Tldr() {
 
             <p className="mt-8">
               <Link
-                href={siteConfig.teamLinks.upworkConsult}
+                href={upworkConfig.consult}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Book a consult with Yo! CXO on Upwork in a new window"

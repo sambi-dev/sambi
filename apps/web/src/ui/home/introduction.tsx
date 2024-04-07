@@ -3,7 +3,7 @@ import { buttonVariants } from '@yocxo/ui/button';
 import { Container } from '@yocxo/ui/container';
 import { ArrowRightIcon, CheckIcon } from '@yocxo/ui/icons';
 
-import { siteConfig } from '#/config/site';
+import { upworkConfig } from '#/config/upwork';
 import { FadeIn } from '#/ui/fade-in';
 
 export function Introduction() {
@@ -106,7 +106,7 @@ export function Introduction() {
           <p className="mt-4">No seriously...</p>
           <div className="mt-10">
             <a
-              href={siteConfig.teamLinks.upworkConsult}
+              href={upworkConfig.consult}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Book a consult with Yo! CXO on Upwork in a new window"

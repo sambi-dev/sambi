@@ -1,6 +1,7 @@
 import type { BlogPosting, WithContext } from 'schema-dts';
 
 import { siteConfig } from '#/config/site';
+import { socialConfig } from '#/config/social';
 
 interface BlogPostJsonProps {
   authorBio: string;
@@ -70,7 +71,7 @@ const BlogPostJson = ({
       name: siteConfig.name,
       url: siteConfig.url,
       logo: siteConfig.logo.url,
-      sameAs: Object.values(siteConfig.links),
+      sameAs: Object.values(socialConfig.links),
     },
     sourceOrganization: {
       '@type': 'Organization',

@@ -72,7 +72,7 @@ const StatusIndicator = ({ status }: StatusIndicatorProps) => {
   return (
     <div className="flex items-center gap-2">
       <div className={`h-2 w-2 rounded-full ${color}`} />
-      <span className="whitespace-nowrap font-mono text-xs text-muted-foreground">
+      <span className="whitespace-nowrap font-mono text-xs uppercase text-secondary-foreground">
         {text}
       </span>
     </div>

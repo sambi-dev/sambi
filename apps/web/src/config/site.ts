@@ -19,21 +19,6 @@ interface SiteConfig {
   name: string;
   logo: Image;
   url: string;
-  links: {
-    facebook: string;
-    github: string;
-    instagram: string;
-    linkedIn: string;
-    support: string;
-    twitter: string;
-    upworkAgency: string;
-  };
-  teamLinks: {
-    upworkAmbreen: string;
-    upworkConsult: string;
-    upworkRebekah: string;
-    upworkSam: string;
-  };
 }
 
 export const siteConfig: SiteConfig = {
@@ -62,20 +47,4 @@ export const siteConfig: SiteConfig = {
   },
   name: 'Yo! CXO',
   url: siteUrl,
-  links: {
-    upworkAgency: 'https://www.upwork.com/agencies/yocxo/',
-    github: 'https://github.com/yocxo/studio',
-    twitter: 'https://twitter.com/supyocxo',
-    instagram: 'https://www.instagram.com/supyocxo/',
-    linkedIn: 'https://www.linkedin.com/in/supyocxo/',
-    facebook: 'https://www.facebook.com/supyocxo',
-    support: 'https://github.com/yocxo/studio/issues/new/choose',
-  },
-  teamLinks: {
-    upworkAmbreen: 'https://www.upwork.com/freelancers/breen',
-    upworkConsult:
-      'https://www.upwork.com/services/consultation/development-it-sam-1756271340353224704',
-    upworkRebekah: 'https://www.upwork.com/freelancers/rebekahrmarketing',
-    upworkSam: 'https://www.upwork.com/freelancers/rizvio',
-  },
 };

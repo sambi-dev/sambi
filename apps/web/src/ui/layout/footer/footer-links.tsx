@@ -1,4 +1,5 @@
-import { siteConfig } from '#/config/site';
+import { socialConfig } from '#/config/social';
+import { upworkConfig } from '#/config/upwork';
 
 interface Link {
   title: string;
@@ -27,20 +28,20 @@ export const footerLinks: Section[] = [
     links: [
       {
         title: 'Yo! CXO',
-        href: siteConfig.links.upworkAgency,
+        href: socialConfig.links.upworkAgency,
         external: true,
       },
       {
         title: 'Ambreen',
-        href: siteConfig.teamLinks.upworkAmbreen,
+        href: upworkConfig.ambreen,
         external: true,
       },
       {
         title: 'Rebekah',
-        href: siteConfig.teamLinks.upworkRebekah,
+        href: upworkConfig.rebekah,
         external: true,
       },
-      { title: 'Sam', href: siteConfig.teamLinks.upworkSam, external: true },
+      { title: 'Sam', href: upworkConfig.sam, external: true },
     ],
   },
   {

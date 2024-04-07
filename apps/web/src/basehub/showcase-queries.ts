@@ -7,74 +7,6 @@ import type {
 
 import { basehubClient } from './client';
 
-export async function fetchShowcasePageIntro() {
-  'use server';
-
-  const { showcase } = await basehubClient.query({
-    showcase: {
-      _sys: {
-        id: true,
-        title: true,
-        slug: true,
-        __typename: true,
-      },
-      pageIntro: {
-        _sys: {
-          id: true,
-          __typename: true,
-        },
-        eyebrow: true,
-        title: true,
-        description: {
-          json: {
-            content: true,
-          },
-        },
-        centered: true,
-      },
-      keyword: {
-        _sys: {
-          id: true,
-          title: true,
-          __typename: true,
-        },
-      },
-    },
-  });
-
-  return {
-    jsonTitle: showcase._sys.title,
-    jsonSlug: showcase._sys.slug,
-    eyebrow: showcase.pageIntro.eyebrow,
-    title: showcase.pageIntro.title,
-    description: showcase.pageIntro.description,
-    centered: showcase.pageIntro.centered,
-    keyword: showcase.keyword,
-  };
-}
-
-export async function fetchShowcasePageMetadata() {
-  'use server';
-
-  const { showcase } = await basehubClient.query({
-    showcase: {
-      meta: {
-        _sys: {
-          id: true,
-          __typename: true,
-        },
-        title: true,
-        description: true,
-      },
-    },
-  });
-
-  return {
-    title: showcase.meta.title,
-    description: showcase.meta.description,
-  };
-}
-
 export const showcaseBriefFragment = {
   _sys: {
     id: true,
@@ -191,11 +123,17 @@ export type ShowcaseBriefFragment = FieldsSelection<
   typeof showcaseBriefFragment
 >;
 
-export async function fetchShowcaseBriefs({ skip = 0, first = 10 } = {}) {
+export async function fetchShowcasePage({ skip = 0, first = 10 } = {}) {
   'use server';
 
   const { showcase } = await basehubClient.query({
     showcase: {
+      _sys: {
+        id: true,
+        title: true,
+        slug: true,
+        __typename: true,
+      },
       brief: {
         __args: {
           first,
@@ -207,13 +145,39 @@ export async function fetchShowcaseBriefs({ skip = 0, first = 10 } = {}) {
           totalCount: true,
         },
       },
+      keyword: {
+        _sys: {
+          id: true,
+          title: true,
+          __typename: true,
+        },
+      },
+      meta: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
+        title: true,
+        description: true,
+      },
+      pageIntro: {
+        _sys: {
+          id: true,
+          __typename: true,
+        },
+        eyebrow: true,
+        title: true,
+        description: {
+          json: {
+            content: true,
+          },
+        },
+        centered: true,
+      },
     },
   });
 
-  return {
-    items: showcase.brief.items,
-    totalCount: showcase.brief._meta.totalCount,
-  };
+  return showcase;
 }
 
 export async function fetchRecentShowcaseBriefs() {

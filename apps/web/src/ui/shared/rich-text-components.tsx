@@ -18,6 +18,7 @@ import { Blockquote } from '#/ui/blockquote';
 import { Border } from '#/ui/border';
 import { GrayscaleTransitionImage } from '#/ui/grayscale-transition-image';
 
+import { FadeIn } from '../fade-in';
 import ReactTweetComponent from './tweet-component';
 
 interface RichTextWrapperProps {
@@ -164,7 +165,7 @@ function RichTextComponents({
       // eslint-disable-next-line jsx-a11y/anchor-has-content
       <a
         className={cn(
-          'font-medium text-primary underline decoration-2 underline-offset-4 hover:text-primary/80 lg:text-lg',
+          `font-medium text-primary underline decoration-2 underline-offset-4 hover:text-primary/80 ${small ? 'text-sm' : 'lg:text-lg'}`,
           className,
         )}
         {...props}
@@ -223,7 +224,7 @@ function RichTextComponents({
   };
 
   return (
-    <div
+    <FadeIn
       className={cn(
         `${centered ? 'mx-auto max-w-prose' : ''} text-muted-foreground [&>*]:max-w-full [&>:first-child]:!mt-0 [&>:last-child]:!mb-0 ${small ? 'text-sm' : 'lg:text-lg'}`,
       )}
@@ -231,7 +232,7 @@ function RichTextComponents({
       <RichText components={components} blocks={blocks}>
         {content}
       </RichText>
-    </div>
+    </FadeIn>
   );
 }
 

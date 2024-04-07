@@ -6,7 +6,7 @@ import { Container } from '@yocxo/ui/container';
 import { ArrowRightIcon } from '@yocxo/ui/icons';
 import { Logo } from '@yocxo/ui/logo';
 
-import { siteConfig } from '#/config/site';
+import { socialConfig } from '#/config/social';
 
 export default function NotFound() {
   return (
@@ -40,7 +40,7 @@ export default function NotFound() {
             <ArrowRightIcon className="ml-2 w-3 flex-none fill-current" />
           </Link>
           <Link
-            href={siteConfig.links.support}
+            href={socialConfig.links.support}
             aria-label="Contact Yo! CXO support on Github in a new window"
             target="_blank"
             rel="noopener noreferrer"

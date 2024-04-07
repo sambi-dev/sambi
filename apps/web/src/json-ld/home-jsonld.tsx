@@ -3,6 +3,7 @@ import type { Graph } from 'schema-dts';
 import React from 'react';
 
 import { siteConfig } from '#/config/site';
+import { socialConfig } from '#/config/social';
 
 const HomePageJson = () => {
   const jsonLd: Graph = {
@@ -35,7 +36,7 @@ const HomePageJson = () => {
             '@type': 'ImageObject',
             url: siteConfig.logo.url,
           },
-          sameAs: Object.values(siteConfig.links),
+          sameAs: Object.values(socialConfig.links),
         },
         url: siteConfig.url,
       },

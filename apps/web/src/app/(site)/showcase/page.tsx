@@ -1,50 +1,33 @@
-import type { ShowcaseBriefFragment } from '#/basehub/showcase-queries';
 import type { Metadata } from 'next';
 
 import { RichText } from 'basehub/react-rich-text';
 
-import {
-  fetchShowcaseBriefs,
-  fetchShowcasePageIntro,
-  fetchShowcasePageMetadata,
-} from '#/basehub/showcase-queries';
+import { fetchShowcasePage } from '#/basehub/showcase-queries';
 import { siteConfig } from '#/config/site';
 import PageJson from '#/json-ld/page-jsonld';
 import { SITE_URL } from '#/lib/constants';
 import { Clients } from '#/ui/clients';
 import { ContactSection } from '#/ui/contact-section';
 import { PageIntro } from '#/ui/page-intro';
-import { LoadMore, LoadMoreButton, LoadMoreItems } from '#/ui/shared/load-more';
 import { ProjectBriefs } from '#/ui/showcase/project-briefs';
 import { BigWarning } from '#/ui/warnings/big-warning';
 
 export default async function ShowcasePage() {
-  const { items: initialProjectBriefs, totalCount } = await fetchShowcaseBriefs(
-    { skip: 0, first: 10 },
-  );
-  const pageIntro = await fetchShowcasePageIntro();
+  const showcase = await fetchShowcasePage({ skip: 0, first: 10 });
 
   return (
     <>
       <PageIntro
-        eyebrow={pageIntro.eyebrow}
-        title={pageIntro.title}
-        centered={pageIntro.centered}
+        eyebrow={showcase.pageIntro.eyebrow}
+        title={showcase.pageIntro.title}
+        centered={showcase.pageIntro.centered}
       >
-        <RichText>{pageIntro.description?.json.content}</RichText>
+        <RichText>{showcase.pageIntro.description?.json.content}</RichText>
       </PageIntro>
 
-      <LoadMore<ShowcaseBriefFragment>
-        className="mt-24 space-y-24 sm:mt-32 lg:mt-40"
-        totalItems={totalCount}
-        initialItems={initialProjectBriefs}
-        loadMoreFn={fetchShowcaseBriefs}
-      >
-        <LoadMoreItems>
-          <ProjectBriefs projectBriefs={initialProjectBriefs} />
-        </LoadMoreItems>
-        <LoadMoreButton>Load more</LoadMoreButton>
-      </LoadMore>
+      <div className="mt-24 space-y-24 sm:mt-32 lg:mt-40">
+        <ProjectBriefs projectBriefs={showcase.brief.items} />
+      </div>
 
       <div className="mt-24 sm:mt-32 lg:mt-40">
         <BigWarning
@@ -75,24 +58,24 @@ export default async function ShowcasePage() {
 
       <ContactSection />
       <PageJson
-        pageSlug={`${pageIntro.jsonSlug}`}
-        pageName={`${pageIntro.jsonTitle} :: ${siteConfig.name}`}
-        keyword={pageIntro.keyword?._sys.title}
+        pageSlug={`${showcase._sys.slug}`}
+        pageName={`${showcase._sys.title} :: ${siteConfig.name}`}
+        keyword={showcase.keyword._sys.title}
       />
     </>
   );
 }
 
 export async function generateMetadata(): Promise<Metadata> {
-  const cmsMetadata = await fetchShowcasePageMetadata();
+  const showcase = await fetchShowcasePage();
 
   const metadata = {
-    title: cmsMetadata.title,
-    description: cmsMetadata.description,
+    title: showcase.meta.title,
+    description: showcase.meta.description,
     openGraph: {
       type: 'website',
-      title: cmsMetadata.title,
-      description: cmsMetadata.description,
+      title: showcase.meta.title,
+      description: showcase.meta.description,
       images: [
         {
           url: siteConfig.image.url,
@@ -104,8 +87,8 @@ export async function generateMetadata(): Promise<Metadata> {
       url: `${SITE_URL}/showcase`,
     },
     twitter: {
-      title: cmsMetadata.title,
-      description: cmsMetadata.description,
+      title: showcase.meta.title,
+      description: showcase.meta.description,
       images: [
         {
           url: siteConfig.image.url,

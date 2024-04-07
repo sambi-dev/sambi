@@ -2,12 +2,15 @@ import type { FaqFragment } from '#/basehub/faq-queries';
 
 import type { BlockRichText } from '.basehub';
 
+import FaqJsonLd from '#/json-ld/faq-jsonld';
 import { Border } from '#/ui/border';
 import { FadeIn, FadeInStagger } from '#/ui/fade-in';
 import RichTextComponents from '#/ui/shared/rich-text-components';
 
 interface FaqsProps {
-  faq: FaqFragment;
+  faq: {
+    items: FaqFragment[];
+  };
   category: string;
 }
 
@@ -25,12 +28,12 @@ export default function Faqs({ faq, category }: FaqsProps) {
         )}
         <FadeInStagger>
           <dl className="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-16 sm:space-y-0 lg:gap-x-10">
-            {faq.items.map((item) => (
+            {faq.items.map((item: FaqFragment) => (
               <FadeIn
                 key={item._sys.id}
                 className="rounded-xl border bg-card p-6 shadow-md"
               >
-                <dt className="font-mono text-lg font-semibold text-secondary-foreground">
+                <dt className="font-mono font-semibold text-foreground">
                   {item._sys.title}
                 </dt>
                 <dd className="mt-2">
@@ -40,6 +43,18 @@ export default function Faqs({ faq, category }: FaqsProps) {
                     small
                   />
                 </dd>
+                <FaqJsonLd
+                  questions={[
+                    {
+                      name: item._sys.title,
+                      acceptedAnswer: item.answer?.json.content as string,
+                    },
+                  ]}
+                  dateModified={item._sys.lastModifiedAt}
+                  datePublished={item._sys.createdAt}
+                  description={`FAQ: ${item._sys.title}`}
+                  keyword={item._sys.title}
+                />
               </FadeIn>
             ))}
           </dl>

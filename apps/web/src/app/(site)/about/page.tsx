@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { fetchBlogPosts } from '#/basehub/blog-queries';
+import { fetchBlogPage } from '#/basehub/blog-queries';
 import { fetchCrew } from '#/basehub/crew-queries';
 import { siteConfig } from '#/config/site';
 import PageJson from '#/json-ld/page-jsonld';
@@ -15,11 +15,11 @@ import { PageLinks } from '#/ui/page-links';
 import { StatList, StatListItem } from '#/ui/stat-list';
 
 export default async function AboutPage() {
-  const { items: blogPosts } = await fetchBlogPosts({
+  const morePostsData = await fetchBlogPage({
     first: 2,
   });
 
-  const pages = blogPosts.map((post) => ({
+  const morePosts = morePostsData.posts.items.map((post) => ({
     href: `/blog/${post._sys.slug}`,
     title: post._sys.title,
     description: post.metaDescription,
@@ -43,7 +43,7 @@ export default async function AboutPage() {
       </PageIntro>
 
       <Container>
-        <FadeIn className="my-10 grid max-w-xl grid-cols-1 gap-8 leading-7 text-muted-foreground lg:max-w-none lg:grid-cols-2 lg:text-lg">
+        <FadeIn className="my-10 grid max-w-xl grid-cols-1 gap-8 leading-7 text-muted-foreground lg:max-w-none lg:grid-cols-2">
           <div>
             <p>
               We&apos;re Sam and Ambreen...and Rebekah. Three principals
@@ -101,7 +101,7 @@ export default async function AboutPage() {
         className="mt-24 sm:mt-32 lg:mt-40"
         title="From the blog"
         intro="Stuck in the maze of business as usual? We share insights on our blog where we decode the latest trends, pass on our winning strategies, and even share our many facepalms."
-        pages={pages}
+        pages={morePosts}
       />
 
       <ContactSection />
