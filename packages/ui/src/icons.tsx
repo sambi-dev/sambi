@@ -65,6 +65,27 @@ function ArrowElbowIcon({ className, ...props }: React.ComponentProps<'svg'>) {
   );
 }
 
+function ArrowLeftIcon({ className, ...props }: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 25 24"
+      fill="none"
+      aria-hidden="true"
+      className={cn('size-4', className)}
+      {...props}
+    >
+      <path
+        d="M10.3304 6C8.227 7.55556 6.33783 9.37278 4.70952 11.4057C4.56984 11.5801 4.5 11.79 4.5 12M10.3304 18C8.227 16.4444 6.33783 14.6272 4.70952 12.5943C4.56984 12.4199 4.5 12.21 4.5 12M4.5 12H20.5"
+        stroke="currentcolor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 function ArrowRightIcon({ className, ...props }: React.ComponentProps<'svg'>) {
   return (
     <svg
@@ -140,6 +161,30 @@ function BurgerMenuIcon({ className, ...props }: React.ComponentProps<'svg'>) {
     >
       <path
         d="M4 16H20M4 8H20"
+        stroke="currentcolor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function ChatBubbleTypingIcon({
+  className,
+  ...props
+}: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="none"
+      className={cn('size-4', className)}
+      {...props}
+    >
+      <path
+        d="M8.5 12.0001H8.51M12.5 12.0001H12.51M16.5 12.0001H16.51M20.688 15.7371C21.2232 14.5639 21.5001 13.2895 21.5 12.0001C21.4987 10.7652 21.2433 9.54391 20.7497 8.41203C20.2562 7.28016 19.5349 6.26196 18.6309 5.42078C17.727 4.57961 16.6596 3.93345 15.4951 3.52252C14.3307 3.11158 13.0942 2.94466 11.8624 3.03213C10.6307 3.11961 9.4302 3.4596 8.33553 4.03098C7.24086 4.60235 6.27548 5.39287 5.49945 6.35335C4.72341 7.31384 4.15333 8.42374 3.82466 9.61401C3.49599 10.8043 3.41577 12.0495 3.589 13.2721C3.759 14.4761 3.845 15.0771 3.857 15.2361C3.877 15.4931 3.873 15.4011 3.871 15.6591C3.871 15.8191 3.857 15.9991 3.831 16.3611L3.678 18.5141C3.616 19.3711 3.586 19.8011 3.738 20.1211C3.871 20.4021 4.098 20.6291 4.379 20.7621C4.7 20.9141 5.129 20.8841 5.986 20.8221L8.139 20.6691C8.501 20.6431 8.68199 20.6291 8.84099 20.6291C9.09899 20.6271 9.007 20.6231 9.264 20.6431C9.423 20.6551 10.025 20.7401 11.228 20.9101C13.152 21.1848 15.1132 20.8294 16.8184 19.8969C18.5236 18.9645 19.8811 17.5051 20.688 15.7371Z"
         stroke="currentcolor"
         strokeWidth="2"
         strokeLinecap="round"
@@ -359,6 +404,48 @@ function DiscordIcon({ className, ...props }: React.ComponentProps<'svg'>) {
   );
 }
 
+function DotFilledIcon({ className, ...props }: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 15 15"
+      fill="none"
+      aria-hidden="true"
+      className={cn('size-4', className)}
+      {...props}
+    >
+      <path
+        d="M9.875 7.5C9.875 8.81168 8.81168 9.875 7.5 9.875C6.18832 9.875 5.125 8.81168 5.125 7.5C5.125 6.18832 6.18832 5.125 7.5 5.125C8.81168 5.125 9.875 6.18832 9.875 7.5Z"
+        fill="currentColor"
+      />
+    </svg>
+  );
+}
+
+function DoubleChevronRightIcon({
+  className,
+  ...props
+}: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+      className={cn('size-4', className)}
+      {...props}
+    >
+      <path
+        d="M13.5 8C14.9619 9.06206 16.2713 10.3071 17.3942 11.7021C17.5353 11.8774 17.5353 12.1226 17.3942 12.2979C16.2713 13.6929 14.9619 14.9379 13.5 16M7.5 8C8.96188 9.06206 10.2713 10.3071 11.3942 11.7021C11.5353 11.8774 11.5353 12.1226 11.3942 12.2979C10.2713 13.6929 8.96188 14.9379 7.5 16"
+        stroke="currentcolor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 function DownloadIcon({ className, ...props }: React.ComponentProps<'svg'>) {
   return (
     <svg
@@ -375,24 +462,6 @@ function DownloadIcon({ className, ...props }: React.ComponentProps<'svg'>) {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function DotFilledIcon({ className, ...props }: React.ComponentProps<'svg'>) {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 15 15"
-      fill="none"
-      aria-hidden="true"
-      className={cn('size-4', className)}
-      {...props}
-    >
-      <path
-        d="M9.875 7.5C9.875 8.81168 8.81168 9.875 7.5 9.875C6.18832 9.875 5.125 8.81168 5.125 7.5C5.125 6.18832 6.18832 5.125 7.5 5.125C8.81168 5.125 9.875 6.18832 9.875 7.5Z"
-        fill="currentColor"
       />
     </svg>
   );
@@ -415,6 +484,48 @@ function FacebookIcon({ className, ...props }: React.ComponentProps<'svg'>) {
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
+      />
+    </svg>
+  );
+}
+
+function FileCheckIcon({ className, ...props }: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+      className={cn('size-4', className)}
+      {...props}
+    >
+      <path
+        d="M14 2.05752V3.2C14 4.88016 14 5.72024 14.327 6.36197C14.6146 6.92646 15.0735 7.3854 15.638 7.67302C16.2798 8 17.1198 8 18.8 8H19.9425M14 2.05752C13.6065 2 13.136 2 12.349 2H10.4C8.15979 2 7.03968 2 6.18404 2.43597C5.43139 2.81947 4.81947 3.43139 4.43597 4.18404C4 5.03968 4 6.15979 4 8.4V15.6C4 17.8402 4 18.9603 4.43597 19.816C4.81947 20.5686 5.43139 21.1805 6.18404 21.564C7.03968 22 8.15979 22 10.4 22H13.6C15.8402 22 16.9603 22 17.816 21.564C18.5686 21.1805 19.1805 20.5686 19.564 19.816C20 18.9603 20 17.8402 20 15.6V9.65097C20 8.864 20 8.39354 19.9425 8M14 2.05752C14.0957 2.07151 14.1869 2.0889 14.2769 2.11052C14.6851 2.20851 15.0753 2.37012 15.4331 2.58944C15.8368 2.83681 16.1827 3.18271 16.8745 3.87451L18.1255 5.12548C18.8173 5.81724 19.1632 6.1632 19.4106 6.56686C19.6299 6.92475 19.7915 7.31493 19.8895 7.72307C19.9111 7.81313 19.9285 7.90429 19.9425 8M9 14.6662L11.3412 17.0049C12.4672 15.0359 14.0256 13.3483 15.8987 12.0692"
+        stroke="currentcolor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function FileTextIcon({ className, ...props }: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+      className={cn('size-4', className)}
+      {...props}
+    >
+      <path
+        d="M14 2.05752V3.2C14 4.88016 14 5.72024 14.327 6.36197C14.6146 6.92646 15.0735 7.3854 15.638 7.67302C16.2798 8 17.1198 8 18.8 8L19.9425 8M14 2.05752C13.6065 2 13.136 2 12.349 2H10.4C8.15979 2 7.03968 2 6.18404 2.43597C5.43139 2.81947 4.81947 3.43139 4.43597 4.18404C4 5.03968 4 6.15979 4 8.4V15.6C4 17.8402 4 18.9603 4.43597 19.816C4.81947 20.5686 5.43139 21.1805 6.18404 21.564C7.03968 22 8.15979 22 10.4 22H13.6C15.8402 22 16.9603 22 17.816 21.564C18.5686 21.1805 19.1805 20.5686 19.564 19.816C20 18.9603 20 17.8402 20 15.6V9.65097C20 8.864 20 8.39354 19.9425 8M14 2.05752C14.0957 2.07151 14.1869 2.0889 14.2769 2.11052C14.6851 2.20851 15.0753 2.37012 15.4331 2.58944C15.8368 2.83681 16.1827 3.18271 16.8745 3.87451L18.1255 5.12548C18.8173 5.81729 19.1632 6.16319 19.4106 6.56686C19.6299 6.92475 19.7915 7.31493 19.8895 7.72307C19.9111 7.81313 19.9285 7.90429 19.9425 8M8 13H16M8 17H13"
+        stroke="currentcolor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -502,6 +613,27 @@ function LinkedInIcon({ className, ...props }: React.ComponentProps<'svg'>) {
         strokeLinecap="round"
         strokeLinejoin="round"
         fill="none"
+      />
+    </svg>
+  );
+}
+
+function MaximizeIcon({ className, ...props }: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      aria-hidden="true"
+      className={cn('size-4', className)}
+      {...props}
+    >
+      <path
+        d="M12.5 6.28858C14.2786 5.99076 16.0759 5.92321 17.8472 6.08707C17.9991 6.10113 18.1335 6.16659 18.2335 6.26652C18.3334 6.36646 18.3989 6.50086 18.4129 6.65281C18.5768 8.42407 18.5092 10.2214 18.2114 12M12.5 17.7114C10.7214 18.0092 8.92407 18.0768 7.15281 17.9129C7.00086 17.8989 6.86646 17.8334 6.76652 17.7335C6.66659 17.6335 6.60113 17.4991 6.58707 17.3472C6.42321 15.5759 6.49076 13.7786 6.78858 12"
+        stroke="currentcolor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );
@@ -598,6 +730,48 @@ function OpenAiIcon({ className, ...props }: React.ComponentProps<'svg'>) {
   );
 }
 
+function PhotoIcon({ className, ...props }: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="none"
+      className={cn('size-4', className)}
+      {...props}
+    >
+      <path
+        d="M21.9989 10H21C19.607 10 18.9104 10 18.324 10.0603C12.9031 10.6176 8.61758 14.9031 8.06029 20.324C8.03963 20.5249 8.02605 20.7388 8.01712 20.9893M21.9989 10C22 10.3123 22 10.6449 22 11V13C22 15.8003 22 17.2004 21.455 18.27C20.9757 19.2108 20.2108 19.9757 19.27 20.455C18.2004 21 16.8003 21 14 21H10C9.24401 21 8.59006 21 8.01712 20.9893M21.9989 10C21.9912 7.84993 21.9309 6.66397 21.455 5.73005C20.9757 4.78924 20.2108 4.02433 19.27 3.54497C18.2004 3 16.8003 3 14 3H10C7.19974 3 5.79961 3 4.73005 3.54497C3.78924 4.02433 3.02433 4.78924 2.54497 5.73005C2 6.79961 2 8.19974 2 11V13C2 15.8003 2 17.2004 2.54497 18.27C3.02433 19.2108 3.78924 19.9757 4.73005 20.455C5.51086 20.8529 6.46784 20.9603 8.01712 20.9893M7.5 9.5C6.94772 9.5 6.5 9.05228 6.5 8.5C6.5 7.94772 6.94772 7.5 7.5 7.5C8.05228 7.5 8.5 7.94772 8.5 8.5C8.5 9.05228 8.05228 9.5 7.5 9.5Z"
+        stroke="currentcolor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function PlusCircleIcon({ className, ...props }: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="none"
+      className={cn('size-4', className)}
+      {...props}
+    >
+      <path
+        d="M12.0001 15V12M12.0001 12V9M12.0001 12H9.00012M12.0001 12H15.0001M21.1501 12.0001C21.1501 17.0535 17.0535 21.1501 12.0001 21.1501C6.94669 21.1501 2.8501 17.0535 2.8501 12.0001C2.8501 6.94669 6.94669 2.8501 12.0001 2.8501C17.0535 2.8501 21.1501 6.94669 21.1501 12.0001Z"
+        stroke="currentcolor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 function PlusIcon({ className, ...props }: React.ComponentProps<'svg'>) {
   return (
     <svg
@@ -610,6 +784,51 @@ function PlusIcon({ className, ...props }: React.ComponentProps<'svg'>) {
     >
       <path
         d="M12 19V12M12 12V5M12 12L5 12M12 12L19 12"
+        stroke="currentcolor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function RepeatSquareIcon({
+  className,
+  ...props
+}: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="none"
+      className={cn('size-4', className)}
+      {...props}
+    >
+      <path
+        d="M21 21L14.9497 14.9497M14.9497 14.9497C16.2165 13.683 17 11.933 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17C11.933 17 13.683 16.2165 14.9497 14.9497Z"
+        stroke="currentcolor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function SearchIcon({ className, ...props }: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="none"
+      className={cn('size-4', className)}
+      {...props}
+    >
+      <path
+        d="M21 21L14.9497 14.9497M14.9497 14.9497C16.2165 13.683 17 11.933 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17C11.933 17 13.683 16.2165 14.9497 14.9497Z"
         stroke="currentcolor"
         strokeWidth="2"
         strokeLinecap="round"
@@ -652,6 +871,31 @@ function SidebarIcon({ className, ...props }: React.ComponentProps<'svg'>) {
     >
       <path
         d="M9 20.989C9.57703 21 10.2365 21 11 21H13C15.8003 21 17.2004 21 18.27 20.455C19.2108 19.9757 19.9757 19.2108 20.455 18.27C21 17.2004 21 15.8003 21 13V11C21 8.19974 21 6.79961 20.455 5.73005C19.9757 4.78924 19.2108 4.02433 18.27 3.54497C17.2004 3 15.8003 3 13 3H11C10.2365 3 9.57703 3 9 3.01105M9 20.989C7.46078 20.9595 6.50797 20.8514 5.73005 20.455C4.78924 19.9757 4.02433 19.2108 3.54497 18.27C3 17.2004 3 15.8003 3 13V11C3 8.19974 3 6.79961 3.54497 5.73005C4.02433 4.78924 4.78924 4.02433 5.73005 3.54497C6.50797 3.14859 7.46078 3.04052 9 3.01105M9 20.989L9 3.01105"
+        stroke="currentcolor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function SparklesIcon({ className, ...props }: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={cn('size-4', className)}
+      {...props}
+    >
+      <path
+        d="M5 17.65V19M5 19V20.35M5 19H6.35M5 19H3.65M12.9 3C13.5401 8.03653 15.5305 11.1418 21 12C15.8102 12.8143 13.5701 15.7277 12.9 21C12.2299 15.7277 9.98984 12.8143 4.8 12C9.98984 11.1857 12.2299 8.2723 12.9 3ZM5.7 3C5.94808 4.50612 6.8515 5.44494 8.4 5.7C6.8515 5.95506 5.94808 6.89388 5.7 8.4C5.45192 6.89388 4.5485 5.95506 3 5.7C4.50612 5.45192 5.44494 4.5485 5.7 3Z"
         stroke="currentcolor"
         strokeWidth="2"
         strokeLinecap="round"
@@ -812,13 +1056,35 @@ function UsersIcon({ className, ...props }: React.ComponentProps<'svg'>) {
   );
 }
 
-function XIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+function WindowsIcon({ className, ...props }: React.ComponentProps<'svg'>) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      fill="none"
+      className={cn('size-4', className)}
+      viewBox="0 0 24 24"
+      {...props}
+    >
+      <path
+        d="M11 4.87682V18.6546M21 11.7657L3 11.7657M4.77913 17.9634L18.7791 19.5189C19.9639 19.6506 21 18.7232 21 17.5312V6.00024C21 4.80821 19.9639 3.88083 18.7791 4.01247L4.77914 5.56803C3.76627 5.68057 3 6.53669 3 7.55579V15.9756C3 16.9947 3.76627 17.8508 4.77913 17.9634Z"
+        stroke="currentcolor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+function XIcon({ className, ...props }: React.ComponentProps<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
       viewBox="0 0 24 24"
       fill="none"
+      className={cn('size-4', className)}
       {...props}
     >
       <path
@@ -837,10 +1103,12 @@ export {
   AlertTriangleIcon,
   ArrowDownIcon,
   ArrowElbowIcon,
+  ArrowLeftIcon,
   ArrowRightIcon,
   ArrowUpIcon,
   ArrowUpRightIcon,
   BurgerMenuIcon,
+  ChatBubbleTypingIcon,
   CheckIcon,
   ChevronDownIcon,
   ChevronRightIcon,
@@ -852,19 +1120,28 @@ export {
   CopyIcon,
   DiscordIcon,
   DotFilledIcon,
+  DoubleChevronRightIcon,
   DownloadIcon,
   FacebookIcon,
+  FileCheckIcon,
+  FileTextIcon,
   GoogleIcon,
   GitHubIcon,
   InstagramIcon,
   LinkedInIcon,
+  MaximizeIcon,
   MenuIcon,
   MessageIcon,
   MoonIcon,
   OpenAiIcon,
+  PhotoIcon,
+  PlusCircleIcon,
   PlusIcon,
+  RepeatSquareIcon,
+  SearchIcon,
   ShareIcon,
   SidebarIcon,
+  SparklesIcon,
   SpinnerIcon,
   StarIcon,
   SunIcon,
@@ -872,5 +1149,6 @@ export {
   UpworkIcon,
   UserIcon,
   UsersIcon,
+  WindowsIcon,
   XIcon,
 };
