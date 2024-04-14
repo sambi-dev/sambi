@@ -55,6 +55,7 @@ interface Props {
   summary: string;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export default function AIReviewSummary({ summary }: Props) {
   const {
     nps,
@@ -73,7 +74,7 @@ export default function AIReviewSummary({ summary }: Props) {
       <CardHeader className="mt-4 items-center gap-4 space-y-0 p-0">
         <div className="grid gap-1 text-center">
           <CardTitle className="flex flex-col font-mono text-2xl font-semibold tracking-tighter">
-            Mock Net Promoter Score
+            Mock NPS Analysis
           </CardTitle>
           <CardDescription className="flex flex-col items-center gap-2">
             <span className="flex justify-center text-xs">
@@ -87,8 +88,12 @@ export default function AIReviewSummary({ summary }: Props) {
       </CardHeader>
       <CardContent className="grid gap-4 p-0">
         <div className="mt-2 text-pretty text-sm leading-loose text-secondary-foreground">
-          {summary} Yo! CXO&apos;s NPS of {nps} is {relativeNPS} points above
-          the relative{' '}
+          {/* summary TODO: https://github.com/vercel/ai/issues/1316 */}Clients
+          of Yo! CXO say that their growth strategies are alright. They only
+          found a large untapped market segment and doubled the customer base.
+          But now the clients have to upgrade their CRM and customer service
+          platforms to accommodate the surge in users too. Yo! CXO&apos;s NPS of{' '}
+          {nps} is {relativeNPS} points above the relative{' '}
           <a
             className="hover:text-primary hover:underline hover:decoration-2 hover:underline-offset-4"
             href="https://www.retently.com/blog/good-net-promoter-score/"
