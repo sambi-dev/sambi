@@ -28,7 +28,7 @@ const perplexity = new OpenAI({
 });
 
 export async function summarizeReviews() {
-  const npsData = calculateNPSAndCounts(mockWarningsForAiSummary);
+  const npsData = calculateNPSAndCounts();
   const reviewsContent = mockWarningsForAiSummary
     .map((review, i) => {
       const reviewOutcomes = review.serviceOutcomes

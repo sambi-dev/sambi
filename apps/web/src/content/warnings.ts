@@ -74,7 +74,7 @@ interface Review {
   serviceOutcomes: string[];
 }
 
-export function calculateNPSAndCounts(reviews: Review[]): {
+export function calculateNPSAndCounts(): {
   nps: number;
   promoters: number;
   passives: number;
@@ -83,20 +83,10 @@ export function calculateNPSAndCounts(reviews: Review[]): {
   relativeNPS: number;
   benchmarkNPS: number;
 } {
-  const totalRespondents = reviews.length;
-  let promoters = 0;
-  let passives = 0;
-  let detractors = 0;
-
-  reviews.forEach((review) => {
-    if (review.nps >= 9) {
-      promoters++;
-    } else if (review.nps > 6 && review.nps < 9) {
-      passives++;
-    } else if (review.nps <= 6) {
-      detractors++;
-    }
-  });
+  const promoters = 58;
+  const passives = 0;
+  const detractors = 1;
+  const totalRespondents = promoters + passives + detractors;
 
   const nps = ((promoters - detractors) / totalRespondents) * 100;
   const benchmarkNPS = 76; // According to retently https://rizv.io/1iKd8T

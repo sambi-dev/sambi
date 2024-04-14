@@ -14,10 +14,7 @@ import {
   CardTitle,
 } from '@yocxo/ui/card';
 
-import {
-  calculateNPSAndCounts,
-  mockWarningsForAiSummary,
-} from '#/content/warnings';
+import { calculateNPSAndCounts } from '#/content/warnings';
 import perplexityAiImage from '#/images/llms/perplexity.jpg';
 
 interface NPSData {
@@ -30,7 +27,7 @@ interface NPSData {
   benchmarkNPS: number;
 }
 
-const getNPSData = (reviews: typeof mockWarningsForAiSummary): NPSData => {
+const getNPSData = (): NPSData => {
   const {
     nps,
     promoters,
@@ -39,7 +36,7 @@ const getNPSData = (reviews: typeof mockWarningsForAiSummary): NPSData => {
     totalRespondents,
     relativeNPS,
     benchmarkNPS,
-  } = calculateNPSAndCounts(reviews);
+  } = calculateNPSAndCounts();
   return {
     nps,
     promoters,
@@ -51,11 +48,7 @@ const getNPSData = (reviews: typeof mockWarningsForAiSummary): NPSData => {
   };
 };
 
-interface Props {
-  summary: string;
-}
-
-export default function AIReviewSummary({ summary }: Props) {
+export default function AIReviewSummary() {
   const {
     nps,
     promoters,
@@ -64,7 +57,7 @@ export default function AIReviewSummary({ summary }: Props) {
     totalRespondents,
     relativeNPS,
     benchmarkNPS,
-  } = getNPSData(mockWarningsForAiSummary);
+  } = getNPSData();
 
   const npsEvaluation = nps > 76 ? 'pretty, pretty, pretty good' : 'horrible';
 
@@ -73,7 +66,7 @@ export default function AIReviewSummary({ summary }: Props) {
       <CardHeader className="mt-4 items-center gap-4 space-y-0 p-0">
         <div className="grid gap-1 text-center">
           <CardTitle className="flex flex-col font-mono text-2xl font-semibold tracking-tighter">
-            Mock Net Promoter Score
+            Mock NPS Analysis
           </CardTitle>
           <CardDescription className="flex flex-col items-center gap-2">
             <span className="flex justify-center text-xs">
@@ -87,8 +80,11 @@ export default function AIReviewSummary({ summary }: Props) {
       </CardHeader>
       <CardContent className="grid gap-4 p-0">
         <div className="mt-2 text-pretty text-sm leading-loose text-secondary-foreground">
-          {summary} Yo! CXO&apos;s NPS of {nps} is {relativeNPS} points above
-          the relative{' '}
+          Clients of Yo! CXO say that their growth strategies are alright. They
+          only found a large untapped market segment and doubled the customer
+          base. But now the clients have to upgrade their CRM and customer
+          service platforms to accommodate the surge in users too. Yo!
+          CXO&apos;s NPS of {nps} is {relativeNPS} points above the relative{' '}
           <a
             className="hover:text-primary hover:underline hover:decoration-2 hover:underline-offset-4"
             href="https://www.retently.com/blog/good-net-promoter-score/"
