@@ -8,7 +8,6 @@ import {
   fetchWarnings,
   fetchWarningsSectionIntro,
 } from '#/basehub/warnings-queries';
-import { summarizeReviews } from '#/lib/ai/ai-summary';
 import AIReviewSummary from '#/ui/ai/ai-review-summary';
 import { FadeIn, FadeInStagger } from '#/ui/fade-in';
 import { SectionIntro } from '#/ui/section-intro';
@@ -23,10 +22,9 @@ function classNames(...classes: string[]) {
 }
 
 export async function Warnings() {
-  const [sectionIntro, warningsData, summary] = await Promise.all([
+  const [sectionIntro, warningsData] = await Promise.all([
     fetchWarningsSectionIntro(),
     fetchWarnings(),
-    summarizeReviews(),
   ]);
 
   if (!sectionIntro || !warningsData) {
@@ -77,7 +75,7 @@ export async function Warnings() {
             <RichText>{sectionIntro.description?.json.content}</RichText>
           </SectionIntro>
           <FadeIn className="mx-auto mt-16 grid max-w-2xl grid-cols-1 grid-rows-1 gap-8 sm:mt-20 sm:grid-cols-2 xl:mx-0 xl:max-w-none xl:grid-flow-col xl:grid-cols-4">
-            <AIReviewSummary summary={summary} />
+            <AIReviewSummary />
             {warningColumns.map((columnWarnings, columnIndex) => (
               <div
                 key={`${columnIndex}-${Math.random()}`}
