@@ -37,8 +37,8 @@
   },
   "devDependencies": {
     "@types/node": "^20.12.5",
-    "@types/react": "^18.2.69",
-    "@types/react-dom": "^18.2.22",
+    "@types/react": "^18.2.77",
+    "@types/react-dom": "^18.2.25",
     "@yocxo/eslint-config": "workspace:*",
     "@yocxo/prettier-config": "workspace:*",
     "@yocxo/tailwind-config": "workspace:*",
@@ -49,8 +49,8 @@
     "prettier": "^3.2.5",
     "schema-dts": "^1.1.2",
     "sharp": "^0.33.3",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5.4.3"
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
   },
   "eslintConfig": {
     "root": true,
