@@ -11,6 +11,6 @@
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
     "module": "esnext"
   },
-  "include": [".", ".next/types/**/*.ts", "./src/types/custom.d.ts"],
+  "include": [".", ".next/types/**/*.ts", "./src/types/**/*.d.ts"],
   "exclude": ["node_modules"]
 }
