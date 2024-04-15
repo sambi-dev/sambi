@@ -33,7 +33,7 @@
     "@radix-ui/react-tooltip": "^1.0.7",
     "class-variance-authority": "^0.7.0",
     "embla-carousel-react": "^8.0.1",
-    "next-themes": "^0.2.1",
+    "next-themes": "^0.3.0",
     "react-hook-form": "^7.51.1",
     "sonner": "^1.4.41",
     "tailwind-merge": "^2.2.2",

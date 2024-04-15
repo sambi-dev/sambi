@@ -1,5 +1,5 @@
-name: "Setup and install"
-description: "Common setup steps for Actions"
+name: 'Setup and install'
+description: 'Common setup steps for Actions'
 
 runs:
   using: composite
@@ -7,8 +7,8 @@ runs:
     - uses: pnpm/action-setup@v2
     - uses: actions/setup-node@v4
       with:
-        node-version: 18
-        cache: "pnpm"
+        node-version: '20.12'
+        cache: 'pnpm'
 
     - shell: bash
       run: pnpm add -g turbo
