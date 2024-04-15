@@ -78,7 +78,7 @@ export function SocialMedia({
                 : 'hover:text-secondary-foreground/80',
             )}
           >
-            <socialMediaProfile.icon className="h-6 w-6 fill-current" />
+            <socialMediaProfile.icon className="h-6 w-6" />
           </a>
         </li>
       ))}
