@@ -11,6 +11,6 @@
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",
     "module": "esnext"
   },
-  "include": [".", ".next/types/**/*.ts", "../../packages/ui/src/slider.tsx"],
+  "include": [".", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
 }
