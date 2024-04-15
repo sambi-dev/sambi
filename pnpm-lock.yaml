@@ -31,7 +31,7 @@ importers:
         version: 0.28.1
     devDependencies:
       '@types/node':
-        specifier: ^20.11.30
+        specifier: ^20.12.5
         version: 20.12.6
       '@yocxo/eslint-config':
         specifier: workspace:*
@@ -152,7 +152,7 @@ importers:
         specifier: ^4.0.8
         version: 4.0.8
       '@types/node':
-        specifier: ^20.11.30
+        specifier: ^20.12.5
         version: 20.12.6
       '@types/react':
         specifier: ^18.2.69
@@ -367,7 +367,7 @@ importers:
         version: 3.22.4
     devDependencies:
       '@types/node':
-        specifier: ^20.11.30
+        specifier: ^20.12.5
         version: 20.12.6
       '@types/react':
         specifier: ^18.2.69
@@ -458,7 +458,7 @@ importers:
         version: 3.22.4
     devDependencies:
       '@types/node':
-        specifier: ^20.11.30
+        specifier: ^20.12.5
         version: 20.12.6
       '@types/react':
         specifier: ^18.2.69
@@ -558,7 +558,7 @@ importers:
         version: 3.22.4
     devDependencies:
       '@types/node':
-        specifier: ^20.11.30
+        specifier: ^20.12.5
         version: 20.12.6
       '@types/react':
         specifier: ^18.2.69

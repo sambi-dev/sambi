@@ -18,7 +18,7 @@
     "@yocxo/prettier-config": "workspace:*",
     "@yocxo/tailwind-config": "workspace:*",
     "@yocxo/tsconfig": "workspace:*",
-    "@types/node": "^20.11.30",
+    "@types/node": "^20.12.5",
     "eslint": "^8.57.0",
     "h3": "^1.11.1",
     "nitropack": "^2.9.4",
