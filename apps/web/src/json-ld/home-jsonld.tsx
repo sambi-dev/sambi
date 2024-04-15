@@ -16,7 +16,6 @@ const HomePageJson = () => {
           '@type': 'Corporation',
           name: siteConfig.company,
           url: siteConfig.companyUrl,
-          logo: siteConfig.companyLogo.url,
           sameAs: [
             'https://www.linkedin.com/company/brillacx/',
             'https://twitter.com/brillacx',
@@ -32,10 +31,6 @@ const HomePageJson = () => {
           '@type': 'Organization',
           name: siteConfig.name,
           url: siteConfig.url,
-          logo: {
-            '@type': 'ImageObject',
-            url: siteConfig.logo.url,
-          },
           sameAs: Object.values(socialConfig.links),
         },
         url: siteConfig.url,

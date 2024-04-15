@@ -29,10 +29,6 @@ const ShowcaseBriefJson = ({
       '@type': 'Corporation',
       name: siteConfig.company,
       url: siteConfig.companyUrl,
-      logo: {
-        '@type': 'ImageObject',
-        url: siteConfig.companyLogo.url,
-      },
       sameAs: [
         'https://www.linkedin.com/company/brillacx/',
         'https://twitter.com/brillacx',
@@ -53,10 +49,6 @@ const ShowcaseBriefJson = ({
     publisher: {
       '@type': 'Organization',
       name: siteConfig.name,
-      logo: {
-        '@type': 'ImageObject',
-        url: siteConfig.logo.url,
-      },
       sameAs: Object.values(socialConfig.links),
     },
   };

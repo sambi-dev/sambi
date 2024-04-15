@@ -1,67 +1,85 @@
+import type { StaticImageData } from 'next/image';
+
+import image1 from '#/images/1.jpg';
+import image2 from '#/images/2.jpg';
+import image3 from '#/images/3.jpg';
+import image4 from '#/images/4.jpg';
+import image5 from '#/images/5.jpg';
+import image6 from '#/images/6.jpg';
+import image7 from '#/images/7.jpg';
+import image8 from '#/images/8.jpg';
+import image9 from '#/images/9.jpg';
+import image10 from '#/images/10.jpg';
+import image11 from '#/images/11.jpg';
+import image12 from '#/images/12.jpg';
+import image13 from '#/images/13.jpg';
+import image16 from '#/images/16.jpg';
+import image17 from '#/images/17.jpg';
+
 export interface Screen {
   title: string;
-  thumbnail: string;
+  thumbnail: StaticImageData;
 }
 
 export const screens: Screen[] = [
   {
     title: 'Increased engagement',
-    thumbnail: '/screens/1.jpg',
+    thumbnail: image1,
   },
   {
     title: 'Time saved',
-    thumbnail: '/screens/2.jpg',
+    thumbnail: image2,
   },
   {
     title: 'Targeted messaging',
-    thumbnail: '/screens/3.jpg',
+    thumbnail: image3,
   },
   {
     title: 'Credibility built',
-    thumbnail: '/screens/4.jpg',
+    thumbnail: image4,
   },
   {
     title: 'Audiences captivated',
-    thumbnail: '/screens/5.jpg',
+    thumbnail: image5,
   },
   {
     title: 'Strategies optimized',
-    thumbnail: '/screens/6.jpg',
+    thumbnail: image6,
   },
   {
     title: 'Workflow streamlined',
-    thumbnail: '/screens/17.jpg',
+    thumbnail: image17,
   },
   {
     title: 'Conversions boosted',
-    thumbnail: '/screens/7.jpg',
+    thumbnail: image7,
   },
   {
     title: 'ROI maximized',
-    thumbnail: '/screens/8.jpg',
+    thumbnail: image8,
   },
   {
     title: 'Trends capitalized',
-    thumbnail: '/screens/9.jpg',
+    thumbnail: image9,
   },
   {
     title: 'Clients satisfied',
-    thumbnail: '/screens/10.jpg',
+    thumbnail: image10,
   },
   {
     title: 'Goals achieved',
-    thumbnail: '/screens/16.jpg',
+    thumbnail: image16,
   },
   {
     title: 'Needs met',
-    thumbnail: '/screens/11.jpg',
+    thumbnail: image11,
   },
   {
     title: 'Connections formed',
-    thumbnail: '/screens/12.jpg',
+    thumbnail: image12,
   },
   {
     title: 'Briefs nailed',
-    thumbnail: '/screens/13.jpg',
+    thumbnail: image13,
   },
 ];

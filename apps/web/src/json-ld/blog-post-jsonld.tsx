@@ -70,13 +70,11 @@ const BlogPostJson = ({
       '@type': 'Organization',
       name: siteConfig.name,
       url: siteConfig.url,
-      logo: siteConfig.logo.url,
       sameAs: Object.values(socialConfig.links),
     },
     sourceOrganization: {
       '@type': 'Organization',
       name: siteConfig.company,
-      logo: siteConfig.companyLogo.url,
       sameAs: [
         'https://www.linkedin.com/company/brillacx/',
         'https://twitter.com/brillacx',

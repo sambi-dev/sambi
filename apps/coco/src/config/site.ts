@@ -35,7 +35,7 @@ export const siteConfig: SiteConfig = {
     'cocoGPT is an experimental wrapper by Yo! CXO. Powered by Vercel AI and forked from their Chat repo. We added a little something something of our own. 🍌🍌',
   url: siteUrl,
   image: {
-    url: `${siteUrl}/opengraph-image.gif`,
+    url: `/opengraph-image.gif`,
     width: 1200,
     height: 630,
     alt: 'Loading screen animation with pulsing text that spells out "Loading..." with the Yo! CXO logo (a silhouette of a French Bulldog and lower case text) in the top left.',
