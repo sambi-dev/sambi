@@ -1,4 +1,6 @@
+import type { StaticImageData } from 'next/image';
+
 declare module '#/images/*' {
-  const src: string;
+  const src: StaticImageData;
   export default src;
 }
