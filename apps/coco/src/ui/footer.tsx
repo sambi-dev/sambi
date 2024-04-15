@@ -17,7 +17,7 @@ export function FooterText({ className, ...props }: React.ComponentProps<'p'>) {
         LLM products are still pretty dumb. Don&apos;t buy any stonks with
         Coco&apos;s advice.
         <p className=" mt-2 text-xs text-muted-foreground">
-          © {siteConfig.name}. All Rights Reserved. {new Date().getFullYear()}
+          © {new Date().getFullYear()} {siteConfig.name}. All Rights Reserved.
         </p>
       </div>
     </>
