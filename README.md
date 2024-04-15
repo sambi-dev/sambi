@@ -150,7 +150,17 @@ pnpm db:push
 
 > **TIP:** Maintain clarity by running each app in a separate terminal window. This allows distinct log tracking and interactive terminal use, like accessing the Expo QR code. Utilize `pnpm --filter expo dev` and `pnpm --filter nextjs dev` for focused app execution.
 
-### 3. Adding a New Package
+### 3. When it's time to add a new UI component
+
+Run the `ui-add` script to install a new shadcn/ui in the shared packages workspace via the interactive `shadcn/ui` CLI:
+
+```bash
+pnpm ui-add
+```
+
+Once the component(s) has been installed, you'll be able to import it inside your apps.
+
+### 4. Adding a New Package
 
 To add a new package to your Turborepo, simply run `pnpm turbo gen init` at the root. The guided setup will ask for the package name and handle dependencies, which you can add immediately or later.
 

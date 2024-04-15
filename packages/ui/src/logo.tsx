@@ -1,6 +1,6 @@
 import { useId } from 'react';
 
-import { cn } from '.';
+import { cn } from '@yocxo/ui';
 
 export function Logomark({
   invert = false,
