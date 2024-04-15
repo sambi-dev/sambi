@@ -1,21 +1,21 @@
 import type { NextPage } from 'next';
 import type { StaticImageData } from 'next/image';
 
-import hero1 from '#/images/1.jpg';
-import hero2 from '#/images/2.jpg';
-import hero3 from '#/images/3.jpg';
-import hero4 from '#/images/4.jpg';
-import hero5 from '#/images/5.jpg';
-import hero6 from '#/images/6.jpg';
-import hero7 from '#/images/7.jpg';
-import hero8 from '#/images/8.jpg';
-import hero9 from '#/images/9.jpg';
-import hero10 from '#/images/10.jpg';
-import hero11 from '#/images/11.jpg';
-import hero12 from '#/images/12.jpg';
-import hero13 from '#/images/13.jpg';
-import hero16 from '#/images/16.jpg';
-import hero17 from '#/images/17.jpg';
+import hero1 from '#/images/image1.jpg';
+import hero2 from '#/images/image2.jpg';
+import hero3 from '#/images/image3.jpg';
+import hero4 from '#/images/image4.jpg';
+import hero5 from '#/images/image5.jpg';
+import hero6 from '#/images/image6.jpg';
+import hero7 from '#/images/image7.jpg';
+import hero8 from '#/images/image8.jpg';
+import hero9 from '#/images/image9.jpg';
+import hero10 from '#/images/image10.jpg';
+import hero11 from '#/images/image11.jpg';
+import hero12 from '#/images/image12.jpg';
+import hero13 from '#/images/image13.jpg';
+import hero16 from '#/images/image16.jpg';
+import hero17 from '#/images/image17.jpg';
 import Authentication from '#/ui/auth';
 import { HeroParallax } from '#/ui/hero-parallax';
 
