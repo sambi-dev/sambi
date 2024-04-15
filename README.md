@@ -148,8 +148,6 @@ pnpm db:push
 
 3. To launch, execute `pnpm dev` in the project's root directory and witness the setup in action.
 
-> **TIP:** Maintain clarity by running each app in a separate terminal window. This allows distinct log tracking and interactive terminal use, like accessing the Expo QR code. Utilize `pnpm --filter expo dev` and `pnpm --filter nextjs dev` for focused app execution.
-
 ### 3. When it's time to add a new UI component
 
 Run the `ui-add` script to install a new shadcn/ui in the shared packages workspace via the interactive `shadcn/ui` CLI:

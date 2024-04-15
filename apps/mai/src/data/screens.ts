@@ -1,20 +1,20 @@
 import type { StaticImageData } from 'next/image';
 
-import image1 from '#/images/1.jpg';
-import image2 from '#/images/2.jpg';
-import image3 from '#/images/3.jpg';
-import image4 from '#/images/4.jpg';
-import image5 from '#/images/5.jpg';
-import image6 from '#/images/6.jpg';
-import image7 from '#/images/7.jpg';
-import image8 from '#/images/8.jpg';
-import image9 from '#/images/9.jpg';
-import image10 from '#/images/10.jpg';
-import image11 from '#/images/11.jpg';
-import image12 from '#/images/12.jpg';
-import image13 from '#/images/13.jpg';
-import image16 from '#/images/16.jpg';
-import image17 from '#/images/17.jpg';
+import hero1 from '#/images/1.jpg';
+import hero2 from '#/images/2.jpg';
+import hero3 from '#/images/3.jpg';
+import hero4 from '#/images/4.jpg';
+import hero5 from '#/images/5.jpg';
+import hero6 from '#/images/6.jpg';
+import hero7 from '#/images/7.jpg';
+import hero8 from '#/images/8.jpg';
+import hero9 from '#/images/9.jpg';
+import hero10 from '#/images/10.jpg';
+import hero11 from '#/images/11.jpg';
+import hero12 from '#/images/12.jpg';
+import hero13 from '#/images/13.jpg';
+import hero16 from '#/images/16.jpg';
+import hero17 from '#/images/17.jpg';
 
 export interface Screen {
   title: string;
@@ -24,62 +24,62 @@ export interface Screen {
 export const screens: Screen[] = [
   {
     title: 'Increased engagement',
-    thumbnail: image1,
+    thumbnail: hero1,
   },
   {
     title: 'Time saved',
-    thumbnail: image2,
+    thumbnail: hero2,
   },
   {
     title: 'Targeted messaging',
-    thumbnail: image3,
+    thumbnail: hero3,
   },
   {
     title: 'Credibility built',
-    thumbnail: image4,
+    thumbnail: hero4,
   },
   {
     title: 'Audiences captivated',
-    thumbnail: image5,
+    thumbnail: hero5,
   },
   {
     title: 'Strategies optimized',
-    thumbnail: image6,
+    thumbnail: hero6,
   },
   {
     title: 'Workflow streamlined',
-    thumbnail: image17,
+    thumbnail: hero17,
   },
   {
     title: 'Conversions boosted',
-    thumbnail: image7,
+    thumbnail: hero7,
   },
   {
     title: 'ROI maximized',
-    thumbnail: image8,
+    thumbnail: hero8,
   },
   {
     title: 'Trends capitalized',
-    thumbnail: image9,
+    thumbnail: hero9,
   },
   {
     title: 'Clients satisfied',
-    thumbnail: image10,
+    thumbnail: hero10,
   },
   {
     title: 'Goals achieved',
-    thumbnail: image16,
+    thumbnail: hero16,
   },
   {
     title: 'Needs met',
-    thumbnail: image11,
+    thumbnail: hero11,
   },
   {
     title: 'Connections formed',
-    thumbnail: image12,
+    thumbnail: hero12,
   },
   {
     title: 'Briefs nailed',
-    thumbnail: image13,
+    thumbnail: hero13,
   },
 ];
