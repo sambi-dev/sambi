@@ -39,6 +39,25 @@
         ".vercel/output/**"
       ]
     },
+    "@yocxo/mai#build": {
+      "dependsOn": ["^build"],
+      "env": [
+        "EXA_API_KEY",
+        "OPENAI_API_KEY",
+        "OPENAI_API_ORG",
+        "NEXT_PUBLIC_APP_URL",
+        "TAVILY_API_KEY",
+        "UPSTASH_REDIS_REST_TOKEN",
+        "UPSTASH_REDIS_REST_URL"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "next-env.d.ts",
+        ".output/**",
+        ".vercel/output/**"
+      ]
+    },
     "@yocxo/web#build": {
       "dependsOn": ["^build"],
       "env": [
