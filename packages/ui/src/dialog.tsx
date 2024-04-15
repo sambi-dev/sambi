@@ -4,7 +4,8 @@ import * as React from 'react';
 
 import * as DialogPrimitive from '@radix-ui/react-dialog';
 
-import { cn } from '.';
+import { cn } from '@yocxo/ui';
+
 import { CloseMenuIcon } from './icons';
 
 const Dialog = DialogPrimitive.Root;

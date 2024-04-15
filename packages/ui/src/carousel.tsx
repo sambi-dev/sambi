@@ -6,7 +6,8 @@ import * as React from 'react';
 
 import useEmblaCarousel from 'embla-carousel-react';
 
-import { cn } from '.';
+import { cn } from '@yocxo/ui';
+
 import { Button } from './button';
 import { ArrowLeftIcon, ArrowRightIcon } from './icons';
 

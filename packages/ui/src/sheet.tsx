@@ -7,7 +7,8 @@ import * as React from 'react';
 import * as SheetPrimitive from '@radix-ui/react-dialog';
 import { cva } from 'class-variance-authority';
 
-import { cn } from '.';
+import { cn } from '@yocxo/ui';
+
 import { CloseMenuIcon } from './icons';
 
 const Sheet = SheetPrimitive.Root;
