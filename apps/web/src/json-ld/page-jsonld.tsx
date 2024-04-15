@@ -23,10 +23,6 @@ const PageJson = ({ pageName, pageSlug, keyword }: PageJsonProps) => {
       {
         '@type': 'Corporation',
         '@id': corporationId,
-        logo: {
-          '@type': 'ImageObject',
-          url: siteConfig.companyLogo.url,
-        },
         name: siteConfig.company,
         sameAs: [
           'https://www.linkedin.com/company/brillacx/',
@@ -39,10 +35,6 @@ const PageJson = ({ pageName, pageSlug, keyword }: PageJsonProps) => {
         '@type': 'Organization',
         '@id': organizationId,
         description: siteConfig.description,
-        logo: {
-          '@type': 'ImageObject',
-          url: siteConfig.logo.url,
-        },
         name: siteConfig.name,
         sameAs: Object.values(socialConfig.links),
         url: siteConfig.url,

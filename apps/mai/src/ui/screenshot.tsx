@@ -1,4 +1,5 @@
 import type { MotionValue } from 'framer-motion';
+import type { StaticImageData } from 'next/image';
 
 import Image from 'next/image';
 
@@ -12,7 +13,7 @@ export const Screenshot = ({
 }: {
   screen: {
     title: string;
-    thumbnail: string;
+    thumbnail: StaticImageData;
   };
   translate: MotionValue<number>;
 }) => {

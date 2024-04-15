@@ -1,5 +1,7 @@
 'use client';
 
+import type { StaticImageData } from 'next/image';
+
 import React from 'react';
 import Link from 'next/link';
 
@@ -21,7 +23,7 @@ export const HeroParallax = ({
 }: {
   screens: {
     title: string;
-    thumbnail: string;
+    thumbnail: StaticImageData;
   }[];
 }) => {
   const firstRow = screens.slice(0, 5);

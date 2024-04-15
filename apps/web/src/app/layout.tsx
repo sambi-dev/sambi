@@ -45,14 +45,6 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     url: siteConfig.url,
-    images: [
-      {
-        url: siteConfig.image.url,
-        width: siteConfig.image.width,
-        height: siteConfig.image.height,
-        alt: siteConfig.image.alt,
-      },
-    ],
     siteName: siteConfig.name,
     locale: 'en_US',
   },
@@ -62,50 +54,7 @@ export const metadata: Metadata = {
     creator: '@yocxo',
     title: siteConfig.name,
     description: siteConfig.description,
-    images: [
-      {
-        url: siteConfig.image.url,
-        width: siteConfig.image.width,
-        height: siteConfig.image.height,
-        alt: siteConfig.image.alt,
-      },
-    ],
   },
-  icons: [
-    {
-      rel: 'icon',
-      url: '/favicon.ico',
-    },
-    {
-      rel: 'apple',
-      url: '/icons/apple-touch-icon.png',
-    },
-    {
-      rel: 'icon',
-      url: '/icons/favicon-16x16.png',
-      sizes: '16x16',
-    },
-    {
-      rel: 'icon',
-      url: '/icons/favicon-32x32.png',
-      sizes: '32x32',
-    },
-    {
-      rel: 'icon',
-      url: '/icons/favicon-192x192.png',
-      sizes: '192x192',
-    },
-    {
-      rel: 'icon',
-      url: '/icons/android-chrome-512x512.png',
-      sizes: '512x512',
-    },
-    {
-      rel: 'mask-icon',
-      url: '/icons/safari-pinned-tab.svg',
-    },
-  ],
-  manifest: `${siteConfig.url}/site.webmanifest`,
 };
 
 export const viewport: Viewport = {

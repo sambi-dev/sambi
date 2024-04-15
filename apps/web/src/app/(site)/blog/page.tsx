@@ -130,27 +130,11 @@ export async function generateMetadata(): Promise<Metadata> {
       type: 'website',
       title: blogPageData.meta.title,
       description: blogPageData.meta.description,
-      images: [
-        {
-          url: siteConfig.image.url,
-          width: siteConfig.image.width,
-          height: siteConfig.image.height,
-          alt: siteConfig.image.alt,
-        },
-      ],
       url: `${SITE_URL}/blog`,
     },
     twitter: {
       title: blogPageData.meta.title,
       description: blogPageData.meta.description,
-      images: [
-        {
-          url: siteConfig.image.url,
-          width: siteConfig.image.width,
-          height: siteConfig.image.height,
-          alt: siteConfig.image.alt,
-        },
-      ],
     },
   };
 

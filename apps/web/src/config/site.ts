@@ -11,40 +11,26 @@ interface Image {
 
 interface SiteConfig {
   company: string;
-  companyLogo: Image;
   companyUrl: string;
   description: string;
   keyword: string;
   image: Image;
   name: string;
-  logo: Image;
   url: string;
 }
 
 export const siteConfig: SiteConfig = {
   company: 'BRIL.LA, LLC.',
-  companyLogo: {
-    url: `${siteUrl}/brilla-logo.png`,
-    width: 1639,
-    height: 821,
-    alt: "A lowercased logomark spelling brilla (rhymes with see ya) in a plain color with an icon consistent of a colon and two forward slashes representing the i and l's in the name.",
-  },
   companyUrl: 'https://bril.la',
   description:
     'Yo! CXO is a top Upwork agency. We help founders, startups, and fast-growing businesses achieve the outcomes they need to build products that people love.',
   image: {
-    url: `${siteUrl}/opengraph-image.gif`,
+    url: `/opengraph-image.gif`,
     width: 1200,
     height: 630,
     alt: 'Loading screen animation with pulsing text that spells out "Loading..." with the Yo! CXO logo (a silhouette of a French Bulldog and lower case text) in the top left.',
   },
   keyword: 'top upwork agency',
-  logo: {
-    url: `${siteUrl}/yocxo.com-logo.png`,
-    width: 1000,
-    height: 1000,
-    alt: 'A lowercased logomark spelling Yo! CXO in an unusual monospaced, plain color font, with a poorly executed drop shadow.',
-  },
   name: 'Yo! CXO',
   url: siteUrl,
 };
