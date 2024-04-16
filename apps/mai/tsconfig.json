@@ -5,8 +5,7 @@
     "jsx": "preserve",
     "baseUrl": ".",
     "paths": {
-      "#/*": ["./src/*"],
-      "#/assets/*": ["./src/assets/*"]
+      "#/*": ["./src/*"]
     },
     "plugins": [{ "name": "next" }],
     "tsBuildInfoFile": "node_modules/.cache/tsbuildinfo.json",

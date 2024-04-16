@@ -15,8 +15,8 @@ concurrency:
 # @link https://turborepo.org/docs/core-concepts/remote-caching#remote-caching-on-vercel-builds
 env:
   FORCE_COLOR: 3
-  # TURBO_TEAM: ${{ vars.TURBO_TEAM }}
-  # TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+  TURBO_TEAM: ${{ vars.TURBO_TEAM }}
+  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
   BASEHUB_TOKEN: ${{ secrets.BASEHUB_TOKEN }}
 
 jobs:
@@ -58,9 +58,26 @@ jobs:
       - name: Setup
         uses: ./tooling/github/setup
 
+      # Generate Basehub Types specifically for apps/web
       - name: Generate Basehub Types (apps/web)
+        if: ${{ matrix.app == 'apps/web' }}
         run: pnpm basehub-generate
         working-directory: apps/web
 
-      - name: Typecheck
+      - name: Typecheck for each app
         run: pnpm typecheck
+        working-directory: ${{ matrix.app }}
+    strategy:
+      matrix:
+        app:
+          [
+            apps/web,
+            apps/mai,
+            apps/coco,
+            apps/nextjs,
+            packages/api,
+            packages/auth,
+            packages/db,
+            packages/ui,
+            packages/validators,
+          ]
