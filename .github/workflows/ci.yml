@@ -58,26 +58,32 @@ jobs:
       - name: Setup
         uses: ./tooling/github/setup
 
-      # Generate Basehub Types specifically for apps/web
+      # Conditional Basehub Types generation for apps/web
       - name: Generate Basehub Types (apps/web)
         if: ${{ matrix.app == 'apps/web' }}
         run: pnpm basehub-generate
         working-directory: apps/web
 
+      # Change working directory of mai app for typecheck
+      - name: Adjust working directory for mai app
+        if: ${{ matrix.app == 'apps/mai' }}
+        run: echo "##[set-output name=working_directory;]apps/mai"
+        id: mai_adjustment
+
       - name: Typecheck for each app
         run: pnpm typecheck
-        working-directory: ${{ matrix.app }}
+        working-directory: ${{ steps.mai_adjustment.outputs.working_directory || format('{0}/{1}', github.workspace, matrix.app) }}
     strategy:
       matrix:
         app:
-          [
-            apps/web,
-            apps/mai,
-            apps/coco,
-            apps/nextjs,
-            packages/api,
-            packages/auth,
-            packages/db,
-            packages/ui,
-            packages/validators,
-          ]
+          - apps/web
+          - apps/mai
+          - apps/coco
+          - apps/expo
+          - apps/auth-proxy
+          - apps/nextjs
+          - packages/api
+          - packages/auth
+          - packages/db
+          - packages/ui
+          - packages/validators
