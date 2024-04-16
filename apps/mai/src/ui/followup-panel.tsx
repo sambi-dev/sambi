@@ -51,6 +51,7 @@ export function FollowupPanel() {
         onChange={(e) => setInput(e.target.value)}
       />
       <Button
+        aria-label="Send follow-up message"
         type="submit"
         size={'icon'}
         disabled={input.length === 0}

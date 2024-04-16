@@ -65,7 +65,7 @@ const Footer: React.FC = () => {
           ))}
         </div>
         <div className="mt-4 md:order-1 md:mt-0">
-          <p className="text-center text-xs text-muted-foreground">
+          <p className="text-center text-xs text-secondary-foreground/80">
             &copy; {new Date().getFullYear()} {siteConfig.name}. All Rights
             Reserved.
           </p>

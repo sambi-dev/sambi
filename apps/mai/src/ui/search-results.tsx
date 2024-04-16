@@ -67,6 +67,7 @@ export function SearchResults({ results }: SearchResultsProps) {
           <Card className="flex h-full flex-1 items-center justify-center">
             <CardContent className="p-2">
               <Button
+                aria-label="View more results"
                 variant="link"
                 className="font-sans tracking-normal text-primary underline"
                 onClick={handleViewMore}

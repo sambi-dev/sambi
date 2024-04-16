@@ -23,9 +23,10 @@ const OopsPage: NextPage = () => {
         <div className="mt-10 flex items-center justify-center gap-x-4">
           <Link
             href="/"
+            aria-label="Upgrade plan"
             className={cn(
               buttonVariants(),
-              'rounded-full font-sans tracking-normal',
+              'rounded-full font-sans tracking-normal dark:text-zinc-950',
             )}
           >
             Upgrade?

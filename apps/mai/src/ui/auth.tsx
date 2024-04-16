@@ -4,7 +4,7 @@ import { UserAuthForm } from './user-auth-form';
 
 export default function Authentication() {
   return (
-    <section className="h-[60vh] px-6" id="user-auth-form">
+    <section className="px-6 pt-40 sm:pt-0" id="user-auth-form">
       <div className="mx-auto w-full rounded-2xl border bg-card p-10 shadow-md sm:w-[420px]">
         <div className="flex flex-col justify-center space-y-6">
           <div className="mb-4 flex flex-col space-y-2 text-center">

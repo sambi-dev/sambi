@@ -78,12 +78,13 @@ export function ChatPanel() {
     return (
       <div className="fixed bottom-2 left-0 right-0 mx-auto flex items-center justify-center md:bottom-16">
         <Button
+          aria-label="New chat"
           type="button"
           size="lg"
           className="group rounded-full transition-all hover:scale-105"
           onClick={() => handleClear()}
         >
-          <span className="mr-2 hidden font-sans text-sm font-medium tracking-normal duration-300 animate-in fade-in group-hover:block">
+          <span className="mr-2 hidden font-sans text-sm font-medium tracking-normal duration-300 animate-in fade-in group-hover:block dark:text-zinc-950">
             New report
           </span>
           <PlusIcon className="transition-all group-hover:rotate-90" />
@@ -118,6 +119,7 @@ export function ChatPanel() {
           />
           <Button
             type="submit"
+            aria-label="Send Message"
             size={'icon'}
             variant={'ghost'}
             className="absolute right-2 top-1/2 -translate-y-1/2 transform"
