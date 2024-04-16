@@ -1,20 +1,20 @@
 import type { StaticImageData } from 'next/image';
 
-import hero1 from '#/hero-assets/hero1.jpg';
-import hero2 from '#/hero-assets/hero2.jpg';
-import hero3 from '#/hero-assets/hero3.jpg';
-import hero4 from '#/hero-assets/hero4.jpg';
-import hero5 from '#/hero-assets/hero5.jpg';
-import hero6 from '#/hero-assets/hero6.jpg';
-import hero7 from '#/hero-assets/hero7.jpg';
-import hero8 from '#/hero-assets/hero8.jpg';
-import hero9 from '#/hero-assets/hero9.jpg';
-import hero10 from '#/hero-assets/hero10.jpg';
-import hero11 from '#/hero-assets/hero11.jpg';
-import hero12 from '#/hero-assets/hero12.jpg';
-import hero13 from '#/hero-assets/hero13.jpg';
-import hero16 from '#/hero-assets/hero16.jpg';
-import hero17 from '#/hero-assets/hero17.jpg';
+import hero1 from '#/images/hero1.jpg';
+import hero2 from '#/images/hero2.jpg';
+import hero3 from '#/images/hero3.jpg';
+import hero4 from '#/images/hero4.jpg';
+import hero5 from '#/images/hero5.jpg';
+import hero6 from '#/images/hero6.jpg';
+import hero7 from '#/images/hero7.jpg';
+import hero8 from '#/images/hero8.jpg';
+import hero9 from '#/images/hero9.jpg';
+import hero10 from '#/images/hero10.jpg';
+import hero11 from '#/images/hero11.jpg';
+import hero12 from '#/images/hero12.jpg';
+import hero13 from '#/images/hero13.jpg';
+import hero16 from '#/images/hero16.jpg';
+import hero17 from '#/images/hero17.jpg';
 
 export interface Screen {
   title: string;

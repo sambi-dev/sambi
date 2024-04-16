@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 
-import { screens } from '#/data/screens';
+import { screens } from '#/data/screens-data';
 import Authentication from '#/ui/auth';
 import { HeroParallax } from '#/ui/hero-parallax';
 
