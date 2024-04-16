@@ -4,12 +4,7 @@ import * as React from 'react';
 
 import { cn } from '@yocxo/ui';
 import { Button } from '@yocxo/ui/button';
-import {
-  DiscordIcon,
-  GoogleIcon,
-  SpinnerIcon,
-  WindowsIcon,
-} from '@yocxo/ui/icons';
+import { DiscordIcon, GoogleIcon, SpinnerIcon } from '@yocxo/ui/icons';
 import { Input } from '@yocxo/ui/input';
 
 type UserAuthFormProps = React.HTMLAttributes<HTMLDivElement>;
@@ -65,44 +60,37 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
         </div>
       </div>
       <div className="grid gap-4">
-        <div className="grid grid-cols-3 gap-4 py-2">
+        <div className="grid grid-cols-2 gap-4 py-2">
           <Button
             aria-label="Sign in with Discord"
             variant="outline"
-            className="rounded-full"
+            className="rounded-full font-sans tracking-normal text-muted-foreground"
             type="button"
             disabled={isLoading}
           >
             {isLoading ? (
               <SpinnerIcon className="mr-2 h-4 w-4 animate-spin" />
             ) : (
-              <DiscordIcon />
+              <>
+                <DiscordIcon className="mr-2" />
+                Discord
+              </>
             )}
           </Button>
           <Button
             aria-label="Sign in with Google"
             variant="outline"
-            className="rounded-full"
+            className="rounded-full font-sans tracking-normal text-muted-foreground"
             type="button"
             disabled={isLoading}
           >
             {isLoading ? (
               <SpinnerIcon className="mr-2 h-4 w-4 animate-spin" />
             ) : (
-              <GoogleIcon />
-            )}
-          </Button>
-          <Button
-            aria-label="Sign in with Microsoft"
-            variant="outline"
-            className="rounded-full"
-            type="button"
-            disabled={isLoading}
-          >
-            {isLoading ? (
-              <SpinnerIcon className="mr-2 h-4 w-4 animate-spin" />
-            ) : (
-              <WindowsIcon />
+              <>
+                <GoogleIcon className="mr-2" />
+                Google
+              </>
             )}
           </Button>
         </div>

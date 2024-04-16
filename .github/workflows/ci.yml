@@ -59,6 +59,7 @@ jobs:
         uses: ./tooling/github/setup
 
       - name: Generate Basehub Types (apps/web)
+        if: github.event_name == 'pull_request' && contains(github.event.pull_request.paths, 'apps/web')
         run: pnpm basehub-generate
         working-directory: apps/web
 

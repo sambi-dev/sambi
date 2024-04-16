@@ -1,16 +1,11 @@
 import type { NextPage } from 'next';
 
-import { screens } from '#/data/screens-data';
-import Authentication from '#/ui/auth';
-import { HeroParallax } from '#/ui/hero-parallax';
+import { GeminiHero } from '#/ui/hero/gemini-hero';
 
 const HomePage: NextPage = () => {
   return (
-    <div className="mx-auto w-full bg-background pt-24 sm:pt-32">
-      <HeroParallax screens={screens} />
-      <div className="pt-32">
-        <Authentication />
-      </div>
+    <div className="mx-auto w-full bg-background">
+      <GeminiHero />
     </div>
   );
 };
