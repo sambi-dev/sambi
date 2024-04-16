@@ -171,6 +171,7 @@ export const Copilot: React.FC<CopilotProps> = ({ inquiry }: CopilotProps) => {
           <div className="flex justify-end space-x-2">
             <Button
               type="button"
+              aria-label="Skip additional input"
               variant="outline"
               onClick={handleSkip}
               disabled={pending}
@@ -179,6 +180,7 @@ export const Copilot: React.FC<CopilotProps> = ({ inquiry }: CopilotProps) => {
               Skip
             </Button>
             <Button
+              aria-label="Send Message"
               className="font-sans tracking-normal"
               type="submit"
               disabled={isButtonDisabled || pending}

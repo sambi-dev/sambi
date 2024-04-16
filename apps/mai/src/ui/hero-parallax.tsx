@@ -122,9 +122,10 @@ export const Header = () => {
       </div>
       <Link
         href="#user-auth-form"
+        aria-label="Create free account"
         className={cn(
           buttonVariants({ size: 'lg' }),
-          'mt-6 rounded-full font-sans tracking-normal',
+          'mt-6 rounded-full font-sans tracking-normal dark:text-zinc-950',
         )}
       >
         Try for free

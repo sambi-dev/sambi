@@ -45,8 +45,9 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
             />
           </div>
           <Button
+            aria-label="Get magic link via email"
             disabled={isLoading}
-            className="mt-2 rounded-full font-sans tracking-normal"
+            className="mt-2 rounded-full font-sans tracking-normal dark:text-zinc-950"
           >
             {isLoading && <SpinnerIcon className="mr-2 h-4 w-4 animate-spin" />}
             Get magic link via email
@@ -66,6 +67,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
       <div className="grid gap-4">
         <div className="grid grid-cols-3 gap-4 py-2">
           <Button
+            aria-label="Sign in with Discord"
             variant="outline"
             className="rounded-full"
             type="button"
@@ -78,6 +80,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
             )}
           </Button>
           <Button
+            aria-label="Sign in with Google"
             variant="outline"
             className="rounded-full"
             type="button"
@@ -90,6 +93,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
             )}
           </Button>
           <Button
+            aria-label="Sign in with Microsoft"
             variant="outline"
             className="rounded-full"
             type="button"

@@ -60,6 +60,7 @@ export const SearchRelated: React.FC<SearchRelatedProps> = ({
           <div className="flex w-full items-center" key={index}>
             <ArrowRightIcon className="mr-2 mt-1 h-4 w-4 flex-shrink-0 text-foreground" />
             <Button
+              aria-label="View related content"
               variant="link"
               className="h-fit flex-1 justify-start whitespace-normal px-0 py-1 text-left font-sans font-medium tracking-normal text-primary underline underline-offset-4 hover:text-primary"
               type="submit"
