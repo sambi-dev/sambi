@@ -31,7 +31,7 @@ export const Gemini = ({
 }) => {
   return (
     <div className={cn('sticky top-80', className)}>
-      <div className="px-6 sm:py-24 lg:px-8">
+      <div className="mt-24 px-6 sm:py-24 md:mt-0 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
           <HeadingGenerateEffect
             heading="From outputs to outcomes"
@@ -43,7 +43,7 @@ export const Gemini = ({
           />
         </div>
       </div>
-      <div className="absolute -top-60 flex  h-[890px] w-full items-center justify-center md:-top-36 ">
+      <div className="absolute -top-40 flex h-[890px] w-full items-center justify-center md:-top-36 ">
         <Link
           href="/auth"
           aria-label="Create free account"
@@ -61,7 +61,7 @@ export const Gemini = ({
         height="890"
         viewBox="0 0 1440 890"
         xmlns="http://www.w3.org/2000/svg"
-        className=" absolute -top-60  w-full md:-top-40"
+        className=" absolute -top-40  w-full"
       >
         <defs>
           <linearGradient
