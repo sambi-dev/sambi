@@ -536,8 +536,8 @@ importers:
         specifier: ^3.0.21
         version: 3.0.21(react@18.2.0)(solid-js@1.8.16)(svelte@4.2.12)(vue@3.4.21(typescript@5.4.5))(zod@3.22.5)
       basehub:
-        specifier: ^4.0.2
-        version: 4.0.12(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+        specifier: ^3.2.0
+        version: 3.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       escape-string-regexp:
         specifier: ^5.0.0
         version: 5.0.0
@@ -1791,11 +1791,11 @@ packages:
     resolution: {integrity: sha512-+j7a5c253RfKh8iABBhywc8NSfP5LURe7Uh4qpsh6jc+aLJguvmIUBdjSdEMQv2bENrCR5MfRdjGo7vzS/ob7w==}
     engines: {node: '>=6.9.0'}
 
-  '@basehub/genql@7.0.7':
-    resolution: {integrity: sha512-LgBiti9iUNKVmYkcBPDPkBY0wMuZ9Yx+bg8nDdBrd7+K990yTWoOGqB5jaRd+ANP/G1aB5U+4yk2MeeI6KLzwA==}
+  '@basehub/genql@6.3.5':
+    resolution: {integrity: sha512-gQb4BoKwEJpdUq+8/dZ10usqMLORbrptGnk059FAuoQHzq1fc5IIfAOzgNG/nFx8o1q/RYdxxgmvhEbILYgU0g==}
 
-  '@basehub/mutation-api-helpers@1.0.1':
-    resolution: {integrity: sha512-D4ZVbkzE9WdanTqP/Mf3chR+ffv4V4XsHlmS2MoBZ0t83oWDRwSFsGdWGTeVw9TdoHVmeDHLm0t5iOei7INTNg==}
+  '@basehub/mutation-api-helpers@1.0.0':
+    resolution: {integrity: sha512-0PyL0dTq6h8p/kQj4zdaO4KVD9LtnxVjsuYDDctNYTbnYxM/qV2Gn9fHqQgM5dv5deKYlt33ratS3DGRLtglQQ==}
 
   '@cloudflare/kv-asset-handler@0.3.1':
     resolution: {integrity: sha512-lKN2XCfKCmpKb86a1tl4GIwsJYDy9TGuwjhDELLmpKygQhw8X2xR4dusgpC5Tg7q1pB96Eb0rBo81kxSILQMwA==}
@@ -4488,8 +4488,8 @@ packages:
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
 
-  basehub@4.0.12:
-    resolution: {integrity: sha512-12TYmK8Rx/ZJIDy9y2mYTM/payOTq0d/OJS83YcEMQJgRwpf61WL7ULL3DU1AYVVcn4+8ybTgHtAUUOoqMz1sg==}
+  basehub@3.2.0:
+    resolution: {integrity: sha512-y/fBWzFxqSzp+XiqabCG3TGYta8eYFcG7Ji+NkeOKoi158S/VbmFqoNjqprZjN12jo+g32u2nJR3EHMgaFrjJw==}
     hasBin: true
     peerDependencies:
       react: ^18.2.0
@@ -6042,9 +6042,6 @@ packages:
   giget@1.2.3:
     resolution: {integrity: sha512-8EHPljDvs7qKykr6uw8b+lqLiUc/vUg+KVTI0uND4s63TdsZM2Xus3mflvF0DDG9SiM4RlCkFGL+7aAjRmV7KA==}
     hasBin: true
-
-  github-slugger@2.0.0:
-    resolution: {integrity: sha512-IaOQ9puYtjrkq7Y0Ygl9KDZnrf/aiUJYUpVf89y8kyaxbRG7Y1SrX/jaumrv81vc61+kiMempujsM3Yw7w5qcw==}
 
   glob-parent@5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
@@ -10853,7 +10850,7 @@ snapshots:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
 
-  '@basehub/genql@7.0.7':
+  '@basehub/genql@6.3.5':
     dependencies:
       '@graphql-tools/graphql-file-loader': 7.5.17(graphql@16.8.1)
       '@graphql-tools/load': 7.8.14(graphql@16.8.1)
@@ -10872,7 +10869,7 @@ snapshots:
     transitivePeerDependencies:
       - enquirer
 
-  '@basehub/mutation-api-helpers@1.0.1':
+  '@basehub/mutation-api-helpers@1.0.0':
     dependencies:
       type-fest: 3.7.1
 
@@ -13910,18 +13907,18 @@ snapshots:
 
   base64-js@1.5.1: {}
 
-  basehub@4.0.12(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+  basehub@3.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
     dependencies:
-      '@basehub/genql': 7.0.7
-      '@basehub/mutation-api-helpers': 1.0.1
+      '@basehub/genql': 6.3.5
+      '@basehub/mutation-api-helpers': 1.0.0
       arg: 5.0.1
       dotenv-mono: 1.3.10
       esbuild: 0.19.2
-      github-slugger: 2.0.0
       pusher-js: 8.3.0
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       resolve-pkg: 2.0.0
+      slugify: 1.6.6
       sonner: 1.4.3(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       zod: 3.22.1
     transitivePeerDependencies:
@@ -15721,8 +15718,6 @@ snapshots:
       ohash: 1.1.3
       pathe: 1.1.2
       tar: 6.2.1
-
-  github-slugger@2.0.0: {}
 
   glob-parent@5.1.2:
     dependencies:
