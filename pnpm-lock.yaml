@@ -63,6 +63,9 @@ importers:
 
   apps/coco:
     dependencies:
+      '@ai-sdk/openai':
+        specifier: ^0.0.2
+        version: 0.0.2(zod@3.22.4)
       '@t3-oss/env-nextjs':
         specifier: ^0.9.2
         version: 0.9.2(typescript@5.4.5)(zod@3.22.4)
@@ -91,7 +94,7 @@ importers:
         specifier: workspace:*
         version: link:../../packages/validators
       ai:
-        specifier: 3.0.21
+        specifier: ^3.0.21
         version: 3.0.21(react@18.2.0)(solid-js@1.8.16)(svelte@4.2.12)(vue@3.4.21)(zod@3.22.4)
       d3-scale:
         specifier: ^4.0.2
@@ -308,6 +311,9 @@ importers:
 
   apps/mai:
     dependencies:
+      '@ai-sdk/openai':
+        specifier: ^0.0.2
+        version: 0.0.2(zod@3.22.4)
       '@t3-oss/env-nextjs':
         specifier: ^0.9.2
         version: 0.9.2(typescript@5.4.5)(zod@3.22.4)
@@ -333,7 +339,7 @@ importers:
         specifier: workspace:*
         version: link:../../packages/validators
       ai:
-        specifier: 3.0.21
+        specifier: ^3.0.21
         version: 3.0.21(react@18.2.0)(solid-js@1.8.16)(svelte@4.2.12)(vue@3.4.21)(zod@3.22.4)
       exa-js:
         specifier: ^1.0.12
@@ -499,6 +505,9 @@ importers:
 
   apps/web:
     dependencies:
+      '@ai-sdk/openai':
+        specifier: ^0.0.2
+        version: 0.0.2(zod@3.22.4)
       '@headlessui/react':
         specifier: ^1.7.13
         version: 1.7.18(react-dom@18.2.0)(react@18.2.0)
@@ -524,7 +533,7 @@ importers:
         specifier: workspace:*
         version: link:../../packages/validators
       ai:
-        specifier: 3.0.21
+        specifier: ^3.0.21
         version: 3.0.21(react@18.2.0)(solid-js@1.8.16)(svelte@4.2.12)(vue@3.4.21)(zod@3.22.4)
       basehub:
         specifier: ^3.2.0
@@ -965,6 +974,36 @@ packages:
   /@aashutoshrathi/word-wrap@1.2.6:
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
+
+  /@ai-sdk/openai@0.0.2(zod@3.22.4):
+    resolution: {integrity: sha512-Dhq/DPjCR8CcyVzWo980yBkgaUulb4X8B1GMvJJ1/BokPv0e/fP40+K1XP6ARLWWJOf6JRCn1XXDdOkHj2Ljqg==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.0.0
+    peerDependenciesMeta:
+      zod:
+        optional: true
+    dependencies:
+      '@ai-sdk/provider': 0.0.0
+      '@ai-sdk/provider-utils': 0.0.1(zod@3.22.4)
+      zod: 3.22.4
+    dev: false
+
+  /@ai-sdk/provider-utils@0.0.1(zod@3.22.4):
+    resolution: {integrity: sha512-DpD58qFYHoPffBcODPL5od/zAsFSLymwEdtP/QqNX8qE3oQcRG9GYHbj1fZTH5b9i7COwlnJ4wYzYSkXVyd3bA==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      zod: ^3.0.0
+    peerDependenciesMeta:
+      zod:
+        optional: true
+    dependencies:
+      '@ai-sdk/provider': 0.0.0
+      eventsource-parser: 1.1.2
+      nanoid: 3.3.6
+      secure-json-parse: 2.7.0
+      zod: 3.22.4
+    dev: false
 
   /@ai-sdk/provider@0.0.0:
     resolution: {integrity: sha512-Gbl9Ei8NPtM85gB/o8cY7s7CLGxK/U6QVheVaI3viFn7o6IpTfy1Ja389e2FXVMNJ4WHK2qYWSp5fAFDuKulTA==}

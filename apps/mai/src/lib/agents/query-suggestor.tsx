@@ -2,8 +2,8 @@ import type { PartialRelated } from '#/lib/schema/related';
 import type { ExperimentalMessage } from 'ai';
 import type { createStreamableUI } from 'ai/rsc';
 
+import { OpenAI } from '@ai-sdk/openai';
 import { experimental_streamObject } from 'ai';
-import { OpenAI } from 'ai/openai';
 import { createStreamableValue } from 'ai/rsc';
 
 import { env } from '#/env';

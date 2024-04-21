@@ -1,7 +1,7 @@
 import type { ExperimentalMessage } from 'ai';
 
+import { OpenAI } from '@ai-sdk/openai';
 import { experimental_generateObject } from 'ai';
-import { OpenAI } from 'ai/openai';
 
 import { env } from '#/env';
 

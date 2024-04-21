@@ -1,8 +1,8 @@
 import type { ExperimentalMessage, ToolCallPart, ToolResultPart } from 'ai';
 import type { createStreamableUI, createStreamableValue } from 'ai/rsc';
 
+import { OpenAI } from '@ai-sdk/openai';
 import { experimental_streamText } from 'ai';
-import { OpenAI } from 'ai/openai';
 import Exa from 'exa-js';
 
 import { Card } from '@yocxo/ui/card';
