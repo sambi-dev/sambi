@@ -48,7 +48,8 @@ async function submit(formData?: FormData, skip?: boolean) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let action: any = { object: { next: 'proceed' } };
     // If the user skips the task, we proceed to the search
-    if (!skip) action = await taskManager(messages);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    if (!skip) action = (await taskManager(messages)) ?? action;
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (action.object.next === 'inquire') {
