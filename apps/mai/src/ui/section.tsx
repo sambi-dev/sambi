@@ -51,7 +51,7 @@ export const Section: React.FC<SectionProps> = ({
 
   return (
     <>
-      {separator && <Separator className="my-8 bg-primary/50" />}
+      {separator && <Separator className="my-16 bg-primary/50" />}
       <section
         className={cn(
           ` ${size === 'sm' ? 'py-1' : size === 'lg' ? 'py-8' : 'py-4'}`,

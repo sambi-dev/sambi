@@ -10,7 +10,12 @@ import {
 
 import { SpinnerIcon } from '@yocxo/ui/icons';
 
-import { inquire, querySuggestor, researcher, taskManager } from '#/lib/agents';
+import { env } from '#/env';
+import { inquire } from '#/lib/agents/inquire';
+import { querySuggestor } from '#/lib/agents/query-suggestor';
+import { researcher } from '#/lib/agents/researcher';
+import { taskManager } from '#/lib/agents/task-manager';
+import { writer } from '#/lib/agents/writer';
 import { FollowupPanel } from '#/ui/followup-panel';
 import { Section } from '#/ui/section';
 
@@ -20,9 +25,14 @@ async function submit(formData?: FormData, skip?: boolean) {
   const aiState = getMutableAIState<typeof AI>();
   const uiStream = createStreamableUI();
   const isGenerating = createStreamableValue(true);
+  const isCollapsed = createStreamableValue(false);
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
   const messages: ExperimentalMessage[] = aiState.get() as any;
+  const useSpecificAPI = env.USE_SPECIFIC_API_FOR_WRITER === 'true';
+  const maxMessages = useSpecificAPI ? 5 : 10;
+  // Limit the number of messages to the maximum
+  messages.splice(0, Math.max(messages.length - maxMessages, 0));
   // Get the user input from the form data
   const userInput = skip
     ? `{"action": "skip"}`
@@ -48,7 +58,8 @@ async function submit(formData?: FormData, skip?: boolean) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let action: any = { object: { next: 'proceed' } };
     // If the user skips the task, we proceed to the search
-    if (!skip) action = await taskManager(messages);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    if (!skip) action = (await taskManager(messages)) ?? action;
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     if (action.object.next === 'inquire') {
@@ -57,6 +68,7 @@ async function submit(formData?: FormData, skip?: boolean) {
 
       uiStream.done();
       isGenerating.done();
+      isCollapsed.done(false);
       aiState.done([
         ...aiState.get(),
         { role: 'assistant', content: `inquiry: ${inquiry?.question}` },
@@ -64,25 +76,57 @@ async function submit(formData?: FormData, skip?: boolean) {
       return;
     }
 
+    // Set the collapsed state to true
+    isCollapsed.done(true);
+
     //  Generate the answer
     let answer = '';
+    let toolOutputs = [];
+    let errorOccurred = false;
     const streamText = createStreamableValue<string>();
-    while (answer.length === 0) {
+    // If useSpecificAPI is enabled, only function calls will be made
+    // If not using a tool, this model generates the answer
+    while (
+      useSpecificAPI
+        ? toolOutputs.length === 0 && answer.length === 0
+        : answer.length === 0
+    ) {
       // Search the web and generate the answer
-      const { fullResponse } = await researcher(uiStream, streamText, messages);
+      const { fullResponse, hasError, toolResponses } = await researcher(
+        uiStream,
+        streamText,
+        messages,
+        useSpecificAPI,
+      );
       answer = fullResponse;
+      toolOutputs = toolResponses;
+      errorOccurred = hasError;
     }
-    streamText.done();
 
-    // Generate related queries
-    await querySuggestor(uiStream, messages);
+    // If useSpecificAPI is enabled, generate the answer using the specific model
+    if (useSpecificAPI && answer.length === 0) {
+      // modify the messages to be used by the specific model
+      const modifiedMessages = messages.map((msg) =>
+        msg.role === 'tool'
+          ? { ...msg, role: 'assistant', content: JSON.stringify(msg.content) }
+          : msg,
+      ) as ExperimentalMessage[];
+      answer = await writer(uiStream, streamText, modifiedMessages);
+    } else {
+      streamText.done();
+    }
 
-    // Add follow-up panel
-    uiStream.append(
-      <Section title="Follow-up">
-        <FollowupPanel />
-      </Section>,
-    );
+    if (!errorOccurred) {
+      // Generate related queries
+      await querySuggestor(uiStream, messages);
+
+      // Add follow-up panel
+      uiStream.append(
+        <Section title="Follow-up" size="lg" separator={true}>
+          <FollowupPanel />
+        </Section>,
+      );
+    }
 
     isGenerating.done(false);
     uiStream.done();
@@ -96,6 +140,7 @@ async function submit(formData?: FormData, skip?: boolean) {
     id: Date.now(),
     isGenerating: isGenerating.value,
     component: uiStream.value,
+    isCollapsed: isCollapsed.value,
   };
 }
 
@@ -110,7 +155,8 @@ const initialAIState: {
 // The initial UI state that the client will keep track of, which contains the message IDs and their UI nodes.
 const initialUIState: {
   id: number;
-  isGenerating: StreamableValue<boolean>;
+  isGenerating?: StreamableValue<boolean>;
+  isCollapsed?: StreamableValue<boolean>;
   component: React.ReactNode;
 }[] = [];
 

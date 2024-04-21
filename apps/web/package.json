@@ -15,6 +15,7 @@
     "basehub-generate": "pnpm with-env basehub --output .basehub"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^0.0.2",
     "@headlessui/react": "^1.7.13",
     "@t3-oss/env-nextjs": "^0.9.2",
     "@vercel/toolbar": "^0.1.13",
@@ -23,7 +24,7 @@
     "@yocxo/db": "workspace:*",
     "@yocxo/ui": "workspace:*",
     "@yocxo/validators": "workspace:*",
-    "ai": "3.0.21",
+    "ai": "^3.0.21",
     "basehub": "^3.2.0",
     "escape-string-regexp": "^5.0.0",
     "fast-glob": "^3.2.12",

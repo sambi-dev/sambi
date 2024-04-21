@@ -1,6 +1,9 @@
 import type { AI } from '#/app/action';
+import type { StreamableValue } from 'ai/rsc';
 
 import { useUIState } from 'ai/rsc';
+
+import { CollapsibleMessage } from './collapsible-message';
 
 export function ChatMessages() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -8,9 +11,19 @@ export function ChatMessages() {
 
   return (
     <>
-      {messages.map((message: { id: number; component: React.ReactNode }) => (
-        <div key={message.id}>{message.component}</div>
-      ))}
+      {messages.map(
+        (message: {
+          id: number;
+          component: React.ReactNode;
+          isCollapsed?: StreamableValue<boolean>;
+        }) => (
+          <CollapsibleMessage
+            key={message.id}
+            message={message}
+            isLastMessage={message.id === messages[messages.length - 1]?.id}
+          />
+        ),
+      )}
     </>
   );
 }

@@ -1,9 +1,11 @@
 import type { ExperimentalMessage, ToolCallPart, ToolResultPart } from 'ai';
 import type { createStreamableUI, createStreamableValue } from 'ai/rsc';
 
+import { OpenAI } from '@ai-sdk/openai';
 import { experimental_streamText } from 'ai';
-import { OpenAI } from 'ai/openai';
 import Exa from 'exa-js';
+
+import { Card } from '@yocxo/ui/card';
 
 import { env } from '#/env';
 import { searchSchema } from '#/lib/schema/search';
@@ -18,6 +20,7 @@ export async function researcher(
   uiStream: ReturnType<typeof createStreamableUI>,
   streamText: ReturnType<typeof createStreamableValue<string>>,
   messages: ExperimentalMessage[],
+  useSpecificModel?: boolean,
 ) {
   const openai = new OpenAI({
     apiKey: env.OPENAI_API_KEY,
@@ -27,6 +30,7 @@ export async function researcher(
   const searchAPI: 'tavily' | 'exa' = 'tavily';
 
   let fullResponse = '';
+  let hasError = false;
   const answerSection = (
     <Section title="Answer">
       <BotMessage content={streamText.value} />
@@ -34,9 +38,11 @@ export async function researcher(
   );
 
   const result = await experimental_streamText({
-    model: openai.chat('gpt-4-turbo'),
+    model: openai.chat(env.OPENAI_API_MODEL ?? 'gpt-4-turbo'),
     maxTokens: 2500,
-    system: `As a professional search expert, your role is to leverage insights from search results to address queries with a focus on the client's industry, their customers' challenges, and their customers' desired outcomes from a jobs-to-be-done perspective. Tailor your research and responses to align with the specific agent profile handling the task.
+    system: `Please respond in the same language as the user's input. This ensures that the generated queries are directly aligned with the linguistic context of the input, making the content more accessible and relevant to the user.
+    
+    As a professional search expert, your role is to leverage insights from search results to address queries with a focus on the client's industry, their customers' challenges, and their customers' desired outcomes from a jobs-to-be-done perspective. Tailor your research and responses to align with the specific agent profile handling the task.
 
     Agents:
     1. Client Industry Agent (🏭): Focuses on providing a deep dive into the client's industry and location, offering foundational understanding for marketing efforts.
@@ -72,11 +78,31 @@ export async function researcher(
             </Section>,
           );
 
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          const searchResult =
-            searchAPI === 'tavily'
-              ? await tavilySearch(query, max_results, search_depth)
-              : await exaSearch(query);
+          // Tavily API requires a minimum of 5 characters in the query
+          const filledQuery =
+            query.length < 5 ? query + ' '.repeat(5 - query.length) : query;
+          let searchResult;
+          try {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+            searchResult =
+              searchAPI === 'tavily'
+                ? await tavilySearch(filledQuery, max_results, search_depth)
+                : await exaSearch(query);
+          } catch (error) {
+            console.error('Search API error:', error);
+            hasError = true;
+          }
+
+          if (hasError) {
+            fullResponse += `\nAn error occurred while searching for "${query}.`;
+            uiStream.update(
+              <Card className="mt-2 p-4 text-sm">
+                {`An error occurred while searching for "${query}".`}
+              </Card>,
+            );
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+            return searchResult;
+          }
 
           uiStream.update(
             <Section title="Images">
@@ -95,7 +121,10 @@ export async function researcher(
             </Section>,
           );
 
-          uiStream.append(answerSection);
+          // Append the answer section if the specific model is not used
+          if (!useSpecificModel) {
+            uiStream.append(answerSection);
+          }
 
           // eslint-disable-next-line @typescript-eslint/no-unsafe-return
           return searchResult;
@@ -127,6 +156,7 @@ export async function researcher(
         toolResponses.push(delta);
         break;
       case 'error':
+        hasError = true;
         fullResponse += `\nError occurred while executing the tool`;
         break;
     }
@@ -141,7 +171,7 @@ export async function researcher(
     messages.push({ role: 'tool', content: toolResponses });
   }
 
-  return { result, fullResponse };
+  return { result, fullResponse, hasError, toolResponses };
 }
 
 async function tavilySearch(
