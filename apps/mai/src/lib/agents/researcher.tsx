@@ -5,6 +5,8 @@ import { experimental_streamText } from 'ai';
 import { OpenAI } from 'ai/openai';
 import Exa from 'exa-js';
 
+import { Card } from '@yocxo/ui/card';
+
 import { env } from '#/env';
 import { searchSchema } from '#/lib/schema/search';
 import { BotMessage } from '#/ui/message';
@@ -27,6 +29,7 @@ export async function researcher(
   const searchAPI: 'tavily' | 'exa' = 'tavily';
 
   let fullResponse = '';
+  let hasError = false;
   const answerSection = (
     <Section title="Answer">
       <BotMessage content={streamText.value} />
@@ -72,11 +75,31 @@ export async function researcher(
             </Section>,
           );
 
-          // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-          const searchResult =
-            searchAPI === 'tavily'
-              ? await tavilySearch(query, max_results, search_depth)
-              : await exaSearch(query);
+          // Tavily API requires a minimum of 5 characters in the query
+          const filledQuery =
+            query.length < 5 ? query + ' '.repeat(5 - query.length) : query;
+          let searchResult;
+          try {
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+            searchResult =
+              searchAPI === 'tavily'
+                ? await tavilySearch(filledQuery, max_results, search_depth)
+                : await exaSearch(query);
+          } catch (error) {
+            console.error('Search API error:', error);
+            hasError = true;
+          }
+
+          if (hasError) {
+            fullResponse += `\nAn error occurred while searching for "${query}.`;
+            uiStream.update(
+              <Card className="mt-2 p-4 text-sm">
+                {`An error occurred while searching for "${query}".`}
+              </Card>,
+            );
+            // eslint-disable-next-line @typescript-eslint/no-unsafe-return
+            return searchResult;
+          }
 
           uiStream.update(
             <Section title="Images">
@@ -127,6 +150,7 @@ export async function researcher(
         toolResponses.push(delta);
         break;
       case 'error':
+        hasError = true;
         fullResponse += `\nError occurred while executing the tool`;
         break;
     }
@@ -141,7 +165,7 @@ export async function researcher(
     messages.push({ role: 'tool', content: toolResponses });
   }
 
-  return { result, fullResponse };
+  return { result, fullResponse, hasError };
 }
 
 async function tavilySearch(
