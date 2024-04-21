@@ -20,11 +20,12 @@ async function submit(formData?: FormData, skip?: boolean) {
   const aiState = getMutableAIState<typeof AI>();
   const uiStream = createStreamableUI();
   const isGenerating = createStreamableValue(true);
+  const isCollapsed = createStreamableValue(false);
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
   const messages: ExperimentalMessage[] = aiState.get() as any;
-  // Limit the number of messages to 14
-  messages.splice(0, Math.max(messages.length - 14, 0));
+  // Limit the number of messages to 10
+  messages.splice(0, Math.max(messages.length - 10, 0));
   // Get the user input from the form data
   const userInput = skip
     ? `{"action": "skip"}`
@@ -60,12 +61,16 @@ async function submit(formData?: FormData, skip?: boolean) {
 
       uiStream.done();
       isGenerating.done();
+      isCollapsed.done(false);
       aiState.done([
         ...aiState.get(),
         { role: 'assistant', content: `inquiry: ${inquiry?.question}` },
       ]);
       return;
     }
+
+    // Set the collapsed state to true
+    isCollapsed.done(true);
 
     //  Generate the answer
     let answer = '';
@@ -108,6 +113,7 @@ async function submit(formData?: FormData, skip?: boolean) {
     id: Date.now(),
     isGenerating: isGenerating.value,
     component: uiStream.value,
+    isCollapsed: isCollapsed.value,
   };
 }
 
@@ -122,7 +128,8 @@ const initialAIState: {
 // The initial UI state that the client will keep track of, which contains the message IDs and their UI nodes.
 const initialUIState: {
   id: number;
-  isGenerating: StreamableValue<boolean>;
+  isGenerating?: StreamableValue<boolean>;
+  isCollapsed?: StreamableValue<boolean>;
   component: React.ReactNode;
 }[] = [];
 
