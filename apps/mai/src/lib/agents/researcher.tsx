@@ -20,6 +20,7 @@ export async function researcher(
   uiStream: ReturnType<typeof createStreamableUI>,
   streamText: ReturnType<typeof createStreamableValue<string>>,
   messages: ExperimentalMessage[],
+  useSpecificModel?: boolean,
 ) {
   const openai = new OpenAI({
     apiKey: env.OPENAI_API_KEY,
@@ -120,7 +121,10 @@ export async function researcher(
             </Section>,
           );
 
-          uiStream.append(answerSection);
+          // Append the answer section if the specific model is not used
+          if (!useSpecificModel) {
+            uiStream.append(answerSection);
+          }
 
           // eslint-disable-next-line @typescript-eslint/no-unsafe-return
           return searchResult;
@@ -167,7 +171,7 @@ export async function researcher(
     messages.push({ role: 'tool', content: toolResponses });
   }
 
-  return { result, fullResponse, hasError };
+  return { result, fullResponse, hasError, toolResponses };
 }
 
 async function tavilySearch(

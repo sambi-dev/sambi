@@ -12,9 +12,13 @@ export const env = createEnv({
     OPENAI_API_KEY: z.string(),
     OPENAI_API_MODEL: z.string(),
     OPENAI_API_ORG: z.string(),
+    SPECIFIC_API_BASE: z.string(),
+    SPECIFIC_API_KEY: z.string(),
+    SPECIFIC_API_MODEL: z.string(),
     TAVILY_API_KEY: z.string(),
     UPSTASH_REDIS_REST_TOKEN: z.string(),
     UPSTASH_REDIS_REST_URL: z.string(),
+    USE_SPECIFIC_API_FOR_WRITER: z.string(),
   },
   client: { NEXT_PUBLIC_APP_URL: z.string() },
 
@@ -25,9 +29,13 @@ export const env = createEnv({
     OPENAI_API_KEY: process.env.OPENAI_API_KEY,
     OPENAI_API_MODEL: process.env.OPENAI_API_MODEL,
     OPENAI_API_ORG: process.env.OPENAI_API_ORG,
+    SPECIFIC_API_BASE: process.env.SPECIFIC_API_BASE,
+    SPECIFIC_API_KEY: process.env.SPECIFIC_API_KEY,
+    SPECIFIC_API_MODEL: process.env.SPECIFIC_API_MODEL,
     TAVILY_API_KEY: process.env.TAVILY_API_KEY,
     UPSTASH_REDIS_REST_TOKEN: process.env.UPSTASH_REDIS_REST_TOKEN,
     UPSTASH_REDIS_REST_URL: process.env.UPSTASH_REDIS_REST_URL,
+    USE_SPECIFIC_API_FOR_WRITER: process.env.USE_SPECIFIC_API_FOR_WRITER,
   },
   skipValidation:
     !!process.env.CI ||
