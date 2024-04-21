@@ -10,6 +10,7 @@ export const env = createEnv({
   server: {
     EXA_API_KEY: z.string(),
     OPENAI_API_KEY: z.string(),
+    OPENAI_API_MODEL: z.string(),
     OPENAI_API_ORG: z.string(),
     TAVILY_API_KEY: z.string(),
     UPSTASH_REDIS_REST_TOKEN: z.string(),
@@ -22,6 +23,7 @@ export const env = createEnv({
     NEXT_PUBLIC_APP_URL: process.env.NEXT_PUBLIC_APP_URL,
     NODE_ENV: process.env.NODE_ENV,
     OPENAI_API_KEY: process.env.OPENAI_API_KEY,
+    OPENAI_API_MODEL: process.env.OPENAI_API_MODEL,
     OPENAI_API_ORG: process.env.OPENAI_API_ORG,
     TAVILY_API_KEY: process.env.TAVILY_API_KEY,
     UPSTASH_REDIS_REST_TOKEN: process.env.UPSTASH_REDIS_REST_TOKEN,

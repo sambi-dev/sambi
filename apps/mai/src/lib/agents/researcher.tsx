@@ -37,7 +37,7 @@ export async function researcher(
   );
 
   const result = await experimental_streamText({
-    model: openai.chat('gpt-4-turbo'),
+    model: openai.chat(env.OPENAI_API_MODEL ?? 'gpt-4-turbo'),
     maxTokens: 2500,
     system: `As a professional search expert, your role is to leverage insights from search results to address queries with a focus on the client's industry, their customers' challenges, and their customers' desired outcomes from a jobs-to-be-done perspective. Tailor your research and responses to align with the specific agent profile handling the task.
 

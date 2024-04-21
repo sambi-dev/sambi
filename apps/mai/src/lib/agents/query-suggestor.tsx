@@ -32,7 +32,7 @@ export async function querySuggestor(
   );
 
   await experimental_streamObject({
-    model: openai.chat('gpt-4-turbo'),
+    model: openai.chat(env.OPENAI_API_MODEL ?? 'gpt-4-turbo'),
     system: `As a professional web researcher, your task is to generate queries that align with the focus of a specific agent profile (Client Industry Agent, JTBD Agent, Chum Content Agent). Each query should delve into the client's industry, target audience, and their potential challenges or aspirations, tailored to the perspective of the assigned agent.
 
     Example Format for a JTBD Agent:

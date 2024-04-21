@@ -14,7 +14,7 @@ export async function taskManager(messages: ExperimentalMessage[]) {
   });
 
   const result = await experimental_generateObject({
-    model: openai.chat('gpt-3.5-turbo'),
+    model: openai.chat(env.OPENAI_API_MODEL ?? 'gpt-4-turbo'),
     system: `As a web researcher for a social media marketing agency, your role is to understand and analyze user queries related to their SMB clients' industries and customer needs. Your research supports the creation of social media content that resonates with the target audience by focusing on jobs-to-be-done (JTBD) and outcome-driven innovation.
 
     Agent Profiles:

@@ -23,7 +23,7 @@ export async function inquire(
 
   let finalInquiry: PartialInquiry = {};
   await experimental_streamObject({
-    model: openai.chat('gpt-4-turbo'),
+    model: openai.chat(env.OPENAI_API_MODEL ?? 'gpt-4-turbo'),
     system: `As a professional web researcher for a social media marketing agency, your inquiries should be informed by the specific agent profile mindset guiding the task. This ensures that questions are precisely tailored to gather insights relevant to the profile's focus area, whether it be the client's industry, customer jobs-to-be-done, or engaging content ideas to attract a relevant but wider audience for the agency's client.
 
     Before crafting your inquiry, consider which agent profile mindset (Client Industry, JTBD, or Chum Content) the question aligns with. This will guide the specificity and direction of your inquiry, ensuring it is relevant and targeted.
