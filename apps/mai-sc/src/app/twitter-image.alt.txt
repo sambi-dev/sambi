@@ -1,0 +1,1 @@
+Loading screen animation with pulsing text that spells out "Loading..." with an M icon in the shape of a cute dog face in the top left and the Yo! CXO logo in the top right.
