@@ -11,8 +11,8 @@ export function UserAvatar({ id, initials, className, name }: UserAvatarProps) {
   return (
     <Avatar className={className}>
       <AvatarImage
-        className="bg-[#FFC60A] p-1"
-        src={`https://api.dicebear.com/7.x/adventurer-neutral/svg?seed=${id}&backgroundColor=FFC60A`}
+        className="bg-[#fed7aa]"
+        src={`https://api.dicebear.com/7.x/adventurer-neutral/svg?seed=${id}&backgroundColor=fed7aa&radius=50`}
         alt={`A fun dicebear avatar with silly faces representing our client, ${name}.`}
       />
       <AvatarFallback>{initials}</AvatarFallback>
