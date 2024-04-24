@@ -41,7 +41,7 @@ export default async function LoginPage() {
 
 const title = 'Login';
 const description =
-  'Looking for a cutting edge ChatGPT wrapper for your next project? Log in to CocoGPT via the login page to get started.';
+  'Log in to Mai x Smarcomms and get started with your research. Mail will help you delight your customers.';
 const pageUrl = `${SITE_URL}/login`;
 
 export const metadata: Metadata = {

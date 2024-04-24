@@ -23,12 +23,12 @@ export const siteConfig: SiteConfig = {
   company: 'BRIL.LA, LLC.',
   companyUrl: 'https://bril.la',
   description:
-    "Mai by Yo! CXO is an exploration in generative UI interfaces with a Perplexity AI like UX. It's AI for business that helps get work done. A fork of morphic.sh.",
+    'Mai x Smarcomms is an experiment to incorporate AI into our workflow at Smarcomms. It will help us serve our customers better by enabling deeper empathy. #JTBD',
   image: {
     url: `/opengraph-image.gif`,
     width: 1200,
     height: 630,
-    alt: 'Loading screen animation with pulsing text that spells out "Loading..." with an M icon in the shape of a cute dog face in the top left and the Yo! CXO logo in the top right.',
+    alt: 'Loading screen animation with pulsing text that spells out "Loading..." with an M icon in the shape of a cute dog face in the top left, the Smarcomms combination mark in the middle and the Yo! CXO logo in the top right.',
   },
   keyword: 'AI for work',
   name: 'MAI x Smarcomms Beta',

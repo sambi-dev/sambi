@@ -41,7 +41,7 @@ export default async function SignupPage() {
 
 const title = 'Sign up';
 const description =
-  'Ready to try out the best new ChatGPT wrapper in town? Sign up for CocoGPT via the signup page, obviously.';
+  "Ready to try out the Mai x Smarcomms Beta? Awesome, sign up for your free account using your @smarcomms.com email. If you don't have one, please contact Sam.";
 const pageUrl = `${SITE_URL}/signup`;
 
 export const metadata: Metadata = {
