@@ -66,26 +66,10 @@ export async function generateMetadata({
         title: siteConfig.name,
         description: siteConfig.description,
         url: siteConfig.url,
-        images: [
-          {
-            url: siteConfig.image.url,
-            width: siteConfig.image.width,
-            height: siteConfig.image.height,
-            alt: siteConfig.image.alt,
-          },
-        ],
       },
       twitter: {
         title: siteConfig.name,
         description: siteConfig.description,
-        images: [
-          {
-            url: siteConfig.image.url,
-            width: siteConfig.image.width,
-            height: siteConfig.image.height,
-            alt: siteConfig.image.alt,
-          },
-        ],
       },
     };
   }
@@ -104,27 +88,11 @@ export async function generateMetadata({
       type: 'website',
       title,
       description,
-      images: [
-        {
-          url: siteConfig.image.url,
-          width: siteConfig.image.width,
-          height: siteConfig.image.height,
-          alt: siteConfig.image.alt,
-        },
-      ],
       url: pageUrl,
     },
     twitter: {
       title,
       description,
-      images: [
-        {
-          url: siteConfig.image.url,
-          width: siteConfig.image.width,
-          height: siteConfig.image.height,
-          alt: siteConfig.image.alt,
-        },
-      ],
     },
   };
 }

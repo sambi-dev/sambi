@@ -5,7 +5,6 @@ import { redirect } from 'next/navigation';
 
 import { auth } from 'auth';
 
-import { siteConfig } from '#/config/site';
 import { SITE_URL } from '#/lib/constants';
 import SignupForm from '#/ui/signup-form';
 
@@ -41,7 +40,7 @@ export default async function SignupPage() {
 
 const title = 'Sign up';
 const description =
-  'Ready to try out the best new ChatGPT wrapper in town? Sign up for CocoGPT via the signup page, obviously.';
+  "Ready to try out the Mai x Smarcomms Beta? Awesome, sign up for your free account using your @smarcomms.com email. If you don't have one, please contact Sam.";
 const pageUrl = `${SITE_URL}/signup`;
 
 export const metadata: Metadata = {
@@ -51,26 +50,10 @@ export const metadata: Metadata = {
     type: 'website',
     title,
     description,
-    images: [
-      {
-        url: siteConfig.image.url,
-        width: siteConfig.image.width,
-        height: siteConfig.image.height,
-        alt: siteConfig.image.alt,
-      },
-    ],
     url: pageUrl,
   },
   twitter: {
     title,
     description,
-    images: [
-      {
-        url: siteConfig.image.url,
-        width: siteConfig.image.width,
-        height: siteConfig.image.height,
-        alt: siteConfig.image.alt,
-      },
-    ],
   },
 };

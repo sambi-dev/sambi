@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 
 import { redirect } from 'next/navigation';
 
-import { siteConfig } from '#/config/site';
 import { SITE_URL } from '#/lib/constants';
 
 export default async function NewPage() {
@@ -21,26 +20,10 @@ export const metadata: Metadata = {
     type: 'website',
     title,
     description,
-    images: [
-      {
-        url: siteConfig.image.url,
-        width: siteConfig.image.width,
-        height: siteConfig.image.height,
-        alt: siteConfig.image.alt,
-      },
-    ],
     url: pageUrl,
   },
   twitter: {
     title,
     description,
-    images: [
-      {
-        url: siteConfig.image.url,
-        width: siteConfig.image.width,
-        height: siteConfig.image.height,
-        alt: siteConfig.image.alt,
-      },
-    ],
   },
 };
