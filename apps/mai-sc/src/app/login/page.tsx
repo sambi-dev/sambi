@@ -5,7 +5,6 @@ import { redirect } from 'next/navigation';
 
 import { auth } from 'auth';
 
-import { siteConfig } from '#/config/site';
 import { SITE_URL } from '#/lib/constants';
 import LoginForm from '#/ui/login-form';
 
@@ -51,26 +50,10 @@ export const metadata: Metadata = {
     type: 'website',
     title,
     description,
-    images: [
-      {
-        url: siteConfig.image.url,
-        width: siteConfig.image.width,
-        height: siteConfig.image.height,
-        alt: siteConfig.image.alt,
-      },
-    ],
     url: pageUrl,
   },
   twitter: {
     title,
     description,
-    images: [
-      {
-        url: siteConfig.image.url,
-        width: siteConfig.image.width,
-        height: siteConfig.image.height,
-        alt: siteConfig.image.alt,
-      },
-    ],
   },
 };

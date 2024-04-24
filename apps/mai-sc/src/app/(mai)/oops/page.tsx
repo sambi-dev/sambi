@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { cn } from '@yocxo/ui';
 import { buttonVariants } from '@yocxo/ui/button';
 
-import { siteConfig } from '#/config/site';
 import { socialConfig } from '#/config/social';
 import { SITE_URL } from '#/lib/constants';
 
@@ -65,26 +64,10 @@ export const metadata: Metadata = {
     type: 'website',
     title,
     description,
-    images: [
-      {
-        url: siteConfig.image.url,
-        width: siteConfig.image.width,
-        height: siteConfig.image.height,
-        alt: siteConfig.image.alt,
-      },
-    ],
     url: pageUrl,
   },
   twitter: {
     title,
     description,
-    images: [
-      {
-        url: siteConfig.image.url,
-        width: siteConfig.image.width,
-        height: siteConfig.image.height,
-        alt: siteConfig.image.alt,
-      },
-    ],
   },
 };

@@ -69,27 +69,11 @@ export async function generateMetadata({
       type: 'website',
       title,
       description,
-      images: [
-        {
-          url: siteConfig.image.url,
-          width: siteConfig.image.width,
-          height: siteConfig.image.height,
-          alt: siteConfig.image.alt,
-        },
-      ],
       url: pageUrl,
     },
     twitter: {
       title,
       description,
-      images: [
-        {
-          url: siteConfig.image.url,
-          width: siteConfig.image.width,
-          height: siteConfig.image.height,
-          alt: siteConfig.image.alt,
-        },
-      ],
     },
   };
 }
