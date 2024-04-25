@@ -17,16 +17,26 @@ export async function ChatHistory({ userId }: ChatHistoryProps) {
       <div className="flex items-center justify-between p-4">
         <h4 className="text-sm font-semibold tracking-tighter">Chat History</h4>
       </div>
-      <div className="mb-2 px-2">
+      <div className="mb-2 flex flex-row gap-2 px-2">
+        <Link
+          href="/new"
+          className={cn(
+            buttonVariants({ variant: 'outline', size: 'sm' }),
+            'rounded-full bg-primary px-4 font-sans tracking-normal text-white shadow-none hover:bg-primary/80 dark:text-black',
+          )}
+        >
+          <PlusIcon className="-translate-x-2 stroke-2 text-white dark:text-black" />
+          New Chat
+        </Link>
         <Link
           href="/research"
           className={cn(
             buttonVariants({ variant: 'outline', size: 'sm' }),
-            'h-10 w-full justify-start bg-border px-4 font-sans tracking-normal shadow-none hover:bg-primary/20',
+            'rounded-full bg-primary px-4 font-sans tracking-normal text-white shadow-none hover:bg-primary/80 dark:text-black',
           )}
         >
-          <PlusIcon className="-translate-x-2 stroke-2 text-primary" />
-          New Chat
+          <PlusIcon className="-translate-x-2 stroke-2 text-white dark:text-black" />
+          New Research
         </Link>
       </div>
       <React.Suspense
@@ -35,7 +45,7 @@ export async function ChatHistory({ userId }: ChatHistoryProps) {
             {Array.from({ length: 10 }).map((_, i) => (
               <div
                 key={i}
-                className="h-6 w-full shrink-0 animate-pulse rounded-md bg-muted"
+                className="h-6 w-full shrink-0 animate-pulse rounded-md"
               />
             ))}
           </div>

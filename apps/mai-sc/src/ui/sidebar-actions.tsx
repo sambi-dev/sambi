@@ -77,17 +77,23 @@ export function SidebarActions({
       <AlertDialog open={deleteDialogOpen} onOpenChange={setDeleteDialogOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+            <AlertDialogTitle>
+              Do you really want to delete this?
+            </AlertDialogTitle>
             <AlertDialogDescription>
-              This will permanently delete your chat message and remove your
-              data from our servers.
+              This chat and report history will be permanently removed from our
+              systems. This action can&apos;t be reversed.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel disabled={isRemovePending}>
+            <AlertDialogCancel
+              className="font-sans tracking-normal"
+              disabled={isRemovePending}
+            >
               Cancel
             </AlertDialogCancel>
             <AlertDialogAction
+              className="font-sans tracking-normal"
               disabled={isRemovePending}
               onClick={(event) => {
                 event.preventDefault();

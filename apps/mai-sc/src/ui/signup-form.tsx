@@ -201,7 +201,7 @@ function SignUpButton() {
 
   return (
     <Button
-      className="my-4 w-full font-sans tracking-normal"
+      className="my-4 w-full rounded-full font-sans tracking-normal"
       aria-disabled={pending}
     >
       {pending ? <SpinnerIcon className="animate-spin" /> : 'Sign up'}
