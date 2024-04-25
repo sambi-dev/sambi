@@ -14,7 +14,7 @@ interface ChatHistoryProps {
 export async function ChatHistory({ userId }: ChatHistoryProps) {
   return (
     <div className="flex h-full flex-col">
-      <div className="flex items-center justify-between p-4">
+      <div className="flex items-center justify-between px-2 py-4">
         <h4 className="text-sm font-semibold tracking-tighter">Chat History</h4>
       </div>
       <div className="mb-2 flex flex-row gap-2 px-2">
@@ -22,7 +22,7 @@ export async function ChatHistory({ userId }: ChatHistoryProps) {
           href="/new"
           className={cn(
             buttonVariants({ variant: 'outline', size: 'sm' }),
-            'rounded-full bg-primary px-4 font-sans tracking-normal text-white shadow-none hover:bg-primary/80 dark:text-black',
+            'rounded-full bg-primary font-sans tracking-normal text-white shadow-none hover:bg-primary/80 dark:text-black',
           )}
         >
           <PlusIcon className="-translate-x-2 stroke-2 text-white dark:text-black" />
@@ -32,11 +32,11 @@ export async function ChatHistory({ userId }: ChatHistoryProps) {
           href="/research"
           className={cn(
             buttonVariants({ variant: 'outline', size: 'sm' }),
-            'rounded-full bg-primary px-4 font-sans tracking-normal text-white shadow-none hover:bg-primary/80 dark:text-black',
+            'rounded-full bg-primary font-sans tracking-normal text-white shadow-none hover:bg-primary/80 dark:text-black',
           )}
         >
           <PlusIcon className="-translate-x-2 stroke-2 text-white dark:text-black" />
-          New Research
+          New Report
         </Link>
       </div>
       <React.Suspense
