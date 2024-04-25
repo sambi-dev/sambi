@@ -4,10 +4,9 @@ import * as React from 'react';
 import { usePathname } from 'next/navigation';
 
 import { Button } from '@yocxo/ui/button';
+import { SidebarIcon } from '@yocxo/ui/icons';
 
 import { useSidebar } from '#/lib/hooks/use-sidebar';
-
-import { MaiLogoIcon } from './mai/logo';
 
 export function SidebarToggle() {
   const { toggleSidebar } = useSidebar();
@@ -26,7 +25,7 @@ export function SidebarToggle() {
           toggleSidebar();
         }}
       >
-        <MaiLogoIcon className="size-8 text-primary" />
+        <SidebarIcon className="size-6 text-secondary-foreground" />
         <span className="sr-only">Toggle Sidebar</span>
       </Button>
     </div>

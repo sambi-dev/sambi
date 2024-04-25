@@ -1,11 +1,10 @@
 'use client';
 
 import { Button } from '@yocxo/ui/button';
+import { SidebarIcon } from '@yocxo/ui/icons';
 import { Sheet, SheetContent, SheetTrigger } from '@yocxo/ui/sheet';
 
 import { Sidebar } from '#/ui/sidebar';
-
-import { MaiLogoIcon } from './mai/logo';
 
 interface SidebarMobileProps {
   children: React.ReactNode;
@@ -16,7 +15,7 @@ export function SidebarMobile({ children }: SidebarMobileProps) {
     <Sheet>
       <SheetTrigger asChild>
         <Button variant="ghost" className="-ml-2 flex p-0 lg:hidden">
-          <MaiLogoIcon className="size-8 text-primary" />
+          <SidebarIcon className="size-6 text-secondary-foreground" />
           <span className="sr-only">Toggle Sidebar</span>
         </Button>
       </SheetTrigger>

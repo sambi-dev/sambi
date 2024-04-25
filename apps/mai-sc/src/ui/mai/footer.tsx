@@ -5,7 +5,7 @@ import { siteConfig } from '#/config/site';
 const Footer: React.FC = () => {
   return (
     <footer className="z-50 border-t bg-card dark:bg-zinc-950">
-      <div className="mx-auto w-full p-4 md:flex md:items-center md:justify-between lg:px-8">
+      <div className="mx-auto w-full p-4 md:flex md:items-center md:justify-between">
         <div className="flex items-center justify-center space-x-6 md:order-2">
           <p className="text-center text-xs text-secondary-foreground/80">
             You&apos;re using the I AM MAI early beta. Stuff might break.
