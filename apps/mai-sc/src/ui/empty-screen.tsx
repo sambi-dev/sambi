@@ -2,7 +2,7 @@ import { ExternalLink } from '#/ui/external-link';
 
 export function EmptyScreen() {
   return (
-    <div className="mx-auto max-w-2xl px-4">
+    <div className="mx-auto mt-16 max-w-2xl px-4">
       <div className="flex flex-col gap-2 rounded-lg border bg-card p-8 text-sm">
         <h1 className="text-lg font-semibold tracking-tighter">
           So, you want to create a ChatGPT wrapper?

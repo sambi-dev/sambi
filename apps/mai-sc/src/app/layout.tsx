@@ -123,7 +123,6 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <main className="flex flex-1 flex-col">
               <AI>{children}</AI>
             </main>
-            <Footer />
           </div>
         </Providers>
       </body>

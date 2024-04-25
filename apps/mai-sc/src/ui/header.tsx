@@ -35,7 +35,7 @@ export async function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-sm font-medium leading-6 text-secondary-foreground"
+                className="text-sm font-medium leading-6 text-secondary-foreground transition-colors hover:text-muted-foreground"
               >
                 {item.name}
               </Link>

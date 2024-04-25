@@ -77,7 +77,7 @@ export function ChatPanel() {
     return (
       <div className="pointer-events-none fixed bottom-2 left-0 right-0 mx-auto flex items-center justify-center md:bottom-16">
         <Button
-          aria-label="New chat"
+          aria-label="New report"
           type="button"
           size="lg"
           className="group pointer-events-auto rounded-full transition-all hover:scale-105"

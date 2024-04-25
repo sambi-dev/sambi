@@ -8,7 +8,7 @@ import { AI } from '#/lib/chat/actions';
 import { nanoid } from '#/lib/utils';
 import { Chat } from '#/ui/chat';
 
-import { getMissingKeys } from '../actions';
+import { getMissingKeys } from '../../actions';
 
 export default async function IndexPage() {
   const id = nanoid();

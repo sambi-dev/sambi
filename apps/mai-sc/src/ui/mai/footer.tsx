@@ -1,8 +1,6 @@
-import React from 'react';
-
 import { siteConfig } from '#/config/site';
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
     <footer className="z-50 border-t bg-card dark:bg-zinc-950">
       <div className="mx-auto w-full p-4 md:flex md:items-center md:justify-between">
