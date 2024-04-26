@@ -80,7 +80,7 @@ async function submit(formData?: FormData, skip?: boolean) {
     let toolOutputs = [];
     let errorOccurred = false;
     const streamText = createStreamableValue<string>();
-    uiStream.update(<SpinnerIcon className="my-4 size-6 animate-spin" />);
+    uiStream.update(<SpinnerIcon className="size-6 animate-spin" />);
     // If useSpecificAPI is enabled, only function calls will be made
     // If not using a tool, this model generates the answer
     while (
