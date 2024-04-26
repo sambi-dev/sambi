@@ -10,7 +10,6 @@ import {
 
 import { SpinnerIcon } from '@yocxo/ui/icons';
 
-import { env } from '#/env';
 import { inquire } from '#/lib/agents/inquire';
 import { querySuggestor } from '#/lib/agents/query-suggestor';
 import { researcher } from '#/lib/agents/researcher';
@@ -29,7 +28,7 @@ async function submit(formData?: FormData, skip?: boolean) {
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
   const messages: ExperimentalMessage[] = aiState.get() as any;
-  const useSpecificAPI = env.USE_SPECIFIC_API_FOR_WRITER === 'true';
+  const useSpecificAPI = process.env.USE_SPECIFIC_API_FOR_WRITER === 'true';
   const maxMessages = useSpecificAPI ? 5 : 10;
   // Limit the number of messages to the maximum
   messages.splice(0, Math.max(messages.length - maxMessages, 0));

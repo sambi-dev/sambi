@@ -8,7 +8,6 @@ import Exa from 'exa-js';
 
 import { Card } from '@yocxo/ui/card';
 
-import { env } from '#/env';
 import { searchSchema } from '#/lib/schema/search';
 import { BotMessage } from '#/ui/mai/message';
 import { SearchSection } from '#/ui/mai/search-section';
@@ -21,8 +20,8 @@ export async function researcher(
   useSpecificModel?: boolean,
 ) {
   const openai = new OpenAI({
-    apiKey: env.OPENAI_API_KEY,
-    organization: env.OPENAI_API_ORG,
+    apiKey: process.env.OPENAI_API_KEY,
+    organization: process.env.OPENAI_API_ORG,
   });
 
   const searchAPI: 'tavily' | 'exa' = 'tavily';
@@ -37,7 +36,7 @@ export async function researcher(
 
   let isFirstToolResponse = true;
   const result = await experimental_streamText({
-    model: openai.chat(env.OPENAI_API_MODEL ?? 'gpt-4-turbo'),
+    model: openai.chat(process.env.OPENAI_API_MODEL ?? 'gpt-4-turbo'),
     maxTokens: 2500,
     system: `Please respond in the same language as the user's input. This ensures that the generated queries are directly aligned with the linguistic context of the input, making the content more accessible and relevant to the user.
     

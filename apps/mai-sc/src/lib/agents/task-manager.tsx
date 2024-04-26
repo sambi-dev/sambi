@@ -3,18 +3,17 @@ import type { ExperimentalMessage } from 'ai';
 import { OpenAI } from '@ai-sdk/openai';
 import { experimental_generateObject } from 'ai';
 
-import { env } from '#/env';
 import { nextActionSchema } from '#/lib/schema/next-action';
 
 export async function taskManager(messages: ExperimentalMessage[]) {
   const openai = new OpenAI({
-    apiKey: env.OPENAI_API_KEY,
-    organization: env.OPENAI_API_ORG,
+    apiKey: process.env.OPENAI_API_KEY,
+    organization: process.env.OPENAI_API_ORG,
   });
 
   try {
     const result = await experimental_generateObject({
-      model: openai.chat(env.OPENAI_API_MODEL ?? 'gpt-4-turbo'),
+      model: openai.chat(process.env.OPENAI_API_MODEL ?? 'gpt-4-turbo'),
       system: `Please respond in the same language as the user's input. This ensures that the generated queries are directly aligned with the linguistic context of the input, making the content more accessible and relevant to the user. 
       
       As a web researcher for a social media marketing agency, your role is to understand and analyze user queries related to their SMB clients' industries and customer needs. Your research supports the creation of social media content that resonates with the target audience by focusing on jobs-to-be-done (JTBD) and outcome-driven innovation.

@@ -4,7 +4,6 @@ import type { createStreamableUI, createStreamableValue } from 'ai/rsc';
 import { OpenAI } from '@ai-sdk/openai';
 import { experimental_streamText } from 'ai';
 
-import { env } from '#/env';
 import { BotMessage } from '#/ui/mai/message';
 import { Section } from '#/ui/mai/section';
 
@@ -14,9 +13,9 @@ export async function writer(
   messages: ExperimentalMessage[],
 ) {
   const openai = new OpenAI({
-    baseUrl: env.SPECIFIC_API_BASE,
-    apiKey: env.SPECIFIC_API_KEY,
-    organization: env.OPENAI_API_ORG,
+    baseUrl: process.env.SPECIFIC_API_BASE,
+    apiKey: process.env.SPECIFIC_API_KEY,
+    organization: process.env.OPENAI_API_ORG,
   });
 
   let fullResponse = '';
@@ -28,7 +27,7 @@ export async function writer(
   uiStream.append(answerSection);
 
   await experimental_streamText({
-    model: openai.chat(env.SPECIFIC_API_MODEL ?? 'llama3-70b-8192'),
+    model: openai.chat(process.env.SPECIFIC_API_MODEL ?? 'llama3-70b-8192'),
     maxTokens: 2500,
     system: `Please respond in the same language as the user's input to ensure the generated report is directly aligned with the linguistic context of the input, making the content more accessible and relevant to the user.
 

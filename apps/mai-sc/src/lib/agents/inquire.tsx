@@ -6,7 +6,6 @@ import { OpenAI } from '@ai-sdk/openai';
 import { experimental_streamObject } from 'ai';
 import { createStreamableValue } from 'ai/rsc';
 
-import { env } from '#/env';
 import { inquirySchema } from '#/lib/schema/inquiry';
 import { Copilot } from '#/ui/mai/copilot';
 
@@ -15,15 +14,15 @@ export async function inquire(
   messages: ExperimentalMessage[],
 ) {
   const openai = new OpenAI({
-    apiKey: env.OPENAI_API_KEY,
-    organization: env.OPENAI_API_ORG,
+    apiKey: process.env.OPENAI_API_KEY,
+    organization: process.env.OPENAI_API_ORG,
   });
   const objectStream = createStreamableValue<PartialInquiry>();
   uiStream.update(<Copilot inquiry={objectStream.value} />);
 
   let finalInquiry: PartialInquiry = {};
   await experimental_streamObject({
-    model: openai.chat(env.OPENAI_API_MODEL ?? 'gpt-4-turbo'),
+    model: openai.chat(process.env.OPENAI_API_MODEL ?? 'gpt-4-turbo'),
     system: `Please respond in the same language as the user's input. This ensures that the generated queries are directly aligned with the linguistic context of the input, making the content more accessible and relevant to the user. 
     
     As a professional web researcher for a social media marketing agency, your inquiries should be informed by the specific agent profile mindset guiding the task. This ensures that questions are precisely tailored to gather insights relevant to the profile's focus area, whether it be the client's industry, customer jobs-to-be-done, or engaging content ideas to attract a relevant but wider audience for the agency's client.

@@ -6,7 +6,6 @@ import { OpenAI } from '@ai-sdk/openai';
 import { experimental_streamObject } from 'ai';
 import { createStreamableValue } from 'ai/rsc';
 
-import { env } from '#/env';
 import { relatedSchema } from '#/lib/schema/related';
 import SearchRelated from '#/ui/mai/search-related';
 import { Section } from '#/ui/mai/section';
@@ -16,8 +15,8 @@ export async function querySuggestor(
   messages: ExperimentalMessage[],
 ) {
   const openai = new OpenAI({
-    apiKey: env.OPENAI_API_KEY,
-    organization: env.OPENAI_API_ORG,
+    apiKey: process.env.OPENAI_API_KEY,
+    organization: process.env.OPENAI_API_ORG,
   });
   const objectStream = createStreamableValue<PartialRelated>();
   uiStream.append(
@@ -32,7 +31,7 @@ export async function querySuggestor(
   );
 
   await experimental_streamObject({
-    model: openai.chat(env.OPENAI_API_MODEL ?? 'gpt-4-turbo'),
+    model: openai.chat(process.env.OPENAI_API_MODEL ?? 'gpt-4-turbo'),
     system: `Please respond in the same language as the user's input. This ensures that the generated queries are directly aligned with the linguistic context of the input, making the content more accessible and relevant to the user. As a professional web researcher, your task is to generate queries that align with the focus of a specific agent profile (Client Industry Agent, JTBD Agent, Chum Content Agent). Each query should delve into the client's industry, target audience, and their potential challenges or aspirations, tailored to the perspective of the assigned agent.
 
     Example Format for a JTBD Agent:
