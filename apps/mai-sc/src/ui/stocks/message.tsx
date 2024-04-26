@@ -10,7 +10,7 @@ import { SpinnerIcon, UserIcon } from '@yocxo/ui/icons';
 
 import { useStreamableText } from '#/lib/hooks/use-streamable-text';
 import { CodeBlock } from '#/ui/codeblock';
-import { MaiLogoIcon } from '#/ui/mai/logo';
+import { MaiLogoIcon } from '#/ui/logo';
 import { MemoizedReactMarkdown } from '#/ui/markdown';
 
 // Different types of message bubbles.

@@ -11,7 +11,7 @@ import { ShareIcon } from '@yocxo/ui/icons';
 import { shareChat } from '#/app/actions';
 import { ButtonScrollToBottom } from '#/ui/button-scroll-to-bottom';
 import { ChatShareDialog } from '#/ui/chat-share-dialog';
-import { FooterText } from '#/ui/footer';
+import { FooterText } from '#/ui/footer-text';
 import { PromptForm } from '#/ui/prompt-form';
 
 import { UserMessage } from './stocks/message';

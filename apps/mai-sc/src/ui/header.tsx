@@ -9,7 +9,7 @@ import { cn } from '@yocxo/ui';
 import { buttonVariants } from '@yocxo/ui/button';
 import { PlusIcon } from '@yocxo/ui/icons';
 
-import { MaiLogoIcon } from '#/ui/mai/logo';
+import { MaiLogoIcon } from '#/ui/logo';
 import { UserMenu } from '#/ui/user-menu';
 import { UserOrLogin } from '#/ui/user-or-login';
 

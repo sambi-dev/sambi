@@ -12,7 +12,7 @@ const exampleMessages = [
     message: 'Content ideas for an Italian restaurant in Tampa',
   },
 ];
-export function EmptyScreen({
+export function MaiEmptyScreen({
   submitMessage,
   className,
 }: {

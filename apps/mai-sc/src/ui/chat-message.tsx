@@ -13,7 +13,7 @@ import { ChatMessageActions } from '#/ui/chat-message-actions';
 import { CodeBlock } from '#/ui/codeblock';
 import { MemoizedReactMarkdown } from '#/ui/markdown';
 
-import { MaiLogoIcon } from './mai/logo';
+import { MaiLogoIcon } from './logo';
 
 export interface ChatMessageProps {
   message: Message;
