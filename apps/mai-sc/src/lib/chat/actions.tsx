@@ -17,6 +17,7 @@ import { z } from 'zod';
 import { SpinnerIcon } from '@yocxo/ui/icons';
 
 import { saveChat } from '#/app/actions';
+import { env } from '#/env';
 import {
   formatNumber,
   nanoid,
@@ -38,7 +39,7 @@ import { Stocks } from '#/ui/stocks/stocks';
 import { StocksSkeleton } from '#/ui/stocks/stocks-skeleton';
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY ?? '',
+  apiKey: env.OPENAI_API_KEY ?? '',
 });
 
 async function confirmPurchase(symbol: string, price: number, amount: number) {
