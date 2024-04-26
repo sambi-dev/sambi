@@ -8,8 +8,6 @@ import { auth } from 'auth';
 import { SITE_URL } from '#/lib/constants';
 import { MaiChat } from '#/ui/mai/mai-chat';
 
-import { AI } from '../action';
-
 export const runtime = 'edge';
 
 export default async function ChatPage() {
@@ -18,11 +16,7 @@ export default async function ChatPage() {
   if (!session?.user) {
     redirect(`/login`);
   }
-  return (
-    <AI>
-      <MaiChat />
-    </AI>
-  );
+  return <MaiChat />;
 }
 
 const title = 'Mai';
