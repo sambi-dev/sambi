@@ -7,7 +7,7 @@ export function EmptyScreen() {
         </h1>
         <p className="leading-normal text-muted-foreground">
           The world&apos;s moving fast, and everyone&apos;s using AI. But
-          you&apos;ve got something special—your creativity. I&apos;ll help you
+          you&apos;ve got something special, your creativity. I&apos;ll help you
           make the most of it. Who should we delight today?
         </p>
       </div>

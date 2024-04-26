@@ -15,7 +15,7 @@ export async function ChatHistory({ userId }: ChatHistoryProps) {
       <div className="flex px-2 py-4">
         <h4 className="text-sm font-medium">Report History</h4>
       </div>
-      <div className="flex flex-1 flex-col space-y-4 overflow-auto px-4">
+      <div className="flex flex-col space-y-4 overflow-auto px-4">
         <Alert className="border-dashed border-muted-foreground bg-transparent">
           <AlertTriangleIcon className="text-muted-foreground" />
           <AlertTitle className="font-medium text-muted-foreground">

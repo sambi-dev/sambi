@@ -90,7 +90,7 @@ export function PromptForm({
           ref={inputRef}
           tabIndex={0}
           onKeyDown={onKeyDown}
-          placeholder="Message Coco about stonks..."
+          placeholder="Ask Mai to create a mock post..."
           className="min-h-[60px] w-full resize-none bg-transparent px-4 py-[1.3rem] focus-within:outline-none sm:text-sm"
           // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus

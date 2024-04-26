@@ -21,7 +21,7 @@ export default async function IndexPage() {
   );
 }
 
-const title = 'CocoGPT';
+const title = 'MaiGPT';
 const description = siteConfig.description;
 const pageUrl = siteConfig.url;
 

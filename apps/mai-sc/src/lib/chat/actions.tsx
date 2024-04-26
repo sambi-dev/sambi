@@ -24,6 +24,8 @@ import {
   runAsyncFnWithoutBlocking,
   sleep,
 } from '#/lib/utils';
+import { FacebookWithImage } from '#/ui/social-cards/facebook-with-image';
+import FacebookWithImageSkeleton from '#/ui/social-cards/facebook-with-image-skeleton';
 import {
   BotCard,
   BotMessage,
@@ -151,20 +153,24 @@ async function submitUserMessage(content: string) {
       {
         role: 'system',
         content: `\
-You are a stock trading conversation bot and you can help users buy stocks, step by step.
-You and the user can discuss stock prices and the user can adjust the amount of stocks they want to buy, or place an order, in the UI.
+You are a social media post creation assistant for Smarcomms, a social media marketing agency. Your purpose is to help our creative team mock up inspiring Facebook posts that adhere to the Jobs-to-be-Done (JTBD) framework, sparking ideas and driving results for our clients.
 
-Messages inside [] means that it's a UI element or a user event. For example:
-- "[Price of AAPL = 100]" means that an interface of the stock price of AAPL is shown to the user.
-- "[User has changed the amount of AAPL to 10]" means that the user has changed the amount of AAPL to 10 in the UI.
+IF THE USER REQUESTS A FACEBOOK POST, call \`show_facebook_post_with_image\` to display the post.
 
-If the user requests purchasing a stock, call \`show_stock_purchase_ui\` to show the purchase UI.
-If the user just wants the price, call \`show_stock_price\` to show the price.
-If you want to show trending stocks, call \`list_stocks\`.
-If you want to show events, call \`get_events\`.
-If the user wants to sell stock, or complete another impossible task, respond that you are a demo and cannot do that.
+When creating posts for various SMB verticals (e.g., bakeries, fitness studios, retailers), focus on addressing the core, functional, emotional, and social jobs of our clients' customers:
 
-Besides that, you can also chat with users and do some calculations if needed.`,
+- Core job: The main task or goal the customer is trying to accomplish.
+- Functional job: The practical benefits the customer seeks.
+- Emotional job: The feelings or experiences the customer desires.
+- Social job: How the customer wants to be perceived by others.
+
+Craft posts that demonstrate deep empathy for the customer's struggles and aspirations related to these jobs. Use storytelling, emotions, and relatable scenarios to inspire action and show how the customer can achieve their desired outcomes. Avoid promotional language and focus on creating genuine connections with the audience.
+
+If the user requests an unsupported action, respond with: "I'm sorry, I'm unable to help with that. I have notified the Smarcomms Chat Police though. 😅"
+
+When engaging in digital marketing conversations, provide clear, concise, and actionable insights tailored to the client's target audience and their stage in the customer journey (awareness, consideration, decision).
+
+Your goal is to inspire our creative team and help them generate engaging, JTBD-focused Facebook content that resonates with our clients' target audiences, fostering meaningful connections and encouraging them to take action towards their desired outcomes.`,
       },
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ...aiState.get().messages.map((message: any) => ({
@@ -391,6 +397,66 @@ Besides that, you can also chat with users and do some calculations if needed.`,
           );
         },
       },
+      showFacebookPostWithImage: {
+        description: 'Display a Facebook post with an image.',
+        parameters: z.object({
+          userName: z.string(),
+          userLocation: z.string(),
+          postDescription: z.string(),
+          postEngagements: z.object({
+            likes: z.number(),
+            hearts: z.number(),
+          }),
+          postComments: z.array(
+            z.object({
+              userName: z.string(),
+              comment: z.string(),
+            }),
+          ),
+        }),
+        render: async function* ({
+          userName,
+          userLocation,
+          postDescription,
+          postEngagements,
+          postComments,
+        }) {
+          const facebookPost = {
+            userName,
+            userLocation,
+            postDescription,
+            postEngagements,
+            postComments,
+          };
+
+          yield (
+            <BotCard>
+              <FacebookWithImageSkeleton />
+            </BotCard>
+          );
+
+          await sleep(1000);
+
+          aiState.done({
+            ...aiState.get(),
+            messages: [
+              ...aiState.get().messages,
+              {
+                id: nanoid(),
+                role: 'function',
+                name: 'facebookPostWithImage',
+                content: JSON.stringify(facebookPost),
+              },
+            ],
+          });
+
+          return (
+            <BotCard>
+              <FacebookWithImage props={facebookPost} />
+            </BotCard>
+          );
+        },
+      },
     },
   });
 
@@ -501,6 +567,12 @@ export const getUIStateFromAIState = (aiState: Chat) => {
               {/* eslint-disable-next-line
               @typescript-eslint/no-unsafe-assignment */}
               <Events props={JSON.parse(message.content)} />
+            </BotCard>
+          ) : message.name === 'facebookPostWithImage' ? (
+            <BotCard>
+              {/* eslint-disable-next-line
+              @typescript-eslint/no-unsafe-assignment */}
+              <FacebookWithImage props={JSON.parse(message.content)} />
             </BotCard>
           ) : null
         ) : message.role === 'user' ? (

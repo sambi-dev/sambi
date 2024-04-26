@@ -31,7 +31,7 @@ export function UserMenu({ user }: UserMenuProps) {
               id={user.id}
               initials={getUserInitials(user.email)}
               className="size-6"
-              name="Coco's Friend"
+              name="Mai's Friend"
             />
             <span className="ml-2 hidden font-sans text-xs tracking-normal md:block">
               {user.email}
