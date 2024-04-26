@@ -1,4 +1,4 @@
-import { AI } from './action';
+import { SidebarDesktop } from '#/ui/sidebar-desktop';
 
 interface ChatLayoutProps {
   children: React.ReactNode;
@@ -7,7 +7,8 @@ interface ChatLayoutProps {
 export default async function ChatLayout({ children }: ChatLayoutProps) {
   return (
     <div className="relative flex h-[calc(100vh_-_theme(spacing.16))] overflow-hidden">
-      <AI>{children}</AI>
+      <SidebarDesktop />
+      {children}
     </div>
   );
 }

@@ -10,7 +10,6 @@ import { Toaster } from '@yocxo/ui/toast';
 import { siteConfig } from '#/config/site';
 import { Header } from '#/ui/header';
 import { Providers } from '#/ui/providers';
-import { SidebarDesktop } from '#/ui/sidebar-desktop';
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -116,7 +115,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <Providers>
           <div className="flex min-h-screen flex-col">
             <Header />
-            <SidebarDesktop />
+
             <main className="flex flex-1 flex-col">{children}</main>
           </div>
         </Providers>
