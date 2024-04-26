@@ -1,9 +1,7 @@
 import * as React from 'react';
-import Link from 'next/link';
 
-import { cn } from '@yocxo/ui';
-import { buttonVariants } from '@yocxo/ui/button';
-import { PlusIcon } from '@yocxo/ui/icons';
+import { Alert, AlertDescription, AlertTitle } from '@yocxo/ui/alert';
+import { AlertTriangleIcon } from '@yocxo/ui/icons';
 
 import { SidebarList } from '#/ui/sidebar-list';
 
@@ -14,20 +12,22 @@ interface ChatHistoryProps {
 export async function ChatHistory({ userId }: ChatHistoryProps) {
   return (
     <div className="flex h-full flex-col">
-      <div className="flex items-center justify-between p-4">
-        <h4 className="text-sm font-semibold tracking-tighter">Chat History</h4>
+      <div className="flex px-2 py-4">
+        <h4 className="text-sm font-medium">Report History</h4>
       </div>
-      <div className="mb-2 px-2">
-        <Link
-          href="/research"
-          className={cn(
-            buttonVariants({ variant: 'outline', size: 'sm' }),
-            'h-10 w-full justify-start bg-border px-4 font-sans tracking-normal shadow-none hover:bg-primary/20',
-          )}
-        >
-          <PlusIcon className="-translate-x-2 stroke-2 text-primary" />
-          New Chat
-        </Link>
+      <div className="flex flex-col space-y-4 overflow-auto px-4">
+        <Alert className="border-dashed border-muted-foreground bg-transparent">
+          <AlertTriangleIcon className="text-muted-foreground" />
+          <AlertTitle className="font-medium text-muted-foreground">
+            Coming Soon
+          </AlertTitle>
+          <AlertDescription className="text-xs text-muted-foreground">
+            I&apos;m sorry but Sam is really slow.
+          </AlertDescription>
+        </Alert>
+      </div>
+      <div className="flex px-2 py-4">
+        <h4 className="text-sm font-medium">Chat History</h4>
       </div>
       <React.Suspense
         fallback={
@@ -35,7 +35,7 @@ export async function ChatHistory({ userId }: ChatHistoryProps) {
             {Array.from({ length: 10 }).map((_, i) => (
               <div
                 key={i}
-                className="h-6 w-full shrink-0 animate-pulse rounded-md bg-muted"
+                className="h-6 w-full shrink-0 animate-pulse rounded-md"
               />
             ))}
           </div>

@@ -75,9 +75,7 @@ export async function generateMetadata({
   }
 
   const chat = await getChat(params.id, session.user.id);
-  const title =
-    chat?.title?.toString().slice(0, 50) ??
-    'CocoGPT Chat powered by Vercel x Yo! CXO';
+  const title = chat?.title?.toString().slice(0, 50) ?? 'MaiGPT x Smarcomms';
   const description = siteConfig.description;
   const pageUrl = `${SITE_URL}/chat/${params.id}`;
 

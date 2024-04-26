@@ -26,12 +26,12 @@ export function UserMenu({ user }: UserMenuProps) {
     <div className="flex items-center justify-between">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="ghost" className="pl-0">
+          <Button variant="ghost" className="px-0">
             <UserAvatar
               id={user.id}
               initials={getUserInitials(user.email)}
               className="size-6"
-              name="Coco's Friend"
+              name="Mai's Friend"
             />
             <span className="ml-2 hidden font-sans text-xs tracking-normal md:block">
               {user.email}

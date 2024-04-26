@@ -12,7 +12,7 @@ const exampleMessages = [
     message: 'Content ideas for an Italian restaurant in Tampa',
   },
 ];
-export function EmptyScreen({
+export function MaiEmptyScreen({
   submitMessage,
   className,
 }: {
@@ -22,13 +22,11 @@ export function EmptyScreen({
   return (
     <div className={`mx-auto transition-all ${className}`}>
       <div className="bg-background p-2">
-        <div className="my-4 grid grid-cols-3 gap-2 px-4 sm:px-0">
+        <div className="grid-col-1 my-4 grid gap-2 px-4 sm:grid-cols-3 sm:px-0">
           {exampleMessages.map((message, index) => (
             <button
               key={index}
-              className={`flex cursor-pointer flex-col rounded-lg border bg-card p-4 shadow-md hover:bg-primary/20 ${
-                index > 1 && 'hidden md:block'
-              }`}
+              className={`flex cursor-pointer flex-col rounded-lg border bg-card p-4 shadow-md hover:bg-primary/20`}
               onClick={async () => {
                 submitMessage(message.message);
               }}

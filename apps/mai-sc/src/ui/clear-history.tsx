@@ -36,27 +36,33 @@ export function ClearHistory({
       <AlertDialogTrigger asChild>
         <Button
           size="sm"
-          variant="outline"
+          variant="destructive"
           disabled={!isEnabled || isPending}
-          className="font-sans text-[0.7rem] tracking-normal"
+          className="rounded-full font-sans text-[0.7rem] tracking-normal shadow-none"
         >
-          {isPending && <SpinnerIcon className="anim mr-2" />}
+          {isPending && <SpinnerIcon className="mr-2 animate-spin" />}
           Clear history
         </Button>
       </AlertDialogTrigger>
       <AlertDialogContent>
         <AlertDialogHeader>
           <AlertDialogTitle className="font-semibold tracking-tighter">
-            Are you sure about this?
+            Are you sure you want to delete everything?
           </AlertDialogTitle>
           <AlertDialogDescription>
-            Your chat history will be permanently removed from our systems, like
-            forever. This action can&apos;t be reversed.
+            Your chat and report history will be permanently removed from our
+            systems. This action can&apos;t be reversed.
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel disabled={isPending}>Cancel</AlertDialogCancel>
+          <AlertDialogCancel
+            className="font-sans tracking-normal"
+            disabled={isPending}
+          >
+            Cancel
+          </AlertDialogCancel>
           <AlertDialogAction
+            className="font-sans tracking-normal"
             disabled={isPending}
             onClick={(event) => {
               event.preventDefault();

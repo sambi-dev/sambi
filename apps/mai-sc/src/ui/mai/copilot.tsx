@@ -18,7 +18,7 @@ import {
 } from '@yocxo/ui/icons';
 import { Input } from '@yocxo/ui/input';
 
-import { MaiLogoIcon } from '#/ui/mai/logo';
+import { MaiLogoIcon } from '#/ui/logo';
 
 export interface CopilotProps {
   inquiry?: PartialInquiry;

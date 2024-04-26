@@ -12,8 +12,10 @@ export const UserMessage: React.FC<UserMessageProps> = ({
   isFirstMessage,
 }) => {
   return (
-    <div className={cn({ 'mt-8 md:mt-16': !isFirstMessage })}>
-      <div className="truncate text-lg font-medium text-primary">{message}</div>
+    <div className={cn({ 'mt-16': !isFirstMessage })}>
+      <div className="-mb-8 max-w-[30ch] truncate text-sm font-medium text-primary sm:max-w-[55ch] sm:text-base">
+        {message}
+      </div>
     </div>
   );
 };

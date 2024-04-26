@@ -6,7 +6,7 @@ import { cn } from '@yocxo/ui';
 import { buttonVariants } from '@yocxo/ui/button';
 
 import { ChatHistory } from './chat-history';
-import { MaiLogoIcon } from './mai/logo';
+import { MaiLogoIcon } from './logo';
 import { SidebarMobile } from './sidebar-mobile';
 import { SidebarToggle } from './sidebar-toggle';
 

@@ -5,7 +5,7 @@ import { useUIState } from 'ai/rsc';
 
 import { CollapsibleMessage } from './collapsible-message';
 
-export function ChatMessages() {
+export function MaiChatMessages() {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [messages, setMessages] = useUIState<typeof AI>();
 

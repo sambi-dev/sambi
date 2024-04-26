@@ -6,7 +6,7 @@ import { redirect } from 'next/navigation';
 import { auth } from 'auth';
 
 import { SITE_URL } from '#/lib/constants';
-import { Chat } from '#/ui/mai/chat';
+import { MaiChat } from '#/ui/mai/mai-chat';
 
 export const runtime = 'edge';
 
@@ -16,7 +16,7 @@ export default async function ChatPage() {
   if (!session?.user) {
     redirect(`/login`);
   }
-  return <Chat />;
+  return <MaiChat />;
 }
 
 const title = 'Mai';

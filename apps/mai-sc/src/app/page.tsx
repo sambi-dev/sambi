@@ -10,7 +10,7 @@ export default async function HomePage() {
   const session = (await auth()) as Session;
 
   if (session) {
-    redirect('/research');
+    redirect('/new');
   }
   return (
     <div className="mx-auto w-full bg-background">

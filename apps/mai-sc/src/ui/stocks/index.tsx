@@ -2,11 +2,23 @@
 
 import dynamic from 'next/dynamic';
 
+import FacebookWithImageSkeleton from '../social-cards/facebook-with-image-skeleton';
 import { EventsSkeleton } from './events-skeleton';
 import { StockSkeleton } from './stock-skeleton';
 import { StocksSkeleton } from './stocks-skeleton';
 
 export { BotCard, BotMessage, SystemMessage } from './message';
+
+const FacebookWithImage = dynamic(
+  () =>
+    import('../social-cards/facebook-with-image').then(
+      (mod) => mod.FacebookWithImage,
+    ),
+  {
+    ssr: false,
+    loading: () => <FacebookWithImageSkeleton />,
+  },
+);
 
 const Stock = dynamic(() => import('./stock').then((mod) => mod.Stock), {
   ssr: false,
@@ -33,4 +45,4 @@ const Events = dynamic(() => import('./events').then((mod) => mod.Events), {
   loading: () => <EventsSkeleton />,
 });
 
-export { Stock, Purchase, Stocks, Events };
+export { Stock, Purchase, Stocks, Events, FacebookWithImage };

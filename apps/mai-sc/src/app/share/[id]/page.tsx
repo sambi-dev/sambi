@@ -9,7 +9,7 @@ import { AI, getUIStateFromAIState } from '#/lib/chat/actions';
 import { SITE_URL } from '#/lib/constants';
 import { formatDate } from '#/lib/utils';
 import { ChatList } from '#/ui/chat-list';
-import { FooterText } from '#/ui/footer';
+import { FooterText } from '#/ui/footer-text';
 
 export const runtime = 'edge';
 export const preferredRegion = 'home';

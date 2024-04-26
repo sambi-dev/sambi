@@ -57,7 +57,7 @@ export const CollapsibleMessage: React.FC<CollapsibleMessageProps> = ({
           <Button
             variant="ghost"
             size={'icon'}
-            className={cn('-mt-3 rounded-full')}
+            className={cn('-mt-4 rounded-full')}
           >
             <ChevronDownIcon
               className={cn(
@@ -70,7 +70,7 @@ export const CollapsibleMessage: React.FC<CollapsibleMessageProps> = ({
         </div>
       </CollapsibleTrigger>
       <CollapsibleContent>{message.component}</CollapsibleContent>
-      {!open && <Separator className="my-2 bg-primary/50" />}
+      {!open && <Separator className="my-4 bg-primary/50" />}
     </Collapsible>
   );
 };

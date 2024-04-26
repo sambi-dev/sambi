@@ -3,12 +3,11 @@ import type { Metadata } from 'next';
 
 import { auth } from 'auth';
 
+import { getMissingKeys } from '#/app/actions';
 import { siteConfig } from '#/config/site';
 import { AI } from '#/lib/chat/actions';
 import { nanoid } from '#/lib/utils';
 import { Chat } from '#/ui/chat';
-
-import { getMissingKeys } from '../actions';
 
 export default async function IndexPage() {
   const id = nanoid();
@@ -22,7 +21,7 @@ export default async function IndexPage() {
   );
 }
 
-const title = 'CocoGPT';
+const title = 'MaiGPT';
 const description = siteConfig.description;
 const pageUrl = siteConfig.url;
 

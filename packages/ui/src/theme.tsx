@@ -13,13 +13,21 @@ import {
 } from './dropdown-menu';
 import { MoonIcon, SunIcon } from './icons';
 
-function ThemeToggle() {
+interface ThemeToggleProps {
+  flat?: boolean;
+}
+
+function ThemeToggle({ flat = false }: ThemeToggleProps) {
   const { setTheme } = useTheme();
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="outline" size="icon" className="h-8">
+        <Button
+          variant="outline"
+          size="icon"
+          className={`h-8 ${flat ? 'shadow-none' : ''}`}
+        >
           <SunIcon className="size-4 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <MoonIcon className="absolute size-4 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
           <span className="sr-only">Toggle theme</span>

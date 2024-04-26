@@ -11,7 +11,7 @@ import { ShareIcon } from '@yocxo/ui/icons';
 import { shareChat } from '#/app/actions';
 import { ButtonScrollToBottom } from '#/ui/button-scroll-to-bottom';
 import { ChatShareDialog } from '#/ui/chat-share-dialog';
-import { FooterText } from '#/ui/footer';
+import { FooterText } from '#/ui/footer-text';
 import { PromptForm } from '#/ui/prompt-form';
 
 import { UserMessage } from './stocks/message';
@@ -23,6 +23,12 @@ export interface ChatPanelProps {
   setInput: (value: string) => void;
   isAtBottom: boolean;
   scrollToBottom: () => void;
+}
+
+interface ExampleMessage {
+  heading: string;
+  subheading: string;
+  message: string;
 }
 
 export function ChatPanel({
@@ -40,26 +46,30 @@ export function ChatPanel({
   const { submitUserMessage } = useActions();
   const [shareDialogOpen, setShareDialogOpen] = React.useState(false);
 
-  const exampleMessages = [
+  const exampleMessages: ExampleMessage[] = [
     {
-      heading: 'Spill the tea on',
-      subheading: "today's hottest memecoins 🔥",
-      message: 'What are the trending memecoins today?',
+      heading: 'Evoke the warmth of',
+      subheading: "a bakery's freshly baked treats 🍞",
+      message:
+        'A mock Facebook post that captures the joy of savoring freshly baked goods.',
     },
     {
-      heading: "What's the deal with",
-      subheading: '$SHIB right now? 💸',
-      message: "What is the price of $SHIB right now?'",
+      heading: 'Empower fitness journeys with',
+      subheading: "a gym's supportive community 🏋️",
+      message:
+        "A mock Facebook post showcasing the camaraderie within a gym's community.",
     },
     {
-      heading: 'Feeling lucky, get me',
-      subheading: '420 $TSLA 🎲',
-      message: 'I would like to buy 420 $TSLA',
+      heading: 'Inspire self-expression through',
+      subheading: "a boutique's curated styles 💄",
+      message:
+        'A mock Facebook post celebrating the confidence from wearing curated outfits.',
     },
     {
-      heading: 'Give me the juicy deets on',
-      subheading: "what's going on with the $RDDT IPO 📰",
-      message: 'What are some recent events about the $RDDT IPO?',
+      heading: 'Evoke the feeling of home with',
+      subheading: "a realtor's property showcase 🏡",
+      message:
+        'A mock Facebook post that helps buyers envision finding their perfect home.',
     },
   ];
 

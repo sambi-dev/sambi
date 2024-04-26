@@ -9,10 +9,10 @@ import { Button } from '@yocxo/ui/button';
 import { ArrowRightIcon, PlusIcon } from '@yocxo/ui/icons';
 import { Input } from '@yocxo/ui/input';
 
-import { EmptyScreen } from '#/ui/mai/empty-screen';
+import { MaiEmptyScreen } from '#/ui/mai/mai-empty-screen';
 import { UserMessage } from '#/ui/mai/user-message';
 
-export function ChatPanel() {
+export function MaiChatPanel() {
   const [input, setInput] = useState('');
   const [messages, setMessages] = useUIState<typeof AI>();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -77,7 +77,7 @@ export function ChatPanel() {
     return (
       <div className="pointer-events-none fixed bottom-2 left-0 right-0 mx-auto flex items-center justify-center md:bottom-16">
         <Button
-          aria-label="New chat"
+          aria-label="New report"
           type="button"
           size="lg"
           className="group pointer-events-auto rounded-full transition-all hover:scale-105"
@@ -127,7 +127,7 @@ export function ChatPanel() {
             <ArrowRightIcon className="text-primary" />
           </Button>
         </div>
-        <EmptyScreen
+        <MaiEmptyScreen
           submitMessage={(message) => {
             setInput(message);
           }}
