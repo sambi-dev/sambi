@@ -1,3 +1,5 @@
+import { SidebarDesktop } from '#/ui/sidebar-desktop';
+
 interface ChatLayoutProps {
   children: React.ReactNode;
 }
@@ -5,6 +7,7 @@ interface ChatLayoutProps {
 export default async function ChatLayout({ children }: ChatLayoutProps) {
   return (
     <div className="no-scrollbar relative flex h-[calc(100vh_-_theme(spacing.16))] overflow-hidden">
+      <SidebarDesktop />
       {children}
     </div>
   );
