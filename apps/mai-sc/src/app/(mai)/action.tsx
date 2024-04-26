@@ -22,7 +22,7 @@ import { Section } from '#/ui/mai/section';
 async function submit(formData?: FormData, skip?: boolean) {
   'use server';
 
-  const aiState = getMutableAIState<typeof AI>();
+  const aiState = getMutableAIState<typeof MaiAI>();
   const uiStream = createStreamableUI();
   const isGenerating = createStreamableValue(true);
   const isCollapsed = createStreamableValue(false);
@@ -158,7 +158,7 @@ const initialUIState: {
 }[] = [];
 
 // AI is a provider you wrap your application with so you can access AI and UI state in your components.
-export const AI = createAI({
+export const MaiAI = createAI({
   actions: {
     submit,
   },

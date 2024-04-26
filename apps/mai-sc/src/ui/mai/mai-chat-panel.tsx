@@ -1,4 +1,4 @@
-import type { AI } from '#/app/(mai)/action';
+import type { MaiAI } from '#/app/(mai)/action';
 
 import { useEffect, useRef, useState } from 'react';
 
@@ -14,10 +14,10 @@ import { UserMessage } from '#/ui/mai/user-message';
 
 export function MaiChatPanel() {
   const [input, setInput] = useState('');
-  const [messages, setMessages] = useUIState<typeof AI>();
+  const [messages, setMessages] = useUIState<typeof MaiAI>();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [aiMessages, setAiMessages] = useAIState<typeof AI>();
-  const { submit } = useActions<typeof AI>();
+  const [aiMessages, setAiMessages] = useAIState<typeof MaiAI>();
+  const { submit } = useActions<typeof MaiAI>();
   const [isButtonPressed, setIsButtonPressed] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const [showEmptyScreen, setShowEmptyScreen] = useState(false);
