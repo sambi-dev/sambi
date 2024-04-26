@@ -10,6 +10,8 @@ import { MaiChat } from '#/ui/mai/mai-chat';
 
 import { AI } from '../action';
 
+export const runtime = 'edge';
+
 export default async function ChatPage() {
   const session = (await auth()) as Session;
 
