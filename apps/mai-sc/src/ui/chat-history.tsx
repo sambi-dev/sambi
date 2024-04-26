@@ -1,9 +1,7 @@
 import * as React from 'react';
-import Link from 'next/link';
 
-import { cn } from '@yocxo/ui';
-import { buttonVariants } from '@yocxo/ui/button';
-import { PlusIcon } from '@yocxo/ui/icons';
+import { Alert, AlertDescription, AlertTitle } from '@yocxo/ui/alert';
+import { AlertTriangleIcon } from '@yocxo/ui/icons';
 
 import { SidebarList } from '#/ui/sidebar-list';
 
@@ -14,20 +12,22 @@ interface ChatHistoryProps {
 export async function ChatHistory({ userId }: ChatHistoryProps) {
   return (
     <div className="flex h-full flex-col">
-      <div className="flex items-center justify-between px-2 py-4">
-        <h4 className="text-sm font-semibold tracking-tighter">Chat History</h4>
+      <div className="flex px-2 py-4">
+        <h4 className="text-sm font-medium">Report History</h4>
       </div>
-      <div className="mb-2 px-2">
-        <Link
-          href="/new"
-          className={cn(
-            buttonVariants({ variant: 'outline', size: 'sm' }),
-            'w-full rounded-full bg-primary font-sans tracking-normal text-white shadow-none hover:bg-primary/80 dark:text-black',
-          )}
-        >
-          <PlusIcon className="-translate-x-2 stroke-2 text-white dark:text-black" />
-          New
-        </Link>
+      <div className="flex flex-1 flex-col space-y-4 overflow-auto px-4">
+        <Alert className="border-dashed border-muted-foreground bg-transparent">
+          <AlertTriangleIcon className="text-muted-foreground" />
+          <AlertTitle className="font-medium text-muted-foreground">
+            Coming Soon
+          </AlertTitle>
+          <AlertDescription className="text-xs text-muted-foreground">
+            I&apos;m sorry but Sam is really slow.
+          </AlertDescription>
+        </Alert>
+      </div>
+      <div className="flex px-2 py-4">
+        <h4 className="text-sm font-medium">Chat History</h4>
       </div>
       <React.Suspense
         fallback={

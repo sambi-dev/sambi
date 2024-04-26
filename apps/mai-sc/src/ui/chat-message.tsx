@@ -7,11 +7,13 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 
 import { cn } from '@yocxo/ui';
-import { CocoIcon, UserIcon } from '@yocxo/ui/icons';
+import { UserIcon } from '@yocxo/ui/icons';
 
 import { ChatMessageActions } from '#/ui/chat-message-actions';
 import { CodeBlock } from '#/ui/codeblock';
 import { MemoizedReactMarkdown } from '#/ui/markdown';
+
+import { MaiLogoIcon } from './mai/logo';
 
 export interface ChatMessageProps {
   message: Message;
@@ -31,11 +33,11 @@ export function ChatMessage({ message, ...props }: ChatMessageProps) {
             : 'bg-primary text-primary-foreground',
         )}
       >
-        {message.role === 'user' ? <UserIcon /> : <CocoIcon />}
+        {message.role === 'user' ? <UserIcon /> : <MaiLogoIcon />}
       </div>
       <div className="ml-4 flex-1 space-y-2 overflow-hidden px-1">
         <MemoizedReactMarkdown
-          className="prose break-words dark:prose-invert prose-p:leading-relaxed prose-pre:p-0"
+          className="prose-sm prose-zinc break-words dark:prose-invert md:prose prose-headings:font-medium prose-headings:text-secondary-foreground prose-h1:text-3xl prose-h2:text-2xl prose-h3:text-xl prose-h4:text-lg prose-p:text-muted-foreground prose-a:text-sm prose-a:text-primary/80 prose-a:underline prose-a:underline-offset-4 hover:prose-a:text-primary prose-pre:p-0 prose-ol:text-muted-foreground prose-ul:text-muted-foreground prose-li:marker:text-primary"
           remarkPlugins={[remarkGfm, remarkMath]}
           components={{
             p({ children }) {

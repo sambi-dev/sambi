@@ -40,7 +40,7 @@ export function ClearHistory({
           disabled={!isEnabled || isPending}
           className="rounded-full font-sans text-[0.7rem] tracking-normal shadow-none"
         >
-          {isPending && <SpinnerIcon className="anim mr-2" />}
+          {isPending && <SpinnerIcon className="mr-2 animate-spin" />}
           Clear history
         </Button>
       </AlertDialogTrigger>

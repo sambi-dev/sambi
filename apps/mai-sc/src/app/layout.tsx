@@ -9,11 +9,8 @@ import { Toaster } from '@yocxo/ui/toast';
 
 import { siteConfig } from '#/config/site';
 import { Header } from '#/ui/header';
-import Footer from '#/ui/mai/footer';
 import { Providers } from '#/ui/providers';
 import { SidebarDesktop } from '#/ui/sidebar-desktop';
-
-import { AI } from './(mai)/action';
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -111,7 +108,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          'scroll-smooth bg-background font-sans text-foreground antialiased',
+          'bg-background font-sans text-foreground antialiased',
           fontLexend.variable,
         )}
       >
@@ -120,9 +117,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <div className="flex min-h-screen flex-col">
             <Header />
             <SidebarDesktop />
-            <main className="flex flex-1 flex-col">
-              <AI>{children}</AI>
-            </main>
+            <main className="flex flex-1 flex-col">{children}</main>
           </div>
         </Providers>
       </body>

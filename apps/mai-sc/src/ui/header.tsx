@@ -7,21 +7,16 @@ import { auth } from 'auth';
 
 import { cn } from '@yocxo/ui';
 import { buttonVariants } from '@yocxo/ui/button';
+import { PlusIcon } from '@yocxo/ui/icons';
 
-import { MaiLogoIcon } from './mai/logo';
-import { UserMenu } from './user-menu';
-import { UserOrLogin } from './user-or-login';
-
-const navigation = [
-  { name: 'New', href: '/new' },
-  { name: 'Research', href: '/research' },
-  { name: 'Chat', href: '/chat' },
-];
+import { MaiLogoIcon } from '#/ui/mai/logo';
+import { UserMenu } from '#/ui/user-menu';
+import { UserOrLogin } from '#/ui/user-or-login';
 
 export async function Header() {
   const session = (await auth()) as Session;
   return (
-    <header className="fixed z-50 h-16 w-full bg-card px-4">
+    <header className="sticky z-50 h-16 w-full bg-card px-4">
       <nav
         className="mx-auto flex items-center justify-between py-4"
         aria-label="Global"
@@ -30,16 +25,17 @@ export async function Header() {
           <React.Suspense fallback={<div className="flex-1 overflow-auto" />}>
             <UserOrLogin />
           </React.Suspense>
-          <div className="ml-12 hidden lg:flex lg:gap-x-12">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-sm font-medium leading-6 text-secondary-foreground transition-colors hover:text-muted-foreground"
-              >
-                {item.name}
-              </Link>
-            ))}
+          <div className="ml-6 hidden lg:flex">
+            <Link
+              href="/new"
+              className={cn(
+                buttonVariants({ size: 'sm', variant: 'primary' }),
+                'font-sans text-xs tracking-normal dark:text-black',
+              )}
+            >
+              <PlusIcon className="mr-2" />
+              New
+            </Link>
           </div>
         </div>
         <Link href="/">
