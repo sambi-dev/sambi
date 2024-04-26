@@ -1,6 +1,6 @@
 'use client';
 
-import type { AI } from '#/app/(mai)/action';
+import type { MaiAI } from '#/app/(mai)/action';
 import type { PartialRelated } from '#/lib/schema/related';
 
 import React from 'react';
@@ -19,8 +19,8 @@ export interface SearchRelatedProps {
 export const SearchRelated: React.FC<SearchRelatedProps> = ({
   relatedQueries,
 }) => {
-  const { submit } = useActions<typeof AI>();
-  const [, setMessages] = useUIState<typeof AI>();
+  const { submit } = useActions<typeof MaiAI>();
+  const [, setMessages] = useUIState<typeof MaiAI>();
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [data, error, pending] =
     useStreamableValue<PartialRelated>(relatedQueries);
