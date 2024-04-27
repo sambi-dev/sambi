@@ -1,6 +1,6 @@
 'use client';
 
-import type { AI } from '#/app/(mai)/action';
+import type { MaiAI } from '#/app/(mai)/action';
 
 import { useState } from 'react';
 
@@ -14,8 +14,8 @@ import { UserMessage } from '#/ui/mai/user-message';
 
 export function FollowupPanel() {
   const [input, setInput] = useState('');
-  const { submit } = useActions<typeof AI>();
-  const [, setMessages] = useUIState<typeof AI>();
+  const { submit } = useActions<typeof MaiAI>();
+  const [, setMessages] = useUIState<typeof MaiAI>();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

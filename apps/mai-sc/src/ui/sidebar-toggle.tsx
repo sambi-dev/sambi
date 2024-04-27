@@ -12,7 +12,7 @@ export function SidebarToggle() {
   const { toggleSidebar } = useSidebar();
   const pathname = usePathname();
 
-  if (pathname === '/') {
+  if (!pathname.startsWith('/chat')) {
     return null;
   }
 
@@ -25,7 +25,7 @@ export function SidebarToggle() {
           toggleSidebar();
         }}
       >
-        <SidebarIcon className="size-6 text-secondary-foreground" />
+        <SidebarIcon className="size-6 text-secondary-foreground sm:mr-6" />
         <span className="sr-only">Toggle Sidebar</span>
       </Button>
     </div>

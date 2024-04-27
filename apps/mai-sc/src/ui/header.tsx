@@ -25,7 +25,7 @@ export async function Header() {
           <React.Suspense fallback={<div className="flex-1 overflow-auto" />}>
             <UserOrLogin />
           </React.Suspense>
-          <div className="ml-6 hidden lg:flex">
+          <div className="hidden lg:flex">
             <Link
               href="/new"
               className={cn(

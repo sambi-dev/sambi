@@ -8,7 +8,7 @@ import { auth } from 'auth';
 import { SITE_URL } from '#/lib/constants';
 import { MaiChat } from '#/ui/mai/mai-chat';
 
-import { AI } from '../action';
+import { MaiAI } from '../action';
 
 export default async function ChatPage() {
   const session = (await auth()) as Session;
@@ -17,9 +17,9 @@ export default async function ChatPage() {
     redirect(`/login`);
   }
   return (
-    <AI>
+    <MaiAI>
       <MaiChat />
-    </AI>
+    </MaiAI>
   );
 }
 
