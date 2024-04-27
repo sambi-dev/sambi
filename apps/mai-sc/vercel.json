@@ -36,12 +36,6 @@
     },
     "src/app/actions.ts": {
       "maxDuration": 30
-    },
-    "src/lib/agents/**/*.tsx": {
-      "maxDuration": 30
-    },
-    "src/lib/chat/**/*.tsx": {
-      "maxDuration": 30
     }
   }
 }
