@@ -1,6 +1,6 @@
 'use client';
 
-import type { AI } from '#/app/(mai)/action';
+import type { MaiAI } from '#/app/(mai)/action';
 import type { PartialInquiry } from '#/lib/schema/inquiry';
 
 import React, { useEffect, useState } from 'react';
@@ -34,8 +34,8 @@ export const Copilot: React.FC<CopilotProps> = ({ inquiry }: CopilotProps) => {
   );
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [messages, setMessages] = useUIState<typeof AI>();
-  const { submit } = useActions<typeof AI>();
+  const [messages, setMessages] = useUIState<typeof MaiAI>();
+  const { submit } = useActions<typeof MaiAI>();
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(event.target.value);

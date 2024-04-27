@@ -22,7 +22,7 @@ import { Section } from '#/ui/mai/section';
 async function submit(formData?: FormData, skip?: boolean) {
   'use server';
 
-  const aiState = getMutableAIState<typeof AI>();
+  const aiState = getMutableAIState<typeof MaiAI>();
   const uiStream = createStreamableUI();
   const isGenerating = createStreamableValue(true);
   const isCollapsed = createStreamableValue(false);
@@ -141,7 +141,7 @@ async function submit(formData?: FormData, skip?: boolean) {
   };
 }
 
-// Define the initial state of the AI. It can be any JSON object.
+// Define the initial state of the MaiAI. It can be any JSON object.
 const initialAIState: {
   role: 'user' | 'assistant' | 'system' | 'function' | 'tool';
   content: string;
@@ -157,8 +157,8 @@ const initialUIState: {
   component: React.ReactNode;
 }[] = [];
 
-// AI is a provider you wrap your application with so you can access AI and UI state in your components.
-export const AI = createAI({
+// MaiAI is a provider you wrap your application with so you can access MaiAI and UI state in your components.
+export const MaiAI = createAI({
   actions: {
     submit,
   },
