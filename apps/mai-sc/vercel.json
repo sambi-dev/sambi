@@ -2,19 +2,5 @@
   "ignoreCommand": "npx turbo-ignore",
   "github": {
     "silent": true
-  },
-  "functions": {
-    "src/app/api/auth/[...nextauth]/route.ts": {
-      "maxDuration": 30
-    },
-    "src/app/login/actions.ts": {
-      "maxDuration": 30
-    },
-    "src/app/signup/actions.ts": {
-      "maxDuration": 30
-    },
-    "src/app/actions.ts": {
-      "maxDuration": 30
-    }
   }
 }
