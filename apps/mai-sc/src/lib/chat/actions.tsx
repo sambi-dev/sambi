@@ -514,11 +514,14 @@ export const AI = createAI<AIState, UIState>({
   },
   unstable_onSetAIState: async ({ state }) => {
     'use server';
+    console.log('unstable_onSetAIState called with state:', state);
 
     const session = await auth();
+    console.log('Session fetched:', session);
 
     if (session?.user) {
       const { chatId, messages } = state;
+      console.log('Processing chat with ID:', chatId);
 
       const createdAt = new Date();
       const userId = session.user.id!;
@@ -534,9 +537,11 @@ export const AI = createAI<AIState, UIState>({
         path,
       };
 
+      console.log('Saving chat:', chat);
       await saveChat(chat);
+      console.log('Chat saved successfully:', chatId);
     } else {
-      return;
+      console.log('No user session found, not saving chat.');
     }
   },
 });
