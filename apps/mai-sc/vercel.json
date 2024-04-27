@@ -2,5 +2,46 @@
   "ignoreCommand": "npx turbo-ignore",
   "github": {
     "silent": true
+  },
+  "functions": {
+    "src/app/chat/chat/page.tsx": {
+      "maxDuration": 30
+    },
+    "src/app/chat/chat/[id]/page.tsx": {
+      "maxDuration": 30
+    },
+    "src/app/mai/action.tsx": {
+      "maxDuration": 30
+    },
+    "src/app/mai/research/page.tsx": {
+      "maxDuration": 30
+    },
+    "src/app/api/auth/[...nextauth]/route.ts": {
+      "maxDuration": 30
+    },
+    "src/app/login/actions.ts": {
+      "maxDuration": 30
+    },
+    "src/app/login/page.tsx": {
+      "maxDuration": 30
+    },
+    "src/app/share/[id]/page.tsx": {
+      "maxDuration": 30
+    },
+    "src/app/signup/actions.ts": {
+      "maxDuration": 30
+    },
+    "src/app/signup/page.tsx": {
+      "maxDuration": 30
+    },
+    "src/app/actions.ts": {
+      "maxDuration": 30
+    },
+    "src/lib/agents/**/*.tsx": {
+      "maxDuration": 30
+    },
+    "src/lib/chat/**/*.tsx": {
+      "maxDuration": 30
+    }
   }
 }
