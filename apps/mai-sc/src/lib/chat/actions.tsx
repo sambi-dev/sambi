@@ -444,7 +444,7 @@ Your goal is to inspire our creative team and help them generate engaging, JTBD-
               {
                 id: nanoid(),
                 role: 'function',
-                name: 'facebookPostWithImage',
+                name: 'showFacebookPostWithImage',
                 content: JSON.stringify(facebookPost),
               },
             ],
@@ -568,7 +568,7 @@ export const getUIStateFromAIState = (aiState: Chat) => {
               @typescript-eslint/no-unsafe-assignment */}
               <Events props={JSON.parse(message.content)} />
             </BotCard>
-          ) : message.name === 'facebookPostWithImage' ? (
+          ) : message.name === 'showFacebookPostWithImage' ? (
             <BotCard>
               {/* eslint-disable-next-line
               @typescript-eslint/no-unsafe-assignment */}

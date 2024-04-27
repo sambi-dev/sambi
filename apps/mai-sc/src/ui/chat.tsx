@@ -38,7 +38,7 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
   useEffect(() => {
     if (session?.user) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-      if (!path.includes('chat') && messages.length === 1) {
+      if (path === '/chat' && messages.length === 1) {
         window.history.replaceState({}, '', `/chat/${id}`);
       }
     }
