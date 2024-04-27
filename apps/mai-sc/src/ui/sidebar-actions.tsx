@@ -113,7 +113,7 @@ export function SidebarActions({
 
                   setDeleteDialogOpen(false);
                   router.refresh();
-                  router.push('/');
+                  router.push('/chat');
                   toast.success('Chat deleted');
                 });
               }}
