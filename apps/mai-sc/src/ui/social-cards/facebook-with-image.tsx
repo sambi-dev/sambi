@@ -43,13 +43,13 @@ export function FacebookWithImage({
             {facebookPost.userName}
           </p>
           <p className="text-xs text-muted-foreground">
-            {facebookPost.userLocation}
+            {facebookPost.userLocation} · via Smarcomms
           </p>
         </div>
         <DotIcon className="ml-auto h-5 w-5 cursor-pointer text-muted-foreground" />
       </div>
       <div className="p-4">
-        <p className="mb-3">{facebookPost.postDescription}</p>
+        <p className="mb-3 text-sm">{facebookPost.postDescription}</p>
         <Image
           alt="Post media"
           className="w-full"
@@ -87,10 +87,12 @@ export function FacebookWithImage({
             </Avatar>
             <div className="flex-1">
               <div className="rounded-lg bg-muted p-2">
-                <p className="font-semibold text-foreground">
+                <p className="text-sm font-semibold text-foreground">
                   {comment.userName}
                 </p>
-                <p className="text-muted-foreground">{comment.comment}</p>
+                <p className="text-xs text-muted-foreground">
+                  {comment.comment}
+                </p>
               </div>
             </div>
           </div>

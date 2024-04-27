@@ -14,7 +14,7 @@ export function FooterText({ className, ...props }: React.ComponentProps<'p'>) {
         )}
         {...props}
       >
-        Mai is to help inspire you not replace you.
+        Mai can help to inspire, not replace you.
         <p className=" mt-2 text-xs text-muted-foreground">
           © {new Date().getFullYear()} {siteConfig.name}. All Rights Reserved.
         </p>
