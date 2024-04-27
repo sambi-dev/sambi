@@ -1,12 +1,6 @@
-import Link from 'next/link';
-
 import { auth } from 'auth';
 
-import { cn } from '@yocxo/ui';
-import { buttonVariants } from '@yocxo/ui/button';
-
 import { ChatHistory } from './chat-history';
-import { MaiLogoIcon } from './logo';
 import { SidebarMobile } from './sidebar-mobile';
 import { SidebarToggle } from './sidebar-toggle';
 
@@ -21,16 +15,7 @@ export async function UserOrLogin() {
           </SidebarMobile>
           <SidebarToggle />
         </>
-      ) : (
-        <>
-          <Link
-            href="/"
-            className={cn(buttonVariants({ size: 'sm', variant: 'ghost' }))}
-          >
-            <MaiLogoIcon className="size-8" />
-          </Link>
-        </>
-      )}
+      ) : null}
     </div>
   );
 }
