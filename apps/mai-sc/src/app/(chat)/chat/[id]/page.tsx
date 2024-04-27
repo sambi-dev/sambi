@@ -9,7 +9,6 @@ import { getChat, getMissingKeys } from '#/app/actions';
 import { siteConfig } from '#/config/site';
 import { AI } from '#/lib/chat/actions';
 import { SITE_URL } from '#/lib/constants';
-import { sleep } from '#/lib/utils';
 import { Chat } from '#/ui/chat';
 
 export interface ChatPageProps {
@@ -30,7 +29,6 @@ export default async function ChatPage({ params }: ChatPageProps) {
   const chat = await getChat(params.id, userId);
 
   if (!chat) {
-    await sleep(2000);
     redirect('/chat');
   }
 
