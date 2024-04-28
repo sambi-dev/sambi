@@ -18,7 +18,7 @@ const agents = [
     title: 'Smarcomms Chatbot',
     description:
       'I want to run some ideas by the smartest intern in the world.',
-    link: '/',
+    link: '/chat',
   },
   {
     id: 'customer-research',

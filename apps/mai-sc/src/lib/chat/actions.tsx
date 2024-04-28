@@ -513,14 +513,11 @@ export const AI = createAI<AIState, UIState>({
   },
   unstable_onSetAIState: async ({ state, done }) => {
     'use server';
-    console.log('🤖 unstable_onSetAIState called');
 
     const session = await auth();
 
     if (session?.user) {
-      console.log('🤖 User authenticated');
       if (done && state.saved !== true) {
-        console.log('🤖 Saving chat');
         const { chatId, messages } = state;
 
         const createdAt = new Date();
@@ -539,12 +536,8 @@ export const AI = createAI<AIState, UIState>({
 
         await saveChat(chat);
         state.saved = true;
-        console.log('🤖 Chat saved');
-      } else {
-        console.log('🤖 Chat not saved');
       }
     } else {
-      console.log('🤖 User not authenticated');
       return;
     }
   },

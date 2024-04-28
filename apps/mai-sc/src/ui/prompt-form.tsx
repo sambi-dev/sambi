@@ -77,7 +77,7 @@ export function PromptForm({
               size="icon"
               className="absolute left-2 top-[20px] size-6 rounded-full p-0 sm:left-4 md:top-[14px] md:size-8"
               onClick={() => {
-                router.push('/');
+                router.push('/chat');
               }}
             >
               <PlusIcon />

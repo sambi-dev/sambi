@@ -14,7 +14,7 @@ import {
 const links = [
   {
     name: 'Want to talk about social media marketing?',
-    href: '/new',
+    href: '/chat',
     description: 'Start a chat with me.',
     icon: ChatBubbleTypingIcon,
   },

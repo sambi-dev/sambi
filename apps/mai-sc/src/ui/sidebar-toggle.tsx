@@ -12,7 +12,7 @@ export function SidebarToggle() {
   const { toggleSidebar } = useSidebar();
   const pathname = usePathname();
 
-  if (!(pathname === '/' || pathname.startsWith('/chat'))) {
+  if (!pathname.startsWith('/chat')) {
     return null;
   }
 
