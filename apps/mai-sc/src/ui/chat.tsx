@@ -65,7 +65,8 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
   useEffect(() => {
     console.log(`🤖 Setting new chat ID in local storage: ${id}`);
     setNewChatId(id);
-  }, [id, setNewChatId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
 
   useEffect(() => {
     console.log('🤖 Checking for missing environment keys');
