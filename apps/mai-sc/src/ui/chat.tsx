@@ -37,39 +37,45 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
   const [_, setNewChatId] = useLocalStorage('newChatId', id);
 
   useEffect(() => {
-    console.log('Before useEffect: Checking session and path');
+    console.log('SESSION CHECK: Before - Checking session and path');
     if (session?.user) {
       console.log(
-        'During useEffect: User is present, checking path and message length',
+        // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+        `SESSION CHECK: During - User present, path: ${path}, message length: ${messages.length}`,
       );
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       if (path === '/chat' && messages.length === 1) {
         console.log(
-          'During useEffect: Path is /chat and only one message, updating path state',
+          `SESSION CHECK: During - Updating path state to /chat/${id}`,
         );
         window.history.replaceState({}, '/chat', `/chat/${id}`);
       }
     }
-    console.log('After useEffect: Session and path check complete');
+    console.log('SESSION CHECK: After - Session and path check complete');
   }, [id, path, session?.user, messages]);
 
   useEffect(() => {
     console.log(
-      'Before useEffect: Preparing to check AI state messages length with initial delay',
+      'DELAYED CHECK: Before - Preparing to check AI state messages length with initial delay',
     );
 
     async function delayedCheck() {
-      console.log('During useEffect: Starting delay before checking messages');
-      await sleep(1000);
       console.log(
-        'During useEffect: Delay complete, now checking messages length',
+        'DELAYED CHECK: During - Starting 5s delay before checking messages',
+      );
+      await sleep(5000);
+      console.log(
+        'DELAYED CHECK: During - Delay complete, checking messages length',
       );
 
       // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
       const messagesLength = aiState.messages?.length;
+      console.log(
+        `DELAYED CHECK: During - AI state messages length: ${messagesLength}`,
+      );
       if (messagesLength === 2) {
         console.log(
-          'During useEffect: AI state messages length is 2, refreshing router',
+          'DELAYED CHECK: During - AI state messages length is 2, refreshing router',
         );
         router.refresh();
       }
@@ -78,17 +84,17 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
     void delayedCheck();
 
     console.log(
-      'After useEffect: AI state messages length check and potential refresh complete',
+      'DELAYED CHECK: After - AI state messages length check and potential refresh complete',
     );
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   }, [aiState.messages, router]);
 
   useEffect(() => {
     console.log(
-      `Before useEffect: Setting new chat ID in local storage to ${id}`,
+      `CHAT ID: Before - Setting new chat ID in local storage to ${id}`,
     );
     setNewChatId(id);
-    console.log(`After useEffect: New chat ID ${id} set in local storage`);
+    console.log(`CHAT ID: After - New chat ID ${id} set in local storage`);
   }, [id, setNewChatId]);
 
   useEffect(() => {
