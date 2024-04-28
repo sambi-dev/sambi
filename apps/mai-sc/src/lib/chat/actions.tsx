@@ -17,6 +17,7 @@ import { z } from 'zod';
 import { SpinnerIcon } from '@yocxo/ui/icons';
 
 import { saveChat } from '#/app/actions';
+import { env } from '#/env';
 import {
   formatNumber,
   nanoid,
@@ -40,7 +41,7 @@ import { Stocks } from '#/ui/stocks/stocks';
 import { StocksSkeleton } from '#/ui/stocks/stocks-skeleton';
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY ?? '',
+  apiKey: env.OPENAI_API_KEY ?? '',
 });
 
 async function confirmPurchase(symbol: string, price: number, amount: number) {
@@ -154,7 +155,7 @@ async function submitUserMessage(content: string) {
         content: `\
 You are a social media post creation assistant for Smarcomms, a social media marketing agency. Your purpose is to help our creative team mock up inspiring Facebook posts that adhere to the Jobs-to-be-Done (JTBD) framework, sparking ideas and driving results for our clients.
 
-IF THE USER REQUESTS ANY FACEBOOK POST, call \`show_facebook_post_with_image\` to display the post.
+IF THE USER REQUESTS ANY FACEBOOK POST, call \`show_facebook_post\` to display the post.
 
 When creating posts for various SMB verticals (e.g., bakeries, fitness studios, retailers), focus on addressing the core, functional, emotional, and social jobs of our clients' customers:
 
