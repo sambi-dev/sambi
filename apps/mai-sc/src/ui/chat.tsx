@@ -36,32 +36,43 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
   const [_, setNewChatId] = useLocalStorage('newChatId', id);
 
   useEffect(() => {
+    console.log('🤖 Checking if user is in a chat path with only one message');
     if (session?.user) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       if (!path.includes('chat') && messages.length === 1) {
         window.history.replaceState({}, '', `/chat/${id}`);
+        console.log(
+          `🤖 Redirected to /chat/${id} because the path did not include 'chat' and only one message was present`,
+        );
       }
     }
   }, [id, path, session?.user, messages]);
 
   useEffect(() => {
+    console.log('🤖 Checking AI state for message length of 2');
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     const messagesLength = aiState.messages?.length;
     if (messagesLength === 2) {
       router.refresh();
+      console.log(
+        '🤖 Refreshed the router due to AI state having exactly 2 messages',
+      );
     }
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   }, [aiState.messages, router]);
 
   useEffect(() => {
+    console.log(`🤖 Setting new chat ID in local storage: ${id}`);
     setNewChatId(id);
-  });
+  }, [id, setNewChatId]);
 
   useEffect(() => {
-    missingKeys.map((key) => {
+    console.log('🤖 Checking for missing environment keys');
+    missingKeys.forEach((key) => {
       toast.error('Missing environment variable', {
         description: `We encountered an issue: The ${key} environment variable is missing. Please try again.`,
       });
+      console.log(`🤖 Reported missing environment variable: ${key}`);
     });
   }, [missingKeys]);
 

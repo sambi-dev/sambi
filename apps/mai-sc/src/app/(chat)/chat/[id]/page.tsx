@@ -18,26 +18,53 @@ export interface ChatPageProps {
 }
 
 export default async function ChatPage({ params }: ChatPageProps) {
+  console.log(`[Chat ID: ${params.id}] Authenticating user session`);
   const session = (await auth()) as Session;
-  const missingKeys = await getMissingKeys();
+  console.log(
+    `[Chat ID: ${params.id}] Authenticated session details:`,
+    session,
+  );
 
   if (!session?.user) {
+    console.log(
+      `[Chat ID: ${params.id}] No user session found, redirecting to login page`,
+    );
     redirect(`/login?next=/chat/${params.id}`);
+    return;
   }
 
-  const userId = session.user.id;
-  const chat = await getChat(params.id, userId);
+  console.log(`[Chat ID: ${params.id}] Fetching chat details`);
+  const chat = await getChat(params.id, session.user.id);
+  console.log(`[Chat ID: ${params.id}] Fetched chat details:`, chat);
 
   if (!chat) {
+    console.log(
+      `[Chat ID: ${params.id}] No chat found, redirecting to home page`,
+    );
     redirect('/');
+    return;
   }
 
   if (chat?.userId !== session?.user?.id) {
+    console.log(
+      `[Chat ID: ${params.id}] User ID mismatch, raising not found error`,
+    );
     notFound();
+    return;
   }
 
+  console.log(`[Chat ID: ${params.id}] Fetching missing keys from the session`);
+  const missingKeys = await getMissingKeys();
+  console.log(`[Chat ID: ${params.id}] Missing keys:`, missingKeys);
+
+  const initialAIState = { chatId: chat.id, messages: chat.messages };
+  console.log(
+    `[Chat ID: ${params.id}] Setting up AI component with initial state:`,
+    initialAIState,
+  );
+
   return (
-    <AI initialAIState={{ chatId: chat.id, messages: chat.messages }}>
+    <AI initialAIState={initialAIState}>
       <Chat
         id={chat.id}
         session={session}
