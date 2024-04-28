@@ -11,6 +11,9 @@ import { AI } from '#/lib/chat/actions';
 import { nanoid } from '#/lib/utils';
 import { Chat } from '#/ui/chat';
 
+export const runtime = 'edge';
+export const preferredRegion = 'home';
+
 export default async function IndexPage() {
   const id = nanoid();
 
