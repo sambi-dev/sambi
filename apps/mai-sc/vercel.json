@@ -5,13 +5,10 @@
   },
   "functions": {
     "src/app/(chat)/page.tsx": {
-      "maxDuration": 60
+      "maxDuration": 30
     },
     "src/app/(chat)/chat/[id]/page.tsx": {
-      "maxDuration": 60
-    },
-    "src/ui/chat.tsx": {
-      "maxDuration": 60
+      "maxDuration": 30
     }
   }
 }

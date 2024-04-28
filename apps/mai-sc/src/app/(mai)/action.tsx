@@ -22,13 +22,13 @@ import { Section } from '#/ui/mai/section';
 async function submit(formData?: FormData, skip?: boolean) {
   'use server';
 
-  const aiState = getMutableAIState<typeof MaiAI>();
+  const maiAiState = getMutableAIState<typeof MaiAI>();
   const uiStream = createStreamableUI();
   const isGenerating = createStreamableValue(true);
   const isCollapsed = createStreamableValue(false);
 
   // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
-  const messages: ExperimentalMessage[] = aiState.get() as any;
+  const messages: ExperimentalMessage[] = maiAiState.get() as any;
   const useSpecificAPI = env.USE_SPECIFIC_API_FOR_WRITER === 'true';
   const maxMessages = useSpecificAPI ? 5 : 10;
   // Limit the number of messages to the maximum
@@ -47,7 +47,7 @@ async function submit(formData?: FormData, skip?: boolean) {
     const message = { role: 'user', content };
     messages.push(message as ExperimentalMessage);
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-explicit-any
-    aiState.update([...(aiState.get() as any), message]);
+    maiAiState.update([...(maiAiState.get() as any), message]);
   }
 
   async function processEvents() {
@@ -65,8 +65,8 @@ async function submit(formData?: FormData, skip?: boolean) {
       uiStream.done();
       isGenerating.done();
       isCollapsed.done(false);
-      aiState.done([
-        ...aiState.get(),
+      maiAiState.done([
+        ...maiAiState.get(),
         { role: 'assistant', content: `inquiry: ${inquiry?.question}` },
       ]);
       return;
@@ -127,7 +127,10 @@ async function submit(formData?: FormData, skip?: boolean) {
 
     isGenerating.done(false);
     uiStream.done();
-    aiState.done([...aiState.get(), { role: 'assistant', content: answer }]);
+    maiAiState.done([
+      ...maiAiState.get(),
+      { role: 'assistant', content: answer },
+    ]);
   }
 
   // eslint-disable-next-line @typescript-eslint/no-floating-promises
