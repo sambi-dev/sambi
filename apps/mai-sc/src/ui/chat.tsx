@@ -52,10 +52,10 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
     console.log('🤖 Checking AI state for message length of 2');
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     const messagesLength = aiState.messages?.length;
-    if (messagesLength === 2) {
+    if (messagesLength > 2) {
       router.refresh();
       console.log(
-        '🤖 Refreshed the router due to AI state having exactly 2 messages',
+        '🤖 Refreshed the router due to AI state having more than 2 messages',
       );
     }
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
