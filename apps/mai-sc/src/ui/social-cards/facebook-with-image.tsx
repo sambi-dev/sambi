@@ -87,7 +87,7 @@ export function FacebookWithImage({
             </Avatar>
             <div className="flex-1">
               <div className="rounded-lg bg-muted p-2">
-                <p className="text-sm font-semibold text-foreground">
+                <p className="text-xs font-semibold text-foreground">
                   {comment.userName}
                 </p>
                 <p className="text-xs text-muted-foreground">

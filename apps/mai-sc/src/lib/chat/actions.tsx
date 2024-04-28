@@ -439,17 +439,19 @@ If the user requests an unsupported action, respond with: "I'm sorry, I'm unable
 
           await sleep(1000);
 
-          aiState.done({
-            ...aiState.get(),
-            messages: [
-              ...aiState.get().messages,
-              {
-                id: nanoid(),
-                role: 'function',
-                name: 'showFacebookPost',
-                content: JSON.stringify(facebookPost),
-              },
-            ],
+          runAsyncFnWithoutBlocking(async () => {
+            aiState.done({
+              ...aiState.get(),
+              messages: [
+                ...aiState.get().messages,
+                {
+                  id: nanoid(),
+                  role: 'function',
+                  name: 'showFacebookPost',
+                  content: JSON.stringify(facebookPost),
+                },
+              ],
+            });
           });
 
           return (
