@@ -478,6 +478,7 @@ export interface Message {
 export interface AIState {
   chatId: string;
   messages: Message[];
+  saved?: boolean;
 }
 
 export type UIState = {
@@ -510,29 +511,32 @@ export const AI = createAI<AIState, UIState>({
       return;
     }
   },
-  unstable_onSetAIState: async ({ state }) => {
+  unstable_onSetAIState: async ({ state, done }) => {
     'use server';
 
     const session = await auth();
 
     if (session?.user) {
-      const { chatId, messages } = state;
+      if (done && !state.saved) {
+        const { chatId, messages } = state;
 
-      const createdAt = new Date();
-      const userId = session.user.id!;
-      const path = `/chat/${chatId}`;
-      const title = messages[0]!.content.substring(0, 100);
+        const createdAt = new Date();
+        const userId = session.user.id!;
+        const path = `/chat/${chatId}`;
+        const title = messages[0]!.content.substring(0, 100);
 
-      const chat: Chat = {
-        id: chatId,
-        title,
-        userId,
-        createdAt,
-        messages,
-        path,
-      };
+        const chat: Chat = {
+          id: chatId,
+          title,
+          userId,
+          createdAt,
+          messages,
+          path,
+        };
 
-      await saveChat(chat);
+        await saveChat(chat);
+        state.saved = true;
+      }
     } else {
       return;
     }
