@@ -17,7 +17,6 @@ import { z } from 'zod';
 import { SpinnerIcon } from '@yocxo/ui/icons';
 
 import { saveChat } from '#/app/actions';
-import { env } from '#/env';
 import {
   formatNumber,
   nanoid,
@@ -41,7 +40,7 @@ import { Stocks } from '#/ui/stocks/stocks';
 import { StocksSkeleton } from '#/ui/stocks/stocks-skeleton';
 
 const openai = new OpenAI({
-  apiKey: env.OPENAI_API_KEY ?? '',
+  apiKey: process.env.OPENAI_API_KEY ?? '',
 });
 
 async function confirmPurchase(symbol: string, price: number, amount: number) {
@@ -172,9 +171,7 @@ Your goal is to inspire our creative team and help them generate engaging, JTBD-
 
 You may discuss anything related to professional topics to help our agency and team members such as digital marketing, social media, content creation, customer engagement, product management, jobs-to-be-done, and more.
 
-If the user requests an unsupported action, respond with: "I'm sorry, I'm unable to help with that. I have notified the Smarcomms Chat Police though. 😅"
-
-`,
+If the user requests an unsupported action, respond with: "I'm sorry, I'm unable to help with that. I have notified the Smarcomms Chat Police though. 😅"`,
       },
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ...aiState.get().messages.map((message: any) => ({
@@ -401,7 +398,7 @@ If the user requests an unsupported action, respond with: "I'm sorry, I'm unable
           );
         },
       },
-      showFacebookPostWithImage: {
+      showFacebookPost: {
         description: 'Display a Facebook post with an image.',
         parameters: z.object({
           userName: z.string(),
@@ -448,7 +445,7 @@ If the user requests an unsupported action, respond with: "I'm sorry, I'm unable
               {
                 id: nanoid(),
                 role: 'function',
-                name: 'showFacebookPostWithImage',
+                name: 'showFacebookPost',
                 content: JSON.stringify(facebookPost),
               },
             ],
@@ -514,14 +511,11 @@ export const AI = createAI<AIState, UIState>({
   },
   unstable_onSetAIState: async ({ state }) => {
     'use server';
-    console.log('unstable_onSetAIState called with state:', state);
 
     const session = await auth();
-    console.log('Session fetched:', session);
 
     if (session?.user) {
       const { chatId, messages } = state;
-      console.log('Processing chat with ID:', chatId);
 
       const createdAt = new Date();
       const userId = session.user.id!;
@@ -537,11 +531,9 @@ export const AI = createAI<AIState, UIState>({
         path,
       };
 
-      console.log('Saving chat:', chat);
       await saveChat(chat);
-      console.log('Chat saved successfully:', chatId);
     } else {
-      console.log('No user session found, not saving chat.');
+      return;
     }
   },
 });
@@ -577,7 +569,7 @@ export const getUIStateFromAIState = (aiState: Chat) => {
               @typescript-eslint/no-unsafe-assignment */}
               <Events props={JSON.parse(message.content)} />
             </BotCard>
-          ) : message.name === 'showFacebookPostWithImage' ? (
+          ) : message.name === 'showFacebookPost' ? (
             <BotCard>
               {/* eslint-disable-next-line
               @typescript-eslint/no-unsafe-assignment */}

@@ -36,16 +36,10 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
   const [_, setNewChatId] = useLocalStorage('newChatId', id);
 
   useEffect(() => {
-    console.log('Setting newChatId:', id);
-    setNewChatId(id);
-    console.log('newChatId set:', id);
-  }, [id, setNewChatId]);
-
-  useEffect(() => {
     if (session?.user) {
       // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
       if (path === '/chat' && messages.length === 1) {
-        window.history.replaceState({}, '', `/chat/${id}`);
+        window.history.replaceState({}, '/chat', `/chat/${id}`);
       }
     }
   }, [id, path, session?.user, messages]);
@@ -58,6 +52,10 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
     }
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   }, [aiState.messages, router]);
+
+  useEffect(() => {
+    setNewChatId(id);
+  });
 
   useEffect(() => {
     missingKeys.map((key) => {
