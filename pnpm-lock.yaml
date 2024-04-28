@@ -504,6 +504,9 @@ importers:
       remark-math:
         specifier: ^5.1.1
         version: 5.1.1
+      server-only:
+        specifier: ^0.0.1
+        version: 0.0.1
       usehooks-ts:
         specifier: ^2.16.0
         version: 2.16.0(react@18.2.0)

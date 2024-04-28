@@ -1,4 +1,4 @@
-'use server';
+import 'server-only';
 
 import type { Chat } from '#/lib/types';
 

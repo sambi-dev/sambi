@@ -45,6 +45,7 @@
     "rehype-external-links": "^3.0.0",
     "remark-gfm": "^3.0.1",
     "remark-math": "^5.1.1",
+    "server-only": "^0.0.1",
     "usehooks-ts": "^2.16.0",
     "zod": "^3.22.5"
   },
