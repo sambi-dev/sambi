@@ -2,5 +2,13 @@
   "ignoreCommand": "npx turbo-ignore",
   "github": {
     "silent": true
+  },
+  "functions": {
+    "/src/app/(chat)/page.tsx": {
+      "maxDuration": 60
+    },
+    "/src/app/(chat)/chat/[id]/page.tsx": {
+      "maxDuration": 60
+    }
   }
 }
