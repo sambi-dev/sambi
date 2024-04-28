@@ -39,7 +39,6 @@ export default async function ChatPage({ params }: ChatPageProps) {
   const initialAIState = {
     chatId: chat.id,
     messages: chat.messages,
-    saved: true,
   };
 
   return (

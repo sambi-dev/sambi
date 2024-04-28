@@ -22,7 +22,7 @@ export default async function IndexPage() {
     redirect(`/signup`);
   }
 
-  const initialAIState = { chatId: id, messages: [], saved: false };
+  const initialAIState = { chatId: id, messages: [] };
 
   return (
     <AI initialAIState={initialAIState}>

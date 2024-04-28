@@ -47,12 +47,12 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     const messagesLength = aiState.messages?.length;
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    if (messagesLength === 2 && aiState.saved) {
+
+    if (messagesLength === 2) {
       router.refresh();
     }
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-  }, [aiState.messages, aiState.saved, router]);
+  }, [aiState.messages, router]);
 
   useEffect(() => {
     setNewChatId(id);

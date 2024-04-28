@@ -478,7 +478,6 @@ export interface Message {
 export interface AIState {
   chatId: string;
   messages: Message[];
-  saved: boolean;
 }
 
 export type UIState = {
@@ -492,7 +491,7 @@ export const AI = createAI<AIState, UIState>({
     confirmPurchase,
   },
   initialUIState: [],
-  initialAIState: { chatId: nanoid(), messages: [], saved: false },
+  initialAIState: { chatId: nanoid(), messages: [] },
   unstable_onGetUIState: async () => {
     'use server';
 
@@ -517,7 +516,7 @@ export const AI = createAI<AIState, UIState>({
     const session = await auth();
 
     if (session?.user) {
-      if (done && state.saved !== true) {
+      if (done) {
         const { chatId, messages } = state;
 
         const createdAt = new Date();
@@ -535,7 +534,6 @@ export const AI = createAI<AIState, UIState>({
         };
 
         await saveChat(chat);
-        state.saved = true;
       }
     } else {
       return;
