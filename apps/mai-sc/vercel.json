@@ -9,6 +9,9 @@
     },
     "src/app/(chat)/chat/[id]/page.tsx": {
       "maxDuration": 60
+    },
+    "src/ui/chat.tsx": {
+      "maxDuration": 60
     }
   }
 }
