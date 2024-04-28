@@ -63,7 +63,7 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
       console.log(
         'DELAYED CHECK: During - Starting 5s delay before checking messages',
       );
-      await sleep(5000);
+      await sleep(1000);
       console.log(
         'DELAYED CHECK: During - Delay complete, checking messages length',
       );
