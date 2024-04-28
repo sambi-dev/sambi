@@ -17,7 +17,7 @@ export default async function IndexPage() {
   const missingKeys = await getMissingKeys();
 
   if (!session?.user) {
-    redirect(`/login`);
+    redirect(`/welcome`);
   }
 
   return (

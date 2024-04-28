@@ -2,10 +2,5 @@
   "ignoreCommand": "npx turbo-ignore",
   "github": {
     "silent": true
-  },
-  "functions": {
-    "src/**/*": {
-      "maxDuration": 30
-    }
   }
 }
