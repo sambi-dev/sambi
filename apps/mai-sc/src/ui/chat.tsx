@@ -52,26 +52,12 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
     console.log('🤖 Checking AI state for message length of 2');
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     const messagesLength = aiState.messages?.length;
-    if (messagesLength === 2) {
-      const refreshAfterSave = async () => {
-        await new Promise((resolve) => {
-          const checkSaveStatus = () => {
-            // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-            if (aiState.saved) {
-              resolve(true);
-            } else {
-              setTimeout(checkSaveStatus, 100);
-            }
-          };
-          checkSaveStatus();
-        });
-
-        router.refresh();
-        console.log(
-          '🤖 Refreshed the router after the chat is saved with 2 messages',
-        );
-      };
-      void refreshAfterSave();
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    if (messagesLength === 2 && aiState.saved) {
+      router.refresh();
+      console.log(
+        '🤖 Refreshed the router after the chat is saved with 2 messages',
+      );
     }
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
   }, [aiState.messages, aiState.saved, router]);

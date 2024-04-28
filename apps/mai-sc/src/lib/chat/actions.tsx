@@ -478,7 +478,7 @@ export interface Message {
 export interface AIState {
   chatId: string;
   messages: Message[];
-  saved?: boolean;
+  saved: boolean;
 }
 
 export type UIState = {
@@ -492,7 +492,7 @@ export const AI = createAI<AIState, UIState>({
     confirmPurchase,
   },
   initialUIState: [],
-  initialAIState: { chatId: nanoid(), messages: [] },
+  initialAIState: { chatId: nanoid(), messages: [], saved: false },
   unstable_onGetUIState: async () => {
     'use server';
 
