@@ -155,7 +155,7 @@ async function submitUserMessage(content: string) {
         content: `\
 You are a social media post creation assistant for Smarcomms, a social media marketing agency. Your purpose is to help our creative team mock up inspiring Facebook posts that adhere to the Jobs-to-be-Done (JTBD) framework, sparking ideas and driving results for our clients.
 
-IF THE USER REQUESTS ANY FACEBOOK POST, call \`show_facebook_post_with_image\` to display the post.
+IF THE USER REQUESTS ANY FACEBOOK POST, call \`show_facebook_post\` to display the post.
 
 When creating posts for various SMB verticals (e.g., bakeries, fitness studios, retailers), focus on addressing the core, functional, emotional, and social jobs of our clients' customers:
 
@@ -172,9 +172,7 @@ Your goal is to inspire our creative team and help them generate engaging, JTBD-
 
 You may discuss anything related to professional topics to help our agency and team members such as digital marketing, social media, content creation, customer engagement, product management, jobs-to-be-done, and more.
 
-If the user requests an unsupported action, respond with: "I'm sorry, I'm unable to help with that. I have notified the Smarcomms Chat Police though. 😅"
-
-`,
+If the user requests an unsupported action, respond with: "I'm sorry, I'm unable to help with that. I have notified the Smarcomms Chat Police though. 😅"`,
       },
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       ...aiState.get().messages.map((message: any) => ({
@@ -401,7 +399,7 @@ If the user requests an unsupported action, respond with: "I'm sorry, I'm unable
           );
         },
       },
-      showFacebookPostWithImage: {
+      showFacebookPost: {
         description: 'Display a Facebook post with an image.',
         parameters: z.object({
           userName: z.string(),
@@ -448,7 +446,7 @@ If the user requests an unsupported action, respond with: "I'm sorry, I'm unable
               {
                 id: nanoid(),
                 role: 'function',
-                name: 'showFacebookPostWithImage',
+                name: 'showFacebookPost',
                 content: JSON.stringify(facebookPost),
               },
             ],
@@ -512,29 +510,31 @@ export const AI = createAI<AIState, UIState>({
       return;
     }
   },
-  unstable_onSetAIState: async ({ state }) => {
+  unstable_onSetAIState: async ({ state, done }) => {
     'use server';
 
     const session = await auth();
 
     if (session?.user) {
-      const { chatId, messages } = state;
+      if (done) {
+        const { chatId, messages } = state;
 
-      const createdAt = new Date();
-      const userId = session.user.id!;
-      const path = `/chat/${chatId}`;
-      const title = messages[0]!.content.substring(0, 100);
+        const createdAt = new Date();
+        const userId = session.user.id!;
+        const path = `/chat/${chatId}`;
+        const title = messages[0]!.content.substring(0, 100);
 
-      const chat: Chat = {
-        id: chatId,
-        title,
-        userId,
-        createdAt,
-        messages,
-        path,
-      };
+        const chat: Chat = {
+          id: chatId,
+          title,
+          userId,
+          createdAt,
+          messages,
+          path,
+        };
 
-      await saveChat(chat);
+        await saveChat(chat);
+      }
     } else {
       return;
     }
@@ -572,7 +572,7 @@ export const getUIStateFromAIState = (aiState: Chat) => {
               @typescript-eslint/no-unsafe-assignment */}
               <Events props={JSON.parse(message.content)} />
             </BotCard>
-          ) : message.name === 'showFacebookPostWithImage' ? (
+          ) : message.name === 'showFacebookPost' ? (
             <BotCard>
               {/* eslint-disable-next-line
               @typescript-eslint/no-unsafe-assignment */}

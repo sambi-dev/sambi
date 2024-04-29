@@ -1,7 +1,6 @@
 'use client';
 
 import * as React from 'react';
-import { usePathname } from 'next/navigation';
 
 const LOCAL_STORAGE_KEY = 'sidebar';
 
@@ -30,7 +29,6 @@ interface SidebarProviderProps {
 export function SidebarProvider({ children }: SidebarProviderProps) {
   const [isSidebarOpen, setSidebarOpen] = React.useState(true);
   const [isLoading, setLoading] = React.useState(true);
-  const pathname = usePathname();
 
   React.useEffect(() => {
     const value = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -40,10 +38,6 @@ export function SidebarProvider({ children }: SidebarProviderProps) {
     }
     setLoading(false);
   }, []);
-
-  React.useEffect(() => {
-    setSidebarOpen(false);
-  }, [pathname]);
 
   const toggleSidebar = () => {
     setSidebarOpen((value) => {

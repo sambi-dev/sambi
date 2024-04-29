@@ -7,7 +7,7 @@ import { Skeleton } from '@yocxo/ui/skeleton';
 
 export default function FacebookWithImageSkeleton() {
   return (
-    <div className="mx-auto max-w-2xl rounded-lg bg-card shadow">
+    <div className="mx-auto max-w-lg rounded-lg bg-card shadow">
       <div className="flex items-center border-b p-4">
         <Skeleton className="h-10 w-10 rounded-full" />
         <div className="ml-2 space-y-2">
@@ -18,7 +18,7 @@ export default function FacebookWithImageSkeleton() {
       </div>
       <div className="p-4">
         <Skeleton className="mb-3 h-4 w-48" />
-        <Skeleton className="h-[768px] w-full" />
+        <Skeleton className="h-[500px] w-full" />
       </div>
       <div className="flex items-center justify-between border-t p-4">
         <div className="flex space-x-1">

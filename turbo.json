@@ -63,6 +63,35 @@
         ".vercel/output/**"
       ]
     },
+    "@yocxo/mai-sc#build": {
+      "dependsOn": ["^build"],
+      "env": [
+        "AUTH_SECRET",
+        "EXA_API_KEY",
+        "KV_URL",
+        "KV_REST_API_URL",
+        "KV_REST_API_TOKEN",
+        "KV_REST_API_READ_ONLY_TOKEN",
+        "OPENAI_API_KEY",
+        "OPENAI_API_MODEL",
+        "OPENAI_API_ORG",
+        "NEXT_PUBLIC_APP_URL",
+        "SPECIFIC_API_BASE",
+        "SPECIFIC_API_KEY",
+        "SPECIFIC_API_MODEL",
+        "TAVILY_API_KEY",
+        "UPSTASH_REDIS_REST_TOKEN",
+        "UPSTASH_REDIS_REST_URL",
+        "USE_SPECIFIC_API_FOR_WRITER"
+      ],
+      "outputs": [
+        ".next/**",
+        "!.next/cache/**",
+        "next-env.d.ts",
+        ".output/**",
+        ".vercel/output/**"
+      ]
+    },
     "@yocxo/web#build": {
       "dependsOn": ["^build"],
       "env": [

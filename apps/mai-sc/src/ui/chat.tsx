@@ -47,6 +47,7 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
   useEffect(() => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment, @typescript-eslint/no-unsafe-member-access
     const messagesLength = aiState.messages?.length;
+
     if (messagesLength === 2) {
       router.refresh();
     }
@@ -55,10 +56,11 @@ export function Chat({ id, className, session, missingKeys }: ChatProps) {
 
   useEffect(() => {
     setNewChatId(id);
-  });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [id]);
 
   useEffect(() => {
-    missingKeys.map((key) => {
+    missingKeys.forEach((key) => {
       toast.error('Missing environment variable', {
         description: `We encountered an issue: The ${key} environment variable is missing. Please try again.`,
       });

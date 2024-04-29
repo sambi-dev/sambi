@@ -13,15 +13,19 @@ import { Chat } from '#/ui/chat';
 
 export default async function IndexPage() {
   const id = nanoid();
+
   const session = (await auth()) as Session;
+
   const missingKeys = await getMissingKeys();
 
   if (!session?.user) {
-    redirect(`/login`);
+    redirect(`/signup`);
   }
 
+  const initialAIState = { chatId: id, messages: [] };
+
   return (
-    <AI initialAIState={{ chatId: id, messages: [] }}>
+    <AI initialAIState={initialAIState}>
       <Chat id={id} session={session} missingKeys={missingKeys} />
     </AI>
   );

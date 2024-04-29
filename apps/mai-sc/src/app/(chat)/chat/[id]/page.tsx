@@ -19,25 +19,30 @@ export interface ChatPageProps {
 
 export default async function ChatPage({ params }: ChatPageProps) {
   const session = (await auth()) as Session;
-  const missingKeys = await getMissingKeys();
 
   if (!session?.user) {
     redirect(`/login?next=/chat/${params.id}`);
   }
 
-  const userId = session.user.id;
-  const chat = await getChat(params.id, userId);
+  const chat = await getChat(params.id, session.user.id);
 
-  // if (!chat) {
-  //   redirect('/chat');
-  // }
+  if (!chat) {
+    redirect('/chat');
+  }
 
   if (chat?.userId !== session?.user?.id) {
     notFound();
   }
 
+  const missingKeys = await getMissingKeys();
+
+  const initialAIState = {
+    chatId: chat.id,
+    messages: chat.messages,
+  };
+
   return (
-    <AI initialAIState={{ chatId: chat.id, messages: chat.messages }}>
+    <AI initialAIState={initialAIState}>
       <Chat
         id={chat.id}
         session={session}

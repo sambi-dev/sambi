@@ -48,7 +48,7 @@ export const Launcher = ({
           {items.map((item, idx) => (
             <Link
               href={item?.link}
-              key={item?.link}
+              key={idx}
               className="group relative  block h-full w-full p-2"
               onMouseEnter={() => setHoveredIndex(idx)}
               onMouseLeave={() => setHoveredIndex(null)}

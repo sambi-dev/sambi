@@ -29,7 +29,7 @@ export function FacebookWithImage({
   props: FacebookPostProps;
 }) {
   return (
-    <div className="mx-auto max-w-2xl rounded-lg bg-card shadow-md">
+    <div className="mx-auto max-w-lg rounded-lg bg-card shadow-md">
       <div className="flex items-center border-b p-4">
         <Avatar>
           <AvatarImage
@@ -60,11 +60,11 @@ export function FacebookWithImage({
       </div>
       <div className="flex items-center justify-between border-t p-4">
         <div className="flex space-x-1">
-          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-blue-600">
-            <ThumbsUpIcon className="h-4 w-4 fill-current text-white" />
+          <div className="flex size-5 items-center justify-center rounded-full bg-blue-600">
+            <ThumbsUpIcon className="size-3 fill-current text-white" />
           </div>
-          <div className="flex h-6 w-6 items-center justify-center rounded-full bg-red-600">
-            <HeartIcon className="h-4 w-4 fill-current text-white" />
+          <div className="flex size-5 items-center justify-center rounded-full bg-red-600">
+            <HeartIcon className="size-3 fill-current text-white" />
           </div>
           <span className="text-sm text-muted-foreground">
             {facebookPost.postEngagements.likes} likes,{' '}
@@ -86,8 +86,8 @@ export function FacebookWithImage({
               <AvatarFallback>JD</AvatarFallback>
             </Avatar>
             <div className="flex-1">
-              <div className="rounded-lg bg-muted p-2">
-                <p className="text-sm font-semibold text-foreground">
+              <div className="rounded-lg bg-muted px-2 py-1">
+                <p className="text-xs font-semibold text-foreground">
                   {comment.userName}
                 </p>
                 <p className="text-xs text-muted-foreground">
