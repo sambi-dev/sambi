@@ -18,7 +18,7 @@ export default function FacebookWithImageSkeleton() {
       </div>
       <div className="p-4">
         <Skeleton className="mb-3 h-4 w-48" />
-        <Skeleton className="h-[768px] w-full" />
+        <Skeleton className="h-[500px] w-full" />
       </div>
       <div className="flex items-center justify-between border-t p-4">
         <div className="flex space-x-1">
